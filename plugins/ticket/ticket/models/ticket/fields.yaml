@@ -1,0 +1,16 @@
+fields:
+    date_achat:
+        label: 'Date d''achat'
+        mode: date
+        span: auto
+        type: datepicker
+    status:
+        label: 'Statut du ticket'
+        span: auto
+        type: text
+    type:
+        label: 'Type de ticket'
+        span: auto
+        nameFrom: nom_type
+        descriptionFrom: description
+        type: relation

@@ -1,0 +1,5 @@
+fields:
+    nom_type:
+        label: 'Nom du type de ticket'
+        span: auto
+        type: text

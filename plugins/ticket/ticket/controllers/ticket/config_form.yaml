@@ -1,0 +1,10 @@
+name: Ticket
+form: $/ticket/ticket/models/ticket/fields.yaml
+modelClass: ticket\Ticket\Models\Ticket
+defaultRedirect: ticket/ticket/ticket
+create:
+    redirect: 'ticket/ticket/ticket/update/:id'
+    redirectClose: ticket/ticket/ticket
+update:
+    redirect: ticket/ticket/ticket
+    redirectClose: ticket/ticket/ticket

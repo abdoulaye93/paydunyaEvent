@@ -1,0 +1,20 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table demande_demande_demande_annulation_event'
+    - builder_table_create_demande_demande_demande_annulation_event.php
+1.0.3:
+    - 'Created table demande_demande_demande_annulation_achat'
+    - builder_table_create_demande_demande_demande_annulation_achat.php
+1.0.4:
+    - 'Updated table demande_demande_demande_annulation_event'
+    - builder_table_update_demande_demande_demande_annulation_event.php
+1.0.5:
+    - 'Updated table demande_demande_demande_annulation_achat'
+    - builder_table_update_demande_demande_demande_annulation_achat.php
+1.0.6:
+    - 'Updated table demande_demande_demande_annulation_event'
+    - builder_table_update_demande_demande_demande_annulation_event_2.php
+1.0.7:
+    - 'Updated table demande_demande_demande_annulation_achat'
+    - builder_table_update_demande_demande_demande_annulation_achat_2.php

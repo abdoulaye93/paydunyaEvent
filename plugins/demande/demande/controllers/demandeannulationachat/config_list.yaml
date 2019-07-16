@@ -1,0 +1,12 @@
+list: $/demande/demande/models/demandeannullationachat/columns.yaml
+modelClass: Demande\Demande\Models\DemandeAnnullationAchat
+title: DemandeAnnulationAchat
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'demande/demande/demandeannulationachat/update/:id'

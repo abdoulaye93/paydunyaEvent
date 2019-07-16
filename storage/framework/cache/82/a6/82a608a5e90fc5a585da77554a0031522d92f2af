@@ -1,0 +1,748 @@
+1563277197a:1:{s:14:"view_event.htm";a:10:{s:8:"fileName";s:14:"view_event.htm";s:7:"content";s:28243:"title = "view_event"
+url = "/view_event"
+layout = "create_event"
+is_hidden = 0
+
+[account]
+paramCode = "code"
+forceSecure = 0
+==
+<section class="live-token-sale">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 text-center">
+                    <div class="section-title">
+                        <h2>Tous les évènements</h2>
+                        <p>...!!!!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 remove-col-padding-mobile">
+                    <div class="token-sale-top-bar">
+                       <div class="row">
+                           <div class="col-lg-6 col-sm-3 remove-col-padding-mobile">
+                                <div class="left-content">
+                                    <h4>All Events</h4>
+                                </div>
+                           </div>
+                           <div class="col-lg-6 col-sm-9 remove-col-padding-mobile">
+                                <div class="right-content">
+                                    <div class="tab-navbar">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" data-toggle="tab" href="#active_tab">Featured</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#upcoming_tab">Active</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#ending_tab">Expired</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 remove-col-padding">
+                    <div class="tab-content">
+                        <div class="tab-pane container active" id="active_tab">
+                                                            <div class="row">
+                                                                        <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+                                            <div class="thumb">
+                                                <a href="event/show/effective-communication-skills.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784183.jpg" alt="ico images"></a>
+                                            </div>
+                                            <div class="content">
+                                                                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Effective Communication Skills</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>3000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                 <a  href="{{ 'description_event'|page }}"  class="boxed-btn-rounded">
+                                              <i class="fa fa-caret-right"></i> <span class="title">Details</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                        <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+                                            <div class="thumb">
+                                                <a href="event/show/sydney-tour.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784243.jpg" alt="ico images"></a>
+                                            </div>
+                                            <div class="content">
+                                                                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Sydney Tour</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>1500 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a  href="{{ 'description_event'|page }}"  class="boxed-btn-rounded">
+                                              <i class="fa fa-caret-right"></i> <span class="title">Details</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                        <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+                                            <div class="thumb">
+                                                <a href="event/show/sydney-australia-package-2-nights-3-days.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784253.jpg" alt="ico images"></a>
+                                            </div>
+                                            <div class="content">
+                                                                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Sydney, Australia Package 2 Nights 3 Days</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>4000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                               <a  href="{{ 'description_event'|page }}"  class="boxed-btn-rounded">
+                                              <i class="fa fa-caret-right"></i> <span class="title">Details</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                        <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+                                            <div class="thumb">
+                                                <a href="event/show/phuket-thailand-package-3-nights-4-days.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784481.jpg" alt="ico images"></a>
+                                            </div>
+                                            <div class="content">
+                                                                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Phuket, Thailand Package 3 Nights 4 Days</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>4500 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a  href="{{ 'description_event'|page }}"  class="boxed-btn-rounded">
+                                              <i class="fa fa-caret-right"></i> <span class="title">Details</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                        <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+                                            <div class="thumb">
+                                                <a href="event/show/bali-indonesia-package-2-nights-3-days.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784475.jpg" alt="ico images"></a>
+                                            </div>
+                                            <div class="content">
+                                                                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Bali, Indonesia Package 2 Nights 3 Days</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>10000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                               <a  href="{{ 'description_event'|page }}"  class="boxed-btn-rounded">
+                                              <i class="fa fa-caret-right"></i> <span class="title">Details</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                        <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+                                            <div class="thumb">
+                                                <a href="event/show/nepal-package-2-nights-3-days.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784472.jpg" alt="ico images"></a>
+                                            </div>
+                                            <div class="content">
+                                                                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Deadpool Movies Ticket</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>4000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a  href="{{ 'description_event'|page }}"  class="boxed-btn-rounded">
+                                              <i class="fa fa-caret-right"></i> <span class="title">Details</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                    </div>
+                                <div class="text-center">
+                                    <a target="_blank" class="btn btn-primary" href="all-featured-tickets.html">Show More</a>
+                                </div>
+                                                    </div>
+                        <div class="tab-pane container fade" id="upcoming_tab">
+                                                    <div class="row">
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/effective-communication-skills.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784183.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Effective Communication Skills</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>3000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/effective-communication-skills.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/elite-paint-celebrating-womanhood.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784212.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                                                                  <a style="float:right;" href="Pratik/profile.html">
+                                                    <strong style="color:#7d5fff;"><i class="fa fa-user"></i> Pratik</strong>
+                                                  </a>
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Elite Paint Celebrating Womanhood</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>3500 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/elite-paint-celebrating-womanhood.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/boney-m-live-in-dhaka.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784219.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                                                                  <a style="float:right;" href="Pratik/profile.html">
+                                                    <strong style="color:#7d5fff;"><i class="fa fa-user"></i> Pratik</strong>
+                                                  </a>
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">BONEY M. Live in Dhaka</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>2500 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/boney-m-live-in-dhaka.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/rock-the-city-live-concert.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784232.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Rock The City – Live Concert</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>3000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/rock-the-city-live-concert.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/sydney-tour.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784243.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Sydney Tour</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>1500 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/sydney-tour.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/mumbai-tour.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784247.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Mumbai Tour</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>1000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/mumbai-tour.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/sydney-australia-package-2-nights-3-days.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784253.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Sydney, Australia Package 2 Nights 3 Days</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>4000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/sydney-australia-package-2-nights-3-days.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/phuket-thailand-package-3-nights-4-days.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784481.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Phuket, Thailand Package 3 Nights 4 Days</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>4500 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/phuket-thailand-package-3-nights-4-days.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/bali-indonesia-package-2-nights-3-days.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784475.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Bali, Indonesia Package 2 Nights 3 Days</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>10000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/bali-indonesia-package-2-nights-3-days.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                            </div>
+                            <div class="text-center">
+                                <a target="_blank" class="btn btn-primary" href="all-active-tickets.html">Show More</a>
+                            </div>
+                                                </div>
+                        <div class="tab-pane container fade" id="ending_tab"><!-- ending tab start -->
+                                                            <div class="row" style="text-align:center;display:block;">
+                                    <h3 class="">NO EXPIRED TICKETS FOUND</h3>
+                                </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>";s:5:"mtime";i:1563276595;s:6:"markup";s:28106:"<section class="live-token-sale">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 text-center">
+                    <div class="section-title">
+                        <h2>Tous les évènements</h2>
+                        <p>...!!!!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 remove-col-padding-mobile">
+                    <div class="token-sale-top-bar">
+                       <div class="row">
+                           <div class="col-lg-6 col-sm-3 remove-col-padding-mobile">
+                                <div class="left-content">
+                                    <h4>All Events</h4>
+                                </div>
+                           </div>
+                           <div class="col-lg-6 col-sm-9 remove-col-padding-mobile">
+                                <div class="right-content">
+                                    <div class="tab-navbar">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" data-toggle="tab" href="#active_tab">Featured</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#upcoming_tab">Active</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#ending_tab">Expired</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 remove-col-padding">
+                    <div class="tab-content">
+                        <div class="tab-pane container active" id="active_tab">
+                                                            <div class="row">
+                                                                        <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+                                            <div class="thumb">
+                                                <a href="event/show/effective-communication-skills.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784183.jpg" alt="ico images"></a>
+                                            </div>
+                                            <div class="content">
+                                                                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Effective Communication Skills</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>3000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                 <a  href="{{ 'description_event'|page }}"  class="boxed-btn-rounded">
+                                              <i class="fa fa-caret-right"></i> <span class="title">Details</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                        <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+                                            <div class="thumb">
+                                                <a href="event/show/sydney-tour.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784243.jpg" alt="ico images"></a>
+                                            </div>
+                                            <div class="content">
+                                                                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Sydney Tour</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>1500 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a  href="{{ 'description_event'|page }}"  class="boxed-btn-rounded">
+                                              <i class="fa fa-caret-right"></i> <span class="title">Details</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                        <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+                                            <div class="thumb">
+                                                <a href="event/show/sydney-australia-package-2-nights-3-days.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784253.jpg" alt="ico images"></a>
+                                            </div>
+                                            <div class="content">
+                                                                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Sydney, Australia Package 2 Nights 3 Days</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>4000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                               <a  href="{{ 'description_event'|page }}"  class="boxed-btn-rounded">
+                                              <i class="fa fa-caret-right"></i> <span class="title">Details</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                        <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+                                            <div class="thumb">
+                                                <a href="event/show/phuket-thailand-package-3-nights-4-days.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784481.jpg" alt="ico images"></a>
+                                            </div>
+                                            <div class="content">
+                                                                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Phuket, Thailand Package 3 Nights 4 Days</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>4500 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a  href="{{ 'description_event'|page }}"  class="boxed-btn-rounded">
+                                              <i class="fa fa-caret-right"></i> <span class="title">Details</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                        <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+                                            <div class="thumb">
+                                                <a href="event/show/bali-indonesia-package-2-nights-3-days.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784475.jpg" alt="ico images"></a>
+                                            </div>
+                                            <div class="content">
+                                                                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Bali, Indonesia Package 2 Nights 3 Days</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>10000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                               <a  href="{{ 'description_event'|page }}"  class="boxed-btn-rounded">
+                                              <i class="fa fa-caret-right"></i> <span class="title">Details</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                        <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+                                            <div class="thumb">
+                                                <a href="event/show/nepal-package-2-nights-3-days.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784472.jpg" alt="ico images"></a>
+                                            </div>
+                                            <div class="content">
+                                                                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Deadpool Movies Ticket</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>4000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a  href="{{ 'description_event'|page }}"  class="boxed-btn-rounded">
+                                              <i class="fa fa-caret-right"></i> <span class="title">Details</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                    </div>
+                                <div class="text-center">
+                                    <a target="_blank" class="btn btn-primary" href="all-featured-tickets.html">Show More</a>
+                                </div>
+                                                    </div>
+                        <div class="tab-pane container fade" id="upcoming_tab">
+                                                    <div class="row">
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/effective-communication-skills.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784183.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Effective Communication Skills</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>3000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/effective-communication-skills.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/elite-paint-celebrating-womanhood.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784212.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                                                                  <a style="float:right;" href="Pratik/profile.html">
+                                                    <strong style="color:#7d5fff;"><i class="fa fa-user"></i> Pratik</strong>
+                                                  </a>
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Elite Paint Celebrating Womanhood</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>3500 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/elite-paint-celebrating-womanhood.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/boney-m-live-in-dhaka.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784219.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                                                                  <a style="float:right;" href="Pratik/profile.html">
+                                                    <strong style="color:#7d5fff;"><i class="fa fa-user"></i> Pratik</strong>
+                                                  </a>
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">BONEY M. Live in Dhaka</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>2500 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/boney-m-live-in-dhaka.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/rock-the-city-live-concert.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784232.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Rock The City – Live Concert</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>3000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/rock-the-city-live-concert.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/sydney-tour.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784243.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Sydney Tour</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>1500 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/sydney-tour.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/mumbai-tour.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784247.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Mumbai Tour</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>1000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/mumbai-tour.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/sydney-australia-package-2-nights-3-days.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784253.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Sydney, Australia Package 2 Nights 3 Days</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>4000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/sydney-australia-package-2-nights-3-days.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/phuket-thailand-package-3-nights-4-days.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784481.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Phuket, Thailand Package 3 Nights 4 Days</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>4500 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/phuket-thailand-package-3-nights-4-days.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="single-ico-list-box">
+
+                                            <div class="thumb">
+
+                                                <a href="event/show/bali-indonesia-package-2-nights-3-days.html" target="_blank"><img style="width:100%;" src="assets/user/img/ticket/1532784475.jpg" alt="ico images"></a>
+                                            </div>
+
+                                            <div class="content">
+                                                
+                                                <p style="margin:0px;clear:both;"></p>
+                                                <h4 style="color:#10ac84;">Bali, Indonesia Package 2 Nights 3 Days</h4>
+                                                <p><strong><i class="fa fa-money" aria-hidden="true"></i> Price: </strong>10000 USD</p>
+                                                <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Expired Date: </strong>2028-06-14</p>
+                                                <a href="event/show/bali-indonesia-package-2-nights-3-days.html" target="_blank" class="boxed-btn-rounded">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    <span class="title">Details</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                                            </div>
+                            <div class="text-center">
+                                <a target="_blank" class="btn btn-primary" href="all-active-tickets.html">Show More</a>
+                            </div>
+                                                </div>
+                        <div class="tab-pane container fade" id="ending_tab"><!-- ending tab start -->
+                                                            <div class="row" style="text-align:center;display:block;">
+                                    <h3 class="">NO EXPIRED TICKETS FOUND</h3>
+                                </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>";s:4:"code";N;s:5:"title";s:10:"view_event";s:3:"url";s:11:"/view_event";s:6:"layout";s:12:"create_event";s:9:"is_hidden";s:1:"0";s:7:"account";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}}}

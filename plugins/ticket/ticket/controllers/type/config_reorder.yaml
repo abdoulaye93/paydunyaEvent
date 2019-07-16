@@ -1,0 +1,4 @@
+title: Type
+modelClass: ticket\Ticket\Models\Type
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,16 @@
+plugin:
+    name: 'ticket.ticket::lang.plugin.name'
+    description: 'ticket.ticket::lang.plugin.description'
+    author: ticket
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: ticket
+        url: ticket/ticket/ticket
+        icon: icon-book
+        sideMenu:
+            side-menu-item:
+                label: 'Type de ticket'
+                url: ticket/ticket/type
+                icon: icon-sitemap

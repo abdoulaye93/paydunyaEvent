@@ -1,0 +1,4 @@
+title: Periode
+modelClass: Event\Event\Models\Periode
+toolbar:
+    buttons: reorder_toolbar

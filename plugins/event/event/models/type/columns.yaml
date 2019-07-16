@@ -1,0 +1,5 @@
+columns:
+    nom_type:
+        label: 'Nom du type '
+        type: text
+        sortable: true

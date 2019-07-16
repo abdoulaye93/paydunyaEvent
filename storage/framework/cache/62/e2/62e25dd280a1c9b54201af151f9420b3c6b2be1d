@@ -1,0 +1,13 @@
+1563277452a:1:{s:14:"connection.htm";a:11:{s:8:"fileName";s:14:"connection.htm";s:7:"content";s:210:"title = "connection"
+url = "/connection"
+layout = "connection"
+is_hidden = 0
+
+[account account2]
+paramCode = "code"
+forceSecure = 0
+
+[session session2]
+security = "all"
+==
+{% component 'account2' %}";s:5:"mtime";i:1562626459;s:6:"markup";s:26:"{% component 'account2' %}";s:4:"code";N;s:5:"title";s:10:"connection";s:3:"url";s:11:"/connection";s:6:"layout";s:10:"connection";s:9:"is_hidden";s:1:"0";s:16:"account account2";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}s:16:"session session2";a:1:{s:8:"security";s:3:"all";}}}

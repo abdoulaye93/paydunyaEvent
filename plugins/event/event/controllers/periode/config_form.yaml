@@ -1,0 +1,10 @@
+name: Periode
+form: $/event/event/models/periode/fields.yaml
+modelClass: Event\Event\Models\Periode
+defaultRedirect: event/event/periode
+create:
+    redirect: 'event/event/periode/update/:id'
+    redirectClose: event/event/periode
+update:
+    redirect: event/event/periode
+    redirectClose: event/event/periode

@@ -1,0 +1,10 @@
+name: Types
+form: $/event/event/models/type/fields.yaml
+modelClass: Event\Event\Models\Type
+defaultRedirect: event/event/types
+create:
+    redirect: 'event/event/types/update/:id'
+    redirectClose: event/event/types
+update:
+    redirect: event/event/types
+    redirectClose: event/event/types

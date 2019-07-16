@@ -1,0 +1,4 @@
+title: DemandeAnnulationEvent
+modelClass: Demande\Demande\Models\DemandeAnnullationEvent
+toolbar:
+    buttons: reorder_toolbar

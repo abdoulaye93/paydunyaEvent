@@ -1,0 +1,11 @@
+fields:
+    nom_type:
+        label: 'Nom du type'
+        span: auto
+        type: text
+    categorie:
+        label: Categorie
+        span: auto
+        nameFrom: categorie
+        descriptionFrom: description
+        type: relation

@@ -1,0 +1,16 @@
+fields:
+    date_debut:
+        label: 'Date du début de l''évènement'
+        mode: date
+        span: auto
+        type: datepicker
+    date_fin:
+        label: 'Date du fin de l''évènement'
+        mode: date
+        span: auto
+        type: datepicker
+    date_cloture:
+        label: 'Date de cloture de l''évènement'
+        span: auto
+        mode: date
+        type: datepicker

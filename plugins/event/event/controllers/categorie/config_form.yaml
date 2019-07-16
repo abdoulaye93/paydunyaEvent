@@ -1,0 +1,10 @@
+name: Categorie
+form: $/event/event/models/categorie/fields.yaml
+modelClass: Event\Event\Models\Categorie
+defaultRedirect: event/event/categorie
+create:
+    redirect: 'event/event/categorie/update/:id'
+    redirectClose: event/event/categorie
+update:
+    redirect: event/event/categorie
+    redirectClose: event/event/categorie

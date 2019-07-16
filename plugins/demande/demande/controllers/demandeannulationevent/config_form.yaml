@@ -1,0 +1,10 @@
+name: DemandeAnnulationEvent
+form: $/demande/demande/models/demandeannullationevent/fields.yaml
+modelClass: Demande\Demande\Models\DemandeAnnullationEvent
+defaultRedirect: demande/demande/demandeannulationevent
+create:
+    redirect: 'demande/demande/demandeannulationevent/update/:id'
+    redirectClose: demande/demande/demandeannulationevent
+update:
+    redirect: demande/demande/demandeannulationevent
+    redirectClose: demande/demande/demandeannulationevent

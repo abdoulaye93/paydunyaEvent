@@ -1,0 +1,29 @@
+columns:
+    nom:
+        label: Nom
+        type: text
+        searchable: true
+        sortable: true
+    montant:
+        label: Montant
+        type: number
+        sortable: true
+    lieu:
+        label: Lieu
+        type: text
+        sortable: true
+    nombre_ticket:
+        label: 'Nombre de Ticket'
+        type: number
+        sortable: true
+    etat_event:
+        label: 'Etat de l''évènement'
+        type: text
+        sortable: true
+    satus_event:
+        label: 'Statut de l''évènement'
+        type: text
+        sortable: true
+    description:
+        label: Description
+        type: text

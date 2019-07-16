@@ -1,0 +1,7 @@
+columns:
+    status:
+        label: 'Statut du ticket'
+        type: text
+    date_achat:
+        label: 'Date d''achat du ticket'
+        type: date

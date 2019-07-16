@@ -1,0 +1,9 @@
+fields:
+    nom:
+        label: 'Nom du sous-évèvenment'
+        span: auto
+        type: text
+    montant:
+        label: 'Montant du sous-évènement'
+        span: auto
+        type: number

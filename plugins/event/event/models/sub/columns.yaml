@@ -1,0 +1,7 @@
+columns:
+    nom:
+        label: 'Nom du sous-évènement'
+        type: text
+    montant:
+        label: Montant
+        type: number

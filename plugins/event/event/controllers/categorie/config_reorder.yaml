@@ -1,0 +1,4 @@
+title: Categorie
+modelClass: Event\Event\Models\Categorie
+toolbar:
+    buttons: reorder_toolbar

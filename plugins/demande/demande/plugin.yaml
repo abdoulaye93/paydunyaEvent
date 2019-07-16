@@ -1,0 +1,16 @@
+plugin:
+    name: 'demande.demande::lang.plugin.name'
+    description: 'demande.demande::lang.plugin.description'
+    author: demande
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Demande Annullation évènement'
+        url: demande/demande/demandeannulationevent
+        icon: icon-life-ring
+        sideMenu:
+            side-menu-item:
+                label: 'Demande annullation d''achat'
+                url: demande/demande/demandeannulationachat
+                icon: icon-sitemap

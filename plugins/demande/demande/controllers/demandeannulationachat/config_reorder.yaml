@@ -1,0 +1,4 @@
+title: DemandeAnnulationAchat
+modelClass: Demande\Demande\Models\DemandeAnnullationAchat
+toolbar:
+    buttons: reorder_toolbar

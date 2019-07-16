@@ -1,0 +1,10 @@
+name: DemandeAnnulationAchat
+form: $/demande/demande/models/demandeannullationachat/fields.yaml
+modelClass: Demande\Demande\Models\DemandeAnnullationAchat
+defaultRedirect: demande/demande/demandeannulationachat
+create:
+    redirect: 'demande/demande/demandeannulationachat/update/:id'
+    redirectClose: demande/demande/demandeannulationachat
+update:
+    redirect: demande/demande/demandeannulationachat
+    redirectClose: demande/demande/demandeannulationachat

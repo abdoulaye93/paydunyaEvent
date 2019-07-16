@@ -1,0 +1,28 @@
+plugin:
+    name: 'event.event::lang.plugin.name'
+    description: 'event.event::lang.plugin.description'
+    author: event
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: event
+        url: event/event/events
+        icon: icon-file-text-o
+        sideMenu:
+            side-menu-item:
+                label: Type
+                url: event/event/types
+                icon: icon-sitemap
+            side-menu-item2:
+                label: Sub
+                url: event/event/sub
+                icon: icon-sitemap
+            side-menu-item3:
+                label: Categorie
+                url: event/event/categorie
+                icon: icon-sitemap
+            side-menu-item4:
+                label: periode
+                url: event/event/periode
+                icon: icon-sitemap

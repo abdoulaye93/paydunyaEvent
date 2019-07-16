@@ -1,0 +1,5 @@
+fields:
+    categorie:
+        label: 'Categorie de l''évènement'
+        span: auto
+        type: text

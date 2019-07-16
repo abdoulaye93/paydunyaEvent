@@ -1,0 +1,55 @@
+fields:
+    nom:
+        label: 'nom eventment'
+        span: auto
+        type: text
+tabs:
+    fields:
+        nombre_ticket:
+            label: 'nombre ticket'
+            span: auto
+            type: text
+            tab: 'Tab 1'
+        montant:
+            label: 'montant ticket'
+            span: auto
+            type: text
+            tab: 'Tab 1'
+        lieu:
+            label: lieu
+            span: auto
+            type: text
+            tab: 'Tab 1'
+        type:
+            label: 'Type d''evènement'
+            nameFrom: nom_type
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: 'Tab 1'
+        periode:
+            label: Periode
+            nameFrom: date_debut
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: 'Tab 1'
+        sub_event:
+            label: 'Sous évènement'
+            span: auto
+            nameFrom: nom
+            descriptionFrom: description
+            type: relation
+            tab: 'Tab 1'
+        user:
+            label: User
+            nameFrom: name
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: 'Tab 1'
+        description:
+            label: Description
+            span: auto
+            type: text
+            tab: 'Tab 1'

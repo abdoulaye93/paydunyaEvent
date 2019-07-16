@@ -1,0 +1,5 @@
+columns:
+    categorie:
+        label: 'Nom du catégorie'
+        type: text
+        sortable: true

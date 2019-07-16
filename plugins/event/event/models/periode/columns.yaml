@@ -1,0 +1,10 @@
+columns:
+    date_debut:
+        label: 'Date du début de l''évènement'
+        type: datetime
+    date_fin:
+        label: 'Date du fin de l''évènement'
+        type: date
+    date_cloture:
+        label: 'Date de cloture de l''évènement'
+        type: date

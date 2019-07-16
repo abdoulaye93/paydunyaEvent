@@ -1,0 +1,231 @@
+1563276881a:1:{s:16:"create_event.htm";a:11:{s:8:"fileName";s:16:"create_event.htm";s:7:"content";s:6532:"title = "create_event"
+url = "/create_event"
+layout = "create_event"
+is_hidden = 0
+
+[builderDetails builderDetails2]
+modelClass = "Event\Event\Models\Event"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = 1
+notFoundMessage = "Record not found"
+
+[account]
+paramCode = "code"
+forceSecure = 0
+==
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="card my-5" style="width:100%;">
+              <div class="card-body" style="background-color:#7d5fff">
+                <h3 style="color:white;">Create Event</h3>
+              </div>
+              <div class="card-body">
+                <div class="col-md-12">
+                    <form class="contact-from-wrapper" method="post" action="http://lab.thesoftking.com/eticket/event/store" enctype="multipart/form-data">
+                       
+                        <div class="form-element square">
+                            <label>Title
+                                <span>**</span>
+                            </label>
+                            <input type="text" name="title" value="" placeholder="Enter Title..." class="input-field-square">
+                        </div>
+                         <div class="form-element square">
+                            <label>Lieu
+                                <span>**</span>
+                            </label>
+                            <input type="text" name="title" value="" placeholder="Entrer le Lieu..." class="input-field-square">
+                        </div>
+
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                <img src="" alt="" />
+                            </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail" style="width: 250px;"> </div>
+                            <p><strong>[images will be resized to 730X440]</strong></p>
+                            <div>
+                                <span class="btn btn-success btn-file">
+                                    <span class="fileinput-new"> Choose Display Image </span>
+                                    <span class="fileinput-exists"> Change </span>
+                                    <input type="file" name="d_image">
+                                </span>
+                                <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                            </div>
+                                                    </div>
+
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="form-element square">
+                                <label>Category
+                                    <span>**</span>
+                                </label>
+                                <select class="input-field-square" name="category" value="">
+                                                                    <option value="Tour">Tour</option>
+                                                                    <option value="Event">Event</option>
+                                                                    <option value="Concert">Concert</option>
+                                                                    <option value="Bus">Bus</option>
+                                                                  </select>
+                                                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-element square">
+                                <label>Expired Date
+                                    <span>**</span>
+                                </label>
+                                <input type="date" name="ex_date" value="" placeholder="mm/dd/yyyy" class="input-field-square">
+                                                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-element square">
+                                <label>PER PERSON PRICE
+                                    <span>**</span>
+                                </label>
+                                <input type="text" name="pp_price" value="" placeholder="Enter per person price..." class="input-field-square">
+                                                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-element square">
+                                <label>MINIMUM NUMBER of PERSONS
+                                    <span>**</span>
+                                </label>
+                                <input type="number" name="minp" value="" placeholder="Enter minimum number of persons..." class="input-field-square">
+                                                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-element square">
+                                <label>MAXIMUM NUMBER of PERSONS
+                                    <span>**</span>
+                                </label>
+                                <input type="number" name="maxp" value="" placeholder="Enter maximum number of persons..." class="input-field-square">
+                                                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-element square">
+                            <label>
+                              Overview
+                              <span>**</span>
+                            </label>
+                            <textarea id="overview" name="overview" rows="12" cols="80" class="input-field-square"></textarea>
+                                                    </div>
+                        <div class="text-center">
+                          <button type="submit" class="submit-form-btn">SEND REQUEST</button>
+                        </div>
+
+                    </form>
+                </div>
+              </div>
+            </div>
+
+        </div>
+    </div>";s:5:"mtime";i:1563276265;s:6:"markup";s:6203:"<div class="container">
+        <div class="row justify-content-center">
+            <div class="card my-5" style="width:100%;">
+              <div class="card-body" style="background-color:#7d5fff">
+                <h3 style="color:white;">Create Event</h3>
+              </div>
+              <div class="card-body">
+                <div class="col-md-12">
+                    <form class="contact-from-wrapper" method="post" action="http://lab.thesoftking.com/eticket/event/store" enctype="multipart/form-data">
+                       
+                        <div class="form-element square">
+                            <label>Title
+                                <span>**</span>
+                            </label>
+                            <input type="text" name="title" value="" placeholder="Enter Title..." class="input-field-square">
+                        </div>
+                         <div class="form-element square">
+                            <label>Lieu
+                                <span>**</span>
+                            </label>
+                            <input type="text" name="title" value="" placeholder="Entrer le Lieu..." class="input-field-square">
+                        </div>
+
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                <img src="" alt="" />
+                            </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail" style="width: 250px;"> </div>
+                            <p><strong>[images will be resized to 730X440]</strong></p>
+                            <div>
+                                <span class="btn btn-success btn-file">
+                                    <span class="fileinput-new"> Choose Display Image </span>
+                                    <span class="fileinput-exists"> Change </span>
+                                    <input type="file" name="d_image">
+                                </span>
+                                <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                            </div>
+                                                    </div>
+
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="form-element square">
+                                <label>Category
+                                    <span>**</span>
+                                </label>
+                                <select class="input-field-square" name="category" value="">
+                                                                    <option value="Tour">Tour</option>
+                                                                    <option value="Event">Event</option>
+                                                                    <option value="Concert">Concert</option>
+                                                                    <option value="Bus">Bus</option>
+                                                                  </select>
+                                                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-element square">
+                                <label>Expired Date
+                                    <span>**</span>
+                                </label>
+                                <input type="date" name="ex_date" value="" placeholder="mm/dd/yyyy" class="input-field-square">
+                                                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-element square">
+                                <label>PER PERSON PRICE
+                                    <span>**</span>
+                                </label>
+                                <input type="text" name="pp_price" value="" placeholder="Enter per person price..." class="input-field-square">
+                                                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-element square">
+                                <label>MINIMUM NUMBER of PERSONS
+                                    <span>**</span>
+                                </label>
+                                <input type="number" name="minp" value="" placeholder="Enter minimum number of persons..." class="input-field-square">
+                                                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-element square">
+                                <label>MAXIMUM NUMBER of PERSONS
+                                    <span>**</span>
+                                </label>
+                                <input type="number" name="maxp" value="" placeholder="Enter maximum number of persons..." class="input-field-square">
+                                                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-element square">
+                            <label>
+                              Overview
+                              <span>**</span>
+                            </label>
+                            <textarea id="overview" name="overview" rows="12" cols="80" class="input-field-square"></textarea>
+                                                    </div>
+                        <div class="text-center">
+                          <button type="submit" class="submit-form-btn">SEND REQUEST</button>
+                        </div>
+
+                    </form>
+                </div>
+              </div>
+            </div>
+
+        </div>
+    </div>";s:4:"code";N;s:5:"title";s:12:"create_event";s:3:"url";s:13:"/create_event";s:6:"layout";s:12:"create_event";s:9:"is_hidden";s:1:"0";s:30:"builderDetails builderDetails2";a:5:{s:10:"modelClass";s:24:"Event\Event\Models\Event";s:15:"identifierValue";s:9:"{{ :id }}";s:14:"modelKeyColumn";s:2:"id";s:13:"displayColumn";s:1:"1";s:15:"notFoundMessage";s:16:"Record not found";}s:7:"account";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}}}
