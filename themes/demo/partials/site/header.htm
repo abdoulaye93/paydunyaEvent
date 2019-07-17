@@ -1,3 +1,5 @@
+[session]
+security = "all"
 ==
 <!-- Nav -->
 <nav class="navbar navbar-area navbar-expand-lg navbar-light navbar-fixed-top navbar-autohide">
@@ -19,7 +21,7 @@
             <!-- navbar collapse start -->
             <ul class="navbar-nav">
                 <li class="nav-item  {% if this.page.id == 'home' %}active{% endif %} ">
-                    <a class="nav-link" href="{{ 'home'|page }}">Comment Ça marche</a>
+                    <a class="na{% component 'session' %}v-link" href="{{ 'home'|page }}">Comment Ça marche</a>
                 </li>
                 
                   <li class='nav-item {% if this.page.id == 'view_event' %}active{% endif %}'>
@@ -30,11 +32,17 @@
                    </li>
                  {% if user %}
                       <li class="nav-item ">
-                          <a data-request="onLogout" data-request-data="redirect: '/'" class="nav-link">Deconnexion</a>
+                      <a data-request="onLogout" data-request-data="redirect: '/good-bye'" class="nav-link">Sign out</a>
+                         
                        </li>
-                        <li class="nav-item {% if this.page.id == 'create_event' %}active{% endif %}">
-                    <a class="nav-link" href="{{ 'create_event'|page }}">Créer un évènement</a>
-                </li>
+                         <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Event</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ 'create_event'|page }}">Créer un évènement</a>
+                                <a class="dropdown-item" href="{{ 'manage_event'|page }}">Gestion des évènement</a>
+                            </div>
+                        </li>
+                    
                 
                     {% else %}
                          <li class="nav-item boxed-btn">

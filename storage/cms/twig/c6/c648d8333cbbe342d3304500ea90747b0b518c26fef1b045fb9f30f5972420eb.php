@@ -32,114 +32,99 @@ class __TwigTemplate_a744a8062c1eb50725a5548d171db07619a032848bae9cd578a9ac7a2a5
     protected function doDisplay(array $context, array $blocks = [])
     {
         // line 1
-        echo "<div class=\"container\">
-        <div class=\"row justify-content-center\">
-            <div class=\"card my-5\" style=\"width:100%;\">
-              <div class=\"card-body\" style=\"background-color:#7d5fff\">
-                <h3 style=\"color:white;\">Create Event</h3>
-              </div>
-              <div class=\"card-body\">
-                <div class=\"col-md-12\">
-                    <form class=\"contact-from-wrapper\" method=\"post\" action=\"http://lab.thesoftking.com/eticket/event/store\" enctype=\"multipart/form-data\">
-                       
-                        <div class=\"form-element square\">
-                            <label>Title
-                                <span>**</span>
-                            </label>
-                            <input type=\"text\" name=\"title\" value=\"\" placeholder=\"Enter Title...\" class=\"input-field-square\">
+        echo "<h2>Add new event</h2>
+";
+        // line 2
+        $context['__cms_component_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("eventform"        , $context['__cms_component_params']        );
+        unset($context['__cms_component_params']);
+        // line 3
+        echo " <div class=\"login-registration-modal\" id=\"loginRegModal\">
+    <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
+        <div class=\"modal\" tabindex=\"-1\" id=\"login-modal\" role=\"dialog\"><!-- #login modal-->
+            <div class=\"modal-dialog\" role=\"document\">
+                <div class=\"modal-content\"><!-- modal content start -->
+                    <nav>
+                        <div class=\"nav nav-tabs login-modal-navigation\" id=\"nav-tab\" role=\"tablist\"><!-- login modal navigation start -->
+                            <a class=\"nav-item nav-link active\" id=\"nav-login-tab\" data-toggle=\"tab\" href=\"#nav-login\" role=\"tab\" aria-controls=\"nav-login\"
+                                aria-selected=\"true\">login</a>
+                            <a class=\"nav-item nav-link\" id=\"nav-signup-tab\" data-toggle=\"tab\" href=\"#nav-signup\" role=\"tab\" aria-controls=\"nav-signup\"
+                                aria-selected=\"false\">Register</a>
+                        </div><!-- login modal navigation end -->
+                    </nav>
+                    <div class=\"tab-content\" id=\"nav-tabContent\"><!-- tab content-->
+                        <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
+                            <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
+                               ";
+        // line 19
+        if ( !($context["user"] ?? null)) {
+            // line 20
+            echo "
+                                    <div class=\"row\">
+                                
+                                        <div class=\"col-md-6\">
+                                            <h3 class=\"";
+            // line 24
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 24), "id", [], "any", false, false, false, 24) == "register")) {
+                echo "active";
+            }
+            echo "\"><a href=\"";
+            echo $this->extensions['Cms\Twig\Extension']->pageFilter("register");
+            echo "\">Créer un compte</a></h3>
+                                            ";
+            // line 25
+            $context['__cms_partial_params'] = [];
+            echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::signin")            , $context['__cms_partial_params']            , true            );
+            unset($context['__cms_partial_params']);
+            // line 26
+            echo "                                        </div>
+                                
+                                    </div>
+                                
+                                ";
+        } else {
+            // line 31
+            echo "                                
+                                ";
+        }
+        // line 33
+        echo "                            </div><!-- login form wrapper end -->
                         </div>
-                         <div class=\"form-element square\">
-                            <label>Lieu
-                                <span>**</span>
-                            </label>
-                            <input type=\"text\" name=\"title\" value=\"\" placeholder=\"Entrer le Lieu...\" class=\"input-field-square\">
+                        <div class=\"tab-pane fade\" id=\"nav-signup\" role=\"tabpanel\" aria-labelledby=\"nav-signup-tab\">
+
+                            <div class=\"singup-form-wrapper\">
+                                ";
+        // line 38
+        if ( !($context["user"] ?? null)) {
+            // line 39
+            echo "                                
+                                    <div class=\"row\">
+                                        <div class=\"col-md-6\">
+                                            ";
+            // line 42
+            $context['__cms_partial_params'] = [];
+            echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::register")            , $context['__cms_partial_params']            , true            );
+            unset($context['__cms_partial_params']);
+            // line 43
+            echo "                                        </div>
+                                
+                                    </div>
+                                
+                                ";
+        } else {
+            // line 48
+            echo "                                
+                                ";
+        }
+        // line 50
+        echo "                             </div>
                         </div>
-
-                        <div class=\"fileinput fileinput-new\" data-provides=\"fileinput\">
-                            <div class=\"fileinput-new thumbnail\">
-                                <img src=\"\" alt=\"\" />
-                            </div>
-                            <div class=\"fileinput-preview fileinput-exists thumbnail\" style=\"width: 250px;\"> </div>
-                            <p><strong>[images will be resized to 730X440]</strong></p>
-                            <div>
-                                <span class=\"btn btn-success btn-file\">
-                                    <span class=\"fileinput-new\"> Choose Display Image </span>
-                                    <span class=\"fileinput-exists\"> Change </span>
-                                    <input type=\"file\" name=\"d_image\">
-                                </span>
-                                <a href=\"javascript:;\" class=\"btn red fileinput-exists\" data-dismiss=\"fileinput\"> Remove </a>
-                            </div>
-                                                    </div>
-
-                        <div class=\"row\">
-                          <div class=\"col-md-4\">
-                            <div class=\"form-element square\">
-                                <label>Category
-                                    <span>**</span>
-                                </label>
-                                <select class=\"input-field-square\" name=\"category\" value=\"\">
-                                                                    <option value=\"Tour\">Tour</option>
-                                                                    <option value=\"Event\">Event</option>
-                                                                    <option value=\"Concert\">Concert</option>
-                                                                    <option value=\"Bus\">Bus</option>
-                                                                  </select>
-                                                            </div>
-                          </div>
-                          <div class=\"col-md-4\">
-                            <div class=\"form-element square\">
-                                <label>Expired Date
-                                    <span>**</span>
-                                </label>
-                                <input type=\"date\" name=\"ex_date\" value=\"\" placeholder=\"mm/dd/yyyy\" class=\"input-field-square\">
-                                                            </div>
-                          </div>
-                          <div class=\"col-md-4\">
-                            <div class=\"form-element square\">
-                                <label>PER PERSON PRICE
-                                    <span>**</span>
-                                </label>
-                                <input type=\"text\" name=\"pp_price\" value=\"\" placeholder=\"Enter per person price...\" class=\"input-field-square\">
-                                                            </div>
-                          </div>
-                        </div>
-
-                        <div class=\"row\">
-                          <div class=\"col-md-6\">
-                            <div class=\"form-element square\">
-                                <label>MINIMUM NUMBER of PERSONS
-                                    <span>**</span>
-                                </label>
-                                <input type=\"number\" name=\"minp\" value=\"\" placeholder=\"Enter minimum number of persons...\" class=\"input-field-square\">
-                                                            </div>
-                          </div>
-                          <div class=\"col-md-6\">
-                            <div class=\"form-element square\">
-                                <label>MAXIMUM NUMBER of PERSONS
-                                    <span>**</span>
-                                </label>
-                                <input type=\"number\" name=\"maxp\" value=\"\" placeholder=\"Enter maximum number of persons...\" class=\"input-field-square\">
-                                                            </div>
-                          </div>
-                        </div>
-
-                        <div class=\"form-element square\">
-                            <label>
-                              Overview
-                              <span>**</span>
-                            </label>
-                            <textarea id=\"overview\" name=\"overview\" rows=\"12\" cols=\"80\" class=\"input-field-square\"></textarea>
-                                                    </div>
-                        <div class=\"text-center\">
-                          <button type=\"submit\" class=\"submit-form-btn\">SEND REQUEST</button>
-                        </div>
-
-                    </form>
-                </div>
-              </div>
+                    </div><!-- /.tab conent-->
+                </div><!-- modal content end -->
             </div>
-
-        </div>
-    </div>";
+        </div><!-- /#loginmodal -->
+    </div><!-- login modal warapper satart end-->
+</div>";
     }
 
     public function getTemplateName()
@@ -147,120 +132,74 @@ class __TwigTemplate_a744a8062c1eb50725a5548d171db07619a032848bae9cd578a9ac7a2a5
         return "C:\\wamp64\\www\\install-master/themes/demo/pages/create_event.htm";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  35 => 1,);
+        return array (  120 => 50,  116 => 48,  109 => 43,  105 => 42,  100 => 39,  98 => 38,  91 => 33,  87 => 31,  80 => 26,  76 => 25,  68 => 24,  62 => 20,  60 => 19,  42 => 3,  38 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"container\">
-        <div class=\"row justify-content-center\">
-            <div class=\"card my-5\" style=\"width:100%;\">
-              <div class=\"card-body\" style=\"background-color:#7d5fff\">
-                <h3 style=\"color:white;\">Create Event</h3>
-              </div>
-              <div class=\"card-body\">
-                <div class=\"col-md-12\">
-                    <form class=\"contact-from-wrapper\" method=\"post\" action=\"http://lab.thesoftking.com/eticket/event/store\" enctype=\"multipart/form-data\">
-                       
-                        <div class=\"form-element square\">
-                            <label>Title
-                                <span>**</span>
-                            </label>
-                            <input type=\"text\" name=\"title\" value=\"\" placeholder=\"Enter Title...\" class=\"input-field-square\">
-                        </div>
-                         <div class=\"form-element square\">
-                            <label>Lieu
-                                <span>**</span>
-                            </label>
-                            <input type=\"text\" name=\"title\" value=\"\" placeholder=\"Entrer le Lieu...\" class=\"input-field-square\">
-                        </div>
+        return new Source("<h2>Add new event</h2>
+{% component 'eventform' %}
+ <div class=\"login-registration-modal\" id=\"loginRegModal\">
+    <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
+        <div class=\"modal\" tabindex=\"-1\" id=\"login-modal\" role=\"dialog\"><!-- #login modal-->
+            <div class=\"modal-dialog\" role=\"document\">
+                <div class=\"modal-content\"><!-- modal content start -->
+                    <nav>
+                        <div class=\"nav nav-tabs login-modal-navigation\" id=\"nav-tab\" role=\"tablist\"><!-- login modal navigation start -->
+                            <a class=\"nav-item nav-link active\" id=\"nav-login-tab\" data-toggle=\"tab\" href=\"#nav-login\" role=\"tab\" aria-controls=\"nav-login\"
+                                aria-selected=\"true\">login</a>
+                            <a class=\"nav-item nav-link\" id=\"nav-signup-tab\" data-toggle=\"tab\" href=\"#nav-signup\" role=\"tab\" aria-controls=\"nav-signup\"
+                                aria-selected=\"false\">Register</a>
+                        </div><!-- login modal navigation end -->
+                    </nav>
+                    <div class=\"tab-content\" id=\"nav-tabContent\"><!-- tab content-->
+                        <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
+                            <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
+                               {% if not user %}
 
-                        <div class=\"fileinput fileinput-new\" data-provides=\"fileinput\">
-                            <div class=\"fileinput-new thumbnail\">
-                                <img src=\"\" alt=\"\" />
-                            </div>
-                            <div class=\"fileinput-preview fileinput-exists thumbnail\" style=\"width: 250px;\"> </div>
-                            <p><strong>[images will be resized to 730X440]</strong></p>
-                            <div>
-                                <span class=\"btn btn-success btn-file\">
-                                    <span class=\"fileinput-new\"> Choose Display Image </span>
-                                    <span class=\"fileinput-exists\"> Change </span>
-                                    <input type=\"file\" name=\"d_image\">
-                                </span>
-                                <a href=\"javascript:;\" class=\"btn red fileinput-exists\" data-dismiss=\"fileinput\"> Remove </a>
-                            </div>
-                                                    </div>
-
-                        <div class=\"row\">
-                          <div class=\"col-md-4\">
-                            <div class=\"form-element square\">
-                                <label>Category
-                                    <span>**</span>
-                                </label>
-                                <select class=\"input-field-square\" name=\"category\" value=\"\">
-                                                                    <option value=\"Tour\">Tour</option>
-                                                                    <option value=\"Event\">Event</option>
-                                                                    <option value=\"Concert\">Concert</option>
-                                                                    <option value=\"Bus\">Bus</option>
-                                                                  </select>
-                                                            </div>
-                          </div>
-                          <div class=\"col-md-4\">
-                            <div class=\"form-element square\">
-                                <label>Expired Date
-                                    <span>**</span>
-                                </label>
-                                <input type=\"date\" name=\"ex_date\" value=\"\" placeholder=\"mm/dd/yyyy\" class=\"input-field-square\">
-                                                            </div>
-                          </div>
-                          <div class=\"col-md-4\">
-                            <div class=\"form-element square\">
-                                <label>PER PERSON PRICE
-                                    <span>**</span>
-                                </label>
-                                <input type=\"text\" name=\"pp_price\" value=\"\" placeholder=\"Enter per person price...\" class=\"input-field-square\">
-                                                            </div>
-                          </div>
+                                    <div class=\"row\">
+                                
+                                        <div class=\"col-md-6\">
+                                            <h3 class=\"{% if this.page.id == 'register' %}active{% endif %}\"><a href=\"{{ 'register'|page }}\">Créer un compte</a></h3>
+                                            {% partial account ~ '::signin' %}
+                                        </div>
+                                
+                                    </div>
+                                
+                                {% else %}
+                                
+                                {% endif %}
+                            </div><!-- login form wrapper end -->
                         </div>
+                        <div class=\"tab-pane fade\" id=\"nav-signup\" role=\"tabpanel\" aria-labelledby=\"nav-signup-tab\">
 
-                        <div class=\"row\">
-                          <div class=\"col-md-6\">
-                            <div class=\"form-element square\">
-                                <label>MINIMUM NUMBER of PERSONS
-                                    <span>**</span>
-                                </label>
-                                <input type=\"number\" name=\"minp\" value=\"\" placeholder=\"Enter minimum number of persons...\" class=\"input-field-square\">
-                                                            </div>
-                          </div>
-                          <div class=\"col-md-6\">
-                            <div class=\"form-element square\">
-                                <label>MAXIMUM NUMBER of PERSONS
-                                    <span>**</span>
-                                </label>
-                                <input type=\"number\" name=\"maxp\" value=\"\" placeholder=\"Enter maximum number of persons...\" class=\"input-field-square\">
-                                                            </div>
-                          </div>
+                            <div class=\"singup-form-wrapper\">
+                                {% if not user %}
+                                
+                                    <div class=\"row\">
+                                        <div class=\"col-md-6\">
+                                            {% partial account ~ '::register' %}
+                                        </div>
+                                
+                                    </div>
+                                
+                                {% else %}
+                                
+                                {% endif %}
+                             </div>
                         </div>
-
-                        <div class=\"form-element square\">
-                            <label>
-                              Overview
-                              <span>**</span>
-                            </label>
-                            <textarea id=\"overview\" name=\"overview\" rows=\"12\" cols=\"80\" class=\"input-field-square\"></textarea>
-                                                    </div>
-                        <div class=\"text-center\">
-                          <button type=\"submit\" class=\"submit-form-btn\">SEND REQUEST</button>
-                        </div>
-
-                    </form>
-                </div>
-              </div>
+                    </div><!-- /.tab conent-->
+                </div><!-- modal content end -->
             </div>
-
-        </div>
-    </div>", "C:\\wamp64\\www\\install-master/themes/demo/pages/create_event.htm", "");
+        </div><!-- /#loginmodal -->
+    </div><!-- login modal warapper satart end-->
+</div>", "C:\\wamp64\\www\\install-master/themes/demo/pages/create_event.htm", "");
     }
 }

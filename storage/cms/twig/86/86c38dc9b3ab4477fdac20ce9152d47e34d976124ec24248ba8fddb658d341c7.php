@@ -203,32 +203,33 @@ class __TwigTemplate_02230268bb4930b39d4fe4af58f873a05778f1ccd5de753db55ef48fc5f
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
         // line 112
         echo "        </section>
-
+    
+    
         <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 116
+        // line 117
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 117
+        // line 118
         echo "        </footer>
 
         <!-- Scripts -->
         <script src=\"";
-        // line 120
+        // line 121
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
         <script src=\"";
-        // line 121
+        // line 122
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
         <script src=\"";
-        // line 122
+        // line 123
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script>
         ";
-        // line 123
+        // line 124
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="'. Request::getBasePath()
@@ -243,11 +244,11 @@ class __TwigTemplate_02230268bb4930b39d4fe4af58f873a05778f1ccd5de753db55ef48fc5f
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 124
+        // line 125
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 125
+        // line 126
         echo "        
 <script>
    function increaseAdView(adID) {
@@ -438,7 +439,7 @@ class __TwigTemplate_02230268bb4930b39d4fe4af58f873a05778f1ccd5de753db55ef48fc5f
 
     public function getDebugInfo()
     {
-        return array (  251 => 125,  247 => 124,  232 => 123,  228 => 122,  224 => 121,  220 => 120,  215 => 117,  211 => 116,  205 => 112,  203 => 111,  195 => 105,  191 => 104,  122 => 38,  118 => 37,  114 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
+        return array (  252 => 126,  248 => 125,  233 => 124,  229 => 123,  225 => 122,  221 => 121,  216 => 118,  212 => 117,  205 => 112,  203 => 111,  195 => 105,  191 => 104,  122 => 38,  118 => 37,  114 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -555,7 +556,8 @@ class __TwigTemplate_02230268bb4930b39d4fe4af58f873a05778f1ccd5de753db55ef48fc5f
         <section id=\"layout-content\">
             {% page %}
         </section>
-
+    
+    
         <!-- Footer -->
         <footer id=\"layout-footer\">
             {% partial 'site/footer' %}

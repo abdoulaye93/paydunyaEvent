@@ -1,4 +1,4 @@
-1563277452a:1:{s:21:"description_event.htm";a:10:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:16169:"title = "description_event"
+1563363754a:1:{s:21:"description_event.htm";a:10:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:19419:"title = "description_event"
 url = "/description_event"
 layout = "description_event"
 is_hidden = 0
@@ -256,7 +256,62 @@ forceSecure = 0
             <div class="loader-inner"></div>
         </div>
     </div>
-    <!-- preloader area end -->";s:5:"mtime";i:1563275370;s:6:"markup";s:16013:"<div class="my-5">
+    <!-- preloader area end -->
+     <div class="login-registration-modal" id="loginRegModal">
+    <div class="login-modal-wrapper"><!-- login modal warapper satart start-->
+        <div class="modal" tabindex="-1" id="login-modal" role="dialog"><!-- #login modal-->
+            <div class="modal-dialog" role="document">
+                <div class="modal-content"><!-- modal content start -->
+                    <nav>
+                        <div class="nav nav-tabs login-modal-navigation" id="nav-tab" role="tablist"><!-- login modal navigation start -->
+                            <a class="nav-item nav-link active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab" aria-controls="nav-login"
+                                aria-selected="true">login</a>
+                            <a class="nav-item nav-link" id="nav-signup-tab" data-toggle="tab" href="#nav-signup" role="tab" aria-controls="nav-signup"
+                                aria-selected="false">Register</a>
+                        </div><!-- login modal navigation end -->
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent"><!-- tab content-->
+                        <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+                            <div class="login-form-wrapper"><!-- login form wrapper start -->
+                               {% if not user %}
+
+                                    <div class="row">
+                                
+                                        <div class="col-md-6">
+                                            <h3 class="{% if this.page.id == 'register' %}active{% endif %}"><a href="{{ 'register'|page }}">Créer un compte</a></h3>
+                                            {% partial account ~ '::signin' %}
+                                        </div>
+                                
+                                    </div>
+                                
+                                {% else %}
+                                
+                                {% endif %}
+                            </div><!-- login form wrapper end -->
+                        </div>
+                        <div class="tab-pane fade" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
+
+                            <div class="singup-form-wrapper">
+                                {% if not user %}
+                                
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            {% partial account ~ '::register' %}
+                                        </div>
+                                
+                                    </div>
+                                
+                                {% else %}
+                                
+                                {% endif %}
+                             </div>
+                        </div>
+                    </div><!-- /.tab conent-->
+                </div><!-- modal content end -->
+            </div>
+        </div><!-- /#loginmodal -->
+    </div><!-- login modal warapper satart end-->
+</div>";s:5:"mtime";i:1563357031;s:6:"markup";s:19263:"<div class="my-5">
     <div class="container">
       <div class="">
         <div class="">
@@ -505,4 +560,59 @@ forceSecure = 0
             <div class="loader-inner"></div>
         </div>
     </div>
-    <!-- preloader area end -->";s:4:"code";N;s:5:"title";s:17:"description_event";s:3:"url";s:18:"/description_event";s:6:"layout";s:17:"description_event";s:9:"is_hidden";s:1:"0";s:7:"account";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}}}
+    <!-- preloader area end -->
+     <div class="login-registration-modal" id="loginRegModal">
+    <div class="login-modal-wrapper"><!-- login modal warapper satart start-->
+        <div class="modal" tabindex="-1" id="login-modal" role="dialog"><!-- #login modal-->
+            <div class="modal-dialog" role="document">
+                <div class="modal-content"><!-- modal content start -->
+                    <nav>
+                        <div class="nav nav-tabs login-modal-navigation" id="nav-tab" role="tablist"><!-- login modal navigation start -->
+                            <a class="nav-item nav-link active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab" aria-controls="nav-login"
+                                aria-selected="true">login</a>
+                            <a class="nav-item nav-link" id="nav-signup-tab" data-toggle="tab" href="#nav-signup" role="tab" aria-controls="nav-signup"
+                                aria-selected="false">Register</a>
+                        </div><!-- login modal navigation end -->
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent"><!-- tab content-->
+                        <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+                            <div class="login-form-wrapper"><!-- login form wrapper start -->
+                               {% if not user %}
+
+                                    <div class="row">
+                                
+                                        <div class="col-md-6">
+                                            <h3 class="{% if this.page.id == 'register' %}active{% endif %}"><a href="{{ 'register'|page }}">Créer un compte</a></h3>
+                                            {% partial account ~ '::signin' %}
+                                        </div>
+                                
+                                    </div>
+                                
+                                {% else %}
+                                
+                                {% endif %}
+                            </div><!-- login form wrapper end -->
+                        </div>
+                        <div class="tab-pane fade" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
+
+                            <div class="singup-form-wrapper">
+                                {% if not user %}
+                                
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            {% partial account ~ '::register' %}
+                                        </div>
+                                
+                                    </div>
+                                
+                                {% else %}
+                                
+                                {% endif %}
+                             </div>
+                        </div>
+                    </div><!-- /.tab conent-->
+                </div><!-- modal content end -->
+            </div>
+        </div><!-- /#loginmodal -->
+    </div><!-- login modal warapper satart end-->
+</div>";s:4:"code";N;s:5:"title";s:17:"description_event";s:3:"url";s:18:"/description_event";s:6:"layout";s:17:"description_event";s:9:"is_hidden";s:1:"0";s:7:"account";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}}}

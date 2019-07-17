@@ -11,3 +11,58 @@ forceSecure = 0
 security = "all"
 ==
 {% component 'account2' %}
+ <div class="login-registration-modal" id="loginRegModal">
+    <div class="login-modal-wrapper"><!-- login modal warapper satart start-->
+        <div class="modal" tabindex="-1" id="login-modal" role="dialog"><!-- #login modal-->
+            <div class="modal-dialog" role="document">
+                <div class="modal-content"><!-- modal content start -->
+                    <nav>
+                        <div class="nav nav-tabs login-modal-navigation" id="nav-tab" role="tablist"><!-- login modal navigation start -->
+                            <a class="nav-item nav-link active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab" aria-controls="nav-login"
+                                aria-selected="true">login</a>
+                            <a class="nav-item nav-link" id="nav-signup-tab" data-toggle="tab" href="#nav-signup" role="tab" aria-controls="nav-signup"
+                                aria-selected="false">Register</a>
+                        </div><!-- login modal navigation end -->
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent"><!-- tab content-->
+                        <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+                            <div class="login-form-wrapper"><!-- login form wrapper start -->
+                               {% if not user %}
+
+                                    <div class="row">
+                                
+                                        <div class="col-md-6">
+                                            <h3 class="{% if this.page.id == 'register' %}active{% endif %}"><a href="{{ 'register'|page }}">Créer un compte</a></h3>
+                                            {% partial account ~ '::signin' %}
+                                        </div>
+                                
+                                    </div>
+                                
+                                {% else %}
+                                
+                                {% endif %}
+                            </div><!-- login form wrapper end -->
+                        </div>
+                        <div class="tab-pane fade" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
+
+                            <div class="singup-form-wrapper">
+                                {% if not user %}
+                                
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            {% partial account ~ '::register' %}
+                                        </div>
+                                
+                                    </div>
+                                
+                                {% else %}
+                                
+                                {% endif %}
+                             </div>
+                        </div>
+                    </div><!-- /.tab conent-->
+                </div><!-- modal content end -->
+            </div>
+        </div><!-- /#loginmodal -->
+    </div><!-- login modal warapper satart end-->
+</div>

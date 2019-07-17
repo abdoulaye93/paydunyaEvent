@@ -1,4 +1,4 @@
-1563277452a:1:{s:9:"login.htm";a:10:{s:8:"fileName";s:9:"login.htm";s:7:"content";s:439:"title = "login"
+1563363754a:1:{s:9:"login.htm";a:11:{s:8:"fileName";s:9:"login.htm";s:7:"content";s:470:"title = "login"
 url = "/login"
 layout = "login"
 is_hidden = 0
@@ -6,6 +6,9 @@ is_hidden = 0
 [account]
 paramCode = "code"
 forceSecure = 0
+
+[session]
+security = "all"
 ==
 {% if not user %}
 
@@ -20,7 +23,7 @@ forceSecure = 0
 
 {% else %}
 
-{% endif %}";s:5:"mtime";i:1562665677;s:6:"markup";s:319:"{% if not user %}
+{% endif %}";s:5:"mtime";i:1563355787;s:6:"markup";s:319:"{% if not user %}
 
     <div class="row">
 
@@ -33,4 +36,4 @@ forceSecure = 0
 
 {% else %}
 
-{% endif %}";s:4:"code";N;s:5:"title";s:5:"login";s:3:"url";s:6:"/login";s:6:"layout";s:5:"login";s:9:"is_hidden";s:1:"0";s:7:"account";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}}}
+{% endif %}";s:4:"code";N;s:5:"title";s:5:"login";s:3:"url";s:6:"/login";s:6:"layout";s:5:"login";s:9:"is_hidden";s:1:"0";s:7:"account";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}s:7:"session";a:1:{s:8:"security";s:3:"all";}}}

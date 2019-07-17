@@ -57,8 +57,12 @@ class __TwigTemplate_08140807b7f2fddf9607b41577f9161666106a4665f065c982bbbcee001
             echo "active";
         }
         echo " \">
-                    <a class=\"nav-link\" href=\"";
+                    <a class=\"na";
         // line 21
+        $context['__cms_component_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("session"        , $context['__cms_component_params']        );
+        unset($context['__cms_component_params']);
+        echo "v-link\" href=\"";
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("home");
         echo "\">Comment Ça marche</a>
                 </li>
@@ -82,29 +86,33 @@ class __TwigTemplate_08140807b7f2fddf9607b41577f9161666106a4665f065c982bbbcee001
         if (($context["user"] ?? null)) {
             // line 31
             echo "                      <li class=\"nav-item \">
-                          <a data-request=\"onLogout\" data-request-data=\"redirect: '/'\" class=\"nav-link\">Deconnexion</a>
+                      <a data-request=\"onLogout\" data-request-data=\"redirect: '/good-bye'\" class=\"nav-link\">Sign out</a>
+                         
                        </li>
-                        <li class=\"nav-item ";
-            // line 34
-            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 34), "id", [], "any", false, false, false, 34) == "create_event")) {
-                echo "active";
-            }
-            echo "\">
-                    <a class=\"nav-link\" href=\"";
-            // line 35
+                         <li class=\"nav-item dropdown active\">
+                            <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Event</a>
+                            <div class=\"dropdown-menu\">
+                                <a class=\"dropdown-item\" href=\"";
+            // line 38
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("create_event");
             echo "\">Créer un évènement</a>
-                </li>
+                                <a class=\"dropdown-item\" href=\"";
+            // line 39
+            echo $this->extensions['Cms\Twig\Extension']->pageFilter("manage_event");
+            echo "\">Gestion des évènement</a>
+                            </div>
+                        </li>
+                    
                 
                     ";
         } else {
-            // line 39
+            // line 45
             echo "                         <li class=\"nav-item boxed-btn\">
                     <a class=\"nav-link boxed-btn\" href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\">Login - Register</a>
                 </li>
                     ";
         }
-        // line 43
+        // line 49
         echo "                
                
                
@@ -127,7 +135,7 @@ class __TwigTemplate_08140807b7f2fddf9607b41577f9161666106a4665f065c982bbbcee001
 
     public function getDebugInfo()
     {
-        return array (  108 => 43,  102 => 39,  95 => 35,  89 => 34,  84 => 31,  82 => 30,  74 => 25,  68 => 24,  62 => 21,  56 => 20,  35 => 1,);
+        return array (  116 => 49,  110 => 45,  101 => 39,  97 => 38,  88 => 31,  86 => 30,  78 => 25,  72 => 24,  62 => 21,  56 => 20,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -152,7 +160,7 @@ class __TwigTemplate_08140807b7f2fddf9607b41577f9161666106a4665f065c982bbbcee001
             <!-- navbar collapse start -->
             <ul class=\"navbar-nav\">
                 <li class=\"nav-item  {% if this.page.id == 'home' %}active{% endif %} \">
-                    <a class=\"nav-link\" href=\"{{ 'home'|page }}\">Comment Ça marche</a>
+                    <a class=\"na{% component 'session' %}v-link\" href=\"{{ 'home'|page }}\">Comment Ça marche</a>
                 </li>
                 
                   <li class='nav-item {% if this.page.id == 'view_event' %}active{% endif %}'>
@@ -163,11 +171,17 @@ class __TwigTemplate_08140807b7f2fddf9607b41577f9161666106a4665f065c982bbbcee001
                    </li>
                  {% if user %}
                       <li class=\"nav-item \">
-                          <a data-request=\"onLogout\" data-request-data=\"redirect: '/'\" class=\"nav-link\">Deconnexion</a>
+                      <a data-request=\"onLogout\" data-request-data=\"redirect: '/good-bye'\" class=\"nav-link\">Sign out</a>
+                         
                        </li>
-                        <li class=\"nav-item {% if this.page.id == 'create_event' %}active{% endif %}\">
-                    <a class=\"nav-link\" href=\"{{ 'create_event'|page }}\">Créer un évènement</a>
-                </li>
+                         <li class=\"nav-item dropdown active\">
+                            <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Event</a>
+                            <div class=\"dropdown-menu\">
+                                <a class=\"dropdown-item\" href=\"{{ 'create_event'|page }}\">Créer un évènement</a>
+                                <a class=\"dropdown-item\" href=\"{{ 'manage_event'|page }}\">Gestion des évènement</a>
+                            </div>
+                        </li>
+                    
                 
                     {% else %}
                          <li class=\"nav-item boxed-btn\">
