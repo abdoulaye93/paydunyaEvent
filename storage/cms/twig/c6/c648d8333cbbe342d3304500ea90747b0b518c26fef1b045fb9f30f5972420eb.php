@@ -32,14 +32,12 @@ class __TwigTemplate_a744a8062c1eb50725a5548d171db07619a032848bae9cd578a9ac7a2a5
     protected function doDisplay(array $context, array $blocks = [])
     {
         // line 1
-        echo "<h2>Add new event</h2>
-";
-        // line 2
         $context['__cms_component_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("eventform"        , $context['__cms_component_params']        );
         unset($context['__cms_component_params']);
-        // line 3
-        echo " <div class=\"login-registration-modal\" id=\"loginRegModal\">
+        // line 2
+        echo "
+ <div class=\"login-registration-modal\" id=\"loginRegModal\">
     <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
         <div class=\"modal\" tabindex=\"-1\" id=\"login-modal\" role=\"dialog\"><!-- #login modal-->
             <div class=\"modal-dialog\" role=\"document\">
@@ -139,13 +137,13 @@ class __TwigTemplate_a744a8062c1eb50725a5548d171db07619a032848bae9cd578a9ac7a2a5
 
     public function getDebugInfo()
     {
-        return array (  120 => 50,  116 => 48,  109 => 43,  105 => 42,  100 => 39,  98 => 38,  91 => 33,  87 => 31,  80 => 26,  76 => 25,  68 => 24,  62 => 20,  60 => 19,  42 => 3,  38 => 2,  35 => 1,);
+        return array (  118 => 50,  114 => 48,  107 => 43,  103 => 42,  98 => 39,  96 => 38,  89 => 33,  85 => 31,  78 => 26,  74 => 25,  66 => 24,  60 => 20,  58 => 19,  39 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<h2>Add new event</h2>
-{% component 'eventform' %}
+        return new Source("{% component 'eventform' %}
+
  <div class=\"login-registration-modal\" id=\"loginRegModal\">
     <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
         <div class=\"modal\" tabindex=\"-1\" id=\"login-modal\" role=\"dialog\"><!-- #login modal-->

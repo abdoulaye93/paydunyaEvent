@@ -87,3 +87,6 @@
 1.0.30:
     - 'Updated table event_event_'
     - builder_table_update_event_event__7.php
+1.0.31:
+    - 'Updated table event_event_'
+    - builder_table_update_event_event__8.php

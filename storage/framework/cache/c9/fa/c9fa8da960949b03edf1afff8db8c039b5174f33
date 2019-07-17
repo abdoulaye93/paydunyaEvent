@@ -1,4 +1,4 @@
-1563363754a:1:{s:16:"create_event.htm";a:12:{s:8:"fileName";s:16:"create_event.htm";s:7:"content";s:3641:"title = "create_event"
+1563367314a:1:{s:16:"create_event.htm";a:12:{s:8:"fileName";s:16:"create_event.htm";s:7:"content";s:3619:"title = "create_event"
 url = "/create_event"
 layout = "create_event"
 is_hidden = 0
@@ -16,8 +16,8 @@ forceSecure = 0
 
 [eventform]
 ==
-<h2>Add new event</h2>
 {% component 'eventform' %}
+
  <div class="login-registration-modal" id="loginRegModal">
     <div class="login-modal-wrapper"><!-- login modal warapper satart start-->
         <div class="modal" tabindex="-1" id="login-modal" role="dialog"><!-- #login modal-->
@@ -72,8 +72,8 @@ forceSecure = 0
             </div>
         </div><!-- /#loginmodal -->
     </div><!-- login modal warapper satart end-->
-</div>";s:5:"mtime";i:1563363152;s:6:"markup";s:3297:"<h2>Add new event</h2>
-{% component 'eventform' %}
+</div>";s:5:"mtime";i:1563364010;s:6:"markup";s:3275:"{% component 'eventform' %}
+
  <div class="login-registration-modal" id="loginRegModal">
     <div class="login-modal-wrapper"><!-- login modal warapper satart start-->
         <div class="modal" tabindex="-1" id="login-modal" role="dialog"><!-- #login modal-->

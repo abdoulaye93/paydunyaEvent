@@ -4,6 +4,8 @@ use Cms\Classes\ComponentBase;
 use Input;
 use Validator;
 use Redirect;
+use event\event\models\Event;
+use Flash;
 
 class EventForm extends ComponentBase
 {
@@ -14,6 +16,14 @@ class EventForm extends ComponentBase
         ];
     }
     public function onSave(){
-
+        $event=new Event();
+        $event->nom=Input::get('nom');
+        $event->lieu=Input::get('lieu');
+        $event->montant=Input::get('montant');
+        $event->nombre_ticket=Input::get('nbrticket');
+        $event->save();
+        Flash::success('évènement a été créer');
+        return Redirect::back();
+       
     }
 }

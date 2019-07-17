@@ -109,4 +109,5 @@
   'Demande\\Demande\\Models\\DemandeAnnullationEvent' => 'plugins\\demande\\demande\\models\\DemandeAnnullationEvent.php',
   'demande\\demande\\Controllers\\demandeannulationachat' => 'plugins\\demande\\demande\\controllers\\demandeannulationachat.php',
   'event\\event\\components\\EventForm' => 'plugins\\event\\event\\components\\EventForm.php',
+  'event\\event\\models\\Event' => 'plugins\\event\\event\\models\\Event.php',
 );
