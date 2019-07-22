@@ -26,3 +26,7 @@ navigation:
                 label: periode
                 url: event/event/periode
                 icon: icon-sitemap
+            side-menu-item5:
+                label: listsub
+                url: event/event/subevent
+                icon: icon-sitemap

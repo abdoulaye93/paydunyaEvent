@@ -121,8 +121,7 @@ class __TwigTemplate_a744a8062c1eb50725a5548d171db07619a032848bae9cd578a9ac7a2a5
                 </div><!-- modal content end -->
             </div>
         </div><!-- /#loginmodal -->
-    </div><!-- login modal warapper satart end-->
-</div>";
+    </div><!-- login modal warapper satart end-->";
     }
 
     public function getTemplateName()
@@ -197,7 +196,6 @@ class __TwigTemplate_a744a8062c1eb50725a5548d171db07619a032848bae9cd578a9ac7a2a5
                 </div><!-- modal content end -->
             </div>
         </div><!-- /#loginmodal -->
-    </div><!-- login modal warapper satart end-->
-</div>", "C:\\wamp64\\www\\install-master/themes/demo/pages/create_event.htm", "");
+    </div><!-- login modal warapper satart end-->", "C:\\wamp64\\www\\install-master/themes/demo/pages/create_event.htm", "");
     }
 }

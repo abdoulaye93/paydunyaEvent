@@ -1,0 +1,10 @@
+name: SubEvent
+form: $/event/event/models/sublist/fields.yaml
+modelClass: Event\Event\Models\SubList
+defaultRedirect: event/event/subevent
+create:
+    redirect: 'event/event/subevent/update/:id'
+    redirectClose: event/event/subevent
+update:
+    redirect: event/event/subevent
+    redirectClose: event/event/subevent

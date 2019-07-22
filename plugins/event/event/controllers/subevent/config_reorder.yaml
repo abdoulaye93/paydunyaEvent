@@ -1,0 +1,4 @@
+title: SubEvent
+modelClass: Event\Event\Models\SubList
+toolbar:
+    buttons: reorder_toolbar

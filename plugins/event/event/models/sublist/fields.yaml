@@ -1,0 +1,13 @@
+fields:
+    sub:
+        label: Relation
+        nameFrom: nom
+        descriptionFrom: description
+        span: auto
+        type: relation
+    event:
+        label: Relation
+        nameFrom: nom
+        descriptionFrom: description
+        span: auto
+        type: relation

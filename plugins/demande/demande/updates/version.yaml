@@ -18,3 +18,6 @@
 1.0.7:
     - 'Updated table demande_demande_demande_annulation_achat'
     - builder_table_update_demande_demande_demande_annulation_achat_2.php
+1.0.8:
+    - 'Updated table demande_demande_demande_annulation_event'
+    - builder_table_update_demande_demande_demande_annulation_event_3.php

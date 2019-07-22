@@ -1,4 +1,6 @@
-1563292599a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:10596:"==
+1563787113a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:10625:"[session]
+security = "all"
+==
 <!DOCTYPE html>
 <html>
     <head>
@@ -296,7 +298,7 @@
     </script>
 
     </body>
-</html>";s:5:"mtime";i:1563275750;s:6:"markup";s:10592:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1563355696;s:6:"markup";s:10592:"<!DOCTYPE html>
 <html>
     <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -593,4 +595,4 @@
     </script>
 
     </body>
-</html>";s:4:"code";N;s:17:"_PARSER_ERROR_INI";s:0:"";}}
+</html>";s:4:"code";N;s:7:"session";a:1:{s:8:"security";s:3:"all";}}}

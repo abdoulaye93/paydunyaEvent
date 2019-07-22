@@ -1,0 +1,7 @@
+columns:
+    sub_id:
+        label: Sub
+        type: text
+    event_id:
+        label: Event
+        type: text

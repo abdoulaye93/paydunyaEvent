@@ -14,7 +14,12 @@ class Sub extends Model
      * Remove this line if timestamps are defined in the database table.
      */
     public $timestamps = false;
-
+    public $belongsToMany = [
+        'events' => [
+            'event\event\models\Event',
+            'table'=> 'event_event_sub_event'
+        ]
+    ];
 
     /**
      * @var string The database table used by the model.

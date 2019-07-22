@@ -32,14 +32,14 @@ security = "all"
                    </li>
                  {% if user %}
                       <li class="nav-item ">
-                      <a data-request="onLogout" data-request-data="redirect: '/good-bye'" class="nav-link">Sign out</a>
+                      <a data-request="onLogout" data-request-data="redirect: '/view_event'" class="nav-link">Sign out</a>
                          
                        </li>
                          <li class="nav-item dropdown active">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Event</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ 'create_event'|page }}">Créer un évènement</a>
-                                <a class="dropdown-item" href="{{ 'manage_event'|page }}">Gestion des évènement</a>
+                                <a class="dropdown-item" href="{{ 'manage_event'|page({event_id:user.id}) }}">Gestion des évènement</a>
                             </div>
                         </li>
                     
@@ -49,6 +49,20 @@ security = "all"
                     <a class="nav-link boxed-btn" href="#" data-toggle="modal" data-target="#login-modal">Login - Register</a>
                 </li>
                     {% endif %}
+                    {% if user.is_superuser %}
+                     </li>
+                         <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gestion</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ 'admin'|page }}">évènement</a>
+                                <a class="dropdown-item" href="{{ 'admin_demande'|page }}">Demande Event</a>
+                            </div>
+                        </li>
+                
+                    {% else %}
+                
+                    {% endif %}
+                    
                 
                
                

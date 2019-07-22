@@ -90,3 +90,42 @@
 1.0.31:
     - 'Updated table event_event_'
     - builder_table_update_event_event__8.php
+1.0.32:
+    - 'Created table event_event_sub_event'
+    - builder_table_create_event_event_sub_event.php
+1.0.33:
+    - 'Updated table event_event_sub_event'
+    - builder_table_update_event_event_sub_event.php
+1.0.34:
+    - 'Updated table event_event_sub'
+    - builder_table_update_event_event_sub.php
+1.0.35:
+    - 'Updated table event_event_periode'
+    - builder_table_update_event_event_periode_8.php
+1.0.36:
+    - 'Updated table event_event_'
+    - builder_table_update_event_event__9.php
+1.0.37:
+    - 'Updated table event_event_'
+    - builder_table_update_event_event__10.php
+1.0.38:
+    - 'Updated table event_event_'
+    - builder_table_update_event_event__11.php
+1.0.39:
+    - 'Updated table event_event_'
+    - builder_table_update_event_event__12.php
+1.0.40:
+    - 'Created table event_event_sub_event_list'
+    - builder_table_create_event_event_sub_event_list.php
+1.0.41:
+    - 'Updated table event_event_'
+    - builder_table_update_event_event__13.php
+1.0.42:
+    - 'Updated table event_event_'
+    - builder_table_update_event_event__14.php
+1.0.43:
+    - 'Updated table event_event_periode'
+    - builder_table_update_event_event_periode_9.php
+1.0.44:
+    - 'Updated table event_event_'
+    - builder_table_update_event_event__15.php

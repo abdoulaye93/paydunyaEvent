@@ -28,7 +28,11 @@ class Event extends Model
     public $belongsToMany = [
         'users' => [
             'rainlab\user\models\User',
-            'table'      => 'event_event_access_event'
+            'table'=> 'event_event_access_event'
+        ],
+        'subs' => [
+            'event\event\models\Sub',
+            'table'=> 'event_event_sub_event'
         ]
     ];
     /**

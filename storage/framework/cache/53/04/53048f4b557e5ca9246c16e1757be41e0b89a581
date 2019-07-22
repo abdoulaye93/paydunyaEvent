@@ -1,4 +1,4 @@
-1563367315a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:2917:"[session]
+1563793112a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:3702:"[session]
 security = "all"
 ==
 <!-- Nav -->
@@ -32,14 +32,14 @@ security = "all"
                    </li>
                  {% if user %}
                       <li class="nav-item ">
-                      <a data-request="onLogout" data-request-data="redirect: '/good-bye'" class="nav-link">Sign out</a>
+                      <a data-request="onLogout" data-request-data="redirect: '/view_event'" class="nav-link">Sign out</a>
                          
                        </li>
                          <li class="nav-item dropdown active">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Event</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ 'create_event'|page }}">Créer un évènement</a>
-                                <a class="dropdown-item" href="{{ 'manage_event'|page }}">Gestion des évènement</a>
+                                <a class="dropdown-item" href="{{ 'manage_event'|page({event_id:user.id}) }}">Gestion des évènement</a>
                             </div>
                         </li>
                     
@@ -49,6 +49,20 @@ security = "all"
                     <a class="nav-link boxed-btn" href="#" data-toggle="modal" data-target="#login-modal">Login - Register</a>
                 </li>
                     {% endif %}
+                    {% if user.is_superuser %}
+                     </li>
+                         <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gestion</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ 'admin'|page }}">évènement</a>
+                                <a class="dropdown-item" href="{{ 'admin_demande'|page }}">Demande Event</a>
+                            </div>
+                        </li>
+                
+                    {% else %}
+                
+                    {% endif %}
+                    
                 
                
                
@@ -56,7 +70,7 @@ security = "all"
         </div>
         <!-- navbar collapse end -->
     </div>
-</nav>";s:5:"mtime";i:1563355301;s:6:"markup";s:2884:"<!-- Nav -->
+</nav>";s:5:"mtime";i:1563790736;s:6:"markup";s:3669:"<!-- Nav -->
 <nav class="navbar navbar-area navbar-expand-lg navbar-light navbar-fixed-top navbar-autohide">
     <div class="container">
         <div >
@@ -87,14 +101,14 @@ security = "all"
                    </li>
                  {% if user %}
                       <li class="nav-item ">
-                      <a data-request="onLogout" data-request-data="redirect: '/good-bye'" class="nav-link">Sign out</a>
+                      <a data-request="onLogout" data-request-data="redirect: '/view_event'" class="nav-link">Sign out</a>
                          
                        </li>
                          <li class="nav-item dropdown active">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Event</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ 'create_event'|page }}">Créer un évènement</a>
-                                <a class="dropdown-item" href="{{ 'manage_event'|page }}">Gestion des évènement</a>
+                                <a class="dropdown-item" href="{{ 'manage_event'|page({event_id:user.id}) }}">Gestion des évènement</a>
                             </div>
                         </li>
                     
@@ -104,6 +118,20 @@ security = "all"
                     <a class="nav-link boxed-btn" href="#" data-toggle="modal" data-target="#login-modal">Login - Register</a>
                 </li>
                     {% endif %}
+                    {% if user.is_superuser %}
+                     </li>
+                         <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gestion</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ 'admin'|page }}">évènement</a>
+                                <a class="dropdown-item" href="{{ 'admin_demande'|page }}">Demande Event</a>
+                            </div>
+                        </li>
+                
+                    {% else %}
+                
+                    {% endif %}
+                    
                 
                
                

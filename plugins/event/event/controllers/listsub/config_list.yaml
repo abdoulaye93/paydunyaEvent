@@ -1,0 +1,12 @@
+list: $/event/event/models/subeventlist/columns.yaml
+modelClass: Event\Event\Models\SubEventList
+title: ListSub
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'event/event/listsub/update/:id'

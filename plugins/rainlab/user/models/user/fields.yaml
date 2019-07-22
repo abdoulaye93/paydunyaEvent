@@ -69,6 +69,11 @@ tabs:
             tab: rainlab.user::lang.user.account
             type: relation
             emptyOption: rainlab.user::lang.user.empty_groups
+        is_superuser:
+            label: admin
+            tab: rainlab.user::lang.user.account
+            type: checkbox
+            span: left
 
 secondaryTabs:
     fields:

@@ -1,0 +1,10 @@
+name: ListSub
+form: $/event/event/models/subeventlist/fields.yaml
+modelClass: Event\Event\Models\SubEventList
+defaultRedirect: event/event/listsub
+create:
+    redirect: 'event/event/listsub/update/:id'
+    redirectClose: event/event/listsub
+update:
+    redirect: event/event/listsub
+    redirectClose: event/event/listsub

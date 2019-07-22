@@ -34,7 +34,7 @@ columns:
         label: rainlab.user::lang.user.last_seen
         type: timetense
 
-    is_guest:
-        label: rainlab.user::lang.user.is_guest
+    is_superuser:
+        label: rainlab.user::lang.user.is_superuser
         type: switch
         invisible: true
