@@ -10,6 +10,7 @@ use event\event\models\Sub;
 use event\event\models\Periode;
 use event\event\models\SubList;
 use demande\demande\models\DemandeAnnullationEvent;
+use rainlab\user\models\User;
 use Flash;
 use Db;
 use Request;

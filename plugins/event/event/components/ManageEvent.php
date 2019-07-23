@@ -10,6 +10,8 @@ use event\event\models\Sub;
 use event\event\models\Periode;
 use event\event\models\SubList;
 use demande\demande\models\DemandeAnnullationEvent;
+use event\event\models\AccessEvent;
+use Mail;
 use Flash;
 use Db;
 use Request;
@@ -62,7 +64,35 @@ class ManageEvent extends ComponentBase
             $annuleDemande->event_id=$event_id;
             $annuleDemande->save();
         }
+       
+       
         return Redirect::back();
+    }
+    public function onActive(){
+        $event_id=Request::segment(2);
+       // dd(Request::segment(2));
+        $email=Input::get('email');
+       // dd($email);
+        $user = Db::table('users')->where('email', Input::get('email'))->first();
+        if($email==$user->email){
+            $accesEven=new AccessEvent();
+            $accesEven->user_id=$user->id;
+            $accesEven->event_id=$event_id;
+            $accesEven->save();
+            $vars = ['name' => 'Joe', 'user' => 'Mary'];
+           // $email=Input::get('email');
+            Mail::send('event.event::mail.message', $vars, function($message) {
+    
+                $message->to(Input::get('email'), 'Admin Person');
+                $message->subject('Invitation de suivre un évènement');
+    
+            });
+            return Redirect::back();
+
+        }else{
+            return Redirect::to('user/login');
+        }
+       
     }
    
 }

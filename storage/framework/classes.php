@@ -133,4 +133,9 @@
   'event\\event\\components\\Admin' => 'plugins\\event\\event\\components\\Admin.php',
   'demande\\demande\\models\\DemandeAnnullationEvent' => 'plugins\\demande\\demande\\models\\DemandeAnnullationEvent.php',
   'event\\event\\components\\AdminDemande' => 'plugins\\event\\event\\components\\AdminDemande.php',
+  'system\\Controllers\\mailbrandsettings' => 'modules\\system\\controllers\\mailbrandsettings.php',
+  'october\\drivers\\Plugin' => 'plugins\\october\\drivers\\Plugin.php',
+  'system\\Controllers\\mailtemplates' => 'modules\\system\\controllers\\mailtemplates.php',
+  'event\\event\\models\\AccessEvent' => 'plugins\\event\\event\\models\\AccessEvent.php',
+  'event\\event\\components\\Access' => 'plugins\\event\\event\\components\\Access.php',
 );

@@ -73,33 +73,33 @@ class __TwigTemplate_b8f578c9eee03b59935b57389e906e24fc9ae71bdc449045dd9d2329f38
                     </div>
                     <div class=\"row\">
                       <div class=\"col-md-4\">
-                        <div class=\"form-element square\">
-                            <label>Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <span><a  href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\">Autres</a></span>
-                            </label>
-                            <select class=\"input-field-square\" name=\"category\" value=\"\">
-                                                                        ";
+                            <div class=\"form-element square\">
+                                <label>Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    <span><a  href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\">Autres</a></span>
+                                </label>
+                                <select class=\"input-field-square\" name=\"category\" value=\"\">
+                                                                            ";
         // line 38
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadEvents", [], "method", false, false, false, 38));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
             // line 39
-            echo "                                                                        <option value=\"";
+            echo "                                                                            <option value=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 39), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom_type", [], "any", false, false, false, 39), "html", null, true);
             echo "</option>
-                                                                         ";
+                                                                            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 41
-        echo "                                                                    
-                                                                   
-                                                               
-                                                              </select>
-                                                        </div>
+        echo "                                                                        
+                                                                    
+                                                                
+                                  </select>
+                            </div>
                       </div>
                       <div class=\"col-md-4\">
                         <div class=\"form-element square\">
@@ -130,7 +130,7 @@ class __TwigTemplate_b8f578c9eee03b59935b57389e906e24fc9ae71bdc449045dd9d2329f38
                             <input type=\"number\" name=\"nbrticket\" value=\"\" placeholder=\"Enter minimum number of persons...\" class=\"input-field-square\">
                         </div>
                       </div>
-                    </div class=\"row\">
+                    </div class=\"row justify-content-center\">
                         <div class=\"col-md-4\">
                             <div class=\"form-element square\">
                                 <label>
@@ -138,7 +138,8 @@ class __TwigTemplate_b8f578c9eee03b59935b57389e906e24fc9ae71bdc449045dd9d2329f38
                                 </label>
                                 <input type='text' id='inputTask' placeholder=\" Entrer le nom  \"   class=\"input-field-square\"/>
                                 <input type='text' id='inputTask1' placeholder=\" Montant\"   class=\"input-field-square\"/>
-                                <input type='button' onclick='addText()' value='Ajoutez'  class=\"submit-form-btn\"/>
+                                <input type='button' onclick='addText()' value='Ajoutez'  class=\"submit-form-btn\"
+                                style=\"margin-bottom: 20px;\"/>
                             </div>
                         </div>
                         <div id=\"addTask\" class=\"col-md-4\">
@@ -165,15 +166,15 @@ class __TwigTemplate_b8f578c9eee03b59935b57389e906e24fc9ae71bdc449045dd9d2329f38
     </div>
 </div>
 ";
-        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 110
+        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 111
         $context["type"] = "success"        ;        foreach (Flash::success        () as $message) {
-            $context["message"] = $message;            // line 111
+            $context["message"] = $message;            // line 112
             echo "<p>";
             echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
             echo "</p>
 ";
         }
-        $context["type"] = $_type;        $context["message"] = $_message;        // line 113
+        $context["type"] = $_type;        $context["message"] = $_message;        // line 114
         echo "       <!-- login and register modal start-->
 <div class=\"login-registration-modal\" id=\"loginRegModal\">
     <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
@@ -273,6 +274,7 @@ function addText(){
     var etat = document.createElement('input');
     etat.setAttribute('type', 'button');
     etat.setAttribute(\"value\", \"supprimer\");
+    etat.setAttribute(\"style\", \"margin-bottom: 20px;\");
     etat.setAttribute(\"id\",\"content\"+row);
     etat.setAttribute(\"class\",\"submit-form-btn\");
     etat.setAttribute(\"onClick\", \"deleterow(\"+ row +\");\");
@@ -304,7 +306,7 @@ function deleterow(ID)
 
     public function getDebugInfo()
     {
-        return array (  177 => 113,  171 => 111,  169 => 110,  98 => 41,  87 => 39,  83 => 38,  58 => 15,  55 => 14,  49 => 12,  47 => 11,  35 => 1,);
+        return array (  178 => 114,  172 => 112,  170 => 111,  98 => 41,  87 => 39,  83 => 38,  58 => 15,  55 => 14,  49 => 12,  47 => 11,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -341,19 +343,19 @@ function deleterow(ID)
                     </div>
                     <div class=\"row\">
                       <div class=\"col-md-4\">
-                        <div class=\"form-element square\">
-                            <label>Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <span><a  href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\">Autres</a></span>
-                            </label>
-                            <select class=\"input-field-square\" name=\"category\" value=\"\">
-                                                                        {% for item in __SELF__.loadEvents() %}
-                                                                        <option value=\"{{ item.id }}\">{{ item.nom_type }}</option>
-                                                                         {% endfor %}
+                            <div class=\"form-element square\">
+                                <label>Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    <span><a  href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\">Autres</a></span>
+                                </label>
+                                <select class=\"input-field-square\" name=\"category\" value=\"\">
+                                                                            {% for item in __SELF__.loadEvents() %}
+                                                                            <option value=\"{{ item.id }}\">{{ item.nom_type }}</option>
+                                                                            {% endfor %}
+                                                                        
                                                                     
-                                                                   
-                                                               
-                                                              </select>
-                                                        </div>
+                                                                
+                                  </select>
+                            </div>
                       </div>
                       <div class=\"col-md-4\">
                         <div class=\"form-element square\">
@@ -384,7 +386,7 @@ function deleterow(ID)
                             <input type=\"number\" name=\"nbrticket\" value=\"\" placeholder=\"Enter minimum number of persons...\" class=\"input-field-square\">
                         </div>
                       </div>
-                    </div class=\"row\">
+                    </div class=\"row justify-content-center\">
                         <div class=\"col-md-4\">
                             <div class=\"form-element square\">
                                 <label>
@@ -392,7 +394,8 @@ function deleterow(ID)
                                 </label>
                                 <input type='text' id='inputTask' placeholder=\" Entrer le nom  \"   class=\"input-field-square\"/>
                                 <input type='text' id='inputTask1' placeholder=\" Montant\"   class=\"input-field-square\"/>
-                                <input type='button' onclick='addText()' value='Ajoutez'  class=\"submit-form-btn\"/>
+                                <input type='button' onclick='addText()' value='Ajoutez'  class=\"submit-form-btn\"
+                                style=\"margin-bottom: 20px;\"/>
                             </div>
                         </div>
                         <div id=\"addTask\" class=\"col-md-4\">
@@ -520,6 +523,7 @@ function addText(){
     var etat = document.createElement('input');
     etat.setAttribute('type', 'button');
     etat.setAttribute(\"value\", \"supprimer\");
+    etat.setAttribute(\"style\", \"margin-bottom: 20px;\");
     etat.setAttribute(\"id\",\"content\"+row);
     etat.setAttribute(\"class\",\"submit-form-btn\");
     etat.setAttribute(\"onClick\", \"deleterow(\"+ row +\");\");

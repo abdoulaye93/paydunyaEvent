@@ -30,3 +30,7 @@ navigation:
                 label: listsub
                 url: event/event/subevent
                 icon: icon-sitemap
+            side-menu-item6:
+                label: accessEvent
+                url: /
+                icon: icon-sitemap

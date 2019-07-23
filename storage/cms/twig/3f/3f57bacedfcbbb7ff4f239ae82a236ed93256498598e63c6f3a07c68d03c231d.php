@@ -98,34 +98,38 @@ class __TwigTemplate_08140807b7f2fddf9607b41577f9161666106a4665f065c982bbbcee001
             echo "\">Créer un évènement</a>
                                 <a class=\"dropdown-item\" href=\"";
             // line 39
-            echo $this->extensions['Cms\Twig\Extension']->pageFilter("manage_event", ["event_id" => twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "id", [], "any", false, false, false, 39)]);
+            echo $this->extensions['Cms\Twig\Extension']->pageFilter("manage_event", ["user_id" => twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "id", [], "any", false, false, false, 39)]);
             echo "\">Gestion des évènement</a>
+                                <a class=\"dropdown-item\" href=\"";
+            // line 40
+            echo $this->extensions['Cms\Twig\Extension']->pageFilter("access_event", ["user_id" => twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "id", [], "any", false, false, false, 40)]);
+            echo "\">Suivre un évènement</a>
                             </div>
                         </li>
                     
                 
                     ";
         } else {
-            // line 45
+            // line 46
             echo "                         <li class=\"nav-item boxed-btn\">
                     <a class=\"nav-link boxed-btn\" href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\">Login - Register</a>
                 </li>
                     ";
         }
-        // line 49
+        // line 50
         echo "                    ";
-        if (twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "is_superuser", [], "any", false, false, false, 49)) {
-            // line 50
+        if (twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "is_superuser", [], "any", false, false, false, 50)) {
+            // line 51
             echo "                     </li>
                          <li class=\"nav-item dropdown active\">
                             <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Gestion</a>
                             <div class=\"dropdown-menu\">
                                 <a class=\"dropdown-item\" href=\"";
-            // line 54
+            // line 55
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("admin");
             echo "\">évènement</a>
                                 <a class=\"dropdown-item\" href=\"";
-            // line 55
+            // line 56
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("admin_demande");
             echo "\">Demande Event</a>
                             </div>
@@ -133,11 +137,11 @@ class __TwigTemplate_08140807b7f2fddf9607b41577f9161666106a4665f065c982bbbcee001
                 
                     ";
         } else {
-            // line 60
+            // line 61
             echo "                
                     ";
         }
-        // line 62
+        // line 63
         echo "                    
                 
                
@@ -161,7 +165,7 @@ class __TwigTemplate_08140807b7f2fddf9607b41577f9161666106a4665f065c982bbbcee001
 
     public function getDebugInfo()
     {
-        return array (  141 => 62,  137 => 60,  129 => 55,  125 => 54,  119 => 50,  116 => 49,  110 => 45,  101 => 39,  97 => 38,  88 => 31,  86 => 30,  78 => 25,  72 => 24,  62 => 21,  56 => 20,  35 => 1,);
+        return array (  145 => 63,  141 => 61,  133 => 56,  129 => 55,  123 => 51,  120 => 50,  114 => 46,  105 => 40,  101 => 39,  97 => 38,  88 => 31,  86 => 30,  78 => 25,  72 => 24,  62 => 21,  56 => 20,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -204,7 +208,8 @@ class __TwigTemplate_08140807b7f2fddf9607b41577f9161666106a4665f065c982bbbcee001
                             <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Event</a>
                             <div class=\"dropdown-menu\">
                                 <a class=\"dropdown-item\" href=\"{{ 'create_event'|page }}\">Créer un évènement</a>
-                                <a class=\"dropdown-item\" href=\"{{ 'manage_event'|page({event_id:user.id}) }}\">Gestion des évènement</a>
+                                <a class=\"dropdown-item\" href=\"{{ 'manage_event'|page({user_id:user.id}) }}\">Gestion des évènement</a>
+                                <a class=\"dropdown-item\" href=\"{{ 'access_event'|page({user_id:user.id}) }}\">Suivre un évènement</a>
                             </div>
                         </li>
                     

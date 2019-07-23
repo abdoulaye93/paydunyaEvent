@@ -1,0 +1,10 @@
+name: AccessEvent
+form: $/event/event/models/accessevent/fields.yaml
+modelClass: Event\Event\Models\AccessEvent
+defaultRedirect: event/event/accessevent
+create:
+    redirect: 'event/event/accessevent/update/:id'
+    redirectClose: event/event/accessevent
+update:
+    redirect: event/event/accessevent
+    redirectClose: event/event/accessevent

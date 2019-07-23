@@ -14,13 +14,12 @@
                                         <tbody>
                                             <tr class="traending_ico_tr">
                                                 <td data-label="ratings" class="ratings_td">
-                                                    <a href="http://lab.thesoftking.com/eticket/event/show/papa">{{item.user_id}}</a>
+                                                    <a href="http://lab.thesoftking.com/eticket/event/show/papa">{{item.event.nom}}</a>
                                                 </td>
                                                 <td data-label="action">
                                                 <form data-request="onSave">
-                                                        <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{ 'manage_event_view'|page({event_id:item.id}) }}" class="action-btn">View</a>
-                                                        <a class="btn btn-warning btn-sm" href="{{ 'manage_event_edit'|page({event_id:item.id}) }}" class="action-btn">Edit</a>
-                                                        <input type="hidden" name="supprimer" value="{{item.id}}"> 
+                                                        <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{ 'manage_event_view'|page({event_id:item.event_id}) }}" class="action-btn">View</a>
+                                                        <input type="hidden" name="supprimer" value="{{item.event_id}}"> 
                                                         <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>                                               
                                                 </form>                 
                                               </td>                      

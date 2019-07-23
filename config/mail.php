@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => 'smtp.mailgun.org',
+    'host' => 'smtp.gmail.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'noreply@domain.tld', 'name' => 'OctoberCMS'],
+    'from' => ['address' => 'abdoulayekeita438@gmail.com', 'name' => 'OctoberCMS'],
 
     /*
     |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ return [
     |
     */
 
-    'username' => null,
+    'username' => 'abdoulayekeita438@gmail.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -94,7 +94,7 @@ return [
     |
     */
 
-    'password' => null,
+    'password' => 'password',
 
     /*
     |--------------------------------------------------------------------------

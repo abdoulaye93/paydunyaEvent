@@ -1,4 +1,4 @@
-1563793112a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:3702:"[session]
+1563881084a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:3837:"[session]
 security = "all"
 ==
 <!-- Nav -->
@@ -39,7 +39,8 @@ security = "all"
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Event</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ 'create_event'|page }}">Créer un évènement</a>
-                                <a class="dropdown-item" href="{{ 'manage_event'|page({event_id:user.id}) }}">Gestion des évènement</a>
+                                <a class="dropdown-item" href="{{ 'manage_event'|page({user_id:user.id}) }}">Gestion des évènement</a>
+                                <a class="dropdown-item" href="{{ 'access_event'|page({user_id:user.id}) }}">Suivre un évènement</a>
                             </div>
                         </li>
                     
@@ -70,7 +71,7 @@ security = "all"
         </div>
         <!-- navbar collapse end -->
     </div>
-</nav>";s:5:"mtime";i:1563790736;s:6:"markup";s:3669:"<!-- Nav -->
+</nav>";s:5:"mtime";i:1563813891;s:6:"markup";s:3804:"<!-- Nav -->
 <nav class="navbar navbar-area navbar-expand-lg navbar-light navbar-fixed-top navbar-autohide">
     <div class="container">
         <div >
@@ -108,7 +109,8 @@ security = "all"
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Event</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ 'create_event'|page }}">Créer un évènement</a>
-                                <a class="dropdown-item" href="{{ 'manage_event'|page({event_id:user.id}) }}">Gestion des évènement</a>
+                                <a class="dropdown-item" href="{{ 'manage_event'|page({user_id:user.id}) }}">Gestion des évènement</a>
+                                <a class="dropdown-item" href="{{ 'access_event'|page({user_id:user.id}) }}">Suivre un évènement</a>
                             </div>
                         </li>
                     

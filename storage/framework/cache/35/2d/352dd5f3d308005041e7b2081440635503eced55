@@ -1,4 +1,4 @@
-1563793112a:1:{s:21:"manage_event_view.htm";a:11:{s:8:"fileName";s:21:"manage_event_view.htm";s:7:"content";s:191:"title = "manage_event_view"
+1563881084a:1:{s:21:"manage_event_view.htm";a:11:{s:8:"fileName";s:21:"manage_event_view.htm";s:7:"content";s:191:"title = "manage_event_view"
 url = "/manage_event_view/:event_id"
 layout = "default"
 is_hidden = 0

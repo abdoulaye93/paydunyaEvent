@@ -129,3 +129,9 @@
 1.0.44:
     - 'Updated table event_event_'
     - builder_table_update_event_event__15.php
+1.0.45:
+    - 'Updated table event_event_access_event'
+    - builder_table_update_event_event_access_event_2.php
+1.0.46:
+    - 'Updated table event_event_access_event'
+    - builder_table_update_event_event_access_event_3.php

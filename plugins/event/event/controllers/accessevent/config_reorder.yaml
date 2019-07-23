@@ -1,0 +1,4 @@
+title: AccessEvent
+modelClass: Event\Event\Models\AccessEvent
+toolbar:
+    buttons: reorder_toolbar

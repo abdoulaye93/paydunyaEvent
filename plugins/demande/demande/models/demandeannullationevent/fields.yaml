@@ -1,7 +1,13 @@
 fields:
     users:
         label: User
-        span: auto
         nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    event:
+        label: event
+        span: auto
+        nameFrom: nom
         descriptionFrom: description
         type: relation

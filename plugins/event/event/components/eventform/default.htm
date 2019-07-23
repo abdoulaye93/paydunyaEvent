@@ -30,19 +30,19 @@
                     </div>
                     <div class="row">
                       <div class="col-md-4">
-                        <div class="form-element square">
-                            <label>Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <span><a  href="#" data-toggle="modal" data-target="#login-modal">Autres</a></span>
-                            </label>
-                            <select class="input-field-square" name="category" value="">
-                                                                        {% for item in __SELF__.loadEvents() %}
-                                                                        <option value="{{ item.id }}">{{ item.nom_type }}</option>
-                                                                         {% endfor %}
+                            <div class="form-element square">
+                                <label>Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    <span><a  href="#" data-toggle="modal" data-target="#login-modal">Autres</a></span>
+                                </label>
+                                <select class="input-field-square" name="category" value="">
+                                                                            {% for item in __SELF__.loadEvents() %}
+                                                                            <option value="{{ item.id }}">{{ item.nom_type }}</option>
+                                                                            {% endfor %}
+                                                                        
                                                                     
-                                                                   
-                                                               
-                                                              </select>
-                                                        </div>
+                                                                
+                                  </select>
+                            </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-element square">
@@ -73,7 +73,7 @@
                             <input type="number" name="nbrticket" value="" placeholder="Enter minimum number of persons..." class="input-field-square">
                         </div>
                       </div>
-                    </div class="row">
+                    </div class="row justify-content-center">
                         <div class="col-md-4">
                             <div class="form-element square">
                                 <label>
@@ -81,7 +81,8 @@
                                 </label>
                                 <input type='text' id='inputTask' placeholder=" Entrer le nom  "   class="input-field-square"/>
                                 <input type='text' id='inputTask1' placeholder=" Montant"   class="input-field-square"/>
-                                <input type='button' onclick='addText()' value='Ajoutez'  class="submit-form-btn"/>
+                                <input type='button' onclick='addText()' value='Ajoutez'  class="submit-form-btn"
+                                style="margin-bottom: 20px;"/>
                             </div>
                         </div>
                         <div id="addTask" class="col-md-4">
@@ -209,6 +210,7 @@ function addText(){
     var etat = document.createElement('input');
     etat.setAttribute('type', 'button');
     etat.setAttribute("value", "supprimer");
+    etat.setAttribute("style", "margin-bottom: 20px;");
     etat.setAttribute("id","content"+row);
     etat.setAttribute("class","submit-form-btn");
     etat.setAttribute("onClick", "deleterow("+ row +");");
