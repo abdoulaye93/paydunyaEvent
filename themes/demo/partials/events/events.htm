@@ -1,0 +1,28 @@
+{% if events|length%}
+<div class="row">
+   {% for item in events %}
+   <div class="col-lg-4 col-sm-6" >
+           <div class="single-ico-list-box">
+               <div class="thumb">
+               <a href="event/show/effective-communication-skills.html" target="_blank">
+               <img src=" {{item.image}}" alt="">                                       
+               </div>
+               <div class="content">
+                   <p style="margin:0px;clear:both;"></p>
+                   <h4 style="color:#10ac84;">{{ item.nom }}</h4>
+                   <p><strong><i class="fa fa-money" aria-hidden="true"></i> Prx: </strong>{{ item.montant }} FCFA</p>
+                   <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Date d'expiration: </strong>{{ item.periode.date_cloture }}</p>
+                   <a  href="{{ 'description_event'|page({ event_id: item.id }) }}"  class="boxed-btn-rounded">
+                   <i class="fa fa-caret-right"></i> <span class="title">Details</span></a>
+               </div>
+           </div>
+       </div>
+ {% endfor %}
+</div>
+
+
+{%else%}
+<div class="row" class="text-center">
+       <h3 class="">NO  TICKETS FOUND</h3>
+   </div>
+{%endif%}

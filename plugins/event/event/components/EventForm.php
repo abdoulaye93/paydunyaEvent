@@ -37,6 +37,7 @@ class EventForm extends ComponentBase
         $event->user_id=Input::get('user');
         $event->publier=false;
         $event->annule_demande=false;
+        $event->eventimage=Input::file('img');
         if(Input::get('gratuit')){
             $event->etat_event=true;
         }else{
@@ -52,6 +53,10 @@ class EventForm extends ComponentBase
        $list=new SubList();
         $sub->nom=Input::get("subnom".$nb);
         $sub->montant=Input::get('submontant'.$nb);
+        $sub->nbrplace=Input::get('subnbrplace'.$nb);
+        $sub->description=Input::get('subdescription'.$nb);
+        $sub->jour=Input::get('subjour'.$nb);
+        $sub->subimage=Input::file('img');
         $sub->save();
         $list->event_id=$event->id;
         $list->sub_id=$sub->id;
@@ -89,3 +94,6 @@ class EventForm extends ComponentBase
         $this->$subs=$par;
     }
 }
+
+
+

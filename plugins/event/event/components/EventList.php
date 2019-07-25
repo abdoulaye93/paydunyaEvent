@@ -32,12 +32,22 @@ class EventList extends ComponentBase
      
     }
     public function onRun(){
-     
+        $this->prepareVarsevnt();
     }
-    public function loadEvents(){
+    public function loadEvents(){   
         return Event::all();
     }
     public function loadEventsExpire(){
+        $eventexpire =Db::table('event_event_')
+        ->join('event_event_periode', function ($join) {
+            $join->on('event_event_.periode_id', '=', 'event_event_periode.id')
+                ->where('event_event_periode.date_cloture', '<', Carbon::now());
+        })
+        ->get();
+      
+        return $eventexpire;
+    }
+    public function loadEventsActive(){
         $eventexpire =Db::table('event_event_')
         ->join('event_event_periode', function ($join) {
             $join->on('event_event_.periode_id', '=', 'event_event_periode.id')
@@ -46,13 +56,20 @@ class EventList extends ComponentBase
         ->get();
         return $eventexpire;
     }
-    public function loadEventsActive(){
-        $eventexpire =Db::table('event_event_')
-        ->join('event_event_periode', function ($join) {
-            $join->on('event_event_.periode_id', '=', 'event_event_periode.id')
-                ->where('event_event_periode.date_cloture', '<', Carbon::now());
-        })
-        ->get();
-        return $eventexpire;
-    }
+    function onStart(){$this->prepareVarsevnt();}
+function prepareVarsevnt(){
+  $option=post('Filter',[]);
+  $eventsactive=Db::table('event_event_')
+  ->join('event_event_periode', function ($join) {
+      $join->on('event_event_.periode_id', '=', 'event_event_periode.id')
+          ->where('event_event_periode.date_cloture', '<', Carbon::now());
+  })
+  ->get();
+  /*$this['eventexpire']=Db::table('event_event_')
+  ->join('event_event_periode', function ($join) {
+      $join->on('event_event_.periode_id', '=', 'event_event_periode.id')
+          ->where('event_event_periode.date_cloture', '<', Carbon::now());
+  })
+  ->get();*/
+}
 }

@@ -97,17 +97,15 @@ class __TwigTemplate_d3a1471e2ba392ed6fb43c1d705e1e02065752e6d5baa61069d8fef0115
      <link href=\"";
         // line 33
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/css/sweetalert.css");
-        echo "\" rel=\"stylesheet\">
-    <script type=\"text/javascript\" src=\"http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js\" charset=\"UTF-8\"></script><script src=\"";
-        // line 34
+        echo "\" rel=\"stylesheet\"><script src=\"";
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/js/sweetalert.js");
         echo "\"></script>
      <link href=\"";
-        // line 35
+        // line 34
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs");
         echo "\" rel=\"stylesheet\">
      <link href=\"";
-        // line 36
+        // line 35
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/themes/base-color.php?color=7d5fff");
         echo "\" rel=\"stylesheet\">
     <style media=\"screen\">
@@ -176,11 +174,11 @@ class __TwigTemplate_d3a1471e2ba392ed6fb43c1d705e1e02065752e6d5baa61069d8fef0115
     
        <header id=\"layout-header\">
             ";
-        // line 102
+        // line 101
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 103
+        // line 102
         echo "        </header>
 
     <!-- navbar area start -->
@@ -188,36 +186,36 @@ class __TwigTemplate_d3a1471e2ba392ed6fb43c1d705e1e02065752e6d5baa61069d8fef0115
         <!-- Content -->
         <section id=\"layout-content\">
             ";
-        // line 109
+        // line 108
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 110
+        // line 109
         echo "        </section>
 
         <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 114
+        // line 113
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 115
+        // line 114
         echo "        </footer>
 
         <!-- Scripts -->
         <script src=\"";
-        // line 118
+        // line 117
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
         <script src=\"";
-        // line 119
+        // line 118
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
         <script src=\"";
-        // line 120
+        // line 119
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script>
         ";
-        // line 121
+        // line 120
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="'. Request::getBasePath()
@@ -232,11 +230,11 @@ class __TwigTemplate_d3a1471e2ba392ed6fb43c1d705e1e02065752e6d5baa61069d8fef0115
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 122
+        // line 121
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 123
+        // line 122
         echo "        
 <script>
    function increaseAdView(adID) {
@@ -279,7 +277,13 @@ class __TwigTemplate_d3a1471e2ba392ed6fb43c1d705e1e02065752e6d5baa61069d8fef0115
     }
 
     function clacTotal(pp_price, p_no) {
-      totalPrice = pp_price * p_no;
+      var totalPrice = pp_price * p_no;
+      var sub = document.getElementsByClassName('sub')
+      for(var i = 0; i < sub.length; i++)
+      {
+        if(sub[i].checked)
+          totalPrice += parseInt(sub[i].value)
+      }
       document.getElementById('totalPriceInput').value = totalPrice;
       document.getElementById('pNoInput').value = p_no;
       document.getElementById('totalPrice').innerHTML = totalPrice;
@@ -287,7 +291,7 @@ class __TwigTemplate_d3a1471e2ba392ed6fb43c1d705e1e02065752e6d5baa61069d8fef0115
 
 
     \$(document).ready(function() {
-      clacTotal(2500, 3);
+      clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
     <script>
@@ -427,7 +431,7 @@ class __TwigTemplate_d3a1471e2ba392ed6fb43c1d705e1e02065752e6d5baa61069d8fef0115
 
     public function getDebugInfo()
     {
-        return array (  240 => 123,  236 => 122,  221 => 121,  217 => 120,  213 => 119,  209 => 118,  204 => 115,  200 => 114,  194 => 110,  192 => 109,  184 => 103,  180 => 102,  111 => 36,  107 => 35,  103 => 34,  99 => 33,  95 => 32,  90 => 30,  85 => 28,  80 => 26,  75 => 24,  70 => 22,  65 => 20,  60 => 18,  54 => 15,  49 => 13,  35 => 1,);
+        return array (  238 => 122,  234 => 121,  219 => 120,  215 => 119,  211 => 118,  207 => 117,  202 => 114,  198 => 113,  192 => 109,  190 => 108,  182 => 102,  178 => 101,  109 => 35,  105 => 34,  99 => 33,  95 => 32,  90 => 30,  85 => 28,  80 => 26,  75 => 24,  70 => 22,  65 => 20,  60 => 18,  54 => 15,  49 => 13,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -464,8 +468,7 @@ class __TwigTemplate_d3a1471e2ba392ed6fb43c1d705e1e02065752e6d5baa61069d8fef0115
     <link href=\"{{ 'assets/user/css/style.css'|theme }}\" rel=\"stylesheet\">
     <!-- responsive -->
     <link href=\"{{ 'assets/user/css/responsive.css'|theme }}\" rel=\"stylesheet\">
-     <link href=\"{{ 'assets/admin/css/sweetalert.css'|theme }}\" rel=\"stylesheet\">
-    <script type=\"text/javascript\" src=\"http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js\" charset=\"UTF-8\"></script><script src=\"{{ 'assets/admin/js/sweetalert.js'|theme }}\"></script>
+     <link href=\"{{ 'assets/admin/css/sweetalert.css'|theme }}\" rel=\"stylesheet\"><script src=\"{{ 'assets/admin/js/sweetalert.js'|theme }}\"></script>
      <link href=\"{{ 'assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs'|theme }}\" rel=\"stylesheet\">
      <link href=\"{{ 'assets/user/css/themes/base-color.php?color=7d5fff'|theme }}\" rel=\"stylesheet\">
     <style media=\"screen\">
@@ -596,7 +599,13 @@ class __TwigTemplate_d3a1471e2ba392ed6fb43c1d705e1e02065752e6d5baa61069d8fef0115
     }
 
     function clacTotal(pp_price, p_no) {
-      totalPrice = pp_price * p_no;
+      var totalPrice = pp_price * p_no;
+      var sub = document.getElementsByClassName('sub')
+      for(var i = 0; i < sub.length; i++)
+      {
+        if(sub[i].checked)
+          totalPrice += parseInt(sub[i].value)
+      }
       document.getElementById('totalPriceInput').value = totalPrice;
       document.getElementById('pNoInput').value = p_no;
       document.getElementById('totalPrice').innerHTML = totalPrice;
@@ -604,7 +613,7 @@ class __TwigTemplate_d3a1471e2ba392ed6fb43c1d705e1e02065752e6d5baa61069d8fef0115
 
 
     \$(document).ready(function() {
-      clacTotal(2500, 3);
+      clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
     <script>

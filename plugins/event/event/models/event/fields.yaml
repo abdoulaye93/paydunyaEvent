@@ -53,3 +53,15 @@ tabs:
             span: auto
             type: text
             tab: 'Tab 1'
+        eventimage:
+            label: Image
+            span: auto
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            imageHeight: '100'
+            imageWidth: '100'
+            type: fileupload
+            tab: 'Tab 1'

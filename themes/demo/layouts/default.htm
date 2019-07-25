@@ -7,6 +7,19 @@ forceSecure = 0
 [session]
 security = "all"
 ==
+<?
+use Carbon\Carbon;
+use event\event\models\Event;
+function onStart(){$this->prepareVars();}
+function onFilterEvents() { $this->prepareVars(); }
+function prepareVars(){
+  $option=post('Filter',[]);
+  $this['events']=Event::ListFrontEnd($option);
+  $this['pages']=$this['events']->lastPage();
+  
+}
+?>
+==
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,8 +54,7 @@ security = "all"
     <link href="{{ 'assets/user/css/style.css'|theme }}" rel="stylesheet">
     <!-- responsive -->
     <link href="{{ 'assets/user/css/responsive.css'|theme }}" rel="stylesheet">
-     <link href="{{ 'assets/admin/css/sweetalert.css'|theme }}" rel="stylesheet">
-    <script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" charset="UTF-8"></script><script src="{{ 'assets/admin/js/sweetalert.js'|theme }}"></script>
+     <link href="{{ 'assets/admin/css/sweetalert.css'|theme }}" rel="stylesheet"><script src="{{ 'assets/admin/js/sweetalert.js'|theme }}"></script>
      <link href="{{ 'assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs'|theme }}" rel="stylesheet">
      <link href="{{ 'assets/user/css/themes/base-color.php?color=7d5fff'|theme }}" rel="stylesheet">
     <style media="screen">
@@ -119,7 +131,7 @@ security = "all"
         <section id="layout-content">
             {% page %}
         </section>
-
+       
         <!-- Footer -->
         <footer id="layout-footer">
             {% partial 'site/footer' %}
@@ -133,6 +145,14 @@ security = "all"
         {% scripts %}
         
 <script>
+  (function($){
+
+$('#EventFilter').on('change', 'input, select', function(){
+    var $form = $(this).closest('form');
+    $form.request();
+});
+
+})(jQuery);
    function increaseAdView(adID) {
       var fd = new FormData();
       fd.append('adID', adID);
@@ -174,14 +194,13 @@ security = "all"
 
     function clacTotal(pp_price, p_no) {
       totalPrice = pp_price * p_no;
-      document.getElementById('totalPriceInput').value = totalPrice;
+      document.getElementById('totalPriceInput').value = pp_price;
       document.getElementById('pNoInput').value = p_no;
       document.getElementById('totalPrice').innerHTML = totalPrice;
     }
 
-
     $(document).ready(function() {
-      clacTotal(2500, 3);
+      clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
     <script>

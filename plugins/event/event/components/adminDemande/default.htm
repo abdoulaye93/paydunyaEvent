@@ -17,21 +17,22 @@
                                                     <a href="http://lab.thesoftking.com/eticket/event/show/papa">{{item.event.nom}}</a>
                                                 </td>
                                                 <td data-label="action">
-                                                <form data-request="onSave">
-                                                        <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{ 'manage_event_view'|page({event_id:item.event_id}) }}" class="action-btn">View</a>
+                                                <form data-request="onSup">
+                                                        <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{'manage_event_view'|page({event_id:item.event_id})}}" class="action-btn">View</a>
                                                         <input type="hidden" name="supprimer" value="{{item.event_id}}"> 
                                                         <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>                                               
                                                 </form>                 
                                               </td>                      
                                             </tr>
                                         </tbody>
-                                      </table>                         
+                                      </table>                        
                                     {% endfor%}
+                                    <div class="text-center">
+                                            <a target="_blank" class="btn btn-primary" href="#">Show More</a>
+                                        </div> 
                                 {%else%}
-                                    <h3>NO EVENT FOUND</h3>
+                                    <h3>NO demande</h3>
                                 {%endif%}
                             </div>
-                                <div class="text-center">
-                                    <a target="_blank" class="btn btn-primary" href="all-featured-tickets.html">Show More</a>
-                                </div>
+                                
                          </div>

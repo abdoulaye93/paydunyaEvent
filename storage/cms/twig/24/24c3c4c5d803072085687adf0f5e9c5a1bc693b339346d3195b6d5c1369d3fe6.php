@@ -61,7 +61,7 @@ class __TwigTemplate_d010a21bfa769cae0ce56c5fdcebdb3e31faa9af01761a412fe1868178e
                 echo "</a>
                                                 </td>
                                                 <td data-label=\"action\">
-                                                <form data-request=\"onSave\">
+                                                <form data-request=\"onSup\">
                                                         <a class=\"btn btn-primary btn-sm\" class=\"btn btn-warning\" href=\"";
                 // line 21
                 echo $this->extensions['Cms\Twig\Extension']->pageFilter("manage_event_view", ["event_id" => twig_get_attribute($this->env, $this->source, $context["item"], "event_id", [], "any", false, false, false, 21)]);
@@ -75,24 +75,25 @@ class __TwigTemplate_d010a21bfa769cae0ce56c5fdcebdb3e31faa9af01761a412fe1868178e
                                               </td>                      
                                             </tr>
                                         </tbody>
-                                      </table>                         
+                                      </table>                        
                                     ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 30
-            echo "                                ";
+            echo "                                    <div class=\"text-center\">
+                                            <a target=\"_blank\" class=\"btn btn-primary\" href=\"#\">Show More</a>
+                                        </div> 
+                                ";
         } else {
-            // line 31
-            echo "                                    <h3>NO EVENT FOUND</h3>
+            // line 34
+            echo "                                    <h3>NO demande</h3>
                                 ";
         }
-        // line 33
+        // line 36
         echo "                            </div>
-                                <div class=\"text-center\">
-                                    <a target=\"_blank\" class=\"btn btn-primary\" href=\"all-featured-tickets.html\">Show More</a>
-                                </div>
+                                
                          </div>";
     }
 
@@ -108,7 +109,7 @@ class __TwigTemplate_d010a21bfa769cae0ce56c5fdcebdb3e31faa9af01761a412fe1868178e
 
     public function getDebugInfo()
     {
-        return array (  92 => 33,  88 => 31,  85 => 30,  71 => 22,  67 => 21,  60 => 17,  44 => 7,  42 => 6,  35 => 1,);
+        return array (  95 => 36,  91 => 34,  85 => 30,  71 => 22,  67 => 21,  60 => 17,  44 => 7,  42 => 6,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -132,23 +133,24 @@ class __TwigTemplate_d010a21bfa769cae0ce56c5fdcebdb3e31faa9af01761a412fe1868178e
                                                     <a href=\"http://lab.thesoftking.com/eticket/event/show/papa\">{{item.event.nom}}</a>
                                                 </td>
                                                 <td data-label=\"action\">
-                                                <form data-request=\"onSave\">
-                                                        <a class=\"btn btn-primary btn-sm\" class=\"btn btn-warning\" href=\"{{ 'manage_event_view'|page({event_id:item.event_id}) }}\" class=\"action-btn\">View</a>
+                                                <form data-request=\"onSup\">
+                                                        <a class=\"btn btn-primary btn-sm\" class=\"btn btn-warning\" href=\"{{'manage_event_view'|page({event_id:item.event_id})}}\" class=\"action-btn\">View</a>
                                                         <input type=\"hidden\" name=\"supprimer\" value=\"{{item.event_id}}\"> 
                                                         <button type=\"submit\" class=\"btn btn-danger btn-sm\">Supprimer</button>                                               
                                                 </form>                 
                                               </td>                      
                                             </tr>
                                         </tbody>
-                                      </table>                         
+                                      </table>                        
                                     {% endfor%}
+                                    <div class=\"text-center\">
+                                            <a target=\"_blank\" class=\"btn btn-primary\" href=\"#\">Show More</a>
+                                        </div> 
                                 {%else%}
-                                    <h3>NO EVENT FOUND</h3>
+                                    <h3>NO demande</h3>
                                 {%endif%}
                             </div>
-                                <div class=\"text-center\">
-                                    <a target=\"_blank\" class=\"btn btn-primary\" href=\"all-featured-tickets.html\">Show More</a>
-                                </div>
+                                
                          </div>", "C:\\wamp64\\www\\install-master/plugins/event/event/components/admindemande/default.htm", "");
     }
 }

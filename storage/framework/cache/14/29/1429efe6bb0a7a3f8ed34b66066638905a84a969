@@ -1,5 +1,6 @@
-1563880481a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:10625:"[session]
+1564098019a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:10711:"[session]
 security = "all"
+
 ==
 <!DOCTYPE html>
 <html>
@@ -33,8 +34,7 @@ security = "all"
     <link href="{{ 'assets/user/css/style.css'|theme }}" rel="stylesheet">
     <!-- responsive -->
     <link href="{{ 'assets/user/css/responsive.css'|theme }}" rel="stylesheet">
-     <link href="{{ 'assets/admin/css/sweetalert.css'|theme }}" rel="stylesheet">
-    <script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" charset="UTF-8"></script><script src="{{ 'assets/admin/js/sweetalert.js'|theme }}"></script>
+     <link href="{{ 'assets/admin/css/sweetalert.css'|theme }}" rel="stylesheet"><script src="{{ 'assets/admin/js/sweetalert.js'|theme }}"></script>
      <link href="{{ 'assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs'|theme }}" rel="stylesheet">
      <link href="{{ 'assets/user/css/themes/base-color.php?color=7d5fff'|theme }}" rel="stylesheet">
     <style media="screen">
@@ -165,7 +165,13 @@ security = "all"
     }
 
     function clacTotal(pp_price, p_no) {
-      totalPrice = pp_price * p_no;
+      var totalPrice = pp_price * p_no;
+      var sub = document.getElementsByClassName('sub')
+      for(var i = 0; i < sub.length; i++)
+      {
+        if(sub[i].checked)
+          totalPrice += parseInt(sub[i].value)
+      }
       document.getElementById('totalPriceInput').value = totalPrice;
       document.getElementById('pNoInput').value = p_no;
       document.getElementById('totalPrice').innerHTML = totalPrice;
@@ -173,7 +179,7 @@ security = "all"
 
 
     $(document).ready(function() {
-      clacTotal(2500, 3);
+      clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
     <script>
@@ -298,7 +304,7 @@ security = "all"
     </script>
 
     </body>
-</html>";s:5:"mtime";i:1563355696;s:6:"markup";s:10592:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1563966484;s:6:"markup";s:10676:"<!DOCTYPE html>
 <html>
     <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -330,8 +336,7 @@ security = "all"
     <link href="{{ 'assets/user/css/style.css'|theme }}" rel="stylesheet">
     <!-- responsive -->
     <link href="{{ 'assets/user/css/responsive.css'|theme }}" rel="stylesheet">
-     <link href="{{ 'assets/admin/css/sweetalert.css'|theme }}" rel="stylesheet">
-    <script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" charset="UTF-8"></script><script src="{{ 'assets/admin/js/sweetalert.js'|theme }}"></script>
+     <link href="{{ 'assets/admin/css/sweetalert.css'|theme }}" rel="stylesheet"><script src="{{ 'assets/admin/js/sweetalert.js'|theme }}"></script>
      <link href="{{ 'assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs'|theme }}" rel="stylesheet">
      <link href="{{ 'assets/user/css/themes/base-color.php?color=7d5fff'|theme }}" rel="stylesheet">
     <style media="screen">
@@ -462,7 +467,13 @@ security = "all"
     }
 
     function clacTotal(pp_price, p_no) {
-      totalPrice = pp_price * p_no;
+      var totalPrice = pp_price * p_no;
+      var sub = document.getElementsByClassName('sub')
+      for(var i = 0; i < sub.length; i++)
+      {
+        if(sub[i].checked)
+          totalPrice += parseInt(sub[i].value)
+      }
       document.getElementById('totalPriceInput').value = totalPrice;
       document.getElementById('pNoInput').value = p_no;
       document.getElementById('totalPrice').innerHTML = totalPrice;
@@ -470,7 +481,7 @@ security = "all"
 
 
     $(document).ready(function() {
-      clacTotal(2500, 3);
+      clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
     <script>

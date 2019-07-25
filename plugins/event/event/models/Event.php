@@ -45,4 +45,28 @@ class Event extends Model
      */
     public $rules = [
     ];
+    public function scopeListFrontEnd($query,$option = []){
+            extract(array_merge([
+                'page'=>1,
+                'perPage'=>3,
+                'sort'=>'created_at_desc'
+            ],$option));
+            $lastPage = $query->paginate($perPage, $page)->lastPage();
+
+            if($lastPage < $page){
+                $page = 1;
+            }
+            return $query->paginate($perPage,$page);
+    }
+    public $attachOne = [
+        'eventimage'=>'System\Models\File'
+    ];
+    public function getImageAttribute()
+{
+    $project = Event::find($this->id);
+    return $project->eventimage->getPath();
+}
+
+
+
 }

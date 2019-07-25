@@ -20,6 +20,9 @@ class Sub extends Model
             'table'=> 'event_event_sub_event'
         ]
     ];
+    public $attachOne = [
+        'subimage'=>'System\Models\File'
+    ];
 
     /**
      * @var string The database table used by the model.

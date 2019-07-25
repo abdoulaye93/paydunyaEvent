@@ -7,7 +7,7 @@
           </div>
           <div class="card-body">
             <div class="col-md-12">
-                <form class="contact-from-wrapper" data-request="onSave">
+                <form class="contact-from-wrapper" data-request="onSave" data-request-files data-request-flash>
                         {% if user %}
                         <input type="hidden" name="user" value=" {{ user.id }}">
                     {% else %}
@@ -18,6 +18,21 @@
                         </label>
                         <input type="text" name="nom" value="" placeholder="Enter Title..." class="input-field-square">
                     </div>
+                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail">
+                                <img src="" alt="" />
+                            </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail" style="width: 250px;"> </div>
+                            <p><strong>[images will be resized to 730X440]</strong></p>
+                            <div>
+                                <span class="btn btn-success btn-file">
+                                    <span class="fileinput-new"> Choose Display Image </span>
+                                    <span class="fileinput-exists"> Change </span>
+                                    <input type="file" name="img">
+                                </span>
+                                <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                            </div>
+                                                    </div>
                      <div class="form-element square">
                         <label>Lieu
                             <span>**</span>
@@ -72,23 +87,95 @@
                             </label>
                             <input type="number" name="nbrticket" value="" placeholder="Enter minimum number of persons..." class="input-field-square">
                         </div>
-                      </div>
-                    </div class="row justify-content-center">
-                        <div class="col-md-4">
+                      </div>                                                
+                        <div class="col-md-12">
+                        <div class="row">
+                                <div class="col-md-8">
+                                        <div class="form-element square">
+                                            <label>type de ticket
+                                            </label>
+                                            <input type="text" name="nbrticket" value="" placeholder="Entrer le nom du type..." class="input-field-square">
+                                        </div>
+                                      </div> 
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                    <div class="form-element square">
+                                    <label>
+                                        Ajouter un sous évènement
+                                     </label>
+                                     </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                    <div class="form-element square">
+                                            <label>Nom
+                                            </label>
+                                            <input type="text"  value="" placeholder="Nom" class="input-field-square"  id='inputTask'>
+                                        </div>
+                            </div>
+                            <div class="col-md-4">
+                                    <div class="form-element square">
+                                            <label>Montant
+                                            </label>
+                                            <input type="text"  value="" placeholder="Nom" class="input-field-square"  id='inputTask1'>
+                                        </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                                <div class="col-md-4">
+                                        <div class="form-element square">
+                                                <label>Nombre de place
+                                                </label>
+                                                <input type="number"  value="" placeholder="Nom" class="input-field-square" id='inputTask2'>
+                                            </div>
+                                </div>
+                                <div class="col-md-4">
+                                        <div class="form-element square">
+                                                <label>Jour
+                                                </label>
+                                                <input type="date"  value="" placeholder="Nom" class="input-field-square" id='inputTask3'>
+                                            </div>
+                                </div>
+                        </div>
+                                <div class="row">
+                                        <div class="col-md-4">
+                                                <div class="form-element square">
+                                                        <label>Description
+                                                        </label>
+                                                        <textarea  name="description" rows="8" cols="50" class="input-field-square" id='inputTask4'></textarea>
+                                                    </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                                <div class="form-element square" data-provides="fileinput">
+                                                        <div class="fileinput-new thumbnail">
+                                                            <img src="" alt="" />
+                                                        </div>
+                                                        <div class="fileinput-preview fileinput-exists thumbnail" style="width: 250px;"> </div>
+                                                        <p><strong>[images will be resized to 730X440]</strong></p>
+                                                        <div>
+                                                            <span class="btn btn-success btn-file">
+                                                                <span class="fileinput-new"> Choose Display Image </span>
+                                                                <span class="fileinput-exists"> Change </span>
+                                                                <input type="file" name="subimg" id='inputTask5'>
+                                                            </span>
+                                                            <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                                        </div>
+                                                                                </div>
+                                        </div>
+                                </div>
                             <div class="form-element square">
-                                <label>
-                                    Ajouter un sous évènement
-                                </label>
-                                <input type='text' id='inputTask' placeholder=" Entrer le nom  "   class="input-field-square"/>
-                                <input type='text' id='inputTask1' placeholder=" Montant"   class="input-field-square"/>
                                 <input type='button' onclick='addText()' value='Ajoutez'  class="submit-form-btn"
                                 style="margin-bottom: 20px;"/>
+                                <a href="{{ 'ticket'|page}}" onclick="edition();return false;">Edition</a>
                             </div>
                         </div>
                         <div id="addTask" class="col-md-4">
     	
                         </div>
-                    <div>
+                    
                     </div>
                     <div class="form-element square">
                         <label>
@@ -173,8 +260,10 @@
         </div><!-- /#loginmodal -->
     </div><!-- login modal warapper satart end-->
 </div>
+
 <script>
-    var row = 0;
+    function edition() { options = "Width=700,Height=700" ; window.open( "{{ 'ticket'|page}}", "edition", options ) ; }
+     var row = 1;
 function nbsub(){
     var nb=document.createElement("div");
     document.getElementById('addTask').appendChild(nb);
@@ -187,7 +276,11 @@ function nbsub(){
 function addText(){
     var input = document.getElementById('inputTask').value;
     var input1 = document.getElementById('inputTask1').value;
-    if(input != "" && input1 != "")
+    var input2 = document.getElementById('inputTask2').value;
+    var input3 = document.getElementById('inputTask3').value;
+    var input4 = document.getElementById('inputTask4').value;
+    var input5 = document.getElementById('inputTask5').value;
+    if(input != "" && input1 != ""&&input2!=""&&input3!=""&&input4!="")
     {
     var nodenom=document.createElement("div");
     nodenom.setAttribute('id', 'contentP'+row);
@@ -198,15 +291,37 @@ function addText(){
     nom.setAttribute("value", input);
     nom.setAttribute("name","subnom"+row);
     nom.setAttribute("class","input-field-square");
-    nom.setAttribute("onClick", "deleterow("+ row +");");
     nodenom.appendChild(nom);
     var montant = document.createElement('input');
     montant.setAttribute('type', 'text');
     montant.setAttribute("value", input1);
     montant.setAttribute("class","input-field-square");
     montant.setAttribute("name","submontant"+row);
-    montant.setAttribute("onClick", "deleterow("+ row +");");
     nodenom.appendChild(montant);
+    var nbrplace = document.createElement('input');
+    nbrplace.setAttribute('type', 'number');
+    nbrplace.setAttribute("value", input2);
+    nbrplace.setAttribute("class","input-field-square");
+    nbrplace.setAttribute("name","subnbrplace"+row);
+    nodenom.appendChild(nbrplace);
+    var jour = document.createElement('input');
+    jour.setAttribute('type', 'date');
+    jour.setAttribute("value", input3);
+    jour.setAttribute("class","input-field-square");
+    jour.setAttribute("name","subjour"+row);
+    nodenom.appendChild(jour);
+    var description = document.createElement('textarea');
+    //description.setAttribute("value", input4);
+    description.value=input4;
+    description.setAttribute("class","input-field-square");
+    description.setAttribute("name","subdescription"+row);
+    nodenom.appendChild(description);
+    var image = document.createElement('input');
+    image.setAttribute('type', 'file');
+    image.setAttribute("value", input5);
+    image.setAttribute("class","input-field-square");
+    image.setAttribute("name","subjour"+row);
+    nodenom.appendChild(image);
     var etat = document.createElement('input');
     etat.setAttribute('type', 'button');
     etat.setAttribute("value", "supprimer");

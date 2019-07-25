@@ -31,35 +31,14 @@ class AdminDemande extends ComponentBase
      
     }
     public function loadEvents(){     
-       // $b=Request::segment(2);
-        $evenon = DemandeAnnullationEvent::all();
-        return $evenon;
+        return DemandeAnnullationEvent::all();
     }
-    public function loadpulichEvent(){
-        $b=Request::segment(2);
-        $evenon = Event::where('user_id',$b)->get();
-        return $evenon;
-    }
-    public function onSave(){
+    public function onSup(){
         $b=Input::get('supprimer');
         Db::table('event_event_')->where('id',$b)->delete();
+        Db::table('demande_demande_demande_annulation_event')->where('event_id',$b)->delete();
         return Redirect::back();
     }
-    public function onActive(){
-        $b=Input::get('activer');
-        $pub=Input::get('pub');
-        if($pub==true){
-            $event=Db::table('event_event_')
-            ->where('id', $b)
-            ->update(['publier' => false]);
-        }else{
-            $event=Db::table('event_event_')
-            ->where('id', $b)
-            ->update(['publier' => true]);
-        }
-       
-      //  Db::table('event_event_')->where('id',$b)->delete();
-        return Redirect::back();
-    }
+    
    
 }

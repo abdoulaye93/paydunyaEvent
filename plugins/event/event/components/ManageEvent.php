@@ -74,7 +74,7 @@ class ManageEvent extends ComponentBase
         $email=Input::get('email');
        // dd($email);
         $user = Db::table('users')->where('email', Input::get('email'))->first();
-        if($email==$user->email){
+        if($user){
             $accesEven=new AccessEvent();
             $accesEven->user_id=$user->id;
             $accesEven->event_id=$event_id;
@@ -90,7 +90,7 @@ class ManageEvent extends ComponentBase
             return Redirect::back();
 
         }else{
-            return Redirect::to('user/login');
+            return Redirect::to('/email_not_found');
         }
        
     }

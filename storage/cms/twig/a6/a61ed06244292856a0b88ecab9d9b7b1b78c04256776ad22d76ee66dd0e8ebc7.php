@@ -56,9 +56,6 @@ class __TwigTemplate_32a5d57158d88c26769d7e7c849fbf06a897d680564e59d0f3ac2596892
                                     <div class=\"tab-navbar\">
                                         <ul class=\"nav nav-tabs\">
                                             <li class=\"nav-item\">
-                                                <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#active_tab\">Featured</a>
-                                            </li>
-                                            <li class=\"nav-item\">
                                                 <a class=\"nav-link\" data-toggle=\"tab\" href=\"#upcoming_tab\">Active</a>
                                             </li>
                                             <li class=\"nav-item\">
@@ -75,178 +72,56 @@ class __TwigTemplate_32a5d57158d88c26769d7e7c849fbf06a897d680564e59d0f3ac2596892
             <div class=\"row\">
                 <div class=\"col-lg-12 remove-col-padding\">
                     <div class=\"tab-content\">
-                        <div class=\"tab-pane container active\" id=\"active_tab\">
-                            ";
+                          
+                        <div class=\"tab-pane container active\" id=\"upcoming_tab\">
+                           
+                                ";
+        // line 44
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("events/events"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
         // line 45
-        if (twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadEvents", [], "method", false, false, false, 45)) {
-            // line 46
-            echo "                                 <div class=\"row\">
-                                    ";
-            // line 47
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadEvents", [], "method", false, false, false, 47));
-            foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-                // line 48
-                echo "                                    <div class=\"col-lg-4 col-sm-6\">
-                                            <div class=\"single-ico-list-box\">
-                                                <div class=\"thumb\">
-                                                <a href=\"event/show/effective-communication-skills.html\" target=\"_blank\">
-                                                <img src=\"http://lab.thesoftking.com/eticket/assets/user/img/ticket/1532784219.jpg\" alt=\"\">                                       
-                                                </div>
-                                                <div class=\"content\">
-                                                    <p style=\"margin:0px;clear:both;\"></p>
-                                                    <h4 style=\"color:#10ac84;\">";
-                // line 56
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", [], "any", false, false, false, 56), "html", null, true);
-                echo "</h4>
-                                                    <p><strong><i class=\"fa fa-money\" aria-hidden=\"true\"></i> Prx: </strong>";
-                // line 57
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant", [], "any", false, false, false, 57), "html", null, true);
-                echo " FCFA</p>
-                                                    <p><strong><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i> Date d'expiration: </strong>";
-                // line 58
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "periode", [], "any", false, false, false, 58), "date_cloture", [], "any", false, false, false, 58), "html", null, true);
-                echo "</p>
-                                                    <a  href=\"";
-                // line 59
-                echo $this->extensions['Cms\Twig\Extension']->pageFilter("description_event", ["event_id" => twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 59)]);
-                echo "\"  class=\"boxed-btn-rounded\">
-                                                    <i class=\"fa fa-caret-right\"></i> <span class=\"title\">Details</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                  ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 65
-            echo "                                 </div>
-                                 <div class=\"text-center\">
-                                    <a target=\"_blank\" class=\"btn btn-primary\" href=\"all-featured-tickets.html\">Show More</a>
-                                </div>
-                                ";
-        } else {
-            // line 70
-            echo "                                <div class=\"row\" style=\"text-align:center;display:block;\">
-                                        <h3 class=\"\">NO  TICKETS FOUND</h3>
-                                    </div>
-                                ";
-        }
-        // line 74
         echo "                        </div>
-                        <div class=\"tab-pane container fade\" id=\"upcoming_tab\">
-                            ";
-        // line 76
-        if (twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadEventsActive", [], "method", false, false, false, 76)) {
-            // line 77
-            echo "                                 <div class=\"row\">
-                                    ";
-            // line 78
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadEventsActive", [], "method", false, false, false, 78));
-            foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-                // line 79
-                echo "                                    <div class=\"col-lg-4 col-sm-6\">
-                                            <div class=\"single-ico-list-box\">
-                                                <div class=\"thumb\">
-                                                <a href=\"event/show/effective-communication-skills.html\" target=\"_blank\">
-                                                <img src=\"http://lab.thesoftking.com/eticket/assets/user/img/ticket/1532784219.jpg\" alt=\"\">                                       
-                                                </div>
-                                                <div class=\"content\">
-                                                    <p style=\"margin:0px;clear:both;\"></p>
-                                                    <h4 style=\"color:#10ac84;\">";
-                // line 87
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", [], "any", false, false, false, 87), "html", null, true);
-                echo "</h4>
-                                                    <p><strong><i class=\"fa fa-money\" aria-hidden=\"true\"></i> Prx: </strong>";
-                // line 88
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant", [], "any", false, false, false, 88), "html", null, true);
-                echo " FCFA</p>
-                                                    <a  href=\"";
-                // line 89
-                echo $this->extensions['Cms\Twig\Extension']->pageFilter("description_event", ["event_id" => twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 89)]);
-                echo "\"  class=\"boxed-btn-rounded\">
-                                                    <i class=\"fa fa-caret-right\"></i> <span class=\"title\">Details</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                  ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 95
-            echo "                                </div>
-                                <div class=\"text-center\">
-                                    <a target=\"_blank\" class=\"btn btn-primary\" href=\"all-featured-tickets.html\">Show More</a>
-                                </div>
-                                ";
-        } else {
-            // line 100
-            echo "                                <div class=\"row\" style=\"text-align:center;display:block;\">
-                                        <h3 class=\"\">NO active TICKETS FOUND</h3>
-                                    </div>
-                                ";
-        }
-        // line 104
-        echo "                          </div>
+                       
+                       
                         <div class=\"tab-pane container fade\" id=\"ending_tab\"><!-- ending tab start -->
                             ";
-        // line 106
-        if (twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadEventsExpire", [], "method", false, false, false, 106)) {
-            // line 107
-            echo "                                 <div class=\"row\">
-                                   ";
-            // line 108
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadEventsExpire", [], "method", false, false, false, 108));
-            foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-                // line 109
-                echo "                                    <div class=\"col-lg-4 col-sm-6\">
-                                            <div class=\"single-ico-list-box\">
-                                                <div class=\"thumb\">
-                                                <a href=\"event/show/effective-communication-skills.html\" target=\"_blank\">
-                                                <img src=\"http://lab.thesoftking.com/eticket/assets/user/img/ticket/1532784219.jpg\" alt=\"\">                                       
-                                                </div>
-                                                <div class=\"content\">
-                                                    <p style=\"margin:0px;clear:both;\"></p>
-                                                    <h4 style=\"color:#10ac84;\">";
-                // line 117
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", [], "any", false, false, false, 117), "html", null, true);
-                echo "</h4>
-                                                    <p><strong><i class=\"fa fa-money\" aria-hidden=\"true\"></i> Prx: </strong>";
-                // line 118
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant", [], "any", false, false, false, 118), "html", null, true);
-                echo " FCFA</p>
-                                                    <a  href=\"";
-                // line 119
-                echo $this->extensions['Cms\Twig\Extension']->pageFilter("description_event", ["event_id" => twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 119)]);
-                echo "\"  class=\"boxed-btn-rounded\">
-                                                    <i class=\"fa fa-caret-right\"></i> <span class=\"title\">Details</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                  ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 125
-            echo "                                </div>
-                                <div class=\"text-center\">
-                                    <a target=\"_blank\" class=\"btn btn-primary\" href=\"all-featured-tickets.html\">Show More</a>
-                                </div>
-                                ";
-        } else {
-            // line 130
-            echo "                                <div class=\"row\" style=\"text-align:center;display:block;\">
-                                        <h3 class=\"\">NO EXPIRED TICKETS FOUND</h3>
-                                 </div>
-                                ";
-        }
-        // line 134
+        // line 49
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("events/eventexpire"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        // line 50
         echo "                        </div>
+                        ";
+        // line 51
+        echo call_user_func_array($this->env->getFunction('form_ajax')->getCallable(), ["ajax", "onFilterEvents", ["update" => ["events/events" => "#upcoming_tab", "events/eventexpire" => "#ending_tab"]]]);
+        echo "
+                        <div id=\"EventFilter\" class=\"text-center\">
+                                <label>page</label>
+                                <select name=\"Filter[page]\">
+                                  ";
+        // line 55
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(range(1, ($context["pages"] ?? null)));
+        foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+            // line 56
+            echo "                                    <option value=\"";
+            echo twig_escape_filter($this->env, $context["i"], "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $context["i"], "html", null, true);
+            echo "</option>
+                                  ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 58
+        echo "                                </select>
+                              </div>
+                              ";
+        // line 60
+        echo call_user_func_array($this->env->getFunction('form_close')->getCallable(), ["close"]);
+        echo "
                     </div>
                 </div>
             </div>
@@ -269,67 +144,67 @@ class __TwigTemplate_32a5d57158d88c26769d7e7c849fbf06a897d680564e59d0f3ac2596892
                         <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
                             <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
                                ";
-        // line 156
+        // line 82
         if ( !($context["user"] ?? null)) {
-            // line 157
+            // line 83
             echo "
                                     <div class=\"row\">
                                 
                                         <div class=\"col-md-6\">
                                             <h3 class=\"";
-            // line 161
-            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 161), "id", [], "any", false, false, false, 161) == "register")) {
+            // line 87
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 87), "id", [], "any", false, false, false, 87) == "register")) {
                 echo "active";
             }
             echo "\"><a href=\"";
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("register");
             echo "\">Créer un compte</a></h3>
                                             ";
-            // line 162
+            // line 88
             $context['__cms_partial_params'] = [];
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::signin")            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 163
+            // line 89
             echo "                                        </div>
                                 
                                     </div>
                                 
                                 ";
         } else {
-            // line 168
+            // line 94
             echo "                                
                                 ";
         }
-        // line 170
+        // line 96
         echo "                            </div><!-- login form wrapper end -->
                         </div>
                         <div class=\"tab-pane fade\" id=\"nav-signup\" role=\"tabpanel\" aria-labelledby=\"nav-signup-tab\">
 
                             <div class=\"singup-form-wrapper\">
                                 ";
-        // line 175
+        // line 101
         if ( !($context["user"] ?? null)) {
-            // line 176
+            // line 102
             echo "                                
                                     <div class=\"row\">
                                         <div class=\"col-md-6\">
                                             ";
-            // line 179
+            // line 105
             $context['__cms_partial_params'] = [];
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::register")            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 180
+            // line 106
             echo "                                        </div>
                                 
                                     </div>
                                 
                                 ";
         } else {
-            // line 185
+            // line 111
             echo "                                
                                 ";
         }
-        // line 187
+        // line 113
         echo "                             </div>
                         </div>
                     </div><!-- /.tab conent-->
@@ -365,7 +240,7 @@ class __TwigTemplate_32a5d57158d88c26769d7e7c849fbf06a897d680564e59d0f3ac2596892
 
     public function getDebugInfo()
     {
-        return array (  333 => 187,  329 => 185,  322 => 180,  318 => 179,  313 => 176,  311 => 175,  304 => 170,  300 => 168,  293 => 163,  289 => 162,  281 => 161,  275 => 157,  273 => 156,  249 => 134,  243 => 130,  236 => 125,  224 => 119,  220 => 118,  216 => 117,  206 => 109,  202 => 108,  199 => 107,  197 => 106,  193 => 104,  187 => 100,  180 => 95,  168 => 89,  164 => 88,  160 => 87,  150 => 79,  146 => 78,  143 => 77,  141 => 76,  137 => 74,  131 => 70,  124 => 65,  112 => 59,  108 => 58,  104 => 57,  100 => 56,  90 => 48,  86 => 47,  83 => 46,  81 => 45,  35 => 1,);
+        return array (  208 => 113,  204 => 111,  197 => 106,  193 => 105,  188 => 102,  186 => 101,  179 => 96,  175 => 94,  168 => 89,  164 => 88,  156 => 87,  150 => 83,  148 => 82,  123 => 60,  119 => 58,  108 => 56,  104 => 55,  97 => 51,  94 => 50,  90 => 49,  84 => 45,  80 => 44,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -394,9 +269,6 @@ class __TwigTemplate_32a5d57158d88c26769d7e7c849fbf06a897d680564e59d0f3ac2596892
                                     <div class=\"tab-navbar\">
                                         <ul class=\"nav nav-tabs\">
                                             <li class=\"nav-item\">
-                                                <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#active_tab\">Featured</a>
-                                            </li>
-                                            <li class=\"nav-item\">
                                                 <a class=\"nav-link\" data-toggle=\"tab\" href=\"#upcoming_tab\">Active</a>
                                             </li>
                                             <li class=\"nav-item\">
@@ -413,97 +285,26 @@ class __TwigTemplate_32a5d57158d88c26769d7e7c849fbf06a897d680564e59d0f3ac2596892
             <div class=\"row\">
                 <div class=\"col-lg-12 remove-col-padding\">
                     <div class=\"tab-content\">
-                        <div class=\"tab-pane container active\" id=\"active_tab\">
-                            {% if __SELF__.loadEvents()%}
-                                 <div class=\"row\">
-                                    {% for item in __SELF__.loadEvents() %}
-                                    <div class=\"col-lg-4 col-sm-6\">
-                                            <div class=\"single-ico-list-box\">
-                                                <div class=\"thumb\">
-                                                <a href=\"event/show/effective-communication-skills.html\" target=\"_blank\">
-                                                <img src=\"http://lab.thesoftking.com/eticket/assets/user/img/ticket/1532784219.jpg\" alt=\"\">                                       
-                                                </div>
-                                                <div class=\"content\">
-                                                    <p style=\"margin:0px;clear:both;\"></p>
-                                                    <h4 style=\"color:#10ac84;\">{{ item.nom }}</h4>
-                                                    <p><strong><i class=\"fa fa-money\" aria-hidden=\"true\"></i> Prx: </strong>{{ item.montant }} FCFA</p>
-                                                    <p><strong><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i> Date d'expiration: </strong>{{ item.periode.date_cloture }}</p>
-                                                    <a  href=\"{{ 'description_event'|page({ event_id: item.id }) }}\"  class=\"boxed-btn-rounded\">
-                                                    <i class=\"fa fa-caret-right\"></i> <span class=\"title\">Details</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                  {% endfor %}
-                                 </div>
-                                 <div class=\"text-center\">
-                                    <a target=\"_blank\" class=\"btn btn-primary\" href=\"all-featured-tickets.html\">Show More</a>
-                                </div>
-                                {%else%}
-                                <div class=\"row\" style=\"text-align:center;display:block;\">
-                                        <h3 class=\"\">NO  TICKETS FOUND</h3>
-                                    </div>
-                                {%endif%}
+                          
+                        <div class=\"tab-pane container active\" id=\"upcoming_tab\">
+                           
+                                {% partial 'events/events' %}
                         </div>
-                        <div class=\"tab-pane container fade\" id=\"upcoming_tab\">
-                            {% if __SELF__.loadEventsActive() %}
-                                 <div class=\"row\">
-                                    {% for item in __SELF__.loadEventsActive() %}
-                                    <div class=\"col-lg-4 col-sm-6\">
-                                            <div class=\"single-ico-list-box\">
-                                                <div class=\"thumb\">
-                                                <a href=\"event/show/effective-communication-skills.html\" target=\"_blank\">
-                                                <img src=\"http://lab.thesoftking.com/eticket/assets/user/img/ticket/1532784219.jpg\" alt=\"\">                                       
-                                                </div>
-                                                <div class=\"content\">
-                                                    <p style=\"margin:0px;clear:both;\"></p>
-                                                    <h4 style=\"color:#10ac84;\">{{ item.nom }}</h4>
-                                                    <p><strong><i class=\"fa fa-money\" aria-hidden=\"true\"></i> Prx: </strong>{{ item.montant }} FCFA</p>
-                                                    <a  href=\"{{ 'description_event'|page({ event_id: item.id }) }}\"  class=\"boxed-btn-rounded\">
-                                                    <i class=\"fa fa-caret-right\"></i> <span class=\"title\">Details</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                  {% endfor %}
-                                </div>
-                                <div class=\"text-center\">
-                                    <a target=\"_blank\" class=\"btn btn-primary\" href=\"all-featured-tickets.html\">Show More</a>
-                                </div>
-                                {%else%}
-                                <div class=\"row\" style=\"text-align:center;display:block;\">
-                                        <h3 class=\"\">NO active TICKETS FOUND</h3>
-                                    </div>
-                                {%endif%}
-                          </div>
+                       
+                       
                         <div class=\"tab-pane container fade\" id=\"ending_tab\"><!-- ending tab start -->
-                            {%if __SELF__.loadEventsExpire()%}
-                                 <div class=\"row\">
-                                   {% for item in __SELF__.loadEventsExpire() %}
-                                    <div class=\"col-lg-4 col-sm-6\">
-                                            <div class=\"single-ico-list-box\">
-                                                <div class=\"thumb\">
-                                                <a href=\"event/show/effective-communication-skills.html\" target=\"_blank\">
-                                                <img src=\"http://lab.thesoftking.com/eticket/assets/user/img/ticket/1532784219.jpg\" alt=\"\">                                       
-                                                </div>
-                                                <div class=\"content\">
-                                                    <p style=\"margin:0px;clear:both;\"></p>
-                                                    <h4 style=\"color:#10ac84;\">{{ item.nom }}</h4>
-                                                    <p><strong><i class=\"fa fa-money\" aria-hidden=\"true\"></i> Prx: </strong>{{ item.montant }} FCFA</p>
-                                                    <a  href=\"{{ 'description_event'|page({ event_id: item.id }) }}\"  class=\"boxed-btn-rounded\">
-                                                    <i class=\"fa fa-caret-right\"></i> <span class=\"title\">Details</span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                  {% endfor %}
-                                </div>
-                                <div class=\"text-center\">
-                                    <a target=\"_blank\" class=\"btn btn-primary\" href=\"all-featured-tickets.html\">Show More</a>
-                                </div>
-                                {%else%}
-                                <div class=\"row\" style=\"text-align:center;display:block;\">
-                                        <h3 class=\"\">NO EXPIRED TICKETS FOUND</h3>
-                                 </div>
-                                {%endif%}
+                            {% partial 'events/eventexpire' %}
                         </div>
+                        {{form_ajax('onFilterEvents',{update:{'events/events':'#upcoming_tab','events/eventexpire':'#ending_tab'}})}}
+                        <div id=\"EventFilter\" class=\"text-center\">
+                                <label>page</label>
+                                <select name=\"Filter[page]\">
+                                  {% for i in 1..pages%}
+                                    <option value=\"{{i}}\">{{i}}</option>
+                                  {% endfor %}
+                                </select>
+                              </div>
+                              {{form_close()}}
                     </div>
                 </div>
             </div>

@@ -79,14 +79,14 @@ class __TwigTemplate_08140807b7f2fddf9607b41577f9161666106a4665f065c982bbbcee001
         echo "\">Trouver un évènement</a>
                   </li>
                    <li class=\"nav-item \">
-                      <a class=\"nav-link\" href=\"http://lab.thesoftking.com/eticket/contact\" >Contactez nous</a>
+                      <a class=\"nav-link\" href=\"\">Contactez nous</a>
                    </li>
                  ";
         // line 30
         if (($context["user"] ?? null)) {
             // line 31
             echo "                      <li class=\"nav-item \">
-                      <a data-request=\"onLogout\" data-request-data=\"redirect: '/view_event'\" class=\"nav-link\">Sign out</a>
+                      <a data-request=\"onLogout\" data-request-data=\"redirect: '/'\" href=\"\" class=\"nav-link\">Sign out</a>
                          
                        </li>
                          <li class=\"nav-item dropdown active\">
@@ -150,7 +150,112 @@ class __TwigTemplate_08140807b7f2fddf9607b41577f9161666106a4665f065c982bbbcee001
         </div>
         <!-- navbar collapse end -->
     </div>
-</nav>";
+</nav>
+
+  <!-- login and register modal start-->
+    <div class=\"login-registration-modal\" id=\"loginRegModal\">
+        <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
+            <div class=\"modal\" tabindex=\"-1\" id=\"login-modal\" role=\"dialog\"><!-- #login modal-->
+                <div class=\"modal-dialog\" role=\"document\">
+                    <div class=\"modal-content\"><!-- modal content start -->
+                        <nav>
+                            <div class=\"nav nav-tabs login-modal-navigation\" id=\"nav-tab\" role=\"tablist\"><!-- login modal navigation start -->
+                                <a class=\"nav-item nav-link active\" id=\"nav-login-tab\" data-toggle=\"tab\" href=\"#nav-login\" role=\"tab\" aria-controls=\"nav-login\"
+                                    aria-selected=\"true\">Connexion</a>
+                                <a class=\"nav-item nav-link\" id=\"nav-signup-tab\" data-toggle=\"tab\" href=\"#nav-signup\" role=\"tab\" aria-controls=\"nav-signup\"
+                                    aria-selected=\"false\">Inscription</a>
+                            </div><!-- login modal navigation end -->
+                        </nav>
+                        <div class=\"tab-content\" id=\"nav-tabContent\"><!-- tab content-->
+                            <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
+                                <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
+                                    <form id=\"userLoginForm\" data-request=\"onSignin\" data-request-success=\"formSuccess(this, context, data, textStatus, jqXHR)\">
+                                        <input type=\"hidden\" name=\"_token\">
+                                        <div class=\"form-element square login\"><!-- form element login start -->
+                                            <label for=\"userSigninLogin\">Email
+                                                <span>**</span>
+                                            </label>
+                                            <input name=\"login\" id=\"userSigninLogin\" type=\"text\" placeholder=\"Votre adresse email...\" class=\"input-field-square\">
+                                            <p class=\"eml\"></p>
+                                        </div><!-- form element login end -->
+                                        <div class=\"form-element square login\"><!-- form element login start -->
+                                            <label for=\"userSigninPassword\">Mot de passe
+                                                <span>**</span>
+                                            </label>
+                                            <input name=\"password\" id=\"userSigninPassword\" type=\"password\" placeholder=\"Votre mot de passe....\" class=\"input-field-square\">
+                                            <p class=\"eml\"></p>
+                                        </div><!-- form element login end -->
+                                        <div class=\"\">
+                                          <a style=\"text-decoration: underline;\" href=\"\">Mot de passe oublié ?</a>
+                                          <p class=\"";
+        // line 108
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 108), "id", [], "any", false, false, false, 108) == "register")) {
+            echo "active";
+        }
+        echo "\" style=\"text-decoration: underline;\"><a href=\"";
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("register");
+        echo "\">Créer un compte</a>   </p>
+                                        </div>
+                                        <button type=\"submit\" class=\"submit-form-btn\">Se connecter</button>
+                                    </form>
+                                </div><!-- login form wrapper end -->
+                            </div>
+                            <div class=\"tab-pane fade\" id=\"nav-signup\" role=\"tabpanel\" aria-labelledby=\"nav-signup-tab\">
+    
+                                <div class=\"singup-form-wrapper\">
+                                    <form id=\"registerForm\" data-request=\"onRegister\">
+                                        <input type=\"hidden\" name=\"_token\" value=\"\">
+                                        <div class=\"form-element square login\">
+                                            <label for=\"\"registerName>Nom complet
+                                                <span>**</span>
+                                            </label>
+                                            <input name=\"name\" id=\"registerName\" type=\"text\" placeholder=\"Votre nom complet....\" class=\"input-field-square\">
+                                            <p class=\"emr\"></p>
+                                        </div>
+                                        <div class=\"form-element square login\">
+                                            <label for=\"registerEmail\">Adresse email
+                                                <span>**</span>
+                                            </label>
+                                            <input name=\"email\" id=\"registerEmail\" type=\"email\" placeholder=\"Votre adresse email....\" class=\"input-field-square\">
+                                            <p class=\"emr\"></p>
+                                        </div>
+                                        <div class=\"form-element square login\">
+                                            <label for=\"registerPassword\">Mot de passe
+                                                <span>**</span>
+                                            </label>
+                                            <input name=\"password\" id=\"registerPassword\" type=\"password\" placeholder=\"Votre mot de passe....\" class=\"input-field-square\">
+                                            <p class=\"emr\"></p>
+                                        </div>
+                                        <div class=\"form-element square login\">
+                                            <label>Confirmer mot de passe
+                                                <span>**</span>
+                                            </label>
+                                            <input name=\"password_confirmation\" id=\"registerPasswordConfirmation\" type=\"password\" placeholder=\"Confirmer le mot de passe....\" class=\"input-field-square\">
+                                            <p class=\"emr\"></p>
+                                        </div>
+                                        <input type=\"submit\" class=\"submit-form-btn\" value=\"S'inscrire\">
+                                    </form>
+                                </div>
+                            </div>
+                        </div><!-- /.tab conent-->
+                    </div><!-- modal content end -->
+                </div>
+            </div><!-- /#loginmodal -->
+        </div><!-- login modal warapper satart end-->
+    </div>
+    <!-- login and register modal end -->
+
+    <script>
+    function formSuccess(form, contect, data, textStatus, jqXHR) 
+    {
+        if(textStatus == 'success')
+            window.location = \"";
+        // line 163
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("Demonstration");
+        echo "\"
+
+    }
+    </script>";
     }
 
     public function getTemplateName()
@@ -165,7 +270,7 @@ class __TwigTemplate_08140807b7f2fddf9607b41577f9161666106a4665f065c982bbbcee001
 
     public function getDebugInfo()
     {
-        return array (  145 => 63,  141 => 61,  133 => 56,  129 => 55,  123 => 51,  120 => 50,  114 => 46,  105 => 40,  101 => 39,  97 => 38,  88 => 31,  86 => 30,  78 => 25,  72 => 24,  62 => 21,  56 => 20,  35 => 1,);
+        return array (  254 => 163,  192 => 108,  145 => 63,  141 => 61,  133 => 56,  129 => 55,  123 => 51,  120 => 50,  114 => 46,  105 => 40,  101 => 39,  97 => 38,  88 => 31,  86 => 30,  78 => 25,  72 => 24,  62 => 21,  56 => 20,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -197,11 +302,11 @@ class __TwigTemplate_08140807b7f2fddf9607b41577f9161666106a4665f065c982bbbcee001
                       <a class=\"nav-link\" href=\"{{ 'view_event'|page }}\">Trouver un évènement</a>
                   </li>
                    <li class=\"nav-item \">
-                      <a class=\"nav-link\" href=\"http://lab.thesoftking.com/eticket/contact\" >Contactez nous</a>
+                      <a class=\"nav-link\" href=\"\">Contactez nous</a>
                    </li>
                  {% if user %}
                       <li class=\"nav-item \">
-                      <a data-request=\"onLogout\" data-request-data=\"redirect: '/view_event'\" class=\"nav-link\">Sign out</a>
+                      <a data-request=\"onLogout\" data-request-data=\"redirect: '/'\" href=\"\" class=\"nav-link\">Sign out</a>
                          
                        </li>
                          <li class=\"nav-item dropdown active\">
@@ -240,6 +345,101 @@ class __TwigTemplate_08140807b7f2fddf9607b41577f9161666106a4665f065c982bbbcee001
         </div>
         <!-- navbar collapse end -->
     </div>
-</nav>", "C:\\wamp64\\www\\install-master/themes/demo/partials/site/header.htm", "");
+</nav>
+
+  <!-- login and register modal start-->
+    <div class=\"login-registration-modal\" id=\"loginRegModal\">
+        <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
+            <div class=\"modal\" tabindex=\"-1\" id=\"login-modal\" role=\"dialog\"><!-- #login modal-->
+                <div class=\"modal-dialog\" role=\"document\">
+                    <div class=\"modal-content\"><!-- modal content start -->
+                        <nav>
+                            <div class=\"nav nav-tabs login-modal-navigation\" id=\"nav-tab\" role=\"tablist\"><!-- login modal navigation start -->
+                                <a class=\"nav-item nav-link active\" id=\"nav-login-tab\" data-toggle=\"tab\" href=\"#nav-login\" role=\"tab\" aria-controls=\"nav-login\"
+                                    aria-selected=\"true\">Connexion</a>
+                                <a class=\"nav-item nav-link\" id=\"nav-signup-tab\" data-toggle=\"tab\" href=\"#nav-signup\" role=\"tab\" aria-controls=\"nav-signup\"
+                                    aria-selected=\"false\">Inscription</a>
+                            </div><!-- login modal navigation end -->
+                        </nav>
+                        <div class=\"tab-content\" id=\"nav-tabContent\"><!-- tab content-->
+                            <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
+                                <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
+                                    <form id=\"userLoginForm\" data-request=\"onSignin\" data-request-success=\"formSuccess(this, context, data, textStatus, jqXHR)\">
+                                        <input type=\"hidden\" name=\"_token\">
+                                        <div class=\"form-element square login\"><!-- form element login start -->
+                                            <label for=\"userSigninLogin\">Email
+                                                <span>**</span>
+                                            </label>
+                                            <input name=\"login\" id=\"userSigninLogin\" type=\"text\" placeholder=\"Votre adresse email...\" class=\"input-field-square\">
+                                            <p class=\"eml\"></p>
+                                        </div><!-- form element login end -->
+                                        <div class=\"form-element square login\"><!-- form element login start -->
+                                            <label for=\"userSigninPassword\">Mot de passe
+                                                <span>**</span>
+                                            </label>
+                                            <input name=\"password\" id=\"userSigninPassword\" type=\"password\" placeholder=\"Votre mot de passe....\" class=\"input-field-square\">
+                                            <p class=\"eml\"></p>
+                                        </div><!-- form element login end -->
+                                        <div class=\"\">
+                                          <a style=\"text-decoration: underline;\" href=\"\">Mot de passe oublié ?</a>
+                                          <p class=\"{% if this.page.id == 'register' %}active{% endif %}\" style=\"text-decoration: underline;\"><a href=\"{{ 'register'|page }}\">Créer un compte</a>   </p>
+                                        </div>
+                                        <button type=\"submit\" class=\"submit-form-btn\">Se connecter</button>
+                                    </form>
+                                </div><!-- login form wrapper end -->
+                            </div>
+                            <div class=\"tab-pane fade\" id=\"nav-signup\" role=\"tabpanel\" aria-labelledby=\"nav-signup-tab\">
+    
+                                <div class=\"singup-form-wrapper\">
+                                    <form id=\"registerForm\" data-request=\"onRegister\">
+                                        <input type=\"hidden\" name=\"_token\" value=\"\">
+                                        <div class=\"form-element square login\">
+                                            <label for=\"\"registerName>Nom complet
+                                                <span>**</span>
+                                            </label>
+                                            <input name=\"name\" id=\"registerName\" type=\"text\" placeholder=\"Votre nom complet....\" class=\"input-field-square\">
+                                            <p class=\"emr\"></p>
+                                        </div>
+                                        <div class=\"form-element square login\">
+                                            <label for=\"registerEmail\">Adresse email
+                                                <span>**</span>
+                                            </label>
+                                            <input name=\"email\" id=\"registerEmail\" type=\"email\" placeholder=\"Votre adresse email....\" class=\"input-field-square\">
+                                            <p class=\"emr\"></p>
+                                        </div>
+                                        <div class=\"form-element square login\">
+                                            <label for=\"registerPassword\">Mot de passe
+                                                <span>**</span>
+                                            </label>
+                                            <input name=\"password\" id=\"registerPassword\" type=\"password\" placeholder=\"Votre mot de passe....\" class=\"input-field-square\">
+                                            <p class=\"emr\"></p>
+                                        </div>
+                                        <div class=\"form-element square login\">
+                                            <label>Confirmer mot de passe
+                                                <span>**</span>
+                                            </label>
+                                            <input name=\"password_confirmation\" id=\"registerPasswordConfirmation\" type=\"password\" placeholder=\"Confirmer le mot de passe....\" class=\"input-field-square\">
+                                            <p class=\"emr\"></p>
+                                        </div>
+                                        <input type=\"submit\" class=\"submit-form-btn\" value=\"S'inscrire\">
+                                    </form>
+                                </div>
+                            </div>
+                        </div><!-- /.tab conent-->
+                    </div><!-- modal content end -->
+                </div>
+            </div><!-- /#loginmodal -->
+        </div><!-- login modal warapper satart end-->
+    </div>
+    <!-- login and register modal end -->
+
+    <script>
+    function formSuccess(form, contect, data, textStatus, jqXHR) 
+    {
+        if(textStatus == 'success')
+            window.location = \"{{ 'Demonstration'|page }}\"
+
+    }
+    </script>", "C:\\wamp64\\www\\install-master/themes/demo/partials/site/header.htm", "");
     }
 }

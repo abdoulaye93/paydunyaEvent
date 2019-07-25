@@ -7,3 +7,22 @@ fields:
         label: 'Montant du sous-évènement'
         span: auto
         type: number
+    description:
+        label: Description
+        span: auto
+        type: text
+    nbrplace:
+        label: 'nombre de place'
+        span: auto
+        type: text
+    subimage:
+        label: image
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        imageWidth: '80'
+        imageHeight: '80'
+        type: fileupload

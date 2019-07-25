@@ -95,18 +95,29 @@ class __TwigTemplate_f1241579279adc67b0dd4663966ae0e5b707f1a5bd9ea8f7e88814e85bc
             // line 45
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant", [], "any", false, false, false, 45), "html", null, true);
             echo " FCFA</span>
-                        <select class=\"float-right\" onchange=\"clacTotal(2000, this.value)\">
-                                                  <option value=\"1\">1</option>
-                                                  <option value=\"2\">2</option>
-                                                  <option value=\"3\">3</option>
-                                                  <option value=\"4\">4</option>
-                                                  <option value=\"5\">5</option>
-                                                  <option value=\"6\">6</option>
-                                                  <option value=\"7\">7</option>
-                                                  <option value=\"8\">8</option>
-                                                  <option value=\"9\">9</option>
-                                                  <option value=\"10\">10</option>
-                                              </select>
+                        <select class=\"float-right\" onchange=\"clacTotal('";
+            // line 46
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant", [], "any", false, false, false, 46), "html", null, true);
+            echo "', this.value)\" id=\"nb\">
+                            ";
+            // line 47
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(range(1, twig_get_attribute($this->env, $this->source, $context["item"], "nombre_ticket", [], "any", false, false, false, 47)));
+            foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+                // line 48
+                echo "                              <option value=\"";
+                echo twig_escape_filter($this->env, $context["i"], "html", null, true);
+                echo "\"> ";
+                echo twig_escape_filter($this->env, $context["i"], "html", null, true);
+                echo "</option>
+                           ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 49
+            echo "            
+                    </select>
                       </span>
                     </div>
                     <hr>
@@ -202,67 +213,67 @@ class __TwigTemplate_f1241579279adc67b0dd4663966ae0e5b707f1a5bd9ea8f7e88814e85bc
                             <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
                                 <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
                                    ";
-            // line 152
+            // line 145
             if ( !($context["user"] ?? null)) {
-                // line 153
+                // line 146
                 echo "    
                                         <div class=\"row\">
                                     
                                             <div class=\"col-md-6\">
                                                 <h3 class=\"";
-                // line 157
-                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 157), "id", [], "any", false, false, false, 157) == "register")) {
+                // line 150
+                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 150), "id", [], "any", false, false, false, 150) == "register")) {
                     echo "active";
                 }
                 echo "\"><a href=\"";
                 echo $this->extensions['Cms\Twig\Extension']->pageFilter("register");
                 echo "\">Créer un compte</a></h3>
                                                 ";
-                // line 158
+                // line 151
                 $context['__cms_partial_params'] = [];
                 echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::signin")                , $context['__cms_partial_params']                , true                );
                 unset($context['__cms_partial_params']);
-                // line 159
+                // line 152
                 echo "                                            </div>
                                     
                                         </div>
                                     
                                     ";
             } else {
-                // line 164
+                // line 157
                 echo "                                    
                                     ";
             }
-            // line 166
+            // line 159
             echo "                                </div><!-- login form wrapper end -->
                             </div>
                             <div class=\"tab-pane fade\" id=\"nav-signup\" role=\"tabpanel\" aria-labelledby=\"nav-signup-tab\">
     
                                 <div class=\"singup-form-wrapper\">
                                     ";
-            // line 171
+            // line 164
             if ( !($context["user"] ?? null)) {
-                // line 172
+                // line 165
                 echo "                                    
                                         <div class=\"row\">
                                             <div class=\"col-md-6\">
                                                 ";
-                // line 175
+                // line 168
                 $context['__cms_partial_params'] = [];
                 echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::register")                , $context['__cms_partial_params']                , true                );
                 unset($context['__cms_partial_params']);
-                // line 176
+                // line 169
                 echo "                                            </div>
                                     
                                         </div>
                                     
                                     ";
             } else {
-                // line 181
+                // line 174
                 echo "                                    
                                     ";
             }
-            // line 183
+            // line 176
             echo "                                 </div>
                             </div>
                         </div><!-- /.tab conent-->
@@ -290,7 +301,7 @@ class __TwigTemplate_f1241579279adc67b0dd4663966ae0e5b707f1a5bd9ea8f7e88814e85bc
 
     public function getDebugInfo()
     {
-        return array (  266 => 183,  262 => 181,  255 => 176,  251 => 175,  246 => 172,  244 => 171,  237 => 166,  233 => 164,  226 => 159,  222 => 158,  214 => 157,  208 => 153,  206 => 152,  96 => 45,  86 => 38,  79 => 34,  57 => 15,  45 => 6,  39 => 2,  35 => 1,);
+        return array (  277 => 176,  273 => 174,  266 => 169,  262 => 168,  257 => 165,  255 => 164,  248 => 159,  244 => 157,  237 => 152,  233 => 151,  225 => 150,  219 => 146,  217 => 145,  119 => 49,  108 => 48,  104 => 47,  100 => 46,  96 => 45,  86 => 38,  79 => 34,  57 => 15,  45 => 6,  39 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -340,18 +351,11 @@ class __TwigTemplate_f1241579279adc67b0dd4663966ae0e5b707f1a5bd9ea8f7e88814e85bc
                       <span>
                         <span>Par Person</span><br>
                         <span>{{item.montant}} FCFA</span>
-                        <select class=\"float-right\" onchange=\"clacTotal(2000, this.value)\">
-                                                  <option value=\"1\">1</option>
-                                                  <option value=\"2\">2</option>
-                                                  <option value=\"3\">3</option>
-                                                  <option value=\"4\">4</option>
-                                                  <option value=\"5\">5</option>
-                                                  <option value=\"6\">6</option>
-                                                  <option value=\"7\">7</option>
-                                                  <option value=\"8\">8</option>
-                                                  <option value=\"9\">9</option>
-                                                  <option value=\"10\">10</option>
-                                              </select>
+                        <select class=\"float-right\" onchange=\"clacTotal('{{ item.montant }}', this.value)\" id=\"nb\">
+                            {% for i in 1..item.nombre_ticket %}
+                              <option value=\"{{ i }}\"> {{ i }}</option>
+                           {% endfor %}            
+                    </select>
                       </span>
                     </div>
                     <hr>

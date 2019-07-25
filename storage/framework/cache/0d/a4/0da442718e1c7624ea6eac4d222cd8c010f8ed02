@@ -1,5 +1,17 @@
-1563880475a:1:{s:16:"create_event.htm";a:6:{s:8:"fileName";s:16:"create_event.htm";s:7:"content";s:10785:"[session]
+1564098014a:1:{s:16:"create_event.htm";a:6:{s:8:"fileName";s:16:"create_event.htm";s:7:"content";s:11153:"[session]
 security = "all"
+==
+<?  
+use event\event\models\Event;
+use Carbon\Carbon;
+function onStart(){$this->prepareVars();}
+function onFilterEvents() { $this->prepareVars(); }
+function prepareVars(){
+  $option=post('Filter',[]);
+  $this['events']=Event::ListFrontEnd($option);
+  $this['pages']=$this['events']->lastPage();
+}
+?>
 ==
 <!DOCTYPE html>
 <html>
@@ -35,8 +47,7 @@ security = "all"
     <link href="{{ 'assets/user/css/style.css'|theme }}" rel="stylesheet">
     <!-- responsive -->
     <link href="{{ 'assets/user/css/responsive.css'|theme }}" rel="stylesheet">
-     <link href="{{ 'assets/admin/css/sweetalert.css'|theme }}" rel="stylesheet">
-    <script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" charset="UTF-8"></script><script src="{{ 'assets/admin/js/sweetalert.js'|theme }}"></script>
+     <link href="{{ 'assets/admin/css/sweetalert.css'|theme }}" rel="stylesheet"><script src="{{ 'assets/admin/js/sweetalert.js'|theme }}"></script>
      <link href="{{ 'assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs'|theme }}" rel="stylesheet">
      <link href="{{ 'assets/user/css/themes/base-color.php?color=7d5fff'|theme }}" rel="stylesheet">
     <style media="screen">
@@ -128,6 +139,14 @@ security = "all"
         {% scripts %}
         
 <script>
+   (function($){
+
+$('#EventFilter').on('change', 'input, select', function(){
+    var $form = $(this).closest('form');
+    $form.request();
+});
+
+})(jQuery);
    function increaseAdView(adID) {
       var fd = new FormData();
       fd.append('adID', adID);
@@ -166,7 +185,7 @@ security = "all"
     function hideModal() {
       $('#buyTicketConfModal').modal('hide');
     }
-
+ 
     function clacTotal(pp_price, p_no) {
       totalPrice = pp_price * p_no;
       document.getElementById('totalPriceInput').value = totalPrice;
@@ -176,7 +195,7 @@ security = "all"
 
 
     $(document).ready(function() {
-      clacTotal(2500, 3);
+      clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
     <script>
@@ -301,7 +320,7 @@ security = "all"
     </script>
 
     </body>
-</html>";s:5:"mtime";i:1563355684;s:6:"markup";s:10752:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1564050300;s:6:"markup";s:10805:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
@@ -335,8 +354,7 @@ security = "all"
     <link href="{{ 'assets/user/css/style.css'|theme }}" rel="stylesheet">
     <!-- responsive -->
     <link href="{{ 'assets/user/css/responsive.css'|theme }}" rel="stylesheet">
-     <link href="{{ 'assets/admin/css/sweetalert.css'|theme }}" rel="stylesheet">
-    <script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" charset="UTF-8"></script><script src="{{ 'assets/admin/js/sweetalert.js'|theme }}"></script>
+     <link href="{{ 'assets/admin/css/sweetalert.css'|theme }}" rel="stylesheet"><script src="{{ 'assets/admin/js/sweetalert.js'|theme }}"></script>
      <link href="{{ 'assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs'|theme }}" rel="stylesheet">
      <link href="{{ 'assets/user/css/themes/base-color.php?color=7d5fff'|theme }}" rel="stylesheet">
     <style media="screen">
@@ -428,6 +446,14 @@ security = "all"
         {% scripts %}
         
 <script>
+   (function($){
+
+$('#EventFilter').on('change', 'input, select', function(){
+    var $form = $(this).closest('form');
+    $form.request();
+});
+
+})(jQuery);
    function increaseAdView(adID) {
       var fd = new FormData();
       fd.append('adID', adID);
@@ -466,7 +492,7 @@ security = "all"
     function hideModal() {
       $('#buyTicketConfModal').modal('hide');
     }
-
+ 
     function clacTotal(pp_price, p_no) {
       totalPrice = pp_price * p_no;
       document.getElementById('totalPriceInput').value = totalPrice;
@@ -476,7 +502,7 @@ security = "all"
 
 
     $(document).ready(function() {
-      clacTotal(2500, 3);
+      clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
     <script>
@@ -601,4 +627,13 @@ security = "all"
     </script>
 
     </body>
-</html>";s:4:"code";N;s:7:"session";a:1:{s:8:"security";s:3:"all";}}}
+</html>";s:4:"code";s:303:"  
+use event\event\models\Event;
+use Carbon\Carbon;
+function onStart(){$this->prepareVars();}
+function onFilterEvents() { $this->prepareVars(); }
+function prepareVars(){
+  $option=post('Filter',[]);
+  $this['events']=Event::ListFrontEnd($option);
+  $this['pages']=$this['events']->lastPage();
+}";s:7:"session";a:1:{s:8:"security";s:3:"all";}}}
