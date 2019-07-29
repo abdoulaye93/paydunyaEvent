@@ -11,6 +11,7 @@ use event\event\models\Periode;
 use event\event\models\SubList;
 use demande\demande\models\DemandeAnnullationEvent;
 use event\event\models\AccessEvent;
+use event\event\models\NotifDemande;
 use Mail;
 use Flash;
 use Db;
@@ -60,6 +61,10 @@ class ManageEvent extends ComponentBase
             $event=Db::table('event_event_')
             ->where('id', $event_id)
             ->update(['annule_demande' => true]);
+            $notif=new NotifDemande();
+            $notif->save();
+            $event=Db::table('event_event_')
+            ->where('id', $event_id)->increment('demande_notif',1);
             $annuleDemande=new DemandeAnnullationEvent();
             $annuleDemande->user_id=$user_id;
             $annuleDemande->event_id=$event_id;
@@ -106,6 +111,9 @@ class ManageEvent extends ComponentBase
             $event=Db::table('event_event_')
             ->where('id', $event_id)
             ->update(['promo' => true]);
+            $event=Db::table('event_event_')
+            ->where('id', $event_id)
+            ->update(['code_promo' => str_random(40)]);
         }
        
        

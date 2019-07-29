@@ -56,13 +56,13 @@
            <td>
                 {% if item.promo %}
                          <span class="badge btn-primary">
-                                <a class="btn btn-warning btn-sm" href="{{__SELF__.loadUrl()}}/promo/{{item.id}}"  class="action-btn">{{__SELF__.loadUrl()}}/promo/{{item.id}}</a>
+                                <a class="btn btn-warning btn-sm" href="{{__SELF__.loadUrl()}}/promo/{{item.id}}"  class="action-btn">{{item.code_promo}}</a>
                          </span>
                          {%else%}
                          <form data-request="onPromo">
                                 <input type="hidden" name="event_id" value="{{item.id}}"> 
                                 <input type="hidden" name="promo" value="{{item.promo}}"> 
-                                <button type="submit" class="btn btn-danger btn-sm">Generer une promotion</button>
+                                <button type="submit" class="btn btn-danger btn-sm">Generer un code promo</button>
                         </form> 
                          {%endif%}
           </td>                           

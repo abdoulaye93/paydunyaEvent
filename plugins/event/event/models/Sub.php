@@ -34,4 +34,15 @@ class Sub extends Model
      */
     public $rules = [
     ];
+    public function getImageAttribute()
+    {
+        $project = Sub::find($this->id);
+        
+        if($project->subimage){
+            return $project->subimage->getPath();
+        }else{
+            return "";
+        }
+    
+    }
 }

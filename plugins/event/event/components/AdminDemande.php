@@ -27,7 +27,7 @@ class AdminDemande extends ComponentBase
     }
    
     public function onRun(){
-       
+        Db::table('event_event_notif_demande')->truncate();
      
     }
     public function loadEvents(){     

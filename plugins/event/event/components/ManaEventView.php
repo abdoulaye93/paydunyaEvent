@@ -25,8 +25,10 @@ class ManaEventView extends ComponentBase
     }
    
     public function onRun(){
-       
-     
+        $b=Request::segment(2);
+        $event=Db::table('event_event_')
+        ->where('id', $b)
+        ->update(['demande_notif' => 0]);
     }
     public function loadEvents(){     
         $b=Request::segment(2);

@@ -1,0 +1,6 @@
+plugin:
+    name: 'payment.payment::lang.plugin.name'
+    description: 'payment.payment::lang.plugin.description'
+    author: paydunya
+    icon: oc-icon-adjust
+    homepage: ''

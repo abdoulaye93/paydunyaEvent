@@ -14,7 +14,11 @@
                                         <tbody>
                                             <tr class="traending_ico_tr">
                                                 <td data-label="ratings" class="ratings_td">
-                                                    <a href="http://lab.thesoftking.com/eticket/event/show/papa">{{item.event.nom}}</a>
+                                                    <a href="http://lab.thesoftking.com/eticket/event/show/papa">{%if item.event.demande_notif!=0%}
+                                                       <strong> {{item.event.nom}}</strong>
+                                                        {%else%}
+                                                        {{item.event.nom}}
+                                                    {%endif%}</a>
                                                 </td>
                                                 <td data-label="action">
                                                 <form data-request="onSup">

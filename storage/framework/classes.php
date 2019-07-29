@@ -337,4 +337,6 @@
   'Lovata\\OrdersShopaholic\\Classes\\PromoMechanism\\PositionCountGreater\\PositionCountGreaterDiscountTotalPrice' => 'plugins\\lovata\\ordersshopaholic\\classes\\promomechanism\\positioncountgreater\\PositionCountGreaterDiscountTotalPrice.php',
   'event\\event\\components\\Promo' => 'plugins\\event\\event\\components\\Promo.php',
   'event\\event\\components\\ModifSub' => 'plugins\\event\\event\\components\\ModifSub.php',
+  'event\\event\\models\\NotifDemande' => 'plugins\\event\\event\\models\\NotifDemande.php',
+  'payment\\payment\\Plugin' => 'plugins\\payment\\payment\\Plugin.php',
 );

@@ -186,3 +186,18 @@
 1.0.63:
     - 'Updated table event_event_sub'
     - builder_table_update_event_event_sub_7.php
+1.0.64:
+    - 'Updated table event_event_'
+    - builder_table_update_event_event__27.php
+1.0.65:
+    - 'Created table event_event_notif_demande'
+    - builder_table_create_event_event_notif_demande.php
+1.0.66:
+    - 'Updated table event_event_notif_demande'
+    - builder_table_update_event_event_notif_demande.php
+1.0.67:
+    - 'Updated table event_event_notif_demande'
+    - builder_table_update_event_event_notif_demande_2.php
+1.0.68:
+    - 'Updated table event_event_'
+    - builder_table_update_event_event__28.php

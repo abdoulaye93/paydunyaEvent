@@ -62,10 +62,16 @@ class Event extends Model
         'eventimage'=>'System\Models\File'
     ];
     public function getImageAttribute()
-{
-    $project = Event::find($this->id);
-    return $project->eventimage->getPath();
-}
+    {
+        $project = Event::find($this->id);
+        
+        if($project->eventimage){
+            return $project->eventimage->getPath();
+        }else{
+            return "";
+        }
+    
+    }
 
 
 

@@ -38,6 +38,7 @@ class EventForm extends ComponentBase
         $event->user_id=Input::get('user');
         $event->publier=false;
         $event->annule_demande=false;
+        $event->demande_notif=0;
         $event->eventimage=Input::file('img');
         if(Input::get('gratuit')){
             $event->etat_event=true;
@@ -46,6 +47,7 @@ class EventForm extends ComponentBase
         }
         if(Input::get('code')){
             $event->promo=true;
+            $event->code_promo=str_random(40);
         }else{
             $event->promo=false;
         }

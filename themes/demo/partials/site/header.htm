@@ -1,6 +1,14 @@
 [session]
 security = "all"
 ==
+<?
+use event\event\models\NotifDemande;
+function onStart(){$this->prepareVars();}
+function prepareVars(){
+  $this['notifs']=NotifDemande::all();
+}
+?>
+==
 <!-- Nav -->
 <nav class="navbar navbar-area navbar-expand-lg navbar-light navbar-fixed-top navbar-autohide">
     <div class="container">
@@ -53,10 +61,20 @@ security = "all"
                     {% if user.is_superuser %}
                      </li>
                          <li class="nav-item dropdown active">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gestion</a>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {% if notifs|length%}
+                                    <span class="badge badge-danger">
+                                            Notif{{ notifs|length}}</span>
+                                    {%else%}
+                                   
+                                    {%endif%}Gestion</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ 'admin'|page }}">évènement</a>
-                                <a class="dropdown-item" href="{{ 'admin_demande'|page }}">Demande Event</a>
+                                <a class="dropdown-item" href="{{ 'admin'|page }}">  évènement</a>
+                                <a class="dropdown-item" href="{{ 'admin_demande'|page }}">{% if notifs|length%}
+                                        <span class="badge badge-danger">
+                                                Notif{{ notifs|length}}</span>
+                                        {%else%}
+                                       
+                                        {%endif%}Demande Event</a>
                             </div>
                         </li>
                 
