@@ -9,6 +9,7 @@ use event\event\models\Type;
 use event\event\models\Sub;
 use event\event\models\Periode;
 use event\event\models\SubList;
+use ticket\ticket\models\TypeTicket;
 use Flash;
 use Db;
 use October\Rain\Support\Collection;
@@ -32,7 +33,7 @@ class EventForm extends ComponentBase
         $event->lieu=Input::get('lieu');
         $event->montant=Input::get('montant');
         $event->nombre_ticket=Input::get('nbrticket');
-        $event->montant=Input::get('montant');
+       // $event->montant=Input::get('montant');
         $event->description=Input::get('description');
         $event->user_id=Input::get('user');
         $event->publier=false;
@@ -43,25 +44,47 @@ class EventForm extends ComponentBase
         }else{
             $event->etat_event=false;
         }
+        if(Input::get('code')){
+            $event->promo=true;
+        }else{
+            $event->promo=false;
+        }
         
       $event->type_id= Input::get('category');
       $event->save();
       
-      $nb=0;
-      while($nb<=Input::get('nbsub')){
-       $sub=new Sub();
-       $list=new SubList();
-        $sub->nom=Input::get("subnom".$nb);
-        $sub->montant=Input::get('submontant'.$nb);
-        $sub->nbrplace=Input::get('subnbrplace'.$nb);
-        $sub->description=Input::get('subdescription'.$nb);
-        $sub->jour=Input::get('subjour'.$nb);
-        $sub->subimage=Input::file('img');
-        $sub->save();
-        $list->event_id=$event->id;
-        $list->sub_id=$sub->id;
-        $list->save();
+      $nb=1;
+      while($nb<Input::get('nbsub')){
+         // if(Input::get("subnom".$nb)&&Input::get('submontant'.$nb)&&Input::get('subnbrplace'.$nb)&&Input::get('subdescription'.$nb)&&Input::get('subjour'.$nb)&&Input::file('subimg'.$nb)){
+            $sub=new Sub();
+            $list=new SubList();
+             $sub->nom=Input::get("subnom".$nb);
+             $sub->montant=Input::get('submontant'.$nb);
+             $sub->nbrplace=Input::get('subnbrplace'.$nb);
+             $sub->description=Input::get('subdescription'.$nb);
+             $sub->jour=Input::get('subjour'.$nb);
+            // dd(Input::file("subimg".$nb));
+             $sub->subimage=Input::file("subimg".$nb."");
+             $sub->save();
+             $list->event_id=$event->id;
+             $list->sub_id=$sub->id;
+             $list->save();
+        //  }
           $nb++;
+      }
+      $nbtype=1;
+      while($nbtype<Input::get('nbtype')){
+          if(Input::get("typenom".$nbtype)&&Input::get('typemontant'.$nbtype)){
+            $type=new TypeTicket();
+            $type->event_id=$event->id;
+            $type->nom_type=Input::get("typenom".$nbtype);
+            $type->montant=Input::get('typemontant'.$nbtype);
+            if(Input::file('typeimg')){
+                $type->typeticketimage=Input::file("typeimg".$nbtype."");
+            }
+            $type->save();
+          }
+        $nbtype++;
       }
       // echo Input::get('nbsub');
         Flash::success('évènement a été créer');

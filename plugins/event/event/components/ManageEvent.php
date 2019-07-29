@@ -14,6 +14,7 @@ use event\event\models\AccessEvent;
 use Mail;
 use Flash;
 use Db;
+use Config;
 use Request;
 use Carbon\Carbon;
 use October\Rain\Support\Collection;
@@ -93,6 +94,22 @@ class ManageEvent extends ComponentBase
             return Redirect::to('/email_not_found');
         }
        
+    }
+    public function loadUrl(){
+        return Config::get('app.url');
+    }
+    public function onPromo(){
+        $event_id=Input::get('event_id');
+        $promo=Input::get('promo');
+        if($promo==true){
+        }else{
+            $event=Db::table('event_event_')
+            ->where('id', $event_id)
+            ->update(['promo' => true]);
+        }
+       
+       
+        return Redirect::back();
     }
    
 }

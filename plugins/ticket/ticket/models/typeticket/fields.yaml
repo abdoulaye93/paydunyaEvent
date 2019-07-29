@@ -1,0 +1,22 @@
+fields:
+    nom_type:
+        label: nom
+        span: auto
+        type: text
+    event:
+        label: event
+        span: auto
+        nameFrom: nom
+        descriptionFrom: description
+        type: relation
+    typeticketimage:
+        label: image
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        imageWidth: '80'
+        imageHeight: '80'
+        type: fileupload

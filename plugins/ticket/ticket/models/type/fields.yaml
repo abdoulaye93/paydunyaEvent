@@ -3,3 +3,9 @@ fields:
         label: 'Nom du type de ticket'
         span: auto
         type: text
+    event:
+        label: event
+        span: auto
+        nameFrom: nom
+        descriptionFrom: description
+        type: relation

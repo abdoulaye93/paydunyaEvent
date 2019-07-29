@@ -9,6 +9,7 @@ security = "all"
 ==
 <?
 use Carbon\Carbon;
+
 use event\event\models\Event;
 function onStart(){$this->prepareVars();}
 function onFilterEvents() { $this->prepareVars(); }
@@ -16,6 +17,7 @@ function prepareVars(){
   $option=post('Filter',[]);
   $this['events']=Event::ListFrontEnd($option);
   $this['pages']=$this['events']->lastPage();
+ 
   
 }
 ?>

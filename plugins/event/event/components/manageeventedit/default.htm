@@ -59,12 +59,31 @@
                     </div>
 
                     <div class="form-element square">
-                        <label>Montant de l'évènement
-                            <span>**</span>
-                        </label>
-                        <input type="text" name="montant" value="{{item.montant}}" placeholder="Enter per person price..." class="input-field-square">
-                                            </div>
-
+                            {% if item.gratuit %}
+                            <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="defaultUncheck" name="gratuit" checked>
+                                    <label class="custom-control-label" for="defaultUncheck">Gratuit</label>
+                                
+                                </div>
+                        {% else %}
+                        <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="defaultUncheck" name="nongratuit" >
+                                <label class="custom-control-label" for="defaultUncheck">Gratuit</label>
+                            
+                            </div>
+                        {% endif %}
+                            
+                       </div>
+                    {%if __SELF__.loadSevent() %}
+                    <label><strong> sous évènements</strong></label>
+                      {% for item in __SELF__.loadSevent()%}
+                      <div class="row">
+                            <div class="col-md-4" style="margin-bottom: 5px;">
+                          <a class="btn btn-primary btn-sm" href="{{ 'modif_sub'|page({sub_id:item.sub_id}) }}" class="action-btn">{{item.sub.nom}}</a>
+                          </div>
+                      </div>
+                        {%endfor%}
+                    {%endif%}
                     <div class="form-element square">
                         <label>Nombre de ticket
                             <span>**</span>
@@ -79,6 +98,7 @@
                         </label>
                         <textarea id="overview" name="description" rows="12" cols="80" class="input-field-square">{{item.description}}</textarea>
                                             </div>
+                    
                     <button type="submit" class="submit-form-btn">Mettre a jour l'évènement</button>
                 </form>
             </div>

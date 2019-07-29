@@ -85,44 +85,80 @@ class __TwigTemplate_b8f578c9eee03b59935b57389e906e24fc9ae71bdc449045dd9d2329f38
                     <div class=\"custom-control custom-checkbox\">
                         <input type=\"checkbox\" class=\"custom-control-input\" id=\"defaultUnchecked\" name=\"gratuit\">
                         <label class=\"custom-control-label\" for=\"defaultUnchecked\">Gratuit</label>
+                    
                     </div>
+                    <div class=\"custom-control custom-checkbox\">
+                            <input type=\"checkbox\" class=\"custom-control-input\" id=\"defaultUncheck\" name=\"code\">
+                            <label class=\"custom-control-label\" for=\"defaultUncheck\">Generer un code promo</label>
+                        
+                        </div>
                     <div class=\"row\">
-                      <div class=\"col-md-4\">
-                            <div class=\"form-element square\">
-                                <label>Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                    <span><a  href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\">Autres</a></span>
+                      <div class=\"col-md-6\">
+                            <div class=\"form-element square\" style=\"margin-top: 25px;\">
+                                <label>Type&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 </label>
                                 <select class=\"input-field-square\" name=\"category\" value=\"\">
                                                                             ";
-        // line 53
+        // line 58
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadEvents", [], "method", false, false, false, 53));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadEvents", [], "method", false, false, false, 58));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 54
+            // line 59
             echo "                                                                            <option value=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 54), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 59), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom_type", [], "any", false, false, false, 54), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom_type", [], "any", false, false, false, 59), "html", null, true);
             echo "</option>
                                                                             ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 56
+        // line 61
         echo "                                                                        
                                                                     
                                                                 
                                   </select>
                             </div>
+                            
+                      </div>
+                      <div class=\"col-md-6\">
+                            <div class=\"form-element square\">
+                                    <label>Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                            <input type='button' onclick='addtype()' value='Ajoutez' 
+                                            style=\"margin-bottom: 20px;\"/>
+                                    </label>
+                                    <select class=\"input-field-square\" name=\"cate\" value=\"\">
+                                                                                ";
+        // line 75
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadEvents", [], "method", false, false, false, 75));
+        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+            // line 76
+            echo "                                                                                <option value=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 76), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "categorie", [], "any", false, false, false, 76), "categorie", [], "any", false, false, false, 76), "html", null, true);
+            echo "</option>
+                                                                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 78
+        echo "                                                                            
+                                                                        
+                                                                    
+                                      </select>
+                                </div>
                       </div>
                       <div class=\"col-md-4\">
-                        <div class=\"form-element square\">
-                            <label>Date de l'évènement
-                            </label>
-                            <input type=\"date\" name=\"date_event\" value=\"\" placeholder=\"mm/dd/yyyy\" class=\"input-field-square\">
+                            <div class=\"form-element square\">
+                                <label>Date de l'évènement
+                                </label>
+                                <input type=\"date\" name=\"date_event\" value=\"\" placeholder=\"mm/dd/yyyy\" class=\"input-field-square\">
+                              </div>
                           </div>
-                      </div>
                        <div class=\"col-md-4\">
                         <div class=\"form-element square\">
                             <label>Date de cloture des ventes
@@ -130,15 +166,8 @@ class __TwigTemplate_b8f578c9eee03b59935b57389e906e24fc9ae71bdc449045dd9d2329f38
                             <input type=\"date\" name=\"date_cloture\" value=\"\" placeholder=\"mm/dd/yyyy\" class=\"input-field-square\">
                                                         </div>
                       </div>
-                      <div class=\"col-md-4\">
-                        <div class=\"form-element square\">
-                            <label>Montant de l'évènement
-                                <span>**</span>
-                            </label>
-                            <input type=\"text\" name=\"montant\" value=\"\" placeholder=\"Enter per person price...\" class=\"input-field-square\">
-                                                        </div>
-                      </div>
-                       <div class=\"col-md-8\">
+                     
+                       <div class=\"col-md-12\">
                         <div class=\"form-element square\">
                             <label>Nombre de ticket
                             </label>
@@ -147,13 +176,49 @@ class __TwigTemplate_b8f578c9eee03b59935b57389e906e24fc9ae71bdc449045dd9d2329f38
                       </div>                                                
                         <div class=\"col-md-12\">
                         <div class=\"row\">
-                                <div class=\"col-md-8\">
+                                <div class=\"col-md-4\">
                                         <div class=\"form-element square\">
-                                            <label>type de ticket
+                                            <label>Nom du type de ticket
                                             </label>
-                                            <input type=\"text\" name=\"nbrticket\" value=\"\" placeholder=\"Entrer le nom du type...\" class=\"input-field-square\">
+                                            <input type=\"text\"  value=\"\" placeholder=\"Entrer le nom du type...\" class=\"input-field-square\" id=\"inputtype1\">
                                         </div>
-                                      </div> 
+                                 </div> 
+                                <div class=\"col-md-4\">
+                                    <div class=\"form-element square\">
+                                        <label>Montant du ticket
+                                            
+                                        </label>
+                                        <input type=\"text\"  value=\"\" placeholder=\"Enter per person price...\" class=\"input-field-square\" id=\"inputtype2\">
+                                    </div>
+                                </div>
+                                <div class=\"col-md-4\">
+                                    <div class=\"form-element square\">
+                                        <input type='button' onclick='addtype()' value='Ajoutez'  class=\"submit-form-btn\"
+                                        style=\"margin-bottom: 20px;\"/>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class=\"row\">
+                            <div class=\"col-md-12\">
+                                    <div class=\"fileinput fileinput-new\" data-provides=\"fileinput\">
+                                            <div class=\"fileinput-new thumbnail\">
+                                                <img src=\"\" alt=\"\" />
+                                            </div>
+                                            <div class=\"fileinput-preview fileinput-exists thumbnail\" style=\"width: 250px;\"> </div>
+                                            <p><strong>[images will be resized to 730X440]</strong></p>
+                                            <div>
+                                                <span class=\"btn btn-success btn-file\">
+                                                    <span class=\"fileinput-new\"> ajouter image du ticket  </span>
+                                                    <span class=\"fileinput-exists\"> Change </span>
+                                                    <input type=\"file\" name=\"typeimg\"  id=\"inputtype3\">
+                                                </span>
+                                                <a href=\"javascript:;\" class=\"btn red fileinput-exists\" data-dismiss=\"fileinput\"> Remove </a>
+                                            </div>
+                                                                    </div>
+                            </div>
+                        </div>
+                        <div class=\"row col-md-8\" id=\"addtype\">
+
                         </div>
                         <div class=\"row\">
                             <div class=\"col-md-12\">
@@ -227,7 +292,7 @@ class __TwigTemplate_b8f578c9eee03b59935b57389e906e24fc9ae71bdc449045dd9d2329f38
                                 <input type='button' onclick='addText()' value='Ajoutez'  class=\"submit-form-btn\"
                                 style=\"margin-bottom: 20px;\"/>
                                 <a href=\"";
-        // line 172
+        // line 223
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("ticket");
         echo "\" onclick=\"edition();return false;\">Edition</a>
                             </div>
@@ -256,15 +321,15 @@ class __TwigTemplate_b8f578c9eee03b59935b57389e906e24fc9ae71bdc449045dd9d2329f38
     </div>
 </div>
 ";
-        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 198
+        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 249
         $context["type"] = "success"        ;        foreach (Flash::success        () as $message) {
-            $context["message"] = $message;            // line 199
+            $context["message"] = $message;            // line 250
             echo "<p>";
             echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
             echo "</p>
 ";
         }
-        $context["type"] = $_type;        $context["message"] = $_message;        // line 201
+        $context["type"] = $_type;        $context["message"] = $_message;        // line 252
         echo "       <!-- login and register modal start-->
 <div class=\"login-registration-modal\" id=\"loginRegModal\">
     <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
@@ -327,13 +392,36 @@ class __TwigTemplate_b8f578c9eee03b59935b57389e906e24fc9ae71bdc449045dd9d2329f38
         </div><!-- /#loginmodal -->
     </div><!-- login modal warapper satart end-->
 </div>
-
+<div class=\"modal\" tabindex=\"-1\" id=\"autre-modal\" role=\"dialog\"><!-- #login modal-->
+    <div class=\"modal-dialog\" role=\"document\">
+        <div class=\"modal-content\"><!-- modal content start -->
+           
+            <div class=\"tab-content\" id=\"nav-tabContent\"><!-- tab content-->
+                <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
+                    <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
+                        <form id=\"userLoginForm\"  data-request=\"onType\">
+                            <div class=\"form-element square login\"><!-- form element login start -->
+                                <label>Enter le nom de la categorie
+                                </label>
+                                <input name=\"type\" type=\"text\" placeholder=\"nom de la categorie....\" class=\"input-field-square\">
+                                <p class=\"eml\"></p>
+                            </div><!-- form element login end -->
+                          <!-- form element login end -->
+                            <button type=\"submit\" class=\"submit-form-btn\">ajouter</button>
+                        </form>
+                    </div><!-- login form wrapper end -->
+                </div>
+            </div><!-- /.tab conent-->
+        </div><!-- modal content end -->
+    </div>
+</div><!-- /#loginmodal -->
 <script>
     function edition() { options = \"Width=700,Height=700\" ; window.open( \"";
-        // line 265
+        // line 338
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("ticket");
         echo "\", \"edition\", options ) ; }
      var row = 1;
+     var typ=1;
 function nbsub(){
     var nb=document.createElement(\"div\");
     document.getElementById('addTask').appendChild(nb);
@@ -342,6 +430,14 @@ function nbsub(){
     ligne.setAttribute(\"value\", row);
     ligne.setAttribute(\"name\", \"nbsub\");
     nb.appendChild(ligne);
+
+    var nbtype=document.createElement(\"div\");
+    document.getElementById('addtype').appendChild(nbtype);
+    var ligne1 = document.createElement('input');
+    ligne1.setAttribute('type', 'hidden');
+    ligne1.setAttribute(\"value\", typ);
+    ligne1.setAttribute(\"name\", \"nbtype\");
+    nbtype.appendChild(ligne1);
 }
 function addText(){
     var input = document.getElementById('inputTask').value;
@@ -390,7 +486,7 @@ function addText(){
     image.setAttribute('type', 'file');
     image.setAttribute(\"value\", input5);
     image.setAttribute(\"class\",\"input-field-square\");
-    image.setAttribute(\"name\",\"subjour\"+row);
+    image.setAttribute(\"name\",\"subimg\"+row);
     nodenom.appendChild(image);
     var etat = document.createElement('input');
     etat.setAttribute('type', 'button');
@@ -412,6 +508,55 @@ function deleterow(ID)
 {
     document.getElementById('contentP'+ID).remove();
 }
+
+function addtype(){
+    var input1 = document.getElementById('inputtype1').value;
+    var input2 = document.getElementById('inputtype2').value;
+    var input3 = document.getElementById('inputtype3').value;
+    if(input1 != \"\" && input2 != \"\")
+    {
+    var nodetype=document.createElement(\"div\");
+    nodetype.setAttribute('id', 'typeP'+typ);
+    document.getElementById('addtype').appendChild(nodetype);
+
+    var nom = document.createElement('input');
+    nom.setAttribute('type', 'text');
+    nom.setAttribute(\"value\", input1);
+    nom.setAttribute(\"name\",\"typenom\"+typ);
+    nom.setAttribute(\"class\",\"input-field-square\");
+    nodetype.appendChild(nom);
+    var montant = document.createElement('input');
+    montant.setAttribute('type', 'text');
+    montant.setAttribute(\"value\", input2);
+    montant.setAttribute(\"class\",\"input-field-square\");
+    montant.setAttribute(\"name\",\"typemontant\"+typ);
+    nodetype.appendChild(montant);
+    var image = document.createElement('input');
+    image.setAttribute('type', 'file');
+    image.setAttribute(\"value\", input3);
+    image.setAttribute(\"class\",\"input-field-square\");
+    image.setAttribute(\"name\",\"typeimg\"+ typ);
+    nodetype.appendChild(image);
+    var etat = document.createElement('input');
+    etat.setAttribute('type', 'button');
+    etat.setAttribute(\"value\", \"supprimer\");
+    etat.setAttribute(\"style\", \"margin-bottom: 20px;\");
+    etat.setAttribute(\"id\",\"content\"+typ);
+    etat.setAttribute(\"class\",\"submit-form-btn\");
+    etat.setAttribute(\"onClick\", \"deletetype(\"+ typ +\");\");
+    nodetype.appendChild(etat);
+        typ++;
+    }
+    else
+    {
+        alert(\"Please insert a value!\");
+    }
+
+}
+function deletetype(ID)
+{
+    document.getElementById('typeP'+ID).remove();
+}
 </script>";
     }
 
@@ -427,7 +572,7 @@ function deleterow(ID)
 
     public function getDebugInfo()
     {
-        return array (  334 => 265,  268 => 201,  262 => 199,  260 => 198,  231 => 172,  113 => 56,  102 => 54,  98 => 53,  58 => 15,  55 => 14,  49 => 12,  47 => 11,  35 => 1,);
+        return array (  421 => 338,  333 => 252,  327 => 250,  325 => 249,  296 => 223,  149 => 78,  138 => 76,  134 => 75,  118 => 61,  107 => 59,  103 => 58,  58 => 15,  55 => 14,  49 => 12,  47 => 11,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -476,12 +621,17 @@ function deleterow(ID)
                     <div class=\"custom-control custom-checkbox\">
                         <input type=\"checkbox\" class=\"custom-control-input\" id=\"defaultUnchecked\" name=\"gratuit\">
                         <label class=\"custom-control-label\" for=\"defaultUnchecked\">Gratuit</label>
+                    
                     </div>
+                    <div class=\"custom-control custom-checkbox\">
+                            <input type=\"checkbox\" class=\"custom-control-input\" id=\"defaultUncheck\" name=\"code\">
+                            <label class=\"custom-control-label\" for=\"defaultUncheck\">Generer un code promo</label>
+                        
+                        </div>
                     <div class=\"row\">
-                      <div class=\"col-md-4\">
-                            <div class=\"form-element square\">
-                                <label>Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                    <span><a  href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\">Autres</a></span>
+                      <div class=\"col-md-6\">
+                            <div class=\"form-element square\" style=\"margin-top: 25px;\">
+                                <label>Type&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                 </label>
                                 <select class=\"input-field-square\" name=\"category\" value=\"\">
                                                                             {% for item in __SELF__.loadEvents() %}
@@ -492,14 +642,31 @@ function deleterow(ID)
                                                                 
                                   </select>
                             </div>
+                            
+                      </div>
+                      <div class=\"col-md-6\">
+                            <div class=\"form-element square\">
+                                    <label>Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                            <input type='button' onclick='addtype()' value='Ajoutez' 
+                                            style=\"margin-bottom: 20px;\"/>
+                                    </label>
+                                    <select class=\"input-field-square\" name=\"cate\" value=\"\">
+                                                                                {% for item in __SELF__.loadEvents() %}
+                                                                                <option value=\"{{ item.id }}\">{{ item.categorie.categorie }}</option>
+                                                                                {% endfor %}
+                                                                            
+                                                                        
+                                                                    
+                                      </select>
+                                </div>
                       </div>
                       <div class=\"col-md-4\">
-                        <div class=\"form-element square\">
-                            <label>Date de l'évènement
-                            </label>
-                            <input type=\"date\" name=\"date_event\" value=\"\" placeholder=\"mm/dd/yyyy\" class=\"input-field-square\">
+                            <div class=\"form-element square\">
+                                <label>Date de l'évènement
+                                </label>
+                                <input type=\"date\" name=\"date_event\" value=\"\" placeholder=\"mm/dd/yyyy\" class=\"input-field-square\">
+                              </div>
                           </div>
-                      </div>
                        <div class=\"col-md-4\">
                         <div class=\"form-element square\">
                             <label>Date de cloture des ventes
@@ -507,15 +674,8 @@ function deleterow(ID)
                             <input type=\"date\" name=\"date_cloture\" value=\"\" placeholder=\"mm/dd/yyyy\" class=\"input-field-square\">
                                                         </div>
                       </div>
-                      <div class=\"col-md-4\">
-                        <div class=\"form-element square\">
-                            <label>Montant de l'évènement
-                                <span>**</span>
-                            </label>
-                            <input type=\"text\" name=\"montant\" value=\"\" placeholder=\"Enter per person price...\" class=\"input-field-square\">
-                                                        </div>
-                      </div>
-                       <div class=\"col-md-8\">
+                     
+                       <div class=\"col-md-12\">
                         <div class=\"form-element square\">
                             <label>Nombre de ticket
                             </label>
@@ -524,13 +684,49 @@ function deleterow(ID)
                       </div>                                                
                         <div class=\"col-md-12\">
                         <div class=\"row\">
-                                <div class=\"col-md-8\">
+                                <div class=\"col-md-4\">
                                         <div class=\"form-element square\">
-                                            <label>type de ticket
+                                            <label>Nom du type de ticket
                                             </label>
-                                            <input type=\"text\" name=\"nbrticket\" value=\"\" placeholder=\"Entrer le nom du type...\" class=\"input-field-square\">
+                                            <input type=\"text\"  value=\"\" placeholder=\"Entrer le nom du type...\" class=\"input-field-square\" id=\"inputtype1\">
                                         </div>
-                                      </div> 
+                                 </div> 
+                                <div class=\"col-md-4\">
+                                    <div class=\"form-element square\">
+                                        <label>Montant du ticket
+                                            
+                                        </label>
+                                        <input type=\"text\"  value=\"\" placeholder=\"Enter per person price...\" class=\"input-field-square\" id=\"inputtype2\">
+                                    </div>
+                                </div>
+                                <div class=\"col-md-4\">
+                                    <div class=\"form-element square\">
+                                        <input type='button' onclick='addtype()' value='Ajoutez'  class=\"submit-form-btn\"
+                                        style=\"margin-bottom: 20px;\"/>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class=\"row\">
+                            <div class=\"col-md-12\">
+                                    <div class=\"fileinput fileinput-new\" data-provides=\"fileinput\">
+                                            <div class=\"fileinput-new thumbnail\">
+                                                <img src=\"\" alt=\"\" />
+                                            </div>
+                                            <div class=\"fileinput-preview fileinput-exists thumbnail\" style=\"width: 250px;\"> </div>
+                                            <p><strong>[images will be resized to 730X440]</strong></p>
+                                            <div>
+                                                <span class=\"btn btn-success btn-file\">
+                                                    <span class=\"fileinput-new\"> ajouter image du ticket  </span>
+                                                    <span class=\"fileinput-exists\"> Change </span>
+                                                    <input type=\"file\" name=\"typeimg\"  id=\"inputtype3\">
+                                                </span>
+                                                <a href=\"javascript:;\" class=\"btn red fileinput-exists\" data-dismiss=\"fileinput\"> Remove </a>
+                                            </div>
+                                                                    </div>
+                            </div>
+                        </div>
+                        <div class=\"row col-md-8\" id=\"addtype\">
+
                         </div>
                         <div class=\"row\">
                             <div class=\"col-md-12\">
@@ -694,10 +890,33 @@ function deleterow(ID)
         </div><!-- /#loginmodal -->
     </div><!-- login modal warapper satart end-->
 </div>
-
+<div class=\"modal\" tabindex=\"-1\" id=\"autre-modal\" role=\"dialog\"><!-- #login modal-->
+    <div class=\"modal-dialog\" role=\"document\">
+        <div class=\"modal-content\"><!-- modal content start -->
+           
+            <div class=\"tab-content\" id=\"nav-tabContent\"><!-- tab content-->
+                <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
+                    <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
+                        <form id=\"userLoginForm\"  data-request=\"onType\">
+                            <div class=\"form-element square login\"><!-- form element login start -->
+                                <label>Enter le nom de la categorie
+                                </label>
+                                <input name=\"type\" type=\"text\" placeholder=\"nom de la categorie....\" class=\"input-field-square\">
+                                <p class=\"eml\"></p>
+                            </div><!-- form element login end -->
+                          <!-- form element login end -->
+                            <button type=\"submit\" class=\"submit-form-btn\">ajouter</button>
+                        </form>
+                    </div><!-- login form wrapper end -->
+                </div>
+            </div><!-- /.tab conent-->
+        </div><!-- modal content end -->
+    </div>
+</div><!-- /#loginmodal -->
 <script>
     function edition() { options = \"Width=700,Height=700\" ; window.open( \"{{ 'ticket'|page}}\", \"edition\", options ) ; }
      var row = 1;
+     var typ=1;
 function nbsub(){
     var nb=document.createElement(\"div\");
     document.getElementById('addTask').appendChild(nb);
@@ -706,6 +925,14 @@ function nbsub(){
     ligne.setAttribute(\"value\", row);
     ligne.setAttribute(\"name\", \"nbsub\");
     nb.appendChild(ligne);
+
+    var nbtype=document.createElement(\"div\");
+    document.getElementById('addtype').appendChild(nbtype);
+    var ligne1 = document.createElement('input');
+    ligne1.setAttribute('type', 'hidden');
+    ligne1.setAttribute(\"value\", typ);
+    ligne1.setAttribute(\"name\", \"nbtype\");
+    nbtype.appendChild(ligne1);
 }
 function addText(){
     var input = document.getElementById('inputTask').value;
@@ -754,7 +981,7 @@ function addText(){
     image.setAttribute('type', 'file');
     image.setAttribute(\"value\", input5);
     image.setAttribute(\"class\",\"input-field-square\");
-    image.setAttribute(\"name\",\"subjour\"+row);
+    image.setAttribute(\"name\",\"subimg\"+row);
     nodenom.appendChild(image);
     var etat = document.createElement('input');
     etat.setAttribute('type', 'button');
@@ -775,6 +1002,55 @@ function addText(){
 function deleterow(ID)
 {
     document.getElementById('contentP'+ID).remove();
+}
+
+function addtype(){
+    var input1 = document.getElementById('inputtype1').value;
+    var input2 = document.getElementById('inputtype2').value;
+    var input3 = document.getElementById('inputtype3').value;
+    if(input1 != \"\" && input2 != \"\")
+    {
+    var nodetype=document.createElement(\"div\");
+    nodetype.setAttribute('id', 'typeP'+typ);
+    document.getElementById('addtype').appendChild(nodetype);
+
+    var nom = document.createElement('input');
+    nom.setAttribute('type', 'text');
+    nom.setAttribute(\"value\", input1);
+    nom.setAttribute(\"name\",\"typenom\"+typ);
+    nom.setAttribute(\"class\",\"input-field-square\");
+    nodetype.appendChild(nom);
+    var montant = document.createElement('input');
+    montant.setAttribute('type', 'text');
+    montant.setAttribute(\"value\", input2);
+    montant.setAttribute(\"class\",\"input-field-square\");
+    montant.setAttribute(\"name\",\"typemontant\"+typ);
+    nodetype.appendChild(montant);
+    var image = document.createElement('input');
+    image.setAttribute('type', 'file');
+    image.setAttribute(\"value\", input3);
+    image.setAttribute(\"class\",\"input-field-square\");
+    image.setAttribute(\"name\",\"typeimg\"+ typ);
+    nodetype.appendChild(image);
+    var etat = document.createElement('input');
+    etat.setAttribute('type', 'button');
+    etat.setAttribute(\"value\", \"supprimer\");
+    etat.setAttribute(\"style\", \"margin-bottom: 20px;\");
+    etat.setAttribute(\"id\",\"content\"+typ);
+    etat.setAttribute(\"class\",\"submit-form-btn\");
+    etat.setAttribute(\"onClick\", \"deletetype(\"+ typ +\");\");
+    nodetype.appendChild(etat);
+        typ++;
+    }
+    else
+    {
+        alert(\"Please insert a value!\");
+    }
+
+}
+function deletetype(ID)
+{
+    document.getElementById('typeP'+ID).remove();
 }
 </script>", "C:\\wamp64\\www\\install-master/plugins/event/event/components/eventform/default.htm", "");
     }

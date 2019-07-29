@@ -48,7 +48,7 @@ class Event extends Model
     public function scopeListFrontEnd($query,$option = []){
             extract(array_merge([
                 'page'=>1,
-                'perPage'=>3,
+                'perPage'=>15,
                 'sort'=>'created_at_desc'
             ],$option));
             $lastPage = $query->paginate($perPage, $page)->lastPage();

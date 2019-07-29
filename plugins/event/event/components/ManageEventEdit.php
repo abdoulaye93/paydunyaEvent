@@ -33,6 +33,12 @@ class ManageEventEdit extends ComponentBase
         $evenon = Event::where('id',$b)->get();
         return $evenon;
     }
+    public function loadSevent(){     
+        $b=Request::segment(2);
+        $evenon=SubList::where('event_id',$b)
+        ->get();
+        return $evenon;
+    }
     public function loadpulichEvent(){
         $b=Request::segment(2);
         $evenon = Event::where('user_id',$b)->get();
@@ -55,7 +61,8 @@ class ManageEventEdit extends ComponentBase
             Db::table('event_event_periode')
             ->where('id',$pdid)
             ->update(['date_debut' => Input::get('date_debut')]);
-        }else if(Input::get('date_cloture')!=$pd->date_cloture){
+        }
+         if(Input::get('date_cloture')!=$pd->date_cloture){
             Db::table('event_event_periode')
             ->where('id',$pdid)
             ->update(['date_cloture' => Input::get('date_cloture')]);
@@ -75,11 +82,7 @@ class ManageEventEdit extends ComponentBase
         ->where('id', $b)
         ->update(['type_id' => Input::get('category')]);
     }
-    if(Input::get('user_id')!=$pd1->user_id){
-        $event=Db::table('event_event_')
-        ->where('id', $b)
-        ->update(['user_id' => Input::get('user_id')]);
-    }
+    
     if(Input::get('description')!=$pd1->description){
         $event=Db::table('event_event_')
         ->where('id', $b)
@@ -94,6 +97,16 @@ class ManageEventEdit extends ComponentBase
         $event=Db::table('event_event_')
         ->where('id', $b)
         ->update(['montant' => Input::get('montant')]);
+    }
+    if(Input::get('gratuitt')){
+        $event=Db::table('event_event_')
+        ->where('id', $b)
+        ->update(['gratuit' => true]);
+    }
+    if(Input::get('nongratuitt')){
+        $event=Db::table('event_event_')
+        ->where('id', $b)
+        ->update(['gratuit' => false]);
     }
     return Redirect::back();
     }

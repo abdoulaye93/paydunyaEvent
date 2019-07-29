@@ -11,6 +11,7 @@ use event\event\models\Periode;
 use event\event\models\SubList;
 use Flash;
 use Db;
+use Config;
 use Carbon\Carbon;
 use October\Rain\Support\Collection;
 class EventList extends ComponentBase
@@ -32,9 +33,11 @@ class EventList extends ComponentBase
      
     }
     public function onRun(){
+        Config::get('app.url'); 
         $this->prepareVarsevnt();
     }
-    public function loadEvents(){   
+    public function loadEvents(){  
+       
         return Event::all();
     }
     public function loadEventsExpire(){

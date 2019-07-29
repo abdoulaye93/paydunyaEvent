@@ -12,5 +12,5 @@ navigation:
         sideMenu:
             side-menu-item:
                 label: 'Type de ticket'
-                url: ticket/ticket/type
+                url: ticket/ticket/typeticket
                 icon: icon-sitemap

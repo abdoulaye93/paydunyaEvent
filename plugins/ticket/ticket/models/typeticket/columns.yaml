@@ -1,0 +1,7 @@
+columns:
+    nom_type:
+        label: nom
+        type: text
+    montant:
+        label: monatnt
+        type: text

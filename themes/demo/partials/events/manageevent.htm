@@ -11,6 +11,7 @@
          <th scope="col" class="founding_target_th" >PUBLISHED</th>
          <th scope="col" class="action_th" >ACTIONS</th>
          <th scope="col" class="action_th" >INVITATION</th>
+         <th scope="col" class="action_th" >Promotion</th>
          </tr>
      </thead>
      <tbody>
@@ -35,7 +36,9 @@
              <td data-label="action">
              <form data-request="onAnnule">
                      <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{ 'manage_event_view'|page({event_id:item.id}) }}" class="action-btn">View</a>
+                     {%if date() < date(item.date_debut)%}
                      <a class="btn btn-warning btn-sm" href="{{ 'manage_event_edit'|page({event_id:item.id}) }}" class="action-btn">Edit</a>
+                     {%endif%}
                      <input type="hidden" name="event_id" value="{{item.id}}"> 
                      <input type="hidden" name="user_id" value="{{item.user_id}}"> 
                      <input type="hidden" name="annule" value="{{item.annule_demande}}"> 
@@ -49,7 +52,20 @@
            </td>  
            <td>
                  <a class="btn btn-warning btn-sm" href="#" data-toggle="modal" data-target="#invite-modal" class="action-btn">inviter un autre</a>
-           </td>                           
+           </td>   
+           <td>
+                {% if item.promo %}
+                         <span class="badge btn-primary">
+                                <a class="btn btn-warning btn-sm" href="{{__SELF__.loadUrl()}}/promo/{{item.id}}"  class="action-btn">{{__SELF__.loadUrl()}}/promo/{{item.id}}</a>
+                         </span>
+                         {%else%}
+                         <form data-request="onPromo">
+                                <input type="hidden" name="event_id" value="{{item.id}}"> 
+                                <input type="hidden" name="promo" value="{{item.promo}}"> 
+                                <button type="submit" class="btn btn-danger btn-sm">Generer une promotion</button>
+                        </form> 
+                         {%endif%}
+          </td>                           
          </tr>
      </tbody>
    </table>                         
