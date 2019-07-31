@@ -1,0 +1,132 @@
+1564575717a:1:{s:16:"create_event.htm";a:13:{s:8:"fileName";s:16:"create_event.htm";s:7:"content";s:3559:"title = "create_event"
+url = "/create_event"
+layout = "create_event"
+is_hidden = 0
+
+[builderDetails builderDetails2]
+modelClass = "Event\Event\Models\Event"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = 1
+notFoundMessage = "Record not found"
+
+[account]
+paramCode = "code"
+forceSecure = 0
+
+[eventform]
+
+[demoTodo]
+max = 10
+==
+{% component 'eventform' %}
+
+ <div class="login-registration-modal" id="loginRegModal">
+    <div class="login-modal-wrapper"><!-- login modal warapper satart start-->
+        <div class="modal" tabindex="-1" id="login-modal" role="dialog"><!-- #login modal-->
+            <div class="modal-dialog" role="document">
+                <div class="modal-content"><!-- modal content start -->
+                    <nav>
+                        <div class="nav nav-tabs login-modal-navigation" id="nav-tab" role="tablist"><!-- login modal navigation start -->
+                            <a class="nav-item nav-link active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab" aria-controls="nav-login"
+                                aria-selected="true">login</a>
+                            <a class="nav-item nav-link" id="nav-signup-tab" data-toggle="tab" href="#nav-signup" role="tab" aria-controls="nav-signup"
+                                aria-selected="false">Register</a>
+                        </div><!-- login modal navigation end -->
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent"><!-- tab content-->
+                        <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+                            <div class="login-form-wrapper"><!-- login form wrapper start -->
+                               {% if not user %}
+
+                                    <div class="row">
+                                
+                                        <div class="col-md-6">
+                                            <h3 class="{% if this.page.id == 'register' %}active{% endif %}"><a href="{{ 'register'|page }}">Créer un compte</a></h3>
+                                            {% partial account ~ '::signin' %}
+                                        </div>
+                                
+                                    </div>
+                                
+                                {% else %}
+                                
+                                {% endif %}
+                            </div><!-- login form wrapper end -->
+                        </div>
+                        <div class="tab-pane fade" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
+
+                            <div class="singup-form-wrapper">
+                                {% if not user %}
+                                
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            {% partial account ~ '::register' %}
+                                        </div>
+                                
+                                    </div>
+                                
+                                {% else %}
+                                
+                                {% endif %}
+                             </div>
+                        </div>
+                    </div><!-- /.tab conent-->
+                </div><!-- modal content end -->
+            </div>
+        </div><!-- /#loginmodal -->
+    </div><!-- login modal warapper satart end-->";s:5:"mtime";i:1564405753;s:6:"markup";s:3212:"{% component 'eventform' %}
+
+ <div class="login-registration-modal" id="loginRegModal">
+    <div class="login-modal-wrapper"><!-- login modal warapper satart start-->
+        <div class="modal" tabindex="-1" id="login-modal" role="dialog"><!-- #login modal-->
+            <div class="modal-dialog" role="document">
+                <div class="modal-content"><!-- modal content start -->
+                    <nav>
+                        <div class="nav nav-tabs login-modal-navigation" id="nav-tab" role="tablist"><!-- login modal navigation start -->
+                            <a class="nav-item nav-link active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab" aria-controls="nav-login"
+                                aria-selected="true">login</a>
+                            <a class="nav-item nav-link" id="nav-signup-tab" data-toggle="tab" href="#nav-signup" role="tab" aria-controls="nav-signup"
+                                aria-selected="false">Register</a>
+                        </div><!-- login modal navigation end -->
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent"><!-- tab content-->
+                        <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+                            <div class="login-form-wrapper"><!-- login form wrapper start -->
+                               {% if not user %}
+
+                                    <div class="row">
+                                
+                                        <div class="col-md-6">
+                                            <h3 class="{% if this.page.id == 'register' %}active{% endif %}"><a href="{{ 'register'|page }}">Créer un compte</a></h3>
+                                            {% partial account ~ '::signin' %}
+                                        </div>
+                                
+                                    </div>
+                                
+                                {% else %}
+                                
+                                {% endif %}
+                            </div><!-- login form wrapper end -->
+                        </div>
+                        <div class="tab-pane fade" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
+
+                            <div class="singup-form-wrapper">
+                                {% if not user %}
+                                
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            {% partial account ~ '::register' %}
+                                        </div>
+                                
+                                    </div>
+                                
+                                {% else %}
+                                
+                                {% endif %}
+                             </div>
+                        </div>
+                    </div><!-- /.tab conent-->
+                </div><!-- modal content end -->
+            </div>
+        </div><!-- /#loginmodal -->
+    </div><!-- login modal warapper satart end-->";s:4:"code";N;s:5:"title";s:12:"create_event";s:3:"url";s:13:"/create_event";s:6:"layout";s:12:"create_event";s:9:"is_hidden";s:1:"0";s:30:"builderDetails builderDetails2";a:5:{s:10:"modelClass";s:24:"Event\Event\Models\Event";s:15:"identifierValue";s:9:"{{ :id }}";s:14:"modelKeyColumn";s:2:"id";s:13:"displayColumn";s:1:"1";s:15:"notFoundMessage";s:16:"Record not found";}s:7:"account";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}s:9:"eventform";a:0:{}s:8:"demoTodo";a:1:{s:3:"max";s:2:"10";}}}

@@ -40,17 +40,21 @@ function prepareVars(){
                    </li>
                  {% if user %}
                       <li class="nav-item ">
-                      <a data-request="onLogout" data-request-data="redirect: '/'" href="" class="nav-link">Sign out</a>
-                         
-                       </li>
-                         <li class="nav-item dropdown active">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Event</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ 'create_event'|page }}">Créer un évènement</a>
-                                <a class="dropdown-item" href="{{ 'manage_event'|page({user_id:user.id}) }}">Gestion des évènement</a>
-                                <a class="dropdown-item" href="{{ 'access_event'|page({user_id:user.id}) }}">Suivre un évènement</a>
-                            </div>
-                        </li>
+                            <a data-request="onLogout" data-request-data="redirect: '/'" href="" class="nav-link">Sign out</a>    
+                      </li>
+
+                            <li class="nav-item dropdown {% if this.page.id == 'create_event' or this.page.id == 'manage_event' or this.page.id == 'access_event' %}active{% endif %}">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Event</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ 'create_event'|page }}">Créer un évènement</a>
+                                    <a class="dropdown-item" href="{{ 'manage_event'|page({user_id:user.id}) }}">Gestion des évènement</a>
+                                    <a class="dropdown-item" href="{{ 'access_event'|page({user_id:user.id}) }}">Suivre un évènement</a>
+                                </div>
+                            </li>
+
+                   <li class="nav-item {% if this.page.id == 'configuration_payment' %}active{% endif %}">
+                        <a class="nav-link" href="{{ 'configuration_payment'|page }}">Config payment</a>
+                   </li>
                     
                 
                     {% else %}
@@ -60,7 +64,7 @@ function prepareVars(){
                     {% endif %}
                     {% if user.is_superuser %}
                      </li>
-                         <li class="nav-item dropdown active">
+                         <li class="nav-item dropdown {% if this.page.id == 'admin' or this.page.id == 'admin_demande' %}active{% endif %}">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {% if notifs|length%}
                                     <span class="badge badge-danger">
                                             Notif{{ notifs|length}}</span>

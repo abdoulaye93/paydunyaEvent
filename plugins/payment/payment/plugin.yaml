@@ -1,6 +1,11 @@
 plugin:
     name: 'payment.payment::lang.plugin.name'
-    description: 'payment.payment::lang.plugin.description'
+    description: 'Module de paiement en ligne avec Paydunya'
     author: paydunya
     icon: oc-icon-adjust
     homepage: ''
+navigation:
+    payment-menu-item:
+        label: Payment
+        url: /
+        icon: icon-bank

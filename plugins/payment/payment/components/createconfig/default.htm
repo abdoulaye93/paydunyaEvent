@@ -1,0 +1,105 @@
+{% flash success %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+            <br>
+                <p class="bg-success">{{ message }}</p>
+            </div>
+        </div>
+    </div>
+{% endflash %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card my-5" style="width:100%;">
+          <div class="card-body" style="background-color:#7d5fff">
+            <h3 style="color:white;">Configuration du module de paiement</h3>
+          </div>
+          <div class="card-body">
+          <div class="jumbotron">
+            <p style="font-size: 1.5em;">Avertissement : </p>
+          <strong>Veuillez renseigner soit les paramètres de test, soit les paramètres de production.
+          Nous vous conseillons de procéder d'abord à des tests en renseignant les paramètres de test, avant de les enlever et de passer en mode production !</strong></div>
+            <div class="col-md-12">
+                <form class="contact-from-wrapper" data-request="onSave" data-request-files data-request-flash>
+                        {% if user %}
+                        <input type="hidden" name="id_user" value="{{ user.id }}">
+                    {% else %}
+                    {% endif %}
+                    <div class="form-element square">
+                        <label for="master_key">Master key
+                            <span>**</span>
+                        </label>
+                        <input type="text" required id="master_key" name="master_key" placeholder="Votre clé principale..." {% if __SELF__.config %} value="{{ __SELF__.config.master_key }}" {% endif %} class="input-field-square">
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                            <div class="form-element square">
+                                <label for="private_key_test">Private test key
+                                </label>
+                                <input type="text" id="private_key_test" {% if __SELF__.config %} value="{{ __SELF__.config.private_key_test }}" {% endif %} placeholder="Votre clé privée de test..." name="private_key_test" value="" class="input-field-square">
+                            </div>
+                        </div>
+                       <div class="col-md-4">
+                        <div class="form-element square">
+                            <label for="public_key_test">Public test key
+                            </label>
+                            <input type="text" id="public_key_test" placeholder="Votre clé public de test..." name="public_key_test" {% if __SELF__.config %} value="{{ __SELF__.config.public_key_test }}" {% endif %} class="input-field-square">
+                        </div>
+                      </div>
+                     
+                       <div class="col-md-4">
+                        <div class="form-element square">
+                            <label for="token_test">Token test
+                            </label>
+                            <input type="text" id="token_test" name="token_test" placeholder="Votre token de test..." {% if __SELF__.config %} value="{{ __SELF__.config.token_test }}" {% endif %} class="input-field-square">
+                        </div>
+                      </div>                                                
+                        <div class="col-md-12">
+                        <div class="row">
+                                <div class="col-md-4">
+                                        <div class="form-element square">
+                                            <label for="private_key_prod">Private production key</label>
+                                            <input type="text" id="private_key_prod" name="private_key_prod" placeholder="Votre clé privée de production..." {% if __SELF__.config %} value="{{ __SELF__.config.private_key_prod }}" {% endif %} class="input-field-square" id="inputtype1">
+                                        </div>
+                                 </div> 
+                                <div class="col-md-4">
+                                    <div class="form-element square">
+                                        <label id="public_key_prod">Public production key</label>
+                                        <input type="text" id="public_key_prod" placeholder="Votre clé public de production..." name="public_key_prod" {% if __SELF__.config %} value="{{ __SELF__.config.public_key_prod }}" {% endif %} class="input-field-square" id="inputtype2">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-element square">
+                                        <label for="token_prod">Token production</label>
+                                        <input type="text" id="token_prod" placeholder="Votre token de production..." name="token_prod" {% if __SELF__.config %} value="{{ __SELF__.config.token_prod }}" {% endif %} class="input-field-square" id="inputtype2">
+                                    </div>
+                                </div>
+                        </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-element square">
+                                        <label for="redirect">Redirection</label>
+                                        <select name="redirect" id="redirect" class="form-control">
+                                            <option value="true">Oui</option>
+                                            <option value="false">Non</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" class="submit-form-btn">Valider</button>
+                    </div>
+
+                </form>
+            </div>
+          </div>
+        </div>
+
+    </div>
+</div>

@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost/install-master/',
+    'url' => 'http://localhost/paydunyaEvent/',
 
     /*
     |--------------------------------------------------------------------------
