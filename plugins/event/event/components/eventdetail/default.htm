@@ -45,14 +45,14 @@
                             <tr>
                               <td>{{ item.nom_type }} - Prix: {{ item.montant }}FCFA</td>
                               <td> &nbsp;&nbsp; &nbsp;</td>
-                              <td><input type="checkbox" value="{{ item.montant }}" class=" tp" onchange="testtype(event)"/></td>
+                              <td><input type="checkbox" value="{{ item.montant }}" class="form-control" id="tp" onchange="testtype(event)"/></td>
                             </tr>
                           {% endfor %}
                           <script>
                            
                           </script>
                         </table>
-                      <select class="float-right" onchange="clacTotal( this.value)" id="nb">
+                      <select class="float-right" onchange="clacTotal(this.value)" id="nb">
                           {% for i in 1..item.nombre_ticket %}
                             <option value="{{ i }}"> {{ i }}</option>
                          {% endfor %}  
@@ -67,7 +67,7 @@
                           <tr>
                             <td>{{ item.sub.nom }} - Prix: {{ item.sub.montant }}FCFA</td>
                             <td> &nbsp;&nbsp; &nbsp;</td>
-                            <td><input type="checkbox" value="{{ item.sub.montant }}" class=" sub" onchange="test(event)"/></td>
+                            <td><input type="checkbox" value="{{ item.sub.montant }}" class="form-control sub" onchange="test(event)"/></td>
                           </tr>
                         {% endfor %}
                         <script>
@@ -81,7 +81,7 @@
                           }
                           function testtype(event)
                           {
-                            var nb = document.getElementById('nb')
+                            var nb = document.getElementById('tp')
                             if(event.target.checked)
                               document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb.value + parseInt(document.getElementById('totalPrice').innerHTML)
                             else
@@ -101,6 +101,12 @@
                       </span>
                     </div>
                     <br>
+
+                    <div>
+                      <form action="">
+                      
+                      </form>
+                    </div>
                                                   
                     <div>
                       <a href="{{ 'calendar'|page }}">jjjj</a>

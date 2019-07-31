@@ -107,7 +107,7 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                               <td><input type=\"checkbox\" value=\"";
                 // line 48
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant", [], "any", false, false, false, 48), "html", null, true);
-                echo "\" class=\" tp\" onchange=\"testtype(event)\"/></td>
+                echo "\" class=\"form-control\" id=\"tp\" onchange=\"testtype(event)\"/></td>
                             </tr>
                           ";
             }
@@ -119,7 +119,7 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                            
                           </script>
                         </table>
-                      <select class=\"float-right\" onchange=\"clacTotal( this.value)\" id=\"nb\">
+                      <select class=\"float-right\" onchange=\"clacTotal(this.value)\" id=\"nb\">
                           ";
             // line 56
             $context['_parent'] = $context;
@@ -165,7 +165,7 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                             <td><input type=\"checkbox\" value=\"";
                     // line 70
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "sub", [], "any", false, false, false, 70), "montant", [], "any", false, false, false, 70), "html", null, true);
-                    echo "\" class=\" sub\" onchange=\"test(event)\"/></td>
+                    echo "\" class=\"form-control sub\" onchange=\"test(event)\"/></td>
                           </tr>
                         ";
                 }
@@ -184,7 +184,7 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                           }
                           function testtype(event)
                           {
-                            var nb = document.getElementById('nb')
+                            var nb = document.getElementById('tp')
                             if(event.target.checked)
                               document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb.value + parseInt(document.getElementById('totalPrice').innerHTML)
                             else
@@ -206,10 +206,16 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                       </span>
                     </div>
                     <br>
+
+                    <div>
+                      <form action=\"\">
+                      
+                      </form>
+                    </div>
                                                   
                     <div>
                       <a href=\"";
-            // line 106
+            // line 112
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("calendar");
             echo "\">jjjj</a>
                     </div>
@@ -295,67 +301,67 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                             <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
                                 <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
                                    ";
-            // line 189
+            // line 195
             if ( !($context["user"] ?? null)) {
-                // line 190
+                // line 196
                 echo "    
                                         <div class=\"row\">
                                     
                                             <div class=\"col-md-6\">
                                                 <h3 class=\"";
-                // line 194
-                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 194), "id", [], "any", false, false, false, 194) == "register")) {
+                // line 200
+                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 200), "id", [], "any", false, false, false, 200) == "register")) {
                     echo "active";
                 }
                 echo "\"><a href=\"";
                 echo $this->extensions['Cms\Twig\Extension']->pageFilter("register");
                 echo "\">Créer un compte</a></h3>
                                                 ";
-                // line 195
+                // line 201
                 $context['__cms_partial_params'] = [];
                 echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::signin")                , $context['__cms_partial_params']                , true                );
                 unset($context['__cms_partial_params']);
-                // line 196
+                // line 202
                 echo "                                            </div>
                                     
                                         </div>
                                     
                                     ";
             } else {
-                // line 201
+                // line 207
                 echo "                                    
                                     ";
             }
-            // line 203
+            // line 209
             echo "                                </div><!-- login form wrapper end -->
                             </div>
                             <div class=\"tab-pane fade\" id=\"nav-signup\" role=\"tabpanel\" aria-labelledby=\"nav-signup-tab\">
     
                                 <div class=\"singup-form-wrapper\">
                                     ";
-            // line 208
+            // line 214
             if ( !($context["user"] ?? null)) {
-                // line 209
+                // line 215
                 echo "                                    
                                         <div class=\"row\">
                                             <div class=\"col-md-6\">
                                                 ";
-                // line 212
+                // line 218
                 $context['__cms_partial_params'] = [];
                 echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::register")                , $context['__cms_partial_params']                , true                );
                 unset($context['__cms_partial_params']);
-                // line 213
+                // line 219
                 echo "                                            </div>
                                     
                                         </div>
                                     
                                     ";
             } else {
-                // line 218
+                // line 224
                 echo "                                    
                                     ";
             }
-            // line 220
+            // line 226
             echo "                                 </div>
                             </div>
                         </div><!-- /.tab conent-->
@@ -383,7 +389,7 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
 
     public function getDebugInfo()
     {
-        return array (  359 => 220,  355 => 218,  348 => 213,  344 => 212,  339 => 209,  337 => 208,  330 => 203,  326 => 201,  319 => 196,  315 => 195,  307 => 194,  301 => 190,  299 => 189,  213 => 106,  200 => 95,  176 => 73,  167 => 70,  160 => 68,  157 => 67,  153 => 66,  148 => 63,  146 => 62,  140 => 58,  129 => 57,  125 => 56,  118 => 51,  109 => 48,  102 => 46,  99 => 45,  95 => 44,  86 => 38,  79 => 34,  57 => 15,  45 => 6,  39 => 2,  35 => 1,);
+        return array (  365 => 226,  361 => 224,  354 => 219,  350 => 218,  345 => 215,  343 => 214,  336 => 209,  332 => 207,  325 => 202,  321 => 201,  313 => 200,  307 => 196,  305 => 195,  219 => 112,  200 => 95,  176 => 73,  167 => 70,  160 => 68,  157 => 67,  153 => 66,  148 => 63,  146 => 62,  140 => 58,  129 => 57,  125 => 56,  118 => 51,  109 => 48,  102 => 46,  99 => 45,  95 => 44,  86 => 38,  79 => 34,  57 => 15,  45 => 6,  39 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -435,14 +441,14 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                             <tr>
                               <td>{{ item.nom_type }} - Prix: {{ item.montant }}FCFA</td>
                               <td> &nbsp;&nbsp; &nbsp;</td>
-                              <td><input type=\"checkbox\" value=\"{{ item.montant }}\" class=\" tp\" onchange=\"testtype(event)\"/></td>
+                              <td><input type=\"checkbox\" value=\"{{ item.montant }}\" class=\"form-control\" id=\"tp\" onchange=\"testtype(event)\"/></td>
                             </tr>
                           {% endfor %}
                           <script>
                            
                           </script>
                         </table>
-                      <select class=\"float-right\" onchange=\"clacTotal( this.value)\" id=\"nb\">
+                      <select class=\"float-right\" onchange=\"clacTotal(this.value)\" id=\"nb\">
                           {% for i in 1..item.nombre_ticket %}
                             <option value=\"{{ i }}\"> {{ i }}</option>
                          {% endfor %}  
@@ -457,7 +463,7 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                           <tr>
                             <td>{{ item.sub.nom }} - Prix: {{ item.sub.montant }}FCFA</td>
                             <td> &nbsp;&nbsp; &nbsp;</td>
-                            <td><input type=\"checkbox\" value=\"{{ item.sub.montant }}\" class=\" sub\" onchange=\"test(event)\"/></td>
+                            <td><input type=\"checkbox\" value=\"{{ item.sub.montant }}\" class=\"form-control sub\" onchange=\"test(event)\"/></td>
                           </tr>
                         {% endfor %}
                         <script>
@@ -471,7 +477,7 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                           }
                           function testtype(event)
                           {
-                            var nb = document.getElementById('nb')
+                            var nb = document.getElementById('tp')
                             if(event.target.checked)
                               document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb.value + parseInt(document.getElementById('totalPrice').innerHTML)
                             else
@@ -491,6 +497,12 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                       </span>
                     </div>
                     <br>
+
+                    <div>
+                      <form action=\"\">
+                      
+                      </form>
+                    </div>
                                                   
                     <div>
                       <a href=\"{{ 'calendar'|page }}\">jjjj</a>
