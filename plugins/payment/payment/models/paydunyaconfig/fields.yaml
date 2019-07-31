@@ -1,0 +1,49 @@
+fields:
+    master_key:
+        label: 'Master Key'
+        span: auto
+        cssClass: form-control
+        required: 1
+        type: text
+    private_key_test:
+        label: 'Private test key'
+        span: auto
+        cssClass: form-control
+        type: text
+    public_key_test:
+        label: 'Public test key'
+        span: auto
+        cssClass: form-control
+        type: text
+    token_test:
+        label: 'Token test'
+        span: auto
+        cssClass: form-control
+        type: text
+    private_key_prod:
+        label: 'Private production key'
+        span: auto
+        type: text
+    public_key_prod:
+        label: 'Public production key'
+        span: auto
+        cssClass: form-control
+        type: text
+    token_prod:
+        label: 'Token production'
+        span: auto
+        cssClass: form-control
+        type: text
+    redirect:
+        label: Redirect
+        span: full
+        cssClass: form-control
+        containerAttributes:
+            'Yes': 'true'
+            'No': 'false'
+        type: section
+    id_user:
+        label: user
+        span: auto
+        hidden: 1
+        type: text

@@ -1,0 +1,17 @@
+name: PaydunyaPayment
+modelClass: payment\Payment\Models\PaydunyaConfig
+form: $/payment/payment/models/paydunyaconfig/fields.yaml
+defaultRedirect: configuration_payment
+create:
+    title: 'Paramètrage du module de paiement'
+    redirect: configuration_payment
+    redirectClose: payment/payment/paydunyapayment
+    flashSave: 'Configuration sauvegardée !'
+update:
+    title: 'Mise à jour des paramètres de configuration'
+    redirect: configuration_payment
+    redirectClose: configuration_payment
+    flashSave: 'Configuration mise à jour !'
+    flashDelete: 'Echec de la mise à jour !'
+preview:
+    title: 'Configuration API'

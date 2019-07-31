@@ -1,0 +1,29 @@
+columns:
+    master_key:
+        label: 'Master key'
+        type: text
+    public_key_test:
+        label: 'Public test key'
+        type: text
+    private_key_test:
+        label: 'Private test key'
+        type: text
+    token_test:
+        label: 'Token test'
+        type: text
+    private_key_prod:
+        label: 'Private production key'
+        type: text
+    public_key_prod:
+        label: 'Public production key'
+        type: text
+    token_prod:
+        label: 'Token production'
+        type: text
+    redirect:
+        label: Redirection
+        type: select
+    id_user:
+        label: User
+        type: text
+        invisible: true
