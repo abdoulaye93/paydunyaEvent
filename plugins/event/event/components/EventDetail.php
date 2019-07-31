@@ -8,6 +8,7 @@ use event\event\models\Event;
 use event\event\models\Type;
 use event\event\models\Sub;
 use event\event\models\Periode;
+use ticket\ticket\models\TypeTicket;
 use event\event\models\SubList;
 use Flash;
 use Db;
@@ -32,6 +33,11 @@ class EventDetail extends ComponentBase
         $b=Request::segment(2);
         $evenon = Event::where('id',$b)->get();
         return $evenon;
+    }
+    public function loadTypeticket(){
+        $b=Request::segment(2);
+        $subevent = TypeTicket::where('event_id',$b)->get();
+        return $subevent;
     }
     public function loadSubEvent(){
         $b=Request::segment(2);

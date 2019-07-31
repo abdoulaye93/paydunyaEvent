@@ -1,4 +1,4 @@
-1564575717a:1:{s:11:"default.htm";a:8:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:10906:"description = "Default layout"
+1564576880a:1:{s:11:"default.htm";a:8:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:11872:"description = "Default layout"
 
 [account]
 paramCode = "code"
@@ -7,7 +7,7 @@ forceSecure = 0
 [session]
 security = "all"
 ==
-<?
+<?php
 use Carbon\Carbon;
 
 use event\event\models\Event;
@@ -59,6 +59,12 @@ function prepareVars(){
      <link href="{{ 'assets/admin/css/sweetalert.css'|theme }}" rel="stylesheet"><script src="{{ 'assets/admin/js/sweetalert.js'|theme }}"></script>
      <link href="{{ 'assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs'|theme }}" rel="stylesheet">
      <link href="{{ 'assets/user/css/themes/base-color.php?color=7d5fff'|theme }}" rel="stylesheet">
+     <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
     <style media="screen">
   .eml {
     color: red;
@@ -194,15 +200,15 @@ $('#EventFilter').on('change', 'input, select', function(){
       $('#buyTicketConfModal').modal('hide');
     }
 
-    function clacTotal(pp_price, p_no) {
-      totalPrice = pp_price * p_no;
-      document.getElementById('totalPriceInput').value = pp_price;
-      document.getElementById('pNoInput').value = p_no;
-      document.getElementById('totalPrice').innerHTML = totalPrice;
+    function clacTotal(p_no) {
+     // totalPrice = 0;
+     // document.getElementById('totalPriceInput').value = pp_price;
+     // document.getElementById('pNoInput').value = p_no;
+     // document.getElementById('totalPrice').innerHTML = 0;
     }
 
     $(document).ready(function() {
-      clacTotal(document.getElementById('montantItem').value, 1);
+     // clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
     <script>
@@ -325,9 +331,16 @@ $('#EventFilter').on('change', 'input, select', function(){
             });
         }
     </script>
-
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:5:"mtime";i:1564405753;s:6:"markup";s:10491:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1564575649;s:6:"markup";s:11454:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
@@ -364,6 +377,12 @@ $('#EventFilter').on('change', 'input, select', function(){
      <link href="{{ 'assets/admin/css/sweetalert.css'|theme }}" rel="stylesheet"><script src="{{ 'assets/admin/js/sweetalert.js'|theme }}"></script>
      <link href="{{ 'assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs'|theme }}" rel="stylesheet">
      <link href="{{ 'assets/user/css/themes/base-color.php?color=7d5fff'|theme }}" rel="stylesheet">
+     <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
     <style media="screen">
   .eml {
     color: red;
@@ -499,15 +518,15 @@ $('#EventFilter').on('change', 'input, select', function(){
       $('#buyTicketConfModal').modal('hide');
     }
 
-    function clacTotal(pp_price, p_no) {
-      totalPrice = pp_price * p_no;
-      document.getElementById('totalPriceInput').value = pp_price;
-      document.getElementById('pNoInput').value = p_no;
-      document.getElementById('totalPrice').innerHTML = totalPrice;
+    function clacTotal(p_no) {
+     // totalPrice = 0;
+     // document.getElementById('totalPriceInput').value = pp_price;
+     // document.getElementById('pNoInput').value = p_no;
+     // document.getElementById('totalPrice').innerHTML = 0;
     }
 
     $(document).ready(function() {
-      clacTotal(document.getElementById('montantItem').value, 1);
+     // clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
     <script>
@@ -630,7 +649,14 @@ $('#EventFilter').on('change', 'input, select', function(){
             });
         }
     </script>
-
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
 </html>";s:4:"code";s:297:"use Carbon\Carbon;
 

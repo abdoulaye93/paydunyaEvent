@@ -64,9 +64,27 @@ class __TwigTemplate_5925abe73302795286bec2dbbe5f1753f18c7b9943ca94d9aea5f60c52a
                 // line 14
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "periode", [], "any", false, false, false, 14), "date_cloture", [], "any", false, false, false, 14), "html", null, true);
                 echo "</p>
-                   <a  href=\"";
+                   ";
                 // line 15
-                echo $this->extensions['Cms\Twig\Extension']->pageFilter("description_event", ["event_id" => twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 15)]);
+                if (twig_get_attribute($this->env, $this->source, $context["item"], "position_id", [], "any", false, false, false, 15)) {
+                    // line 16
+                    echo "                        <p> 
+                            <a  href=\"";
+                    // line 17
+                    echo $this->extensions['Cms\Twig\Extension']->pageFilter("position", ["lat" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "position", [], "any", false, false, false, 17), "lat", [], "any", false, false, false, 17), "long" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "position", [], "any", false, false, false, 17), "long", [], "any", false, false, false, 17)]);
+                    echo "\"  >
+
+                                <i class=\"fa fa-caret-right\"></i> 
+                                <span class=\"title\">
+                                    Position
+                                </span>
+                            </a>
+                        </p>
+                    ";
+                }
+                // line 26
+                echo "                   <a  href=\"";
+                echo $this->extensions['Cms\Twig\Extension']->pageFilter("description_event", ["event_id" => twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 26)]);
                 echo "\"  class=\"boxed-btn-rounded\">
                    <i class=\"fa fa-caret-right\"></i> <span class=\"title\">Details</span></a>
                </div>
@@ -77,13 +95,13 @@ class __TwigTemplate_5925abe73302795286bec2dbbe5f1753f18c7b9943ca94d9aea5f60c52a
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 21
+            // line 32
             echo "</div>
 
 
 ";
         } else {
-            // line 25
+            // line 36
             echo "<div class=\"row\" class=\"text-center\">
        <h3 class=\"\">NO  TICKETS FOUND</h3>
    </div>
@@ -103,7 +121,7 @@ class __TwigTemplate_5925abe73302795286bec2dbbe5f1753f18c7b9943ca94d9aea5f60c52a
 
     public function getDebugInfo()
     {
-        return array (  87 => 25,  81 => 21,  69 => 15,  65 => 14,  61 => 13,  57 => 12,  50 => 8,  44 => 4,  40 => 3,  37 => 2,  35 => 1,);
+        return array (  105 => 36,  99 => 32,  86 => 26,  74 => 17,  71 => 16,  69 => 15,  65 => 14,  61 => 13,  57 => 12,  50 => 8,  44 => 4,  40 => 3,  37 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -122,6 +140,17 @@ class __TwigTemplate_5925abe73302795286bec2dbbe5f1753f18c7b9943ca94d9aea5f60c52a
                    <h4 style=\"color:#10ac84;\">{{ item.nom }}</h4>
                    <p><strong><i class=\"fa fa-money\" aria-hidden=\"true\"></i> Prx: </strong>{{ item.montant }} FCFA</p>
                    <p><strong><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i> Date d'expiration: </strong>{{ item.periode.date_cloture }}</p>
+                   {%if item.position_id%}
+                        <p> 
+                            <a  href=\"{{ 'position'|page({lat:item.position.lat,long:item.position.long}) }}\"  >
+
+                                <i class=\"fa fa-caret-right\"></i> 
+                                <span class=\"title\">
+                                    Position
+                                </span>
+                            </a>
+                        </p>
+                    {%endif%}
                    <a  href=\"{{ 'description_event'|page({ event_id: item.id }) }}\"  class=\"boxed-btn-rounded\">
                    <i class=\"fa fa-caret-right\"></i> <span class=\"title\">Details</span></a>
                </div>

@@ -119,6 +119,12 @@ class __TwigTemplate_daf1bfd842d967c7553b6c0f83b7b8301b08a3aea9833b921262d41e3d7
         // line 37
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/themes/base-color.php?color=7d5fff");
         echo "\" rel=\"stylesheet\">
+     <!-- Font Awesome -->
+<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">
+<!-- Bootstrap core CSS -->
+<link href=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\">
+<!-- Material Design Bootstrap -->
+<link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
     <style media=\"screen\">
   .eml {
     color: red;
@@ -185,11 +191,11 @@ class __TwigTemplate_daf1bfd842d967c7553b6c0f83b7b8301b08a3aea9833b921262d41e3d7
     
        <header id=\"layout-header\">
             ";
-        // line 103
+        // line 109
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 104
+        // line 110
         echo "        </header>
 
     <!-- navbar area start -->
@@ -197,36 +203,36 @@ class __TwigTemplate_daf1bfd842d967c7553b6c0f83b7b8301b08a3aea9833b921262d41e3d7
         <!-- Content -->
         <section id=\"layout-content\">
             ";
-        // line 110
+        // line 116
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 111
+        // line 117
         echo "        </section>
        
         <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 115
+        // line 121
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 116
+        // line 122
         echo "        </footer>
 
         <!-- Scripts -->
         <script src=\"";
-        // line 119
+        // line 125
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
         <script src=\"";
-        // line 120
+        // line 126
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
         <script src=\"";
-        // line 121
+        // line 127
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script>
         ";
-        // line 122
+        // line 128
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="'. Request::getBasePath()
@@ -241,11 +247,11 @@ class __TwigTemplate_daf1bfd842d967c7553b6c0f83b7b8301b08a3aea9833b921262d41e3d7
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 123
+        // line 129
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 124
+        // line 130
         echo "        
 <script>
   (function(\$){
@@ -295,15 +301,15 @@ class __TwigTemplate_daf1bfd842d967c7553b6c0f83b7b8301b08a3aea9833b921262d41e3d7
       \$('#buyTicketConfModal').modal('hide');
     }
 
-    function clacTotal(pp_price, p_no) {
-      totalPrice = pp_price * p_no;
-      document.getElementById('totalPriceInput').value = pp_price;
-      document.getElementById('pNoInput').value = p_no;
-      document.getElementById('totalPrice').innerHTML = totalPrice;
+    function clacTotal(p_no) {
+     // totalPrice = 0;
+     // document.getElementById('totalPriceInput').value = pp_price;
+     // document.getElementById('pNoInput').value = p_no;
+     // document.getElementById('totalPrice').innerHTML = 0;
     }
 
     \$(document).ready(function() {
-      clacTotal(document.getElementById('montantItem').value, 1);
+     // clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
     <script>
@@ -426,7 +432,14 @@ class __TwigTemplate_daf1bfd842d967c7553b6c0f83b7b8301b08a3aea9833b921262d41e3d7
             });
         }
     </script>
-
+<!-- JQuery -->
+<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
+<!-- Bootstrap tooltips -->
+<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js\"></script>
+<!-- Bootstrap core JavaScript -->
+<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js\"></script>
+<!-- MDB core JavaScript -->
+<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js\"></script>
     </body>
 </html>";
     }
@@ -443,7 +456,7 @@ class __TwigTemplate_daf1bfd842d967c7553b6c0f83b7b8301b08a3aea9833b921262d41e3d7
 
     public function getDebugInfo()
     {
-        return array (  249 => 124,  245 => 123,  230 => 122,  226 => 121,  222 => 120,  218 => 119,  213 => 116,  209 => 115,  203 => 111,  201 => 110,  193 => 104,  189 => 103,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
+        return array (  255 => 130,  251 => 129,  236 => 128,  232 => 127,  228 => 126,  224 => 125,  219 => 122,  215 => 121,  209 => 117,  207 => 116,  199 => 110,  195 => 109,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -485,6 +498,12 @@ class __TwigTemplate_daf1bfd842d967c7553b6c0f83b7b8301b08a3aea9833b921262d41e3d7
      <link href=\"{{ 'assets/admin/css/sweetalert.css'|theme }}\" rel=\"stylesheet\"><script src=\"{{ 'assets/admin/js/sweetalert.js'|theme }}\"></script>
      <link href=\"{{ 'assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs'|theme }}\" rel=\"stylesheet\">
      <link href=\"{{ 'assets/user/css/themes/base-color.php?color=7d5fff'|theme }}\" rel=\"stylesheet\">
+     <!-- Font Awesome -->
+<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">
+<!-- Bootstrap core CSS -->
+<link href=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\">
+<!-- Material Design Bootstrap -->
+<link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
     <style media=\"screen\">
   .eml {
     color: red;
@@ -620,15 +639,15 @@ class __TwigTemplate_daf1bfd842d967c7553b6c0f83b7b8301b08a3aea9833b921262d41e3d7
       \$('#buyTicketConfModal').modal('hide');
     }
 
-    function clacTotal(pp_price, p_no) {
-      totalPrice = pp_price * p_no;
-      document.getElementById('totalPriceInput').value = pp_price;
-      document.getElementById('pNoInput').value = p_no;
-      document.getElementById('totalPrice').innerHTML = totalPrice;
+    function clacTotal(p_no) {
+     // totalPrice = 0;
+     // document.getElementById('totalPriceInput').value = pp_price;
+     // document.getElementById('pNoInput').value = p_no;
+     // document.getElementById('totalPrice').innerHTML = 0;
     }
 
     \$(document).ready(function() {
-      clacTotal(document.getElementById('montantItem').value, 1);
+     // clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
     <script>
@@ -751,7 +770,14 @@ class __TwigTemplate_daf1bfd842d967c7553b6c0f83b7b8301b08a3aea9833b921262d41e3d7
             });
         }
     </script>
-
+<!-- JQuery -->
+<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
+<!-- Bootstrap tooltips -->
+<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js\"></script>
+<!-- Bootstrap core JavaScript -->
+<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js\"></script>
+<!-- MDB core JavaScript -->
+<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js\"></script>
     </body>
 </html>", "/opt/lampp/htdocs/paydunyaEvent/themes/demo/layouts/default.htm", "");
     }

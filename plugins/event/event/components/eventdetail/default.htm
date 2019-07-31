@@ -39,16 +39,24 @@
                     </div>
                     <hr>
                     <div class="">
-                      <strong class="card-title">Buy Tickets:</strong><br>
-                      <span>
-                        <span>Par Person</span><br>
-                        <span>{{item.montant}} FCFA</span>
-                        <select class="float-right" onchange="clacTotal('{{ item.montant }}', this.value)" id="nb">
-                            {% for i in 1..item.nombre_ticket %}
-                              <option value="{{ i }}"> {{ i }}</option>
-                           {% endfor %}            
-                    </select>
-                      </span>
+                      <strong class="card-title">Tickets:</strong><br>
+                      <table>
+                          {% for item in __SELF__.loadTypeticket() %}
+                            <tr>
+                              <td>{{ item.nom_type }} - Prix: {{ item.montant }}FCFA</td>
+                              <td> &nbsp;&nbsp; &nbsp;</td>
+                              <td><input type="checkbox" value="{{ item.montant }}" class=" tp" onchange="testtype(event)"/></td>
+                            </tr>
+                          {% endfor %}
+                          <script>
+                           
+                          </script>
+                        </table>
+                      <select class="float-right" onchange="clacTotal( this.value)" id="nb">
+                          {% for i in 1..item.nombre_ticket %}
+                            <option value="{{ i }}"> {{ i }}</option>
+                         {% endfor %}  
+                        </select>  
                     </div>
                     <hr>
                     {% if __SELF__.loadSubEvent()|length > 0 %}
@@ -63,13 +71,21 @@
                           </tr>
                         {% endfor %}
                         <script>
-                          function test(event)
+                         function test(event)
                           {
                             var nb = document.getElementById('nb')
                             if(event.target.checked)
                               document.getElementById('totalPrice').innerHTML = parseInt(event.target.value) + parseInt(document.getElementById('totalPrice').innerHTML)
                             else
                               document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)
+                          }
+                          function testtype(event)
+                          {
+                            var nb = document.getElementById('nb')
+                            if(event.target.checked)
+                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb.value + parseInt(document.getElementById('totalPrice').innerHTML)
+                            else
+                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb.value
                           }
                           //parseInt(document.getElementById('montantItem').value) * parseInt(nb.options[nb.selectedIndex].value)
                         </script>
@@ -79,13 +95,16 @@
                     <div class="">
                       <strong>Total:</strong>
                       <span class="float-right">
-                        $
+                        
                         <span id="totalPrice"></span>
+                        FCFA
                       </span>
                     </div>
                     <br>
                                                   
-                    
+                    <div>
+                      <a href="{{ 'calendar'|page }}">jjjj</a>
+                    </div>
                   </div>
                 </div><br>
                 <div class="card">

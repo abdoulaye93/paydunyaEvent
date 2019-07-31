@@ -22,7 +22,19 @@ class DemandeAnnullationEvent extends Model
         'event' => ['event\event\models\Event',
         'table'=>'event_event_']
     ];
+    public function scopeListFrontEnd($query,$option = []){
+        extract(array_merge([
+            'page'=>1,
+            'perPage'=>10,
+            'sort'=>'created_at_desc'
+        ],$option));
+        $lastPage = $query->paginate($perPage, $page)->lastPage();
 
+        if($lastPage < $page){
+            $page = 1;
+        }
+        return $query->paginate($perPage,$page);
+}
     /**
      * @var string The database table used by the model.
      */

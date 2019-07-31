@@ -10,6 +10,7 @@ use event\event\models\Sub;
 use event\event\models\Periode;
 use event\event\models\SubList;
 use ticket\ticket\models\TypeTicket;
+use event\event\models\Categorie;
 use Flash;
 use Db;
 use October\Rain\Support\Collection;
@@ -31,7 +32,7 @@ class EventForm extends ComponentBase
         $event->periode_id=$periode->id;
         $event->nom=Input::get('nom');
         $event->lieu=Input::get('lieu');
-        $event->montant=Input::get('montant');
+       // $event->montant=Input::get('montant');
         $event->nombre_ticket=Input::get('nbrticket');
        // $event->montant=Input::get('montant');
         $event->description=Input::get('description');
@@ -117,6 +118,21 @@ class EventForm extends ComponentBase
     public $types;
     public function setSub($par){
         $this->$subs=$par;
+    }
+    public function loadCategory(){
+        return Categorie::all();
+    }
+    public function onType(){
+        $c=new Categorie();
+        $c->categorie="autre";
+        $c->save();
+        $type=Input::get('type');
+        $t=new Type();
+        $t->nom_type=$type;
+        $t->categorie_id=$c->id;
+        $t->save();
+        return Redirect::back();
+       
     }
 }
 

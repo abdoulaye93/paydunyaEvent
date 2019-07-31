@@ -119,6 +119,12 @@ class __TwigTemplate_e909f0cf9c6af4f09359adbda6ce36356dd2f6af1dd9baa8f980df7588e
         // line 37
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/themes/base-color.php?color=7d5fff");
         echo "\" rel=\"stylesheet\">
+     <!-- Font Awesome -->
+<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">
+<!-- Bootstrap core CSS -->
+<link href=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\">
+<!-- Material Design Bootstrap -->
+<link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
     <style media=\"screen\">
   .eml {
     color: red;
@@ -185,11 +191,11 @@ class __TwigTemplate_e909f0cf9c6af4f09359adbda6ce36356dd2f6af1dd9baa8f980df7588e
     
        <header id=\"layout-header\">
             ";
-        // line 103
+        // line 109
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 104
+        // line 110
         echo "        </header>
 
     <!-- navbar area start -->
@@ -197,37 +203,37 @@ class __TwigTemplate_e909f0cf9c6af4f09359adbda6ce36356dd2f6af1dd9baa8f980df7588e
         <!-- Content -->
         <section id=\"layout-content\">
             ";
-        // line 110
+        // line 116
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 111
+        // line 117
         echo "        </section>
     
     
         <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 116
+        // line 122
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 117
+        // line 123
         echo "        </footer>
 
         <!-- Scripts -->
         <script src=\"";
-        // line 120
+        // line 126
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
         <script src=\"";
-        // line 121
+        // line 127
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
         <script src=\"";
-        // line 122
+        // line 128
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script>
         ";
-        // line 123
+        // line 129
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="'. Request::getBasePath()
@@ -242,11 +248,11 @@ class __TwigTemplate_e909f0cf9c6af4f09359adbda6ce36356dd2f6af1dd9baa8f980df7588e
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 124
+        // line 130
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 125
+        // line 131
         echo "        
 <script>
    (function(\$){
@@ -428,7 +434,14 @@ class __TwigTemplate_e909f0cf9c6af4f09359adbda6ce36356dd2f6af1dd9baa8f980df7588e
             });
         }
     </script>
-
+<!-- JQuery -->
+<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
+<!-- Bootstrap tooltips -->
+<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js\"></script>
+<!-- Bootstrap core JavaScript -->
+<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js\"></script>
+<!-- MDB core JavaScript -->
+<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js\"></script>
     </body>
 </html>";
     }
@@ -445,7 +458,7 @@ class __TwigTemplate_e909f0cf9c6af4f09359adbda6ce36356dd2f6af1dd9baa8f980df7588e
 
     public function getDebugInfo()
     {
-        return array (  250 => 125,  246 => 124,  231 => 123,  227 => 122,  223 => 121,  219 => 120,  214 => 117,  210 => 116,  203 => 111,  201 => 110,  193 => 104,  189 => 103,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
+        return array (  256 => 131,  252 => 130,  237 => 129,  233 => 128,  229 => 127,  225 => 126,  220 => 123,  216 => 122,  209 => 117,  207 => 116,  199 => 110,  195 => 109,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -487,6 +500,12 @@ class __TwigTemplate_e909f0cf9c6af4f09359adbda6ce36356dd2f6af1dd9baa8f980df7588e
      <link href=\"{{ 'assets/admin/css/sweetalert.css'|theme }}\" rel=\"stylesheet\"><script src=\"{{ 'assets/admin/js/sweetalert.js'|theme }}\"></script>
      <link href=\"{{ 'assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs'|theme }}\" rel=\"stylesheet\">
      <link href=\"{{ 'assets/user/css/themes/base-color.php?color=7d5fff'|theme }}\" rel=\"stylesheet\">
+     <!-- Font Awesome -->
+<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">
+<!-- Bootstrap core CSS -->
+<link href=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\">
+<!-- Material Design Bootstrap -->
+<link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
     <style media=\"screen\">
   .eml {
     color: red;
@@ -755,7 +774,14 @@ class __TwigTemplate_e909f0cf9c6af4f09359adbda6ce36356dd2f6af1dd9baa8f980df7588e
             });
         }
     </script>
-
+<!-- JQuery -->
+<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>
+<!-- Bootstrap tooltips -->
+<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js\"></script>
+<!-- Bootstrap core JavaScript -->
+<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js\"></script>
+<!-- MDB core JavaScript -->
+<script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js\"></script>
     </body>
 </html>", "/opt/lampp/htdocs/paydunyaEvent/themes/demo/layouts/create_event.htm", "");
     }

@@ -22,7 +22,9 @@ class Event extends Model
         'sub_event' => ['event\event\models\Sub',
         'table'=>'event_event_sub'],
         'user' => ['rainlab\user\models\User',
-        'table'=>'users']
+        'table'=>'users'],
+        'position' => ['event\event\models\Position',
+        'table'=>'event_event_position']
     ];
     
     public $belongsToMany = [
@@ -48,8 +50,8 @@ class Event extends Model
     public function scopeListFrontEnd($query,$option = []){
             extract(array_merge([
                 'page'=>1,
-                'perPage'=>15,
-                'sort'=>'created_at_desc'
+                'perPage'=>3,
+                'sort'=>'priorite'
             ],$option));
             $lastPage = $query->paginate($perPage, $page)->lastPage();
 

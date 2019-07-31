@@ -1,0 +1,35 @@
+1564575804a:1:{s:12:"register.htm";a:11:{s:8:"fileName";s:12:"register.htm";s:7:"content";s:342:"title = "register"
+url = "/register"
+layout = "default"
+is_hidden = 0
+
+[account]
+paramCode = "code"
+forceSecure = 0
+
+[session]
+security = "all"
+==
+{% if not user %}
+
+    <div class="row">
+        <div class="col-md-6">
+            {% partial account ~ '::register' %}
+        </div>
+
+    </div>
+
+{% else %}
+
+{% endif %}";s:5:"mtime";i:1563355777;s:6:"markup";s:183:"{% if not user %}
+
+    <div class="row">
+        <div class="col-md-6">
+            {% partial account ~ '::register' %}
+        </div>
+
+    </div>
+
+{% else %}
+
+{% endif %}";s:4:"code";N;s:5:"title";s:8:"register";s:3:"url";s:9:"/register";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"account";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}s:7:"session";a:1:{s:8:"security";s:3:"all";}}}

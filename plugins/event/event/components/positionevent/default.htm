@@ -1,0 +1,8 @@
+{% if __SELF__.loadLat() %}
+<input type="hidden" value="{{__SELF__.loadLat()}}" id="lat1">
+
+{%endif%}
+{% if __SELF__.loadLong() %}
+<input type="hidden" value="{{__SELF__.loadLong()}}" id="long1">
+
+{%endif%}

@@ -40,20 +40,30 @@
                                     {% partial 'events/manageevent' %}
                                 
                             </div>
-                            {% partial 'events/pagination' %}
+                           
                          </div>
                         <div class="tab-pane container fade" id="upcoming_tab">
                              <div class="row" style="text-align:center;display:block;">                                                       
                                     {% partial 'events/manageeventpub' %}
                              </div>
-                             {% partial 'events/pagination' %}
+                           
                         </div>
                         <div class="tab-pane container fade" id="ending_tab"><!-- ending tab start -->
                             <div class="row" style="text-align:center;display:block;">
                                     {% partial 'events/manageeventexpire' %}
                             </div>
-                            {% partial 'events/pagination' %}
+                         
                         </div>
+                        {{form_ajax('onFilterEvents',{update:{'events/manageevent':'#active_tab','events/manageeventexpire':'#ending_tab','events/manageeventpub':'#upcoming_tab'}})}}
+                        <div id="EventFilter" class="text-center">
+                                <label>page</label>
+                                <select name="Filter[page]">
+                                  {% for i in 1..pages%}
+                                    <option value="{{i}}">{{i}}</option>
+                                  {% endfor %}
+                                </select>
+                              </div>
+                              {{form_close()}}
                     </div>
                 </div>
             </div>

@@ -1,0 +1,9 @@
+fields:
+    lat:
+        label: lat
+        span: auto
+        type: text
+    long:
+        label: long
+        span: auto
+        type: text

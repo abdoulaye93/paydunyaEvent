@@ -50,34 +50,16 @@
                         
                         </div>
                     <div class="row">
-                      <div class="col-md-6">
-                            <div class="form-element square" style="margin-top: 25px;">
-                                <label>Type&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                </label>
-                                <select class="input-field-square" name="category" value="">
-                                                                            {% for item in __SELF__.loadEvents() %}
-                                                                            <option value="{{ item.id }}">{{ item.nom_type }}</option>
-                                                                            {% endfor %}
-                                                                        
-                                                                    
-                                                                
-                                  </select>
-                            </div>
-                            
-                      </div>
+                      
                       <div class="col-md-6">
                             <div class="form-element square">
                                     <label>Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                            <input type='button' onclick='addtype()' value='Ajoutez' 
-                                            style="margin-bottom: 20px;"/>
+                                            <a class="" href="#" data-toggle="modal" data-target="#autre-modal" class="action-btn"> autre</a>
                                     </label>
-                                    <select class="input-field-square" name="cate" value="">
-                                                                                {% for item in __SELF__.loadEvents() %}
-                                                                                <option value="{{ item.id }}">{{ item.categorie.categorie }}</option>
-                                                                                {% endfor %}
-                                                                            
-                                                                        
-                                                                    
+                                    <select class="input-field-square" name="cate" value="" id="sel2">
+                                                                                {% for item in __SELF__.loadSubs() %}
+                                                                                <option value="{{ item.id }}">{{ item.nom_type }}</option>
+                                                                                {% endfor %}                                                                                                                                                                                     
                                       </select>
                                 </div>
                       </div>
@@ -335,6 +317,18 @@
     </div>
 </div><!-- /#loginmodal -->
 <script>
+    
+doThisOnChange = function( value, optionIndex)
+{
+    if ( optionIndex != null )
+    {
+       var option = document.getElementById( "sel1" ).options[optionIndex];
+       option.selected = true;
+       value = option.value;
+    }
+   // alert( "Do something with the value: " + value );
+}
+
     function edition() { options = "Width=700,Height=700" ; window.open( "{{ 'ticket'|page}}", "edition", options ) ; }
      var row = 1;
      var typ=1;
