@@ -1,0 +1,65 @@
+1564562964a:1:{s:20:"demande/demandes.htm";a:5:{s:8:"fileName";s:20:"demande/demandes.htm";s:7:"content";s:1875:"<div class="row" style="text-align:center;display:block;">
+        {% if demandes|length%}
+        {% for item in demandes %}                                   
+              <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                    <th scope="col" class="coin_name_th">TITLE</th>
+                    <th scope="col" class="action_th" >ACTIONS</th>                                            </tr>
+                </thead>
+                <tbody>
+                    <tr class="traending_ico_tr">
+                        <td data-label="ratings" class="ratings_td">
+                            <a href="http://lab.thesoftking.com/eticket/event/show/papa">{%if item.event.demande_notif!=0%}
+                               <strong> {{item.event.nom}}</strong>
+                                {%else%}
+                                {{item.event.nom}}
+                            {%endif%}</a>
+                        </td>
+                        <td data-label="action">
+                        <form data-request="onSup">
+                                <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{'manage_event_view'|page({event_id:item.event_id})}}" class="action-btn">View</a>
+                                <input type="hidden" name="supprimer" value="{{item.event_id}}"> 
+                                <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>                                               
+                        </form>                 
+                      </td>                      
+                    </tr>
+                </tbody>
+              </table>                        
+            {% endfor%}
+        {%else%}
+            <h3>NO demande</h3>
+        {%endif%}
+    </div>";s:5:"mtime";i:1564418827;s:6:"markup";s:1875:"<div class="row" style="text-align:center;display:block;">
+        {% if demandes|length%}
+        {% for item in demandes %}                                   
+              <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                    <th scope="col" class="coin_name_th">TITLE</th>
+                    <th scope="col" class="action_th" >ACTIONS</th>                                            </tr>
+                </thead>
+                <tbody>
+                    <tr class="traending_ico_tr">
+                        <td data-label="ratings" class="ratings_td">
+                            <a href="http://lab.thesoftking.com/eticket/event/show/papa">{%if item.event.demande_notif!=0%}
+                               <strong> {{item.event.nom}}</strong>
+                                {%else%}
+                                {{item.event.nom}}
+                            {%endif%}</a>
+                        </td>
+                        <td data-label="action">
+                        <form data-request="onSup">
+                                <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{'manage_event_view'|page({event_id:item.event_id})}}" class="action-btn">View</a>
+                                <input type="hidden" name="supprimer" value="{{item.event_id}}"> 
+                                <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>                                               
+                        </form>                 
+                      </td>                      
+                    </tr>
+                </tbody>
+              </table>                        
+            {% endfor%}
+        {%else%}
+            <h3>NO demande</h3>
+        {%endif%}
+    </div>";s:4:"code";N;}}

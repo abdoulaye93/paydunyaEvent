@@ -1,0 +1,8 @@
+1564575804a:1:{s:13:"modif_sub.htm";a:10:{s:8:"fileName";s:13:"modif_sub.htm";s:7:"content";s:128:"title = "modif_sub"
+url = "/modif_sub/:sub_id"
+layout = "default"
+is_hidden = 0
+
+[modifSub]
+==
+{% component 'modifSub' %}";s:5:"mtime";i:1564339577;s:6:"markup";s:26:"{% component 'modifSub' %}";s:4:"code";N;s:5:"title";s:9:"modif_sub";s:3:"url";s:18:"/modif_sub/:sub_id";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:8:"modifSub";a:0:{}}}

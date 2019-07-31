@@ -12,6 +12,7 @@ use event\event\models\SubList;
 use demande\demande\models\DemandeAnnullationEvent;
 use event\event\models\AccessEvent;
 use event\event\models\NotifDemande;
+use event\event\models\Position;
 use Mail;
 use Flash;
 use Db;
@@ -30,7 +31,15 @@ class ManageEvent extends ComponentBase
     }
    
     public function onRun(){
-       
+        $date=new Carbon();
+        Db::table('event_event_')
+        ->join('event_event_periode', 'event_event_periode.id', '=', 'event_event_.periode_id')
+        ->where('event_event_periode.date_debut','>',$date->addDays(-5))
+        ->update(['modif_droit'=>true]);
+        Db::table('event_event_')
+        ->join('event_event_periode', 'event_event_periode.id', '=', 'event_event_.periode_id')
+        ->where('event_event_periode.date_debut','<',$date->addDays(-5))
+        ->update(['modif_droit'=>false]);
      
     }
     public function loadEvents(){     
@@ -117,6 +126,17 @@ class ManageEvent extends ComponentBase
         }
        
        
+        return Redirect::back();
+    }
+    public function onPosition(){
+        $event_id=Input::get('event');
+        $position=new Position();
+        $position->lat=Input::get('lat');
+        $position->long=Input::get('long');
+        $position->save();
+        $event=Db::table('event_event_')
+        ->where('id', $event_id)
+        ->update(['position_id' => $position->id]);
         return Redirect::back();
     }
    

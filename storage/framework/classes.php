@@ -339,4 +339,8 @@
   'event\\event\\components\\ModifSub' => 'plugins\\event\\event\\components\\ModifSub.php',
   'event\\event\\models\\NotifDemande' => 'plugins\\event\\event\\models\\NotifDemande.php',
   'payment\\payment\\Plugin' => 'plugins\\payment\\payment\\Plugin.php',
+  'event\\event\\Controllers\\position' => 'plugins\\event\\event\\controllers\\position.php',
+  'Event\\Event\\Models\\Position' => 'plugins\\event\\event\\models\\Position.php',
+  'event\\event\\models\\Position' => 'plugins\\event\\event\\models\\Position.php',
+  'event\\event\\components\\Positionevent' => 'plugins\\event\\event\\components\\Positionevent.php',
 );

@@ -201,3 +201,27 @@
 1.0.68:
     - 'Updated table event_event_'
     - builder_table_update_event_event__28.php
+1.0.69:
+    - 'Updated table event_event_'
+    - builder_table_update_event_event__29.php
+1.0.70:
+    - 'Updated table event_event_'
+    - builder_table_update_event_event__30.php
+1.0.71:
+    - 'Updated table event_event_'
+    - builder_table_update_event_event__31.php
+1.0.72:
+    - 'Updated table event_event_'
+    - builder_table_update_event_event__32.php
+1.0.73:
+    - 'Created table event_event_position'
+    - builder_table_create_event_event_position.php
+1.0.74:
+    - 'Updated table event_event_'
+    - builder_table_update_event_event__33.php
+1.0.75:
+    - 'Updated table event_event_position'
+    - builder_table_update_event_event_position.php
+1.0.76:
+    - 'Updated table event_event_position'
+    - builder_table_update_event_event_position_2.php

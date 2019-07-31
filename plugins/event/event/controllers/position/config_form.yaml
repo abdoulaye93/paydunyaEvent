@@ -1,0 +1,10 @@
+name: Position
+form: $/event/event/models/position/fields.yaml
+modelClass: Event\Event\Models\Position
+defaultRedirect: event/event/position
+create:
+    redirect: 'event/event/position/update/:id'
+    redirectClose: event/event/position
+update:
+    redirect: event/event/position
+    redirectClose: event/event/position

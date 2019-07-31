@@ -3,6 +3,12 @@ fields:
         label: 'nom eventment'
         span: auto
         type: text
+    position:
+        label: position
+        nameFrom: lat
+        descriptionFrom: description
+        span: auto
+        type: relation
 tabs:
     fields:
         nombre_ticket:

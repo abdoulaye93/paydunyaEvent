@@ -1,6 +1,5 @@
 [session]
 security = "all"
-
 ==
 <!DOCTYPE html>
 <html>
@@ -37,6 +36,12 @@ security = "all"
      <link href="{{ 'assets/admin/css/sweetalert.css'|theme }}" rel="stylesheet"><script src="{{ 'assets/admin/js/sweetalert.js'|theme }}"></script>
      <link href="{{ 'assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs'|theme }}" rel="stylesheet">
      <link href="{{ 'assets/user/css/themes/base-color.php?color=7d5fff'|theme }}" rel="stylesheet">
+     <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
     <style media="screen">
   .eml {
     color: red;
@@ -163,23 +168,32 @@ security = "all"
     function hideModal() {
       $('#buyTicketConfModal').modal('hide');
     }
-
-    function clacTotal(pp_price, p_no) {
-      var totalPrice = pp_price * p_no;
+    
+    function clacTotal(p_no) {
+       var subPrice = 0;
+        var typePrice = 0;
       var sub = document.getElementsByClassName('sub')
       for(var i = 0; i < sub.length; i++)
       {
         if(sub[i].checked)
-          totalPrice += parseInt(sub[i].value)
+          subPrice += parseInt(sub[i].value)
       }
-      document.getElementById('totalPriceInput').value = totalPrice;
-      document.getElementById('pNoInput').value = p_no;
-      document.getElementById('totalPrice').innerHTML = totalPrice;
+      var type = document.getElementsByClassName('tp')
+      for(var i = 0; i < type.length; i++)
+      {
+        if(type[i].checked)
+          typePrice = parseInt(type[i].value)
+      }
+      var totalPrice = (subPrice+typePrice)*p_no;
+      //document.getElementById('totalPriceInput').value = totalPrice;
+     // document.getElementById('pNoInput').value = p_no;
+     document.getElementById('totalPrice').innerHTML = totalPrice;
     }
 
 
     $(document).ready(function() {
-      clacTotal(document.getElementById('montantItem').value, 1);
+        document.getElementById('totalPrice').innerHTML = 0;
+     // clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
     <script>
@@ -302,6 +316,13 @@ security = "all"
             });
         }
     </script>
-
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
 </html>

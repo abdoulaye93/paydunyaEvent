@@ -34,3 +34,7 @@ navigation:
                 label: accessEvent
                 url: /
                 icon: icon-sitemap
+    main-menu-item2:
+        label: position
+        url: event/event/position
+        icon: icon-line-chart

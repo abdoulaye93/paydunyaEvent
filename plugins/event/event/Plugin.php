@@ -18,6 +18,7 @@ class Plugin extends PluginBase
             'event\event\components\AdminDemande'=>'adminDemande',
             'event\event\components\Promo'=>'Promo',
             'event\event\components\ModifSub'=>'modifSub',
+            'event\event\components\Positionevent'=>'positionevent',
             
         ];
     }

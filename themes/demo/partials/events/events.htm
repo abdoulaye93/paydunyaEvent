@@ -12,6 +12,17 @@
                    <h4 style="color:#10ac84;">{{ item.nom }}</h4>
                    <p><strong><i class="fa fa-money" aria-hidden="true"></i> Prx: </strong>{{ item.montant }} FCFA</p>
                    <p><strong><i class="fa fa-calendar" aria-hidden="true"></i> Date d'expiration: </strong>{{ item.periode.date_cloture }}</p>
+                   {%if item.position_id%}
+                        <p> 
+                            <a  href="{{ 'position'|page({lat:item.position.lat,long:item.position.long}) }}"  >
+
+                                <i class="fa fa-caret-right"></i> 
+                                <span class="title">
+                                    Position
+                                </span>
+                            </a>
+                        </p>
+                    {%endif%}
                    <a  href="{{ 'description_event'|page({ event_id: item.id }) }}"  class="boxed-btn-rounded">
                    <i class="fa fa-caret-right"></i> <span class="title">Details</span></a>
                </div>

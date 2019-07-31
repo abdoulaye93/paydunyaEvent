@@ -1,0 +1,12 @@
+list: $/event/event/models/position/columns.yaml
+modelClass: Event\Event\Models\Position
+title: Position
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'event/event/position/update/:id'

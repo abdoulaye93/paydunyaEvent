@@ -1,0 +1,7 @@
+columns:
+    lat:
+        label: lat
+        type: text
+    long:
+        label: long
+        type: text
