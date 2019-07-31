@@ -182,30 +182,32 @@ function getRelativeDate(daysOffset, hour) {
        * appropriate message is printed.
        */
       function listUpcomingEvents() {
-        gapi.client.calendar.events.list({
-          'calendarId': 'primary',
-          'timeMin': (new Date()).toISOString(),
-          'showDeleted': false,
-          'singleEvents': true,
-          'maxResults': 10,
-          'orderBy': 'startTime'
-        }).then(function(response) {
-          var events = response.result.items;
-          appendPre('Upcoming events:');
+    var event = {
+    summary: 'Lunch Meeting',
+    location: 'The Deli',
+    description: 'To discuss our plans for the presentation next week.',
+    start: {
+      dateTime: start.toISOString()
+    },
+    end: {
+      dateTime: end.toISOString()
+    },
+    attendees: [
+      {email: 'abdoulayekeita438@gmail.com'},
+      {email: 'bob@example.com'}
+    ],
+    // Red background. Use Calendar.Colors.get() for the full list.
+    colorId: 11
+  };
+var request = gapi.client.calendar.events.insert({
+  'calendarId': 'primary',
+  'resource': event
+});
 
-          if (events.length > 0) {
-            for (i = 0; i < events.length; i++) {
-              var event = events[i];
-              var when = event.start.dateTime;
-              if (!when) {
-                when = event.start.date;
-              }
-              appendPre(event.summary + ' (' + when + ')')
-            }
-          } else {
-            appendPre('No upcoming events found.');
-          }
-        });
+request.execute(function(event) {
+  appendPre('Event created: ' + event.htmlLink);
+});
+
       }
 
     </script>
@@ -380,30 +382,32 @@ function getRelativeDate(daysOffset, hour) {
        * appropriate message is printed.
        */
       function listUpcomingEvents() {
-        gapi.client.calendar.events.list({
-          'calendarId': 'primary',
-          'timeMin': (new Date()).toISOString(),
-          'showDeleted': false,
-          'singleEvents': true,
-          'maxResults': 10,
-          'orderBy': 'startTime'
-        }).then(function(response) {
-          var events = response.result.items;
-          appendPre('Upcoming events:');
+    var event = {
+    summary: 'Lunch Meeting',
+    location: 'The Deli',
+    description: 'To discuss our plans for the presentation next week.',
+    start: {
+      dateTime: start.toISOString()
+    },
+    end: {
+      dateTime: end.toISOString()
+    },
+    attendees: [
+      {email: 'abdoulayekeita438@gmail.com'},
+      {email: 'bob@example.com'}
+    ],
+    // Red background. Use Calendar.Colors.get() for the full list.
+    colorId: 11
+  };
+var request = gapi.client.calendar.events.insert({
+  'calendarId': 'primary',
+  'resource': event
+});
 
-          if (events.length > 0) {
-            for (i = 0; i < events.length; i++) {
-              var event = events[i];
-              var when = event.start.dateTime;
-              if (!when) {
-                when = event.start.date;
-              }
-              appendPre(event.summary + ' (' + when + ')')
-            }
-          } else {
-            appendPre('No upcoming events found.');
-          }
-        });
+request.execute(function(event) {
+  appendPre('Event created: ' + event.htmlLink);
+});
+
       }
 
     </script>
