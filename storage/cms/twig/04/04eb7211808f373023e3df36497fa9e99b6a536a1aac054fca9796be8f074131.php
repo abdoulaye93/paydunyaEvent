@@ -198,41 +198,60 @@ class __TwigTemplate_daf1bfd842d967c7553b6c0f83b7b8301b08a3aea9833b921262d41e3d7
         // line 110
         echo "        </header>
 
+        ";
+        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 112
+        $context["type"] = "success"        ;        foreach (Flash::success        () as $message) {
+            $context["message"] = $message;            // line 113
+            echo "          <div class=\"container\">
+              <div class=\"row\">
+                  <div class=\"col-lg-12\">
+                  <br>
+                      <p class=\"bg-success\">";
+            // line 117
+            echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
+            echo "</p>
+                  </div>
+              </div>
+          </div>
+      ";
+        }
+        $context["type"] = $_type;        $context["message"] = $_message;        // line 122
+        echo "
     <!-- navbar area start -->
 
         <!-- Content -->
         <section id=\"layout-content\">
             ";
-        // line 116
+        // line 127
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 117
+        // line 128
         echo "        </section>
        
         <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 121
+        // line 132
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 122
+        // line 133
         echo "        </footer>
 
         <!-- Scripts -->
         <script src=\"";
-        // line 125
+        // line 136
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
         <script src=\"";
-        // line 126
+        // line 137
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
         <script src=\"";
-        // line 127
+        // line 138
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script>
         ";
-        // line 128
+        // line 139
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="'. Request::getBasePath()
@@ -247,11 +266,11 @@ class __TwigTemplate_daf1bfd842d967c7553b6c0f83b7b8301b08a3aea9833b921262d41e3d7
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 129
+        // line 140
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 130
+        // line 141
         echo "        
 <script>
   (function(\$){
@@ -457,7 +476,7 @@ class __TwigTemplate_daf1bfd842d967c7553b6c0f83b7b8301b08a3aea9833b921262d41e3d7
 
     public function getDebugInfo()
     {
-        return array (  255 => 130,  251 => 129,  236 => 128,  232 => 127,  228 => 126,  224 => 125,  219 => 122,  215 => 121,  209 => 117,  207 => 116,  199 => 110,  195 => 109,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
+        return array (  274 => 141,  270 => 140,  255 => 139,  251 => 138,  247 => 137,  243 => 136,  238 => 133,  234 => 132,  228 => 128,  226 => 127,  219 => 122,  211 => 117,  205 => 113,  203 => 112,  199 => 110,  195 => 109,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -572,6 +591,17 @@ class __TwigTemplate_daf1bfd842d967c7553b6c0f83b7b8301b08a3aea9833b921262d41e3d7
        <header id=\"layout-header\">
             {% partial 'site/header' %}
         </header>
+
+        {% flash success %}
+          <div class=\"container\">
+              <div class=\"row\">
+                  <div class=\"col-lg-12\">
+                  <br>
+                      <p class=\"bg-success\">{{ message }}</p>
+                  </div>
+              </div>
+          </div>
+      {% endflash %}
 
     <!-- navbar area start -->
 

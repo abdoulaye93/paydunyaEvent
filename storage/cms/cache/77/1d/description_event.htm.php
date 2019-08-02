@@ -1,6 +1,6 @@
 <?php 
 use payment\Payment\Models\PaydunyaConfig;
-class Cms5d43f4eda4634787736441_c364a823e11b318807ac8badad870ee0Class extends Cms\Classes\LayoutCode
+class Cms5d43f77439e8c867010945_db46c0440bf42ae67a7e23fa00f916d9Class extends Cms\Classes\LayoutCode
 {
   public function onAchat()
   {
@@ -29,7 +29,7 @@ class Cms5d43f4eda4634787736441_c364a823e11b318807ac8badad870ee0Class extends Cm
     \Paydunya\Checkout\Store::setReturnUrl("http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME'])."/index.php");
 
     $montantTotal = (input('promo')) ? input('total') - input('promo') : input('total');
-    $checkoutInvoice->setTotalAmount($montantTotal + 1000);
+    $checkoutInvoice->setTotalAmount($montantTotal);
 
     if($checkoutInvoice->create()) 
     {

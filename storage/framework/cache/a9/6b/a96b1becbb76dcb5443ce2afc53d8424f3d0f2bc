@@ -1,4 +1,4 @@
-1564687302a:1:{s:25:"events/manageeventpub.htm";a:5:{s:8:"fileName";s:25:"events/manageeventpub.htm";s:7:"content";s:2923:"{%set id=user.id%}
+1564752356a:1:{s:25:"events/manageeventpub.htm";a:5:{s:8:"fileName";s:25:"events/manageeventpub.htm";s:7:"content";s:2923:"{%set id=user.id%}
 {% if events|length%}
    {% for item in events %}
    {% if item.user_id==9%}

@@ -326,4 +326,10 @@
   'Cms\\Twig\\ContentNode' => 'modules/cms/twig/ContentNode.php',
   'Cms\\Twig\\ComponentNode' => 'modules/cms/twig/ComponentNode.php',
   'RainLab\\Builder\\Models\\Settings' => 'plugins/rainlab/builder/models/Settings.php',
+  'Backend\\FormWidgets\\CodeEditor' => 'modules/backend/formwidgets/CodeEditor.php',
+  'Cms\\FormWidgets\\Components' => 'modules/cms/formwidgets/Components.php',
+  'Backend\\Behaviors\\ReorderController' => 'modules/backend/behaviors/ReorderController.php',
+  'Demande\\Demande\\Models\\DemandeAnnullationEvent' => 'plugins/demande/demande/models/DemandeAnnullationEvent.php',
+  'demande\\demande\\models\\DemandeAnnullationEvent' => 'plugins/demande/demande/models/DemandeAnnullationEvent.php',
+  'Demande\\Demande\\Models\\DemandeAnnullationAchat' => 'plugins/demande/demande/models/DemandeAnnullationAchat.php',
 );

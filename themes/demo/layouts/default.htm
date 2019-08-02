@@ -8,18 +8,40 @@ forceSecure = 0
 security = "all"
 ==
 <?php
-use Carbon\Carbon;
+  use Carbon\Carbon;
+  use event\event\models\Event;
+  use event\event\models\NotifDemande;
+  use Demande\Demande\Models\DemandeAnnullationAchat;
 
-use event\event\models\Event;
-function onStart(){$this->prepareVars();}
-function onFilterEvents() { $this->prepareVars(); }
-function prepareVars(){
-  $option=post('Filter',[]);
-  $this['events']=Event::ListFrontEnd($option);
-  $this['pages']=$this['events']->lastPage();
- 
+  function onStart()
+  {
+    $this->prepareVars();
+  }
   
-}
+  function onFilterEvents() 
+  { 
+    $this->prepareVars(); 
+  }
+
+  function prepareVars()
+  {
+    $option=post('Filter',[]);
+    $this['events']=Event::ListFrontEnd($option);
+    $this['pages']=$this['events']->lastPage(); 
+  }
+    
+    function onAnnuler() 
+    {
+      $user = Auth::getUser();
+      $notif = new NotifDemande();
+      $annulation = new DemandeAnnullationAchat();
+      $annulation->user_id = $user->id;
+      $annulation->email = $user->email;
+      $annulation->save();
+      $notif->save();
+      Flash::success('Votre demande d\'annulation a bien été transmise, nous vous revenons dans un moment !');
+      return Redirect::to('/');
+    }
 ?>
 ==
 <!DOCTYPE html>
@@ -132,6 +154,17 @@ function prepareVars(){
        <header id="layout-header">
             {% partial 'site/header' %}
         </header>
+
+        {% flash success %}
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12">
+                  <br>
+                      <p class="bg-success">{{ message }}</p>
+                  </div>
+              </div>
+          </div>
+      {% endflash %}
 
     <!-- navbar area start -->
 
