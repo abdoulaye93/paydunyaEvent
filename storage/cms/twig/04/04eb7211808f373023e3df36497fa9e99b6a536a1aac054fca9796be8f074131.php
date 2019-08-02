@@ -368,6 +368,7 @@ class __TwigTemplate_daf1bfd842d967c7553b6c0f83b7b8301b08a3aea9833b921262d41e3d7
             })
         }
     </script>
+
     <script src=\"http://lab.thesoftking.com/eticket/assets/user/js/jquery.js\"></script>
 <!-- popper -->
 <script src=\"http://lab.thesoftking.com/eticket/assets/user/js/popper.min.js\"></script>
@@ -706,6 +707,7 @@ class __TwigTemplate_daf1bfd842d967c7553b6c0f83b7b8301b08a3aea9833b921262d41e3d7
             })
         }
     </script>
+
     <script src=\"http://lab.thesoftking.com/eticket/assets/user/js/jquery.js\"></script>
 <!-- popper -->
 <script src=\"http://lab.thesoftking.com/eticket/assets/user/js/popper.min.js\"></script>

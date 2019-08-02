@@ -187,6 +187,32 @@ class __TwigTemplate_62c8c176302ab6bfc998fe79e506611135069feb26cfa03596e325c3a35
                                         </select>
                                     </div>
                                 </div>
+                                <div class=\"col-md-4\">
+                                    <div class=\"form-element square\">
+                                        <label for=\"phone\">Telephone <span>**</span></label>
+                                        <input type=\"text\" id=\"phone\" required placeholder=\"Votre numero de telephone...\" name=\"phone\" ";
+        // line 95
+        if (twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "config", [], "any", false, false, false, 95)) {
+            echo " value=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "config", [], "any", false, false, false, 95), "phone", [], "any", false, false, false, 95), "html", null, true);
+            echo "\" ";
+        }
+        echo " class=\"input-field-square\" id=\"inputtype2\">
+                                    </div>
+                                </div>
+                                <div class=\"col-md-4\">
+                                    <div class=\"form-element square\">
+                                        <label for=\"email\">Email <span>**</span></label>
+                                        <input type=\"email\" required id=\"email\" placeholder=\"Votre adresse email...\" name=\"email\" ";
+        // line 101
+        if (twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "config", [], "any", false, false, false, 101)) {
+            echo " value=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "config", [], "any", false, false, false, 101), "email", [], "any", false, false, false, 101), "html", null, true);
+            echo "\" ";
+        }
+        echo " class=\"input-field-square\" id=\"inputtype2\">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -215,7 +241,7 @@ class __TwigTemplate_62c8c176302ab6bfc998fe79e506611135069feb26cfa03596e325c3a35
 
     public function getDebugInfo()
     {
-        return array (  168 => 75,  155 => 69,  142 => 63,  127 => 55,  112 => 47,  98 => 40,  84 => 33,  78 => 29,  75 => 28,  69 => 26,  67 => 25,  51 => 11,  43 => 6,  37 => 2,  35 => 1,);
+        return array (  208 => 101,  195 => 95,  168 => 75,  155 => 69,  142 => 63,  127 => 55,  112 => 47,  98 => 40,  84 => 33,  78 => 29,  75 => 28,  69 => 26,  67 => 25,  51 => 11,  43 => 6,  37 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -309,6 +335,18 @@ class __TwigTemplate_62c8c176302ab6bfc998fe79e506611135069feb26cfa03596e325c3a35
                                             <option value=\"true\">Oui</option>
                                             <option value=\"false\">Non</option>
                                         </select>
+                                    </div>
+                                </div>
+                                <div class=\"col-md-4\">
+                                    <div class=\"form-element square\">
+                                        <label for=\"phone\">Telephone <span>**</span></label>
+                                        <input type=\"text\" id=\"phone\" required placeholder=\"Votre numero de telephone...\" name=\"phone\" {% if __SELF__.config %} value=\"{{ __SELF__.config.phone }}\" {% endif %} class=\"input-field-square\" id=\"inputtype2\">
+                                    </div>
+                                </div>
+                                <div class=\"col-md-4\">
+                                    <div class=\"form-element square\">
+                                        <label for=\"email\">Email <span>**</span></label>
+                                        <input type=\"email\" required id=\"email\" placeholder=\"Votre adresse email...\" name=\"email\" {% if __SELF__.config %} value=\"{{ __SELF__.config.email }}\" {% endif %} class=\"input-field-square\" id=\"inputtype2\">
                                     </div>
                                 </div>
                             </div>

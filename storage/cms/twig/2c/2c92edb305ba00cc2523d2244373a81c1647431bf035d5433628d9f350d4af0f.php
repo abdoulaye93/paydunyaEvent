@@ -107,7 +107,9 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                               <td><input type=\"checkbox\" value=\"";
                 // line 48
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant", [], "any", false, false, false, 48), "html", null, true);
-                echo "\" class=\"form-control\" id=\"tp\" onchange=\"testtype(event)\"/></td>
+                echo "\" name=\"";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom_type", [], "any", false, false, false, 48), "html", null, true);
+                echo "\" class=\"form-control ticket\" onchange=\"testtype(event)\"/></td>
                             </tr>
                           ";
             }
@@ -165,6 +167,8 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                             <td><input type=\"checkbox\" value=\"";
                     // line 70
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "sub", [], "any", false, false, false, 70), "montant", [], "any", false, false, false, 70), "html", null, true);
+                    echo "\" name=\"";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "sub", [], "any", false, false, false, 70), "nom", [], "any", false, false, false, 70), "html", null, true);
                     echo "\" class=\"form-control sub\" onchange=\"test(event)\"/></td>
                           </tr>
                         ";
@@ -176,19 +180,19 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                 echo "                        <script>
                          function test(event)
                           {
-                            var nb = document.getElementById('nb')
+                            var nb = parseInt(document.getElementById('nb').value)
                             if(event.target.checked)
-                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value) + parseInt(document.getElementById('totalPrice').innerHTML)
+                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb + parseInt(document.getElementById('totalPrice').innerHTML)
                             else
-                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)
+                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb
                           }
                           function testtype(event)
                           {
-                            var nb = document.getElementById('tp')
+                            var nb = parseInt(document.getElementById('nb').value)
                             if(event.target.checked)
-                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb.value + parseInt(document.getElementById('totalPrice').innerHTML)
+                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb + parseInt(document.getElementById('totalPrice').innerHTML)
                             else
-                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb.value
+                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb
                           }
                           //parseInt(document.getElementById('montantItem').value) * parseInt(nb.options[nb.selectedIndex].value)
                         </script>
@@ -206,18 +210,30 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                       </span>
                     </div>
                     <br>
-
-                    <div>
-                      <form action=\"\">
-                      
-                      </form>
-                    </div>
                                                   
                     <div>
                       <a href=\"";
-            // line 112
+            // line 106
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("calendar");
             echo "\">jjjj</a>
+
+                      <div class=\"pull-right\">
+                        <form data-request=\"onAchat\" id=\"buyForm\">
+                          <input type=\"hidden\" name=\"total\" id=\"total\" value=\"\">
+                          ";
+            // line 111
+            if (twig_get_attribute($this->env, $this->source, $context["item"], "promo", [], "any", false, false, false, 111)) {
+                // line 112
+                echo "                            <input type=\"hidden\" name=\"promo\" value=\"";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant_promo", [], "any", false, false, false, 112), "html", null, true);
+                echo "\">
+                          ";
+            }
+            // line 113
+            echo "  
+                          <input type=\"submit\" class=\"btn btn-primary\" value=\"Acheter\"/>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div><br>
@@ -301,67 +317,67 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                             <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
                                 <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
                                    ";
-            // line 195
+            // line 199
             if ( !($context["user"] ?? null)) {
-                // line 196
+                // line 200
                 echo "    
                                         <div class=\"row\">
                                     
                                             <div class=\"col-md-6\">
                                                 <h3 class=\"";
-                // line 200
-                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 200), "id", [], "any", false, false, false, 200) == "register")) {
+                // line 204
+                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 204), "id", [], "any", false, false, false, 204) == "register")) {
                     echo "active";
                 }
                 echo "\"><a href=\"";
                 echo $this->extensions['Cms\Twig\Extension']->pageFilter("register");
                 echo "\">Créer un compte</a></h3>
                                                 ";
-                // line 201
+                // line 205
                 $context['__cms_partial_params'] = [];
                 echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::signin")                , $context['__cms_partial_params']                , true                );
                 unset($context['__cms_partial_params']);
-                // line 202
+                // line 206
                 echo "                                            </div>
                                     
                                         </div>
                                     
                                     ";
             } else {
-                // line 207
+                // line 211
                 echo "                                    
                                     ";
             }
-            // line 209
+            // line 213
             echo "                                </div><!-- login form wrapper end -->
                             </div>
                             <div class=\"tab-pane fade\" id=\"nav-signup\" role=\"tabpanel\" aria-labelledby=\"nav-signup-tab\">
     
                                 <div class=\"singup-form-wrapper\">
                                     ";
-            // line 214
+            // line 218
             if ( !($context["user"] ?? null)) {
-                // line 215
+                // line 219
                 echo "                                    
                                         <div class=\"row\">
                                             <div class=\"col-md-6\">
                                                 ";
-                // line 218
+                // line 222
                 $context['__cms_partial_params'] = [];
                 echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::register")                , $context['__cms_partial_params']                , true                );
                 unset($context['__cms_partial_params']);
-                // line 219
+                // line 223
                 echo "                                            </div>
                                     
                                         </div>
                                     
                                     ";
             } else {
-                // line 224
+                // line 228
                 echo "                                    
                                     ";
             }
-            // line 226
+            // line 230
             echo "                                 </div>
                             </div>
                         </div><!-- /.tab conent-->
@@ -375,6 +391,49 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 239
+        echo "
+    <script>
+        
+        document.getElementById('buyForm').addEventListener('submit', function(){
+          document.getElementById('total').value = document.getElementById('totalPrice').innerHTML
+
+          var tickets = document.getElementsByClassName('ticket')
+          var subEvents = document.getElementsByClassName('sub')
+          var nbTicket = document.getElementById('nb').value
+
+          var element = document.createElement('input')
+              element.setAttribute('type', 'hidden')
+              element.setAttribute('name', 'nbTicket')
+              element.setAttribute('value', nbTicket)
+              document.getElementById('buyForm').appendChild(element)
+
+          for(var i = 0; i < tickets.length; i++)
+          {
+            if(tickets[i].checked)
+            {
+              var element = document.createElement('input')
+              element.setAttribute('type', 'hidden')
+              element.setAttribute('name', tickets[i].name)
+              element.setAttribute('value', tickets[i].value)
+              document.getElementById('buyForm').appendChild(element)
+            }
+          }
+
+          for(var i = 0; i < subEvents.length; i++)
+          {
+            if(subEvents[i].checked)
+            {
+              var element = document.createElement('input')
+              element.setAttribute('type', 'hidden')
+              element.setAttribute('name', subEvents[i].name)
+              element.setAttribute('value', subEvents[i].value)
+              document.getElementById('buyForm').appendChild(element)
+            }
+          }
+
+      })
+    </script>";
     }
 
     public function getTemplateName()
@@ -389,7 +448,7 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
 
     public function getDebugInfo()
     {
-        return array (  365 => 226,  361 => 224,  354 => 219,  350 => 218,  345 => 215,  343 => 214,  336 => 209,  332 => 207,  325 => 202,  321 => 201,  313 => 200,  307 => 196,  305 => 195,  219 => 112,  200 => 95,  176 => 73,  167 => 70,  160 => 68,  157 => 67,  153 => 66,  148 => 63,  146 => 62,  140 => 58,  129 => 57,  125 => 56,  118 => 51,  109 => 48,  102 => 46,  99 => 45,  95 => 44,  86 => 38,  79 => 34,  57 => 15,  45 => 6,  39 => 2,  35 => 1,);
+        return array (  395 => 239,  381 => 230,  377 => 228,  370 => 223,  366 => 222,  361 => 219,  359 => 218,  352 => 213,  348 => 211,  341 => 206,  337 => 205,  329 => 204,  323 => 200,  321 => 199,  233 => 113,  227 => 112,  225 => 111,  217 => 106,  204 => 95,  180 => 73,  169 => 70,  162 => 68,  159 => 67,  155 => 66,  150 => 63,  148 => 62,  142 => 58,  131 => 57,  127 => 56,  120 => 51,  109 => 48,  102 => 46,  99 => 45,  95 => 44,  86 => 38,  79 => 34,  57 => 15,  45 => 6,  39 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -441,7 +500,7 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                             <tr>
                               <td>{{ item.nom_type }} - Prix: {{ item.montant }}FCFA</td>
                               <td> &nbsp;&nbsp; &nbsp;</td>
-                              <td><input type=\"checkbox\" value=\"{{ item.montant }}\" class=\"form-control\" id=\"tp\" onchange=\"testtype(event)\"/></td>
+                              <td><input type=\"checkbox\" value=\"{{ item.montant }}\" name=\"{{ item.nom_type }}\" class=\"form-control ticket\" onchange=\"testtype(event)\"/></td>
                             </tr>
                           {% endfor %}
                           <script>
@@ -463,25 +522,25 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                           <tr>
                             <td>{{ item.sub.nom }} - Prix: {{ item.sub.montant }}FCFA</td>
                             <td> &nbsp;&nbsp; &nbsp;</td>
-                            <td><input type=\"checkbox\" value=\"{{ item.sub.montant }}\" class=\"form-control sub\" onchange=\"test(event)\"/></td>
+                            <td><input type=\"checkbox\" value=\"{{ item.sub.montant }}\" name=\"{{ item.sub.nom }}\" class=\"form-control sub\" onchange=\"test(event)\"/></td>
                           </tr>
                         {% endfor %}
                         <script>
                          function test(event)
                           {
-                            var nb = document.getElementById('nb')
+                            var nb = parseInt(document.getElementById('nb').value)
                             if(event.target.checked)
-                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value) + parseInt(document.getElementById('totalPrice').innerHTML)
+                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb + parseInt(document.getElementById('totalPrice').innerHTML)
                             else
-                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)
+                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb
                           }
                           function testtype(event)
                           {
-                            var nb = document.getElementById('tp')
+                            var nb = parseInt(document.getElementById('nb').value)
                             if(event.target.checked)
-                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb.value + parseInt(document.getElementById('totalPrice').innerHTML)
+                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb + parseInt(document.getElementById('totalPrice').innerHTML)
                             else
-                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb.value
+                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb
                           }
                           //parseInt(document.getElementById('montantItem').value) * parseInt(nb.options[nb.selectedIndex].value)
                         </script>
@@ -497,15 +556,19 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
                       </span>
                     </div>
                     <br>
-
-                    <div>
-                      <form action=\"\">
-                      
-                      </form>
-                    </div>
                                                   
                     <div>
                       <a href=\"{{ 'calendar'|page }}\">jjjj</a>
+
+                      <div class=\"pull-right\">
+                        <form data-request=\"onAchat\" id=\"buyForm\">
+                          <input type=\"hidden\" name=\"total\" id=\"total\" value=\"\">
+                          {% if item.promo %}
+                            <input type=\"hidden\" name=\"promo\" value=\"{{ item.montant_promo }}\">
+                          {% endif %}  
+                          <input type=\"submit\" class=\"btn btn-primary\" value=\"Acheter\"/>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div><br>
@@ -627,6 +690,48 @@ class __TwigTemplate_17bea2fd666161bd7af31ec6f2392251ef46126af83bb212b1529a7a512
             </div><!-- /#loginmodal -->
         </div><!-- login modal warapper satart end-->
     </div>
-    {%endfor%}", "/opt/lampp/htdocs/paydunyaEvent/plugins/event/event/components/eventdetail/default.htm", "");
+    {%endfor%}
+
+    <script>
+        
+        document.getElementById('buyForm').addEventListener('submit', function(){
+          document.getElementById('total').value = document.getElementById('totalPrice').innerHTML
+
+          var tickets = document.getElementsByClassName('ticket')
+          var subEvents = document.getElementsByClassName('sub')
+          var nbTicket = document.getElementById('nb').value
+
+          var element = document.createElement('input')
+              element.setAttribute('type', 'hidden')
+              element.setAttribute('name', 'nbTicket')
+              element.setAttribute('value', nbTicket)
+              document.getElementById('buyForm').appendChild(element)
+
+          for(var i = 0; i < tickets.length; i++)
+          {
+            if(tickets[i].checked)
+            {
+              var element = document.createElement('input')
+              element.setAttribute('type', 'hidden')
+              element.setAttribute('name', tickets[i].name)
+              element.setAttribute('value', tickets[i].value)
+              document.getElementById('buyForm').appendChild(element)
+            }
+          }
+
+          for(var i = 0; i < subEvents.length; i++)
+          {
+            if(subEvents[i].checked)
+            {
+              var element = document.createElement('input')
+              element.setAttribute('type', 'hidden')
+              element.setAttribute('name', subEvents[i].name)
+              element.setAttribute('value', subEvents[i].value)
+              document.getElementById('buyForm').appendChild(element)
+            }
+          }
+
+      })
+    </script>", "/opt/lampp/htdocs/paydunyaEvent/plugins/event/event/components/eventdetail/default.htm", "");
     }
 }

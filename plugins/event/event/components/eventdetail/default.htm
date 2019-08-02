@@ -45,7 +45,7 @@
                             <tr>
                               <td>{{ item.nom_type }} - Prix: {{ item.montant }}FCFA</td>
                               <td> &nbsp;&nbsp; &nbsp;</td>
-                              <td><input type="checkbox" value="{{ item.montant }}" class="form-control" id="tp" onchange="testtype(event)"/></td>
+                              <td><input type="checkbox" value="{{ item.montant }}" name="{{ item.nom_type }}" class="form-control ticket" onchange="testtype(event)"/></td>
                             </tr>
                           {% endfor %}
                           <script>
@@ -67,25 +67,25 @@
                           <tr>
                             <td>{{ item.sub.nom }} - Prix: {{ item.sub.montant }}FCFA</td>
                             <td> &nbsp;&nbsp; &nbsp;</td>
-                            <td><input type="checkbox" value="{{ item.sub.montant }}" class="form-control sub" onchange="test(event)"/></td>
+                            <td><input type="checkbox" value="{{ item.sub.montant }}" name="{{ item.sub.nom }}" class="form-control sub" onchange="test(event)"/></td>
                           </tr>
                         {% endfor %}
                         <script>
                          function test(event)
                           {
-                            var nb = document.getElementById('nb')
+                            var nb = parseInt(document.getElementById('nb').value)
                             if(event.target.checked)
-                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value) + parseInt(document.getElementById('totalPrice').innerHTML)
+                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb + parseInt(document.getElementById('totalPrice').innerHTML)
                             else
-                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)
+                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb
                           }
                           function testtype(event)
                           {
-                            var nb = document.getElementById('tp')
+                            var nb = parseInt(document.getElementById('nb').value)
                             if(event.target.checked)
-                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb.value + parseInt(document.getElementById('totalPrice').innerHTML)
+                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb + parseInt(document.getElementById('totalPrice').innerHTML)
                             else
-                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb.value
+                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb
                           }
                           //parseInt(document.getElementById('montantItem').value) * parseInt(nb.options[nb.selectedIndex].value)
                         </script>
@@ -101,15 +101,19 @@
                       </span>
                     </div>
                     <br>
-
-                    <div>
-                      <form action="">
-                      
-                      </form>
-                    </div>
                                                   
                     <div>
                       <a href="{{ 'calendar'|page }}">jjjj</a>
+
+                      <div class="pull-right">
+                        <form data-request="onAchat" id="buyForm">
+                          <input type="hidden" name="total" id="total" value="">
+                          {% if item.promo %}
+                            <input type="hidden" name="promo" value="{{ item.montant_promo }}">
+                          {% endif %}  
+                          <input type="submit" class="btn btn-primary" value="Acheter"/>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div><br>
@@ -232,3 +236,45 @@
         </div><!-- login modal warapper satart end-->
     </div>
     {%endfor%}
+
+    <script>
+        
+        document.getElementById('buyForm').addEventListener('submit', function(){
+          document.getElementById('total').value = document.getElementById('totalPrice').innerHTML
+
+          var tickets = document.getElementsByClassName('ticket')
+          var subEvents = document.getElementsByClassName('sub')
+          var nbTicket = document.getElementById('nb').value
+
+          var element = document.createElement('input')
+              element.setAttribute('type', 'hidden')
+              element.setAttribute('name', 'nbTicket')
+              element.setAttribute('value', nbTicket)
+              document.getElementById('buyForm').appendChild(element)
+
+          for(var i = 0; i < tickets.length; i++)
+          {
+            if(tickets[i].checked)
+            {
+              var element = document.createElement('input')
+              element.setAttribute('type', 'hidden')
+              element.setAttribute('name', tickets[i].name)
+              element.setAttribute('value', tickets[i].value)
+              document.getElementById('buyForm').appendChild(element)
+            }
+          }
+
+          for(var i = 0; i < subEvents.length; i++)
+          {
+            if(subEvents[i].checked)
+            {
+              var element = document.createElement('input')
+              element.setAttribute('type', 'hidden')
+              element.setAttribute('name', subEvents[i].name)
+              element.setAttribute('value', subEvents[i].value)
+              document.getElementById('buyForm').appendChild(element)
+            }
+          }
+
+      })
+    </script>

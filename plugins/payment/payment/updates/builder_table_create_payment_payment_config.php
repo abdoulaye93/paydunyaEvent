@@ -18,6 +18,8 @@ class BuilderTableCreatePaymentPaymentConfig extends Migration
             $table->string('public_key_prod', 255);
             $table->string('private_key_prod', 255);
             $table->string('token_prod', 255);
+            $table->string('phone', 255);
+            $table->string('email', 255);
             $table->integer('id_user');
             $table->boolean('redirect');
         });

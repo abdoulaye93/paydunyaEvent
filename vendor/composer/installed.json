@@ -2125,6 +2125,65 @@
         ]
     },
     {
+        "name": "paydunya/paydunya",
+        "version": "1.0.6",
+        "version_normalized": "1.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/paydunya/paydunya-php-composer.git",
+            "reference": "df0e64ff8f19bc04311185aa26fef5f4beb8f833"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/paydunya/paydunya-php-composer/zipball/df0e64ff8f19bc04311185aa26fef5f4beb8f833",
+            "reference": "df0e64ff8f19bc04311185aa26fef5f4beb8f833",
+            "shasum": ""
+        },
+        "require": {
+            "rmccue/requests": "^1.6"
+        },
+        "time": "2017-08-19T00:59:56+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Paydunya\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PAYDUNYA",
+                "email": "paydunya@paydunya.com"
+            }
+        ],
+        "description": "PAYDUNYA PHP CLIENT",
+        "keywords": [
+            "Marchand en ligne",
+            "Mobile Payments",
+            "Orange Money",
+            "Paiement Sénégal",
+            "Passerelle de paiement en ligne",
+            "Plateforme de paiement en ligne Afrique",
+            "Sénégal",
+            "api",
+            "best payment gateway",
+            "client php",
+            "library",
+            "online payment gateway",
+            "paiement",
+            "paiement en ligne",
+            "paydunya",
+            "paydunya.com",
+            "payment gateway",
+            "payment gateway Africa",
+            "php client"
+        ]
+    },
+    {
         "name": "psr/container",
         "version": "1.0.0",
         "version_normalized": "1.0.0.0",
@@ -2432,6 +2491,57 @@
             "guid",
             "identifier",
             "uuid"
+        ]
+    },
+    {
+        "name": "rmccue/requests",
+        "version": "v1.7.0",
+        "version_normalized": "1.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/rmccue/Requests.git",
+            "reference": "87932f52ffad70504d93f04f15690cf16a089546"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/rmccue/Requests/zipball/87932f52ffad70504d93f04f15690cf16a089546",
+            "reference": "87932f52ffad70504d93f04f15690cf16a089546",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2"
+        },
+        "require-dev": {
+            "requests/test-server": "dev-master"
+        },
+        "time": "2016-10-13T00:11:37+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Requests": "library/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "ISC"
+        ],
+        "authors": [
+            {
+                "name": "Ryan McCue",
+                "homepage": "http://ryanmccue.info"
+            }
+        ],
+        "description": "A HTTP library written in PHP, for human beings.",
+        "homepage": "http://github.com/rmccue/Requests",
+        "keywords": [
+            "curl",
+            "fsockopen",
+            "http",
+            "idna",
+            "ipv6",
+            "iri",
+            "sockets"
         ]
     },
     {
@@ -3739,56 +3849,5 @@
             "env",
             "environment"
         ]
-    },
-    {
-        "name": "wikimedia/composer-merge-plugin",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/wikimedia/composer-merge-plugin.git",
-            "reference": "73e4ed4fa66167823cb9bfc65fdd5fd6019722b6"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/wikimedia/composer-merge-plugin/zipball/73e4ed4fa66167823cb9bfc65fdd5fd6019722b6",
-            "reference": "73e4ed4fa66167823cb9bfc65fdd5fd6019722b6",
-            "shasum": ""
-        },
-        "require": {
-            "composer-plugin-api": "^1.0",
-            "php": ">=5.3.2"
-        },
-        "require-dev": {
-            "composer/composer": "~1.0.0",
-            "jakub-onderka/php-parallel-lint": "~0.8",
-            "phpunit/phpunit": "~4.8|~5.0",
-            "squizlabs/php_codesniffer": "~2.1.0"
-        },
-        "time": "2018-01-10T05:07:51+00:00",
-        "type": "composer-plugin",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.3.x-dev"
-            },
-            "class": "Wikimedia\\Composer\\MergePlugin"
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Wikimedia\\Composer\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Bryan Davis",
-                "email": "bd808@wikimedia.org"
-            }
-        ],
-        "description": "Composer plugin to merge multiple composer.json files"
     }
 ]

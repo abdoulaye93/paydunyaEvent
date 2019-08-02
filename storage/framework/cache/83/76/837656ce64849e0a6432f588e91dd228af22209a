@@ -1,5 +1,51 @@
-1564579496a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:11698:"[session]
+1564735301a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:13294:"[session]
 security = "all"
+==
+<?php
+  use payment\Payment\Models\PaydunyaConfig;
+
+  function onAchat()
+  {
+    $checkoutInvoice = new \Paydunya\Checkout\CheckoutInvoice();
+    $config = PaydunyaConfig::get()[0];
+
+    $quantity = input('nbTicket');
+    
+    foreach (input() as $key => $value) 
+    {
+      if($key != 'nbTicket' && $key != 'total' && $key != 'promo')
+      {
+        $checkoutInvoice->addItem($key, $quantity, input($key), (int)$quantity * (int)input($key));
+      }
+    }
+
+    \Paydunya\Setup::setMasterKey($config->master_key);
+    \Paydunya\Setup::setPublicKey($config->public_key_test);
+    \Paydunya\Setup::setPrivateKey($config->private_key_test);
+    \Paydunya\Setup::setMode("test");
+    \Paydunya\Setup::setToken($config->token_test);
+    \Paydunya\Checkout\Store::setName("Paydunya - Event");
+    \Paydunya\Checkout\Store::setTagline("Achetez des tickets de tous vos évenements favoris.");
+    \Paydunya\Checkout\Store::setPhoneNumber($config->phone);
+    \Paydunya\Checkout\Store::setCancelUrl("http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME'])."/index.php");
+    \Paydunya\Checkout\Store::setReturnUrl("http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME'])."/index.php");
+
+    $montantTotal = (input('promo')) ? input('total') - input('promo') : input('total');
+    $checkoutInvoice->setTotalAmount($montantTotal + 1000);
+
+    if($checkoutInvoice->create()) 
+    {
+      return Redirect::to($checkoutInvoice->getInvoiceUrl());
+    }
+    else
+    {
+      echo $checkoutInvoice->response_text;
+    }
+    //echo($config->master_key);
+    //echo(input('nbTicket'));
+  }
+
+?>
 ==
 <!DOCTYPE html>
 <html>
@@ -325,7 +371,7 @@ security = "all"
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:5:"mtime";i:1564575649;s:6:"markup";s:11668:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1564734690;s:6:"markup";s:11668:"<!DOCTYPE html>
 <html>
     <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -649,4 +695,45 @@ security = "all"
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:4:"code";N;s:7:"session";a:1:{s:8:"security";s:3:"all";}}}
+</html>";s:4:"code";s:1582:"  use payment\Payment\Models\PaydunyaConfig;
+
+  function onAchat()
+  {
+    $checkoutInvoice = new \Paydunya\Checkout\CheckoutInvoice();
+    $config = PaydunyaConfig::get()[0];
+
+    $quantity = input('nbTicket');
+    
+    foreach (input() as $key => $value) 
+    {
+      if($key != 'nbTicket' && $key != 'total' && $key != 'promo')
+      {
+        $checkoutInvoice->addItem($key, $quantity, input($key), (int)$quantity * (int)input($key));
+      }
+    }
+
+    \Paydunya\Setup::setMasterKey($config->master_key);
+    \Paydunya\Setup::setPublicKey($config->public_key_test);
+    \Paydunya\Setup::setPrivateKey($config->private_key_test);
+    \Paydunya\Setup::setMode("test");
+    \Paydunya\Setup::setToken($config->token_test);
+    \Paydunya\Checkout\Store::setName("Paydunya - Event");
+    \Paydunya\Checkout\Store::setTagline("Achetez des tickets de tous vos évenements favoris.");
+    \Paydunya\Checkout\Store::setPhoneNumber($config->phone);
+    \Paydunya\Checkout\Store::setCancelUrl("http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME'])."/index.php");
+    \Paydunya\Checkout\Store::setReturnUrl("http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME'])."/index.php");
+
+    $montantTotal = (input('promo')) ? input('total') - input('promo') : input('total');
+    $checkoutInvoice->setTotalAmount($montantTotal + 1000);
+
+    if($checkoutInvoice->create()) 
+    {
+      return Redirect::to($checkoutInvoice->getInvoiceUrl());
+    }
+    else
+    {
+      echo $checkoutInvoice->response_text;
+    }
+    //echo($config->master_key);
+    //echo(input('nbTicket'));
+  }";s:7:"session";a:1:{s:8:"security";s:3:"all";}}}

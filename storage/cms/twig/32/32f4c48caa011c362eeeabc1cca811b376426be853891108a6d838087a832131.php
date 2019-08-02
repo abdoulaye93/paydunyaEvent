@@ -93,62 +93,31 @@ class __TwigTemplate_efa115be646d9f4a6b2fbe87bd88446287e24e532eeae43a794e34dbf58
                         
                         </div>
                     <div class=\"row\">
-                      <div class=\"col-md-6\">
-                            <div class=\"form-element square\" style=\"margin-top: 25px;\">
-                                <label>Type&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                </label>
-                                <select class=\"input-field-square\" name=\"category\" value=\"\">
-                                                                            ";
-        // line 58
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadEvents", [], "method", false, false, false, 58));
-        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 59
-            echo "                                                                            <option value=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 59), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom_type", [], "any", false, false, false, 59), "html", null, true);
-            echo "</option>
-                                                                            ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 61
-        echo "                                                                        
-                                                                    
-                                                                
-                                  </select>
-                            </div>
-                            
-                      </div>
+                      
                       <div class=\"col-md-6\">
                             <div class=\"form-element square\">
                                     <label>Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                            <input type='button' onclick='addtype()' value='Ajoutez' 
-                                            style=\"margin-bottom: 20px;\"/>
+                                            <a class=\"\" href=\"#\" data-toggle=\"modal\" data-target=\"#autre-modal\" class=\"action-btn\"> autre</a>
                                     </label>
-                                    <select class=\"input-field-square\" name=\"cate\" value=\"\">
+                                    <select class=\"input-field-square\" name=\"cate\" value=\"\" id=\"sel2\">
                                                                                 ";
-        // line 75
+        // line 60
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadEvents", [], "method", false, false, false, 75));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadSubs", [], "method", false, false, false, 60));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 76
+            // line 61
             echo "                                                                                <option value=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 76), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 61), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "categorie", [], "any", false, false, false, 76), "categorie", [], "any", false, false, false, 76), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom_type", [], "any", false, false, false, 61), "html", null, true);
             echo "</option>
                                                                                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 78
-        echo "                                                                            
-                                                                        
-                                                                    
+        // line 62
+        echo "                                                                                                                                                                                     
                                       </select>
                                 </div>
                       </div>
@@ -292,7 +261,7 @@ class __TwigTemplate_efa115be646d9f4a6b2fbe87bd88446287e24e532eeae43a794e34dbf58
                                 <input type='button' onclick='addText()' value='Ajoutez'  class=\"submit-form-btn\"
                                 style=\"margin-bottom: 20px;\"/>
                                 <a href=\"";
-        // line 223
+        // line 205
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("ticket");
         echo "\" onclick=\"edition();return false;\">Edition</a>
                             </div>
@@ -321,15 +290,15 @@ class __TwigTemplate_efa115be646d9f4a6b2fbe87bd88446287e24e532eeae43a794e34dbf58
     </div>
 </div>
 ";
-        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 249
+        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 231
         $context["type"] = "success"        ;        foreach (Flash::success        () as $message) {
-            $context["message"] = $message;            // line 250
+            $context["message"] = $message;            // line 232
             echo "<p>";
             echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
             echo "</p>
 ";
         }
-        $context["type"] = $_type;        $context["message"] = $_message;        // line 252
+        $context["type"] = $_type;        $context["message"] = $_message;        // line 234
         echo "       <!-- login and register modal start-->
 <div class=\"login-registration-modal\" id=\"loginRegModal\">
     <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
@@ -416,8 +385,20 @@ class __TwigTemplate_efa115be646d9f4a6b2fbe87bd88446287e24e532eeae43a794e34dbf58
     </div>
 </div><!-- /#loginmodal -->
 <script>
+    
+doThisOnChange = function( value, optionIndex)
+{
+    if ( optionIndex != null )
+    {
+       var option = document.getElementById( \"sel1\" ).options[optionIndex];
+       option.selected = true;
+       value = option.value;
+    }
+   // alert( \"Do something with the value: \" + value );
+}
+
     function edition() { options = \"Width=700,Height=700\" ; window.open( \"";
-        // line 338
+        // line 332
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("ticket");
         echo "\", \"edition\", options ) ; }
      var row = 1;
@@ -572,7 +553,7 @@ function deletetype(ID)
 
     public function getDebugInfo()
     {
-        return array (  421 => 338,  333 => 252,  327 => 250,  325 => 249,  296 => 223,  149 => 78,  138 => 76,  134 => 75,  118 => 61,  107 => 59,  103 => 58,  58 => 15,  55 => 14,  49 => 12,  47 => 11,  35 => 1,);
+        return array (  402 => 332,  302 => 234,  296 => 232,  294 => 231,  265 => 205,  120 => 62,  109 => 61,  105 => 60,  58 => 15,  55 => 14,  49 => 12,  47 => 11,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -629,34 +610,16 @@ function deletetype(ID)
                         
                         </div>
                     <div class=\"row\">
-                      <div class=\"col-md-6\">
-                            <div class=\"form-element square\" style=\"margin-top: 25px;\">
-                                <label>Type&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                </label>
-                                <select class=\"input-field-square\" name=\"category\" value=\"\">
-                                                                            {% for item in __SELF__.loadEvents() %}
-                                                                            <option value=\"{{ item.id }}\">{{ item.nom_type }}</option>
-                                                                            {% endfor %}
-                                                                        
-                                                                    
-                                                                
-                                  </select>
-                            </div>
-                            
-                      </div>
+                      
                       <div class=\"col-md-6\">
                             <div class=\"form-element square\">
                                     <label>Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                            <input type='button' onclick='addtype()' value='Ajoutez' 
-                                            style=\"margin-bottom: 20px;\"/>
+                                            <a class=\"\" href=\"#\" data-toggle=\"modal\" data-target=\"#autre-modal\" class=\"action-btn\"> autre</a>
                                     </label>
-                                    <select class=\"input-field-square\" name=\"cate\" value=\"\">
-                                                                                {% for item in __SELF__.loadEvents() %}
-                                                                                <option value=\"{{ item.id }}\">{{ item.categorie.categorie }}</option>
-                                                                                {% endfor %}
-                                                                            
-                                                                        
-                                                                    
+                                    <select class=\"input-field-square\" name=\"cate\" value=\"\" id=\"sel2\">
+                                                                                {% for item in __SELF__.loadSubs() %}
+                                                                                <option value=\"{{ item.id }}\">{{ item.nom_type }}</option>
+                                                                                {% endfor %}                                                                                                                                                                                     
                                       </select>
                                 </div>
                       </div>
@@ -914,6 +877,18 @@ function deletetype(ID)
     </div>
 </div><!-- /#loginmodal -->
 <script>
+    
+doThisOnChange = function( value, optionIndex)
+{
+    if ( optionIndex != null )
+    {
+       var option = document.getElementById( \"sel1\" ).options[optionIndex];
+       option.selected = true;
+       value = option.value;
+    }
+   // alert( \"Do something with the value: \" + value );
+}
+
     function edition() { options = \"Width=700,Height=700\" ; window.open( \"{{ 'ticket'|page}}\", \"edition\", options ) ; }
      var row = 1;
      var typ=1;
