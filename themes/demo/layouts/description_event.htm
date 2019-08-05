@@ -31,7 +31,7 @@ security = "all"
     \Paydunya\Checkout\Store::setReturnUrl("http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME'])."/index.php");
 
     $montantTotal = (input('promo')) ? input('total') - input('promo') : input('total');
-    $checkoutInvoice->setTotalAmount($montantTotal);
+    $checkoutInvoice->setTotalAmount($montantTotal+1000);
 
     if($checkoutInvoice->create()) 
     {

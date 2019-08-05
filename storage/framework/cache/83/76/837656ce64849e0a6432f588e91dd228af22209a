@@ -1,4 +1,4 @@
-1564735948a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:13287:"[session]
+1565045623a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:13292:"[session]
 security = "all"
 ==
 <?php
@@ -31,7 +31,7 @@ security = "all"
     \Paydunya\Checkout\Store::setReturnUrl("http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME'])."/index.php");
 
     $montantTotal = (input('promo')) ? input('total') - input('promo') : input('total');
-    $checkoutInvoice->setTotalAmount($montantTotal);
+    $checkoutInvoice->setTotalAmount($montantTotal+1000);
 
     if($checkoutInvoice->create()) 
     {
@@ -371,7 +371,7 @@ security = "all"
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:5:"mtime";i:1564734850;s:6:"markup";s:11668:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1565045019;s:6:"markup";s:11668:"<!DOCTYPE html>
 <html>
     <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -695,7 +695,7 @@ security = "all"
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:4:"code";s:1575:"  use payment\Payment\Models\PaydunyaConfig;
+</html>";s:4:"code";s:1580:"  use payment\Payment\Models\PaydunyaConfig;
 
   function onAchat()
   {
@@ -724,7 +724,7 @@ security = "all"
     \Paydunya\Checkout\Store::setReturnUrl("http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME'])."/index.php");
 
     $montantTotal = (input('promo')) ? input('total') - input('promo') : input('total');
-    $checkoutInvoice->setTotalAmount($montantTotal);
+    $checkoutInvoice->setTotalAmount($montantTotal+1000);
 
     if($checkoutInvoice->create()) 
     {
