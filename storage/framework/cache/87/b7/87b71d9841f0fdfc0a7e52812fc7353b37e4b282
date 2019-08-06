@@ -1,47 +1,26 @@
-1565126591a:1:{s:11:"default.htm";a:8:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:13498:"description = "Default layout"
+1565126880a:1:{s:16:"retour_achat.htm";a:6:{s:8:"fileName";s:16:"retour_achat.htm";s:7:"content";s:13127:"==
+<?
+function onStart(){
+    $token = $_GET['token'];
 
-[account]
-paramCode = "code"
-forceSecure = 0
-
-[session]
-security = "all"
-==
-<?php
-  use Carbon\Carbon;
-  use event\event\models\Event;
-  use event\event\models\NotifDemande;
-  use Demande\Demande\Models\DemandeAnnullationAchat;
-
-  function onStart()
-  {
-    $this->prepareVars();
-  }
-  
-  function onFilterEvents() 
-  { 
-    $this->prepareVars(); 
-  }
-
-  function prepareVars()
-  {
-    $option=post('Filter',[]);
-    $this['events']=Event::ListFrontEnd($option);
-    $this['pages']=$this['events']->lastPage(); 
-  }
+    $invoice = new \Paydunya\Checkout\CheckoutInvoice();
+    $invoice->confirm($token);
+   /* if (!$invoice->confirm($token)) {
+        echo $invoice->getStatus();
+     // echo $invoice->getCustomData("id");
+     // echo $invoice->getCustomData("numero_gagnant");
+      //echo $invoice->getCustomData("nameticket");
     
-    function onAnnuler() 
-    {
-      $user = Auth::getUser();
-      $notif = new NotifDemande();
-      $annulation = new DemandeAnnullationAchat();
-      $annulation->user_id = $user->id;
-      $annulation->email = $user->email;
-      $annulation->save();
-      $notif->save();
-      Flash::success('Votre demande d\'annulation a bien été transmise, nous vous revenons dans un moment !');
-      return Redirect::to('/');
-    }
+      // Vous pouvez aussi récupérer le montant total spécifié précédemment
+     // echo $invoice->getTotalAmount();
+    
+    }else{
+      echo $invoice->getStatus();
+      echo $invoice->response_text;
+      echo $invoice->response_code;
+    }*/
+}
+
 ?>
 ==
 <!DOCTYPE html>
@@ -382,7 +361,7 @@ $('#EventFilter').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:5:"mtime";i:1565093198;s:6:"markup";s:12463:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1565126274;s:6:"markup";s:12463:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
@@ -720,37 +699,23 @@ $('#EventFilter').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:4:"code";s:901:"  use Carbon\Carbon;
-  use event\event\models\Event;
-  use event\event\models\NotifDemande;
-  use Demande\Demande\Models\DemandeAnnullationAchat;
+</html>";s:4:"code";s:644:"function onStart(){
+    $token = $_GET['token'];
 
-  function onStart()
-  {
-    $this->prepareVars();
-  }
-  
-  function onFilterEvents() 
-  { 
-    $this->prepareVars(); 
-  }
-
-  function prepareVars()
-  {
-    $option=post('Filter',[]);
-    $this['events']=Event::ListFrontEnd($option);
-    $this['pages']=$this['events']->lastPage(); 
-  }
+    $invoice = new \Paydunya\Checkout\CheckoutInvoice();
+    $invoice->confirm($token);
+   /* if (!$invoice->confirm($token)) {
+        echo $invoice->getStatus();
+     // echo $invoice->getCustomData("id");
+     // echo $invoice->getCustomData("numero_gagnant");
+      //echo $invoice->getCustomData("nameticket");
     
-    function onAnnuler() 
-    {
-      $user = Auth::getUser();
-      $notif = new NotifDemande();
-      $annulation = new DemandeAnnullationAchat();
-      $annulation->user_id = $user->id;
-      $annulation->email = $user->email;
-      $annulation->save();
-      $notif->save();
-      Flash::success('Votre demande d\'annulation a bien été transmise, nous vous revenons dans un moment !');
-      return Redirect::to('/');
-    }";s:11:"description";s:14:"Default layout";s:7:"account";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}s:7:"session";a:1:{s:8:"security";s:3:"all";}}}
+      // Vous pouvez aussi récupérer le montant total spécifié précédemment
+     // echo $invoice->getTotalAmount();
+    
+    }else{
+      echo $invoice->getStatus();
+      echo $invoice->response_text;
+      echo $invoice->response_code;
+    }*/
+}";s:17:"_PARSER_ERROR_INI";s:0:"";}}

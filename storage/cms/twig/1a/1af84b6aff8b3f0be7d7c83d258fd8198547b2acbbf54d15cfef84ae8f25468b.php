@@ -106,7 +106,7 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                               <td> &nbsp;&nbsp; &nbsp;</td>
                               <td><input type=\"radio\" value=\"";
                 // line 48
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant", [], "any", false, false, false, 48), "html", null, true);
+                echo twig_escape_filter($this->env, $context["item"], "html", null, true);
                 echo "\" name=\"tic\" class=\" ticket\" onchange=\"testtype(event)\"/></td>
                             </tr>
                           ";
@@ -196,7 +196,7 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                                   nom+=parseFloat(document.getElementsByClassName('sub')[i].value);
                                 }
                               }
-                              document.getElementById('totalPrice').innerHTML = (parseInt(event.target.value)+nomb)*nb ;
+                              document.getElementById('totalPrice').innerHTML = (parseInt(JSON.parse(event.target.value).montant)+nomb)*nb ;
                             }else{
                              /// document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb;
                             }
@@ -422,8 +422,13 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
               var element = document.createElement('input')
               element.setAttribute('type', 'hidden')
               element.setAttribute('name', tickets[i].name)
-              element.setAttribute('value', tickets[i].value)
+              element.setAttribute('value', JSON.parse(tickets[i].value).montant)
               document.getElementById('buyForm').appendChild(element)
+              var element1 = document.createElement('input')
+              element1.setAttribute('type', 'hidden')
+              element1.setAttribute('name','nameticket')
+              element1.setAttribute('value',JSON.parse(tickets[i].value).nom_type)
+              document.getElementById('buyForm').appendChild(element1)
             }
           }
 
@@ -507,7 +512,7 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                             <tr>
                               <td>{{ item.nom_type }} - Prix: {{ item.montant }}FCFA</td>
                               <td> &nbsp;&nbsp; &nbsp;</td>
-                              <td><input type=\"radio\" value=\"{{ item.montant }}\" name=\"tic\" class=\" ticket\" onchange=\"testtype(event)\"/></td>
+                              <td><input type=\"radio\" value=\"{{ item }}\" name=\"tic\" class=\" ticket\" onchange=\"testtype(event)\"/></td>
                             </tr>
                           {% endfor %}
                           <script>
@@ -553,7 +558,7 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                                   nom+=parseFloat(document.getElementsByClassName('sub')[i].value);
                                 }
                               }
-                              document.getElementById('totalPrice').innerHTML = (parseInt(event.target.value)+nomb)*nb ;
+                              document.getElementById('totalPrice').innerHTML = (parseInt(JSON.parse(event.target.value).montant)+nomb)*nb ;
                             }else{
                              /// document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb;
                             }
@@ -730,8 +735,13 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
               var element = document.createElement('input')
               element.setAttribute('type', 'hidden')
               element.setAttribute('name', tickets[i].name)
-              element.setAttribute('value', tickets[i].value)
+              element.setAttribute('value', JSON.parse(tickets[i].value).montant)
               document.getElementById('buyForm').appendChild(element)
+              var element1 = document.createElement('input')
+              element1.setAttribute('type', 'hidden')
+              element1.setAttribute('name','nameticket')
+              element1.setAttribute('value',JSON.parse(tickets[i].value).nom_type)
+              document.getElementById('buyForm').appendChild(element1)
             }
           }
 

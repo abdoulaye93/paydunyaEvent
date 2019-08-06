@@ -1,4 +1,4 @@
-1565120564a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:14426:"[session]
+1565125327a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:14707:"[session]
 security = "all"
 ==
 <?php
@@ -10,6 +10,7 @@ security = "all"
     $config = PaydunyaConfig::get()[0];
 
     $quantity = input('nbTicket');
+    $nomticket = input('nameticket');
     
     foreach (input() as $key => $value) 
     {
@@ -34,7 +35,10 @@ security = "all"
     $checkoutInvoice->setTotalAmount($montantTotal);
     $checkoutInvoice->setCancelUrl("http://localhost/install-master1/description_event/".$b);
     $checkoutInvoice->setReturnUrl("http://localhost/install-master1/retour_achat");
-   
+    $checkoutInvoice->addCustomData("id",$b);
+    $checkoutInvoice->addCustomData("total",$b);
+    $checkoutInvoice->addCustomData("nbrticket",(int)$quantity );
+    $checkoutInvoice->addCustomData("nameticket",$nomticket);
     if($checkoutInvoice->create()) 
     {
       return Redirect::to($checkoutInvoice->getInvoiceUrl());
@@ -241,7 +245,7 @@ security = "all"
      var nbtic=0;
      for(var i=0;i<tic;i++){
       if(document.getElementsByClassName('ticket')[i].checked){
-        nbtic+=parseFloat(document.getElementsByClassName('ticket')[i].value);
+        nbtic+=parseFloat(JSON.parse(document.getElementsByClassName('ticket')[i].value).montant);
       }
      }
      var nomb=0;
@@ -388,7 +392,7 @@ security = "all"
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:5:"mtime";i:1565119960;s:6:"markup";s:12631:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1565124676;s:6:"markup";s:12651:"<!DOCTYPE html>
 <html>
     <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -580,7 +584,7 @@ security = "all"
      var nbtic=0;
      for(var i=0;i<tic;i++){
       if(document.getElementsByClassName('ticket')[i].checked){
-        nbtic+=parseFloat(document.getElementsByClassName('ticket')[i].value);
+        nbtic+=parseFloat(JSON.parse(document.getElementsByClassName('ticket')[i].value).montant);
       }
      }
      var nomb=0;
@@ -727,7 +731,7 @@ security = "all"
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:4:"code";s:1743:"  use payment\Payment\Models\PaydunyaConfig;
+</html>";s:4:"code";s:2004:"  use payment\Payment\Models\PaydunyaConfig;
 
   function onAchat()
   {
@@ -735,6 +739,7 @@ security = "all"
     $config = PaydunyaConfig::get()[0];
 
     $quantity = input('nbTicket');
+    $nomticket = input('nameticket');
     
     foreach (input() as $key => $value) 
     {
@@ -759,7 +764,10 @@ security = "all"
     $checkoutInvoice->setTotalAmount($montantTotal);
     $checkoutInvoice->setCancelUrl("http://localhost/install-master1/description_event/".$b);
     $checkoutInvoice->setReturnUrl("http://localhost/install-master1/retour_achat");
-   
+    $checkoutInvoice->addCustomData("id",$b);
+    $checkoutInvoice->addCustomData("total",$b);
+    $checkoutInvoice->addCustomData("nbrticket",(int)$quantity );
+    $checkoutInvoice->addCustomData("nameticket",$nomticket);
     if($checkoutInvoice->create()) 
     {
       return Redirect::to($checkoutInvoice->getInvoiceUrl());

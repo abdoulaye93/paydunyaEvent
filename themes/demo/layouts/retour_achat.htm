@@ -1,64 +1,36 @@
-[session]
-security = "all"
 ==
-<?php
-  use payment\Payment\Models\PaydunyaConfig;
+<?
+function onStart(){
+    $token = $_GET['token'];
 
-  function onAchat()
-  {
-    $checkoutInvoice = new \Paydunya\Checkout\CheckoutInvoice();
-    $config = PaydunyaConfig::get()[0];
-
-    $quantity = input('nbTicket');
-    $nomticket = input('nameticket');
+    $invoice = new \Paydunya\Checkout\CheckoutInvoice();
+    $invoice->confirm($token);
+   /* if (!$invoice->confirm($token)) {
+        echo $invoice->getStatus();
+     // echo $invoice->getCustomData("id");
+     // echo $invoice->getCustomData("numero_gagnant");
+      //echo $invoice->getCustomData("nameticket");
     
-    foreach (input() as $key => $value) 
-    {
-      if($key != 'nbTicket' && $key != 'total' && $key != 'promo')
-      {
-        $checkoutInvoice->addItem($key, $quantity, input($key), (int)$quantity * (int)input($key));
-      }
-    }
-
-    \Paydunya\Setup::setMasterKey($config->master_key);
-    \Paydunya\Setup::setPublicKey($config->public_key_test);
-    \Paydunya\Setup::setPrivateKey($config->private_key_test);
-    \Paydunya\Setup::setMode("test");
-    \Paydunya\Setup::setToken($config->token_test);
-    \Paydunya\Checkout\Store::setName("Paydunya - Event");
-    \Paydunya\Checkout\Store::setTagline("Achetez des tickets de tous vos évenements favoris.");
-    \Paydunya\Checkout\Store::setPhoneNumber($config->phone);
-    \Paydunya\Checkout\Store::setCancelUrl("http://localhost/install-master1/");
-    \Paydunya\Checkout\Store::setReturnUrl("http://localhost/install-master1/");
-    $b=Request::segment(2);
-    $montantTotal = (input('promo')) ? input('total') - input('promo') : input('total');
-    $checkoutInvoice->setTotalAmount($montantTotal);
-    $checkoutInvoice->setCancelUrl("http://localhost/install-master1/description_event/".$b);
-    $checkoutInvoice->setReturnUrl("http://localhost/install-master1/retour_achat");
-    $checkoutInvoice->addCustomData("id",$b);
-    $checkoutInvoice->addCustomData("total",$b);
-    $checkoutInvoice->addCustomData("nbrticket",(int)$quantity );
-    $checkoutInvoice->addCustomData("nameticket",$nomticket);
-    if($checkoutInvoice->create()) 
-    {
-      return Redirect::to($checkoutInvoice->getInvoiceUrl());
-    }
-    else
-    {
-      echo $checkoutInvoice->response_text;
-    }
-    //echo($config->master_key);
-    //echo(input('nbTicket'));
-  }
+      // Vous pouvez aussi récupérer le montant total spécifié précédemment
+     // echo $invoice->getTotalAmount();
+    
+    }else{
+      echo $invoice->getStatus();
+      echo $invoice->response_text;
+      echo $invoice->response_code;
+    }*/
+}
 
 ?>
 ==
 <!DOCTYPE html>
 <html>
     <head>
+     <meta charset="utf-8">
+        <title>October CMS - {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <meta name="csrf-token" content="5ifU7niyjh0byubCovg0kvgPryLEh51pgOvWgabI">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -162,13 +134,24 @@ security = "all"
             {% partial 'site/header' %}
         </header>
 
+        {% flash success %}
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12">
+                  <br>
+                      <p class="bg-success">{{ message }}</p>
+                  </div>
+              </div>
+          </div>
+      {% endflash %}
+
     <!-- navbar area start -->
 
         <!-- Content -->
         <section id="layout-content">
             {% page %}
         </section>
-
+       
         <!-- Footer -->
         <footer id="layout-footer">
             {% partial 'site/footer' %}
@@ -182,6 +165,14 @@ security = "all"
         {% scripts %}
         
 <script>
+  (function($){
+
+$('#EventFilter').on('change', 'input, select', function(){
+    var $form = $(this).closest('form');
+    $form.request();
+});
+
+})(jQuery);
    function increaseAdView(adID) {
       var fd = new FormData();
       fd.append('adID', adID);
@@ -220,46 +211,23 @@ security = "all"
     function hideModal() {
       $('#buyTicketConfModal').modal('hide');
     }
-    
+
     function clacTotal(p_no) {
-      /* var subPrice = 0;
-        var typePrice = 0;
-      var sub = document.getElementsByClassName('sub')
-      for(var i = 0; i < sub.length; i++)
-      {
-        if(sub[i].checked)
-          subPrice += parseInt(sub[i].value)
-      }
-      var type = document.getElementsByClassName('tp')
-      for(var i = 0; i < type.length; i++)
-      {
-        if(type[i].checked)
-          typePrice = parseInt(type[i].value)
-      }
-      var totalPrice = (subPrice+typePrice)*p_no;
-      //document.getElementById('totalPriceInput').value = totalPrice;
+     // totalPrice = 0;
+     // document.getElementById('totalPriceInput').value = pp_price;
      // document.getElementById('pNoInput').value = p_no;
-     document.getElementById('totalPrice').innerHTML = totalPrice;*/
+     // document.getElementById('totalPrice').innerHTML = 0;
      var sub=parseInt(document.getElementsByClassName('sub').length);
-     var tic=parseInt(document.getElementsByClassName('ticket').length);
-     var nbtic=0;
-     for(var i=0;i<tic;i++){
-      if(document.getElementsByClassName('ticket')[i].checked){
-        nbtic+=parseFloat(JSON.parse(document.getElementsByClassName('ticket')[i].value).montant);
-      }
-     }
      var nomb=0;
      for(var i=0;i< sub;i++){
       if(document.getElementsByClassName('sub')[i].checked){
-        nomb+=parseFloat(document.getElementsByClassName('sub')[i].value);
+        nom+=parseFloat(document.getElementsByClassName('sub')[i].value);
       }
      }
-    document.getElementById('totalPrice').innerHTML = (nbtic+nomb)*p_no ;
+    document.getElementById('totalPrice').innerHTML = (parseInt(event.target.value)+nomb)*p_no ;
     }
 
-
     $(document).ready(function() {
-        document.getElementById('totalPrice').innerHTML = 0;
      // clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
@@ -319,6 +287,7 @@ security = "all"
             })
         }
     </script>
+
     <script src="http://lab.thesoftking.com/eticket/assets/user/js/jquery.js"></script>
 <!-- popper -->
 <script src="http://lab.thesoftking.com/eticket/assets/user/js/popper.min.js"></script>

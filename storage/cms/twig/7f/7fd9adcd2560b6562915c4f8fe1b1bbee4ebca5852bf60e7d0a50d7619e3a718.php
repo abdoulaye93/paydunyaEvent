@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* C:\wamp64\www\install-master1/themes/demo/layouts/description_event.htm */
-class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0bddca1 extends \Twig\Template
+/* C:\wamp64\www\install-master1/themes/demo/layouts/retour_achat.htm */
+class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb12f542 extends \Twig\Template
 {
     private $source;
 
@@ -35,9 +35,20 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
         echo "<!DOCTYPE html>
 <html>
     <head>
+     <meta charset=\"utf-8\">
+        <title>October CMS - ";
+        // line 5
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 5), "title", [], "any", false, false, false, 5), "html", null, true);
+        echo "</title>
+        <meta name=\"description\" content=\"";
+        // line 6
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 6), "meta_description", [], "any", false, false, false, 6), "html", null, true);
+        echo "\">
+        <meta name=\"title\" content=\"";
+        // line 7
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 7), "meta_title", [], "any", false, false, false, 7), "html", null, true);
+        echo "\">
        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">
-
-    <meta name=\"csrf-token\" content=\"5ifU7niyjh0byubCovg0kvgPryLEh51pgOvWgabI\">
 
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />
     <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
@@ -45,67 +56,67 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
     <title> eTicket | Event Details  </title>
     <!-- favicon -->
      <link href=\"";
-        // line 13
+        // line 15
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/interfaceControl/logoIcon/icon.jpg");
         echo "\" rel=\"stylesheet\">
     <!-- bootstrap -->
      <link href=\"";
-        // line 15
+        // line 17
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/bootstrap.min.css");
         echo "\" rel=\"stylesheet\">
          <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\">
     <!-- fontawesome -->
      <link href=\"";
-        // line 18
+        // line 20
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/css/font-awesome.min.css");
         echo "\" rel=\"stylesheet\">
     <!-- flaticon -->
      <link href=\"";
-        // line 20
+        // line 22
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/flaticon.css");
         echo "\" rel=\"stylesheet\">
     <!-- bootstrap datetime picker -->
       <link href=\"";
-        // line 22
+        // line 24
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/bootstrap-datepicker.min.css");
         echo "\" rel=\"stylesheet\">
     <!-- animate.css -->
      <link href=\"";
-        // line 24
+        // line 26
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/animate.css");
         echo "\" rel=\"stylesheet\">
     <!-- Owl Carousel -->
         <link href=\"";
-        // line 26
+        // line 28
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/owl.carousel.min.css");
         echo "\" rel=\"stylesheet\">
     <!-- magnific popup -->
       <link href=\"";
-        // line 28
+        // line 30
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/magnific-popup.css");
         echo "\" rel=\"stylesheet\">
     <!-- stylesheet -->
     <link href=\"";
-        // line 30
+        // line 32
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/style.css");
         echo "\" rel=\"stylesheet\">
     <!-- responsive -->
     <link href=\"";
-        // line 32
+        // line 34
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/responsive.css");
         echo "\" rel=\"stylesheet\">
      <link href=\"";
-        // line 33
+        // line 35
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/css/sweetalert.css");
         echo "\" rel=\"stylesheet\"><script src=\"";
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/js/sweetalert.js");
         echo "\"></script>
      <link href=\"";
-        // line 34
+        // line 36
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs");
         echo "\" rel=\"stylesheet\">
      <link href=\"";
-        // line 35
+        // line 37
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/themes/base-color.php?color=7d5fff");
         echo "\" rel=\"stylesheet\">
      <!-- Font Awesome -->
@@ -180,48 +191,67 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
     
        <header id=\"layout-header\">
             ";
-        // line 107
+        // line 109
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 108
+        // line 110
         echo "        </header>
 
+        ";
+        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 112
+        $context["type"] = "success"        ;        foreach (Flash::success        () as $message) {
+            $context["message"] = $message;            // line 113
+            echo "          <div class=\"container\">
+              <div class=\"row\">
+                  <div class=\"col-lg-12\">
+                  <br>
+                      <p class=\"bg-success\">";
+            // line 117
+            echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
+            echo "</p>
+                  </div>
+              </div>
+          </div>
+      ";
+        }
+        $context["type"] = $_type;        $context["message"] = $_message;        // line 122
+        echo "
     <!-- navbar area start -->
 
         <!-- Content -->
         <section id=\"layout-content\">
             ";
-        // line 114
+        // line 127
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 115
+        // line 128
         echo "        </section>
-
+       
         <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 119
+        // line 132
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 120
+        // line 133
         echo "        </footer>
 
         <!-- Scripts -->
         <script src=\"";
-        // line 123
+        // line 136
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
         <script src=\"";
-        // line 124
+        // line 137
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
         <script src=\"";
-        // line 125
+        // line 138
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script>
         ";
-        // line 126
+        // line 139
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="'. Request::getBasePath()
@@ -236,13 +266,21 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 127
+        // line 140
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 128
+        // line 141
         echo "        
 <script>
+  (function(\$){
+
+\$('#EventFilter').on('change', 'input, select', function(){
+    var \$form = \$(this).closest('form');
+    \$form.request();
+});
+
+})(jQuery);
    function increaseAdView(adID) {
       var fd = new FormData();
       fd.append('adID', adID);
@@ -281,46 +319,23 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
     function hideModal() {
       \$('#buyTicketConfModal').modal('hide');
     }
-    
+
     function clacTotal(p_no) {
-      /* var subPrice = 0;
-        var typePrice = 0;
-      var sub = document.getElementsByClassName('sub')
-      for(var i = 0; i < sub.length; i++)
-      {
-        if(sub[i].checked)
-          subPrice += parseInt(sub[i].value)
-      }
-      var type = document.getElementsByClassName('tp')
-      for(var i = 0; i < type.length; i++)
-      {
-        if(type[i].checked)
-          typePrice = parseInt(type[i].value)
-      }
-      var totalPrice = (subPrice+typePrice)*p_no;
-      //document.getElementById('totalPriceInput').value = totalPrice;
+     // totalPrice = 0;
+     // document.getElementById('totalPriceInput').value = pp_price;
      // document.getElementById('pNoInput').value = p_no;
-     document.getElementById('totalPrice').innerHTML = totalPrice;*/
+     // document.getElementById('totalPrice').innerHTML = 0;
      var sub=parseInt(document.getElementsByClassName('sub').length);
-     var tic=parseInt(document.getElementsByClassName('ticket').length);
-     var nbtic=0;
-     for(var i=0;i<tic;i++){
-      if(document.getElementsByClassName('ticket')[i].checked){
-        nbtic+=parseFloat(JSON.parse(document.getElementsByClassName('ticket')[i].value).montant);
-      }
-     }
      var nomb=0;
      for(var i=0;i< sub;i++){
       if(document.getElementsByClassName('sub')[i].checked){
-        nomb+=parseFloat(document.getElementsByClassName('sub')[i].value);
+        nom+=parseFloat(document.getElementsByClassName('sub')[i].value);
       }
      }
-    document.getElementById('totalPrice').innerHTML = (nbtic+nomb)*p_no ;
+    document.getElementById('totalPrice').innerHTML = (parseInt(event.target.value)+nomb)*p_no ;
     }
 
-
     \$(document).ready(function() {
-        document.getElementById('totalPrice').innerHTML = 0;
      // clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
@@ -380,6 +395,7 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
             })
         }
     </script>
+
     <script src=\"http://lab.thesoftking.com/eticket/assets/user/js/jquery.js\"></script>
 <!-- popper -->
 <script src=\"http://lab.thesoftking.com/eticket/assets/user/js/popper.min.js\"></script>
@@ -458,7 +474,7 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
 
     public function getTemplateName()
     {
-        return "C:\\wamp64\\www\\install-master1/themes/demo/layouts/description_event.htm";
+        return "C:\\wamp64\\www\\install-master1/themes/demo/layouts/retour_achat.htm";
     }
 
     public function isTraitable()
@@ -468,7 +484,7 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
 
     public function getDebugInfo()
     {
-        return array (  244 => 128,  240 => 127,  225 => 126,  221 => 125,  217 => 124,  213 => 123,  208 => 120,  204 => 119,  198 => 115,  196 => 114,  188 => 108,  184 => 107,  109 => 35,  105 => 34,  99 => 33,  95 => 32,  90 => 30,  85 => 28,  80 => 26,  75 => 24,  70 => 22,  65 => 20,  60 => 18,  54 => 15,  49 => 13,  35 => 1,);
+        return array (  274 => 141,  270 => 140,  255 => 139,  251 => 138,  247 => 137,  243 => 136,  238 => 133,  234 => 132,  228 => 128,  226 => 127,  219 => 122,  211 => 117,  205 => 113,  203 => 112,  199 => 110,  195 => 109,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -476,9 +492,11 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
         return new Source("<!DOCTYPE html>
 <html>
     <head>
+     <meta charset=\"utf-8\">
+        <title>October CMS - {{ this.page.title }}</title>
+        <meta name=\"description\" content=\"{{ this.page.meta_description }}\">
+        <meta name=\"title\" content=\"{{ this.page.meta_title }}\">
        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">
-
-    <meta name=\"csrf-token\" content=\"5ifU7niyjh0byubCovg0kvgPryLEh51pgOvWgabI\">
 
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />
     <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
@@ -582,13 +600,24 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
             {% partial 'site/header' %}
         </header>
 
+        {% flash success %}
+          <div class=\"container\">
+              <div class=\"row\">
+                  <div class=\"col-lg-12\">
+                  <br>
+                      <p class=\"bg-success\">{{ message }}</p>
+                  </div>
+              </div>
+          </div>
+      {% endflash %}
+
     <!-- navbar area start -->
 
         <!-- Content -->
         <section id=\"layout-content\">
             {% page %}
         </section>
-
+       
         <!-- Footer -->
         <footer id=\"layout-footer\">
             {% partial 'site/footer' %}
@@ -602,6 +631,14 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
         {% scripts %}
         
 <script>
+  (function(\$){
+
+\$('#EventFilter').on('change', 'input, select', function(){
+    var \$form = \$(this).closest('form');
+    \$form.request();
+});
+
+})(jQuery);
    function increaseAdView(adID) {
       var fd = new FormData();
       fd.append('adID', adID);
@@ -640,46 +677,23 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
     function hideModal() {
       \$('#buyTicketConfModal').modal('hide');
     }
-    
+
     function clacTotal(p_no) {
-      /* var subPrice = 0;
-        var typePrice = 0;
-      var sub = document.getElementsByClassName('sub')
-      for(var i = 0; i < sub.length; i++)
-      {
-        if(sub[i].checked)
-          subPrice += parseInt(sub[i].value)
-      }
-      var type = document.getElementsByClassName('tp')
-      for(var i = 0; i < type.length; i++)
-      {
-        if(type[i].checked)
-          typePrice = parseInt(type[i].value)
-      }
-      var totalPrice = (subPrice+typePrice)*p_no;
-      //document.getElementById('totalPriceInput').value = totalPrice;
+     // totalPrice = 0;
+     // document.getElementById('totalPriceInput').value = pp_price;
      // document.getElementById('pNoInput').value = p_no;
-     document.getElementById('totalPrice').innerHTML = totalPrice;*/
+     // document.getElementById('totalPrice').innerHTML = 0;
      var sub=parseInt(document.getElementsByClassName('sub').length);
-     var tic=parseInt(document.getElementsByClassName('ticket').length);
-     var nbtic=0;
-     for(var i=0;i<tic;i++){
-      if(document.getElementsByClassName('ticket')[i].checked){
-        nbtic+=parseFloat(JSON.parse(document.getElementsByClassName('ticket')[i].value).montant);
-      }
-     }
      var nomb=0;
      for(var i=0;i< sub;i++){
       if(document.getElementsByClassName('sub')[i].checked){
-        nomb+=parseFloat(document.getElementsByClassName('sub')[i].value);
+        nom+=parseFloat(document.getElementsByClassName('sub')[i].value);
       }
      }
-    document.getElementById('totalPrice').innerHTML = (nbtic+nomb)*p_no ;
+    document.getElementById('totalPrice').innerHTML = (parseInt(event.target.value)+nomb)*p_no ;
     }
 
-
     \$(document).ready(function() {
-        document.getElementById('totalPrice').innerHTML = 0;
      // clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
@@ -739,6 +753,7 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
             })
         }
     </script>
+
     <script src=\"http://lab.thesoftking.com/eticket/assets/user/js/jquery.js\"></script>
 <!-- popper -->
 <script src=\"http://lab.thesoftking.com/eticket/assets/user/js/popper.min.js\"></script>
@@ -812,6 +827,6 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
 <!-- MDB core JavaScript -->
 <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js\"></script>
     </body>
-</html>", "C:\\wamp64\\www\\install-master1/themes/demo/layouts/description_event.htm", "");
+</html>", "C:\\wamp64\\www\\install-master1/themes/demo/layouts/retour_achat.htm", "");
     }
 }

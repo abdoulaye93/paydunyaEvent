@@ -45,7 +45,7 @@
                             <tr>
                               <td>{{ item.nom_type }} - Prix: {{ item.montant }}FCFA</td>
                               <td> &nbsp;&nbsp; &nbsp;</td>
-                              <td><input type="radio" value="{{ item.montant }}" name="tic" class=" ticket" onchange="testtype(event)"/></td>
+                              <td><input type="radio" value="{{ item }}" name="tic" class=" ticket" onchange="testtype(event)"/></td>
                             </tr>
                           {% endfor %}
                           <script>
@@ -91,7 +91,7 @@
                                   nom+=parseFloat(document.getElementsByClassName('sub')[i].value);
                                 }
                               }
-                              document.getElementById('totalPrice').innerHTML = (parseInt(event.target.value)+nomb)*nb ;
+                              document.getElementById('totalPrice').innerHTML = (parseInt(JSON.parse(event.target.value).montant)+nomb)*nb ;
                             }else{
                              /// document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb;
                             }
@@ -268,8 +268,13 @@
               var element = document.createElement('input')
               element.setAttribute('type', 'hidden')
               element.setAttribute('name', tickets[i].name)
-              element.setAttribute('value', tickets[i].value)
+              element.setAttribute('value', JSON.parse(tickets[i].value).montant)
               document.getElementById('buyForm').appendChild(element)
+              var element1 = document.createElement('input')
+              element1.setAttribute('type', 'hidden')
+              element1.setAttribute('name','nameticket')
+              element1.setAttribute('value',JSON.parse(tickets[i].value).nom_type)
+              document.getElementById('buyForm').appendChild(element1)
             }
           }
 

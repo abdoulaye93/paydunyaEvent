@@ -1,4 +1,4 @@
-1565120525a:1:{s:14:"view_event.htm";a:12:{s:8:"fileName";s:14:"view_event.htm";s:7:"content";s:217:"title = "view_event"
+1565126590a:1:{s:14:"view_event.htm";a:12:{s:8:"fileName";s:14:"view_event.htm";s:7:"content";s:217:"title = "view_event"
 url = "/view_event/:page?"
 layout = "create_event"
 is_hidden = 0
