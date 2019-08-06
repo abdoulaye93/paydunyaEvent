@@ -283,7 +283,7 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
     }
     
     function clacTotal(p_no) {
-       var subPrice = 0;
+      /* var subPrice = 0;
         var typePrice = 0;
       var sub = document.getElementsByClassName('sub')
       for(var i = 0; i < sub.length; i++)
@@ -300,7 +300,22 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
       var totalPrice = (subPrice+typePrice)*p_no;
       //document.getElementById('totalPriceInput').value = totalPrice;
      // document.getElementById('pNoInput').value = p_no;
-     document.getElementById('totalPrice').innerHTML = totalPrice;
+     document.getElementById('totalPrice').innerHTML = totalPrice;*/
+     var sub=parseInt(document.getElementsByClassName('sub').length);
+     var tic=parseInt(document.getElementsByClassName('ticket').length);
+     var nbtic=0;
+     for(var i=0;i<tic;i++){
+      if(document.getElementsByClassName('ticket')[i].checked){
+        nbtic+=parseFloat(document.getElementsByClassName('ticket')[i].value);
+      }
+     }
+     var nomb=0;
+     for(var i=0;i< sub;i++){
+      if(document.getElementsByClassName('sub')[i].checked){
+        nomb+=parseFloat(document.getElementsByClassName('sub')[i].value);
+      }
+     }
+    document.getElementById('totalPrice').innerHTML = (nbtic+nomb)*p_no ;
     }
 
 
@@ -627,7 +642,7 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
     }
     
     function clacTotal(p_no) {
-       var subPrice = 0;
+      /* var subPrice = 0;
         var typePrice = 0;
       var sub = document.getElementsByClassName('sub')
       for(var i = 0; i < sub.length; i++)
@@ -644,7 +659,22 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
       var totalPrice = (subPrice+typePrice)*p_no;
       //document.getElementById('totalPriceInput').value = totalPrice;
      // document.getElementById('pNoInput').value = p_no;
-     document.getElementById('totalPrice').innerHTML = totalPrice;
+     document.getElementById('totalPrice').innerHTML = totalPrice;*/
+     var sub=parseInt(document.getElementsByClassName('sub').length);
+     var tic=parseInt(document.getElementsByClassName('ticket').length);
+     var nbtic=0;
+     for(var i=0;i<tic;i++){
+      if(document.getElementsByClassName('ticket')[i].checked){
+        nbtic+=parseFloat(document.getElementsByClassName('ticket')[i].value);
+      }
+     }
+     var nomb=0;
+     for(var i=0;i< sub;i++){
+      if(document.getElementsByClassName('sub')[i].checked){
+        nomb+=parseFloat(document.getElementsByClassName('sub')[i].value);
+      }
+     }
+    document.getElementById('totalPrice').innerHTML = (nbtic+nomb)*p_no ;
     }
 
 

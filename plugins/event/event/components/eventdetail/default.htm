@@ -73,11 +73,12 @@
                         <script>
                          function test(event)
                           {
+                            var sub=parseInt(document.getElementsByClassName('sub').length);
                             var nb = parseInt(document.getElementById('nb').value)
                             if(event.target.checked)
                               document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb + parseInt(document.getElementById('totalPrice').innerHTML)
                             else
-                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)
+                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb
                           }
                           function testtype(event)
                           {
@@ -92,7 +93,7 @@
                               }
                               document.getElementById('totalPrice').innerHTML = (parseInt(event.target.value)+nomb)*nb ;
                             }else{
-                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb;
+                             /// document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb;
                             }
                           }
                           //parseInt(document.getElementById('montantItem').value) * parseInt(nb.options[nb.selectedIndex].value)

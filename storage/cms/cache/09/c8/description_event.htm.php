@@ -1,5 +1,5 @@
 <?php 
-use payment\Payment\Models\PaydunyaConfig;class Cms5d495f2783ee1753434941_fe5757bdef673d3203ecfd1d26186e7aClass extends Cms\Classes\LayoutCode
+use payment\Payment\Models\PaydunyaConfig;class Cms5d4970f96b06a675025075_c20eae8eb1f7b084006ea065e3b8c11dClass extends Cms\Classes\LayoutCode
 {
   
 public function onAchat()

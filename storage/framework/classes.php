@@ -107,4 +107,6 @@
   'event\\event\\models\\Categorie' => 'plugins\\event\\event\\models\\Categorie.php',
   'payment\\Payment\\Models\\PaydunyaConfig' => 'plugins\\payment\\payment\\models\\PaydunyaConfig.php',
   'payment\\payment\\components\\CreateConfig' => 'plugins\\payment\\payment\\components\\CreateConfig.php',
+  'event\\event\\components\\EventList' => 'plugins\\event\\event\\components\\EventList.php',
+  'event\\event\\models\\Position' => 'plugins\\event\\event\\models\\Position.php',
 );

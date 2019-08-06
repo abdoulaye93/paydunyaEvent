@@ -1,4 +1,4 @@
-1565092522a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:13660:"[session]
+1565095477a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:14299:"[session]
 security = "all"
 ==
 <?php
@@ -216,7 +216,7 @@ security = "all"
     }
     
     function clacTotal(p_no) {
-       var subPrice = 0;
+      /* var subPrice = 0;
         var typePrice = 0;
       var sub = document.getElementsByClassName('sub')
       for(var i = 0; i < sub.length; i++)
@@ -233,7 +233,22 @@ security = "all"
       var totalPrice = (subPrice+typePrice)*p_no;
       //document.getElementById('totalPriceInput').value = totalPrice;
      // document.getElementById('pNoInput').value = p_no;
-     document.getElementById('totalPrice').innerHTML = totalPrice;
+     document.getElementById('totalPrice').innerHTML = totalPrice;*/
+     var sub=parseInt(document.getElementsByClassName('sub').length);
+     var tic=parseInt(document.getElementsByClassName('ticket').length);
+     var nbtic=0;
+     for(var i=0;i<tic;i++){
+      if(document.getElementsByClassName('ticket')[i].checked){
+        nbtic+=parseFloat(document.getElementsByClassName('ticket')[i].value);
+      }
+     }
+     var nomb=0;
+     for(var i=0;i< sub;i++){
+      if(document.getElementsByClassName('sub')[i].checked){
+        nomb+=parseFloat(document.getElementsByClassName('sub')[i].value);
+      }
+     }
+    document.getElementById('totalPrice').innerHTML = (nbtic+nomb)*p_no ;
     }
 
 
@@ -371,7 +386,7 @@ security = "all"
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:5:"mtime";i:1565089565;s:6:"markup";s:11992:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1565094133;s:6:"markup";s:12631:"<!DOCTYPE html>
 <html>
     <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -540,7 +555,7 @@ security = "all"
     }
     
     function clacTotal(p_no) {
-       var subPrice = 0;
+      /* var subPrice = 0;
         var typePrice = 0;
       var sub = document.getElementsByClassName('sub')
       for(var i = 0; i < sub.length; i++)
@@ -557,7 +572,22 @@ security = "all"
       var totalPrice = (subPrice+typePrice)*p_no;
       //document.getElementById('totalPriceInput').value = totalPrice;
      // document.getElementById('pNoInput').value = p_no;
-     document.getElementById('totalPrice').innerHTML = totalPrice;
+     document.getElementById('totalPrice').innerHTML = totalPrice;*/
+     var sub=parseInt(document.getElementsByClassName('sub').length);
+     var tic=parseInt(document.getElementsByClassName('ticket').length);
+     var nbtic=0;
+     for(var i=0;i<tic;i++){
+      if(document.getElementsByClassName('ticket')[i].checked){
+        nbtic+=parseFloat(document.getElementsByClassName('ticket')[i].value);
+      }
+     }
+     var nomb=0;
+     for(var i=0;i< sub;i++){
+      if(document.getElementsByClassName('sub')[i].checked){
+        nomb+=parseFloat(document.getElementsByClassName('sub')[i].value);
+      }
+     }
+    document.getElementById('totalPrice').innerHTML = (nbtic+nomb)*p_no ;
     }
 
 
