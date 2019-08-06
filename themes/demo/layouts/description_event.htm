@@ -27,12 +27,14 @@ security = "all"
     \Paydunya\Checkout\Store::setName("Paydunya - Event");
     \Paydunya\Checkout\Store::setTagline("Achetez des tickets de tous vos évenements favoris.");
     \Paydunya\Checkout\Store::setPhoneNumber($config->phone);
-    \Paydunya\Checkout\Store::setCancelUrl("http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME'])."/index.php");
-    \Paydunya\Checkout\Store::setReturnUrl("http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME'])."/index.php");
-
+    \Paydunya\Checkout\Store::setCancelUrl("http://localhost/install-master1/");
+    \Paydunya\Checkout\Store::setReturnUrl("http://localhost/install-master1/");
+    $b=Request::segment(2);
     $montantTotal = (input('promo')) ? input('total') - input('promo') : input('total');
     $checkoutInvoice->setTotalAmount($montantTotal);
-
+    $checkoutInvoice->setCancelUrl("http://localhost/install-master1/description_event/".$b);
+    $checkoutInvoice->setReturnUrl("http://localhost/install-master1/retour_achat");
+    $checkoutInvoice->addCustomData("id",$b);
     if($checkoutInvoice->create()) 
     {
       return Redirect::to($checkoutInvoice->getInvoiceUrl());
