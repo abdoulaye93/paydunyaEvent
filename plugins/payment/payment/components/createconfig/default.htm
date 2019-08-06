@@ -89,6 +89,18 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="col-md-4">
+                                    <div class="form-element square">
+                                        <label for="phone">Telephone <span>**</span></label>
+                                        <input type="text" id="phone" required placeholder="Votre numero de telephone..." name="phone" {% if __SELF__.config %} value="{{ __SELF__.config.phone }}" {% endif %} class="input-field-square" id="inputtype2">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-element square">
+                                        <label for="email">Email <span>**</span></label>
+                                        <input type="email" required id="email" placeholder="Votre adresse email..." name="email" {% if __SELF__.config %} value="{{ __SELF__.config.email }}" {% endif %} class="input-field-square" id="inputtype2">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

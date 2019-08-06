@@ -45,6 +45,8 @@ class CreateConfig extends ComponentBase
         $this->config->private_key_prod = Input::get('private_key_prod');
         $this->config->token_prod = Input::get('token_prod');
         $this->config->id_user = Input::get('id_user');
+        $this->config->phone = Input::get('phone');
+        $this->config->email = Input::get('email');
         $this->config->redirect = Input::get('redirect');
 
         $this->config->save();

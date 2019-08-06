@@ -1,13 +1,5 @@
-1565089731a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:12066:"[session]
+1565090175a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:12628:"[session]
 security = "all"
-==
-<?
-use event\event\models\NotifDemande;
-function onStart(){$this->prepareVars();}
-function prepareVars(){
-  $this['notifs']=NotifDemande::all();
-}
-?>
 ==
 <!-- Nav -->
 <nav class="navbar navbar-area navbar-expand-lg navbar-light navbar-fixed-top navbar-autohide">
@@ -52,9 +44,15 @@ function prepareVars(){
                                 </div>
                             </li>
 
-                   <li class="nav-item {% if this.page.id == 'configuration_payment' %}active{% endif %}">
-                        <a class="nav-link" href="{{ 'configuration_payment'|page }}">Config payment</a>
-                   </li>
+
+
+                            <li class="nav-item dropdown {% if this.page.id == 'configuration_payment' %}active{% endif %}">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paiement</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ 'configuration_payment'|page }}">Configurer le paiement</a>
+                                    <a class="dropdown-item" id="annulerAchat" data-request="onAnnuler" data-request-data="redirect: '/'" href="">Annuler un achat</a>
+                                </div>
+                            </li>
                     
                 
                     {% else %}
@@ -188,7 +186,12 @@ function prepareVars(){
             window.location = "{{ 'Demonstration'|page }}"
 
     }
-    </script>";s:5:"mtime";i:1565043391;s:6:"markup";s:11872:"<!-- Nav -->
+
+    document.getElementById('annulerAchat').addEventListener('click', function(event){
+        if(!confirm('Voulez vous vraiment effectuer une demande d\'annulation d\'achat ?'))
+            event.preventDefault()
+    })
+    </script>";s:5:"mtime";i:1565089565;s:6:"markup";s:12595:"<!-- Nav -->
 <nav class="navbar navbar-area navbar-expand-lg navbar-light navbar-fixed-top navbar-autohide">
     <div class="container">
         <div >
@@ -231,9 +234,15 @@ function prepareVars(){
                                 </div>
                             </li>
 
-                   <li class="nav-item {% if this.page.id == 'configuration_payment' %}active{% endif %}">
-                        <a class="nav-link" href="{{ 'configuration_payment'|page }}">Config payment</a>
-                   </li>
+
+
+                            <li class="nav-item dropdown {% if this.page.id == 'configuration_payment' %}active{% endif %}">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paiement</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ 'configuration_payment'|page }}">Configurer le paiement</a>
+                                    <a class="dropdown-item" id="annulerAchat" data-request="onAnnuler" data-request-data="redirect: '/'" href="">Annuler un achat</a>
+                                </div>
+                            </li>
                     
                 
                     {% else %}
@@ -367,8 +376,9 @@ function prepareVars(){
             window.location = "{{ 'Demonstration'|page }}"
 
     }
-    </script>";s:4:"code";s:147:"use event\event\models\NotifDemande;
-function onStart(){$this->prepareVars();}
-function prepareVars(){
-  $this['notifs']=NotifDemande::all();
-}";s:7:"session";a:1:{s:8:"security";s:3:"all";}}}
+
+    document.getElementById('annulerAchat').addEventListener('click', function(event){
+        if(!confirm('Voulez vous vraiment effectuer une demande d\'annulation d\'achat ?'))
+            event.preventDefault()
+    })
+    </script>";s:4:"code";N;s:7:"session";a:1:{s:8:"security";s:3:"all";}}}

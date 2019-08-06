@@ -27,10 +27,6 @@ class ComposerStaticInitce290a037d2cbd6fc6b8d537449d0ac2
         array (
             'XdgBaseDir\\' => 11,
         ),
-        'W' => 
-        array (
-            'Wikimedia\\Composer\\' => 19,
-        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -68,11 +64,11 @@ class ComposerStaticInitce290a037d2cbd6fc6b8d537449d0ac2
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
             'PhpParser\\' => 10,
+            'Paydunya\\' => 9,
         ),
         'O' => 
         array (
             'October\\Rain\\' => 13,
-            'October\\Demo\\' => 13,
         ),
         'M' => 
         array (
@@ -123,10 +119,6 @@ class ComposerStaticInitce290a037d2cbd6fc6b8d537449d0ac2
         'XdgBaseDir\\' => 
         array (
             0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
-        ),
-        'Wikimedia\\Composer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/wikimedia/composer-merge-plugin/src',
         ),
         'Twig\\' => 
         array (
@@ -232,13 +224,13 @@ class ComposerStaticInitce290a037d2cbd6fc6b8d537449d0ac2
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'Paydunya\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paydunya/paydunya/src',
+        ),
         'October\\Rain\\' => 
         array (
             0 => __DIR__ . '/..' . '/october/rain/src',
-        ),
-        'October\\Demo\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/plugins/october/demo',
         ),
         'Monolog\\' => 
         array (
@@ -328,6 +320,13 @@ class ComposerStaticInitce290a037d2cbd6fc6b8d537449d0ac2
             'Twig_' => 
             array (
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
+        'R' => 
+        array (
+            'Requests' => 
+            array (
+                0 => __DIR__ . '/..' . '/rmccue/requests/library',
             ),
         ),
         'P' => 

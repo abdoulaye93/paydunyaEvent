@@ -112,89 +112,95 @@ class __TwigTemplate_8c74380184862f86b99b09c1ba4197e1a2537b10847669314138d93a03f
                                 </div>
                             </li>
 
-                   <li class=\"nav-item ";
-            // line 44
-            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 44), "id", [], "any", false, false, false, 44) == "configuration_payment")) {
+
+
+                            <li class=\"nav-item dropdown ";
+            // line 46
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 46), "id", [], "any", false, false, false, 46) == "configuration_payment")) {
                 echo "active";
             }
             echo "\">
-                        <a class=\"nav-link\" href=\"";
-            // line 45
+                                <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Paiement</a>
+                                <div class=\"dropdown-menu\">
+                                    <a class=\"dropdown-item\" href=\"";
+            // line 49
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("configuration_payment");
-            echo "\">Config payment</a>
-                   </li>
+            echo "\">Configurer le paiement</a>
+                                    <a class=\"dropdown-item\" id=\"annulerAchat\" data-request=\"onAnnuler\" data-request-data=\"redirect: '/'\" href=\"\">Annuler un achat</a>
+                                </div>
+                            </li>
                     
                 
                     ";
         } else {
-            // line 50
+            // line 56
             echo "                         <li class=\"nav-item boxed-btn\">
                     <a class=\"nav-link boxed-btn\" href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\">Login - Register</a>
                 </li>
                     ";
         }
-        // line 54
+        // line 60
         echo "                    ";
-        if (twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "is_superuser", [], "any", false, false, false, 54)) {
-            // line 55
+        if (twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "is_superuser", [], "any", false, false, false, 60)) {
+            // line 61
             echo "                     </li>
                          <li class=\"nav-item dropdown ";
-            // line 56
-            if (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 56), "id", [], "any", false, false, false, 56) == "admin") || (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 56), "id", [], "any", false, false, false, 56) == "admin_demande"))) {
+            // line 62
+            if (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 62), "id", [], "any", false, false, false, 62) == "admin") || (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 62), "id", [], "any", false, false, false, 62) == "admin_demande"))) {
                 echo "active";
             }
             echo "\">
                             <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> ";
-            // line 57
+            // line 63
             if (twig_length_filter($this->env, ($context["notifs"] ?? null))) {
-                // line 58
+                // line 64
                 echo "                                    <span class=\"badge badge-danger\">
                                             Notif";
-                // line 59
+                // line 65
                 echo twig_escape_filter($this->env, twig_length_filter($this->env, ($context["notifs"] ?? null)), "html", null, true);
                 echo "</span>
                                     ";
             } else {
-                // line 61
+                // line 67
                 echo "                                   
                                     ";
             }
-            // line 62
+            // line 68
             echo "Gestion</a>
                             <div class=\"dropdown-menu\">
                                 <a class=\"dropdown-item\" href=\"";
-            // line 64
+            // line 70
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("admin");
             echo "\">  évènement</a>
                                 <a class=\"dropdown-item\" href=\"";
-            // line 65
+            // line 71
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("admin_demande");
             echo "\">";
             if (twig_length_filter($this->env, ($context["notifs"] ?? null))) {
-                // line 66
+                // line 72
                 echo "                                        <span class=\"badge badge-danger\">
                                                 Notif";
-                // line 67
+                // line 73
                 echo twig_escape_filter($this->env, twig_length_filter($this->env, ($context["notifs"] ?? null)), "html", null, true);
                 echo "</span>
                                         ";
             } else {
-                // line 69
+                // line 75
                 echo "                                       
                                         ";
             }
-            // line 70
+            // line 76
             echo "Demande Event</a>
                             </div>
                         </li>
                 
                     ";
         } else {
-            // line 75
+            // line 81
             echo "                
                     ";
         }
-        // line 77
+        // line 83
         echo "                    
                 
                
@@ -241,8 +247,8 @@ class __TwigTemplate_8c74380184862f86b99b09c1ba4197e1a2537b10847669314138d93a03f
                                         <div class=\"\">
                                           <a style=\"text-decoration: underline;\" href=\"\">Mot de passe oublié ?</a>
                                           <p class=\"";
-        // line 122
-        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 122), "id", [], "any", false, false, false, 122) == "register")) {
+        // line 128
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 128), "id", [], "any", false, false, false, 128) == "register")) {
             echo "active";
         }
         echo "\" style=\"text-decoration: underline;\"><a href=\"";
@@ -303,11 +309,16 @@ class __TwigTemplate_8c74380184862f86b99b09c1ba4197e1a2537b10847669314138d93a03f
     {
         if(textStatus == 'success')
             window.location = \"";
-        // line 177
+        // line 183
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("Demonstration");
         echo "\"
 
     }
+
+    document.getElementById('annulerAchat').addEventListener('click', function(event){
+        if(!confirm('Voulez vous vraiment effectuer une demande d\\'annulation d\\'achat ?'))
+            event.preventDefault()
+    })
     </script>";
     }
 
@@ -323,7 +334,7 @@ class __TwigTemplate_8c74380184862f86b99b09c1ba4197e1a2537b10847669314138d93a03f
 
     public function getDebugInfo()
     {
-        return array (  307 => 177,  245 => 122,  198 => 77,  194 => 75,  187 => 70,  183 => 69,  178 => 67,  175 => 66,  171 => 65,  167 => 64,  163 => 62,  159 => 61,  154 => 59,  151 => 58,  149 => 57,  143 => 56,  140 => 55,  137 => 54,  131 => 50,  123 => 45,  117 => 44,  110 => 40,  106 => 39,  102 => 38,  94 => 35,  88 => 31,  86 => 30,  78 => 25,  72 => 24,  62 => 21,  56 => 20,  35 => 1,);
+        return array (  313 => 183,  251 => 128,  204 => 83,  200 => 81,  193 => 76,  189 => 75,  184 => 73,  181 => 72,  177 => 71,  173 => 70,  169 => 68,  165 => 67,  160 => 65,  157 => 64,  155 => 63,  149 => 62,  146 => 61,  143 => 60,  137 => 56,  127 => 49,  119 => 46,  110 => 40,  106 => 39,  102 => 38,  94 => 35,  88 => 31,  86 => 30,  78 => 25,  72 => 24,  62 => 21,  56 => 20,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -371,9 +382,15 @@ class __TwigTemplate_8c74380184862f86b99b09c1ba4197e1a2537b10847669314138d93a03f
                                 </div>
                             </li>
 
-                   <li class=\"nav-item {% if this.page.id == 'configuration_payment' %}active{% endif %}\">
-                        <a class=\"nav-link\" href=\"{{ 'configuration_payment'|page }}\">Config payment</a>
-                   </li>
+
+
+                            <li class=\"nav-item dropdown {% if this.page.id == 'configuration_payment' %}active{% endif %}\">
+                                <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Paiement</a>
+                                <div class=\"dropdown-menu\">
+                                    <a class=\"dropdown-item\" href=\"{{ 'configuration_payment'|page }}\">Configurer le paiement</a>
+                                    <a class=\"dropdown-item\" id=\"annulerAchat\" data-request=\"onAnnuler\" data-request-data=\"redirect: '/'\" href=\"\">Annuler un achat</a>
+                                </div>
+                            </li>
                     
                 
                     {% else %}
@@ -507,6 +524,11 @@ class __TwigTemplate_8c74380184862f86b99b09c1ba4197e1a2537b10847669314138d93a03f
             window.location = \"{{ 'Demonstration'|page }}\"
 
     }
+
+    document.getElementById('annulerAchat').addEventListener('click', function(event){
+        if(!confirm('Voulez vous vraiment effectuer une demande d\\'annulation d\\'achat ?'))
+            event.preventDefault()
+    })
     </script>", "/opt/lampp/htdocs/paydunyaEvent/themes/demo/partials/site/header.htm", "");
     }
 }

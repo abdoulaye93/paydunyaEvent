@@ -27,3 +27,9 @@ columns:
         label: User
         type: text
         invisible: true
+    email:
+        label: Email
+        type: text
+    phone:
+        label: Phone
+        type: text

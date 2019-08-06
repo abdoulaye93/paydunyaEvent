@@ -17,6 +17,7 @@ class BuilderTableCreateEventEvent extends Migration
             $table->integer('nombre_ticket');
             $table->string('etat_event');
             $table->string('satus_event');
+            $table->string('montant_promo');
         });
     }
     

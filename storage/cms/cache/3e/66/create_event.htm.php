@@ -1,7 +1,7 @@
 <?php 
 use event\event\models\Event;
 use Carbon\Carbon;
-class Cms5d4187f263552004328227_98bee5ddcb1585746f8fe38366e147f6Class extends Cms\Classes\LayoutCode
+class Cms5d432ea22bfaa874376034_f8bf82f364c47cb81c8c41957f2e94b9Class extends Cms\Classes\LayoutCode
 {
   
 public function onStart(){$this->prepareVars();}

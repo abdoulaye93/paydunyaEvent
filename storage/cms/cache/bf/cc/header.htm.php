@@ -1,9 +1,5 @@
 <?php 
-use event\event\models\NotifDemande;
-class Cms5d415d8bd9c67406569131_3230a64d458e0d648991250d3929cf26Class extends Cms\Classes\PartialCode
+class Cms5d442e9bbe26d253331261_6626793c3676db2dc4e7229bc95e052bClass extends Cms\Classes\PartialCode
 {
-public function onStart(){$this->prepareVars();}
-public function prepareVars(){
-  $this['notifs']=NotifDemande::all();
-}
+
 }

@@ -1,14 +1,6 @@
 [session]
 security = "all"
 ==
-<?
-use event\event\models\NotifDemande;
-function onStart(){$this->prepareVars();}
-function prepareVars(){
-  $this['notifs']=NotifDemande::all();
-}
-?>
-==
 <!-- Nav -->
 <nav class="navbar navbar-area navbar-expand-lg navbar-light navbar-fixed-top navbar-autohide">
     <div class="container">
@@ -52,9 +44,15 @@ function prepareVars(){
                                 </div>
                             </li>
 
-                   <li class="nav-item {% if this.page.id == 'configuration_payment' %}active{% endif %}">
-                        <a class="nav-link" href="{{ 'configuration_payment'|page }}">Config payment</a>
-                   </li>
+
+
+                            <li class="nav-item dropdown {% if this.page.id == 'configuration_payment' %}active{% endif %}">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paiement</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ 'configuration_payment'|page }}">Configurer le paiement</a>
+                                    <a class="dropdown-item" id="annulerAchat" data-request="onAnnuler" data-request-data="redirect: '/'" href="">Annuler un achat</a>
+                                </div>
+                            </li>
                     
                 
                     {% else %}
@@ -188,4 +186,9 @@ function prepareVars(){
             window.location = "{{ 'Demonstration'|page }}"
 
     }
+
+    document.getElementById('annulerAchat').addEventListener('click', function(event){
+        if(!confirm('Voulez vous vraiment effectuer une demande d\'annulation d\'achat ?'))
+            event.preventDefault()
+    })
     </script>
