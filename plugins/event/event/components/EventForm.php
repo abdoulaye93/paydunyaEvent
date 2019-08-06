@@ -13,6 +13,7 @@ use ticket\ticket\models\TypeTicket;
 use event\event\models\Categorie;
 use Flash;
 use Db;
+use ValidationException;
 use October\Rain\Support\Collection;
 class EventForm extends ComponentBase
 {
@@ -24,6 +25,28 @@ class EventForm extends ComponentBase
         ];
     }
     public function onSave(){
+      /*  throw new ValidationException(['nom' => 'Entrer le nom!',
+        'lieu'=>'Entrer le lieu!',
+        'date_event'=>'Entrer la date!',
+        'date_cloture'=>'Entrer la date de cloture!',
+        'nbrticket'=>'Entrer le nombre de ticket!',
+        'description'=>'Entrer la decription!']);*/
+        $data = post();
+
+        $rules = [
+            'nom' => 'required',
+            'lieu' => 'required',
+            'date_event' => 'required',
+            'date_cloture' => 'required',
+            'nbrticket' => 'required',
+            'description' => 'required',
+        ];
+    
+        $validation = Validator::make($data, $rules);
+    
+        if ($validation->fails()) {
+            throw new ValidationException($validation);
+        }
         $event=new Event();
         $periode=new Periode();
         $periode->date_debut=Input::get('date_event');
@@ -48,13 +71,16 @@ class EventForm extends ComponentBase
         }
         if(Input::get('code')){
             $event->promo=true;
-            $event->code_promo=str_random(40);
+            $event->code_promo=str_random(10);
         }else{
             $event->promo=false;
         }
-        
-      $event->type_id= Input::get('category');
-      $event->save();
+        if(Input::get('cate')){
+            $event->categorie=Input::get('cate');
+        }else{
+            $event->type_id= json_decode(Input::get('category'))->id;
+           $event->save();
+        }
       
       $nb=1;
       while($nb<Input::get('nbsub')){

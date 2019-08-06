@@ -1,0 +1,8 @@
+1565089381a:1:{s:12:"position.htm";a:10:{s:8:"fileName";s:12:"position.htm";s:7:"content";s:140:"title = "position"
+url = "/position/:lat/:long"
+layout = "position"
+is_hidden = 0
+
+[positionevent]
+==
+{% component 'positionevent' %}";s:5:"mtime";i:1564576707;s:6:"markup";s:31:"{% component 'positionevent' %}";s:4:"code";N;s:5:"title";s:8:"position";s:3:"url";s:20:"/position/:lat/:long";s:6:"layout";s:8:"position";s:9:"is_hidden";s:1:"0";s:13:"positionevent";a:0:{}}}

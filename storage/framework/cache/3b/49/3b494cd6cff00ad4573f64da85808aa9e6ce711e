@@ -1,0 +1,8 @@
+1565089381a:1:{s:9:"admin.htm";a:10:{s:8:"fileName";s:9:"admin.htm";s:7:"content";s:106:"title = "admin"
+url = "/admin"
+layout = "default"
+is_hidden = 0
+
+[admin]
+==
+{% component 'admin' %}";s:5:"mtime";i:1564576707;s:6:"markup";s:23:"{% component 'admin' %}";s:4:"code";N;s:5:"title";s:5:"admin";s:3:"url";s:6:"/admin";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:5:"admin";a:0:{}}}

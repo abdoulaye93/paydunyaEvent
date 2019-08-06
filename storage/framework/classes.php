@@ -176,4 +176,10 @@
   'ticket\\ticket\\models\\TypeTicket' => 'plugins/ticket/ticket/models/TypeTicket.php',
   'event\\event\\models\\SubList' => 'plugins/event/event/models/SubList.php',
   'event\\event\\models\\Sub' => 'plugins/event/event/models/Sub.php',
+  'vdomah\\excel\\Plugin' => 'plugins\\vdomah\\excel\\Plugin.php',
+  'RainLab\\Builder\\Components\\RecordDetails' => 'plugins\\rainlab\\builder\\components\\RecordDetails.php',
+  'event\\event\\components\\EventForm' => 'plugins\\event\\event\\components\\EventForm.php',
+  'event\\event\\models\\Position' => 'plugins\\event\\event\\models\\Position.php',
+  'event\\event\\components\\ManageEvent' => 'plugins\\event\\event\\components\\ManageEvent.php',
+  'event\\event\\models\\Categorie' => 'plugins\\event\\event\\models\\Categorie.php',
 );

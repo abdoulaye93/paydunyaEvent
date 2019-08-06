@@ -7,7 +7,7 @@
           </div>
           <div class="card-body">
             <div class="col-md-12">
-                <form class="contact-from-wrapper" data-request="onSave" data-request-files data-request-flash>
+                <form class="contact-from-wrapper" data-request="onSave" data-request-files data-request-flash data-request-validate>
                         {% if user %}
                         <input type="hidden" name="user" value=" {{ user.id }}">
                     {% else %}
@@ -51,18 +51,12 @@
                         </div>
                     <div class="row">
                       
-                      <div class="col-md-6">
-                            <div class="form-element square">
-                                    <label>Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                            <a class="" href="#" data-toggle="modal" data-target="#autre-modal" class="action-btn"> autre</a>
-                                    </label>
-                                    <select class="input-field-square" name="cate" value="" id="sel2">
-                                                                                {% for item in __SELF__.loadSubs() %}
-                                                                                <option value="{{ item.id }}">{{ item.nom_type }}</option>
-                                                                                {% endfor %}                                                                                                                                                                                     
-                                      </select>
-                                </div>
+                      <div class="col-md-4">
+                            {%partial 'typeevent/type'%}
                       </div>
+                      <div class="col-md-4">
+                        {%partial 'categorieevent/category'%}
+                  </div>
                       <div class="col-md-4">
                             <div class="form-element square">
                                 <label>Date de l'évènement
@@ -70,12 +64,17 @@
                                 <input type="date" name="date_event" value="" placeholder="mm/dd/yyyy" class="input-field-square">
                               </div>
                           </div>
+                        </div>
+                        <div class="row">
                        <div class="col-md-4">
                         <div class="form-element square">
                             <label>Date de cloture des ventes
                             </label>
                             <input type="date" name="date_cloture" value="" placeholder="mm/dd/yyyy" class="input-field-square">
-                                                        </div>
+                         </div>
+                      </div>
+                      <div class="col-md-4" id="pi">
+                      
                       </div>
                      
                        <div class="col-md-12">
@@ -218,9 +217,11 @@
                         <textarea id="overview" name="description" rows="12" cols="80" class="input-field-square"></textarea>
                                                 </div>
                     <div class="text-center">
-                      <button type="submit" class="submit-form-btn" onclick='nbsub()'>Envoyer</button>
+                      <button type="submit" class="submit-form-btn" onclick='nbsub()' data-attach-loading>Envoyer</button>
                     </div>
-
+                   
+    <div class="alert alert-danger" data-validate-error>
+            <p data-message></p>
                 </form>
             </div>
           </div>

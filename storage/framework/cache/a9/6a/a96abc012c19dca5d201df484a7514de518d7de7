@@ -1,0 +1,70 @@
+1565089730a:1:{s:27:"categorieevent/category.htm";a:5:{s:8:"fileName";s:27:"categorieevent/category.htm";s:7:"content";s:1289:"
+<div  class="form-element square">
+        <label>Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type="checkbox" name="checkbox">&nbsp&nbspautre
+        </label>
+        <select class="input-field-square" id="ca">
+            {% for cati in categorie %}
+                    <option value="{{cati.id}}">{{ cati.categorie }}</option>
+            {% endfor %}
+        </select>
+      </div>
+     
+     <script>
+             var checkbox = document.querySelector("input[name=checkbox]");
+
+checkbox.addEventListener( 'change', function() {
+    if(this.checked) {
+        var pi=document.getElementById('pi');
+        var div = document.createElement('div');
+        div.setAttribute('id','gp');
+        var lab = document.createElement('label');
+        lab.innerHTML="Entrer le nom de la categorie";
+        var input = document.createElement('input');
+        input.setAttribute('type','text');
+        input.setAttribute('class','input-field-square');
+        input.setAttribute('name','cate');
+        input.setAttribute('placeholder','Entrer le nom de la cat..');
+        div.appendChild(lab);
+        div.appendChild(input);
+        pi.appendChild(div);
+    } else {
+        document.getElementById('gp').remove();
+    }
+});
+
+  </script>";s:5:"mtime";i:1565084843;s:6:"markup";s:1287:"<div  class="form-element square">
+        <label>Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type="checkbox" name="checkbox">&nbsp&nbspautre
+        </label>
+        <select class="input-field-square" id="ca">
+            {% for cati in categorie %}
+                    <option value="{{cati.id}}">{{ cati.categorie }}</option>
+            {% endfor %}
+        </select>
+      </div>
+     
+     <script>
+             var checkbox = document.querySelector("input[name=checkbox]");
+
+checkbox.addEventListener( 'change', function() {
+    if(this.checked) {
+        var pi=document.getElementById('pi');
+        var div = document.createElement('div');
+        div.setAttribute('id','gp');
+        var lab = document.createElement('label');
+        lab.innerHTML="Entrer le nom de la categorie";
+        var input = document.createElement('input');
+        input.setAttribute('type','text');
+        input.setAttribute('class','input-field-square');
+        input.setAttribute('name','cate');
+        input.setAttribute('placeholder','Entrer le nom de la cat..');
+        div.appendChild(lab);
+        div.appendChild(input);
+        pi.appendChild(div);
+    } else {
+        document.getElementById('gp').remove();
+    }
+});
+
+  </script>";s:4:"code";N;}}

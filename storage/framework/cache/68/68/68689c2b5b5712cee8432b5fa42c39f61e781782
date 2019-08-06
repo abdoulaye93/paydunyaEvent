@@ -1,0 +1,8 @@
+1565089381a:1:{s:9:"promo.htm";a:10:{s:8:"fileName";s:9:"promo.htm";s:7:"content";s:114:"title = "promo"
+url = "/promo/:event_id"
+layout = "promo"
+is_hidden = 0
+
+[Promo]
+==
+{% component 'Promo' %}";s:5:"mtime";i:1564576707;s:6:"markup";s:23:"{% component 'Promo' %}";s:4:"code";N;s:5:"title";s:5:"promo";s:3:"url";s:16:"/promo/:event_id";s:6:"layout";s:5:"promo";s:9:"is_hidden";s:1:"0";s:5:"Promo";a:0:{}}}

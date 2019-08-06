@@ -1,0 +1,45 @@
+1565089730a:1:{s:18:"typeevent/type.htm";a:5:{s:8:"fileName";s:18:"typeevent/type.htm";s:7:"content";s:881:"<div  class="form-element square" id="type" >
+        <label>Types&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <a class="" href="#" data-toggle="modal" data-target="#autre-modal" class="action-btn"> autre</a>
+        </label>
+        <select class="input-field-square"  onchange="protyp( this.value)" name="category">
+            {% for i in types %}
+                    <option value="{{i}}">{{ i.nom_type }}</option>
+            {% endfor %}
+        </select>
+      </div>
+    
+     <script>
+             function protyp(po){
+        var cat=document.getElementById('ca').options.length;
+        for(var i=0;i<cat;i++){
+                if(JSON.parse(po).categorie_id==document.getElementById('ca').options[i].value){
+                        document.getElementById('ca').options[i].selected=true; 
+                }
+        }
+        
+}
+   
+     </script>";s:5:"mtime";i:1565084978;s:6:"markup";s:881:"<div  class="form-element square" id="type" >
+        <label>Types&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <a class="" href="#" data-toggle="modal" data-target="#autre-modal" class="action-btn"> autre</a>
+        </label>
+        <select class="input-field-square"  onchange="protyp( this.value)" name="category">
+            {% for i in types %}
+                    <option value="{{i}}">{{ i.nom_type }}</option>
+            {% endfor %}
+        </select>
+      </div>
+    
+     <script>
+             function protyp(po){
+        var cat=document.getElementById('ca').options.length;
+        for(var i=0;i<cat;i++){
+                if(JSON.parse(po).categorie_id==document.getElementById('ca').options[i].value){
+                        document.getElementById('ca').options[i].selected=true; 
+                }
+        }
+        
+}
+   
+     </script>";s:4:"code";N;}}
