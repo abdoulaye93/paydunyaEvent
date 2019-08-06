@@ -45,7 +45,7 @@
                             <tr>
                               <td>{{ item.nom_type }} - Prix: {{ item.montant }}FCFA</td>
                               <td> &nbsp;&nbsp; &nbsp;</td>
-                              <td><input type="checkbox" value="{{ item.montant }}" name="{{ item.nom_type }}" class="form-control ticket" onchange="testtype(event)"/></td>
+                              <td><input type="radio" value="{{ item.montant }}" name="tic" class=" ticket" onchange="testtype(event)"/></td>
                             </tr>
                           {% endfor %}
                           <script>
@@ -67,7 +67,7 @@
                           <tr>
                             <td>{{ item.sub.nom }} - Prix: {{ item.sub.montant }}FCFA</td>
                             <td> &nbsp;&nbsp; &nbsp;</td>
-                            <td><input type="checkbox" value="{{ item.sub.montant }}" name="{{ item.sub.nom }}" class="form-control sub" onchange="test(event)"/></td>
+                            <td><input type="checkbox" value="{{ item.sub.montant }}" name="{{ item.sub.nom }}" class=" sub" onchange="test(event)"/></td>
                           </tr>
                         {% endfor %}
                         <script>
@@ -77,15 +77,23 @@
                             if(event.target.checked)
                               document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb + parseInt(document.getElementById('totalPrice').innerHTML)
                             else
-                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb
+                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)
                           }
                           function testtype(event)
                           {
-                            var nb = parseInt(document.getElementById('nb').value)
-                            if(event.target.checked)
-                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb + parseInt(document.getElementById('totalPrice').innerHTML)
-                            else
-                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb
+                            var nb = parseInt(document.getElementById('nb').value);
+                            var sub=parseInt(document.getElementsByClassName('sub').length);
+                            var nomb=0;
+                            if(event.target.checked){
+                              for(var i=0;i< sub;i++){
+                               if(document.getElementsByClassName('sub')[i].checked){
+                                  nom+=parseFloat(document.getElementsByClassName('sub')[i].value);
+                                }
+                              }
+                              document.getElementById('totalPrice').innerHTML = (parseInt(event.target.value)+nomb)*nb ;
+                            }else{
+                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb;
+                            }
                           }
                           //parseInt(document.getElementById('montantItem').value) * parseInt(nb.options[nb.selectedIndex].value)
                         </script>
