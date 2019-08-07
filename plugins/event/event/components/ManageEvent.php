@@ -134,9 +134,10 @@ class ManageEvent extends ComponentBase
         $position->lat=Input::get('lat');
         $position->long=Input::get('long');
         $position->save();
-        $event=Db::table('event_event_')
+        $id=$position->id;
+        Db::table('event_event_')
         ->where('id', $event_id)
-        ->update(['position_id' => $position->id]);
+        ->update(['position_id' => $id]);
         return Redirect::back();
     }
    

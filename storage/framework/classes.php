@@ -193,4 +193,7 @@
   'RainLab\\User\\Models\\MailBlocker' => 'plugins\\rainlab\\user\\models\\MailBlocker.php',
   'demande\\demande\\models\\DemandeAnnullationEvent' => 'plugins\\demande\\demande\\models\\DemandeAnnullationEvent.php',
   'event\\event\\models\\NotifDemande' => 'plugins\\event\\event\\models\\NotifDemande.php',
+  'RainLab\\Builder\\Classes\\DatabaseTableSchemaCreator' => 'plugins\\rainlab\\builder\\classes\\DatabaseTableSchemaCreator.php',
+  'RainLab\\Builder\\Classes\\TableMigrationCodeGenerator' => 'plugins\\rainlab\\builder\\classes\\TableMigrationCodeGenerator.php',
+  'RainLab\\Builder\\Classes\\MigrationModel' => 'plugins\\rainlab\\builder\\classes\\MigrationModel.php',
 );

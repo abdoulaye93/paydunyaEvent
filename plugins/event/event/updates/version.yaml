@@ -225,3 +225,6 @@
 1.0.76:
     - 'Updated table event_event_position'
     - builder_table_update_event_event_position_2.php
+1.0.77:
+    - 'Updated table event_event_'
+    - builder_table_update_event_event__34.php

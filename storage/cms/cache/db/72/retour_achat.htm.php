@@ -1,6 +1,7 @@
 <?php 
-use payment\Payment\Models\PaydunyaConfig;class Cms5d4aad97b5ad4175043398_d2719bff634db711b30d042999a34be8Class extends Cms\Classes\LayoutCode
+use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;class Cms5d4abec972a2c547708399_84f877dd146816d2ac6a87599774390eClass extends Cms\Classes\LayoutCode
 {
+
 
 public function onStart(){
   $config = PaydunyaConfig::get()[0];
@@ -22,6 +23,13 @@ public function onStart(){
     
       // Vous pouvez aussi récupérer le montant total spécifié précédemment
       $this['montant']=$invoice->getTotalAmount();
+      $user = Db::table('event_event_')->where('id', $invoice->getCustomData("id"))->first();
+      Db::table('event_event_')
+    ->where('id', $invoice->getCustomData("id"))
+    ->update(['ticket_vendu' => $user->ticket_vendu+1]);
+    Db::table('event_event_')
+    ->where('id', $invoice->getCustomData("id"))
+    ->update(['nombre_ticket' => $user->nombre_ticket-1]);
     
     }else{
       echo $invoice->getStatus();

@@ -187,19 +187,33 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                           }
                           function testtype(event)
                           {
+                            
                             var nb = parseInt(document.getElementById('nb').value);
                             var sub=parseInt(document.getElementsByClassName('sub').length);
                             var nomb=0;
-                            if(event.target.checked){
+                           
+                            if(document.getElementsByClassName('sub')){
+                              
+                              if(event.target.checked){
                               for(var i=0;i< sub;i++){
+                               
                                if(document.getElementsByClassName('sub')[i].checked){
-                                  nom+=parseFloat(document.getElementsByClassName('sub')[i].value);
+                                
+                                  nomb+=parseFloat(document.getElementsByClassName('sub')[i].value);
                                 }
+                              
                               }
                               document.getElementById('totalPrice').innerHTML = (parseInt(JSON.parse(event.target.value).montant)+nomb)*nb ;
+                         
                             }else{
                              /// document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb;
                             }
+                            }else{
+                            
+                              document.getElementById('totalPrice').innerHTML = (parseInt(JSON.parse(event.target.value).montant))*nb ;
+                            }
+                           
+                           
                           }
                           //parseInt(document.getElementById('montantItem').value) * parseInt(nb.options[nb.selectedIndex].value)
                         </script>
@@ -207,7 +221,7 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                     </div>
                   ";
             }
-            // line 104
+            // line 118
             echo "                    <div class=\"\">
                       <strong>Total:</strong>
                       <span class=\"float-right\">
@@ -220,7 +234,7 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                                                   
                     <div>
                       <a href=\"";
-            // line 115
+            // line 129
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("calendar");
             echo "\">jjjj</a>
 
@@ -228,15 +242,15 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                         <form data-request=\"onAchat\" id=\"buyForm\">
                           <input type=\"hidden\" name=\"total\" id=\"total\" value=\"\">
                           ";
-            // line 120
-            if (twig_get_attribute($this->env, $this->source, $context["item"], "promo", [], "any", false, false, false, 120)) {
-                // line 121
+            // line 134
+            if (twig_get_attribute($this->env, $this->source, $context["item"], "promo", [], "any", false, false, false, 134)) {
+                // line 135
                 echo "                            <input type=\"hidden\" name=\"promo\" value=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant_promo", [], "any", false, false, false, 121), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant_promo", [], "any", false, false, false, 135), "html", null, true);
                 echo "\">
                           ";
             }
-            // line 122
+            // line 136
             echo "  
                           <input type=\"submit\" class=\"btn btn-primary\" value=\"Acheter\"/>
                         </form>
@@ -324,67 +338,67 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                             <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
                                 <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
                                    ";
-            // line 208
+            // line 222
             if ( !($context["user"] ?? null)) {
-                // line 209
+                // line 223
                 echo "    
                                         <div class=\"row\">
                                     
                                             <div class=\"col-md-6\">
                                                 <h3 class=\"";
-                // line 213
-                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 213), "id", [], "any", false, false, false, 213) == "register")) {
+                // line 227
+                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 227), "id", [], "any", false, false, false, 227) == "register")) {
                     echo "active";
                 }
                 echo "\"><a href=\"";
                 echo $this->extensions['Cms\Twig\Extension']->pageFilter("register");
                 echo "\">Créer un compte</a></h3>
                                                 ";
-                // line 214
+                // line 228
                 $context['__cms_partial_params'] = [];
                 echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::signin")                , $context['__cms_partial_params']                , true                );
                 unset($context['__cms_partial_params']);
-                // line 215
+                // line 229
                 echo "                                            </div>
                                     
                                         </div>
                                     
                                     ";
             } else {
-                // line 220
+                // line 234
                 echo "                                    
                                     ";
             }
-            // line 222
+            // line 236
             echo "                                </div><!-- login form wrapper end -->
                             </div>
                             <div class=\"tab-pane fade\" id=\"nav-signup\" role=\"tabpanel\" aria-labelledby=\"nav-signup-tab\">
     
                                 <div class=\"singup-form-wrapper\">
                                     ";
-            // line 227
+            // line 241
             if ( !($context["user"] ?? null)) {
-                // line 228
+                // line 242
                 echo "                                    
                                         <div class=\"row\">
                                             <div class=\"col-md-6\">
                                                 ";
-                // line 231
+                // line 245
                 $context['__cms_partial_params'] = [];
                 echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::register")                , $context['__cms_partial_params']                , true                );
                 unset($context['__cms_partial_params']);
-                // line 232
+                // line 246
                 echo "                                            </div>
                                     
                                         </div>
                                     
                                     ";
             } else {
-                // line 237
+                // line 251
                 echo "                                    
                                     ";
             }
-            // line 239
+            // line 253
             echo "                                 </div>
                             </div>
                         </div><!-- /.tab conent-->
@@ -398,7 +412,7 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 248
+        // line 262
         echo "
     <script>
         
@@ -460,7 +474,7 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
 
     public function getDebugInfo()
     {
-        return array (  402 => 248,  388 => 239,  384 => 237,  377 => 232,  373 => 231,  368 => 228,  366 => 227,  359 => 222,  355 => 220,  348 => 215,  344 => 214,  336 => 213,  330 => 209,  328 => 208,  240 => 122,  234 => 121,  232 => 120,  224 => 115,  211 => 104,  178 => 73,  167 => 70,  160 => 68,  157 => 67,  153 => 66,  148 => 63,  146 => 62,  140 => 58,  129 => 57,  125 => 56,  118 => 51,  109 => 48,  102 => 46,  99 => 45,  95 => 44,  86 => 38,  79 => 34,  57 => 15,  45 => 6,  39 => 2,  35 => 1,);
+        return array (  416 => 262,  402 => 253,  398 => 251,  391 => 246,  387 => 245,  382 => 242,  380 => 241,  373 => 236,  369 => 234,  362 => 229,  358 => 228,  350 => 227,  344 => 223,  342 => 222,  254 => 136,  248 => 135,  246 => 134,  238 => 129,  225 => 118,  178 => 73,  167 => 70,  160 => 68,  157 => 67,  153 => 66,  148 => 63,  146 => 62,  140 => 58,  129 => 57,  125 => 56,  118 => 51,  109 => 48,  102 => 46,  99 => 45,  95 => 44,  86 => 38,  79 => 34,  57 => 15,  45 => 6,  39 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -549,19 +563,33 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                           }
                           function testtype(event)
                           {
+                            
                             var nb = parseInt(document.getElementById('nb').value);
                             var sub=parseInt(document.getElementsByClassName('sub').length);
                             var nomb=0;
-                            if(event.target.checked){
+                           
+                            if(document.getElementsByClassName('sub')){
+                              
+                              if(event.target.checked){
                               for(var i=0;i< sub;i++){
+                               
                                if(document.getElementsByClassName('sub')[i].checked){
-                                  nom+=parseFloat(document.getElementsByClassName('sub')[i].value);
+                                
+                                  nomb+=parseFloat(document.getElementsByClassName('sub')[i].value);
                                 }
+                              
                               }
                               document.getElementById('totalPrice').innerHTML = (parseInt(JSON.parse(event.target.value).montant)+nomb)*nb ;
+                         
                             }else{
                              /// document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb;
                             }
+                            }else{
+                            
+                              document.getElementById('totalPrice').innerHTML = (parseInt(JSON.parse(event.target.value).montant))*nb ;
+                            }
+                           
+                           
                           }
                           //parseInt(document.getElementById('montantItem').value) * parseInt(nb.options[nb.selectedIndex].value)
                         </script>

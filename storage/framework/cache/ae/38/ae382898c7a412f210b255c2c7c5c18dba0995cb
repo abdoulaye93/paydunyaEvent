@@ -1,4 +1,4 @@
-1565176334a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:14707:"[session]
+1565184794a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:17065:"[session]
 security = "all"
 ==
 <?php
@@ -391,8 +391,49 @@ security = "all"
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
+<script>
+  function test(event)
+                          {
+                            var sub=parseInt(document.getElementsByClassName('sub').length);
+                            var nb = parseInt(document.getElementById('nb').value)
+                            if(event.target.checked)
+                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb + parseInt(document.getElementById('totalPrice').innerHTML)
+                            else
+                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb
+                          }
+   function testtype(event)
+                          {
+                          
+                            var nb = parseInt(document.getElementById('nb').value);
+                            var sub=parseInt(document.getElementsByClassName('sub').length);
+                            var nomb=0;
+                           
+                            if(document.getElementsByClassName('sub')){
+                              
+                              if(event.target.checked){
+                              for(var i=0;i< sub;i++){
+                               
+                               if(document.getElementsByClassName('sub')[i].checked){
+                                
+                                  nomb+=parseFloat(document.getElementsByClassName('sub')[i].value);
+                                }
+                              
+                              }
+                              document.getElementById('totalPrice').innerHTML = (parseInt(JSON.parse(event.target.value).montant)+nomb)*nb ;
+                         
+                            }else{
+                             /// document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb;
+                            }
+                            }else{
+                            
+                              document.getElementById('totalPrice').innerHTML = (parseInt(JSON.parse(event.target.value).montant))*nb ;
+                            }
+                           
+                           
+                          }
+</script>
     </body>
-</html>";s:5:"mtime";i:1565124676;s:6:"markup";s:12651:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1565182681;s:6:"markup";s:15009:"<!DOCTYPE html>
 <html>
     <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -730,6 +771,47 @@ security = "all"
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
+<script>
+  function test(event)
+                          {
+                            var sub=parseInt(document.getElementsByClassName('sub').length);
+                            var nb = parseInt(document.getElementById('nb').value)
+                            if(event.target.checked)
+                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb + parseInt(document.getElementById('totalPrice').innerHTML)
+                            else
+                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb
+                          }
+   function testtype(event)
+                          {
+                          
+                            var nb = parseInt(document.getElementById('nb').value);
+                            var sub=parseInt(document.getElementsByClassName('sub').length);
+                            var nomb=0;
+                           
+                            if(document.getElementsByClassName('sub')){
+                              
+                              if(event.target.checked){
+                              for(var i=0;i< sub;i++){
+                               
+                               if(document.getElementsByClassName('sub')[i].checked){
+                                
+                                  nomb+=parseFloat(document.getElementsByClassName('sub')[i].value);
+                                }
+                              
+                              }
+                              document.getElementById('totalPrice').innerHTML = (parseInt(JSON.parse(event.target.value).montant)+nomb)*nb ;
+                         
+                            }else{
+                             /// document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb;
+                            }
+                            }else{
+                            
+                              document.getElementById('totalPrice').innerHTML = (parseInt(JSON.parse(event.target.value).montant))*nb ;
+                            }
+                           
+                           
+                          }
+</script>
     </body>
 </html>";s:4:"code";s:2004:"  use payment\Payment\Models\PaydunyaConfig;
 

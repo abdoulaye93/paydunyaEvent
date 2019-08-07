@@ -452,6 +452,47 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
 <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js\"></script>
 <!-- MDB core JavaScript -->
 <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js\"></script>
+<script>
+  function test(event)
+                          {
+                            var sub=parseInt(document.getElementsByClassName('sub').length);
+                            var nb = parseInt(document.getElementById('nb').value)
+                            if(event.target.checked)
+                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb + parseInt(document.getElementById('totalPrice').innerHTML)
+                            else
+                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb
+                          }
+   function testtype(event)
+                          {
+                          
+                            var nb = parseInt(document.getElementById('nb').value);
+                            var sub=parseInt(document.getElementsByClassName('sub').length);
+                            var nomb=0;
+                           
+                            if(document.getElementsByClassName('sub')){
+                              
+                              if(event.target.checked){
+                              for(var i=0;i< sub;i++){
+                               
+                               if(document.getElementsByClassName('sub')[i].checked){
+                                
+                                  nomb+=parseFloat(document.getElementsByClassName('sub')[i].value);
+                                }
+                              
+                              }
+                              document.getElementById('totalPrice').innerHTML = (parseInt(JSON.parse(event.target.value).montant)+nomb)*nb ;
+                         
+                            }else{
+                             /// document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb;
+                            }
+                            }else{
+                            
+                              document.getElementById('totalPrice').innerHTML = (parseInt(JSON.parse(event.target.value).montant))*nb ;
+                            }
+                           
+                           
+                          }
+</script>
     </body>
 </html>";
     }
@@ -811,6 +852,47 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
 <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js\"></script>
 <!-- MDB core JavaScript -->
 <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js\"></script>
+<script>
+  function test(event)
+                          {
+                            var sub=parseInt(document.getElementsByClassName('sub').length);
+                            var nb = parseInt(document.getElementById('nb').value)
+                            if(event.target.checked)
+                              document.getElementById('totalPrice').innerHTML = parseInt(event.target.value)*nb + parseInt(document.getElementById('totalPrice').innerHTML)
+                            else
+                              document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb
+                          }
+   function testtype(event)
+                          {
+                          
+                            var nb = parseInt(document.getElementById('nb').value);
+                            var sub=parseInt(document.getElementsByClassName('sub').length);
+                            var nomb=0;
+                           
+                            if(document.getElementsByClassName('sub')){
+                              
+                              if(event.target.checked){
+                              for(var i=0;i< sub;i++){
+                               
+                               if(document.getElementsByClassName('sub')[i].checked){
+                                
+                                  nomb+=parseFloat(document.getElementsByClassName('sub')[i].value);
+                                }
+                              
+                              }
+                              document.getElementById('totalPrice').innerHTML = (parseInt(JSON.parse(event.target.value).montant)+nomb)*nb ;
+                         
+                            }else{
+                             /// document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb;
+                            }
+                            }else{
+                            
+                              document.getElementById('totalPrice').innerHTML = (parseInt(JSON.parse(event.target.value).montant))*nb ;
+                            }
+                           
+                           
+                          }
+</script>
     </body>
 </html>", "C:\\wamp64\\www\\install-master1/themes/demo/layouts/description_event.htm", "");
     }

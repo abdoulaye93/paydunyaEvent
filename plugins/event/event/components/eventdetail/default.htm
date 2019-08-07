@@ -82,19 +82,33 @@
                           }
                           function testtype(event)
                           {
+                            
                             var nb = parseInt(document.getElementById('nb').value);
                             var sub=parseInt(document.getElementsByClassName('sub').length);
                             var nomb=0;
-                            if(event.target.checked){
+                           
+                            if(document.getElementsByClassName('sub')){
+                              
+                              if(event.target.checked){
                               for(var i=0;i< sub;i++){
+                               
                                if(document.getElementsByClassName('sub')[i].checked){
-                                  nom+=parseFloat(document.getElementsByClassName('sub')[i].value);
+                                
+                                  nomb+=parseFloat(document.getElementsByClassName('sub')[i].value);
                                 }
+                              
                               }
                               document.getElementById('totalPrice').innerHTML = (parseInt(JSON.parse(event.target.value).montant)+nomb)*nb ;
+                         
                             }else{
                              /// document.getElementById('totalPrice').innerHTML = parseInt(document.getElementById('totalPrice').innerHTML) - parseInt(event.target.value)*nb;
                             }
+                            }else{
+                            
+                              document.getElementById('totalPrice').innerHTML = (parseInt(JSON.parse(event.target.value).montant))*nb ;
+                            }
+                           
+                           
                           }
                           //parseInt(document.getElementById('montantItem').value) * parseInt(nb.options[nb.selectedIndex].value)
                         </script>
