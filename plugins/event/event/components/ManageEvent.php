@@ -122,7 +122,7 @@ class ManageEvent extends ComponentBase
             ->update(['promo' => true]);
             $event=Db::table('event_event_')
             ->where('id', $event_id)
-            ->update(['code_promo' => str_random(40)]);
+            ->update(['code_promo' => str_random(10)]);
         }
        
        
