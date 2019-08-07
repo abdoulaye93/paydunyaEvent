@@ -254,10 +254,6 @@ class __TwigTemplate_612dc76171d58be8fbc95f846dc070e58982aad6f438a503bf9ce2a516f
                             <div class=\"form-element square\">
                                 <input type='button' onclick='addText()' value='Ajoutez'  class=\"submit-form-btn\"
                                 style=\"margin-bottom: 20px;\"/>
-                                <a href=\"";
-        // line 204
-        echo $this->extensions['Cms\Twig\Extension']->pageFilter("ticket");
-        echo "\" onclick=\"edition();return false;\">Edition</a>
                             </div>
                         </div>
                         <div id=\"addTask\" class=\"col-md-4\">
@@ -286,15 +282,15 @@ class __TwigTemplate_612dc76171d58be8fbc95f846dc070e58982aad6f438a503bf9ce2a516f
     </div>
 </div>
 ";
-        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 232
+        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 231
         $context["type"] = "success"        ;        foreach (Flash::success        () as $message) {
-            $context["message"] = $message;            // line 233
+            $context["message"] = $message;            // line 232
             echo "<p>";
             echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
             echo "</p>
 ";
         }
-        $context["type"] = $_type;        $context["message"] = $_message;        // line 235
+        $context["type"] = $_type;        $context["message"] = $_message;        // line 234
         echo "       <!-- login and register modal start-->
 <div class=\"login-registration-modal\" id=\"loginRegModal\">
     <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
@@ -394,7 +390,7 @@ doThisOnChange = function( value, optionIndex)
 }
 
     function edition() { options = \"Width=700,Height=700\" ; window.open( \"";
-        // line 333
+        // line 332
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("ticket");
         echo "\", \"edition\", options ) ; }
      var row = 1;
@@ -549,7 +545,7 @@ function deletetype(ID)
 
     public function getDebugInfo()
     {
-        return array (  398 => 333,  298 => 235,  292 => 233,  290 => 232,  259 => 204,  112 => 59,  108 => 58,  104 => 56,  100 => 55,  58 => 15,  55 => 14,  49 => 12,  47 => 11,  35 => 1,);
+        return array (  394 => 332,  294 => 234,  288 => 232,  286 => 231,  112 => 59,  108 => 58,  104 => 56,  100 => 55,  58 => 15,  55 => 14,  49 => 12,  47 => 11,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -757,7 +753,6 @@ function deletetype(ID)
                             <div class=\"form-element square\">
                                 <input type='button' onclick='addText()' value='Ajoutez'  class=\"submit-form-btn\"
                                 style=\"margin-bottom: 20px;\"/>
-                                <a href=\"{{ 'ticket'|page}}\" onclick=\"edition();return false;\">Edition</a>
                             </div>
                         </div>
                         <div id=\"addTask\" class=\"col-md-4\">

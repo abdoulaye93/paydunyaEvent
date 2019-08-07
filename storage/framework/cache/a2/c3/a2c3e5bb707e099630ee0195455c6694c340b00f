@@ -1,8 +1,4 @@
-<<<<<<< HEAD:storage/framework/cache/a2/c3/a2c3e5bb707e099630ee0195455c6694c340b00f
-1565081533a:1:{s:22:"events/manageevent.htm";a:5:{s:8:"fileName";s:22:"events/manageevent.htm";s:7:"content";s:6044:"{%set id=user.id%}
-=======
-1564752356a:1:{s:22:"events/manageevent.htm";a:5:{s:8:"fileName";s:22:"events/manageevent.htm";s:7:"content";s:5924:"{%set id=user.id%}
->>>>>>> f0a6ed5c971d5d15f53de554e006f1c53cdcdf84:storage/framework/cache/4e/00/4e0098e37584d5a32757db4ae1ff420e95fffdf1
+1565168819a:1:{s:22:"events/manageevent.htm";a:5:{s:8:"fileName";s:22:"events/manageevent.htm";s:7:"content";s:6044:"{%set id=user.id%}
 {% if events|length%}
    {% for item in events %}
    
@@ -122,11 +118,7 @@
  <div class="row" class="text-center">
         <h3 class="">NO  event FOUND</h3>
     </div>
-<<<<<<< HEAD:storage/framework/cache/a2/c3/a2c3e5bb707e099630ee0195455c6694c340b00f
 {%endif%}";s:5:"mtime";i:1565043391;s:6:"markup";s:6044:"{%set id=user.id%}
-=======
-{%endif%}";s:5:"mtime";i:1564575649;s:6:"markup";s:5924:"{%set id=user.id%}
->>>>>>> f0a6ed5c971d5d15f53de554e006f1c53cdcdf84:storage/framework/cache/4e/00/4e0098e37584d5a32757db4ae1ff420e95fffdf1
 {% if events|length%}
    {% for item in events %}
    

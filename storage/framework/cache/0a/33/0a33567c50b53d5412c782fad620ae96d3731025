@@ -1,0 +1,32 @@
+1565177962a:1:{s:10:"ticket.htm";a:6:{s:8:"fileName";s:10:"ticket.htm";s:7:"content";s:593:"==
+<?
+use event\event\models\Event;
+function onStart(){
+
+    $this['id'] = Request::segment(5);
+    $this['nomticket'] = Request::segment(2);
+    $this['nbrticket'] = Request::segment(3);
+    $this['montant'] =Request::segment(4);
+    $this['event'] = Event::where('id',Request::segment(5))->get();
+}
+?>
+==
+<script type="text/javascript"> window.print() ; </script>
+
+<div>
+    hehhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+    nom de event{% if event|length%} {%for item in event%} {{item.nom}} {%endfor%} {%endif%} nom {{nomticket }} nbr  {{nbrticket}}   montant{{montant }}
+</div>";s:5:"mtime";i:1565177354;s:6:"markup";s:273:"<script type="text/javascript"> window.print() ; </script>
+
+<div>
+    hehhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+    nom de event{% if event|length%} {%for item in event%} {{item.nom}} {%endfor%} {%endif%} nom {{nomticket }} nbr  {{nbrticket}}   montant{{montant }}
+</div>";s:4:"code";s:302:"use event\event\models\Event;
+function onStart(){
+
+    $this['id'] = Request::segment(5);
+    $this['nomticket'] = Request::segment(2);
+    $this['nbrticket'] = Request::segment(3);
+    $this['montant'] =Request::segment(4);
+    $this['event'] = Event::where('id',Request::segment(5))->get();
+}";s:17:"_PARSER_ERROR_INI";s:0:"";}}

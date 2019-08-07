@@ -189,4 +189,8 @@
   'RainLab\\Builder\\Classes\\LocalizationModel' => 'plugins\\rainlab\\builder\\classes\\LocalizationModel.php',
   'RainLab\\Builder\\Classes\\ControllerModel' => 'plugins\\rainlab\\builder\\classes\\ControllerModel.php',
   'RainLab\\Builder\\Classes\\MigrationColumnType' => 'plugins\\rainlab\\builder\\classes\\MigrationColumnType.php',
+  'event\\event\\models\\AccessEvent' => 'plugins\\event\\event\\models\\AccessEvent.php',
+  'RainLab\\User\\Models\\MailBlocker' => 'plugins\\rainlab\\user\\models\\MailBlocker.php',
+  'demande\\demande\\models\\DemandeAnnullationEvent' => 'plugins\\demande\\demande\\models\\DemandeAnnullationEvent.php',
+  'event\\event\\models\\NotifDemande' => 'plugins\\event\\event\\models\\NotifDemande.php',
 );

@@ -1,24 +1,32 @@
-1565126880a:1:{s:16:"retour_achat.htm";a:6:{s:8:"fileName";s:16:"retour_achat.htm";s:7:"content";s:13127:"==
+1565177414a:1:{s:16:"retour_achat.htm";a:6:{s:8:"fileName";s:16:"retour_achat.htm";s:7:"content";s:13605:"==
 <?
+use payment\Payment\Models\PaydunyaConfig;
 function onStart(){
+  $config = PaydunyaConfig::get()[0];
+  \Paydunya\Setup::setMasterKey($config->master_key);
+  \Paydunya\Setup::setPublicKey($config->public_key_test);
+  \Paydunya\Setup::setPrivateKey($config->private_key_test);
+  \Paydunya\Setup::setMode("test");
+  \Paydunya\Setup::setToken($config->token_test);
     $token = $_GET['token'];
-
+   $id;$nbrticket;$montant;$nomticket;
     $invoice = new \Paydunya\Checkout\CheckoutInvoice();
     $invoice->confirm($token);
-   /* if (!$invoice->confirm($token)) {
-        echo $invoice->getStatus();
-     // echo $invoice->getCustomData("id");
-     // echo $invoice->getCustomData("numero_gagnant");
-      //echo $invoice->getCustomData("nameticket");
+    if ($invoice->confirm($token)) {
+       // echo "satus".$invoice->getStatus();
+      $this['id']=$invoice->getCustomData("id");
+    // echo $invoice->getCustomData("numero_gagnant");
+    $this['nomticket']=$invoice->getCustomData("nameticket");
+    $this['nbrticket']=$invoice->getCustomData("nbrticket"); 
     
       // Vous pouvez aussi récupérer le montant total spécifié précédemment
-     // echo $invoice->getTotalAmount();
+      $this['montant']=$invoice->getTotalAmount();
     
     }else{
       echo $invoice->getStatus();
       echo $invoice->response_text;
       echo $invoice->response_code;
-    }*/
+    }
 }
 
 ?>
@@ -361,7 +369,7 @@ $('#EventFilter').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:5:"mtime";i:1565126274;s:6:"markup";s:12463:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1565175189;s:6:"markup";s:12463:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
@@ -699,23 +707,31 @@ $('#EventFilter').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:4:"code";s:644:"function onStart(){
+</html>";s:4:"code";s:1122:"use payment\Payment\Models\PaydunyaConfig;
+function onStart(){
+  $config = PaydunyaConfig::get()[0];
+  \Paydunya\Setup::setMasterKey($config->master_key);
+  \Paydunya\Setup::setPublicKey($config->public_key_test);
+  \Paydunya\Setup::setPrivateKey($config->private_key_test);
+  \Paydunya\Setup::setMode("test");
+  \Paydunya\Setup::setToken($config->token_test);
     $token = $_GET['token'];
-
+   $id;$nbrticket;$montant;$nomticket;
     $invoice = new \Paydunya\Checkout\CheckoutInvoice();
     $invoice->confirm($token);
-   /* if (!$invoice->confirm($token)) {
-        echo $invoice->getStatus();
-     // echo $invoice->getCustomData("id");
-     // echo $invoice->getCustomData("numero_gagnant");
-      //echo $invoice->getCustomData("nameticket");
+    if ($invoice->confirm($token)) {
+       // echo "satus".$invoice->getStatus();
+      $this['id']=$invoice->getCustomData("id");
+    // echo $invoice->getCustomData("numero_gagnant");
+    $this['nomticket']=$invoice->getCustomData("nameticket");
+    $this['nbrticket']=$invoice->getCustomData("nbrticket"); 
     
       // Vous pouvez aussi récupérer le montant total spécifié précédemment
-     // echo $invoice->getTotalAmount();
+      $this['montant']=$invoice->getTotalAmount();
     
     }else{
       echo $invoice->getStatus();
       echo $invoice->response_text;
       echo $invoice->response_code;
-    }*/
+    }
 }";s:17:"_PARSER_ERROR_INI";s:0:"";}}

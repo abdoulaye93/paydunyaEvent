@@ -1,8 +1,4 @@
-<<<<<<< HEAD:storage/framework/cache/95/94/9594746c179c78090d8241615fefa7c9e1543bbb
-1565081533a:1:{s:25:"events/manageeventpub.htm";a:5:{s:8:"fileName";s:25:"events/manageeventpub.htm";s:7:"content";s:2987:"{%set id=user.id%}
-=======
-1564752356a:1:{s:25:"events/manageeventpub.htm";a:5:{s:8:"fileName";s:25:"events/manageeventpub.htm";s:7:"content";s:2923:"{%set id=user.id%}
->>>>>>> f0a6ed5c971d5d15f53de554e006f1c53cdcdf84:storage/framework/cache/a9/6b/a96b1becbb76dcb5443ce2afc53d8424f3d0f2bc
+1565168819a:1:{s:25:"events/manageeventpub.htm";a:5:{s:8:"fileName";s:25:"events/manageeventpub.htm";s:7:"content";s:2987:"{%set id=user.id%}
 {% if events|length%}
    {% for item in events %}
    {% if item.user_id==9%}
@@ -66,11 +62,7 @@
  <div class="row" class="text-center">
         <h3 class="">NO  event FOUND</h3>
     </div>
-<<<<<<< HEAD:storage/framework/cache/95/94/9594746c179c78090d8241615fefa7c9e1543bbb
 {%endif%}";s:5:"mtime";i:1565041813;s:6:"markup";s:2987:"{%set id=user.id%}
-=======
-{%endif%}";s:5:"mtime";i:1564405753;s:6:"markup";s:2923:"{%set id=user.id%}
->>>>>>> f0a6ed5c971d5d15f53de554e006f1c53cdcdf84:storage/framework/cache/a9/6b/a96b1becbb76dcb5443ce2afc53d8424f3d0f2bc
 {% if events|length%}
    {% for item in events %}
    {% if item.user_id==9%}

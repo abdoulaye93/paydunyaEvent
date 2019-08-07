@@ -1,7 +1,19 @@
 ==
+<?
+use event\event\models\Event;
+function onStart(){
 
+    $this['id'] = Request::segment(5);
+    $this['nomticket'] = Request::segment(2);
+    $this['nbrticket'] = Request::segment(3);
+    $this['montant'] =Request::segment(4);
+    $this['event'] = Event::where('id',Request::segment(5))->get();
+}
+?>
+==
 <script type="text/javascript"> window.print() ; </script>
 
 <div>
-    hehhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+    votre ticket
+    nom de event{% if event|length%} {%for item in event%} {{item.nom}} {%endfor%} {%endif%} nom {{nomticket }} nbr  {{nbrticket}}   montant{{montant }}
 </div>

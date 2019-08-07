@@ -1,0 +1,132 @@
+1565169016a:1:{s:16:"admin/events.htm";a:5:{s:8:"fileName";s:16:"admin/events.htm";s:7:"content";s:3801:"<div class="row" style="text-align:center;display:block;">
+        {% if events|length%}
+        {% for item in events %}                                
+              <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                    <th scope="col" class="coin_name_th">TITLE</th>
+                    <th scope="col" class="founding_target_th" >SALES</th>
+                    <th scope="col" class="founding_target_th" >Montant</th>
+                    <th scope="col" class="founding_target_th" >PUBLISHED</th>
+                    <th scope="col" class="action_th" >ACTIONS</th>
+                    <th scope="col" class="action_th" >ACTIVATION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="traending_ico_tr">
+                        <td data-label="ratings" class="ratings_td">
+                            <a href="http://lab.thesoftking.com/eticket/event/show/papa">{{item.nom}}</a>
+                        </td>
+                        <td data-label="ico_date">
+                            0
+                        </td>
+                        <td data-label="ico_date">
+                                {{item.montant}}
+                            </td>
+                        <td data-label="ico_date">
+                            <h4 style="display:inline-block;">
+                                
+                                    {% if item.publier %}
+                                    <span class="badge btn-primary">
+                                      oui
+                                    </span>
+                                    {%else%}
+                                    <span class="badge badge-danger">
+                                      No</span>
+                                    {%endif%}                                                
+                                </h4>
+                        </td>
+                        <td data-label="action">
+                        <form data-request="onSave">
+                                <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{ 'manage_event_view'|page({event_id:item.id}) }}" class="action-btn">View</a>
+                                <a class="btn btn-warning btn-sm" href="{{ 'manage_event_edit'|page({event_id:item.id}) }}" class="action-btn">Edit</a>
+                                <input type="hidden" name="supprimer" value="{{item.id}}"> 
+                                <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>                                               
+                        </form>                 
+                      </td>   
+                      <td>
+                          <form data-request="onActive">
+                                <input type="hidden" name="activer" value="{{item.id}}"> 
+                                <input type="hidden" name="pub" value="{{item.publier}}"> 
+                                {% if item.publier %}
+                                <button type="submit" class="btn btn-primary btn-sm">Desactiver</button>                                               
+                          
+                                {%else%}
+                                <button type="submit" class="btn btn-warning btn-sm">Activer</button>
+                                {%endif%}
+                            </form>
+                      </td>                          
+                    </tr>
+                </tbody>
+              </table>                         
+            {% endfor%}
+        {%else%}
+            <h3>NO EVENT FOUND</h3>
+        {%endif%}
+    </div>
+       ";s:5:"mtime";i:1564576707;s:6:"markup";s:3792:"<div class="row" style="text-align:center;display:block;">
+        {% if events|length%}
+        {% for item in events %}                                
+              <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                    <th scope="col" class="coin_name_th">TITLE</th>
+                    <th scope="col" class="founding_target_th" >SALES</th>
+                    <th scope="col" class="founding_target_th" >Montant</th>
+                    <th scope="col" class="founding_target_th" >PUBLISHED</th>
+                    <th scope="col" class="action_th" >ACTIONS</th>
+                    <th scope="col" class="action_th" >ACTIVATION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="traending_ico_tr">
+                        <td data-label="ratings" class="ratings_td">
+                            <a href="http://lab.thesoftking.com/eticket/event/show/papa">{{item.nom}}</a>
+                        </td>
+                        <td data-label="ico_date">
+                            0
+                        </td>
+                        <td data-label="ico_date">
+                                {{item.montant}}
+                            </td>
+                        <td data-label="ico_date">
+                            <h4 style="display:inline-block;">
+                                
+                                    {% if item.publier %}
+                                    <span class="badge btn-primary">
+                                      oui
+                                    </span>
+                                    {%else%}
+                                    <span class="badge badge-danger">
+                                      No</span>
+                                    {%endif%}                                                
+                                </h4>
+                        </td>
+                        <td data-label="action">
+                        <form data-request="onSave">
+                                <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{ 'manage_event_view'|page({event_id:item.id}) }}" class="action-btn">View</a>
+                                <a class="btn btn-warning btn-sm" href="{{ 'manage_event_edit'|page({event_id:item.id}) }}" class="action-btn">Edit</a>
+                                <input type="hidden" name="supprimer" value="{{item.id}}"> 
+                                <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>                                               
+                        </form>                 
+                      </td>   
+                      <td>
+                          <form data-request="onActive">
+                                <input type="hidden" name="activer" value="{{item.id}}"> 
+                                <input type="hidden" name="pub" value="{{item.publier}}"> 
+                                {% if item.publier %}
+                                <button type="submit" class="btn btn-primary btn-sm">Desactiver</button>                                               
+                          
+                                {%else%}
+                                <button type="submit" class="btn btn-warning btn-sm">Activer</button>
+                                {%endif%}
+                            </form>
+                      </td>                          
+                    </tr>
+                </tbody>
+              </table>                         
+            {% endfor%}
+        {%else%}
+            <h3>NO EVENT FOUND</h3>
+        {%endif%}
+    </div>";s:4:"code";N;}}

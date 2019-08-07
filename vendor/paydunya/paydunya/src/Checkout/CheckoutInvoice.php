@@ -176,6 +176,7 @@ class CheckoutInvoice extends Checkout
         }
 
         $result = Utilities::httpGetRequest(Setup::getCheckoutConfirmUrl().$token);
+        
 
         if (count($result) > 0) {
             switch ($result['status']) {

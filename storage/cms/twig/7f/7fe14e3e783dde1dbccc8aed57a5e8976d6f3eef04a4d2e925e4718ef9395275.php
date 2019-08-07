@@ -33,7 +33,10 @@ class __TwigTemplate_d7d19946a95db96d8c36da909f930630b203b7b97689b7a790f1a02558d
     {
         // line 1
         echo "<div>
-    <a>Imprimer le ticket</a>
+    <a href=\"";
+        // line 2
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("ticket", ["nom_type_ticket" => ($context["nomticket"] ?? null), "nbr_ticket" => ($context["nbrticket"] ?? null), "montant" => ($context["montant"] ?? null), "id_event" => ($context["id"] ?? null)]);
+        echo "\" onclick=\"edition();return false;\">Imprimer le ticket</a>
     <a>Ajouter à votre calendar</a>
 </div>";
     }
@@ -43,15 +46,20 @@ class __TwigTemplate_d7d19946a95db96d8c36da909f930630b203b7b97689b7a790f1a02558d
         return "C:\\wamp64\\www\\install-master1/themes/demo/pages/retour_achat.htm";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  35 => 1,);
+        return array (  38 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<div>
-    <a>Imprimer le ticket</a>
+    <a href=\"{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}\" onclick=\"edition();return false;\">Imprimer le ticket</a>
     <a>Ajouter à votre calendar</a>
 </div>", "C:\\wamp64\\www\\install-master1/themes/demo/pages/retour_achat.htm", "");
     }

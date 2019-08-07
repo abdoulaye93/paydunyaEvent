@@ -6,6 +6,6 @@ is_hidden = 0
 
 
 <div>
-    <a>Imprimer le ticket</a>
+    <a href="{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}" onclick="edition();return false;">Imprimer le ticket</a>
     <a>Ajouter à votre calendar</a>
 </div>
