@@ -1,5 +1,12 @@
-1565184784a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:12628:"[session]
+1565187415a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:12744:"[session]
 security = "all"
+==
+<?
+use event\event\models\NotifDemande;
+function onStart(){
+    $this['notifs']=NotifDemande::all();
+}
+?>
 ==
 <!-- Nav -->
 <nav class="navbar navbar-area navbar-expand-lg navbar-light navbar-fixed-top navbar-autohide">
@@ -191,7 +198,7 @@ security = "all"
         if(!confirm('Voulez vous vraiment effectuer une demande d\'annulation d\'achat ?'))
             event.preventDefault()
     })
-    </script>";s:5:"mtime";i:1565089565;s:6:"markup";s:12595:"<!-- Nav -->
+    </script>";s:5:"mtime";i:1565186811;s:6:"markup";s:12595:"<!-- Nav -->
 <nav class="navbar navbar-area navbar-expand-lg navbar-light navbar-fixed-top navbar-autohide">
     <div class="container">
         <div >
@@ -381,4 +388,7 @@ security = "all"
         if(!confirm('Voulez vous vraiment effectuer une demande d\'annulation d\'achat ?'))
             event.preventDefault()
     })
-    </script>";s:4:"code";N;s:7:"session";a:1:{s:8:"security";s:3:"all";}}}
+    </script>";s:4:"code";s:102:"use event\event\models\NotifDemande;
+function onStart(){
+    $this['notifs']=NotifDemande::all();
+}";s:7:"session";a:1:{s:8:"security";s:3:"all";}}}
