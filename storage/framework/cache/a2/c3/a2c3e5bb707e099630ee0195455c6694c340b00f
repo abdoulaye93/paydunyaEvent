@@ -1,4 +1,4 @@
-1565187164a:1:{s:22:"events/manageevent.htm";a:5:{s:8:"fileName";s:22:"events/manageevent.htm";s:7:"content";s:6044:"{%set id=user.id%}
+1565193036a:1:{s:22:"events/manageevent.htm";a:5:{s:8:"fileName";s:22:"events/manageevent.htm";s:7:"content";s:6064:"{%set id=user.id%}
 {% if events|length%}
    {% for item in events %}
    
@@ -21,7 +21,7 @@
                  <a href="http://lab.thesoftking.com/eticket/event/show/papa">{{item.nom}}</a>
              </td>
              <td data-label="ico_date">
-                 0
+                 {{item.ticket_vendu}}
              </td>
              <td data-label="ico_date">
                  <h4 style="display:inline-block;">
@@ -118,7 +118,7 @@
  <div class="row" class="text-center">
         <h3 class="">NO  event FOUND</h3>
     </div>
-{%endif%}";s:5:"mtime";i:1565043391;s:6:"markup";s:6044:"{%set id=user.id%}
+{%endif%}";s:5:"mtime";i:1565192433;s:6:"markup";s:6064:"{%set id=user.id%}
 {% if events|length%}
    {% for item in events %}
    
@@ -141,7 +141,7 @@
                  <a href="http://lab.thesoftking.com/eticket/event/show/papa">{{item.nom}}</a>
              </td>
              <td data-label="ico_date">
-                 0
+                 {{item.ticket_vendu}}
              </td>
              <td data-label="ico_date">
                  <h4 style="display:inline-block;">

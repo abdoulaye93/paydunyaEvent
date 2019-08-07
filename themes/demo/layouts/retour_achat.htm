@@ -2,6 +2,7 @@
 <?
 use payment\Payment\Models\PaydunyaConfig;
 use event\event\models\Event;
+use event\event\models\AchatList;
 function onStart(){
   $config = PaydunyaConfig::get()[0];
   \Paydunya\Setup::setMasterKey($config->master_key);
@@ -29,6 +30,11 @@ function onStart(){
     Db::table('event_event_')
     ->where('id', $invoice->getCustomData("id"))
     ->update(['nombre_ticket' => $user->nombre_ticket-1]);
+    $user = BackendAuth::getUser();
+    $achat=new AchatList();
+    $achat->user_id=$user->id;
+    $achat->event_id=$invoice->getCustomData("id");
+    $achat->save();
     
     }else{
       echo $invoice->getStatus();

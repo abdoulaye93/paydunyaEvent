@@ -47,7 +47,8 @@ function onStart(){
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="{{ 'create_event'|page }}">Créer un évènement</a>
                                     <a class="dropdown-item" href="{{ 'manage_event'|page({user_id:user.id}) }}">Gestion des évènement</a>
-                                    <a class="dropdown-item" href="{{ 'access_event'|page({user_id:user.id}) }}">Suivre un évènement</a>
+                                    <a class="dropdown-item" href="{{ 'access_event'|page({user_id:user.id}) }}">Invitation</a>
+                                    <a class="dropdown-item" href="{{ 'admin'|page }}">Mes achats</a>
                                 </div>
                             </li>
 
@@ -84,6 +85,7 @@ function onStart(){
                                         {%else%}
                                        
                                         {%endif%}Demande Event</a>
+                                        
                             </div>
                         </li>
                 

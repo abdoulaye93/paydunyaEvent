@@ -1,7 +1,8 @@
-1565180193a:1:{s:16:"retour_achat.htm";a:6:{s:8:"fileName";s:16:"retour_achat.htm";s:7:"content";s:14013:"==
+1565192812a:1:{s:16:"retour_achat.htm";a:6:{s:8:"fileName";s:16:"retour_achat.htm";s:7:"content";s:14220:"==
 <?
 use payment\Payment\Models\PaydunyaConfig;
 use event\event\models\Event;
+use event\event\models\AchatList;
 function onStart(){
   $config = PaydunyaConfig::get()[0];
   \Paydunya\Setup::setMasterKey($config->master_key);
@@ -29,6 +30,11 @@ function onStart(){
     Db::table('event_event_')
     ->where('id', $invoice->getCustomData("id"))
     ->update(['nombre_ticket' => $user->nombre_ticket-1]);
+    $user = BackendAuth::getUser();
+    $achat=new AchatList();
+    $achat->user_id=$user->id;
+    $achat->event_id=$invoice->getCustomData("id");
+    $achat->save();
     
     }else{
       echo $invoice->getStatus();
@@ -377,7 +383,7 @@ $('#EventFilter').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:5:"mtime";i:1565179568;s:6:"markup";s:12463:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1565192211;s:6:"markup";s:12463:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
@@ -715,8 +721,9 @@ $('#EventFilter').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:4:"code";s:1530:"use payment\Payment\Models\PaydunyaConfig;
+</html>";s:4:"code";s:1737:"use payment\Payment\Models\PaydunyaConfig;
 use event\event\models\Event;
+use event\event\models\AchatList;
 function onStart(){
   $config = PaydunyaConfig::get()[0];
   \Paydunya\Setup::setMasterKey($config->master_key);
@@ -744,6 +751,11 @@ function onStart(){
     Db::table('event_event_')
     ->where('id', $invoice->getCustomData("id"))
     ->update(['nombre_ticket' => $user->nombre_ticket-1]);
+    $user = BackendAuth::getUser();
+    $achat=new AchatList();
+    $achat->user_id=$user->id;
+    $achat->event_id=$invoice->getCustomData("id");
+    $achat->save();
     
     }else{
       echo $invoice->getStatus();

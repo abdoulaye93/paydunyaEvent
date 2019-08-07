@@ -1,4 +1,4 @@
-1565187415a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:12744:"[session]
+1565193230a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:12878:"[session]
 security = "all"
 ==
 <?
@@ -47,7 +47,8 @@ function onStart(){
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="{{ 'create_event'|page }}">Créer un évènement</a>
                                     <a class="dropdown-item" href="{{ 'manage_event'|page({user_id:user.id}) }}">Gestion des évènement</a>
-                                    <a class="dropdown-item" href="{{ 'access_event'|page({user_id:user.id}) }}">Suivre un évènement</a>
+                                    <a class="dropdown-item" href="{{ 'access_event'|page({user_id:user.id}) }}">Invitation</a>
+                                    <a class="dropdown-item" href="{{ 'admin'|page }}">Mes achats</a>
                                 </div>
                             </li>
 
@@ -84,6 +85,7 @@ function onStart(){
                                         {%else%}
                                        
                                         {%endif%}Demande Event</a>
+                                        
                             </div>
                         </li>
                 
@@ -198,7 +200,7 @@ function onStart(){
         if(!confirm('Voulez vous vraiment effectuer une demande d\'annulation d\'achat ?'))
             event.preventDefault()
     })
-    </script>";s:5:"mtime";i:1565186811;s:6:"markup";s:12595:"<!-- Nav -->
+    </script>";s:5:"mtime";i:1565192627;s:6:"markup";s:12729:"<!-- Nav -->
 <nav class="navbar navbar-area navbar-expand-lg navbar-light navbar-fixed-top navbar-autohide">
     <div class="container">
         <div >
@@ -237,7 +239,8 @@ function onStart(){
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="{{ 'create_event'|page }}">Créer un évènement</a>
                                     <a class="dropdown-item" href="{{ 'manage_event'|page({user_id:user.id}) }}">Gestion des évènement</a>
-                                    <a class="dropdown-item" href="{{ 'access_event'|page({user_id:user.id}) }}">Suivre un évènement</a>
+                                    <a class="dropdown-item" href="{{ 'access_event'|page({user_id:user.id}) }}">Invitation</a>
+                                    <a class="dropdown-item" href="{{ 'admin'|page }}">Mes achats</a>
                                 </div>
                             </li>
 
@@ -274,6 +277,7 @@ function onStart(){
                                         {%else%}
                                        
                                         {%endif%}Demande Event</a>
+                                        
                             </div>
                         </li>
                 

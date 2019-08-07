@@ -67,7 +67,10 @@ class __TwigTemplate_a4bfcda2549adf05ec5482335c3360038a6172c54f844587dc81fb8011b
                         echo "</a>
              </td>
              <td data-label=\"ico_date\">
-                 0
+                ";
+                        // line 23
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "ticket_vendu", [], "any", false, false, false, 23), "html", null, true);
+                        echo "
              </td>
              <td data-label=\"ico_date\">
                  <h4 style=\"display:inline-block;\">
@@ -168,7 +171,7 @@ class __TwigTemplate_a4bfcda2549adf05ec5482335c3360038a6172c54f844587dc81fb8011b
 
     public function getDebugInfo()
     {
-        return array (  152 => 62,  149 => 61,  143 => 60,  140 => 59,  137 => 58,  126 => 49,  122 => 47,  117 => 44,  115 => 43,  111 => 42,  107 => 41,  103 => 40,  99 => 39,  95 => 38,  89 => 34,  84 => 32,  78 => 28,  76 => 27,  66 => 20,  50 => 6,  47 => 5,  44 => 4,  39 => 3,  37 => 2,  35 => 1,);
+        return array (  155 => 62,  152 => 61,  146 => 60,  143 => 59,  140 => 58,  129 => 49,  125 => 47,  120 => 44,  118 => 43,  114 => 42,  110 => 41,  106 => 40,  102 => 39,  98 => 38,  92 => 34,  87 => 32,  81 => 28,  79 => 27,  72 => 23,  66 => 20,  50 => 6,  47 => 5,  44 => 4,  39 => 3,  37 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -195,7 +198,7 @@ class __TwigTemplate_a4bfcda2549adf05ec5482335c3360038a6172c54f844587dc81fb8011b
                  <a href=\"http://lab.thesoftking.com/eticket/event/show/papa\">{{item.nom}}</a>
              </td>
              <td data-label=\"ico_date\">
-                 0
+                {{item.ticket_vendu}}
              </td>
              <td data-label=\"ico_date\">
                  <h4 style=\"display:inline-block;\">

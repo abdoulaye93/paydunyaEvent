@@ -64,7 +64,10 @@ class __TwigTemplate_7ddd45286a0d51e99d560dcf8f201dbd5fa000661b984b6cd366c64a16a
                 echo "</a>
              </td>
              <td data-label=\"ico_date\">
-                 0
+                 ";
+                // line 24
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "ticket_vendu", [], "any", false, false, false, 24), "html", null, true);
+                echo "
              </td>
              <td data-label=\"ico_date\">
                  <h4 style=\"display:inline-block;\">
@@ -249,7 +252,7 @@ class __TwigTemplate_7ddd45286a0d51e99d560dcf8f201dbd5fa000661b984b6cd366c64a16a
 
     public function getDebugInfo()
     {
-        return array (  233 => 118,  230 => 117,  193 => 86,  184 => 79,  177 => 74,  171 => 72,  169 => 71,  165 => 69,  158 => 65,  154 => 64,  151 => 63,  141 => 60,  138 => 59,  136 => 58,  128 => 52,  124 => 50,  119 => 47,  117 => 46,  113 => 45,  109 => 44,  104 => 43,  98 => 41,  96 => 40,  92 => 39,  86 => 35,  81 => 33,  75 => 29,  73 => 28,  63 => 21,  44 => 4,  39 => 3,  37 => 2,  35 => 1,);
+        return array (  236 => 118,  233 => 117,  196 => 86,  187 => 79,  180 => 74,  174 => 72,  172 => 71,  168 => 69,  161 => 65,  157 => 64,  154 => 63,  144 => 60,  141 => 59,  139 => 58,  131 => 52,  127 => 50,  122 => 47,  120 => 46,  116 => 45,  112 => 44,  107 => 43,  101 => 41,  99 => 40,  95 => 39,  89 => 35,  84 => 33,  78 => 29,  76 => 28,  69 => 24,  63 => 21,  44 => 4,  39 => 3,  37 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -277,7 +280,7 @@ class __TwigTemplate_7ddd45286a0d51e99d560dcf8f201dbd5fa000661b984b6cd366c64a16a
                  <a href=\"http://lab.thesoftking.com/eticket/event/show/papa\">{{item.nom}}</a>
              </td>
              <td data-label=\"ico_date\">
-                 0
+                 {{item.ticket_vendu}}
              </td>
              <td data-label=\"ico_date\">
                  <h4 style=\"display:inline-block;\">

@@ -196,4 +196,6 @@
   'RainLab\\Builder\\Classes\\DatabaseTableSchemaCreator' => 'plugins\\rainlab\\builder\\classes\\DatabaseTableSchemaCreator.php',
   'RainLab\\Builder\\Classes\\TableMigrationCodeGenerator' => 'plugins\\rainlab\\builder\\classes\\TableMigrationCodeGenerator.php',
   'RainLab\\Builder\\Classes\\MigrationModel' => 'plugins\\rainlab\\builder\\classes\\MigrationModel.php',
+  'RainLab\\Builder\\Classes\\FilesystemGenerator' => 'plugins\\rainlab\\builder\\classes\\FilesystemGenerator.php',
+  'event\\event\\models\\AchatList' => 'plugins\\event\\event\\models\\AchatList.php',
 );

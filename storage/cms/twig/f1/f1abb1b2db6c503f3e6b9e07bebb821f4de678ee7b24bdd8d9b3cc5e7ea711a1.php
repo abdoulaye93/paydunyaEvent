@@ -108,22 +108,26 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                                     <a class=\"dropdown-item\" href=\"";
             // line 40
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("access_event", ["user_id" => twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "id", [], "any", false, false, false, 40)]);
-            echo "\">Suivre un évènement</a>
+            echo "\">Invitation</a>
+                                    <a class=\"dropdown-item\" href=\"";
+            // line 41
+            echo $this->extensions['Cms\Twig\Extension']->pageFilter("admin");
+            echo "\">Mes achats</a>
                                 </div>
                             </li>
 
 
 
                             <li class=\"nav-item dropdown ";
-            // line 46
-            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 46), "id", [], "any", false, false, false, 46) == "configuration_payment")) {
+            // line 47
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 47), "id", [], "any", false, false, false, 47) == "configuration_payment")) {
                 echo "active";
             }
             echo "\">
                                 <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Paiement</a>
                                 <div class=\"dropdown-menu\">
                                     <a class=\"dropdown-item\" href=\"";
-            // line 49
+            // line 50
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("configuration_payment");
             echo "\">Configurer le paiement</a>
                                     <a class=\"dropdown-item\" id=\"annulerAchat\" data-request=\"onAnnuler\" data-request-data=\"redirect: '/'\" href=\"\">Annuler un achat</a>
@@ -133,74 +137,75 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                 
                     ";
         } else {
-            // line 56
+            // line 57
             echo "                         <li class=\"nav-item boxed-btn\">
                     <a class=\"nav-link boxed-btn\" href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\">Login - Register</a>
                 </li>
                     ";
         }
-        // line 60
+        // line 61
         echo "                    ";
-        if (twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "is_superuser", [], "any", false, false, false, 60)) {
-            // line 61
+        if (twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "is_superuser", [], "any", false, false, false, 61)) {
+            // line 62
             echo "                     </li>
                          <li class=\"nav-item dropdown ";
-            // line 62
-            if (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 62), "id", [], "any", false, false, false, 62) == "admin") || (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 62), "id", [], "any", false, false, false, 62) == "admin_demande"))) {
+            // line 63
+            if (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 63), "id", [], "any", false, false, false, 63) == "admin") || (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 63), "id", [], "any", false, false, false, 63) == "admin_demande"))) {
                 echo "active";
             }
             echo "\">
                             <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> ";
-            // line 63
+            // line 64
             if (twig_length_filter($this->env, ($context["notifs"] ?? null))) {
-                // line 64
+                // line 65
                 echo "                                    <span class=\"badge badge-danger\">
                                             Notif";
-                // line 65
+                // line 66
                 echo twig_escape_filter($this->env, twig_length_filter($this->env, ($context["notifs"] ?? null)), "html", null, true);
                 echo "</span>
                                     ";
             } else {
-                // line 67
+                // line 68
                 echo "                                   
                                     ";
             }
-            // line 68
+            // line 69
             echo "Gestion</a>
                             <div class=\"dropdown-menu\">
                                 <a class=\"dropdown-item\" href=\"";
-            // line 70
+            // line 71
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("admin");
             echo "\">  évènement</a>
                                 <a class=\"dropdown-item\" href=\"";
-            // line 71
+            // line 72
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("admin_demande");
             echo "\">";
             if (twig_length_filter($this->env, ($context["notifs"] ?? null))) {
-                // line 72
+                // line 73
                 echo "                                        <span class=\"badge badge-danger\">
                                                 Notif";
-                // line 73
+                // line 74
                 echo twig_escape_filter($this->env, twig_length_filter($this->env, ($context["notifs"] ?? null)), "html", null, true);
                 echo "</span>
                                         ";
             } else {
-                // line 75
+                // line 76
                 echo "                                       
                                         ";
             }
-            // line 76
+            // line 77
             echo "Demande Event</a>
+                                        
                             </div>
                         </li>
                 
                     ";
         } else {
-            // line 81
+            // line 83
             echo "                
                     ";
         }
-        // line 83
+        // line 85
         echo "                    
                 
                
@@ -247,8 +252,8 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                                         <div class=\"\">
                                           <a style=\"text-decoration: underline;\" href=\"\">Mot de passe oublié ?</a>
                                           <p class=\"";
-        // line 128
-        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 128), "id", [], "any", false, false, false, 128) == "register")) {
+        // line 130
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 130), "id", [], "any", false, false, false, 130) == "register")) {
             echo "active";
         }
         echo "\" style=\"text-decoration: underline;\"><a href=\"";
@@ -309,7 +314,7 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
     {
         if(textStatus == 'success')
             window.location = \"";
-        // line 183
+        // line 185
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("Demonstration");
         echo "\"
 
@@ -334,7 +339,7 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
 
     public function getDebugInfo()
     {
-        return array (  313 => 183,  251 => 128,  204 => 83,  200 => 81,  193 => 76,  189 => 75,  184 => 73,  181 => 72,  177 => 71,  173 => 70,  169 => 68,  165 => 67,  160 => 65,  157 => 64,  155 => 63,  149 => 62,  146 => 61,  143 => 60,  137 => 56,  127 => 49,  119 => 46,  110 => 40,  106 => 39,  102 => 38,  94 => 35,  88 => 31,  86 => 30,  78 => 25,  72 => 24,  62 => 21,  56 => 20,  35 => 1,);
+        return array (  318 => 185,  256 => 130,  209 => 85,  205 => 83,  197 => 77,  193 => 76,  188 => 74,  185 => 73,  181 => 72,  177 => 71,  173 => 69,  169 => 68,  164 => 66,  161 => 65,  159 => 64,  153 => 63,  150 => 62,  147 => 61,  141 => 57,  131 => 50,  123 => 47,  114 => 41,  110 => 40,  106 => 39,  102 => 38,  94 => 35,  88 => 31,  86 => 30,  78 => 25,  72 => 24,  62 => 21,  56 => 20,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -378,7 +383,8 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                                 <div class=\"dropdown-menu\">
                                     <a class=\"dropdown-item\" href=\"{{ 'create_event'|page }}\">Créer un évènement</a>
                                     <a class=\"dropdown-item\" href=\"{{ 'manage_event'|page({user_id:user.id}) }}\">Gestion des évènement</a>
-                                    <a class=\"dropdown-item\" href=\"{{ 'access_event'|page({user_id:user.id}) }}\">Suivre un évènement</a>
+                                    <a class=\"dropdown-item\" href=\"{{ 'access_event'|page({user_id:user.id}) }}\">Invitation</a>
+                                    <a class=\"dropdown-item\" href=\"{{ 'admin'|page }}\">Mes achats</a>
                                 </div>
                             </li>
 
@@ -415,6 +421,7 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                                         {%else%}
                                        
                                         {%endif%}Demande Event</a>
+                                        
                             </div>
                         </li>
                 
