@@ -60,17 +60,47 @@ class __TwigTemplate_8a08a9aadda38eef3a79bd46917ca16eccc1710fdaaebfa1fe93336d97b
         
                         </td>
                         <td data-label=\"action\">
-                        <form data-request=\"onSup\">
-                                <a class=\"btn btn-primary btn-sm\" class=\"btn btn-warning\" href=\"";
-                // line 20
-                echo $this->extensions['Cms\Twig\Extension']->pageFilter("manage_event_view", ["event_id" => twig_get_attribute($this->env, $this->source, $context["item"], "event_id", [], "any", false, false, false, 20)]);
-                echo "\" class=\"action-btn\">View</a>
-                                <input type=\"hidden\" name=\"supprimer\" value=\"";
-                // line 21
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "event_id", [], "any", false, false, false, 21), "html", null, true);
-                echo "\"> 
-                                <a class=\"btn\" id=\"annulerAchat\" data-request=\"onAnnuler\" data-request-data=\"redirect: '/'\" href=\"\">Annuler un achat</a>                                              
-                        </form>                 
+                        ";
+                // line 19
+                if (twig_get_attribute($this->env, $this->source, $context["item"], "state", [], "any", false, false, false, 19)) {
+                    // line 20
+                    echo "                        <form data-request=\"onAnnuledemanade\">
+                            <a class=\"btn btn-primary btn-sm\" class=\"btn btn-warning\" href=\"";
+                    // line 21
+                    echo $this->extensions['Cms\Twig\Extension']->pageFilter("manage_event_view", ["event_id" => twig_get_attribute($this->env, $this->source, $context["item"], "event_id", [], "any", false, false, false, 21)]);
+                    echo "\" class=\"action-btn\">View</a>
+                            <input type=\"hidden\" name=\"event\" value=\"";
+                    // line 22
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "event", [], "any", false, false, false, 22), "id", [], "any", false, false, false, 22), "html", null, true);
+                    echo "\"> 
+                            <input type=\"submit\" value=\"Annuller la demande d'annulation d'achat\" class=\"btn\"> 
+                        </form>  
+                        ";
+                } else {
+                    // line 26
+                    echo "                        <form data-request=\"onAnnuleachat\">
+                            <a class=\"btn btn-primary btn-sm\" class=\"btn btn-warning\" href=\"";
+                    // line 27
+                    echo $this->extensions['Cms\Twig\Extension']->pageFilter("manage_event_view", ["event_id" => twig_get_attribute($this->env, $this->source, $context["item"], "event_id", [], "any", false, false, false, 27)]);
+                    echo "\" class=\"action-btn\">View</a>
+                            <input type=\"hidden\" name=\"usersend\" value=\"";
+                    // line 28
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "id", [], "any", false, false, false, 28), "html", null, true);
+                    echo "\"> 
+                            <input type=\"hidden\" name=\"event\" value=\"";
+                    // line 29
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "event", [], "any", false, false, false, 29), "id", [], "any", false, false, false, 29), "html", null, true);
+                    echo "\"> 
+                            <input type=\"hidden\" name=\"montant\" value=\"";
+                    // line 30
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant", [], "any", false, false, false, 30), "html", null, true);
+                    echo "\"> 
+                            <input type=\"submit\" value=\"Annuller l'chat\" class=\"btn\">                                            
+                        </form>   
+                        ";
+                }
+                // line 33
+                echo "              
                       </td>                      
                     </tr>
                 </tbody>
@@ -80,14 +110,14 @@ class __TwigTemplate_8a08a9aadda38eef3a79bd46917ca16eccc1710fdaaebfa1fe93336d97b
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 29
+            // line 39
             echo "        ";
         } else {
-            // line 30
+            // line 40
             echo "            <h3>NO demande</h3>
         ";
         }
-        // line 32
+        // line 42
         echo "    </div>";
     }
 
@@ -103,7 +133,7 @@ class __TwigTemplate_8a08a9aadda38eef3a79bd46917ca16eccc1710fdaaebfa1fe93336d97b
 
     public function getDebugInfo()
     {
-        return array (  91 => 32,  87 => 30,  84 => 29,  70 => 21,  66 => 20,  58 => 15,  40 => 3,  38 => 2,  35 => 1,);
+        return array (  121 => 42,  117 => 40,  114 => 39,  103 => 33,  96 => 30,  92 => 29,  88 => 28,  84 => 27,  81 => 26,  74 => 22,  70 => 21,  67 => 20,  65 => 19,  58 => 15,  40 => 3,  38 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -126,11 +156,21 @@ class __TwigTemplate_8a08a9aadda38eef3a79bd46917ca16eccc1710fdaaebfa1fe93336d97b
         
                         </td>
                         <td data-label=\"action\">
-                        <form data-request=\"onSup\">
-                                <a class=\"btn btn-primary btn-sm\" class=\"btn btn-warning\" href=\"{{'manage_event_view'|page({event_id:item.event_id})}}\" class=\"action-btn\">View</a>
-                                <input type=\"hidden\" name=\"supprimer\" value=\"{{item.event_id}}\"> 
-                                <a class=\"btn\" id=\"annulerAchat\" data-request=\"onAnnuler\" data-request-data=\"redirect: '/'\" href=\"\">Annuler un achat</a>                                              
-                        </form>                 
+                        {%if item.state%}
+                        <form data-request=\"onAnnuledemanade\">
+                            <a class=\"btn btn-primary btn-sm\" class=\"btn btn-warning\" href=\"{{'manage_event_view'|page({event_id:item.event_id})}}\" class=\"action-btn\">View</a>
+                            <input type=\"hidden\" name=\"event\" value=\"{{item.event.id}}\"> 
+                            <input type=\"submit\" value=\"Annuller la demande d'annulation d'achat\" class=\"btn\"> 
+                        </form>  
+                        {%else%}
+                        <form data-request=\"onAnnuleachat\">
+                            <a class=\"btn btn-primary btn-sm\" class=\"btn btn-warning\" href=\"{{'manage_event_view'|page({event_id:item.event_id})}}\" class=\"action-btn\">View</a>
+                            <input type=\"hidden\" name=\"usersend\" value=\"{{user.id}}\"> 
+                            <input type=\"hidden\" name=\"event\" value=\"{{item.event.id}}\"> 
+                            <input type=\"hidden\" name=\"montant\" value=\"{{item.montant}}\"> 
+                            <input type=\"submit\" value=\"Annuller l'chat\" class=\"btn\">                                            
+                        </form>   
+                        {%endif%}              
                       </td>                      
                     </tr>
                 </tbody>

@@ -1,5 +1,5 @@
 <?php 
-use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;use event\event\models\AchatList;class Cms5d4beda082178978830949_85629cec878cc97bbed72c036c161ad8Class extends Cms\Classes\LayoutCode
+use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;use event\event\models\AchatList;class Cms5d4c24cc39ecc542935544_96cce71d43cab48e3aa3c704c0d9b368Class extends Cms\Classes\LayoutCode
 {
 
 
@@ -35,6 +35,7 @@ public function onStart(){
     $achat=new AchatList();
     $achat->user_email=$user->email;
     $achat->event_id=$invoice->getCustomData("id");
+    $achat->montant=$invoice->getTotalAmount();
     $achat->save();
     
     }else{

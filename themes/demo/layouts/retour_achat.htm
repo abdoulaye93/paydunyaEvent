@@ -34,6 +34,7 @@ function onStart(){
     $achat=new AchatList();
     $achat->user_email=$user->email;
     $achat->event_id=$invoice->getCustomData("id");
+    $achat->montant=$invoice->getTotalAmount();
     $achat->save();
     
     }else{

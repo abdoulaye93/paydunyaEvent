@@ -1,4 +1,4 @@
-1565262813a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:12746:"[session]
+1565273472a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:12871:"[session]
 security = "all"
 ==
 <?
@@ -49,6 +49,7 @@ function onStart(){
                                     <a class="dropdown-item" href="{{ 'manage_event'|page({user_id:user.id}) }}">Gestion des évènement</a>
                                     <a class="dropdown-item" href="{{ 'access_event'|page({user_id:user.id}) }}">Invitation</a>
                                     <a class="dropdown-item" href="{{ 'achat'|page }}">Mes achats</a>
+                                    <a class="dropdown-item" href="{{ 'annue_achat'|page }}">Demande d'annulation achat</a>
                                 </div>
                             </li>
 
@@ -200,7 +201,7 @@ function onStart(){
         if(!confirm('Voulez vous vraiment effectuer une demande d\'annulation d\'achat ?'))
             event.preventDefault()
     })
-    </script>";s:5:"mtime";i:1565195046;s:6:"markup";s:12597:"<!-- Nav -->
+    </script>";s:5:"mtime";i:1565268029;s:6:"markup";s:12722:"<!-- Nav -->
 <nav class="navbar navbar-area navbar-expand-lg navbar-light navbar-fixed-top navbar-autohide">
     <div class="container">
         <div >
@@ -241,6 +242,7 @@ function onStart(){
                                     <a class="dropdown-item" href="{{ 'manage_event'|page({user_id:user.id}) }}">Gestion des évènement</a>
                                     <a class="dropdown-item" href="{{ 'access_event'|page({user_id:user.id}) }}">Invitation</a>
                                     <a class="dropdown-item" href="{{ 'achat'|page }}">Mes achats</a>
+                                    <a class="dropdown-item" href="{{ 'annue_achat'|page }}">Demande d'annulation achat</a>
                                 </div>
                             </li>
 
