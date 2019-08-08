@@ -23,23 +23,26 @@ class ManaEventView extends ComponentBase
             'description'=>'Entrer un évènement'
         ];
     }
-   
+   //renitialisation de la demande de notification 
     public function onRun(){
         $b=Request::segment(2);
         $event=Db::table('event_event_')
         ->where('id', $b)
         ->update(['demande_notif' => 0]);
     }
+    //recuperation d'un evenement a travers son id
     public function loadEvents(){     
         $b=Request::segment(2);
         $evenon = Event::where('id',$b)->get();
         return $evenon;
     }
+    //recuperation des evenments d'un utilisateur
     public function loadpulichEvent(){
         $b=Request::segment(2);
         $evenon = Event::where('user_id',$b)->get();
         return $evenon;
     }
+    //recuperation des evenments d'un utilisateur
     public function loadpEpirerEvent(){
         $b=Request::segment(2);
         $evenon = Event::where('user_id',$b)->get();

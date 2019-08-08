@@ -27,16 +27,19 @@ class Positionevent extends ComponentBase
     public function onRun(){   
       
     }
+    //recuperation d'un evenement
     public function loadEvents(){     
         $b=Request::segment(2);
         $evenon = Sub::where('id',$b)->get();
         return $evenon;
     }
+    //recupreration de lattitude de la position dans url
     public function loadLat(){
         $lat=Request::segment(2);
         return $lat;
        
     }
+    //recupreration de logitude de la position dans url
     public function loadLong(){
        $long= Request::segment(3);
      return  $long;

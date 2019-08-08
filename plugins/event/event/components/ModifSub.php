@@ -26,11 +26,13 @@ class ModifSub extends ComponentBase
    
     public function onRun(){   
     }
+    //recuperation d'un evenement 
     public function loadEvents(){     
         $b=Request::segment(2);
         $evenon = Sub::where('id',$b)->get();
         return $evenon;
     }
+    //modification d'un sous evenement
     public function onSave(){
         $b=Request::segment(2);
         $pd1 = Sub::where('id',$b)->first();

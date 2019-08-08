@@ -47,10 +47,11 @@ class Event extends Model
      */
     public $rules = [
     ];
+    //filtrage de levenment
     public function scopeListFrontEnd($query,$option = []){
             extract(array_merge([
                 'page'=>1,
-                'perPage'=>3,
+                'perPage'=>6,
                 'sort'=>'priorite'
             ],$option));
             $lastPage = $query->paginate($perPage, $page)->lastPage();

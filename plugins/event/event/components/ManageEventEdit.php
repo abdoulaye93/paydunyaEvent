@@ -28,30 +28,36 @@ class ManageEventEdit extends ComponentBase
        
      
     }
+    //recuperation d'un evenement
     public function loadEvents(){     
         $b=Request::segment(2);
         $evenon = Event::where('id',$b)->get();
         return $evenon;
     }
+    //recuperation des sous evenement d'un evenment
     public function loadSevent(){     
         $b=Request::segment(2);
         $evenon=SubList::where('event_id',$b)
         ->get();
         return $evenon;
     }
+    //recuperation des evenement d'un user
     public function loadpulichEvent(){
         $b=Request::segment(2);
         $evenon = Event::where('user_id',$b)->get();
         return $evenon;
     }
+    //recuperation des evenement d'un user
     public function loadpEpirerEvent(){
         $b=Request::segment(2);
         $evenon = Event::where('user_id',$b)->get();
         return $evenon;
     }
+    //recuperation des type d'evenement
     public function loadSubs(){
         return Type::all();
     }
+    //modification d'un evenement
     public function onSave(){
         $b=Request::segment(2);
         $pd1 = Event::where('id',$b)->first();

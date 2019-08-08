@@ -28,21 +28,24 @@ class Admin extends ComponentBase
        
      
     }
+     //recuperation des evenements 
     public function loadEvents(){     
-       // $b=Request::segment(2);
         $evenon = Event::all();
         return $evenon;
     }
+     //recuperation des evenements publier
     public function loadpulichEvent(){
         $b=Request::segment(2);
         $evenon = Event::where('user_id',$b)->get();
         return $evenon;
     }
+    //function pour la suppression d'un evenment
     public function onSave(){
         $b=Input::get('supprimer');
         Db::table('event_event_')->where('id',$b)->delete();
         return Redirect::back();
     }
+    //function pour l'activation d'un evenement
     public function onActive(){
         $b=Input::get('activer');
         $pub=Input::get('pub');
@@ -55,8 +58,6 @@ class Admin extends ComponentBase
             ->where('id', $b)
             ->update(['publier' => true]);
         }
-       
-      //  Db::table('event_event_')->where('id',$b)->delete();
         return Redirect::back();
     }
    

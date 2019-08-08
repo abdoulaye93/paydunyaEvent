@@ -23,10 +23,7 @@ class EventList extends ComponentBase
             'description'=>'Entrer un évènement'
         ];
     }
-    public function onSave(){
-      
-    }
-   
+   //recuperation de la periode d'un evenement
     public function priode($id){
         $perio = Db::table('event_event_periode')->where('id', $id)->first();
         return $perio;
@@ -36,10 +33,12 @@ class EventList extends ComponentBase
         Config::get('app.url'); 
         $this->prepareVarsevnt();
     }
+    //recuperation de l'ensemble des evements
     public function loadEvents(){  
        
         return Event::all();
     }
+    //recuperation de evenement expirer
     public function loadEventsExpire(){
         $eventexpire =Db::table('event_event_')
         ->join('event_event_periode', function ($join) {
@@ -50,6 +49,7 @@ class EventList extends ComponentBase
       
         return $eventexpire;
     }
+    //recuperation des evenements activé
     public function loadEventsActive(){
         $eventexpire =Db::table('event_event_')
         ->join('event_event_periode', function ($join) {
@@ -59,20 +59,16 @@ class EventList extends ComponentBase
         ->get();
         return $eventexpire;
     }
+    //declaration des variables au demarage
     function onStart(){$this->prepareVarsevnt();}
-function prepareVarsevnt(){
-  $option=post('Filter',[]);
-  $eventsactive=Db::table('event_event_')
-  ->join('event_event_periode', function ($join) {
-      $join->on('event_event_.periode_id', '=', 'event_event_periode.id')
-          ->where('event_event_periode.date_cloture', '<', Carbon::now());
-  })
-  ->get();
-  /*$this['eventexpire']=Db::table('event_event_')
-  ->join('event_event_periode', function ($join) {
-      $join->on('event_event_.periode_id', '=', 'event_event_periode.id')
-          ->where('event_event_periode.date_cloture', '<', Carbon::now());
-  })
-  ->get();*/
-}
+    //preparation des variables 
+    function prepareVarsevnt(){
+    $option=post('Filter',[]);
+    $eventsactive=Db::table('event_event_')
+    ->join('event_event_periode', function ($join) {
+        $join->on('event_event_.periode_id', '=', 'event_event_periode.id')
+            ->where('event_event_periode.date_cloture', '<', Carbon::now());
+    })
+    ->get();
+    }
 }

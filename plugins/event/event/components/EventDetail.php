@@ -29,16 +29,19 @@ class EventDetail extends ComponentBase
        
      
     }
+    //recuperation d'un evenement
     public function loadEvents(){     
         $b=Request::segment(2);
         $evenon = Event::where('id',$b)->get();
         return $evenon;
     }
+    //recuperation du type de ticket d'un evenement
     public function loadTypeticket(){
         $b=Request::segment(2);
         $subevent = TypeTicket::where('event_id',$b)->get();
         return $subevent;
     }
+    //recuperation des sous evenement d'un evenement
     public function loadSubEvent(){
         $b=Request::segment(2);
         $subevent = SubList::where('event_id',$b)->get();

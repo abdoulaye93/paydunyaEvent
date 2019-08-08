@@ -29,11 +29,13 @@ class Promo extends ComponentBase
        
      
     }
+        //recuperation d'un evenement
     public function loadEvents(){     
         $b=Request::segment(2);
         $evenon = Event::where('id',$b)->get();
         return $evenon;
     }
+    //recuperation des sous evenement d'un evenement
     public function loadSubEvent(){
         $b=Request::segment(2);
         $subevent = SubList::where('event_id',$b)->get();

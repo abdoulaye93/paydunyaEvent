@@ -29,10 +29,12 @@ class Ticket extends ComponentBase
        
      
     }
+    //recuperation du montant dans l'url
     public function loadMontant(){     
         $b=Request::segment(2);
         return $b;
     }
+    //recuoeration des sous evenement d'un evenment 
     public function loadSubEvent(){
         $b=Request::segment(2);
         $subevent = SubList::where('event_id',$b)->get();

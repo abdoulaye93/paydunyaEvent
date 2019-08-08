@@ -27,12 +27,15 @@ class AdminDemande extends ComponentBase
     }
    
     public function onRun(){
+        //supprimer les demande notification une fois vusialiser
         Db::table('event_event_notif_demande')->truncate();
      
     }
+    //recuperation des demandes d'annulation d'un evenement
     public function loadEvents(){     
         return DemandeAnnullationEvent::all();
     }
+    //suppression de la demande d'annulation d'un evenement et de l'evenment meme
     public function onSup(){
         $b=Input::get('supprimer');
         Db::table('event_event_')->where('id',$b)->delete();

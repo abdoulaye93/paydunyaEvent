@@ -35,6 +35,7 @@ class ManageEvent extends ComponentBase
     }
    
     public function onRun(){
+        //activation et desactivation du droit de modification d'un evement a 5 avant l'evenment
         $date=new Carbon();
         Db::table('event_event_')
         ->join('event_event_periode', 'event_event_periode.id', '=', 'event_event_.periode_id')
@@ -46,21 +47,25 @@ class ManageEvent extends ComponentBase
         ->update(['modif_droit'=>false]);
      
     }
+    //recuperation des evenements des evenement d'un utilisateur
     public function loadEvents(){     
         $b=Request::segment(2);
         $evenon = Event::where('user_id',$b)->get();
         return $evenon;
     }
+    //recuperation des evenements des evenement d'un utilisateur
     public function loadpulichEvent(){
         $b=Request::segment(2);
         $evenon = Event::where('user_id',$b)->get();
         return $evenon;
     }
+    //recuperation des evenements des evenement d'un utilisateur
     public function loadpEpirerEvent(){
         $b=Request::segment(2);
         $evenon = Event::where('user_id',$b)->get();
         return $evenon;
     }
+    //annulation d'un evenement
     public function onAnnule(){
         $event_id=Input::get('event_id');
         $user_id=Input::get('user_id');
@@ -87,11 +92,10 @@ class ManageEvent extends ComponentBase
        
         return Redirect::back();
     }
+    //activation d'un evenment
     public function onActive(){
         $event_id=Request::segment(2);
-       // dd(Request::segment(2));
         $email=Input::get('email');
-       // dd($email);
         $user = Db::table('users')->where('email', Input::get('email'))->first();
         if($user){
             $accesEven=new AccessEvent();
@@ -99,7 +103,6 @@ class ManageEvent extends ComponentBase
             $accesEven->event_id=$event_id;
             $accesEven->save();
             $vars = ['name' => 'Joe', 'user' => 'Mary'];
-           // $email=Input::get('email');
             Mail::send('event.event::mail.message', $vars, function($message) {
     
                 $message->to(Input::get('email'), 'Admin Person');
@@ -113,9 +116,11 @@ class ManageEvent extends ComponentBase
         }
        
     }
+    //recuperation de lurl en cours 
     public function loadUrl(){
         return Config::get('app.url');
     }
+    //activation de du code promo d'un evement
     public function onPromo(){
         $event_id=Input::get('event_id');
         $promo=Input::get('promo');
@@ -132,6 +137,7 @@ class ManageEvent extends ComponentBase
        
         return Redirect::back();
     }
+    //enregistrement de la position d'un evenement
     public function onPosition(){
         $event_id=Input::get('event');
         $position=new Position();
@@ -144,6 +150,7 @@ class ManageEvent extends ComponentBase
         ->update(['position_id' => $id]);
         return Redirect::back();
     }
+    //envoi de mail de notification a tous les users qui ont participé a ton evenement
     function onPush(){
         if(sizeof($this->getMail())!=0){
             $vars = ['name' => 'Joe', 'user' => 'Mary'];
@@ -158,6 +165,7 @@ class ManageEvent extends ComponentBase
            });
         }  
     }
+    //recuperation de l'enemble des mail des uers qui ont participé a ton evenement
     public function getMail(){
         $u= Db::table('event_event_achat')
         ->join('event_event_', function ($join) {

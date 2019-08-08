@@ -31,21 +31,25 @@ class Access extends ComponentBase
        
      
     }
+     //recuperation des evenements 
     public function loadEvents(){     
         $b=Request::segment(2);
         $evenon = AccessEvent::where('user_id',$b)->get();
         return $evenon;
     }
+     //recuperation des evenements publier
     public function loadpulichEvent(){
         $b=Request::segment(2);
         $evenon = Event::where('user_id',$b)->get();
         return $evenon;
     }
+    //recuperation des evenements expirer
     public function loadpEpirerEvent(){
         $b=Request::segment(2);
         $evenon = Event::where('user_id',$b)->get();
         return $evenon;
     }
+    //annulation d'un evenement
     public function onAnnule(){
         $event_id=Input::get('event_id');
         $user_id=Input::get('user_id');
@@ -75,6 +79,7 @@ class Access extends ComponentBase
         });
         return Redirect::back();
     }
+    //Activation d'un evenement
     public function onActive(){
         $event_id=Request::segment(2);
         $email=Input::get('email');

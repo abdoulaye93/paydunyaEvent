@@ -24,13 +24,8 @@ class EventForm extends ComponentBase
             'description'=>'Entrer un évènement'
         ];
     }
+    //creation d'un evenement
     public function onSave(){
-      /*  throw new ValidationException(['nom' => 'Entrer le nom!',
-        'lieu'=>'Entrer le lieu!',
-        'date_event'=>'Entrer la date!',
-        'date_cloture'=>'Entrer la date de cloture!',
-        'nbrticket'=>'Entrer le nombre de ticket!',
-        'description'=>'Entrer la decription!']);*/
         $data = post();
 
         $rules = [
@@ -134,9 +129,11 @@ class EventForm extends ComponentBase
     public function onRun(){
         $this->types=$this->loadEvents();
     }
+    //recuperation des types d'evenement
     public function loadEvents(){
         return Type::all();
     }
+    //recuperation des types d'evenement
     public function loadSubs(){
         return Type::all();
     }
@@ -145,9 +142,11 @@ class EventForm extends ComponentBase
     public function setSub($par){
         $this->$subs=$par;
     }
+    //recuperation des categorie d'evenement
     public function loadCategory(){
         return Categorie::all();
     }
+    //enregistrement de la categorie par defaut
     public function onType(){
         $c=new Categorie();
         $c->categorie="autre";
