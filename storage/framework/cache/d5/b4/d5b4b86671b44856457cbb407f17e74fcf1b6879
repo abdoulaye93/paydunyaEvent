@@ -1,10 +1,11 @@
-1565285607a:1:{s:12:"position.htm";a:6:{s:8:"fileName";s:12:"position.htm";s:7:"content";s:3307:"==
+1565306053a:1:{s:12:"position.htm";a:6:{s:8:"fileName";s:12:"position.htm";s:7:"content";s:3503:"==
 <!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Custom Controls</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -89,14 +90,15 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMycsqrP-SmPjklBMnvzU7DKNCmebIcjo&callback=initMap">
     </script>
-      
+      <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
   </body>
-</html>";s:5:"mtime";i:1564576707;s:6:"markup";s:3303:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1565303615;s:6:"markup";s:3499:"<!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Custom Controls</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -181,6 +183,6 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMycsqrP-SmPjklBMnvzU7DKNCmebIcjo&callback=initMap">
     </script>
-      
+      <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
   </body>
 </html>";s:4:"code";N;s:17:"_PARSER_ERROR_INI";s:0:"";}}

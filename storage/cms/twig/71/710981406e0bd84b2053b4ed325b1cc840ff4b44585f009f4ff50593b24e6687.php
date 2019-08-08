@@ -38,6 +38,7 @@ class __TwigTemplate_af82a7ec50d28d488137b4d3a7d0d849f9d9cf7b3a3172448829e57efc9
     <meta name=\"viewport\" content=\"initial-scale=1.0, user-scalable=no\">
     <meta charset=\"utf-8\">
     <title>Custom Controls</title>
+    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -55,9 +56,9 @@ class __TwigTemplate_af82a7ec50d28d488137b4d3a7d0d849f9d9cf7b3a3172448829e57efc9
   <body>
  <section id=\"layout-content\">
             ";
-        // line 23
-        echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
         // line 24
+        echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
+        // line 25
         echo "        </section>
        
 <div id=\"map\"></div>
@@ -125,7 +126,7 @@ class __TwigTemplate_af82a7ec50d28d488137b4d3a7d0d849f9d9cf7b3a3172448829e57efc9
     <script async defer
     src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyCMycsqrP-SmPjklBMnvzU7DKNCmebIcjo&callback=initMap\">
     </script>
-      
+      <script src=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js\"></script>
   </body>
 </html>";
     }
@@ -137,7 +138,7 @@ class __TwigTemplate_af82a7ec50d28d488137b4d3a7d0d849f9d9cf7b3a3172448829e57efc9
 
     public function getDebugInfo()
     {
-        return array (  61 => 24,  59 => 23,  35 => 1,);
+        return array (  62 => 25,  60 => 24,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -148,6 +149,7 @@ class __TwigTemplate_af82a7ec50d28d488137b4d3a7d0d849f9d9cf7b3a3172448829e57efc9
     <meta name=\"viewport\" content=\"initial-scale=1.0, user-scalable=no\">
     <meta charset=\"utf-8\">
     <title>Custom Controls</title>
+    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -232,7 +234,7 @@ class __TwigTemplate_af82a7ec50d28d488137b4d3a7d0d849f9d9cf7b3a3172448829e57efc9
     <script async defer
     src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyCMycsqrP-SmPjklBMnvzU7DKNCmebIcjo&callback=initMap\">
     </script>
-      
+      <script src=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js\"></script>
   </body>
 </html>", "C:\\wamp64\\www\\install-master1/themes/demo/layouts/position.htm", "");
     }

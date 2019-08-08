@@ -33,7 +33,11 @@ class ManageEvent extends ComponentBase
             'description'=>'Entrer un évènement'
         ];
     }
-   
+   function onStart(){
+       $this->loadEvents();
+       $this->loadpulichEvent();
+       $this->loadpEpirerEvent();
+   }
     public function onRun(){
         //activation et desactivation du droit de modification d'un evement a 5 avant l'evenment
         $date=new Carbon();
@@ -50,20 +54,17 @@ class ManageEvent extends ComponentBase
     //recuperation des evenements des evenement d'un utilisateur
     public function loadEvents(){     
         $b=Request::segment(2);
-        $evenon = Event::where('user_id',$b)->get();
-        return $evenon;
+        return $this['manageevent'] = Event::where('user_id',$b)->get();
     }
     //recuperation des evenements des evenement d'un utilisateur
     public function loadpulichEvent(){
         $b=Request::segment(2);
-        $evenon = Event::where('user_id',$b)->get();
-        return $evenon;
+        return $this['manageeventacitve'] = Event::where('user_id',$b)->get();
     }
     //recuperation des evenements des evenement d'un utilisateur
     public function loadpEpirerEvent(){
         $b=Request::segment(2);
-        $evenon = Event::where('user_id',$b)->get();
-        return $evenon;
+        return $this['manageeventexpire'] = Event::where('user_id',$b)->get();
     }
     //annulation d'un evenement
     public function onAnnule(){
@@ -179,9 +180,6 @@ class ManageEvent extends ComponentBase
         
      }
      return $emptyArray;
-    }
-    function onStart(){
-      
     }
    
 }

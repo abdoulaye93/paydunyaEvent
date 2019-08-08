@@ -48,7 +48,7 @@ class Event extends Model
     public $rules = [
     ];
     //filtrage de levenment
-    public function scopeListFrontEnd($query,$option = []){
+    public function scopeListFrontEnd($query,$option = [],$b){
             extract(array_merge([
                 'page'=>1,
                 'perPage'=>6,

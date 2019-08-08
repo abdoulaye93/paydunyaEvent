@@ -204,7 +204,7 @@ class __TwigTemplate_612dc76171d58be8fbc95f846dc070e58982aad6f438a503bf9ce2a516f
                                     <div class=\"form-element square\">
                                             <label>Montant
                                             </label>
-                                            <input type=\"text\"  value=\"\" placeholder=\"Nom\" class=\"input-field-square\"  id='inputTask1'>
+                                            <input type=\"text\"  value=\"\" placeholder=\"montant\" class=\"input-field-square\"  id='inputTask1'>
                                         </div>
                             </div>
                             
@@ -214,7 +214,7 @@ class __TwigTemplate_612dc76171d58be8fbc95f846dc070e58982aad6f438a503bf9ce2a516f
                                         <div class=\"form-element square\">
                                                 <label>Nombre de place
                                                 </label>
-                                                <input type=\"number\"  value=\"\" placeholder=\"Nom\" class=\"input-field-square\" id='inputTask2'>
+                                                <input type=\"number\"  value=\"\" placeholder=\"nombre de place...\" class=\"input-field-square\" id='inputTask2'>
                                             </div>
                                 </div>
                                 <div class=\"col-md-4\">
@@ -388,13 +388,14 @@ doThisOnChange = function( value, optionIndex)
     }
    // alert( \"Do something with the value: \" + value );
 }
-
+//impresion du ticket
     function edition() { options = \"Width=700,Height=700\" ; window.open( \"";
         // line 332
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("ticket");
         echo "\", \"edition\", options ) ; }
      var row = 1;
      var typ=1;
+     //gestion du nombre de sous evement ajouté
 function nbsub(){
     var nb=document.createElement(\"div\");
     document.getElementById('addTask').appendChild(nb);
@@ -412,6 +413,7 @@ function nbsub(){
     ligne1.setAttribute(\"name\", \"nbtype\");
     nbtype.appendChild(ligne1);
 }
+//ajout d'un sous evenement
 function addText(){
     var input = document.getElementById('inputTask').value;
     var input1 = document.getElementById('inputTask1').value;
@@ -481,7 +483,7 @@ function deleterow(ID)
 {
     document.getElementById('contentP'+ID).remove();
 }
-
+//ajout d'un type de ticket
 function addtype(){
     var input1 = document.getElementById('inputtype1').value;
     var input2 = document.getElementById('inputtype2').value;
@@ -703,7 +705,7 @@ function deletetype(ID)
                                     <div class=\"form-element square\">
                                             <label>Montant
                                             </label>
-                                            <input type=\"text\"  value=\"\" placeholder=\"Nom\" class=\"input-field-square\"  id='inputTask1'>
+                                            <input type=\"text\"  value=\"\" placeholder=\"montant\" class=\"input-field-square\"  id='inputTask1'>
                                         </div>
                             </div>
                             
@@ -713,7 +715,7 @@ function deletetype(ID)
                                         <div class=\"form-element square\">
                                                 <label>Nombre de place
                                                 </label>
-                                                <input type=\"number\"  value=\"\" placeholder=\"Nom\" class=\"input-field-square\" id='inputTask2'>
+                                                <input type=\"number\"  value=\"\" placeholder=\"nombre de place...\" class=\"input-field-square\" id='inputTask2'>
                                             </div>
                                 </div>
                                 <div class=\"col-md-4\">
@@ -880,10 +882,11 @@ doThisOnChange = function( value, optionIndex)
     }
    // alert( \"Do something with the value: \" + value );
 }
-
+//impresion du ticket
     function edition() { options = \"Width=700,Height=700\" ; window.open( \"{{ 'ticket'|page}}\", \"edition\", options ) ; }
      var row = 1;
      var typ=1;
+     //gestion du nombre de sous evement ajouté
 function nbsub(){
     var nb=document.createElement(\"div\");
     document.getElementById('addTask').appendChild(nb);
@@ -901,6 +904,7 @@ function nbsub(){
     ligne1.setAttribute(\"name\", \"nbtype\");
     nbtype.appendChild(ligne1);
 }
+//ajout d'un sous evenement
 function addText(){
     var input = document.getElementById('inputTask').value;
     var input1 = document.getElementById('inputTask1').value;
@@ -970,7 +974,7 @@ function deleterow(ID)
 {
     document.getElementById('contentP'+ID).remove();
 }
-
+//ajout d'un type de ticket
 function addtype(){
     var input1 = document.getElementById('inputtype1').value;
     var input2 = document.getElementById('inputtype2').value;

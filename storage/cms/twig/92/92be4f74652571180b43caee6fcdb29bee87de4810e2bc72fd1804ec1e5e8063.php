@@ -125,6 +125,7 @@ class __TwigTemplate_23440fe094ed9b62ea4f4358a290486b9236e04a3a88005d7caeebe6a18
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\">
 <!-- Material Design Bootstrap -->
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
+<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
     <style media=\"screen\">
   .eml {
     color: red;
@@ -191,23 +192,23 @@ class __TwigTemplate_23440fe094ed9b62ea4f4358a290486b9236e04a3a88005d7caeebe6a18
     
        <header id=\"layout-header\">
             ";
-        // line 109
+        // line 110
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 110
+        // line 111
         echo "        </header>
 
         ";
-        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 112
+        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 113
         $context["type"] = "success"        ;        foreach (Flash::success        () as $message) {
-            $context["message"] = $message;            // line 113
+            $context["message"] = $message;            // line 114
             echo "          <div class=\"container\">
               <div class=\"row\">
                   <div class=\"col-lg-12\">
                   <br>
                       <p class=\"bg-success\">";
-            // line 117
+            // line 118
             echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
             echo "</p>
                   </div>
@@ -215,43 +216,43 @@ class __TwigTemplate_23440fe094ed9b62ea4f4358a290486b9236e04a3a88005d7caeebe6a18
           </div>
       ";
         }
-        $context["type"] = $_type;        $context["message"] = $_message;        // line 122
+        $context["type"] = $_type;        $context["message"] = $_message;        // line 123
         echo "
     <!-- navbar area start -->
 
         <!-- Content -->
         <section id=\"layout-content\">
             ";
-        // line 127
-        echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
         // line 128
+        echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
+        // line 129
         echo "        </section>
        
         <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 132
+        // line 133
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 133
+        // line 134
         echo "        </footer>
 
         <!-- Scripts -->
         <script src=\"";
-        // line 136
+        // line 137
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
         <script src=\"";
-        // line 137
+        // line 138
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
         <script src=\"";
-        // line 138
+        // line 139
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script>
         ";
-        // line 139
+        // line 140
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="'. Request::getBasePath()
@@ -266,11 +267,11 @@ class __TwigTemplate_23440fe094ed9b62ea4f4358a290486b9236e04a3a88005d7caeebe6a18
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 140
+        // line 141
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 141
+        // line 142
         echo "        
 <script>
   (function(\$){
@@ -417,6 +418,7 @@ class __TwigTemplate_23440fe094ed9b62ea4f4358a290486b9236e04a3a88005d7caeebe6a18
 
 <!-- main -->
 <script src=\"http://lab.thesoftking.com/eticket/assets/user/js/main.js\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js\"></script>
 
     <script>
         function loginUser(e) {
@@ -484,7 +486,7 @@ class __TwigTemplate_23440fe094ed9b62ea4f4358a290486b9236e04a3a88005d7caeebe6a18
 
     public function getDebugInfo()
     {
-        return array (  274 => 141,  270 => 140,  255 => 139,  251 => 138,  247 => 137,  243 => 136,  238 => 133,  234 => 132,  228 => 128,  226 => 127,  219 => 122,  211 => 117,  205 => 113,  203 => 112,  199 => 110,  195 => 109,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
+        return array (  275 => 142,  271 => 141,  256 => 140,  252 => 139,  248 => 138,  244 => 137,  239 => 134,  235 => 133,  229 => 129,  227 => 128,  220 => 123,  212 => 118,  206 => 114,  204 => 113,  200 => 111,  196 => 110,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -532,6 +534,7 @@ class __TwigTemplate_23440fe094ed9b62ea4f4358a290486b9236e04a3a88005d7caeebe6a18
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\">
 <!-- Material Design Bootstrap -->
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
+<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
     <style media=\"screen\">
   .eml {
     color: red;
@@ -775,6 +778,7 @@ class __TwigTemplate_23440fe094ed9b62ea4f4358a290486b9236e04a3a88005d7caeebe6a18
 
 <!-- main -->
 <script src=\"http://lab.thesoftking.com/eticket/assets/user/js/main.js\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js\"></script>
 
     <script>
         function loginUser(e) {

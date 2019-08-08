@@ -1,5 +1,5 @@
 <?php 
-use Carbon\Carbon;use event\event\models\Event;use event\event\models\NotifDemande;use Demande\Demande\Models\DemandeAnnullationAchat;class Cms5d496ddb8f132977922683_b8fc9e3b509e90987b5300e4b2077db4Class extends Cms\Classes\LayoutCode
+use Carbon\Carbon;use event\event\models\Event;use event\event\models\NotifDemande;use Demande\Demande\Models\DemandeAnnullationAchat;class Cms5d4cab894cb36184638602_e330266b6f1f48c705c37014e25d189dClass extends Cms\Classes\LayoutCode
 {
   
   
@@ -15,8 +15,9 @@ public function onFilterEvents()
   }
 public function prepareVars()
   {
+    $b=Request::segment(2);
     $option=post('Filter',[]);
-    $this['events']=Event::ListFrontEnd($option);
+    $this['events']=Event::ListFrontEnd($option,$b);
     $this['pages']=$this['events']->lastPage(); 
   }
 public function onAnnuler() 
