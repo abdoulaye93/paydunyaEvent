@@ -228,3 +228,12 @@
 1.0.77:
     - 'Updated table event_event_'
     - builder_table_update_event_event__34.php
+1.0.78:
+    - 'Updated table event_event_achat'
+    - builder_table_update_event_event_achat.php
+1.0.79:
+    - 'Updated table event_event_achat'
+    - builder_table_update_event_event_achat_2.php
+1.0.80:
+    - 'Updated table event_event_achat'
+    - builder_table_update_event_event_achat_3.php

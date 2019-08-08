@@ -1,4 +1,4 @@
-1565193036a:1:{s:22:"events/manageevent.htm";a:5:{s:8:"fileName";s:22:"events/manageevent.htm";s:7:"content";s:6064:"{%set id=user.id%}
+1565262957a:1:{s:22:"events/manageevent.htm";a:5:{s:8:"fileName";s:22:"events/manageevent.htm";s:7:"content";s:6325:"{%set id=user.id%}
 {% if events|length%}
    {% for item in events %}
    
@@ -13,6 +13,7 @@
          <th scope="col" class="action_th" >INVITATION</th>
          <th scope="col" class="action_th" >Promotion</th>
          <th scope="col" class="action_th" >Prosition</th>
+         <th scope="col" class="action_th" >push Mail au userss</th>
          </tr>
      </thead>
      <tbody>
@@ -76,7 +77,12 @@
                     </form> 
                    
               {%endif%}
-          </td>                       
+          </td>   
+          <td>
+                <form data-request="onPush">
+                        <button type="submit" class="btn  btn-sm">Send Mail</button>
+                </form> 
+          </td>                    
          </tr>
      </tbody>
    </table>                         
@@ -118,7 +124,7 @@
  <div class="row" class="text-center">
         <h3 class="">NO  event FOUND</h3>
     </div>
-{%endif%}";s:5:"mtime";i:1565192433;s:6:"markup";s:6064:"{%set id=user.id%}
+{%endif%}";s:5:"mtime";i:1565196321;s:6:"markup";s:6325:"{%set id=user.id%}
 {% if events|length%}
    {% for item in events %}
    
@@ -133,6 +139,7 @@
          <th scope="col" class="action_th" >INVITATION</th>
          <th scope="col" class="action_th" >Promotion</th>
          <th scope="col" class="action_th" >Prosition</th>
+         <th scope="col" class="action_th" >push Mail au userss</th>
          </tr>
      </thead>
      <tbody>
@@ -196,7 +203,12 @@
                     </form> 
                    
               {%endif%}
-          </td>                       
+          </td>   
+          <td>
+                <form data-request="onPush">
+                        <button type="submit" class="btn  btn-sm">Send Mail</button>
+                </form> 
+          </td>                    
          </tr>
      </tbody>
    </table>                         

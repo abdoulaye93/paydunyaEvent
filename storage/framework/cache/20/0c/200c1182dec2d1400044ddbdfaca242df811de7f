@@ -1,4 +1,4 @@
-1565187586a:1:{s:16:"admin/events.htm";a:5:{s:8:"fileName";s:16:"admin/events.htm";s:7:"content";s:3801:"<div class="row" style="text-align:center;display:block;">
+1565196871a:1:{s:16:"admin/events.htm";a:5:{s:8:"fileName";s:16:"admin/events.htm";s:7:"content";s:3801:"<div class="row" style="text-align:center;display:block;">
         {% if events|length%}
         {% for item in events %}                                
               <table id="example" class="table table-striped table-bordered" style="width:100%">

@@ -1,0 +1,62 @@
+1565262813a:1:{s:9:"achat.htm";a:9:{s:8:"fileName";s:9:"achat.htm";s:7:"content";s:1360:"title = "achat"
+url = "/achat"
+layout = "default"
+is_hidden = 0
+==
+<?
+use event\event\models\AchatList;
+    function onStart(){
+        $user = Auth::getUser();
+        $this['achats'] = AchatList::where('user_email', '=', $user->email)->get();
+    }
+?>
+==
+
+
+
+
+<div class="row">
+        <div class="col-lg-12 remove-col-padding-mobile">
+            <div class="tab-content">
+                <div class="tab-pane container active" id="active_tab">
+                        {% partial 'achat/achat' %}
+                 </div>
+                 
+                 {{form_ajax('onFilterEvents',{update:{'demande/demandes':'#active_tab'}})}}
+                 <div id="EventFilter" class="text-center">
+                         <label>Page</label>
+                         <select class="ui fluid dropdown" name="Filter[page]">
+                             {% for i in 1..pages %}
+                                 {%  if i == page %}
+                                     <option value="{{page}}" selected>{{ page }}</option>
+                                 {% else %}
+                                     <option value="{{i}}">{{ i }}</option>
+                                 {% endif %}
+                             {% endfor %}
+                         </select>
+                     </div>
+                     {{form_close()}}";s:5:"mtime";i:1565262210;s:6:"markup";s:1082:"<div class="row">
+        <div class="col-lg-12 remove-col-padding-mobile">
+            <div class="tab-content">
+                <div class="tab-pane container active" id="active_tab">
+                        {% partial 'achat/achat' %}
+                 </div>
+                 
+                 {{form_ajax('onFilterEvents',{update:{'demande/demandes':'#active_tab'}})}}
+                 <div id="EventFilter" class="text-center">
+                         <label>Page</label>
+                         <select class="ui fluid dropdown" name="Filter[page]">
+                             {% for i in 1..pages %}
+                                 {%  if i == page %}
+                                     <option value="{{page}}" selected>{{ page }}</option>
+                                 {% else %}
+                                     <option value="{{i}}">{{ i }}</option>
+                                 {% endif %}
+                             {% endfor %}
+                         </select>
+                     </div>
+                     {{form_close()}}";s:4:"code";s:184:"use event\event\models\AchatList;
+    function onStart(){
+        $user = Auth::getUser();
+        $this['achats'] = AchatList::where('user_email', '=', $user->email)->get();
+    }";s:5:"title";s:5:"achat";s:3:"url";s:6:"/achat";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";}}

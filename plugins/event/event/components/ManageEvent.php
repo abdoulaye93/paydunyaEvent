@@ -15,7 +15,11 @@ use event\event\models\NotifDemande;
 use event\event\models\Position;
 use Mail;
 use Flash;
+use Auth;
+use rainlab\user\models\User;
+use event\event\models\AchatList;
 use Db;
+use  BackendAuth;
 use Config;
 use Request;
 use Carbon\Carbon;
@@ -139,6 +143,37 @@ class ManageEvent extends ComponentBase
         ->where('id', $event_id)
         ->update(['position_id' => $id]);
         return Redirect::back();
+    }
+    function onPush(){
+        if(sizeof($this->getMail())!=0){
+            $vars = ['name' => 'Joe', 'user' => 'Mary'];
+        Mail::send('event.event::mail.message', $vars, function($message) {
+            $mail="";
+            for ($i=0; $i<count($this->getMail()); $i++) {
+                $mail= $mail.$this->getMail()[$i].",";
+            }
+            $mail=rtrim($mail,", ");
+            $message->to([$mail], 'Admin Person');
+            $message->subject('new event');
+           });
+        }  
+    }
+    public function getMail(){
+        $u= Db::table('event_event_achat')
+        ->join('event_event_', function ($join) {
+            $join->on('event_event_achat.event_id', '=', 'event_event_.id')
+                ->where('event_event_.user_id', '=', Auth::getUser()->id);
+        })
+        ->get();
+        $emptyArray = [];
+        foreach($u as $i){    
+         $emptyArray[]=$i->user_email;
+        
+     }
+     return $emptyArray;
+    }
+    function onStart(){
+      
     }
    
 }

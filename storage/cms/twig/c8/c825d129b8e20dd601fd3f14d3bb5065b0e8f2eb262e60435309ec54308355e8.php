@@ -35,7 +35,7 @@ class __TwigTemplate_6fcbab4712869f62c1bceb2c467e4f35a681cafb4609905d837c2635608
         echo "<script type=\"text/javascript\"> window.print() ; </script>
 
 <div>
-    hehhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+    votre ticket
     nom de event";
         // line 5
         if (twig_length_filter($this->env, ($context["event"] ?? null))) {
@@ -82,7 +82,7 @@ class __TwigTemplate_6fcbab4712869f62c1bceb2c467e4f35a681cafb4609905d837c2635608
         return new Source("<script type=\"text/javascript\"> window.print() ; </script>
 
 <div>
-    hehhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+    votre ticket
     nom de event{% if event|length%} {%for item in event%} {{item.nom}} {%endfor%} {%endif%} nom {{nomticket }} nbr  {{nbrticket}}   montant{{montant }}
 </div>", "C:\\wamp64\\www\\install-master1/themes/demo/layouts/ticket.htm", "");
     }

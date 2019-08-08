@@ -1,4 +1,4 @@
-1565177962a:1:{s:10:"ticket.htm";a:6:{s:8:"fileName";s:10:"ticket.htm";s:7:"content";s:593:"==
+1565254668a:1:{s:10:"ticket.htm";a:6:{s:8:"fileName";s:10:"ticket.htm";s:7:"content";s:567:"==
 <?
 use event\event\models\Event;
 function onStart(){
@@ -14,12 +14,12 @@ function onStart(){
 <script type="text/javascript"> window.print() ; </script>
 
 <div>
-    hehhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+    votre ticket
     nom de event{% if event|length%} {%for item in event%} {{item.nom}} {%endfor%} {%endif%} nom {{nomticket }} nbr  {{nbrticket}}   montant{{montant }}
-</div>";s:5:"mtime";i:1565177354;s:6:"markup";s:273:"<script type="text/javascript"> window.print() ; </script>
+</div>";s:5:"mtime";i:1565177399;s:6:"markup";s:247:"<script type="text/javascript"> window.print() ; </script>
 
 <div>
-    hehhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+    votre ticket
     nom de event{% if event|length%} {%for item in event%} {{item.nom}} {%endfor%} {%endif%} nom {{nomticket }} nbr  {{nbrticket}}   montant{{montant }}
 </div>";s:4:"code";s:302:"use event\event\models\Event;
 function onStart(){

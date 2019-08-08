@@ -6,7 +6,8 @@ use event\event\models\Event;
 use Carbon\Carbon;
 use event\event\models\Type;
 use event\event\models\Categorie;
-function onStart(){$this->prepareVars();}
+function onStart(){$this->prepareVars(); 
+ }
 function onFilterEvents() { $this->prepareVars(); }
 function prepareVars(){
   $option=post('Filter',[]);
@@ -16,6 +17,7 @@ function prepareVars(){
   $this['types']=Type::all();
  
 }
+
 ?>
 ==
 <!DOCTYPE html>

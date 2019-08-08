@@ -198,4 +198,5 @@
   'RainLab\\Builder\\Classes\\MigrationModel' => 'plugins\\rainlab\\builder\\classes\\MigrationModel.php',
   'RainLab\\Builder\\Classes\\FilesystemGenerator' => 'plugins\\rainlab\\builder\\classes\\FilesystemGenerator.php',
   'event\\event\\models\\AchatList' => 'plugins\\event\\event\\models\\AchatList.php',
+  'event\\event\\components\\Achat' => 'plugins\\event\\event\\components\\Achat.php',
 );

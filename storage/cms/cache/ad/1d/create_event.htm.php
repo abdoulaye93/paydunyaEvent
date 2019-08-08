@@ -1,12 +1,13 @@
 <?php 
-use event\event\models\Event;use Carbon\Carbon;use event\event\models\Type;use event\event\models\Categorie;class Cms5d4940ffbf659506490474_18a46970a3885825650f2bc53883dd57Class extends Cms\Classes\LayoutCode
+use event\event\models\Event;use Carbon\Carbon;use event\event\models\Type;use event\event\models\Categorie;class Cms5d4bfc991e05d923928564_1996d6781a87fe7afe1846c57fdf4f0fClass extends Cms\Classes\LayoutCode
 {
   
 
 
 
 
-public function onStart(){$this->prepareVars();}
+public function onStart(){$this->prepareVars(); 
+ }
 public function onFilterEvents() { $this->prepareVars(); }
 public function prepareVars(){
   $option=post('Filter',[]);

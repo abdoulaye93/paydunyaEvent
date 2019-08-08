@@ -48,7 +48,7 @@ function onStart(){
                                     <a class="dropdown-item" href="{{ 'create_event'|page }}">Créer un évènement</a>
                                     <a class="dropdown-item" href="{{ 'manage_event'|page({user_id:user.id}) }}">Gestion des évènement</a>
                                     <a class="dropdown-item" href="{{ 'access_event'|page({user_id:user.id}) }}">Invitation</a>
-                                    <a class="dropdown-item" href="{{ 'admin'|page }}">Mes achats</a>
+                                    <a class="dropdown-item" href="{{ 'achat'|page }}">Mes achats</a>
                                 </div>
                             </li>
 
@@ -58,7 +58,7 @@ function onStart(){
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paiement</a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="{{ 'configuration_payment'|page }}">Configurer le paiement</a>
-                                    <a class="dropdown-item" id="annulerAchat" data-request="onAnnuler" data-request-data="redirect: '/'" href="">Annuler un achat</a>
+                                  
                                 </div>
                             </li>
                     

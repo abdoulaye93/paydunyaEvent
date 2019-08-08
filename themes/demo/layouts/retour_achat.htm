@@ -30,9 +30,9 @@ function onStart(){
     Db::table('event_event_')
     ->where('id', $invoice->getCustomData("id"))
     ->update(['nombre_ticket' => $user->nombre_ticket-1]);
-    $user = BackendAuth::getUser();
+    $user = Auth::getUser();
     $achat=new AchatList();
-    $achat->user_id=$user->id;
+    $achat->user_email=$user->email;
     $achat->event_id=$invoice->getCustomData("id");
     $achat->save();
     

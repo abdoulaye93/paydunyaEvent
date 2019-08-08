@@ -20,7 +20,10 @@ class AchatList extends Model
      * @var string The database table used by the model.
      */
     public $table = 'event_event_achat';
-
+    public $belongsTo = [
+        'event' => ['event\event\models\Event',
+        'table'=>'event_event_type'],
+    ];
     /**
      * @var array Validation rules
      */

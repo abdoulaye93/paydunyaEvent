@@ -1,5 +1,5 @@
 <?php 
-use event\event\models\Event;class Cms5d4ab612ae01b976423648_608d2df74e96977f0f12f62322420171Class extends Cms\Classes\LayoutCode
+use event\event\models\Event;class Cms5d4af7ecebcc7135990675_d393a16654bd26ab110bd2e9e53070d2Class extends Cms\Classes\LayoutCode
 {
 
 public function onStart(){

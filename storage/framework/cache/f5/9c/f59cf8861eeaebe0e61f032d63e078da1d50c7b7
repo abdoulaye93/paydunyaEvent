@@ -1,4 +1,4 @@
-1565192760a:1:{s:22:"events/eventexpire.htm";a:5:{s:8:"fileName";s:22:"events/eventexpire.htm";s:7:"content";s:1530:"{% if events|length%}
+1565262851a:1:{s:22:"events/eventexpire.htm";a:5:{s:8:"fileName";s:22:"events/eventexpire.htm";s:7:"content";s:1530:"{% if events|length%}
 <div class="row">
    {% for item in events %}
    {% if item.periode.date_cloture < date()%}

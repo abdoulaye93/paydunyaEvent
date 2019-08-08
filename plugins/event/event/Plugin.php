@@ -19,6 +19,7 @@ class Plugin extends PluginBase
             'event\event\components\Promo'=>'Promo',
             'event\event\components\ModifSub'=>'modifSub',
             'event\event\components\Positionevent'=>'positionevent',
+            'event\event\components\Achat'=>'listAchat',
             
         ];
     }

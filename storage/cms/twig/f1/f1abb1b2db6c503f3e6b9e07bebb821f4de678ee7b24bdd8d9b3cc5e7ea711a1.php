@@ -111,7 +111,7 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
             echo "\">Invitation</a>
                                     <a class=\"dropdown-item\" href=\"";
             // line 41
-            echo $this->extensions['Cms\Twig\Extension']->pageFilter("admin");
+            echo $this->extensions['Cms\Twig\Extension']->pageFilter("achat");
             echo "\">Mes achats</a>
                                 </div>
                             </li>
@@ -130,7 +130,7 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
             // line 50
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("configuration_payment");
             echo "\">Configurer le paiement</a>
-                                    <a class=\"dropdown-item\" id=\"annulerAchat\" data-request=\"onAnnuler\" data-request-data=\"redirect: '/'\" href=\"\">Annuler un achat</a>
+                                  
                                 </div>
                             </li>
                     
@@ -384,7 +384,7 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                                     <a class=\"dropdown-item\" href=\"{{ 'create_event'|page }}\">Créer un évènement</a>
                                     <a class=\"dropdown-item\" href=\"{{ 'manage_event'|page({user_id:user.id}) }}\">Gestion des évènement</a>
                                     <a class=\"dropdown-item\" href=\"{{ 'access_event'|page({user_id:user.id}) }}\">Invitation</a>
-                                    <a class=\"dropdown-item\" href=\"{{ 'admin'|page }}\">Mes achats</a>
+                                    <a class=\"dropdown-item\" href=\"{{ 'achat'|page }}\">Mes achats</a>
                                 </div>
                             </li>
 
@@ -394,7 +394,7 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                                 <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Paiement</a>
                                 <div class=\"dropdown-menu\">
                                     <a class=\"dropdown-item\" href=\"{{ 'configuration_payment'|page }}\">Configurer le paiement</a>
-                                    <a class=\"dropdown-item\" id=\"annulerAchat\" data-request=\"onAnnuler\" data-request-data=\"redirect: '/'\" href=\"\">Annuler un achat</a>
+                                  
                                 </div>
                             </li>
                     

@@ -1,4 +1,4 @@
-1565192760a:1:{s:16:"create_event.htm";a:6:{s:8:"fileName";s:16:"create_event.htm";s:7:"content";s:12291:"[session]
+1565262851a:1:{s:16:"create_event.htm";a:6:{s:8:"fileName";s:16:"create_event.htm";s:7:"content";s:12297:"[session]
 security = "all"
 ==
 <?  
@@ -6,7 +6,8 @@ use event\event\models\Event;
 use Carbon\Carbon;
 use event\event\models\Type;
 use event\event\models\Categorie;
-function onStart(){$this->prepareVars();}
+function onStart(){$this->prepareVars(); 
+ }
 function onFilterEvents() { $this->prepareVars(); }
 function prepareVars(){
   $option=post('Filter',[]);
@@ -16,6 +17,7 @@ function prepareVars(){
   $this['types']=Type::all();
  
 }
+
 ?>
 ==
 <!DOCTYPE html>
@@ -338,7 +340,7 @@ $('#EventFilter').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:5:"mtime";i:1565081853;s:6:"markup";s:11804:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1565260689;s:6:"markup";s:11804:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
@@ -658,12 +660,13 @@ $('#EventFilter').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:4:"code";s:442:"  
+</html>";s:4:"code";s:446:"  
 use event\event\models\Event;
 use Carbon\Carbon;
 use event\event\models\Type;
 use event\event\models\Categorie;
-function onStart(){$this->prepareVars();}
+function onStart(){$this->prepareVars(); 
+ }
 function onFilterEvents() { $this->prepareVars(); }
 function prepareVars(){
   $option=post('Filter',[]);

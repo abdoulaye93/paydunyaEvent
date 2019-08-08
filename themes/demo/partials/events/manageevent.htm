@@ -13,6 +13,7 @@
          <th scope="col" class="action_th" >INVITATION</th>
          <th scope="col" class="action_th" >Promotion</th>
          <th scope="col" class="action_th" >Prosition</th>
+         <th scope="col" class="action_th" >push Mail au userss</th>
          </tr>
      </thead>
      <tbody>
@@ -76,7 +77,12 @@
                     </form> 
                    
               {%endif%}
-          </td>                       
+          </td>   
+          <td>
+                <form data-request="onPush">
+                        <button type="submit" class="btn  btn-sm">Send Mail</button>
+                </form> 
+          </td>                    
          </tr>
      </tbody>
    </table>                         

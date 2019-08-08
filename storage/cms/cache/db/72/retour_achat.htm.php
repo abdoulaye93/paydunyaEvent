@@ -1,5 +1,5 @@
 <?php 
-use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;use event\event\models\AchatList;class Cms5d4af014d82f5799292779_cfd52667b1a0dda37aac8b44f3adac0eClass extends Cms\Classes\LayoutCode
+use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;use event\event\models\AchatList;class Cms5d4beda082178978830949_85629cec878cc97bbed72c036c161ad8Class extends Cms\Classes\LayoutCode
 {
 
 
@@ -31,9 +31,9 @@ public function onStart(){
     Db::table('event_event_')
     ->where('id', $invoice->getCustomData("id"))
     ->update(['nombre_ticket' => $user->nombre_ticket-1]);
-    $user = BackendAuth::getUser();
+    $user = Auth::getUser();
     $achat=new AchatList();
-    $achat->user_id=$user->id;
+    $achat->user_email=$user->email;
     $achat->event_id=$invoice->getCustomData("id");
     $achat->save();
     
