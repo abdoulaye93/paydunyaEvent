@@ -17,18 +17,22 @@
                         </td>
                         <td data-label="action">
                         {%if item.state%}
+                        {%if item.remboursser%}
+                        <a>remboursserment effectué</a>
+                        {%else%}
                         <form data-request="onAnnuledemanade">
-                            <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{'manage_event_view'|page({event_id:item.event_id})}}" class="action-btn">View</a>
-                            <input type="hidden" name="event" value="{{item.event.id}}"> 
-                            <input type="submit" value="Annuller la demande d'annulation d'achat" class="btn"> 
-                        </form>  
+                                <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{'manage_event_view'|page({event_id:item.event_id})}}" class="action-btn">View</a>
+                                <input type="hidden" name="event" value="{{item.event.id}}"> 
+                                <input type="submit" value="Annuller la demande d'annulation d'achat" class="btn"> 
+                            </form>  
+                        {%endif%}
                         {%else%}
                         <form data-request="onAnnuleachat">
                             <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{'manage_event_view'|page({event_id:item.event_id})}}" class="action-btn">View</a>
                             <input type="hidden" name="usersend" value="{{user.id}}"> 
                             <input type="hidden" name="event" value="{{item.event.id}}"> 
                             <input type="hidden" name="montant" value="{{item.montant}}"> 
-                            <input type="submit" value="Annuller l'chat" class="btn">                                            
+                            <input type="submit" value="Annuller l'chat" class="btn">                                        
                         </form>   
                         {%endif%}              
                       </td>                      

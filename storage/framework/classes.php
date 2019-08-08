@@ -201,4 +201,5 @@
   'event\\event\\components\\Achat' => 'plugins\\event\\event\\components\\Achat.php',
   'event\\event\\models\\AnnulleAchat' => 'plugins\\event\\event\\models\\AnnulleAchat.php',
   'backend\\Controllers\\index' => 'modules\\backend\\controllers\\index.php',
+  'event\\event\\models\\Annulachat1' => 'plugins\\event\\event\\models\\Annulachat1.php',
 );

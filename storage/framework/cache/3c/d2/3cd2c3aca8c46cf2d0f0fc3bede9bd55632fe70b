@@ -1,4 +1,4 @@
-1565274029a:1:{s:17:"achat/demande.htm";a:5:{s:8:"fileName";s:17:"achat/demande.htm";s:7:"content";s:1426:"<div class="row" style="text-align:center;display:block;">
+1565281967a:1:{s:17:"achat/demande.htm";a:5:{s:8:"fileName";s:17:"achat/demande.htm";s:7:"content";s:1844:"<div class="row" style="text-align:center;display:block;">
         {% if demandes|length%}
         {% for item in demandes %}                                   
               <table id="example" class="table table-striped table-bordered" style="width:100%">
@@ -11,15 +11,22 @@
                     <tr class="traending_ico_tr">
                         <td data-label="ratings" class="ratings_td">
                     
-                              
-                                {{item.event_id}}  {{item.montant}}  
+                             
+                                {{item.nom}}  {{item.montant}}  
         
                         </td>
                             <td>
+                                {%if item.paye%}
+                                    <a> Remboussement effectué</a>
+                                {%else%}
                                 <form data-request="onRembourse">
-                                    <input type="hidden" name="montant" value="{{item.montant}}">
-                                    <input type="submit" class="btn" value="Rembousser">
-                                </form>
+                                        <input type="hidden" name="event" value="{{item.event_id}}">
+                                        <input type="hidden" name="usersender" value="{{item.user_send_id}}">
+                                        <input type="hidden" name="montant" value="10000">
+                                        <input type="submit" class="btn" value="Rembousser">
+                                    </form>
+                                {%endif%}
+    
                             </td>      
                     </tr>
                 </tbody>
@@ -29,7 +36,7 @@
         {%else%}
             <h3>NO demande</h3>
         {%endif%}
-    </div>";s:5:"mtime";i:1565273425;s:6:"markup";s:1426:"<div class="row" style="text-align:center;display:block;">
+    </div>";s:5:"mtime";i:1565280130;s:6:"markup";s:1844:"<div class="row" style="text-align:center;display:block;">
         {% if demandes|length%}
         {% for item in demandes %}                                   
               <table id="example" class="table table-striped table-bordered" style="width:100%">
@@ -42,15 +49,22 @@
                     <tr class="traending_ico_tr">
                         <td data-label="ratings" class="ratings_td">
                     
-                              
-                                {{item.event_id}}  {{item.montant}}  
+                             
+                                {{item.nom}}  {{item.montant}}  
         
                         </td>
                             <td>
+                                {%if item.paye%}
+                                    <a> Remboussement effectué</a>
+                                {%else%}
                                 <form data-request="onRembourse">
-                                    <input type="hidden" name="montant" value="{{item.montant}}">
-                                    <input type="submit" class="btn" value="Rembousser">
-                                </form>
+                                        <input type="hidden" name="event" value="{{item.event_id}}">
+                                        <input type="hidden" name="usersender" value="{{item.user_send_id}}">
+                                        <input type="hidden" name="montant" value="10000">
+                                        <input type="submit" class="btn" value="Rembousser">
+                                    </form>
+                                {%endif%}
+    
                             </td>      
                     </tr>
                 </tbody>

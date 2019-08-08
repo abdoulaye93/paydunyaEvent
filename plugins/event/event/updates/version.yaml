@@ -261,3 +261,27 @@
 1.0.88:
     - 'Updated table event_event_annule_achat'
     - builder_table_update_event_event_annule_achat_3.php
+1.0.89:
+    - 'Created table event_event_annule_achat1'
+    - builder_table_create_event_event_annule_achat1.php
+1.0.90:
+    - 'Updated table event_event_annule_achat1'
+    - builder_table_update_event_event_annule_achat1.php
+1.0.91:
+    - 'Updated table event_event_annule_achat1'
+    - builder_table_update_event_event_annule_achat1_2.php
+1.0.92:
+    - 'Updated table event_event_annule_achat1'
+    - builder_table_update_event_event_annule_achat1_3.php
+1.0.93:
+    - 'Updated table event_event_annule_achat1'
+    - builder_table_update_event_event_annule_achat1_4.php
+1.0.94:
+    - 'Updated table event_event_annule_achat1'
+    - builder_table_update_event_event_annule_achat1_5.php
+1.0.95:
+    - 'Updated table event_event_annule_achat1'
+    - builder_table_update_event_event_annule_achat1_6.php
+1.0.96:
+    - 'Updated table event_event_achat'
+    - builder_table_update_event_event_achat_8.php

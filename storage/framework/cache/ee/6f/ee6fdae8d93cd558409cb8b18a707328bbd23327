@@ -1,4 +1,4 @@
-1565272430a:1:{s:15:"achat/achat.htm";a:5:{s:8:"fileName";s:15:"achat/achat.htm";s:7:"content";s:2404:"<div class="row" style="text-align:center;display:block;">
+1565281952a:1:{s:15:"achat/achat.htm";a:5:{s:8:"fileName";s:15:"achat/achat.htm";s:7:"content";s:2592:"<div class="row" style="text-align:center;display:block;">
         {% if achats|length%}
         {% for item in achats %}                                   
               <table id="example" class="table table-striped table-bordered" style="width:100%">
@@ -17,18 +17,22 @@
                         </td>
                         <td data-label="action">
                         {%if item.state%}
+                        {%if item.remboursser%}
+                        <a>remboursserment effectué</a>
+                        {%else%}
                         <form data-request="onAnnuledemanade">
-                            <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{'manage_event_view'|page({event_id:item.event_id})}}" class="action-btn">View</a>
-                            <input type="hidden" name="event" value="{{item.event.id}}"> 
-                            <input type="submit" value="Annuller la demande d'annulation d'achat" class="btn"> 
-                        </form>  
+                                <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{'manage_event_view'|page({event_id:item.event_id})}}" class="action-btn">View</a>
+                                <input type="hidden" name="event" value="{{item.event.id}}"> 
+                                <input type="submit" value="Annuller la demande d'annulation d'achat" class="btn"> 
+                            </form>  
+                        {%endif%}
                         {%else%}
                         <form data-request="onAnnuleachat">
                             <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{'manage_event_view'|page({event_id:item.event_id})}}" class="action-btn">View</a>
                             <input type="hidden" name="usersend" value="{{user.id}}"> 
                             <input type="hidden" name="event" value="{{item.event.id}}"> 
                             <input type="hidden" name="montant" value="{{item.montant}}"> 
-                            <input type="submit" value="Annuller l'chat" class="btn">                                            
+                            <input type="submit" value="Annuller l'chat" class="btn">                                        
                         </form>   
                         {%endif%}              
                       </td>                      
@@ -39,7 +43,7 @@
         {%else%}
             <h3>NO demande</h3>
         {%endif%}
-    </div>";s:5:"mtime";i:1565271809;s:6:"markup";s:2404:"<div class="row" style="text-align:center;display:block;">
+    </div>";s:5:"mtime";i:1565280027;s:6:"markup";s:2592:"<div class="row" style="text-align:center;display:block;">
         {% if achats|length%}
         {% for item in achats %}                                   
               <table id="example" class="table table-striped table-bordered" style="width:100%">
@@ -58,18 +62,22 @@
                         </td>
                         <td data-label="action">
                         {%if item.state%}
+                        {%if item.remboursser%}
+                        <a>remboursserment effectué</a>
+                        {%else%}
                         <form data-request="onAnnuledemanade">
-                            <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{'manage_event_view'|page({event_id:item.event_id})}}" class="action-btn">View</a>
-                            <input type="hidden" name="event" value="{{item.event.id}}"> 
-                            <input type="submit" value="Annuller la demande d'annulation d'achat" class="btn"> 
-                        </form>  
+                                <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{'manage_event_view'|page({event_id:item.event_id})}}" class="action-btn">View</a>
+                                <input type="hidden" name="event" value="{{item.event.id}}"> 
+                                <input type="submit" value="Annuller la demande d'annulation d'achat" class="btn"> 
+                            </form>  
+                        {%endif%}
                         {%else%}
                         <form data-request="onAnnuleachat">
                             <a class="btn btn-primary btn-sm" class="btn btn-warning" href="{{'manage_event_view'|page({event_id:item.event_id})}}" class="action-btn">View</a>
                             <input type="hidden" name="usersend" value="{{user.id}}"> 
                             <input type="hidden" name="event" value="{{item.event.id}}"> 
                             <input type="hidden" name="montant" value="{{item.montant}}"> 
-                            <input type="submit" value="Annuller l'chat" class="btn">                                            
+                            <input type="submit" value="Annuller l'chat" class="btn">                                        
                         </form>   
                         {%endif%}              
                       </td>                      

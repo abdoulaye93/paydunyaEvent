@@ -1,0 +1,753 @@
+1565282039a:1:{s:18:"retour_rembour.htm";a:6:{s:8:"fileName";s:18:"retour_rembour.htm";s:7:"content";s:13873:"==
+<?
+use payment\Payment\Models\PaydunyaConfig;
+use event\event\models\Event;
+use rainlab\user\models\User;
+use event\event\models\AchatList;
+function onStart(){
+  $config = PaydunyaConfig::get()[0];
+  \Paydunya\Setup::setMasterKey($config->master_key);
+  \Paydunya\Setup::setPublicKey($config->public_key_test);
+  \Paydunya\Setup::setPrivateKey($config->private_key_test);
+  \Paydunya\Setup::setMode("test");
+  \Paydunya\Setup::setToken($config->token_test);
+    $token = $_GET['token'];
+   $id;$nbrticket;$montant;$nomticket;
+    $invoice = new \Paydunya\Checkout\CheckoutInvoice();
+    if ($invoice->confirm($token)) {
+       if($invoice->getStatus()=="completed"){
+        $uid=$invoice->getCustomData("user");
+        //$user=User::where('id',$uid)->get();
+        $user= Db::table('users')->where('id',$uid)->first();
+      //  dd($user->email);
+        Db::table('event_event_achat')
+        ->where('user_email', $user->email)
+        ->where('event_id',$invoice->getCustomData("event"))
+        ->update(['remboursser' => true]);
+        Db::table('event_event_annule_achat1')
+        ->where('event_id', $invoice->getCustomData("event"))
+        ->where('user_send_id', $uid)
+        ->update(['paye' => true]);
+       }
+    
+    }else{
+      echo $invoice->getStatus();
+      echo $invoice->response_text;
+      echo $invoice->response_code;
+    }
+}
+
+?>
+==
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta charset="utf-8">
+        <title>October CMS - {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> eTicket | Event Details  </title>
+    <!-- favicon -->
+     <link href="{{ 'assets/user/interfaceControl/logoIcon/icon.jpg'|theme }}" rel="stylesheet">
+    <!-- bootstrap -->
+     <link href="{{ 'assets/user/css/bootstrap.min.css'|theme }}" rel="stylesheet">
+         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- fontawesome -->
+     <link href="{{ 'assets/admin/css/font-awesome.min.css'|theme }}" rel="stylesheet">
+    <!-- flaticon -->
+     <link href="{{ 'assets/user/css/flaticon.css'|theme }}" rel="stylesheet">
+    <!-- bootstrap datetime picker -->
+      <link href="{{ 'assets/user/css/bootstrap-datepicker.min.css'|theme }}" rel="stylesheet">
+    <!-- animate.css -->
+     <link href="{{ 'assets/user/css/animate.css'|theme }}" rel="stylesheet">
+    <!-- Owl Carousel -->
+        <link href="{{ 'assets/user/css/owl.carousel.min.css'|theme }}" rel="stylesheet">
+    <!-- magnific popup -->
+      <link href="{{ 'assets/user/css/magnific-popup.css'|theme }}" rel="stylesheet">
+    <!-- stylesheet -->
+    <link href="{{ 'assets/user/css/style.css'|theme }}" rel="stylesheet">
+    <!-- responsive -->
+    <link href="{{ 'assets/user/css/responsive.css'|theme }}" rel="stylesheet">
+     <link href="{{ 'assets/admin/css/sweetalert.css'|theme }}" rel="stylesheet"><script src="{{ 'assets/admin/js/sweetalert.js'|theme }}"></script>
+     <link href="{{ 'assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs'|theme }}" rel="stylesheet">
+     <link href="{{ 'assets/user/css/themes/base-color.php?color=7d5fff'|theme }}" rel="stylesheet">
+     <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
+    <style media="screen">
+  .eml {
+    color: red;
+  }
+
+  .emr {
+    color: red;
+  }
+  .social-icons .fa {
+    padding-top: 14px;
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+
+  .social-icons .fa:hover {
+      opacity: 0.7;
+  }
+
+  .social-icons .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+  .social-icons .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  .social-icons .fa-google-plus {
+    background: #dd4b39;
+    color: white;
+  }
+
+  .social-icons .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+
+  .social-icons {
+    margin-top:20px;
+    width: 300px;
+    margin: 0 auto;
+  }
+  .navbar-area {
+    border-bottom: 1px solid #7d5fff;
+  }
+  .card-header {
+    background-color: #7d5fff !important;
+  }
+
+</style>
+    </head>
+<style media="screen">
+  .navbar-area {
+    border-bottom: 1px solid #7d5fff;
+  }
+</style>
+    <body>
+    
+       <header id="layout-header">
+            {% partial 'site/header' %}
+        </header>
+
+        {% flash success %}
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12">
+                  <br>
+                      <p class="bg-success">{{ message }}</p>
+                  </div>
+              </div>
+          </div>
+      {% endflash %}
+
+    <!-- navbar area start -->
+
+        <!-- Content -->
+        <section id="layout-content">
+            {% page %}
+        </section>
+       
+        <!-- Footer -->
+        <footer id="layout-footer">
+            {% partial 'site/footer' %}
+        </footer>
+
+        <!-- Scripts -->
+        <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
+        <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+        {% framework extras %}
+        {% scripts %}
+        
+<script>
+  (function($){
+
+$('#EventFilter').on('change', 'input, select', function(){
+    var $form = $(this).closest('form');
+    $form.request();
+});
+
+})(jQuery);
+   function increaseAdView(adID) {
+      var fd = new FormData();
+      fd.append('adID', adID);
+      $.ajaxSetup({
+          headers: {
+              'X-CSRF-Token': $('meta[name=csrf-token]').attr('content')
+          }
+      });
+      $.ajax({
+         url: 'http://lab.thesoftking.com/eticket/admin/Ad/increaseAdView',
+         type: 'POST',
+         data: fd,
+         contentType: false,
+         processData: false,
+         success: function(data) {
+            // console.log(data);
+         }
+      });
+   }
+</script>
+
+  <script>
+  $(".fb-comments").attr("data-width", $(".fb-comments").parent().width());
+         $(window).on('resize', function () {
+             resizeiframe();
+         });
+
+     function resizeiframe() {
+         var src = $('.fb-comments iframe').attr('src').split('width='),
+             width = $(".fb-comments").parent().width();
+
+         $('.fb-comments iframe').attr('src', src[0] + 'width=' + width);
+     }
+
+
+    function hideModal() {
+      $('#buyTicketConfModal').modal('hide');
+    }
+
+    function clacTotal(p_no) {
+     // totalPrice = 0;
+     // document.getElementById('totalPriceInput').value = pp_price;
+     // document.getElementById('pNoInput').value = p_no;
+     // document.getElementById('totalPrice').innerHTML = 0;
+     var sub=parseInt(document.getElementsByClassName('sub').length);
+     var nomb=0;
+     for(var i=0;i< sub;i++){
+      if(document.getElementsByClassName('sub')[i].checked){
+        nom+=parseFloat(document.getElementsByClassName('sub')[i].value);
+      }
+     }
+    document.getElementById('totalPrice').innerHTML = (parseInt(event.target.value)+nomb)*p_no ;
+    }
+
+    $(document).ready(function() {
+     // clacTotal(document.getElementById('montantItem').value, 1);
+    });
+  </script>
+    <script>
+        function registerUser(e) {
+            e.preventDefault();
+
+            var form = document.getElementById('registerForm');
+            var fd = new FormData(form);
+
+            $.ajax({
+                url: 'http://lab.thesoftking.com/eticket/register',
+                type: 'POST',
+                data: fd,
+                contentType: false,
+                processData: false,
+                success: function(data) {
+                    console.log(data);
+                    var em = document.getElementsByClassName("emr");
+                    // after returning from the controller we are clearing the
+                    // previous error messages...
+                    for(i=0; i<em.length; i++) {
+                        em[i].innerHTML = '';
+                    }
+
+                    if (data == "closed") {
+                        $("#login-modal").modal('hide');
+                        swal('Sorry!', 'Registration is closed!', 'error');
+                    }
+
+                    if(data === "success") {
+                        window.location = 'http://lab.thesoftking.com/eticket';
+                    }
+
+                    // Showing error messages in the HTML...
+                    if(typeof data.error != 'undefined') {
+                      if(typeof data.username != 'undefined') {
+                        em[0].innerHTML = data.username[0];
+                      }
+                      if(typeof data.firstname != 'undefined') {
+                        em[1].innerHTML = data.firstname[0];
+                      }
+                      if(typeof data.lastname != 'undefined') {
+                        em[2].innerHTML = data.lastname[0];
+                      }
+                      if(typeof data.email != 'undefined') {
+                        em[3].innerHTML = data.email[0];
+                      }
+                      if(typeof data.phone != 'undefined') {
+                        em[4].innerHTML = data.phone[0];
+                      }
+                      if(typeof data.password != 'undefined') {
+                        em[5].innerHTML = data.password[0];
+                      }
+                    }
+                }
+            })
+        }
+    </script>
+
+    <script src="http://lab.thesoftking.com/eticket/assets/user/js/jquery.js"></script>
+<!-- popper -->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/popper.min.js"></script>
+<!-- bootstrap -->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/bootstrap.min.js"></script>
+<!-- owl carousel -->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/owl.carousel.min.js"></script>
+<!-- magnific popup -->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/jquery.magnific-popup.js"></script>
+<!-- way poin js-->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/waypoints.min.js"></script>
+<!-- wow js-->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/wow.min.js"></script>
+<!-- bootstrap datetimepicker -->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/bootstrap-datepicker.min.js"></script>
+<!-- counterup js-->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/jquery.counterup.min.js"></script>
+<script src="http://lab.thesoftking.com/eticket/assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
+
+<!-- main -->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/main.js"></script>
+
+    <script>
+        function loginUser(e) {
+            e.preventDefault();
+            var form = document.getElementById('userLoginForm');
+            var fd = new FormData(form);
+
+            $.ajax({
+                url: 'http://lab.thesoftking.com/eticket/login',
+                type: 'POST',
+                data: fd,
+                contentType: false,
+                processData: false,
+                success: function(data) {
+                    console.log(data);
+                    var em = document.getElementsByClassName("eml");
+                    // after returning from the controller we are clearing the
+                    // previous error messages...
+                    for(i=0; i<em.length; i++) {
+                        em[i].innerHTML = '';
+                    }
+
+                    if(data === "success") {
+                        window.location = 'http://lab.thesoftking.com/eticket';
+                    }
+
+                    if (data == "no_success") {
+                        em[0].innerHTML = "Username/Password do not match!";
+                    }
+
+                    // Showing error messages in the HTML...
+                    if(typeof data.error != 'undefined') {
+                      if(typeof data.username != 'undefined') {
+                        em[0].innerHTML = data.username[0];
+                      }
+                      if(typeof data.password != 'undefined') {
+                        em[1].innerHTML = data.password[0];
+                      }
+                    }
+                }
+            });
+        }
+    </script>
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
+    </body>
+</html>";s:5:"mtime";i:1565281403;s:6:"markup";s:12463:"<!DOCTYPE html>
+<html>
+    <head>
+     <meta charset="utf-8">
+        <title>October CMS - {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> eTicket | Event Details  </title>
+    <!-- favicon -->
+     <link href="{{ 'assets/user/interfaceControl/logoIcon/icon.jpg'|theme }}" rel="stylesheet">
+    <!-- bootstrap -->
+     <link href="{{ 'assets/user/css/bootstrap.min.css'|theme }}" rel="stylesheet">
+         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- fontawesome -->
+     <link href="{{ 'assets/admin/css/font-awesome.min.css'|theme }}" rel="stylesheet">
+    <!-- flaticon -->
+     <link href="{{ 'assets/user/css/flaticon.css'|theme }}" rel="stylesheet">
+    <!-- bootstrap datetime picker -->
+      <link href="{{ 'assets/user/css/bootstrap-datepicker.min.css'|theme }}" rel="stylesheet">
+    <!-- animate.css -->
+     <link href="{{ 'assets/user/css/animate.css'|theme }}" rel="stylesheet">
+    <!-- Owl Carousel -->
+        <link href="{{ 'assets/user/css/owl.carousel.min.css'|theme }}" rel="stylesheet">
+    <!-- magnific popup -->
+      <link href="{{ 'assets/user/css/magnific-popup.css'|theme }}" rel="stylesheet">
+    <!-- stylesheet -->
+    <link href="{{ 'assets/user/css/style.css'|theme }}" rel="stylesheet">
+    <!-- responsive -->
+    <link href="{{ 'assets/user/css/responsive.css'|theme }}" rel="stylesheet">
+     <link href="{{ 'assets/admin/css/sweetalert.css'|theme }}" rel="stylesheet"><script src="{{ 'assets/admin/js/sweetalert.js'|theme }}"></script>
+     <link href="{{ 'assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs'|theme }}" rel="stylesheet">
+     <link href="{{ 'assets/user/css/themes/base-color.php?color=7d5fff'|theme }}" rel="stylesheet">
+     <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
+    <style media="screen">
+  .eml {
+    color: red;
+  }
+
+  .emr {
+    color: red;
+  }
+  .social-icons .fa {
+    padding-top: 14px;
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+
+  .social-icons .fa:hover {
+      opacity: 0.7;
+  }
+
+  .social-icons .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+  .social-icons .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  .social-icons .fa-google-plus {
+    background: #dd4b39;
+    color: white;
+  }
+
+  .social-icons .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+
+  .social-icons {
+    margin-top:20px;
+    width: 300px;
+    margin: 0 auto;
+  }
+  .navbar-area {
+    border-bottom: 1px solid #7d5fff;
+  }
+  .card-header {
+    background-color: #7d5fff !important;
+  }
+
+</style>
+    </head>
+<style media="screen">
+  .navbar-area {
+    border-bottom: 1px solid #7d5fff;
+  }
+</style>
+    <body>
+    
+       <header id="layout-header">
+            {% partial 'site/header' %}
+        </header>
+
+        {% flash success %}
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12">
+                  <br>
+                      <p class="bg-success">{{ message }}</p>
+                  </div>
+              </div>
+          </div>
+      {% endflash %}
+
+    <!-- navbar area start -->
+
+        <!-- Content -->
+        <section id="layout-content">
+            {% page %}
+        </section>
+       
+        <!-- Footer -->
+        <footer id="layout-footer">
+            {% partial 'site/footer' %}
+        </footer>
+
+        <!-- Scripts -->
+        <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
+        <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+        {% framework extras %}
+        {% scripts %}
+        
+<script>
+  (function($){
+
+$('#EventFilter').on('change', 'input, select', function(){
+    var $form = $(this).closest('form');
+    $form.request();
+});
+
+})(jQuery);
+   function increaseAdView(adID) {
+      var fd = new FormData();
+      fd.append('adID', adID);
+      $.ajaxSetup({
+          headers: {
+              'X-CSRF-Token': $('meta[name=csrf-token]').attr('content')
+          }
+      });
+      $.ajax({
+         url: 'http://lab.thesoftking.com/eticket/admin/Ad/increaseAdView',
+         type: 'POST',
+         data: fd,
+         contentType: false,
+         processData: false,
+         success: function(data) {
+            // console.log(data);
+         }
+      });
+   }
+</script>
+
+  <script>
+  $(".fb-comments").attr("data-width", $(".fb-comments").parent().width());
+         $(window).on('resize', function () {
+             resizeiframe();
+         });
+
+     function resizeiframe() {
+         var src = $('.fb-comments iframe').attr('src').split('width='),
+             width = $(".fb-comments").parent().width();
+
+         $('.fb-comments iframe').attr('src', src[0] + 'width=' + width);
+     }
+
+
+    function hideModal() {
+      $('#buyTicketConfModal').modal('hide');
+    }
+
+    function clacTotal(p_no) {
+     // totalPrice = 0;
+     // document.getElementById('totalPriceInput').value = pp_price;
+     // document.getElementById('pNoInput').value = p_no;
+     // document.getElementById('totalPrice').innerHTML = 0;
+     var sub=parseInt(document.getElementsByClassName('sub').length);
+     var nomb=0;
+     for(var i=0;i< sub;i++){
+      if(document.getElementsByClassName('sub')[i].checked){
+        nom+=parseFloat(document.getElementsByClassName('sub')[i].value);
+      }
+     }
+    document.getElementById('totalPrice').innerHTML = (parseInt(event.target.value)+nomb)*p_no ;
+    }
+
+    $(document).ready(function() {
+     // clacTotal(document.getElementById('montantItem').value, 1);
+    });
+  </script>
+    <script>
+        function registerUser(e) {
+            e.preventDefault();
+
+            var form = document.getElementById('registerForm');
+            var fd = new FormData(form);
+
+            $.ajax({
+                url: 'http://lab.thesoftking.com/eticket/register',
+                type: 'POST',
+                data: fd,
+                contentType: false,
+                processData: false,
+                success: function(data) {
+                    console.log(data);
+                    var em = document.getElementsByClassName("emr");
+                    // after returning from the controller we are clearing the
+                    // previous error messages...
+                    for(i=0; i<em.length; i++) {
+                        em[i].innerHTML = '';
+                    }
+
+                    if (data == "closed") {
+                        $("#login-modal").modal('hide');
+                        swal('Sorry!', 'Registration is closed!', 'error');
+                    }
+
+                    if(data === "success") {
+                        window.location = 'http://lab.thesoftking.com/eticket';
+                    }
+
+                    // Showing error messages in the HTML...
+                    if(typeof data.error != 'undefined') {
+                      if(typeof data.username != 'undefined') {
+                        em[0].innerHTML = data.username[0];
+                      }
+                      if(typeof data.firstname != 'undefined') {
+                        em[1].innerHTML = data.firstname[0];
+                      }
+                      if(typeof data.lastname != 'undefined') {
+                        em[2].innerHTML = data.lastname[0];
+                      }
+                      if(typeof data.email != 'undefined') {
+                        em[3].innerHTML = data.email[0];
+                      }
+                      if(typeof data.phone != 'undefined') {
+                        em[4].innerHTML = data.phone[0];
+                      }
+                      if(typeof data.password != 'undefined') {
+                        em[5].innerHTML = data.password[0];
+                      }
+                    }
+                }
+            })
+        }
+    </script>
+
+    <script src="http://lab.thesoftking.com/eticket/assets/user/js/jquery.js"></script>
+<!-- popper -->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/popper.min.js"></script>
+<!-- bootstrap -->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/bootstrap.min.js"></script>
+<!-- owl carousel -->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/owl.carousel.min.js"></script>
+<!-- magnific popup -->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/jquery.magnific-popup.js"></script>
+<!-- way poin js-->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/waypoints.min.js"></script>
+<!-- wow js-->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/wow.min.js"></script>
+<!-- bootstrap datetimepicker -->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/bootstrap-datepicker.min.js"></script>
+<!-- counterup js-->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/jquery.counterup.min.js"></script>
+<script src="http://lab.thesoftking.com/eticket/assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
+
+<!-- main -->
+<script src="http://lab.thesoftking.com/eticket/assets/user/js/main.js"></script>
+
+    <script>
+        function loginUser(e) {
+            e.preventDefault();
+            var form = document.getElementById('userLoginForm');
+            var fd = new FormData(form);
+
+            $.ajax({
+                url: 'http://lab.thesoftking.com/eticket/login',
+                type: 'POST',
+                data: fd,
+                contentType: false,
+                processData: false,
+                success: function(data) {
+                    console.log(data);
+                    var em = document.getElementsByClassName("eml");
+                    // after returning from the controller we are clearing the
+                    // previous error messages...
+                    for(i=0; i<em.length; i++) {
+                        em[i].innerHTML = '';
+                    }
+
+                    if(data === "success") {
+                        window.location = 'http://lab.thesoftking.com/eticket';
+                    }
+
+                    if (data == "no_success") {
+                        em[0].innerHTML = "Username/Password do not match!";
+                    }
+
+                    // Showing error messages in the HTML...
+                    if(typeof data.error != 'undefined') {
+                      if(typeof data.username != 'undefined') {
+                        em[0].innerHTML = data.username[0];
+                      }
+                      if(typeof data.password != 'undefined') {
+                        em[1].innerHTML = data.password[0];
+                      }
+                    }
+                }
+            });
+        }
+    </script>
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
+    </body>
+</html>";s:4:"code";s:1390:"use payment\Payment\Models\PaydunyaConfig;
+use event\event\models\Event;
+use rainlab\user\models\User;
+use event\event\models\AchatList;
+function onStart(){
+  $config = PaydunyaConfig::get()[0];
+  \Paydunya\Setup::setMasterKey($config->master_key);
+  \Paydunya\Setup::setPublicKey($config->public_key_test);
+  \Paydunya\Setup::setPrivateKey($config->private_key_test);
+  \Paydunya\Setup::setMode("test");
+  \Paydunya\Setup::setToken($config->token_test);
+    $token = $_GET['token'];
+   $id;$nbrticket;$montant;$nomticket;
+    $invoice = new \Paydunya\Checkout\CheckoutInvoice();
+    if ($invoice->confirm($token)) {
+       if($invoice->getStatus()=="completed"){
+        $uid=$invoice->getCustomData("user");
+        //$user=User::where('id',$uid)->get();
+        $user= Db::table('users')->where('id',$uid)->first();
+      //  dd($user->email);
+        Db::table('event_event_achat')
+        ->where('user_email', $user->email)
+        ->where('event_id',$invoice->getCustomData("event"))
+        ->update(['remboursser' => true]);
+        Db::table('event_event_annule_achat1')
+        ->where('event_id', $invoice->getCustomData("event"))
+        ->where('user_send_id', $uid)
+        ->update(['paye' => true]);
+       }
+    
+    }else{
+      echo $invoice->getStatus();
+      echo $invoice->response_text;
+      echo $invoice->response_code;
+    }
+}";s:17:"_PARSER_ERROR_INI";s:0:"";}}
