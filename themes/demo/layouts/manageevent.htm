@@ -1,48 +1,41 @@
-description = "Default layout"
-
-[account]
-paramCode = "code"
-forceSecure = 0
-
-[session]
-security = "all"
 ==
-<?php
-  use Carbon\Carbon;
-  use event\event\models\Event;
-  use event\event\models\NotifDemande;
-  use Demande\Demande\Models\DemandeAnnullationAchat;
+<?
+use Carbon\Carbon;
+use event\event\models\Event;
+use event\event\models\NotifDemande;
+use Demande\Demande\Models\DemandeAnnullationAchat;
 
-  function onStart()
-  {
-    $this->prepareVars();
-  }
+function onStart()
+{
+  $this->prepareVars();
+}
+
+function onFilterEvents() 
+{ 
+  $this->prepareVars(); 
+}
+
+function prepareVars()
+{
+  $b=Request::segment(2);
+  $option=post('Filter',[]);
+  $this['events']=Event::ListFrontEnd($option,$b);
+  $this['pages']=$this['events']->lastPage(); 
+}
   
-  function onFilterEvents() 
-  { 
-    $this->prepareVars(); 
+  function onAnnuler() 
+  {
+    $user = Auth::getUser();
+    $notif = new NotifDemande();
+    $annulation = new DemandeAnnullationAchat();
+    $annulation->user_id = $user->id;
+    $annulation->email = $user->email;
+    $annulation->save();
+    $notif->save();
+    Flash::success('Votre demande d\'annulation a bien été transmise, nous vous revenons dans un moment !');
+    return Redirect::to('/');
   }
 
-  function prepareVars()
-  {
-    $b=null;
-    $option=post('Filter',[]);
-    $this['events']=Event::ListFrontEnd($option,$b);
-    $this['pages']=$this['events']->lastPage(); 
-  }
-    
-    function onAnnuler() 
-    {
-      $user = Auth::getUser();
-      $notif = new NotifDemande();
-      $annulation = new DemandeAnnullationAchat();
-      $annulation->user_id = $user->id;
-      $annulation->email = $user->email;
-      $annulation->save();
-      $notif->save();
-      Flash::success('Votre demande d\'annulation a bien été transmise, nous vous revenons dans un moment !');
-      return Redirect::to('/');
-    }
 ?>
 ==
 <!DOCTYPE html>

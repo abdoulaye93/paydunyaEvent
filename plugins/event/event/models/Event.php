@@ -59,6 +59,9 @@ class Event extends Model
             if($lastPage < $page){
                 $page = 1;
             }
+            if($b!=null){
+                 $query->where('user_id', '=',$b);
+            }
             return $query->paginate($perPage,$page);
     }
     public $attachOne = [

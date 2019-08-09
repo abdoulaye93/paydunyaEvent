@@ -114,6 +114,7 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\">
 <!-- Material Design Bootstrap -->
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
+<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
     <style media=\"screen\">
   .eml {
     color: red;
@@ -180,11 +181,11 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
     
        <header id=\"layout-header\">
             ";
-        // line 107
+        // line 108
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 108
+        // line 109
         echo "        </header>
 
     <!-- navbar area start -->
@@ -192,36 +193,36 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
         <!-- Content -->
         <section id=\"layout-content\">
             ";
-        // line 114
-        echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
         // line 115
+        echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
+        // line 116
         echo "        </section>
 
         <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 119
+        // line 120
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 120
+        // line 121
         echo "        </footer>
 
         <!-- Scripts -->
         <script src=\"";
-        // line 123
+        // line 124
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
         <script src=\"";
-        // line 124
+        // line 125
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
         <script src=\"";
-        // line 125
+        // line 126
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script>
         ";
-        // line 126
+        // line 127
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="'. Request::getBasePath()
@@ -236,11 +237,11 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 127
+        // line 128
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 128
+        // line 129
         echo "        
 <script>
    function increaseAdView(adID) {
@@ -401,6 +402,7 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
 
 <!-- main -->
 <script src=\"http://lab.thesoftking.com/eticket/assets/user/js/main.js\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js\"></script>
 
     <script>
         function loginUser(e) {
@@ -509,7 +511,7 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
 
     public function getDebugInfo()
     {
-        return array (  244 => 128,  240 => 127,  225 => 126,  221 => 125,  217 => 124,  213 => 123,  208 => 120,  204 => 119,  198 => 115,  196 => 114,  188 => 108,  184 => 107,  109 => 35,  105 => 34,  99 => 33,  95 => 32,  90 => 30,  85 => 28,  80 => 26,  75 => 24,  70 => 22,  65 => 20,  60 => 18,  54 => 15,  49 => 13,  35 => 1,);
+        return array (  245 => 129,  241 => 128,  226 => 127,  222 => 126,  218 => 125,  214 => 124,  209 => 121,  205 => 120,  199 => 116,  197 => 115,  189 => 109,  185 => 108,  109 => 35,  105 => 34,  99 => 33,  95 => 32,  90 => 30,  85 => 28,  80 => 26,  75 => 24,  70 => 22,  65 => 20,  60 => 18,  54 => 15,  49 => 13,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -555,6 +557,7 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\">
 <!-- Material Design Bootstrap -->
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
+<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
     <style media=\"screen\">
   .eml {
     color: red;
@@ -801,6 +804,7 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
 
 <!-- main -->
 <script src=\"http://lab.thesoftking.com/eticket/assets/user/js/main.js\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js\"></script>
 
     <script>
         function loginUser(e) {

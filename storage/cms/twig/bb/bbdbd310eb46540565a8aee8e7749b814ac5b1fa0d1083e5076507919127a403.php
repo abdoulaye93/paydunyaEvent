@@ -12,8 +12,8 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* C:\wamp64\www\install-master1/themes/demo/layouts/retour_rembour.htm */
-class __TwigTemplate_5bb9f892ca80686fba652f4b2109554cc1eae2c34c153c84988cef4c2f2dbbf8 extends \Twig\Template
+/* C:\wamp64\www\install-master1/themes/demo/layouts/manageevent.htm */
+class __TwigTemplate_426e26f6e41680765799227f0162214864b2c8d02b4cb2aea8f5e3dacd1a13d1 extends \Twig\Template
 {
     private $source;
 
@@ -415,9 +415,10 @@ class __TwigTemplate_5bb9f892ca80686fba652f4b2109554cc1eae2c34c153c84988cef4c2f2
 <!-- counterup js-->
 <script src=\"http://lab.thesoftking.com/eticket/assets/user/js/jquery.counterup.min.js\"></script>
 <script src=\"http://lab.thesoftking.com/eticket/assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.js\" type=\"text/javascript\"></script>
-<script src=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js\"></script>
+
 <!-- main -->
 <script src=\"http://lab.thesoftking.com/eticket/assets/user/js/main.js\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js\"></script>
 
     <script>
         function loginUser(e) {
@@ -475,7 +476,7 @@ class __TwigTemplate_5bb9f892ca80686fba652f4b2109554cc1eae2c34c153c84988cef4c2f2
 
     public function getTemplateName()
     {
-        return "C:\\wamp64\\www\\install-master1/themes/demo/layouts/retour_rembour.htm";
+        return "C:\\wamp64\\www\\install-master1/themes/demo/layouts/manageevent.htm";
     }
 
     public function isTraitable()
@@ -774,9 +775,10 @@ class __TwigTemplate_5bb9f892ca80686fba652f4b2109554cc1eae2c34c153c84988cef4c2f2
 <!-- counterup js-->
 <script src=\"http://lab.thesoftking.com/eticket/assets/user/js/jquery.counterup.min.js\"></script>
 <script src=\"http://lab.thesoftking.com/eticket/assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.js\" type=\"text/javascript\"></script>
-<script src=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js\"></script>
+
 <!-- main -->
 <script src=\"http://lab.thesoftking.com/eticket/assets/user/js/main.js\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js\"></script>
 
     <script>
         function loginUser(e) {
@@ -829,6 +831,6 @@ class __TwigTemplate_5bb9f892ca80686fba652f4b2109554cc1eae2c34c153c84988cef4c2f2
 <!-- MDB core JavaScript -->
 <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js\"></script>
     </body>
-</html>", "C:\\wamp64\\www\\install-master1/themes/demo/layouts/retour_rembour.htm", "");
+</html>", "C:\\wamp64\\www\\install-master1/themes/demo/layouts/manageevent.htm", "");
     }
 }

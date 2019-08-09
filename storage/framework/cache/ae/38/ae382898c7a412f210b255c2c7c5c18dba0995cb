@@ -1,4 +1,4 @@
-1565285439a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:17065:"[session]
+1565347255a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:17259:"[session]
 security = "all"
 ==
 <?php
@@ -94,6 +94,7 @@ security = "all"
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <style media="screen">
   .eml {
     color: red;
@@ -340,6 +341,7 @@ security = "all"
 
 <!-- main -->
 <script src="http://lab.thesoftking.com/eticket/assets/user/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
     <script>
         function loginUser(e) {
@@ -433,7 +435,7 @@ security = "all"
                           }
 </script>
     </body>
-</html>";s:5:"mtime";i:1565182681;s:6:"markup";s:15009:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1565303538;s:6:"markup";s:15203:"<!DOCTYPE html>
 <html>
     <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -474,6 +476,7 @@ security = "all"
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <style media="screen">
   .eml {
     color: red;
@@ -720,6 +723,7 @@ security = "all"
 
 <!-- main -->
 <script src="http://lab.thesoftking.com/eticket/assets/user/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
     <script>
         function loginUser(e) {

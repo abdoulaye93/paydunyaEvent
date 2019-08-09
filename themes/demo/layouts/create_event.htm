@@ -10,8 +10,9 @@ function onStart(){$this->prepareVars();
  }
 function onFilterEvents() { $this->prepareVars(); }
 function prepareVars(){
+  $b=null;
   $option=post('Filter',[]);
-  $this['events']=Event::ListFrontEnd($option);
+  $this['events']=Event::ListFrontEnd($option,$b);
   $this['pages']=$this['events']->lastPage();
   $this['categorie']=Categorie::all();
   $this['types']=Type::all();
