@@ -1,21 +1,23 @@
 <?php 
-use event\event\models\Event;use Carbon\Carbon;use event\event\models\Type;use event\event\models\Categorie;class Cms5d4d3a0065daf572528457_6fb7d8e174e2f5af289da8d1d699b42cClass extends Cms\Classes\LayoutCode
+use event\event\models\Event;use Carbon\Carbon;use event\event\models\Type;use event\event\models\Categorie;class Cms5d53074548fdb881951831_82844e1d619b9d0fd9bd9a6ce0ef27d5Class extends Cms\Classes\LayoutCode
 {
   
 
 
 
 
-public function onStart(){$this->prepareVars(); 
+public function onStart(){$this->onPrepareVars(); 
  }
-public function onFilterEvents() { $this->prepareVars(); }
-public function prepareVars(){
+public function onFilterEvents() { $this->onPrepareVars(); }
+public function onPrepareVars(){
+  $type=Input::get('typ');
   $b=null;
   $option=post('Filter',[]);
-  $this['events']=Event::ListFrontEnd($option,$b);
+  $this['events']=Event::ListFrontEnd($option,$b,$type);
   $this['pages']=$this['events']->lastPage();
   $this['categorie']=Categorie::all();
   $this['types']=Type::all();
+  $this['categories']=Type::ListFrontEnd($option);
  
 }
 }

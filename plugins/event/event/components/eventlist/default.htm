@@ -1,24 +1,27 @@
-<div class="container mt-5" style="background-attachment: fixed;background-image: url('https://via.placeholder.com/728x90?text=728x90+LeaderboardC');">
-    <h1 class="text-center">Retrouver tous les évènement</h1>
+<div class="container-fluid mt-5 mx-auto" style=" height: 400px;;background-attachment: fixed;background-image: url({{ '/assets/images/bgFixed.jpg'|theme }});background-position: center;background-repeat: no-repeat">
+    <h1 class="text-center uppercase">Retrouver tous les évènement</h1>
+  {{form_ajax('onFilterEvents',{update:{'events/events':'#upcoming_tab','events/eventexpire':'#ending_tab','events/pagination':'#active_tab'}})}}
+   {% partial 'events/filter'%}
+   {{form_close()}}
 </div>
-<section class="live-token-sale">
-        <div class="container container-fluid">
+<section class="live-token-sale" >
+        <div class="container ">
             <div class="row justify-content-center">
                 <div class="col-lg-12 text-center">
                     <div class="section-title">
-                        <H3 class="lead h2">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        <H3 class="lead h2 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             Eaque asperiores expedita nostrum sunt iste culpa, harum vitae minus iusto voluptatum magni, 
                             assumenda accusantium sequi facilis. Ex ut possimus atque voluptatum?</p>
                     </div>
                 </div>
             </div>
-            <div class="row container-fluid">
+            <div class="row">
                 <div class="col-lg-12 remove-col-padding-mobile">
-                    <div class="token-sale-top-bar">
+                    <div class="token-sale-top-bar   ">
                        <div class="row">
                            <div class="col-lg-6 col-sm-3 remove-col-padding-mobile">
                                 <div class="left-content">
-                                    <h4>All Events</h4>
+                                    <h4 class=" lead">All Events</h4>
                                 </div>
                            </div>
                            <div class="col-lg-6 col-sm-9 remove-col-padding-mobile">
@@ -26,10 +29,10 @@
                                     <div class="tab-navbar">
                                         <ul class="nav nav-tabs">
                                             <li class="nav-item">
-                                                <a class="nav-link" data-toggle="tab" href="#upcoming_tab">Active</a>
+                                                <a class="nav-link " data-toggle="tab" href="#upcoming_tab">Active</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" data-toggle="tab" href="#ending_tab">Expired</a>
+                                                <a class="nav-link " data-toggle="tab" href="#ending_tab">Expired</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -39,21 +42,21 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row ">
                 <div class="col-lg-12 remove-col-padding">
                     <div class="tab-content">
                           
-                        <div class="tab-pane container active" id="upcoming_tab">
+                        <div class="tab-pane container active  " id="upcoming_tab">
                            
                                 {% partial 'events/events' %}
                         </div>
                        
                        
-                        <div class="tab-pane container fade" id="ending_tab"><!-- ending tab start -->
+                        <div class="tab-pane container fade  " id="ending_tab"><!-- ending tab start -->
                             {% partial 'events/eventexpire' %}
                         </div>
                         {{form_ajax('onFilterEvents',{update:{'events/events':'#upcoming_tab','events/eventexpire':'#ending_tab'}})}}
-                        <div id="EventFilter" class="text-center">
+                        <div id="EventPagination" class="text-center">
                                 <label>page</label>
                                 <select name="Filter[page]">
                                   {% for i in 1..pages%}

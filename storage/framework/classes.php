@@ -231,4 +231,6 @@
   'Lovata\\Toolbox\\Classes\\Console\\CreateExtendModelColumnsHandler' => 'plugins\\lovata\\toolbox\\classes\\console\\CreateExtendModelColumnsHandler.php',
   'Renatio\\Todos\\Console\\TaskReminder' => 'plugins\\renatio\\todos\\console\\TaskReminder.php',
   'Lovata\\OrdersShopaholic\\Models\\Task' => 'plugins\\lovata\\ordersshopaholic\\models\\Task.php',
+  'event\\event\\Controllers\\events' => 'plugins\\event\\event\\controllers\\events.php',
+  'Event\\Event\\Models\\Event' => 'plugins\\event\\event\\models\\Event.php',
 );

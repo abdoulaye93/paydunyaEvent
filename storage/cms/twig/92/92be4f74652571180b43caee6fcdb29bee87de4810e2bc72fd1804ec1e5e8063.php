@@ -280,8 +280,13 @@ class __TwigTemplate_23440fe094ed9b62ea4f4358a290486b9236e04a3a88005d7caeebe6a18
     var \$form = \$(this).closest('form');
     \$form.request();
 });
+\$('#EventPagination').on('change', 'input, select', function(){
+    var \$form = \$(this).closest('form');
+    \$form.request();
+});
 
 })(jQuery);
+
    function increaseAdView(adID) {
       var fd = new FormData();
       fd.append('adID', adID);
@@ -640,8 +645,13 @@ class __TwigTemplate_23440fe094ed9b62ea4f4358a290486b9236e04a3a88005d7caeebe6a18
     var \$form = \$(this).closest('form');
     \$form.request();
 });
+\$('#EventPagination').on('change', 'input, select', function(){
+    var \$form = \$(this).closest('form');
+    \$form.request();
+});
 
 })(jQuery);
+
    function increaseAdView(adID) {
       var fd = new FormData();
       fd.append('adID', adID);

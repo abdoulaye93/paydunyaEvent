@@ -72,6 +72,7 @@ class EventForm extends ComponentBase
         }
         if(Input::get('cate')){
             $event->categorie=Input::get('cate');
+            $event->save();
         }else{
             $event->type_id= json_decode(Input::get('category'))->id;
            $event->save();

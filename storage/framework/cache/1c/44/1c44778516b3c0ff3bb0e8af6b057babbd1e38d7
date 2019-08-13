@@ -1,7 +1,7 @@
-1565349724a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:12871:"[session]
+1565723864a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:12946:"[session]
 security = "all"
 ==
-<?
+<?php
 use event\event\models\NotifDemande;
 function onStart(){
     $this['notifs']=NotifDemande::all();
@@ -9,12 +9,12 @@ function onStart(){
 ?>
 ==
 <!-- Nav -->
-<nav class="navbar navbar-area navbar-expand-lg navbar-light navbar-fixed-top navbar-autohide">
+<nav class="navbar navbar-area navbar-expand-lg bg-white navbar-light fixed-top navbar-autohide" style="background-color: #0070B2">
     <div class="container">
         <div >
             <!-- navbar header start -->
             <a class="" href="http://lab.thesoftking.com/eticket">
-              <img style="width:20px;display:block;margin:0;" src="http://lab.thesoftking.com/eticket/assets/user/ad_images/1532510917.jpg" alt="addvertisement-02">
+              <img style="width:80px;display:block;margin:0;" class="img-fluid" src="{{ '/assets/images/logo.jpg'|theme }}" alt="logo PayDunay">
             </a>
             
         </div>
@@ -66,7 +66,7 @@ function onStart(){
                 
                     {% else %}
                          <li class="nav-item boxed-btn">
-                    <a class="nav-link boxed-btn" href="#" data-toggle="modal" data-target="#login-modal">Login - Register</a>
+                    <a class="nav-link btn bg-success text-white p-3" href="#" data-toggle="modal" data-target="#login-modal"><h3><i class="fa fa-home"></i> Login - Register</h3></a>
                 </li>
                     {% endif %}
                     {% if user.is_superuser %}
@@ -201,13 +201,13 @@ function onStart(){
         if(!confirm('Voulez vous vraiment effectuer une demande d\'annulation d\'achat ?'))
             event.preventDefault()
     })
-    </script>";s:5:"mtime";i:1565268029;s:6:"markup";s:12722:"<!-- Nav -->
-<nav class="navbar navbar-area navbar-expand-lg navbar-light navbar-fixed-top navbar-autohide">
+    </script>";s:5:"mtime";i:1565719801;s:6:"markup";s:12794:"<!-- Nav -->
+<nav class="navbar navbar-area navbar-expand-lg bg-white navbar-light fixed-top navbar-autohide" style="background-color: #0070B2">
     <div class="container">
         <div >
             <!-- navbar header start -->
             <a class="" href="http://lab.thesoftking.com/eticket">
-              <img style="width:20px;display:block;margin:0;" src="http://lab.thesoftking.com/eticket/assets/user/ad_images/1532510917.jpg" alt="addvertisement-02">
+              <img style="width:80px;display:block;margin:0;" class="img-fluid" src="{{ '/assets/images/logo.jpg'|theme }}" alt="logo PayDunay">
             </a>
             
         </div>
@@ -259,7 +259,7 @@ function onStart(){
                 
                     {% else %}
                          <li class="nav-item boxed-btn">
-                    <a class="nav-link boxed-btn" href="#" data-toggle="modal" data-target="#login-modal">Login - Register</a>
+                    <a class="nav-link btn bg-success text-white p-3" href="#" data-toggle="modal" data-target="#login-modal"><h3><i class="fa fa-home"></i> Login - Register</h3></a>
                 </li>
                     {% endif %}
                     {% if user.is_superuser %}

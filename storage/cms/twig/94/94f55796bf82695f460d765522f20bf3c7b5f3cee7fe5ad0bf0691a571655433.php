@@ -34,45 +34,48 @@ class __TwigTemplate_67ee04c23b30a6fce510a9bfa090f796705d1a924d15eeb7bfa1bc81cec
         // line 1
         if (twig_length_filter($this->env, ($context["events"] ?? null))) {
             // line 2
-            echo "<div class=\"row\">
+            echo "<div class=\"row bg-transparent no-gutters  \">
    ";
             // line 3
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["events"] ?? null));
             foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
                 // line 4
-                echo "   <div class=\"col-lg-4 col-sm-6\" >
+                echo "   ";
+                if (twig_get_attribute($this->env, $this->source, $context["item"], "publier", [], "any", false, false, false, 4)) {
+                    // line 5
+                    echo "   <div class=\"col-lg-4 col-sm-6  m-0\" >
            <div class=\"single-ico-list-box\">
-               <div class=\"thumb\">
+               <div class=\"thumb bg-transparent\">
                <a href=\"event/show/effective-communication-skills.html\" target=\"_blank\">
-               <img src=\" ";
-                // line 8
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "image", [], "any", false, false, false, 8), "html", null, true);
-                echo "\" alt=\"\">                                       
+               <img class=\"img-fluid border border-circle\" src=\" ";
+                    // line 9
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "image", [], "any", false, false, false, 9), "html", null, true);
+                    echo "\" alt=\"\">                                       
                </div>
-               <div class=\"content\">
+               <div class=\"content \">
                    <p style=\"margin:0px;clear:both;\"></p>
-                   <h4 style=\"color:#10ac84;\">";
-                // line 12
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", [], "any", false, false, false, 12), "html", null, true);
-                echo "</h4>
-                   <p><strong><i class=\"fa fa-money\" aria-hidden=\"true\"></i> Prx: </strong>";
-                // line 13
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant", [], "any", false, false, false, 13), "html", null, true);
-                echo " FCFA</p>
-                   <p><strong><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i> Date d'expiration: </strong>";
-                // line 14
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "periode", [], "any", false, false, false, 14), "date_cloture", [], "any", false, false, false, 14), "html", null, true);
-                echo "</p>
+                   <h4 class=\"border border-circle text-uppercase\" style=\"color: #0070B2\">";
+                    // line 13
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", [], "any", false, false, false, 13), "html", null, true);
+                    echo "</h4>
+                   <p><strong class=\"\"><i class=\"fa fa-money text-white fa-2x\" aria-hidden=\"true\"></i> Prix : </strong>";
+                    // line 14
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant", [], "any", false, false, false, 14), "html", null, true);
+                    echo " FCFA</p>
+                   <p><strong><i class=\"fa  fa-2x fa-calendar\" aria-hidden=\"true\"></i> Date d'expiration: </strong>";
+                    // line 15
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "periode", [], "any", false, false, false, 15), "date_cloture", [], "any", false, false, false, 15), "html", null, true);
+                    echo "</p>
                    ";
-                // line 15
-                if (twig_get_attribute($this->env, $this->source, $context["item"], "position_id", [], "any", false, false, false, 15)) {
                     // line 16
-                    echo "                        <p> 
+                    if (twig_get_attribute($this->env, $this->source, $context["item"], "position_id", [], "any", false, false, false, 16)) {
+                        // line 17
+                        echo "                        <p> 
                             <a  href=\"";
-                    // line 17
-                    echo $this->extensions['Cms\Twig\Extension']->pageFilter("position", ["lat" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "position", [], "any", false, false, false, 17), "lat", [], "any", false, false, false, 17), "long" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "position", [], "any", false, false, false, 17), "long", [], "any", false, false, false, 17)]);
-                    echo "\"  >
+                        // line 18
+                        echo $this->extensions['Cms\Twig\Extension']->pageFilter("position", ["lat" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "position", [], "any", false, false, false, 18), "lat", [], "any", false, false, false, 18), "long" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "position", [], "any", false, false, false, 18), "long", [], "any", false, false, false, 18)]);
+                        echo "\"  >
 
                                 <i class=\"fa fa-caret-right\"></i> 
                                 <span class=\"title\">
@@ -81,27 +84,30 @@ class __TwigTemplate_67ee04c23b30a6fce510a9bfa090f796705d1a924d15eeb7bfa1bc81cec
                             </a>
                         </p>
                     ";
-                }
-                // line 26
-                echo "                   <a  href=\"";
-                echo $this->extensions['Cms\Twig\Extension']->pageFilter("description_event", ["event_id" => twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 26)]);
-                echo "\"  class=\"boxed-btn-rounded\">
+                    }
+                    // line 27
+                    echo "                   <a  href=\"";
+                    echo $this->extensions['Cms\Twig\Extension']->pageFilter("description_event", ["event_id" => twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 27)]);
+                    echo "\"  class=\"boxed-btn-rounded\">
                    <i class=\"fa fa-caret-right\"></i> <span class=\"title\">Details</span></a>
                </div>
            </div>
        </div>
- ";
+";
+                }
+                // line 33
+                echo " ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 32
+            // line 34
             echo "</div>
 
 
 ";
         } else {
-            // line 36
+            // line 38
             echo "<div class=\"row\" class=\"text-center\">
        <h3 class=\"\">NO  TICKETS FOUND</h3>
    </div>
@@ -121,25 +127,26 @@ class __TwigTemplate_67ee04c23b30a6fce510a9bfa090f796705d1a924d15eeb7bfa1bc81cec
 
     public function getDebugInfo()
     {
-        return array (  105 => 36,  99 => 32,  86 => 26,  74 => 17,  71 => 16,  69 => 15,  65 => 14,  61 => 13,  57 => 12,  50 => 8,  44 => 4,  40 => 3,  37 => 2,  35 => 1,);
+        return array (  111 => 38,  105 => 34,  99 => 33,  89 => 27,  77 => 18,  74 => 17,  72 => 16,  68 => 15,  64 => 14,  60 => 13,  53 => 9,  47 => 5,  44 => 4,  40 => 3,  37 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% if events|length%}
-<div class=\"row\">
+<div class=\"row bg-transparent no-gutters  \">
    {% for item in events %}
-   <div class=\"col-lg-4 col-sm-6\" >
+   {% if item.publier%}
+   <div class=\"col-lg-4 col-sm-6  m-0\" >
            <div class=\"single-ico-list-box\">
-               <div class=\"thumb\">
+               <div class=\"thumb bg-transparent\">
                <a href=\"event/show/effective-communication-skills.html\" target=\"_blank\">
-               <img src=\" {{item.image}}\" alt=\"\">                                       
+               <img class=\"img-fluid border border-circle\" src=\" {{item.image}}\" alt=\"\">                                       
                </div>
-               <div class=\"content\">
+               <div class=\"content \">
                    <p style=\"margin:0px;clear:both;\"></p>
-                   <h4 style=\"color:#10ac84;\">{{ item.nom }}</h4>
-                   <p><strong><i class=\"fa fa-money\" aria-hidden=\"true\"></i> Prx: </strong>{{ item.montant }} FCFA</p>
-                   <p><strong><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i> Date d'expiration: </strong>{{ item.periode.date_cloture }}</p>
+                   <h4 class=\"border border-circle text-uppercase\" style=\"color: #0070B2\">{{ item.nom }}</h4>
+                   <p><strong class=\"\"><i class=\"fa fa-money text-white fa-2x\" aria-hidden=\"true\"></i> Prix : </strong>{{ item.montant }} FCFA</p>
+                   <p><strong><i class=\"fa  fa-2x fa-calendar\" aria-hidden=\"true\"></i> Date d'expiration: </strong>{{ item.periode.date_cloture }}</p>
                    {%if item.position_id%}
                         <p> 
                             <a  href=\"{{ 'position'|page({lat:item.position.lat,long:item.position.long}) }}\"  >
@@ -156,6 +163,7 @@ class __TwigTemplate_67ee04c23b30a6fce510a9bfa090f796705d1a924d15eeb7bfa1bc81cec
                </div>
            </div>
        </div>
+{%endif%}
  {% endfor %}
 </div>
 

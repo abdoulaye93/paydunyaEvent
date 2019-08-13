@@ -1,4 +1,4 @@
-1565349725a:1:{s:11:"default.htm";a:8:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:13709:"description = "Default layout"
+1565723864a:1:{s:11:"default.htm";a:8:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:13866:"description = "Default layout"
 
 [account]
 paramCode = "code"
@@ -26,8 +26,9 @@ security = "all"
   function prepareVars()
   {
     $b=null;
+    $typ=null;
     $option=post('Filter',[]);
-    $this['events']=Event::ListFrontEnd($option,$b);
+    $this['events']=Event::ListFrontEnd($option,$b,$typ);
     $this['pages']=$this['events']->lastPage(); 
   }
     
@@ -194,8 +195,13 @@ $('#EventFilter').on('change', 'input, select', function(){
     var $form = $(this).closest('form');
     $form.request();
 });
+$('#EventPagination').on('change', 'input, select', function(){
+    var $form = $(this).closest('form');
+    $form.request();
+});
 
 })(jQuery);
+
    function increaseAdView(adID) {
       var fd = new FormData();
       fd.append('adID', adID);
@@ -385,7 +391,7 @@ $('#EventFilter').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:5:"mtime";i:1565342283;s:6:"markup";s:12657:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1565722349;s:6:"markup";s:12793:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
@@ -534,8 +540,13 @@ $('#EventFilter').on('change', 'input, select', function(){
     var $form = $(this).closest('form');
     $form.request();
 });
+$('#EventPagination').on('change', 'input, select', function(){
+    var $form = $(this).closest('form');
+    $form.request();
+});
 
 })(jQuery);
+
    function increaseAdView(adID) {
       var fd = new FormData();
       fd.append('adID', adID);
@@ -725,7 +736,7 @@ $('#EventFilter').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:4:"code";s:918:"  use Carbon\Carbon;
+</html>";s:4:"code";s:939:"  use Carbon\Carbon;
   use event\event\models\Event;
   use event\event\models\NotifDemande;
   use Demande\Demande\Models\DemandeAnnullationAchat;
@@ -743,8 +754,9 @@ $('#EventFilter').on('change', 'input, select', function(){
   function prepareVars()
   {
     $b=null;
+    $typ=null;
     $option=post('Filter',[]);
-    $this['events']=Event::ListFrontEnd($option,$b);
+    $this['events']=Event::ListFrontEnd($option,$b,$typ);
     $this['pages']=$this['events']->lastPage(); 
   }
     

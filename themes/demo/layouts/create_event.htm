@@ -6,16 +6,18 @@ use event\event\models\Event;
 use Carbon\Carbon;
 use event\event\models\Type;
 use event\event\models\Categorie;
-function onStart(){$this->prepareVars(); 
+function onStart(){$this->onPrepareVars(); 
  }
-function onFilterEvents() { $this->prepareVars(); }
-function prepareVars(){
+function onFilterEvents() { $this->onPrepareVars(); }
+function onPrepareVars(){
+  $type=Input::get('typ');
   $b=null;
   $option=post('Filter',[]);
-  $this['events']=Event::ListFrontEnd($option,$b);
+  $this['events']=Event::ListFrontEnd($option,$b,$type);
   $this['pages']=$this['events']->lastPage();
   $this['categorie']=Categorie::all();
   $this['types']=Type::all();
+  $this['categories']=Type::ListFrontEnd($option);
  
 }
 
@@ -65,6 +67,8 @@ function prepareVars(){
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/sema }}"
+<link rel="stylesheet" type="text/css" href="{{'semantic/semantic.min.css'|theme}}">>
     <style media="screen">
   .eml {
     color: red;
@@ -157,6 +161,10 @@ function prepareVars(){
    (function($){
 
 $('#EventFilter').on('change', 'input, select', function(){
+    var $form = $(this).closest('form');
+    $form.request();
+});
+$('#EventPagination').on('change', 'input, select', function(){
     var $form = $(this).closest('form');
     $form.request();
 });
@@ -342,5 +350,11 @@ $('#EventFilter').on('change', 'input, select', function(){
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="{{'/assets/semantic/semantic.min.js'|theme }}"></script>
     </body>
 </html>

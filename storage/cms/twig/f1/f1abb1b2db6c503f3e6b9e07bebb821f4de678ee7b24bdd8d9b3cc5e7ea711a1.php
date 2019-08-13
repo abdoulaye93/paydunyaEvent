@@ -33,12 +33,15 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
     {
         // line 1
         echo "<!-- Nav -->
-<nav class=\"navbar navbar-area navbar-expand-lg navbar-light navbar-fixed-top navbar-autohide\">
+<nav class=\"navbar navbar-area navbar-expand-lg bg-white navbar-light fixed-top navbar-autohide\" style=\"background-color: #0070B2\">
     <div class=\"container\">
         <div >
             <!-- navbar header start -->
             <a class=\"\" href=\"http://lab.thesoftking.com/eticket\">
-              <img style=\"width:20px;display:block;margin:0;\" src=\"http://lab.thesoftking.com/eticket/assets/user/ad_images/1532510917.jpg\" alt=\"addvertisement-02\">
+              <img style=\"width:80px;display:block;margin:0;\" class=\"img-fluid\" src=\"";
+        // line 7
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/images/logo.jpg");
+        echo "\" alt=\"logo PayDunay\">
             </a>
             
         </div>
@@ -143,7 +146,7 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
         } else {
             // line 58
             echo "                         <li class=\"nav-item boxed-btn\">
-                    <a class=\"nav-link boxed-btn\" href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\">Login - Register</a>
+                    <a class=\"nav-link btn bg-success text-white p-3\" href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\"><h3><i class=\"fa fa-home\"></i> Login - Register</h3></a>
                 </li>
                     ";
         }
@@ -343,18 +346,18 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
 
     public function getDebugInfo()
     {
-        return array (  322 => 186,  260 => 131,  213 => 86,  209 => 84,  201 => 78,  197 => 77,  192 => 75,  189 => 74,  185 => 73,  181 => 72,  177 => 70,  173 => 69,  168 => 67,  165 => 66,  163 => 65,  157 => 64,  154 => 63,  151 => 62,  145 => 58,  135 => 51,  127 => 48,  118 => 42,  114 => 41,  110 => 40,  106 => 39,  102 => 38,  94 => 35,  88 => 31,  86 => 30,  78 => 25,  72 => 24,  62 => 21,  56 => 20,  35 => 1,);
+        return array (  325 => 186,  263 => 131,  216 => 86,  212 => 84,  204 => 78,  200 => 77,  195 => 75,  192 => 74,  188 => 73,  184 => 72,  180 => 70,  176 => 69,  171 => 67,  168 => 66,  166 => 65,  160 => 64,  157 => 63,  154 => 62,  148 => 58,  138 => 51,  130 => 48,  121 => 42,  117 => 41,  113 => 40,  109 => 39,  105 => 38,  97 => 35,  91 => 31,  89 => 30,  81 => 25,  75 => 24,  65 => 21,  59 => 20,  43 => 7,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<!-- Nav -->
-<nav class=\"navbar navbar-area navbar-expand-lg navbar-light navbar-fixed-top navbar-autohide\">
+<nav class=\"navbar navbar-area navbar-expand-lg bg-white navbar-light fixed-top navbar-autohide\" style=\"background-color: #0070B2\">
     <div class=\"container\">
         <div >
             <!-- navbar header start -->
             <a class=\"\" href=\"http://lab.thesoftking.com/eticket\">
-              <img style=\"width:20px;display:block;margin:0;\" src=\"http://lab.thesoftking.com/eticket/assets/user/ad_images/1532510917.jpg\" alt=\"addvertisement-02\">
+              <img style=\"width:80px;display:block;margin:0;\" class=\"img-fluid\" src=\"{{ '/assets/images/logo.jpg'|theme }}\" alt=\"logo PayDunay\">
             </a>
             
         </div>
@@ -406,7 +409,7 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                 
                     {% else %}
                          <li class=\"nav-item boxed-btn\">
-                    <a class=\"nav-link boxed-btn\" href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\">Login - Register</a>
+                    <a class=\"nav-link btn bg-success text-white p-3\" href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\"><h3><i class=\"fa fa-home\"></i> Login - Register</h3></a>
                 </li>
                     {% endif %}
                     {% if user.is_superuser %}

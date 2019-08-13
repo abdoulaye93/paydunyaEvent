@@ -18,8 +18,9 @@ function onFilterEvents()
 function prepareVars()
 {
   $b=Request::segment(2);
+  $typ=null;
   $option=post('Filter',[]);
-  $this['events']=Event::ListFrontEnd($option,$b);
+  $this['events']=Event::ListFrontEnd($option,$b,$typ);
   $this['pages']=$this['events']->lastPage(); 
 }
   

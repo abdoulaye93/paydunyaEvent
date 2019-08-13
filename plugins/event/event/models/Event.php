@@ -48,10 +48,10 @@ class Event extends Model
     public $rules = [
     ];
     //filtrage de levenment
-    public function scopeListFrontEnd($query,$option = [],$b){
+    public function scopeListFrontEnd($query,$option = [],$b,$type){
             extract(array_merge([
                 'page'=>1,
-                'perPage'=>6,
+                'perPage'=>3,
                 'sort'=>'priorite'
             ],$option));
             $lastPage = $query->paginate($perPage, $page)->lastPage();
@@ -62,6 +62,15 @@ class Event extends Model
             if($b!=null){
                  $query->where('user_id', '=',$b);
             }
+            if($type!=null){
+                $query->whereHas('type', function($q) use ($type){
+                    $q->where('nom_type', '=', $type);
+                })->orWhere('categorie', '=',$type);
+            }
+           /*if($type!=null){
+                $query->where('categorie', '=',$type);
+            }*/
+          
             return $query->paginate($perPage,$page);
     }
     public $attachOne = [

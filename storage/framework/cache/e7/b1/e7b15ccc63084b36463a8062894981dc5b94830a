@@ -1,4 +1,4 @@
-1565349724a:1:{s:16:"create_event.htm";a:6:{s:8:"fileName";s:16:"create_event.htm";s:7:"content";s:12506:"[session]
+1565723769a:1:{s:16:"create_event.htm";a:6:{s:8:"fileName";s:16:"create_event.htm";s:7:"content";s:13240:"[session]
 security = "all"
 ==
 <?  
@@ -6,16 +6,18 @@ use event\event\models\Event;
 use Carbon\Carbon;
 use event\event\models\Type;
 use event\event\models\Categorie;
-function onStart(){$this->prepareVars(); 
+function onStart(){$this->onPrepareVars(); 
  }
-function onFilterEvents() { $this->prepareVars(); }
-function prepareVars(){
+function onFilterEvents() { $this->onPrepareVars(); }
+function onPrepareVars(){
+  $type=Input::get('typ');
   $b=null;
   $option=post('Filter',[]);
-  $this['events']=Event::ListFrontEnd($option,$b);
+  $this['events']=Event::ListFrontEnd($option,$b,$type);
   $this['pages']=$this['events']->lastPage();
   $this['categorie']=Categorie::all();
   $this['types']=Type::all();
+  $this['categories']=Type::ListFrontEnd($option);
  
 }
 
@@ -65,6 +67,8 @@ function prepareVars(){
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/sema }}"
+<link rel="stylesheet" type="text/css" href="{{'semantic/semantic.min.css'|theme}}">>
     <style media="screen">
   .eml {
     color: red;
@@ -157,6 +161,10 @@ function prepareVars(){
    (function($){
 
 $('#EventFilter').on('change', 'input, select', function(){
+    var $form = $(this).closest('form');
+    $form.request();
+});
+$('#EventPagination').on('change', 'input, select', function(){
     var $form = $(this).closest('form');
     $form.request();
 });
@@ -342,8 +350,14 @@ $('#EventFilter').on('change', 'input, select', function(){
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="{{'/assets/semantic/semantic.min.js'|theme }}"></script>
     </body>
-</html>";s:5:"mtime";i:1565342206;s:6:"markup";s:11998:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1565722435;s:6:"markup";s:12640:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
@@ -387,6 +401,8 @@ $('#EventFilter').on('change', 'input, select', function(){
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/sema }}"
+<link rel="stylesheet" type="text/css" href="{{'semantic/semantic.min.css'|theme}}">>
     <style media="screen">
   .eml {
     color: red;
@@ -479,6 +495,10 @@ $('#EventFilter').on('change', 'input, select', function(){
    (function($){
 
 $('#EventFilter').on('change', 'input, select', function(){
+    var $form = $(this).closest('form');
+    $form.request();
+});
+$('#EventPagination').on('change', 'input, select', function(){
     var $form = $(this).closest('form');
     $form.request();
 });
@@ -664,21 +684,29 @@ $('#EventFilter').on('change', 'input, select', function(){
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="{{'/assets/semantic/semantic.min.js'|theme }}"></script>
     </body>
-</html>";s:4:"code";s:461:"  
+</html>";s:4:"code";s:553:"  
 use event\event\models\Event;
 use Carbon\Carbon;
 use event\event\models\Type;
 use event\event\models\Categorie;
-function onStart(){$this->prepareVars(); 
+function onStart(){$this->onPrepareVars(); 
  }
-function onFilterEvents() { $this->prepareVars(); }
-function prepareVars(){
+function onFilterEvents() { $this->onPrepareVars(); }
+function onPrepareVars(){
+  $type=Input::get('typ');
   $b=null;
   $option=post('Filter',[]);
-  $this['events']=Event::ListFrontEnd($option,$b);
+  $this['events']=Event::ListFrontEnd($option,$b,$type);
   $this['pages']=$this['events']->lastPage();
   $this['categorie']=Categorie::all();
   $this['types']=Type::all();
+  $this['categories']=Type::ListFrontEnd($option);
  
 }";s:7:"session";a:1:{s:8:"security";s:3:"all";}}}

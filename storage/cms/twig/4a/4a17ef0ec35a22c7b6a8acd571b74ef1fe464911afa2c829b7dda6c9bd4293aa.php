@@ -126,6 +126,11 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
 <!-- Material Design Bootstrap -->
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
 <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
+<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/sema }}\"
+<link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        // line 46
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("semantic/semantic.min.css");
+        echo "\">>
     <style media=\"screen\">
   .eml {
     color: red;
@@ -192,11 +197,11 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
     
        <header id=\"layout-header\">
             ";
-        // line 110
+        // line 112
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 111
+        // line 113
         echo "        </header>
 
     <!-- navbar area start -->
@@ -204,37 +209,37 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
         <!-- Content -->
         <section id=\"layout-content\">
             ";
-        // line 117
+        // line 119
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 118
+        // line 120
         echo "        </section>
     
     
         <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 123
+        // line 125
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 124
+        // line 126
         echo "        </footer>
 
         <!-- Scripts -->
         <script src=\"";
-        // line 127
+        // line 129
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
         <script src=\"";
-        // line 128
+        // line 130
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
         <script src=\"";
-        // line 129
+        // line 131
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script>
         ";
-        // line 130
+        // line 132
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="'. Request::getBasePath()
@@ -249,16 +254,20 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 131
+        // line 133
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 132
+        // line 134
         echo "        
 <script>
    (function(\$){
 
 \$('#EventFilter').on('change', 'input, select', function(){
+    var \$form = \$(this).closest('form');
+    \$form.request();
+});
+\$('#EventPagination').on('change', 'input, select', function(){
     var \$form = \$(this).closest('form');
     \$form.request();
 });
@@ -444,6 +453,15 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
 <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js\"></script>
 <!-- MDB core JavaScript -->
 <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js\"></script>
+<script
+  src=\"https://code.jquery.com/jquery-3.1.1.min.js\"
+  integrity=\"sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=\"
+  crossorigin=\"anonymous\"></script>
+<script src=\"";
+        // line 333
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/semantic/semantic.min.js");
+        echo "\"></script>
     </body>
 </html>";
     }
@@ -460,7 +478,7 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
 
     public function getDebugInfo()
     {
-        return array (  257 => 132,  253 => 131,  238 => 130,  234 => 129,  230 => 128,  226 => 127,  221 => 124,  217 => 123,  210 => 118,  208 => 117,  200 => 111,  196 => 110,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
+        return array (  463 => 333,  262 => 134,  258 => 133,  243 => 132,  239 => 131,  235 => 130,  231 => 129,  226 => 126,  222 => 125,  215 => 120,  213 => 119,  205 => 113,  201 => 112,  132 => 46,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -509,6 +527,8 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
 <!-- Material Design Bootstrap -->
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
 <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
+<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/sema }}\"
+<link rel=\"stylesheet\" type=\"text/css\" href=\"{{'semantic/semantic.min.css'|theme}}\">>
     <style media=\"screen\">
   .eml {
     color: red;
@@ -604,6 +624,10 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
     var \$form = \$(this).closest('form');
     \$form.request();
 });
+\$('#EventPagination').on('change', 'input, select', function(){
+    var \$form = \$(this).closest('form');
+    \$form.request();
+});
 
 })(jQuery);
    function increaseAdView(adID) {
@@ -786,6 +810,12 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
 <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js\"></script>
 <!-- MDB core JavaScript -->
 <script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js\"></script>
+<script
+  src=\"https://code.jquery.com/jquery-3.1.1.min.js\"
+  integrity=\"sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=\"
+  crossorigin=\"anonymous\"></script>
+<script src=\"{{'/assets/semantic/semantic.min.js'|theme }}\"></script>
     </body>
 </html>", "C:\\wamp64\\www\\install-master1/themes/demo/layouts/create_event.htm", "");
     }
