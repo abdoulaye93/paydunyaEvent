@@ -227,32 +227,42 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
         // line 129
         echo "        </section>
-       
+        <div class=\"container\" style=\"height: 1000px; padding-top: 200px;\">
+          <a href=\"";
+        // line 131
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("ticket", ["nom_type_ticket" => ($context["nomticket"] ?? null), "nbr_ticket" => ($context["nbrticket"] ?? null), "montant" => ($context["montant"] ?? null), "id_event" => ($context["id"] ?? null)]);
+        echo "\" onclick=\"edition();return false;\">Imprimer le ticket</a>
+          <a href=\"";
+        // line 132
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("calendar", ["date" => ($context["dateEvent"] ?? null), "email" => ($context["mail"] ?? null), "nom" => ($context["nomevent"] ?? null), "description" => ($context["description"] ?? null), "lieu" => ($context["lieu"] ?? null)]);
+        echo "\">Ajouter à votre calendar</a>
+        </div>
+        
         <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 133
+        // line 137
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 134
+        // line 138
         echo "        </footer>
 
         <!-- Scripts -->
         <script src=\"";
-        // line 137
+        // line 141
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
         <script src=\"";
-        // line 138
+        // line 142
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
         <script src=\"";
-        // line 139
+        // line 143
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script>
         ";
-        // line 140
+        // line 144
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="'. Request::getBasePath()
@@ -267,11 +277,11 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 141
+        // line 145
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 142
+        // line 146
         echo "        
 <script>
   (function(\$){
@@ -280,8 +290,13 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
     var \$form = \$(this).closest('form');
     \$form.request();
 });
+\$('#EventPagination').on('change', 'input, select', function(){
+    var \$form = \$(this).closest('form');
+    \$form.request();
+});
 
 })(jQuery);
+
    function increaseAdView(adID) {
       var fd = new FormData();
       fd.append('adID', adID);
@@ -486,7 +501,7 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
 
     public function getDebugInfo()
     {
-        return array (  275 => 142,  271 => 141,  256 => 140,  252 => 139,  248 => 138,  244 => 137,  239 => 134,  235 => 133,  229 => 129,  227 => 128,  220 => 123,  212 => 118,  206 => 114,  204 => 113,  200 => 111,  196 => 110,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
+        return array (  285 => 146,  281 => 145,  266 => 144,  262 => 143,  258 => 142,  254 => 141,  249 => 138,  245 => 137,  237 => 132,  233 => 131,  229 => 129,  227 => 128,  220 => 123,  212 => 118,  206 => 114,  204 => 113,  200 => 111,  196 => 110,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -620,7 +635,11 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
         <section id=\"layout-content\">
             {% page %}
         </section>
-       
+        <div class=\"container\" style=\"height: 1000px; padding-top: 200px;\">
+          <a href=\"{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}\" onclick=\"edition();return false;\">Imprimer le ticket</a>
+          <a href=\"{{'calendar'|page({date:dateEvent,email:mail,nom:nomevent,description:description,lieu:lieu})}}\">Ajouter à votre calendar</a>
+        </div>
+        
         <!-- Footer -->
         <footer id=\"layout-footer\">
             {% partial 'site/footer' %}
@@ -640,8 +659,13 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
     var \$form = \$(this).closest('form');
     \$form.request();
 });
+\$('#EventPagination').on('change', 'input, select', function(){
+    var \$form = \$(this).closest('form');
+    \$form.request();
+});
 
 })(jQuery);
+
    function increaseAdView(adID) {
       var fd = new FormData();
       fd.append('adID', adID);

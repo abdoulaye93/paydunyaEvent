@@ -4,6 +4,7 @@
           <div class="">
             <div class="">
               <h2 style="font-size:32px;">{{item.nom}}</h2>
+              <input type="hidden" value="{{item.nom}}" id="nomevent">
             </div>
             <div class="row my-5">
               <div class="col-lg-8">
@@ -13,6 +14,8 @@
                 <div class="mt-5">
                   <h3>Description</h3>
                   {{item.description}}
+                  <input type="hidden" value="{{item.description}}" id="description">
+                  <input type="hidden" value="{{item.lieu}}" id="lieu">
                 </div>
                             <div class="" style="margin-bottom: 20px;">
                                                            <a onclick="increaseAdView(25)" href="https://laravel.com/" target="_blank">
@@ -32,6 +35,10 @@
                     <div class="">
                       <strong class="card-title" style="display:inline-block;">Expired Date:</strong>
                       <p class="card-text" style="display:inline-block;">{{item.periode.date_cloture}}</p>
+                      <input type="hidden" id="date" value="{{item.periode.date_cloture}}">
+                      {% if user %}
+                      <input type="hidden" id="mailcalendar" value="{{user.email}}">
+                      {%endif%}
                     </div>
                     <div class="">
                       <strong class="card-title" style="display:inline-block;">Category:</strong>
@@ -126,7 +133,6 @@
                     <br>
                                                   
                     <div>
-                      <a href="{{ 'calendar'|page }}">jjjj</a>
 
                       <div class="pull-right">
                         <form data-request="onAchat" id="buyForm">
@@ -289,6 +295,31 @@
               element1.setAttribute('name','nameticket')
               element1.setAttribute('value',JSON.parse(tickets[i].value).nom_type)
               document.getElementById('buyForm').appendChild(element1)
+              var element2 = document.createElement('input')
+              element2.setAttribute('type', 'hidden')
+              element2.setAttribute('name','mailcalendar')
+              element2.setAttribute('value',document.getElementById('mailcalendar').value)
+              document.getElementById('buyForm').appendChild(element2)
+              var element3 = document.createElement('input')
+              element3.setAttribute('type', 'hidden')
+              element3.setAttribute('name','datecalendar')
+              element3.setAttribute('value',document.getElementById('date').value)
+              document.getElementById('buyForm').appendChild(element3)
+              var element4 = document.createElement('input')
+              element4.setAttribute('type', 'hidden')
+              element4.setAttribute('name','nomevent')
+              element4.setAttribute('value',document.getElementById('nomevent').value)
+              document.getElementById('buyForm').appendChild(element4)
+              var element5 = document.createElement('input')
+              element5.setAttribute('type', 'hidden')
+              element5.setAttribute('name','description')
+              element5.setAttribute('value',document.getElementById('description').value)
+              document.getElementById('buyForm').appendChild(element5)
+              var element6 = document.createElement('input')
+              element6.setAttribute('type', 'hidden')
+              element6.setAttribute('name','lieu')
+              element6.setAttribute('value',document.getElementById('lieu').value)
+              document.getElementById('buyForm').appendChild(element6)
             }
           }
 

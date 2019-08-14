@@ -1,4 +1,4 @@
-1565702562a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:17259:"[session]
+1565799086a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:17732:"[session]
 security = "all"
 ==
 <?php
@@ -11,6 +11,11 @@ security = "all"
 
     $quantity = input('nbTicket');
     $nomticket = input('nameticket');
+    $dateEvent = input('datecalendar');
+    $mail = input('mailcalendar');
+    $nomevent = input('nomevent');
+    $decription = input('description');
+    $lieu = input('lieu');
     
     foreach (input() as $key => $value) 
     {
@@ -39,6 +44,11 @@ security = "all"
     $checkoutInvoice->addCustomData("total",$b);
     $checkoutInvoice->addCustomData("nbrticket",(int)$quantity );
     $checkoutInvoice->addCustomData("nameticket",$nomticket);
+    $checkoutInvoice->addCustomData("dateEvent",$dateEvent);
+    $checkoutInvoice->addCustomData("mail",$mail);
+    $checkoutInvoice->addCustomData("nomevent",$nomevent);
+    $checkoutInvoice->addCustomData("description",$decription);
+    $checkoutInvoice->addCustomData("lieu",$lieu);
     if($checkoutInvoice->create()) 
     {
       return Redirect::to($checkoutInvoice->getInvoiceUrl());
@@ -435,7 +445,7 @@ security = "all"
                           }
 </script>
     </body>
-</html>";s:5:"mtime";i:1565303538;s:6:"markup";s:15203:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1565798484;s:6:"markup";s:15203:"<!DOCTYPE html>
 <html>
     <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -817,7 +827,7 @@ security = "all"
                           }
 </script>
     </body>
-</html>";s:4:"code";s:2004:"  use payment\Payment\Models\PaydunyaConfig;
+</html>";s:4:"code";s:2477:"  use payment\Payment\Models\PaydunyaConfig;
 
   function onAchat()
   {
@@ -826,6 +836,11 @@ security = "all"
 
     $quantity = input('nbTicket');
     $nomticket = input('nameticket');
+    $dateEvent = input('datecalendar');
+    $mail = input('mailcalendar');
+    $nomevent = input('nomevent');
+    $decription = input('description');
+    $lieu = input('lieu');
     
     foreach (input() as $key => $value) 
     {
@@ -854,6 +869,11 @@ security = "all"
     $checkoutInvoice->addCustomData("total",$b);
     $checkoutInvoice->addCustomData("nbrticket",(int)$quantity );
     $checkoutInvoice->addCustomData("nameticket",$nomticket);
+    $checkoutInvoice->addCustomData("dateEvent",$dateEvent);
+    $checkoutInvoice->addCustomData("mail",$mail);
+    $checkoutInvoice->addCustomData("nomevent",$nomevent);
+    $checkoutInvoice->addCustomData("description",$decription);
+    $checkoutInvoice->addCustomData("lieu",$lieu);
     if($checkoutInvoice->create()) 
     {
       return Redirect::to($checkoutInvoice->getInvoiceUrl());

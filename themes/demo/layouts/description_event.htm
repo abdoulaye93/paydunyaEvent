@@ -11,6 +11,11 @@ security = "all"
 
     $quantity = input('nbTicket');
     $nomticket = input('nameticket');
+    $dateEvent = input('datecalendar');
+    $mail = input('mailcalendar');
+    $nomevent = input('nomevent');
+    $decription = input('description');
+    $lieu = input('lieu');
     
     foreach (input() as $key => $value) 
     {
@@ -39,6 +44,11 @@ security = "all"
     $checkoutInvoice->addCustomData("total",$b);
     $checkoutInvoice->addCustomData("nbrticket",(int)$quantity );
     $checkoutInvoice->addCustomData("nameticket",$nomticket);
+    $checkoutInvoice->addCustomData("dateEvent",$dateEvent);
+    $checkoutInvoice->addCustomData("mail",$mail);
+    $checkoutInvoice->addCustomData("nomevent",$nomevent);
+    $checkoutInvoice->addCustomData("description",$decription);
+    $checkoutInvoice->addCustomData("lieu",$lieu);
     if($checkoutInvoice->create()) 
     {
       return Redirect::to($checkoutInvoice->getInvoiceUrl());

@@ -3,9 +3,7 @@ url = "/retour_achat"
 layout = "retour_achat"
 is_hidden = 0
 ==
-
-
 <div>
     <a href="{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}" onclick="edition();return false;">Imprimer le ticket</a>
-    <a>Ajouter à votre calendar</a>
+    <a href="{{'calendar'|page({date:dateEvent,email:mail})}}">Ajouter à votre calendar</a>
 </div>

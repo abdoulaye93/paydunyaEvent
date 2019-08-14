@@ -1,5 +1,5 @@
 <?php 
-use payment\Payment\Models\PaydunyaConfig;class Cms5d4d3a9059a57843332286_ac03fe80747bd4cbdb6c69d7a85e6325Class extends Cms\Classes\LayoutCode
+use payment\Payment\Models\PaydunyaConfig;class Cms5d543056d3a85204388569_c4580e4e1e3043c9ac50007478d1c0f0Class extends Cms\Classes\LayoutCode
 {
   
 public function onAchat()
@@ -9,6 +9,11 @@ public function onAchat()
 
     $quantity = input('nbTicket');
     $nomticket = input('nameticket');
+    $dateEvent = input('datecalendar');
+    $mail = input('mailcalendar');
+    $nomevent = input('nomevent');
+    $decription = input('description');
+    $lieu = input('lieu');
     
     foreach (input() as $key => $value) 
     {
@@ -37,6 +42,11 @@ public function onAchat()
     $checkoutInvoice->addCustomData("total",$b);
     $checkoutInvoice->addCustomData("nbrticket",(int)$quantity );
     $checkoutInvoice->addCustomData("nameticket",$nomticket);
+    $checkoutInvoice->addCustomData("dateEvent",$dateEvent);
+    $checkoutInvoice->addCustomData("mail",$mail);
+    $checkoutInvoice->addCustomData("nomevent",$nomevent);
+    $checkoutInvoice->addCustomData("description",$decription);
+    $checkoutInvoice->addCustomData("lieu",$lieu);
     if($checkoutInvoice->create()) 
     {
       return Redirect::to($checkoutInvoice->getInvoiceUrl());

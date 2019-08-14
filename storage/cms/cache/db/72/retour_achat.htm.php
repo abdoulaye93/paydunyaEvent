@@ -1,5 +1,5 @@
 <?php 
-use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;use event\event\models\AchatList;class Cms5d4d3ad2acb85858837929_3f29bbd643aecdb9a4ac6f0424542ee3Class extends Cms\Classes\LayoutCode
+use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;use event\event\models\AchatList;class Cms5d543064855a5843310274_8263e106f84da681734b5979023bf8d4Class extends Cms\Classes\LayoutCode
 {
 
 
@@ -21,6 +21,11 @@ public function onStart(){
     // echo $invoice->getCustomData("numero_gagnant");
     $this['nomticket']=$invoice->getCustomData("nameticket");
     $this['nbrticket']=$invoice->getCustomData("nbrticket"); 
+    $this['dateEvent']=$invoice->getCustomData("dateEvent"); 
+    $this['mail']=$invoice->getCustomData("mail"); 
+    $this['nomevent']=$invoice->getCustomData("nomevent"); 
+    $this['description']=$invoice->getCustomData("description"); 
+    $this['lieu']=$invoice->getCustomData("lieu"); 
     
       // Vous pouvez aussi récupérer le montant total spécifié précédemment
       $this['montant']=$invoice->getTotalAmount();

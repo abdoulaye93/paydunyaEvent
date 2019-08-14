@@ -1,5 +1,5 @@
 ==
-<?
+<?php
 use payment\Payment\Models\PaydunyaConfig;
 use event\event\models\Event;
 use event\event\models\AchatList;
@@ -20,6 +20,11 @@ function onStart(){
     // echo $invoice->getCustomData("numero_gagnant");
     $this['nomticket']=$invoice->getCustomData("nameticket");
     $this['nbrticket']=$invoice->getCustomData("nbrticket"); 
+    $this['dateEvent']=$invoice->getCustomData("dateEvent"); 
+    $this['mail']=$invoice->getCustomData("mail"); 
+    $this['nomevent']=$invoice->getCustomData("nomevent"); 
+    $this['description']=$invoice->getCustomData("description"); 
+    $this['lieu']=$invoice->getCustomData("lieu"); 
     
       // Vous pouvez aussi récupérer le montant total spécifié précédemment
       $this['montant']=$invoice->getTotalAmount();
@@ -43,7 +48,6 @@ function onStart(){
       echo $invoice->response_code;
     }
 }
-
 ?>
 ==
 <!DOCTYPE html>
@@ -175,7 +179,11 @@ function onStart(){
         <section id="layout-content">
             {% page %}
         </section>
-       
+        <div class="container" style="height: 1000px; padding-top: 200px;">
+          <a href="{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}" onclick="edition();return false;">Imprimer le ticket</a>
+          <a href="{{'calendar'|page({date:dateEvent,email:mail,nom:nomevent,description:description,lieu:lieu})}}">Ajouter à votre calendar</a>
+        </div>
+        
         <!-- Footer -->
         <footer id="layout-footer">
             {% partial 'site/footer' %}
@@ -195,8 +203,13 @@ $('#EventFilter').on('change', 'input, select', function(){
     var $form = $(this).closest('form');
     $form.request();
 });
+$('#EventPagination').on('change', 'input, select', function(){
+    var $form = $(this).closest('form');
+    $form.request();
+});
 
 })(jQuery);
+
    function increaseAdView(adID) {
       var fd = new FormData();
       fd.append('adID', adID);

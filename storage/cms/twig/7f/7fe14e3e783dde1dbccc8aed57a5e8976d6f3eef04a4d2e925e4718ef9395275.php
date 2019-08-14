@@ -37,7 +37,10 @@ class __TwigTemplate_d7d19946a95db96d8c36da909f930630b203b7b97689b7a790f1a02558d
         // line 2
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("ticket", ["nom_type_ticket" => ($context["nomticket"] ?? null), "nbr_ticket" => ($context["nbrticket"] ?? null), "montant" => ($context["montant"] ?? null), "id_event" => ($context["id"] ?? null)]);
         echo "\" onclick=\"edition();return false;\">Imprimer le ticket</a>
-    <a>Ajouter à votre calendar</a>
+    <a href=\"";
+        // line 3
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("calendar", ["date" => ($context["dateEvent"] ?? null), "email" => ($context["mail"] ?? null)]);
+        echo "\">Ajouter à votre calendar</a>
 </div>";
     }
 
@@ -53,14 +56,14 @@ class __TwigTemplate_d7d19946a95db96d8c36da909f930630b203b7b97689b7a790f1a02558d
 
     public function getDebugInfo()
     {
-        return array (  38 => 2,  35 => 1,);
+        return array (  42 => 3,  38 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<div>
     <a href=\"{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}\" onclick=\"edition();return false;\">Imprimer le ticket</a>
-    <a>Ajouter à votre calendar</a>
+    <a href=\"{{'calendar'|page({date:dateEvent,email:mail})}}\">Ajouter à votre calendar</a>
 </div>", "C:\\wamp64\\www\\install-master1/themes/demo/pages/retour_achat.htm", "");
     }
 }

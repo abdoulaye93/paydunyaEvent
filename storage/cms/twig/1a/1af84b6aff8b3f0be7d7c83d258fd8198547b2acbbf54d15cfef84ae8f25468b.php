@@ -44,6 +44,10 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
             // line 6
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", [], "any", false, false, false, 6), "html", null, true);
             echo "</h2>
+              <input type=\"hidden\" value=\"";
+            // line 7
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", [], "any", false, false, false, 7), "html", null, true);
+            echo "\" id=\"nomevent\">
             </div>
             <div class=\"row my-5\">
               <div class=\"col-lg-8\">
@@ -53,9 +57,17 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                 <div class=\"mt-5\">
                   <h3>Description</h3>
                   ";
-            // line 15
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "description", [], "any", false, false, false, 15), "html", null, true);
+            // line 16
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "description", [], "any", false, false, false, 16), "html", null, true);
             echo "
+                  <input type=\"hidden\" value=\"";
+            // line 17
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "description", [], "any", false, false, false, 17), "html", null, true);
+            echo "\" id=\"description\">
+                  <input type=\"hidden\" value=\"";
+            // line 18
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "lieu", [], "any", false, false, false, 18), "html", null, true);
+            echo "\" id=\"lieu\">
                 </div>
                             <div class=\"\" style=\"margin-bottom: 20px;\">
                                                            <a onclick=\"increaseAdView(25)\" href=\"https://laravel.com/\" target=\"_blank\">
@@ -75,15 +87,29 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                     <div class=\"\">
                       <strong class=\"card-title\" style=\"display:inline-block;\">Expired Date:</strong>
                       <p class=\"card-text\" style=\"display:inline-block;\">";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "periode", [], "any", false, false, false, 34), "date_cloture", [], "any", false, false, false, 34), "html", null, true);
+            // line 37
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "periode", [], "any", false, false, false, 37), "date_cloture", [], "any", false, false, false, 37), "html", null, true);
             echo "</p>
-                    </div>
+                      <input type=\"hidden\" id=\"date\" value=\"";
+            // line 38
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "periode", [], "any", false, false, false, 38), "date_cloture", [], "any", false, false, false, 38), "html", null, true);
+            echo "\">
+                      ";
+            // line 39
+            if (($context["user"] ?? null)) {
+                // line 40
+                echo "                      <input type=\"hidden\" id=\"mailcalendar\" value=\"";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "email", [], "any", false, false, false, 40), "html", null, true);
+                echo "\">
+                      ";
+            }
+            // line 42
+            echo "                    </div>
                     <div class=\"\">
                       <strong class=\"card-title\" style=\"display:inline-block;\">Category:</strong>
                       <p class=\"card-text\" style=\"display:inline-block;\">";
-            // line 38
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "type", [], "any", false, false, false, 38), "nom_type", [], "any", false, false, false, 38), "html", null, true);
+            // line 45
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "type", [], "any", false, false, false, 45), "nom_type", [], "any", false, false, false, 45), "html", null, true);
             echo "</p>
                     </div>
                     <hr>
@@ -91,21 +117,21 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                       <strong class=\"card-title\">Tickets:</strong><br>
                       <table>
                           ";
-            // line 44
+            // line 51
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadTypeticket", [], "method", false, false, false, 44));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadTypeticket", [], "method", false, false, false, 51));
             foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-                // line 45
+                // line 52
                 echo "                            <tr>
                               <td>";
-                // line 46
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom_type", [], "any", false, false, false, 46), "html", null, true);
+                // line 53
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom_type", [], "any", false, false, false, 53), "html", null, true);
                 echo " - Prix: ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant", [], "any", false, false, false, 46), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant", [], "any", false, false, false, 53), "html", null, true);
                 echo "FCFA</td>
                               <td> &nbsp;&nbsp; &nbsp;</td>
                               <td><input type=\"radio\" value=\"";
-                // line 48
+                // line 55
                 echo twig_escape_filter($this->env, $context["item"], "html", null, true);
                 echo "\" name=\"tic\" class=\" ticket\" onchange=\"testtype(event)\"/></td>
                             </tr>
@@ -114,18 +140,18 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 51
+            // line 58
             echo "                          <script>
                            
                           </script>
                         </table>
                       <select class=\"float-right\" onchange=\"clacTotal(this.value)\" id=\"nb\">
                           ";
-            // line 56
+            // line 63
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(range(1, twig_get_attribute($this->env, $this->source, $context["item"], "nombre_ticket", [], "any", false, false, false, 56)));
+            $context['_seq'] = twig_ensure_traversable(range(1, twig_get_attribute($this->env, $this->source, $context["item"], "nombre_ticket", [], "any", false, false, false, 63)));
             foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-                // line 57
+                // line 64
                 echo "                            <option value=\"";
                 echo twig_escape_filter($this->env, $context["i"], "html", null, true);
                 echo "\"> ";
@@ -136,37 +162,37 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 58
+            // line 65
             echo "  
                         </select>  
                     </div>
                     <hr>
                     ";
-            // line 62
-            if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadSubEvent", [], "method", false, false, false, 62)) > 0)) {
-                // line 63
+            // line 69
+            if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadSubEvent", [], "method", false, false, false, 69)) > 0)) {
+                // line 70
                 echo "                    <div class=\"\">
                       <strong class=\"card-title\">Sous évènement(s):</strong><br>
                       <table>
                         ";
-                // line 66
+                // line 73
                 $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadSubEvent", [], "method", false, false, false, 66));
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadSubEvent", [], "method", false, false, false, 73));
                 foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-                    // line 67
+                    // line 74
                     echo "                          <tr>
                             <td>";
-                    // line 68
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "sub", [], "any", false, false, false, 68), "nom", [], "any", false, false, false, 68), "html", null, true);
+                    // line 75
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "sub", [], "any", false, false, false, 75), "nom", [], "any", false, false, false, 75), "html", null, true);
                     echo " - Prix: ";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "sub", [], "any", false, false, false, 68), "montant", [], "any", false, false, false, 68), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "sub", [], "any", false, false, false, 75), "montant", [], "any", false, false, false, 75), "html", null, true);
                     echo "FCFA</td>
                             <td> &nbsp;&nbsp; &nbsp;</td>
                             <td><input type=\"checkbox\" value=\"";
-                    // line 70
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "sub", [], "any", false, false, false, 70), "montant", [], "any", false, false, false, 70), "html", null, true);
+                    // line 77
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "sub", [], "any", false, false, false, 77), "montant", [], "any", false, false, false, 77), "html", null, true);
                     echo "\" name=\"";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "sub", [], "any", false, false, false, 70), "nom", [], "any", false, false, false, 70), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "sub", [], "any", false, false, false, 77), "nom", [], "any", false, false, false, 77), "html", null, true);
                     echo "\" class=\" sub\" onchange=\"test(event)\"/></td>
                           </tr>
                         ";
@@ -174,7 +200,7 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 73
+                // line 80
                 echo "                        <script>
                          function test(event)
                           {
@@ -221,7 +247,7 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                     </div>
                   ";
             }
-            // line 118
+            // line 125
             echo "                    <div class=\"\">
                       <strong>Total:</strong>
                       <span class=\"float-right\">
@@ -233,24 +259,20 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                     <br>
                                                   
                     <div>
-                      <a href=\"";
-            // line 129
-            echo $this->extensions['Cms\Twig\Extension']->pageFilter("calendar");
-            echo "\">jjjj</a>
 
                       <div class=\"pull-right\">
                         <form data-request=\"onAchat\" id=\"buyForm\">
                           <input type=\"hidden\" name=\"total\" id=\"total\" value=\"\">
                           ";
-            // line 134
-            if (twig_get_attribute($this->env, $this->source, $context["item"], "promo", [], "any", false, false, false, 134)) {
-                // line 135
+            // line 140
+            if (twig_get_attribute($this->env, $this->source, $context["item"], "promo", [], "any", false, false, false, 140)) {
+                // line 141
                 echo "                            <input type=\"hidden\" name=\"promo\" value=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant_promo", [], "any", false, false, false, 135), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant_promo", [], "any", false, false, false, 141), "html", null, true);
                 echo "\">
                           ";
             }
-            // line 136
+            // line 142
             echo "  
                           <input type=\"submit\" class=\"btn btn-primary\" value=\"Acheter\"/>
                         </form>
@@ -338,67 +360,67 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                             <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
                                 <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
                                    ";
-            // line 222
+            // line 228
             if ( !($context["user"] ?? null)) {
-                // line 223
+                // line 229
                 echo "    
                                         <div class=\"row\">
                                     
                                             <div class=\"col-md-6\">
                                                 <h3 class=\"";
-                // line 227
-                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 227), "id", [], "any", false, false, false, 227) == "register")) {
+                // line 233
+                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 233), "id", [], "any", false, false, false, 233) == "register")) {
                     echo "active";
                 }
                 echo "\"><a href=\"";
                 echo $this->extensions['Cms\Twig\Extension']->pageFilter("register");
                 echo "\">Créer un compte</a></h3>
                                                 ";
-                // line 228
+                // line 234
                 $context['__cms_partial_params'] = [];
                 echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::signin")                , $context['__cms_partial_params']                , true                );
                 unset($context['__cms_partial_params']);
-                // line 229
+                // line 235
                 echo "                                            </div>
                                     
                                         </div>
                                     
                                     ";
             } else {
-                // line 234
+                // line 240
                 echo "                                    
                                     ";
             }
-            // line 236
+            // line 242
             echo "                                </div><!-- login form wrapper end -->
                             </div>
                             <div class=\"tab-pane fade\" id=\"nav-signup\" role=\"tabpanel\" aria-labelledby=\"nav-signup-tab\">
     
                                 <div class=\"singup-form-wrapper\">
                                     ";
-            // line 241
+            // line 247
             if ( !($context["user"] ?? null)) {
-                // line 242
+                // line 248
                 echo "                                    
                                         <div class=\"row\">
                                             <div class=\"col-md-6\">
                                                 ";
-                // line 245
+                // line 251
                 $context['__cms_partial_params'] = [];
                 echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::register")                , $context['__cms_partial_params']                , true                );
                 unset($context['__cms_partial_params']);
-                // line 246
+                // line 252
                 echo "                                            </div>
                                     
                                         </div>
                                     
                                     ";
             } else {
-                // line 251
+                // line 257
                 echo "                                    
                                     ";
             }
-            // line 253
+            // line 259
             echo "                                 </div>
                             </div>
                         </div><!-- /.tab conent-->
@@ -412,7 +434,7 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 262
+        // line 268
         echo "
     <script>
         
@@ -443,6 +465,31 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
               element1.setAttribute('name','nameticket')
               element1.setAttribute('value',JSON.parse(tickets[i].value).nom_type)
               document.getElementById('buyForm').appendChild(element1)
+              var element2 = document.createElement('input')
+              element2.setAttribute('type', 'hidden')
+              element2.setAttribute('name','mailcalendar')
+              element2.setAttribute('value',document.getElementById('mailcalendar').value)
+              document.getElementById('buyForm').appendChild(element2)
+              var element3 = document.createElement('input')
+              element3.setAttribute('type', 'hidden')
+              element3.setAttribute('name','datecalendar')
+              element3.setAttribute('value',document.getElementById('date').value)
+              document.getElementById('buyForm').appendChild(element3)
+              var element4 = document.createElement('input')
+              element4.setAttribute('type', 'hidden')
+              element4.setAttribute('name','nomevent')
+              element4.setAttribute('value',document.getElementById('nomevent').value)
+              document.getElementById('buyForm').appendChild(element4)
+              var element5 = document.createElement('input')
+              element5.setAttribute('type', 'hidden')
+              element5.setAttribute('name','description')
+              element5.setAttribute('value',document.getElementById('description').value)
+              document.getElementById('buyForm').appendChild(element5)
+              var element6 = document.createElement('input')
+              element6.setAttribute('type', 'hidden')
+              element6.setAttribute('name','lieu')
+              element6.setAttribute('value',document.getElementById('lieu').value)
+              document.getElementById('buyForm').appendChild(element6)
             }
           }
 
@@ -474,7 +521,7 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
 
     public function getDebugInfo()
     {
-        return array (  416 => 262,  402 => 253,  398 => 251,  391 => 246,  387 => 245,  382 => 242,  380 => 241,  373 => 236,  369 => 234,  362 => 229,  358 => 228,  350 => 227,  344 => 223,  342 => 222,  254 => 136,  248 => 135,  246 => 134,  238 => 129,  225 => 118,  178 => 73,  167 => 70,  160 => 68,  157 => 67,  153 => 66,  148 => 63,  146 => 62,  140 => 58,  129 => 57,  125 => 56,  118 => 51,  109 => 48,  102 => 46,  99 => 45,  95 => 44,  86 => 38,  79 => 34,  57 => 15,  45 => 6,  39 => 2,  35 => 1,);
+        return array (  438 => 268,  424 => 259,  420 => 257,  413 => 252,  409 => 251,  404 => 248,  402 => 247,  395 => 242,  391 => 240,  384 => 235,  380 => 234,  372 => 233,  366 => 229,  364 => 228,  276 => 142,  270 => 141,  268 => 140,  251 => 125,  204 => 80,  193 => 77,  186 => 75,  183 => 74,  179 => 73,  174 => 70,  172 => 69,  166 => 65,  155 => 64,  151 => 63,  144 => 58,  135 => 55,  128 => 53,  125 => 52,  121 => 51,  112 => 45,  107 => 42,  101 => 40,  99 => 39,  95 => 38,  91 => 37,  69 => 18,  65 => 17,  61 => 16,  49 => 7,  45 => 6,  39 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -485,6 +532,7 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
           <div class=\"\">
             <div class=\"\">
               <h2 style=\"font-size:32px;\">{{item.nom}}</h2>
+              <input type=\"hidden\" value=\"{{item.nom}}\" id=\"nomevent\">
             </div>
             <div class=\"row my-5\">
               <div class=\"col-lg-8\">
@@ -494,6 +542,8 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                 <div class=\"mt-5\">
                   <h3>Description</h3>
                   {{item.description}}
+                  <input type=\"hidden\" value=\"{{item.description}}\" id=\"description\">
+                  <input type=\"hidden\" value=\"{{item.lieu}}\" id=\"lieu\">
                 </div>
                             <div class=\"\" style=\"margin-bottom: 20px;\">
                                                            <a onclick=\"increaseAdView(25)\" href=\"https://laravel.com/\" target=\"_blank\">
@@ -513,6 +563,10 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                     <div class=\"\">
                       <strong class=\"card-title\" style=\"display:inline-block;\">Expired Date:</strong>
                       <p class=\"card-text\" style=\"display:inline-block;\">{{item.periode.date_cloture}}</p>
+                      <input type=\"hidden\" id=\"date\" value=\"{{item.periode.date_cloture}}\">
+                      {% if user %}
+                      <input type=\"hidden\" id=\"mailcalendar\" value=\"{{user.email}}\">
+                      {%endif%}
                     </div>
                     <div class=\"\">
                       <strong class=\"card-title\" style=\"display:inline-block;\">Category:</strong>
@@ -607,7 +661,6 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
                     <br>
                                                   
                     <div>
-                      <a href=\"{{ 'calendar'|page }}\">jjjj</a>
 
                       <div class=\"pull-right\">
                         <form data-request=\"onAchat\" id=\"buyForm\">
@@ -770,6 +823,31 @@ class __TwigTemplate_e204366d8674e0dfcaa1d6e209d9cd6a699168b06ea6947169663dbe502
               element1.setAttribute('name','nameticket')
               element1.setAttribute('value',JSON.parse(tickets[i].value).nom_type)
               document.getElementById('buyForm').appendChild(element1)
+              var element2 = document.createElement('input')
+              element2.setAttribute('type', 'hidden')
+              element2.setAttribute('name','mailcalendar')
+              element2.setAttribute('value',document.getElementById('mailcalendar').value)
+              document.getElementById('buyForm').appendChild(element2)
+              var element3 = document.createElement('input')
+              element3.setAttribute('type', 'hidden')
+              element3.setAttribute('name','datecalendar')
+              element3.setAttribute('value',document.getElementById('date').value)
+              document.getElementById('buyForm').appendChild(element3)
+              var element4 = document.createElement('input')
+              element4.setAttribute('type', 'hidden')
+              element4.setAttribute('name','nomevent')
+              element4.setAttribute('value',document.getElementById('nomevent').value)
+              document.getElementById('buyForm').appendChild(element4)
+              var element5 = document.createElement('input')
+              element5.setAttribute('type', 'hidden')
+              element5.setAttribute('name','description')
+              element5.setAttribute('value',document.getElementById('description').value)
+              document.getElementById('buyForm').appendChild(element5)
+              var element6 = document.createElement('input')
+              element6.setAttribute('type', 'hidden')
+              element6.setAttribute('name','lieu')
+              element6.setAttribute('value',document.getElementById('lieu').value)
+              document.getElementById('buyForm').appendChild(element6)
             }
           }
 
