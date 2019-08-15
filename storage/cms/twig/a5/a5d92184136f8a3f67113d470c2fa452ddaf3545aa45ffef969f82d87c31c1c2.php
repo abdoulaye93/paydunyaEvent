@@ -34,39 +34,156 @@ class __TwigTemplate_247f68f14339031b012a9d85f6ba8ed93771df41063d72846038ed5586e
         // line 1
         echo "<!DOCTYPE html>
 <html>
-  <head>
-    <title>Google Calendar API Quickstart</title>
-    <meta charset=\"utf-8\" />
-  </head>
-  <body>
-    <p>Google Calendar API Quickstart</p>
+    <head>
+        <meta charset=\"utf-8\">
+           <title>October CMS - ";
+        // line 5
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 5), "title", [], "any", false, false, false, 5), "html", null, true);
+        echo "</title>
+           <meta name=\"description\" content=\"";
+        // line 6
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 6), "meta_description", [], "any", false, false, false, 6), "html", null, true);
+        echo "\">
+           <meta name=\"title\" content=\"";
+        // line 7
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 7), "meta_title", [], "any", false, false, false, 7), "html", null, true);
+        echo "\">
+          <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">
+   
+       <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />
+       <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
+       <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+       <title> eTicket | Event Details  </title>
+       <!-- favicon -->
+        <link href=\"";
+        // line 15
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/interfaceControl/logoIcon/icon.jpg");
+        echo "\" rel=\"stylesheet\">
+       <!-- bootstrap -->
+        <link href=\"";
+        // line 17
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/bootstrap.min.css");
+        echo "\" rel=\"stylesheet\">
+            <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\">
+       <!-- fontawesome -->
+        <link href=\"";
+        // line 20
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/css/font-awesome.min.css");
+        echo "\" rel=\"stylesheet\">
+       <!-- flaticon -->
+        <link href=\"";
+        // line 22
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/flaticon.css");
+        echo "\" rel=\"stylesheet\">
+       <!-- bootstrap datetime picker -->
+         <link href=\"";
+        // line 24
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/bootstrap-datepicker.min.css");
+        echo "\" rel=\"stylesheet\">
+       <!-- animate.css -->
+        <link href=\"";
+        // line 26
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/animate.css");
+        echo "\" rel=\"stylesheet\">
+       <!-- Owl Carousel -->
+           <link href=\"";
+        // line 28
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/owl.carousel.min.css");
+        echo "\" rel=\"stylesheet\">
+       <!-- magnific popup -->
+         <link href=\"";
+        // line 30
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/magnific-popup.css");
+        echo "\" rel=\"stylesheet\">
+       <!-- stylesheet -->
+       <link href=\"";
+        // line 32
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/style.css");
+        echo "\" rel=\"stylesheet\">
+       <!-- responsive -->
+       <link href=\"";
+        // line 34
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/responsive.css");
+        echo "\" rel=\"stylesheet\">
+        <link href=\"";
+        // line 35
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/css/sweetalert.css");
+        echo "\" rel=\"stylesheet\"><script src=\"";
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/js/sweetalert.js");
+        echo "\"></script>
+        <link href=\"";
+        // line 36
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs");
+        echo "\" rel=\"stylesheet\">
+        <link href=\"";
+        // line 37
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/themes/base-color.php?color=7d5fff");
+        echo "\" rel=\"stylesheet\">
+        <!-- Font Awesome -->
+   <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">
+   <!-- Bootstrap core CSS -->
+   <link href=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\">
+   <!-- Material Design Bootstrap -->
+   <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
+   <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
+      
+       </head>
+  <body >
+      <header id=\"layout-header\">
+          ";
+        // line 49
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        // line 50
+        echo "      </header>
+      <div style=\"height: 1000px;padding-top: 200px;\" class=\"container\">
+    <p>Cliquer sur Authorize pour effectuer cette action</p>
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <input type=\"hidden\" value=\"";
-        // line 11
+        // line 55
         echo twig_escape_filter($this->env, ($context["date"] ?? null), "html", null, true);
         echo "\" id=\"date\">
-    <input type=\"hidden\" value=\"";
-        // line 12
-        echo twig_escape_filter($this->env, ($context["mail"] ?? null), "html", null, true);
-        echo "\" id=\"mail\">
-    <input type=\"hidden\" value=\"";
-        // line 13
+    ";
+        // line 56
+        if (($context["user"] ?? null)) {
+            // line 57
+            echo "    <input type=\"hidden\" value=\"";
+            echo twig_escape_filter($this->env, ($context["mail"] ?? null), "html", null, true);
+            echo "\" id=\"mail\">
+    ";
+        } else {
+            // line 59
+            echo "    <label>Entrer votre email</label>
+    <input type=\"email\"  id=\"mail\">
+    ";
+        }
+        // line 62
+        echo "    <input type=\"hidden\" value=\"";
         echo twig_escape_filter($this->env, ($context["nom"] ?? null), "html", null, true);
         echo "\" id=\"nom\">
     <input type=\"hidden\" value=\"";
-        // line 14
+        // line 63
         echo twig_escape_filter($this->env, ($context["description"] ?? null), "html", null, true);
         echo "\" id=\"description\">
     <input type=\"hidden\" value=\"";
-        // line 15
+        // line 64
         echo twig_escape_filter($this->env, ($context["lieu"] ?? null), "html", null, true);
         echo "\" id=\"lieu\">
     <button id=\"authorize_button\" style=\"display: none;\">Authorize</button>
-    <button id=\"signout_button\" style=\"display: none;\">Sign Out</button>
+    <p id=\"signout_button\" style=\"display: none;\">event ajouter a votre calendar</p>
 
     <pre id=\"content\" style=\"white-space: pre-wrap;\"></pre>
-
+  </div>
+  <footer id=\"layout-footer\">
+      ";
+        // line 71
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        // line 72
+        echo "  </footer>
     <script type=\"text/javascript\">
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '27600548519-e1du7hi2qjqbji3e7q6vmcmdg2jeq89q.apps.googleusercontent.com';
@@ -264,31 +381,83 @@ request.execute(function(event) {
 
     public function getDebugInfo()
     {
-        return array (  63 => 15,  59 => 14,  55 => 13,  51 => 12,  47 => 11,  35 => 1,);
+        return array (  186 => 72,  182 => 71,  172 => 64,  168 => 63,  163 => 62,  158 => 59,  152 => 57,  150 => 56,  146 => 55,  139 => 50,  135 => 49,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<!DOCTYPE html>
 <html>
-  <head>
-    <title>Google Calendar API Quickstart</title>
-    <meta charset=\"utf-8\" />
-  </head>
-  <body>
-    <p>Google Calendar API Quickstart</p>
+    <head>
+        <meta charset=\"utf-8\">
+           <title>October CMS - {{ this.page.title }}</title>
+           <meta name=\"description\" content=\"{{ this.page.meta_description }}\">
+           <meta name=\"title\" content=\"{{ this.page.meta_title }}\">
+          <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">
+   
+       <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />
+       <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
+       <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+       <title> eTicket | Event Details  </title>
+       <!-- favicon -->
+        <link href=\"{{ 'assets/user/interfaceControl/logoIcon/icon.jpg'|theme }}\" rel=\"stylesheet\">
+       <!-- bootstrap -->
+        <link href=\"{{ 'assets/user/css/bootstrap.min.css'|theme }}\" rel=\"stylesheet\">
+            <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\">
+       <!-- fontawesome -->
+        <link href=\"{{ 'assets/admin/css/font-awesome.min.css'|theme }}\" rel=\"stylesheet\">
+       <!-- flaticon -->
+        <link href=\"{{ 'assets/user/css/flaticon.css'|theme }}\" rel=\"stylesheet\">
+       <!-- bootstrap datetime picker -->
+         <link href=\"{{ 'assets/user/css/bootstrap-datepicker.min.css'|theme }}\" rel=\"stylesheet\">
+       <!-- animate.css -->
+        <link href=\"{{ 'assets/user/css/animate.css'|theme }}\" rel=\"stylesheet\">
+       <!-- Owl Carousel -->
+           <link href=\"{{ 'assets/user/css/owl.carousel.min.css'|theme }}\" rel=\"stylesheet\">
+       <!-- magnific popup -->
+         <link href=\"{{ 'assets/user/css/magnific-popup.css'|theme }}\" rel=\"stylesheet\">
+       <!-- stylesheet -->
+       <link href=\"{{ 'assets/user/css/style.css'|theme }}\" rel=\"stylesheet\">
+       <!-- responsive -->
+       <link href=\"{{ 'assets/user/css/responsive.css'|theme }}\" rel=\"stylesheet\">
+        <link href=\"{{ 'assets/admin/css/sweetalert.css'|theme }}\" rel=\"stylesheet\"><script src=\"{{ 'assets/admin/js/sweetalert.js'|theme }}\"></script>
+        <link href=\"{{ 'assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs'|theme }}\" rel=\"stylesheet\">
+        <link href=\"{{ 'assets/user/css/themes/base-color.php?color=7d5fff'|theme }}\" rel=\"stylesheet\">
+        <!-- Font Awesome -->
+   <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.2/css/all.css\">
+   <!-- Bootstrap core CSS -->
+   <link href=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\">
+   <!-- Material Design Bootstrap -->
+   <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
+   <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
+      
+       </head>
+  <body >
+      <header id=\"layout-header\">
+          {% partial 'site/header' %}
+      </header>
+      <div style=\"height: 1000px;padding-top: 200px;\" class=\"container\">
+    <p>Cliquer sur Authorize pour effectuer cette action</p>
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <input type=\"hidden\" value=\"{{date}}\" id=\"date\">
+    {% if user %}
     <input type=\"hidden\" value=\"{{mail}}\" id=\"mail\">
+    {% else %}
+    <label>Entrer votre email</label>
+    <input type=\"email\"  id=\"mail\">
+    {% endif %}
     <input type=\"hidden\" value=\"{{nom}}\" id=\"nom\">
     <input type=\"hidden\" value=\"{{description}}\" id=\"description\">
     <input type=\"hidden\" value=\"{{lieu}}\" id=\"lieu\">
     <button id=\"authorize_button\" style=\"display: none;\">Authorize</button>
-    <button id=\"signout_button\" style=\"display: none;\">Sign Out</button>
+    <p id=\"signout_button\" style=\"display: none;\">event ajouter a votre calendar</p>
 
     <pre id=\"content\" style=\"white-space: pre-wrap;\"></pre>
-
+  </div>
+  <footer id=\"layout-footer\">
+      {% partial 'site/footer' %}
+  </footer>
     <script type=\"text/javascript\">
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '27600548519-e1du7hi2qjqbji3e7q6vmcmdg2jeq89q.apps.googleusercontent.com';

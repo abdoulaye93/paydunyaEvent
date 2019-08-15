@@ -1,4 +1,4 @@
-1565799100a:1:{s:16:"retour_achat.htm";a:6:{s:8:"fileName";s:16:"retour_achat.htm";s:7:"content";s:15311:"==
+1565888919a:1:{s:16:"retour_achat.htm";a:6:{s:8:"fileName";s:16:"retour_achat.htm";s:7:"content";s:15562:"==
 <?php
 use payment\Payment\Models\PaydunyaConfig;
 use event\event\models\Event;
@@ -35,6 +35,13 @@ function onStart(){
     Db::table('event_event_')
     ->where('id', $invoice->getCustomData("id"))
     ->update(['nombre_ticket' => $user->nombre_ticket-1]);
+    $ev=Event::where('id',$invoice->getCustomData("id"))->first();
+    //dd($ev);
+    if($ev->nombre_ticket<=0){
+      Db::table('event_event_')
+      ->where('id', $invoice->getCustomData("id"))
+      ->update(['status_event' => true]);
+    }
     $user = Auth::getUser();
     $achat=new AchatList();
     $achat->user_email=$user->email;
@@ -399,7 +406,7 @@ $('#EventPagination').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:5:"mtime";i:1565797906;s:6:"markup";s:13208:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1565888187;s:6:"markup";s:13208:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
@@ -748,7 +755,7 @@ $('#EventPagination').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:4:"code";s:2082:"use payment\Payment\Models\PaydunyaConfig;
+</html>";s:4:"code";s:2333:"use payment\Payment\Models\PaydunyaConfig;
 use event\event\models\Event;
 use event\event\models\AchatList;
 function onStart(){
@@ -783,6 +790,13 @@ function onStart(){
     Db::table('event_event_')
     ->where('id', $invoice->getCustomData("id"))
     ->update(['nombre_ticket' => $user->nombre_ticket-1]);
+    $ev=Event::where('id',$invoice->getCustomData("id"))->first();
+    //dd($ev);
+    if($ev->nombre_ticket<=0){
+      Db::table('event_event_')
+      ->where('id', $invoice->getCustomData("id"))
+      ->update(['status_event' => true]);
+    }
     $user = Auth::getUser();
     $achat=new AchatList();
     $achat->user_email=$user->email;

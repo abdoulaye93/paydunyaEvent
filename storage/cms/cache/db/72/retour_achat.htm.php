@@ -1,5 +1,5 @@
 <?php 
-use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;use event\event\models\AchatList;class Cms5d543064855a5843310274_8263e106f84da681734b5979023bf8d4Class extends Cms\Classes\LayoutCode
+use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;use event\event\models\AchatList;class Cms5d558f3f0cf52081944859_f08219b199b27365bee34bab970a7842Class extends Cms\Classes\LayoutCode
 {
 
 
@@ -36,6 +36,13 @@ public function onStart(){
     Db::table('event_event_')
     ->where('id', $invoice->getCustomData("id"))
     ->update(['nombre_ticket' => $user->nombre_ticket-1]);
+    $ev=Event::where('id',$invoice->getCustomData("id"))->first();
+    //dd($ev);
+    if($ev->nombre_ticket<=0){
+      Db::table('event_event_')
+      ->where('id', $invoice->getCustomData("id"))
+      ->update(['status_event' => true]);
+    }
     $user = Auth::getUser();
     $achat=new AchatList();
     $achat->user_email=$user->email;

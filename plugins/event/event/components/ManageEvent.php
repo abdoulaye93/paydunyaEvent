@@ -124,6 +124,7 @@ class ManageEvent extends ComponentBase
     //activation de du code promo d'un evement
     public function onPromo(){
         $event_id=Input::get('event_id');
+        $montantpromo=Input::get('montantpromo');
         $promo=Input::get('promo');
         if($promo==true){
         }else{
@@ -133,6 +134,9 @@ class ManageEvent extends ComponentBase
             $event=Db::table('event_event_')
             ->where('id', $event_id)
             ->update(['code_promo' => str_random(10)]);
+            $event=Db::table('event_event_')
+            ->where('id', $event_id)
+            ->update(['montant_promo' => $montantpromo]);
         }
        
        

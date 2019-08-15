@@ -1,4 +1,4 @@
-1565716567a:1:{s:22:"admin/eventsexpire.htm";a:5:{s:8:"fileName";s:22:"admin/eventsexpire.htm";s:7:"content";s:2080:"<div class="row" style="text-align:center;display:block;">
+1565888797a:1:{s:22:"admin/eventsexpire.htm";a:5:{s:8:"fileName";s:22:"admin/eventsexpire.htm";s:7:"content";s:2080:"<div class="row" style="text-align:center;display:block;">
         {% if events|length%}
         {% for item in events %} 
         {% if item.periode.date_cloture < date()%}

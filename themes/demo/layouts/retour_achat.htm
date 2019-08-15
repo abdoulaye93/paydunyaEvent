@@ -35,6 +35,13 @@ function onStart(){
     Db::table('event_event_')
     ->where('id', $invoice->getCustomData("id"))
     ->update(['nombre_ticket' => $user->nombre_ticket-1]);
+    $ev=Event::where('id',$invoice->getCustomData("id"))->first();
+    //dd($ev);
+    if($ev->nombre_ticket<=0){
+      Db::table('event_event_')
+      ->where('id', $invoice->getCustomData("id"))
+      ->update(['status_event' => true]);
+    }
     $user = Auth::getUser();
     $achat=new AchatList();
     $achat->user_email=$user->email;

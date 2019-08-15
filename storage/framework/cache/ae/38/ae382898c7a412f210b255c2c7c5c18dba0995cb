@@ -1,4 +1,4 @@
-1565799086a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:17732:"[session]
+1565889551a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:17997:"[session]
 security = "all"
 ==
 <?php
@@ -16,6 +16,8 @@ security = "all"
     $nomevent = input('nomevent');
     $decription = input('description');
     $lieu = input('lieu');
+    $ticketPromocode = input('ticketPromocode');
+    $promocode = input('promocode');
     
     foreach (input() as $key => $value) 
     {
@@ -36,7 +38,15 @@ security = "all"
     \Paydunya\Checkout\Store::setCancelUrl("http://localhost/install-master1/");
     \Paydunya\Checkout\Store::setReturnUrl("http://localhost/install-master1/");
     $b=Request::segment(2);
-    $montantTotal = (input('promo')) ? input('total') - input('promo') : input('total');
+    if(input('ticketPromocode')){
+      if(input('promocode')==input('ticketPromocode')){
+        $montantTotal=input('total') - input('promo') ;
+      }else{
+        $montantTotal=input('total');
+      }
+    }else{
+      $montantTotal=input('total');
+    }
     $checkoutInvoice->setTotalAmount($montantTotal);
     $checkoutInvoice->setCancelUrl("http://localhost/install-master1/description_event/".$b);
     $checkoutInvoice->setReturnUrl("http://localhost/install-master1/retour_achat");
@@ -445,7 +455,7 @@ security = "all"
                           }
 </script>
     </body>
-</html>";s:5:"mtime";i:1565798484;s:6:"markup";s:15203:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1565884398;s:6:"markup";s:15203:"<!DOCTYPE html>
 <html>
     <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -827,7 +837,7 @@ security = "all"
                           }
 </script>
     </body>
-</html>";s:4:"code";s:2477:"  use payment\Payment\Models\PaydunyaConfig;
+</html>";s:4:"code";s:2742:"  use payment\Payment\Models\PaydunyaConfig;
 
   function onAchat()
   {
@@ -841,6 +851,8 @@ security = "all"
     $nomevent = input('nomevent');
     $decription = input('description');
     $lieu = input('lieu');
+    $ticketPromocode = input('ticketPromocode');
+    $promocode = input('promocode');
     
     foreach (input() as $key => $value) 
     {
@@ -861,7 +873,15 @@ security = "all"
     \Paydunya\Checkout\Store::setCancelUrl("http://localhost/install-master1/");
     \Paydunya\Checkout\Store::setReturnUrl("http://localhost/install-master1/");
     $b=Request::segment(2);
-    $montantTotal = (input('promo')) ? input('total') - input('promo') : input('total');
+    if(input('ticketPromocode')){
+      if(input('promocode')==input('ticketPromocode')){
+        $montantTotal=input('total') - input('promo') ;
+      }else{
+        $montantTotal=input('total');
+      }
+    }else{
+      $montantTotal=input('total');
+    }
     $checkoutInvoice->setTotalAmount($montantTotal);
     $checkoutInvoice->setCancelUrl("http://localhost/install-master1/description_event/".$b);
     $checkoutInvoice->setReturnUrl("http://localhost/install-master1/retour_achat");

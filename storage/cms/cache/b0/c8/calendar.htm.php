@@ -1,5 +1,5 @@
 <?php 
-class Cms5d5431cc02943769328222_681a187c4d46103e848c30dd538abb50Class extends Cms\Classes\LayoutCode
+class Cms5d5438fc20c2c161375981_5950140e0a90396419dc292b0bfa3f48Class extends Cms\Classes\LayoutCode
 {
 public function onStart(){
   $this['date']=Request::segment(2);

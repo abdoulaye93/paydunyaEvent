@@ -152,39 +152,60 @@ class __TwigTemplate_7ddd45286a0d51e99d560dcf8f201dbd5fa000661b984b6cd366c64a16a
                          ";
                 } else {
                     // line 64
-                    echo "                         <form data-request=\"onPromo\">
-                                <input type=\"hidden\" name=\"event_id\" value=\"";
-                    // line 65
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 65), "html", null, true);
+                    echo "                         <a class=\"btn btn-warning btn-sm\" href=\"#\" data-toggle=\"modal\" data-target=\"#code-modal\">Generer un code promo</a>
+                         <div class=\"modal fade\" id=\"code-modal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+                            <form data-request=\"onPromo\">
+                                    <input type=\"hidden\" name=\"event_id\" value=\"";
+                    // line 67
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 67), "html", null, true);
                     echo "\"> 
-                                <input type=\"hidden\" name=\"promo\" value=\"";
-                    // line 66
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "promo", [], "any", false, false, false, 66), "html", null, true);
+                                    <input type=\"hidden\" name=\"promo\" value=\"";
+                    // line 68
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "promo", [], "any", false, false, false, 68), "html", null, true);
                     echo "\"> 
-                                <button type=\"submit\" class=\"btn btn-danger btn-sm\">Generer un code promo</button>
-                        </form> 
+                                 <div class=\"modal-dialog\" role=\"document\">
+                                     <div class=\"modal-content\">
+                                     <div class=\"modal-header text-center\">
+                                         <h4 class=\"modal-title w-100 font-weight-bold\">Entrer le montant à reduire</h4>
+                                         <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+                                         <span aria-hidden=\"true\">&times;</span>
+                                         </button>
+                                     </div>
+                                     <div class=\"modal-body mx-3\">
+                                         <div class=\"md-form mb-5\">
+                                         <input type=\"text\" id=\"defaultForm-email\" class=\"form-control validate\" name=\"montantpromo\">
+                                         <label data-error=\"wrong\" data-success=\"right\" for=\"defaultForm-email\">Montant</label>
+                                         </div>
+                                     </div>
+                                     <div class=\"modal-footer d-flex justify-content-center\">
+                                         <button class=\"btn btn-default\" type=\"submit\">Generer un code promo</button>
+                                     </div>
+                                     </div>
+                                 </div>
+                             </form>
+                         </div>
                          ";
                 }
-                // line 70
+                // line 91
                 echo "          </td>    
           <td>
               ";
-                // line 72
-                if (twig_get_attribute($this->env, $this->source, $context["item"], "position_id", [], "any", false, false, false, 72)) {
-                    // line 73
+                // line 93
+                if (twig_get_attribute($this->env, $this->source, $context["item"], "position_id", [], "any", false, false, false, 93)) {
+                    // line 94
                     echo "                 <a class=\"btn btn-warning btn-sm\" href=\"";
-                    echo $this->extensions['Cms\Twig\Extension']->pageFilter("position", ["lat" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "position", [], "any", false, false, false, 73), "lat", [], "any", false, false, false, 73), "long" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "position", [], "any", false, false, false, 73), "long", [], "any", false, false, false, 73)]);
+                    echo $this->extensions['Cms\Twig\Extension']->pageFilter("position", ["lat" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "position", [], "any", false, false, false, 94), "lat", [], "any", false, false, false, 94), "long" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "position", [], "any", false, false, false, 94), "long", [], "any", false, false, false, 94)]);
                     echo "\" class=\"action-btn\">Voir position</a>
               ";
                 } else {
-                    // line 75
+                    // line 96
                     echo "                    <form data-request=\"onPosition\">
                             <a href=\"\" class=\"btn btn-default\" data-toggle=\"modal\" data-target=\"#modalLoginForm\">coordonnée</a>
                     </form> 
                    
               ";
                 }
-                // line 80
+                // line 101
                 echo "          </td>   
           <td>
                 <form data-request=\"onPush\">
@@ -198,8 +219,8 @@ class __TwigTemplate_7ddd45286a0d51e99d560dcf8f201dbd5fa000661b984b6cd366c64a16a
    <div class=\"modal fade\" id=\"modalLoginForm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
        <form data-request=\"onPosition\">
            <input type=\"hidden\" name=\"event\" value=\"";
-                // line 92
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 92), "html", null, true);
+                // line 113
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 113), "html", null, true);
                 echo "\">
         <div class=\"modal-dialog\" role=\"document\">
             <div class=\"modal-content\">
@@ -235,10 +256,10 @@ class __TwigTemplate_7ddd45286a0d51e99d560dcf8f201dbd5fa000661b984b6cd366c64a16a
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 123
+            // line 144
             echo " ";
         } else {
-            // line 124
+            // line 145
             echo " <div class=\"row\" class=\"text-center\">
         <h3 class=\"\">NO  event FOUND</h3>
     </div>
@@ -258,7 +279,7 @@ class __TwigTemplate_7ddd45286a0d51e99d560dcf8f201dbd5fa000661b984b6cd366c64a16a
 
     public function getDebugInfo()
     {
-        return array (  242 => 124,  239 => 123,  202 => 92,  188 => 80,  181 => 75,  175 => 73,  173 => 72,  169 => 70,  162 => 66,  158 => 65,  155 => 64,  145 => 61,  142 => 60,  140 => 59,  132 => 53,  128 => 51,  123 => 48,  121 => 47,  117 => 46,  113 => 45,  108 => 44,  102 => 42,  100 => 41,  96 => 40,  90 => 36,  85 => 34,  79 => 30,  77 => 29,  70 => 25,  64 => 22,  44 => 4,  39 => 3,  37 => 2,  35 => 1,);
+        return array (  263 => 145,  260 => 144,  223 => 113,  209 => 101,  202 => 96,  196 => 94,  194 => 93,  190 => 91,  164 => 68,  160 => 67,  155 => 64,  145 => 61,  142 => 60,  140 => 59,  132 => 53,  128 => 51,  123 => 48,  121 => 47,  117 => 46,  113 => 45,  108 => 44,  102 => 42,  100 => 41,  96 => 40,  90 => 36,  85 => 34,  79 => 30,  77 => 29,  70 => 25,  64 => 22,  44 => 4,  39 => 3,  37 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -326,11 +347,32 @@ class __TwigTemplate_7ddd45286a0d51e99d560dcf8f201dbd5fa000661b984b6cd366c64a16a
                                 <a class=\"btn btn-warning btn-sm\" href=\"{{__SELF__.loadUrl()}}/promo/{{item.id}}\"  class=\"action-btn\">{{item.code_promo}}</a>
                          </span>
                          {%else%}
-                         <form data-request=\"onPromo\">
-                                <input type=\"hidden\" name=\"event_id\" value=\"{{item.id}}\"> 
-                                <input type=\"hidden\" name=\"promo\" value=\"{{item.promo}}\"> 
-                                <button type=\"submit\" class=\"btn btn-danger btn-sm\">Generer un code promo</button>
-                        </form> 
+                         <a class=\"btn btn-warning btn-sm\" href=\"#\" data-toggle=\"modal\" data-target=\"#code-modal\">Generer un code promo</a>
+                         <div class=\"modal fade\" id=\"code-modal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+                            <form data-request=\"onPromo\">
+                                    <input type=\"hidden\" name=\"event_id\" value=\"{{item.id}}\"> 
+                                    <input type=\"hidden\" name=\"promo\" value=\"{{item.promo}}\"> 
+                                 <div class=\"modal-dialog\" role=\"document\">
+                                     <div class=\"modal-content\">
+                                     <div class=\"modal-header text-center\">
+                                         <h4 class=\"modal-title w-100 font-weight-bold\">Entrer le montant à reduire</h4>
+                                         <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+                                         <span aria-hidden=\"true\">&times;</span>
+                                         </button>
+                                     </div>
+                                     <div class=\"modal-body mx-3\">
+                                         <div class=\"md-form mb-5\">
+                                         <input type=\"text\" id=\"defaultForm-email\" class=\"form-control validate\" name=\"montantpromo\">
+                                         <label data-error=\"wrong\" data-success=\"right\" for=\"defaultForm-email\">Montant</label>
+                                         </div>
+                                     </div>
+                                     <div class=\"modal-footer d-flex justify-content-center\">
+                                         <button class=\"btn btn-default\" type=\"submit\">Generer un code promo</button>
+                                     </div>
+                                     </div>
+                                 </div>
+                             </form>
+                         </div>
                          {%endif%}
           </td>    
           <td>

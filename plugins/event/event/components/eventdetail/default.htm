@@ -59,12 +59,23 @@
                            
                           </script>
                         </table>
+                        {%if item.nombre_ticket==0%}
+                        {%else%}
                       <select class="float-right" onchange="clacTotal(this.value)" id="nb">
                           {% for i in 1..item.nombre_ticket %}
                             <option value="{{ i }}"> {{ i }}</option>
                          {% endfor %}  
                         </select>  
+                        {% endif%}
                     </div>
+                    <form data-request="onAchat" id="buyForm">
+                    {%if item.promo %}
+                    <hr>
+                    <input type="hidden" value="{{item.code_promo}}" id="ticketPromo" name="ticketPromocode">
+                    <div>
+                    <label> Entrer le code ici si vous avez un code promo</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="text" name="promocode">
+                    </div>
+                    {% endif %}
                     <hr>
                     {% if __SELF__.loadSubEvent()|length > 0 %}
                     <div class="">
@@ -124,23 +135,23 @@
                   {% endif %}
                     <div class="">
                       <strong>Total:</strong>
-                      <span class="float-right">
-                        
-                        <span id="totalPrice"></span>
-                        FCFA
+                      <span class="float-right">                   
+                        <span id="totalPrice"></span> 
+                        FCFA  
                       </span>
                     </div>
-                    <br>
-                                                  
+                    <br>                                              
                     <div>
-
-                      <div class="pull-right">
-                        <form data-request="onAchat" id="buyForm">
+                      <div class="pull-right">                  
                           <input type="hidden" name="total" id="total" value="">
                           {% if item.promo %}
                             <input type="hidden" name="promo" value="{{ item.montant_promo }}">
                           {% endif %}  
-                          <input type="submit" class="btn btn-primary" value="Acheter"/>
+                          {%if item.nombre_ticket==0%}
+                          <p>plus de ticket</p>
+                          {%else%}
+                           <input type="submit" class="btn btn-primary" value="Acheter"/>
+                          {% endif %}
                         </form>
                       </div>
                     </div>
@@ -274,6 +285,20 @@
           var tickets = document.getElementsByClassName('ticket')
           var subEvents = document.getElementsByClassName('sub')
           var nbTicket = document.getElementById('nb').value
+          var codeEntrer= document.getElementsByClassName('promo').value
+          var code= document.getElementsById('ticketPromo').value
+          alert('oui')
+          if(code!=null){
+            
+            if(code==codeEntrer){
+              var promo = document.createElement('input')
+              promo.setAttribute('type', 'hidden')
+              promo.setAttribute('name', 'promo')
+              promo.setAttribute('value', code)
+              document.getElementById('buyForm').appendChild(promo)
+             
+            }
+          }
 
           var element = document.createElement('input')
               element.setAttribute('type', 'hidden')
