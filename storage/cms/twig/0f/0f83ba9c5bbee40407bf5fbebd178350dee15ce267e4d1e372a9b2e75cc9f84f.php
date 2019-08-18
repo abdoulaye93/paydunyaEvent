@@ -32,10 +32,10 @@ class __TwigTemplate_a7102ff6821154b66c22c4d13e70e82ac3cd033eb8150ff692d9676e9ec
     protected function doDisplay(array $context, array $blocks = [])
     {
         // line 1
-        echo "<div class=\"container-fluid mt-5 mx-auto\" style=\" height: 400px;;background-attachment: fixed;background-image: url(";
+        echo "<div class=\"container-fluid mt-5 mx-auto\" style=\" height: 400px;padding-top: 200px;padding-left: 800px;background-attachment: fixed;background-image: url(";
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/images/bgFixed.jpg");
         echo ");background-position: center;background-repeat: no-repeat\">
-    <h1 class=\"text-center uppercase\">Retrouver tous les évènement</h1>
+   
   ";
         // line 3
         echo call_user_func_array($this->env->getFunction('form_ajax')->getCallable(), ["ajax", "onFilterEvents", ["update" => ["events/events" => "#upcoming_tab", "events/eventexpire" => "#ending_tab", "events/pagination" => "#active_tab"]]]);
@@ -146,101 +146,7 @@ class __TwigTemplate_a7102ff6821154b66c22c4d13e70e82ac3cd033eb8150ff692d9676e9ec
             </div>
         </div>
     </section>
-    <div class=\"login-registration-modal\" id=\"loginRegModal\">
-    <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
-        <div class=\"modal\" tabindex=\"-1\" id=\"login-modal\" role=\"dialog\"><!-- #login modal-->
-            <div class=\"modal-dialog\" role=\"document\">
-                <div class=\"modal-content\"><!-- modal content start -->
-                    <nav>
-                        <div class=\"nav nav-tabs login-modal-navigation\" id=\"nav-tab\" role=\"tablist\"><!-- login modal navigation start -->
-                            <a class=\"nav-item nav-link active\" id=\"nav-login-tab\" data-toggle=\"tab\" href=\"#nav-login\" role=\"tab\" aria-controls=\"nav-login\"
-                                aria-selected=\"true\">login</a>
-                            <a class=\"nav-item nav-link\" id=\"nav-signup-tab\" data-toggle=\"tab\" href=\"#nav-signup\" role=\"tab\" aria-controls=\"nav-signup\"
-                                aria-selected=\"false\">Register</a>
-                        </div><!-- login modal navigation end -->
-                    </nav>
-                    <div class=\"tab-content\" id=\"nav-tabContent\"><!-- tab content-->
-                        <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
-                            <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
-                               ";
-        // line 89
-        if ( !($context["user"] ?? null)) {
-            // line 90
-            echo "
-                                    <div class=\"row\">
-                                
-                                        <div class=\"col-md-6\">
-                                            <h3 class=\"";
-            // line 94
-            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 94), "id", [], "any", false, false, false, 94) == "register")) {
-                echo "active";
-            }
-            echo "\"><a href=\"";
-            echo $this->extensions['Cms\Twig\Extension']->pageFilter("register");
-            echo "\">Créer un compte</a></h3>
-                                            ";
-            // line 95
-            $context['__cms_partial_params'] = [];
-            echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::signin")            , $context['__cms_partial_params']            , true            );
-            unset($context['__cms_partial_params']);
-            // line 96
-            echo "                                        </div>
-                                
-                                    </div>
-                                
-                                ";
-        } else {
-            // line 101
-            echo "                                
-                                ";
-        }
-        // line 103
-        echo "                            </div><!-- login form wrapper end -->
-                        </div>
-                        <div class=\"tab-pane fade\" id=\"nav-signup\" role=\"tabpanel\" aria-labelledby=\"nav-signup-tab\">
-
-                            <div class=\"singup-form-wrapper\">
-                                ";
-        // line 108
-        if ( !($context["user"] ?? null)) {
-            // line 109
-            echo "                                
-                                    <div class=\"row\">
-                                        <div class=\"col-md-6\">
-                                            ";
-            // line 112
-            $context['__cms_partial_params'] = [];
-            echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::register")            , $context['__cms_partial_params']            , true            );
-            unset($context['__cms_partial_params']);
-            // line 113
-            echo "                                        </div>
-                                
-                                    </div>
-                                
-                                ";
-        } else {
-            // line 118
-            echo "                                
-                                ";
-        }
-        // line 120
-        echo "                             </div>
-                        </div>
-                    </div><!-- /.tab conent-->
-                </div><!-- modal content end -->
-            </div>
-        </div><!-- /#loginmodal -->
-    </div><!-- login modal warapper satart end-->
-</div>
-
-
-
-
-
-
-
-
-
+    
 
 
 
@@ -259,13 +165,13 @@ class __TwigTemplate_a7102ff6821154b66c22c4d13e70e82ac3cd033eb8150ff692d9676e9ec
 
     public function getDebugInfo()
     {
-        return array (  227 => 120,  223 => 118,  216 => 113,  212 => 112,  207 => 109,  205 => 108,  198 => 103,  194 => 101,  187 => 96,  183 => 95,  175 => 94,  169 => 90,  167 => 89,  142 => 67,  138 => 65,  127 => 63,  123 => 62,  116 => 58,  113 => 57,  109 => 56,  103 => 52,  99 => 51,  49 => 5,  45 => 4,  41 => 3,  35 => 1,);
+        return array (  142 => 67,  138 => 65,  127 => 63,  123 => 62,  116 => 58,  113 => 57,  109 => 56,  103 => 52,  99 => 51,  49 => 5,  45 => 4,  41 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"container-fluid mt-5 mx-auto\" style=\" height: 400px;;background-attachment: fixed;background-image: url({{ '/assets/images/bgFixed.jpg'|theme }});background-position: center;background-repeat: no-repeat\">
-    <h1 class=\"text-center uppercase\">Retrouver tous les évènement</h1>
+        return new Source("<div class=\"container-fluid mt-5 mx-auto\" style=\" height: 400px;padding-top: 200px;padding-left: 800px;background-attachment: fixed;background-image: url({{ '/assets/images/bgFixed.jpg'|theme }});background-position: center;background-repeat: no-repeat\">
+   
   {{form_ajax('onFilterEvents',{update:{'events/events':'#upcoming_tab','events/eventexpire':'#ending_tab','events/pagination':'#active_tab'}})}}
    {% partial 'events/filter'%}
    {{form_close()}}
@@ -336,70 +242,7 @@ class __TwigTemplate_a7102ff6821154b66c22c4d13e70e82ac3cd033eb8150ff692d9676e9ec
             </div>
         </div>
     </section>
-    <div class=\"login-registration-modal\" id=\"loginRegModal\">
-    <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
-        <div class=\"modal\" tabindex=\"-1\" id=\"login-modal\" role=\"dialog\"><!-- #login modal-->
-            <div class=\"modal-dialog\" role=\"document\">
-                <div class=\"modal-content\"><!-- modal content start -->
-                    <nav>
-                        <div class=\"nav nav-tabs login-modal-navigation\" id=\"nav-tab\" role=\"tablist\"><!-- login modal navigation start -->
-                            <a class=\"nav-item nav-link active\" id=\"nav-login-tab\" data-toggle=\"tab\" href=\"#nav-login\" role=\"tab\" aria-controls=\"nav-login\"
-                                aria-selected=\"true\">login</a>
-                            <a class=\"nav-item nav-link\" id=\"nav-signup-tab\" data-toggle=\"tab\" href=\"#nav-signup\" role=\"tab\" aria-controls=\"nav-signup\"
-                                aria-selected=\"false\">Register</a>
-                        </div><!-- login modal navigation end -->
-                    </nav>
-                    <div class=\"tab-content\" id=\"nav-tabContent\"><!-- tab content-->
-                        <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
-                            <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
-                               {% if not user %}
-
-                                    <div class=\"row\">
-                                
-                                        <div class=\"col-md-6\">
-                                            <h3 class=\"{% if this.page.id == 'register' %}active{% endif %}\"><a href=\"{{ 'register'|page }}\">Créer un compte</a></h3>
-                                            {% partial account ~ '::signin' %}
-                                        </div>
-                                
-                                    </div>
-                                
-                                {% else %}
-                                
-                                {% endif %}
-                            </div><!-- login form wrapper end -->
-                        </div>
-                        <div class=\"tab-pane fade\" id=\"nav-signup\" role=\"tabpanel\" aria-labelledby=\"nav-signup-tab\">
-
-                            <div class=\"singup-form-wrapper\">
-                                {% if not user %}
-                                
-                                    <div class=\"row\">
-                                        <div class=\"col-md-6\">
-                                            {% partial account ~ '::register' %}
-                                        </div>
-                                
-                                    </div>
-                                
-                                {% else %}
-                                
-                                {% endif %}
-                             </div>
-                        </div>
-                    </div><!-- /.tab conent-->
-                </div><!-- modal content end -->
-            </div>
-        </div><!-- /#loginmodal -->
-    </div><!-- login modal warapper satart end-->
-</div>
-
-
-
-
-
-
-
-
-
+    
 
 
 

@@ -1,4 +1,4 @@
-1565889346a:1:{s:14:"view_event.htm";a:12:{s:8:"fileName";s:14:"view_event.htm";s:7:"content";s:200:"title = "view_event"
+1566169331a:1:{s:14:"view_event.htm";a:12:{s:8:"fileName";s:14:"view_event.htm";s:7:"content";s:200:"title = "view_event"
 url = "/"
 layout = "create_event"
 is_hidden = 0
@@ -12,4 +12,4 @@ security = "all"
 
 [eventlist]
 ==
-{% component 'eventlist' %}";s:5:"mtime";i:1565721282;s:6:"markup";s:27:"{% component 'eventlist' %}";s:4:"code";N;s:5:"title";s:10:"view_event";s:3:"url";s:1:"/";s:6:"layout";s:12:"create_event";s:9:"is_hidden";s:1:"0";s:7:"account";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}s:7:"session";a:1:{s:8:"security";s:3:"all";}s:9:"eventlist";a:0:{}}}
+{% component 'eventlist' %}";s:5:"mtime";i:1566141588;s:6:"markup";s:27:"{% component 'eventlist' %}";s:4:"code";N;s:5:"title";s:10:"view_event";s:3:"url";s:1:"/";s:6:"layout";s:12:"create_event";s:9:"is_hidden";s:1:"0";s:7:"account";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}s:7:"session";a:1:{s:8:"security";s:3:"all";}s:9:"eventlist";a:0:{}}}

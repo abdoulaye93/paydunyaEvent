@@ -1,12 +1,13 @@
 <?php 
-use payment\Payment\Models\PaydunyaConfig;class Cms5d557ff35e78e945673688_4cb1d3ec418a1c1607368d5659c9d060Class extends Cms\Classes\LayoutCode
+use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;class Cms5d59d78bb883d470253450_8808d97b6da8785d6a901b5dbe76c5a9Class extends Cms\Classes\LayoutCode
 {
+  
   
 public function onAchat()
   {
     $checkoutInvoice = new \Paydunya\Checkout\CheckoutInvoice();
-    $config = PaydunyaConfig::get()[0];
-
+    $eventconf=Event::where('id',Request::segment(2))->first();
+    $config =PaydunyaConfig::where('id_user',$eventconf->user_id)->first();
     $quantity = input('nbTicket');
     $nomticket = input('nameticket');
     $dateEvent = input('datecalendar');
@@ -47,7 +48,7 @@ public function onAchat()
     }
     $checkoutInvoice->setTotalAmount($montantTotal);
     $checkoutInvoice->setCancelUrl("http://localhost/install-master1/description_event/".$b);
-    $checkoutInvoice->setReturnUrl("http://localhost/install-master1/retour_achat");
+    $checkoutInvoice->setReturnUrl("http://localhost/install-master1/retour_achat/$b");
     $checkoutInvoice->addCustomData("id",$b);
     $checkoutInvoice->addCustomData("total",$b);
     $checkoutInvoice->addCustomData("nbrticket",(int)$quantity );

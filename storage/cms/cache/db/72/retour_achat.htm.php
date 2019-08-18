@@ -1,11 +1,12 @@
 <?php 
-use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;use event\event\models\AchatList;class Cms5d558f3f0cf52081944859_f08219b199b27365bee34bab970a7842Class extends Cms\Classes\LayoutCode
+use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;use event\event\models\AchatList;class Cms5d59d79a3774b392752048_ece6e490014f83bf3ad7abfff2534297Class extends Cms\Classes\LayoutCode
 {
 
 
 
 public function onStart(){
-  $config = PaydunyaConfig::get()[0];
+  $eventconf=Event::where('id',Request::segment(2))->first();
+  $config =PaydunyaConfig::where('id_user',$eventconf->user_id)->first();
   \Paydunya\Setup::setMasterKey($config->master_key);
   \Paydunya\Setup::setPublicKey($config->public_key_test);
   \Paydunya\Setup::setPrivateKey($config->private_key_test);
@@ -14,10 +15,9 @@ public function onStart(){
     $token = $_GET['token'];
    $id;$nbrticket;$montant;$nomticket;
     $invoice = new \Paydunya\Checkout\CheckoutInvoice();
-    $invoice->confirm($token);
     if ($invoice->confirm($token)) {
        // echo "satus".$invoice->getStatus();
-      $this['id']=$invoice->getCustomData("id");
+     $this['id']=$invoice->getCustomData("id");
     // echo $invoice->getCustomData("numero_gagnant");
     $this['nomticket']=$invoice->getCustomData("nameticket");
     $this['nbrticket']=$invoice->getCustomData("nbrticket"); 

@@ -1,10 +1,11 @@
-1565888919a:1:{s:16:"retour_achat.htm";a:6:{s:8:"fileName";s:16:"retour_achat.htm";s:7:"content";s:15562:"==
+1566169586a:1:{s:16:"retour_achat.htm";a:6:{s:8:"fileName";s:16:"retour_achat.htm";s:7:"content";s:15628:"==
 <?php
 use payment\Payment\Models\PaydunyaConfig;
 use event\event\models\Event;
 use event\event\models\AchatList;
 function onStart(){
-  $config = PaydunyaConfig::get()[0];
+  $eventconf=Event::where('id',Request::segment(2))->first();
+  $config =PaydunyaConfig::where('id_user',$eventconf->user_id)->first();
   \Paydunya\Setup::setMasterKey($config->master_key);
   \Paydunya\Setup::setPublicKey($config->public_key_test);
   \Paydunya\Setup::setPrivateKey($config->private_key_test);
@@ -13,10 +14,9 @@ function onStart(){
     $token = $_GET['token'];
    $id;$nbrticket;$montant;$nomticket;
     $invoice = new \Paydunya\Checkout\CheckoutInvoice();
-    $invoice->confirm($token);
     if ($invoice->confirm($token)) {
        // echo "satus".$invoice->getStatus();
-      $this['id']=$invoice->getCustomData("id");
+     $this['id']=$invoice->getCustomData("id");
     // echo $invoice->getCustomData("numero_gagnant");
     $this['nomticket']=$invoice->getCustomData("nameticket");
     $this['nbrticket']=$invoice->getCustomData("nbrticket"); 
@@ -406,7 +406,7 @@ $('#EventPagination').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:5:"mtime";i:1565888187;s:6:"markup";s:13208:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1566168959;s:6:"markup";s:13208:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
@@ -755,11 +755,12 @@ $('#EventPagination').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:4:"code";s:2333:"use payment\Payment\Models\PaydunyaConfig;
+</html>";s:4:"code";s:2399:"use payment\Payment\Models\PaydunyaConfig;
 use event\event\models\Event;
 use event\event\models\AchatList;
 function onStart(){
-  $config = PaydunyaConfig::get()[0];
+  $eventconf=Event::where('id',Request::segment(2))->first();
+  $config =PaydunyaConfig::where('id_user',$eventconf->user_id)->first();
   \Paydunya\Setup::setMasterKey($config->master_key);
   \Paydunya\Setup::setPublicKey($config->public_key_test);
   \Paydunya\Setup::setPrivateKey($config->private_key_test);
@@ -768,10 +769,9 @@ function onStart(){
     $token = $_GET['token'];
    $id;$nbrticket;$montant;$nomticket;
     $invoice = new \Paydunya\Checkout\CheckoutInvoice();
-    $invoice->confirm($token);
     if ($invoice->confirm($token)) {
        // echo "satus".$invoice->getStatus();
-      $this['id']=$invoice->getCustomData("id");
+     $this['id']=$invoice->getCustomData("id");
     // echo $invoice->getCustomData("numero_gagnant");
     $this['nomticket']=$invoice->getCustomData("nameticket");
     $this['nbrticket']=$invoice->getCustomData("nbrticket"); 

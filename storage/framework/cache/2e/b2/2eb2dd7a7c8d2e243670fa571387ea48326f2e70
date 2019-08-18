@@ -1,4 +1,4 @@
-1565889346a:1:{s:25:"configuration_payment.htm";a:12:{s:8:"fileName";s:25:"configuration_payment.htm";s:7:"content";s:256:"title = "configuration_payment"
+1566169330a:1:{s:25:"configuration_payment.htm";a:12:{s:8:"fileName";s:25:"configuration_payment.htm";s:7:"content";s:256:"title = "configuration_payment"
 url = "/configuration_payment"
 layout = "default"
 description = "Page de configuration des paramètres de l'API Paydunya"

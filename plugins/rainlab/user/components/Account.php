@@ -15,7 +15,7 @@ use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
 use RainLab\User\Models\Settings as UserSettings;
 use Exception;
-
+use payment\Payment\Models\PaydunyaConfig;
 /**
  * Account component
  *
@@ -255,7 +255,19 @@ class Account extends ComponentBase
             $automaticActivation = UserSettings::get('activate_mode') == UserSettings::ACTIVATE_AUTO;
             $userActivation = UserSettings::get('activate_mode') == UserSettings::ACTIVATE_USER;
             $user = Auth::register($data, $automaticActivation);
-
+            $config=new PaydunyaConfig();
+            $config->master_key = Input::get('master_key');
+            $config->public_key_test = Input::get('public_key_test');
+            $config->private_key_test = Input::get('private_key_test');
+            $config->token_test = Input::get('token_test');
+            $config->public_key_prod = Input::get('public_key_prod');
+            $config->private_key_prod = Input::get('private_key_prod');
+            $config->token_prod = Input::get('token_prod');
+            $config->id_user = $user->id;
+            $config->phone = Input::get('phone');
+            $config->email = Input::get('email');
+            $config->redirect = Input::get('redirect');
+            $config->save();
             Event::fire('rainlab.user.register', [$user, $data]);
 
             /*

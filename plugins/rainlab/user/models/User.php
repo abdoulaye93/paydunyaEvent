@@ -8,7 +8,8 @@ use October\Rain\Auth\Models\User as UserBase;
 use RainLab\User\Models\Settings as UserSettings;
 use October\Rain\Auth\AuthException;
 
-class User extends UserBase
+
+class User extends UserBase 
 {
     use \October\Rain\Database\Traits\SoftDelete;
 
@@ -55,7 +56,7 @@ class User extends UserBase
         'password_confirmation',
         'is_guest'
     ];
-
+   
     /**
      * Purge attributes from data set.
      */

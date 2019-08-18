@@ -3,12 +3,12 @@ security = "all"
 ==
 <?php
   use payment\Payment\Models\PaydunyaConfig;
-
+  use event\event\models\Event;
   function onAchat()
   {
     $checkoutInvoice = new \Paydunya\Checkout\CheckoutInvoice();
-    $config = PaydunyaConfig::get()[0];
-
+    $eventconf=Event::where('id',Request::segment(2))->first();
+    $config =PaydunyaConfig::where('id_user',$eventconf->user_id)->first();
     $quantity = input('nbTicket');
     $nomticket = input('nameticket');
     $dateEvent = input('datecalendar');
@@ -49,7 +49,7 @@ security = "all"
     }
     $checkoutInvoice->setTotalAmount($montantTotal);
     $checkoutInvoice->setCancelUrl("http://localhost/install-master1/description_event/".$b);
-    $checkoutInvoice->setReturnUrl("http://localhost/install-master1/retour_achat");
+    $checkoutInvoice->setReturnUrl("http://localhost/install-master1/retour_achat/$b");
     $checkoutInvoice->addCustomData("id",$b);
     $checkoutInvoice->addCustomData("total",$b);
     $checkoutInvoice->addCustomData("nbrticket",(int)$quantity );
@@ -243,24 +243,6 @@ security = "all"
     }
     
     function clacTotal(p_no) {
-      /* var subPrice = 0;
-        var typePrice = 0;
-      var sub = document.getElementsByClassName('sub')
-      for(var i = 0; i < sub.length; i++)
-      {
-        if(sub[i].checked)
-          subPrice += parseInt(sub[i].value)
-      }
-      var type = document.getElementsByClassName('tp')
-      for(var i = 0; i < type.length; i++)
-      {
-        if(type[i].checked)
-          typePrice = parseInt(type[i].value)
-      }
-      var totalPrice = (subPrice+typePrice)*p_no;
-      //document.getElementById('totalPriceInput').value = totalPrice;
-     // document.getElementById('pNoInput').value = p_no;
-     document.getElementById('totalPrice').innerHTML = totalPrice;*/
      var sub=parseInt(document.getElementsByClassName('sub').length);
      var tic=parseInt(document.getElementsByClassName('ticket').length);
      var nbtic=0;
@@ -281,7 +263,6 @@ security = "all"
 
     $(document).ready(function() {
         document.getElementById('totalPrice').innerHTML = 0;
-     // clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
     <script>

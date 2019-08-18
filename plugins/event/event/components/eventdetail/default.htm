@@ -147,7 +147,7 @@
                           {% if item.promo %}
                             <input type="hidden" name="promo" value="{{ item.montant_promo }}">
                           {% endif %}  
-                          {%if item.nombre_ticket==0%}
+                          {%if item.nombre_ticket<=0%} 
                           <p>plus de ticket</p>
                           {%else%}
                            <input type="submit" class="btn btn-primary" value="Acheter"/>

@@ -284,24 +284,6 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
     }
     
     function clacTotal(p_no) {
-      /* var subPrice = 0;
-        var typePrice = 0;
-      var sub = document.getElementsByClassName('sub')
-      for(var i = 0; i < sub.length; i++)
-      {
-        if(sub[i].checked)
-          subPrice += parseInt(sub[i].value)
-      }
-      var type = document.getElementsByClassName('tp')
-      for(var i = 0; i < type.length; i++)
-      {
-        if(type[i].checked)
-          typePrice = parseInt(type[i].value)
-      }
-      var totalPrice = (subPrice+typePrice)*p_no;
-      //document.getElementById('totalPriceInput').value = totalPrice;
-     // document.getElementById('pNoInput').value = p_no;
-     document.getElementById('totalPrice').innerHTML = totalPrice;*/
      var sub=parseInt(document.getElementsByClassName('sub').length);
      var tic=parseInt(document.getElementsByClassName('ticket').length);
      var nbtic=0;
@@ -322,7 +304,6 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
 
     \$(document).ready(function() {
         document.getElementById('totalPrice').innerHTML = 0;
-     // clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
     <script>
@@ -686,24 +667,6 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
     }
     
     function clacTotal(p_no) {
-      /* var subPrice = 0;
-        var typePrice = 0;
-      var sub = document.getElementsByClassName('sub')
-      for(var i = 0; i < sub.length; i++)
-      {
-        if(sub[i].checked)
-          subPrice += parseInt(sub[i].value)
-      }
-      var type = document.getElementsByClassName('tp')
-      for(var i = 0; i < type.length; i++)
-      {
-        if(type[i].checked)
-          typePrice = parseInt(type[i].value)
-      }
-      var totalPrice = (subPrice+typePrice)*p_no;
-      //document.getElementById('totalPriceInput').value = totalPrice;
-     // document.getElementById('pNoInput').value = p_no;
-     document.getElementById('totalPrice').innerHTML = totalPrice;*/
      var sub=parseInt(document.getElementsByClassName('sub').length);
      var tic=parseInt(document.getElementsByClassName('ticket').length);
      var nbtic=0;
@@ -724,7 +687,6 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
 
     \$(document).ready(function() {
         document.getElementById('totalPrice').innerHTML = 0;
-     // clacTotal(document.getElementById('montantItem').value, 1);
     });
   </script>
     <script>

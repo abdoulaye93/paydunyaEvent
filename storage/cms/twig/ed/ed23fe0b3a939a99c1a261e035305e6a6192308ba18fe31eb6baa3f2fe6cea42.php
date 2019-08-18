@@ -209,6 +209,10 @@ class __TwigTemplate_7ddd45286a0d51e99d560dcf8f201dbd5fa000661b984b6cd366c64a16a
                 echo "          </td>   
           <td>
                 <form data-request=\"onPush\">
+                        <input type=\"hidden\" value=\"";
+                // line 104
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", [], "any", false, false, false, 104), "html", null, true);
+                echo "\" name=\"nampush\">
                         <button type=\"submit\" class=\"btn  btn-sm\">Send Mail</button>
                 </form> 
           </td>                    
@@ -219,8 +223,8 @@ class __TwigTemplate_7ddd45286a0d51e99d560dcf8f201dbd5fa000661b984b6cd366c64a16a
    <div class=\"modal fade\" id=\"modalLoginForm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
        <form data-request=\"onPosition\">
            <input type=\"hidden\" name=\"event\" value=\"";
-                // line 113
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 113), "html", null, true);
+                // line 114
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 114), "html", null, true);
                 echo "\">
         <div class=\"modal-dialog\" role=\"document\">
             <div class=\"modal-content\">
@@ -256,10 +260,10 @@ class __TwigTemplate_7ddd45286a0d51e99d560dcf8f201dbd5fa000661b984b6cd366c64a16a
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 144
+            // line 145
             echo " ";
         } else {
-            // line 145
+            // line 146
             echo " <div class=\"row\" class=\"text-center\">
         <h3 class=\"\">NO  event FOUND</h3>
     </div>
@@ -279,7 +283,7 @@ class __TwigTemplate_7ddd45286a0d51e99d560dcf8f201dbd5fa000661b984b6cd366c64a16a
 
     public function getDebugInfo()
     {
-        return array (  263 => 145,  260 => 144,  223 => 113,  209 => 101,  202 => 96,  196 => 94,  194 => 93,  190 => 91,  164 => 68,  160 => 67,  155 => 64,  145 => 61,  142 => 60,  140 => 59,  132 => 53,  128 => 51,  123 => 48,  121 => 47,  117 => 46,  113 => 45,  108 => 44,  102 => 42,  100 => 41,  96 => 40,  90 => 36,  85 => 34,  79 => 30,  77 => 29,  70 => 25,  64 => 22,  44 => 4,  39 => 3,  37 => 2,  35 => 1,);
+        return array (  267 => 146,  264 => 145,  227 => 114,  214 => 104,  209 => 101,  202 => 96,  196 => 94,  194 => 93,  190 => 91,  164 => 68,  160 => 67,  155 => 64,  145 => 61,  142 => 60,  140 => 59,  132 => 53,  128 => 51,  123 => 48,  121 => 47,  117 => 46,  113 => 45,  108 => 44,  102 => 42,  100 => 41,  96 => 40,  90 => 36,  85 => 34,  79 => 30,  77 => 29,  70 => 25,  64 => 22,  44 => 4,  39 => 3,  37 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -387,6 +391,7 @@ class __TwigTemplate_7ddd45286a0d51e99d560dcf8f201dbd5fa000661b984b6cd366c64a16a
           </td>   
           <td>
                 <form data-request=\"onPush\">
+                        <input type=\"hidden\" value=\"{{item.nom}}\" name=\"nampush\">
                         <button type=\"submit\" class=\"btn  btn-sm\">Send Mail</button>
                 </form> 
           </td>                    

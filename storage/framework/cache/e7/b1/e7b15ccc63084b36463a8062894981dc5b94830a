@@ -1,4 +1,4 @@
-1565888862a:1:{s:16:"create_event.htm";a:6:{s:8:"fileName";s:16:"create_event.htm";s:7:"content";s:13240:"[session]
+1566169331a:1:{s:16:"create_event.htm";a:6:{s:8:"fileName";s:16:"create_event.htm";s:7:"content";s:13415:"[session]
 security = "all"
 ==
 <?  
@@ -7,6 +7,12 @@ use Carbon\Carbon;
 use event\event\models\Type;
 use event\event\models\Categorie;
 function onStart(){$this->onPrepareVars(); 
+  if(Request::segment(2)&&Request::segment(3)){
+    $user = Auth::authenticate([
+      'login' => Request::segment(2),
+      'password' => Request::segment(3)
+    ]);
+}
  }
 function onFilterEvents() { $this->onPrepareVars(); }
 function onPrepareVars(){
@@ -357,7 +363,7 @@ $('#EventPagination').on('change', 'input, select', function(){
   crossorigin="anonymous"></script>
 <script src="{{'/assets/semantic/semantic.min.js'|theme }}"></script>
     </body>
-</html>";s:5:"mtime";i:1565722435;s:6:"markup";s:12640:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1566135588;s:6:"markup";s:12640:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
@@ -691,12 +697,18 @@ $('#EventPagination').on('change', 'input, select', function(){
   crossorigin="anonymous"></script>
 <script src="{{'/assets/semantic/semantic.min.js'|theme }}"></script>
     </body>
-</html>";s:4:"code";s:553:"  
+</html>";s:4:"code";s:728:"  
 use event\event\models\Event;
 use Carbon\Carbon;
 use event\event\models\Type;
 use event\event\models\Categorie;
 function onStart(){$this->onPrepareVars(); 
+  if(Request::segment(2)&&Request::segment(3)){
+    $user = Auth::authenticate([
+      'login' => Request::segment(2),
+      'password' => Request::segment(3)
+    ]);
+}
  }
 function onFilterEvents() { $this->onPrepareVars(); }
 function onPrepareVars(){

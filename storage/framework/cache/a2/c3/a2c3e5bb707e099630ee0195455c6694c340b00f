@@ -1,4 +1,4 @@
-1565887370a:1:{s:22:"events/manageevent.htm";a:5:{s:8:"fileName";s:22:"events/manageevent.htm";s:7:"content";s:8024:"{%set id=user.id%}
+1566166862a:1:{s:22:"events/manageevent.htm";a:5:{s:8:"fileName";s:22:"events/manageevent.htm";s:7:"content";s:8107:"{%set id=user.id%}
 {% if events|length%}
    {% for item in events %}
    
@@ -101,6 +101,7 @@
           </td>   
           <td>
                 <form data-request="onPush">
+                        <input type="hidden" value="{{item.nom}}" name="nampush">
                         <button type="submit" class="btn  btn-sm">Send Mail</button>
                 </form> 
           </td>                    
@@ -145,7 +146,7 @@
  <div class="row" class="text-center">
         <h3 class="">NO  event FOUND</h3>
     </div>
-{%endif%}";s:5:"mtime";i:1565880701;s:6:"markup";s:8024:"{%set id=user.id%}
+{%endif%}";s:5:"mtime";i:1566163591;s:6:"markup";s:8107:"{%set id=user.id%}
 {% if events|length%}
    {% for item in events %}
    
@@ -248,6 +249,7 @@
           </td>   
           <td>
                 <form data-request="onPush">
+                        <input type="hidden" value="{{item.nom}}" name="nampush">
                         <button type="submit" class="btn  btn-sm">Send Mail</button>
                 </form> 
           </td>                    

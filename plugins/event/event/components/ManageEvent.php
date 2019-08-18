@@ -160,13 +160,13 @@ class ManageEvent extends ComponentBase
         if(sizeof($this->getMail())!=0){
             $vars = ['name' => 'Joe', 'user' => 'Mary'];
         Mail::send('event.event::mail.message', $vars, function($message) {
-            $mail="";
+            $mail='';
             for ($i=0; $i<count($this->getMail()); $i++) {
-                $mail= $mail.$this->getMail()[$i].",";
+                $mail= $mail.'"'.$this->getMail()[$i].'",';
             }
-            $mail=rtrim($mail,", ");
-            $message->to([$mail], 'Admin Person');
-            $message->subject('new event');
+            $mail=rtrim($mail,",");
+            $message->to($mail, 'Admin Person');
+            $message->subject(Input::get('nampush'));
            });
         }  
     }

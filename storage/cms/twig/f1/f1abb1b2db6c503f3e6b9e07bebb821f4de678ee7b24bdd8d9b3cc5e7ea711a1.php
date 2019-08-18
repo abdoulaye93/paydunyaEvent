@@ -124,7 +124,7 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                             </li>
 
 
-
+                            <!--
                             <li class=\"nav-item dropdown ";
             // line 48
             if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 48), "id", [], "any", false, false, false, 48) == "configuration_payment")) {
@@ -139,7 +139,7 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
             echo "\">Configurer le paiement</a>
                                   
                                 </div>
-                            </li>
+                            </li>-->  
                     
                 
                     ";
@@ -304,6 +304,15 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                                             <input name=\"password_confirmation\" id=\"registerPasswordConfirmation\" type=\"password\" placeholder=\"Confirmer le mot de passe....\" class=\"input-field-square\">
                                             <p class=\"emr\"></p>
                                         </div>
+                                        <div class=\"form-element square login\">
+                                            <label>Modifier les informations personnelles renseignées dans le compte PayDunya
+                                                <span>**</span>
+                                            </label>
+                                            <input  type=\"checkbox\" onchange=\"register(event)\">
+                                            <p class=\"emr\"></p>
+                                        </div>
+                                        <div id=\"paydunya\">
+                                        </div>
                                         <input type=\"submit\" class=\"submit-form-btn\" value=\"S'inscrire\">
                                     </form>
                                 </div>
@@ -315,13 +324,168 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
         </div><!-- login modal warapper satart end-->
     </div>
     <!-- login and register modal end -->
-
     <script>
+    function register(event){
+        if(event.target.checked){
+        var paydunya=document.getElementById('paydunya')
+        var div1 = document.createElement('div')
+            div1.setAttribute('class', 'form-element square login')
+            div1.setAttribute('id', 'div1')
+        var label1 = document.createElement('label')
+              label1.setAttribute('for', 'master_key')
+              label1.innerHTML=\"Master key\"
+        var input1 = document.createElement('input')
+              input1.setAttribute('type', 'text')
+              input1.setAttribute('id', 'inputtype2')
+              input1.setAttribute('class', 'input-field-square')
+              input1.setAttribute('placeholder', 'Votre clé principale...')
+              input1.setAttribute('name', 'master_key')
+             // input1.setAttribute('required')
+        div1.appendChild(label1)
+        div1.appendChild(input1)
+        document.getElementById('paydunya').appendChild(div1)
+       var div2 = document.createElement('div')
+            div2.setAttribute('class', 'form-element square login')
+            div2.setAttribute('id', 'div2')
+        var label2 = document.createElement('label')
+              label2.setAttribute('for', 'private_key_test')
+              label2.innerHTML=\"Token production\"
+        var input2 = document.createElement('input')
+              input2.setAttribute('type', 'text')
+              input2.setAttribute('id', 'private_key_test')
+              input2.setAttribute('class', 'input-field-square')
+              input2.setAttribute('placeholder', 'Votre clé privée de test...')
+              input2.setAttribute('name', 'private_key_test')
+        div2.appendChild(label2)
+        div2.appendChild(input2)
+        document.getElementById('paydunya').appendChild(div2)
+        var div3 = document.createElement('div')
+            div3.setAttribute('id', 'div3')
+            div3.setAttribute('class', 'form-element square login')
+        var label3 = document.createElement('label')
+              label3.setAttribute('for', 'public_key_test')
+              label3.innerHTML=\"Public test key\"
+        var input3 = document.createElement('input')
+              input3.setAttribute('type', 'text')
+              input3.setAttribute('id', 'public_key_test')
+              input3.setAttribute('class', 'input-field-square')
+              input3.setAttribute('placeholder', 'Votre clé public de test...')
+              input3.setAttribute('name', 'public_key_test')
+        div3.appendChild(label3)
+        div3.appendChild(input3)
+        document.getElementById('paydunya').appendChild(div3)
+        var div4 = document.createElement('div')
+            div4.setAttribute('class', 'form-element square login')
+            div4.setAttribute('id', 'div4')
+        var label4 = document.createElement('label')
+              label4.setAttribute('for', 'token_test')
+              label4.innerHTML=\"Token production\"
+        var input4 = document.createElement('input')
+              input4.setAttribute('type', 'text')
+              input4.setAttribute('id', 'token_test')
+              input4.setAttribute('class', 'input-field-square')
+              input4.setAttribute('placeholder', 'Votre token de test...')
+              input4.setAttribute('name', 'token_test')
+        div4.appendChild(label4)
+        div4.appendChild(input4)
+        document.getElementById('paydunya').appendChild(div4)
+        var div5 = document.createElement('div')
+            div5.setAttribute('class', 'form-element square login')
+            div5.setAttribute('id', 'div5')
+        var label5 = document.createElement('label')
+              label5.setAttribute('id', 'public_key_prod')
+              label5.innerHTML=\"Private production key\"
+        var input5 = document.createElement('input')
+              input5.setAttribute('type', 'text')
+              input5.setAttribute('id', 'public_key_prod')
+              input5.setAttribute('class', 'input-field-square')
+              input5.setAttribute('placeholder', 'Votre clé public de production...')
+              input5.setAttribute('name', 'public_key_prod')
+        div5.appendChild(label5)
+        div5.appendChild(input5)
+        document.getElementById('paydunya').appendChild(div5)
+        var div6 = document.createElement('div')
+            div6.setAttribute('class', 'form-element square login')
+            div6.setAttribute('id', 'div6')
+        var label6 = document.createElement('label')
+              label6.setAttribute('for', 'public_key_prod')
+              label6.innerHTML=\"Public production key\"
+        var input6 = document.createElement('input')
+              input6.setAttribute('type', 'text')
+              input6.setAttribute('id', 'public_key_prod')
+              input6.setAttribute('class', 'input-field-square')
+              input6.setAttribute('placeholder', 'Votre clé public de production...')
+              input6.setAttribute('name', 'public_key_prod')
+        div6.appendChild(label6)
+        div6.appendChild(input6)
+        document.getElementById('paydunya').appendChild(div6)
+        var div7 = document.createElement('div')
+            div7.setAttribute('class', 'form-element square login')
+            div7.setAttribute('id', 'div7')
+        var label7 = document.createElement('label')
+              label7.setAttribute('for', 'token_prod')
+              label7.innerHTML=\"Token production\"
+        var input7 = document.createElement('input')
+              input7.setAttribute('type', 'text')
+              input7.setAttribute('id', 'token_prod')
+              input7.setAttribute('class', 'input-field-square')
+              input7.setAttribute('placeholder', 'Votre token de production...')
+              input7.setAttribute('name', 'token_prod')
+        div7.appendChild(label7)
+        div7.appendChild(input7)
+        document.getElementById('paydunya').appendChild(div7)
+        var div8 = document.createElement('div')
+            div8.setAttribute('class', 'form-element square login')
+            div8.setAttribute('id', 'div8')
+        var label8 = document.createElement('label')
+              label8.setAttribute('for', 'phone')
+              label8.innerHTML=\"Telephone\"
+        var input8 = document.createElement('input')
+              input8.setAttribute('type', 'text')
+              input8.setAttribute('id', 'phone')
+              input8.setAttribute('class', 'input-field-square')
+              input8.setAttribute('placeholder', 'Votre numero de telephone...')
+              input8.setAttribute('name', 'phone')
+        div8.appendChild(label8)
+        div8.appendChild(input8)
+        document.getElementById('paydunya').appendChild(div8)
+        var div9 = document.createElement('div')
+            div9.setAttribute('class', 'form-element square login')
+            div9.setAttribute('id', 'div9')
+        var label9 = document.createElement('label')
+              label9.setAttribute('for', 'redirect')
+              label9.innerHTML=\"Redirection\"
+        var slect = document.createElement('select')
+              slect.setAttribute('id', 'redirect')
+              slect.setAttribute('class', 'form-control')
+              slect.setAttribute('name', 'redirect')
+        var option1 = document.createElement('option')
+            option1.innerHTML=\"oui\"
+            option1.setAttribute('value','true')
+        var option2 = document.createElement('option')
+            option2.innerHTML=\"non\"
+            option2.setAttribute('value','false')
+        slect.appendChild(option1)
+        slect.appendChild(option2)
+        div9.appendChild(slect)
+        document.getElementById('paydunya').appendChild(div9)
+        }else{
+            document.getElementById('div1').remove()
+            document.getElementById('div2').remove()
+            document.getElementById('div3').remove()
+            document.getElementById('div4').remove()
+            document.getElementById('div5').remove()
+            document.getElementById('div6').remove()
+            document.getElementById('div7').remove()
+            document.getElementById('div8').remove()
+            document.getElementById('div9').remove()
+        }
+    }
     function formSuccess(form, contect, data, textStatus, jqXHR) 
     {
         if(textStatus == 'success')
             window.location = \"";
-        // line 186
+        // line 350
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("Demonstration");
         echo "\"
 
@@ -346,7 +510,7 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
 
     public function getDebugInfo()
     {
-        return array (  325 => 186,  263 => 131,  216 => 86,  212 => 84,  204 => 78,  200 => 77,  195 => 75,  192 => 74,  188 => 73,  184 => 72,  180 => 70,  176 => 69,  171 => 67,  168 => 66,  166 => 65,  160 => 64,  157 => 63,  154 => 62,  148 => 58,  138 => 51,  130 => 48,  121 => 42,  117 => 41,  113 => 40,  109 => 39,  105 => 38,  97 => 35,  91 => 31,  89 => 30,  81 => 25,  75 => 24,  65 => 21,  59 => 20,  43 => 7,  35 => 1,);
+        return array (  489 => 350,  263 => 131,  216 => 86,  212 => 84,  204 => 78,  200 => 77,  195 => 75,  192 => 74,  188 => 73,  184 => 72,  180 => 70,  176 => 69,  171 => 67,  168 => 66,  166 => 65,  160 => 64,  157 => 63,  154 => 62,  148 => 58,  138 => 51,  130 => 48,  121 => 42,  117 => 41,  113 => 40,  109 => 39,  105 => 38,  97 => 35,  91 => 31,  89 => 30,  81 => 25,  75 => 24,  65 => 21,  59 => 20,  43 => 7,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -397,14 +561,14 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                             </li>
 
 
-
+                            <!--
                             <li class=\"nav-item dropdown {% if this.page.id == 'configuration_payment' %}active{% endif %}\">
                                 <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Paiement</a>
                                 <div class=\"dropdown-menu\">
                                     <a class=\"dropdown-item\" href=\"{{ 'configuration_payment'|page }}\">Configurer le paiement</a>
                                   
                                 </div>
-                            </li>
+                            </li>-->  
                     
                 
                     {% else %}
@@ -520,6 +684,15 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                                             <input name=\"password_confirmation\" id=\"registerPasswordConfirmation\" type=\"password\" placeholder=\"Confirmer le mot de passe....\" class=\"input-field-square\">
                                             <p class=\"emr\"></p>
                                         </div>
+                                        <div class=\"form-element square login\">
+                                            <label>Modifier les informations personnelles renseignées dans le compte PayDunya
+                                                <span>**</span>
+                                            </label>
+                                            <input  type=\"checkbox\" onchange=\"register(event)\">
+                                            <p class=\"emr\"></p>
+                                        </div>
+                                        <div id=\"paydunya\">
+                                        </div>
                                         <input type=\"submit\" class=\"submit-form-btn\" value=\"S'inscrire\">
                                     </form>
                                 </div>
@@ -531,8 +704,163 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
         </div><!-- login modal warapper satart end-->
     </div>
     <!-- login and register modal end -->
-
     <script>
+    function register(event){
+        if(event.target.checked){
+        var paydunya=document.getElementById('paydunya')
+        var div1 = document.createElement('div')
+            div1.setAttribute('class', 'form-element square login')
+            div1.setAttribute('id', 'div1')
+        var label1 = document.createElement('label')
+              label1.setAttribute('for', 'master_key')
+              label1.innerHTML=\"Master key\"
+        var input1 = document.createElement('input')
+              input1.setAttribute('type', 'text')
+              input1.setAttribute('id', 'inputtype2')
+              input1.setAttribute('class', 'input-field-square')
+              input1.setAttribute('placeholder', 'Votre clé principale...')
+              input1.setAttribute('name', 'master_key')
+             // input1.setAttribute('required')
+        div1.appendChild(label1)
+        div1.appendChild(input1)
+        document.getElementById('paydunya').appendChild(div1)
+       var div2 = document.createElement('div')
+            div2.setAttribute('class', 'form-element square login')
+            div2.setAttribute('id', 'div2')
+        var label2 = document.createElement('label')
+              label2.setAttribute('for', 'private_key_test')
+              label2.innerHTML=\"Token production\"
+        var input2 = document.createElement('input')
+              input2.setAttribute('type', 'text')
+              input2.setAttribute('id', 'private_key_test')
+              input2.setAttribute('class', 'input-field-square')
+              input2.setAttribute('placeholder', 'Votre clé privée de test...')
+              input2.setAttribute('name', 'private_key_test')
+        div2.appendChild(label2)
+        div2.appendChild(input2)
+        document.getElementById('paydunya').appendChild(div2)
+        var div3 = document.createElement('div')
+            div3.setAttribute('id', 'div3')
+            div3.setAttribute('class', 'form-element square login')
+        var label3 = document.createElement('label')
+              label3.setAttribute('for', 'public_key_test')
+              label3.innerHTML=\"Public test key\"
+        var input3 = document.createElement('input')
+              input3.setAttribute('type', 'text')
+              input3.setAttribute('id', 'public_key_test')
+              input3.setAttribute('class', 'input-field-square')
+              input3.setAttribute('placeholder', 'Votre clé public de test...')
+              input3.setAttribute('name', 'public_key_test')
+        div3.appendChild(label3)
+        div3.appendChild(input3)
+        document.getElementById('paydunya').appendChild(div3)
+        var div4 = document.createElement('div')
+            div4.setAttribute('class', 'form-element square login')
+            div4.setAttribute('id', 'div4')
+        var label4 = document.createElement('label')
+              label4.setAttribute('for', 'token_test')
+              label4.innerHTML=\"Token production\"
+        var input4 = document.createElement('input')
+              input4.setAttribute('type', 'text')
+              input4.setAttribute('id', 'token_test')
+              input4.setAttribute('class', 'input-field-square')
+              input4.setAttribute('placeholder', 'Votre token de test...')
+              input4.setAttribute('name', 'token_test')
+        div4.appendChild(label4)
+        div4.appendChild(input4)
+        document.getElementById('paydunya').appendChild(div4)
+        var div5 = document.createElement('div')
+            div5.setAttribute('class', 'form-element square login')
+            div5.setAttribute('id', 'div5')
+        var label5 = document.createElement('label')
+              label5.setAttribute('id', 'public_key_prod')
+              label5.innerHTML=\"Private production key\"
+        var input5 = document.createElement('input')
+              input5.setAttribute('type', 'text')
+              input5.setAttribute('id', 'public_key_prod')
+              input5.setAttribute('class', 'input-field-square')
+              input5.setAttribute('placeholder', 'Votre clé public de production...')
+              input5.setAttribute('name', 'public_key_prod')
+        div5.appendChild(label5)
+        div5.appendChild(input5)
+        document.getElementById('paydunya').appendChild(div5)
+        var div6 = document.createElement('div')
+            div6.setAttribute('class', 'form-element square login')
+            div6.setAttribute('id', 'div6')
+        var label6 = document.createElement('label')
+              label6.setAttribute('for', 'public_key_prod')
+              label6.innerHTML=\"Public production key\"
+        var input6 = document.createElement('input')
+              input6.setAttribute('type', 'text')
+              input6.setAttribute('id', 'public_key_prod')
+              input6.setAttribute('class', 'input-field-square')
+              input6.setAttribute('placeholder', 'Votre clé public de production...')
+              input6.setAttribute('name', 'public_key_prod')
+        div6.appendChild(label6)
+        div6.appendChild(input6)
+        document.getElementById('paydunya').appendChild(div6)
+        var div7 = document.createElement('div')
+            div7.setAttribute('class', 'form-element square login')
+            div7.setAttribute('id', 'div7')
+        var label7 = document.createElement('label')
+              label7.setAttribute('for', 'token_prod')
+              label7.innerHTML=\"Token production\"
+        var input7 = document.createElement('input')
+              input7.setAttribute('type', 'text')
+              input7.setAttribute('id', 'token_prod')
+              input7.setAttribute('class', 'input-field-square')
+              input7.setAttribute('placeholder', 'Votre token de production...')
+              input7.setAttribute('name', 'token_prod')
+        div7.appendChild(label7)
+        div7.appendChild(input7)
+        document.getElementById('paydunya').appendChild(div7)
+        var div8 = document.createElement('div')
+            div8.setAttribute('class', 'form-element square login')
+            div8.setAttribute('id', 'div8')
+        var label8 = document.createElement('label')
+              label8.setAttribute('for', 'phone')
+              label8.innerHTML=\"Telephone\"
+        var input8 = document.createElement('input')
+              input8.setAttribute('type', 'text')
+              input8.setAttribute('id', 'phone')
+              input8.setAttribute('class', 'input-field-square')
+              input8.setAttribute('placeholder', 'Votre numero de telephone...')
+              input8.setAttribute('name', 'phone')
+        div8.appendChild(label8)
+        div8.appendChild(input8)
+        document.getElementById('paydunya').appendChild(div8)
+        var div9 = document.createElement('div')
+            div9.setAttribute('class', 'form-element square login')
+            div9.setAttribute('id', 'div9')
+        var label9 = document.createElement('label')
+              label9.setAttribute('for', 'redirect')
+              label9.innerHTML=\"Redirection\"
+        var slect = document.createElement('select')
+              slect.setAttribute('id', 'redirect')
+              slect.setAttribute('class', 'form-control')
+              slect.setAttribute('name', 'redirect')
+        var option1 = document.createElement('option')
+            option1.innerHTML=\"oui\"
+            option1.setAttribute('value','true')
+        var option2 = document.createElement('option')
+            option2.innerHTML=\"non\"
+            option2.setAttribute('value','false')
+        slect.appendChild(option1)
+        slect.appendChild(option2)
+        div9.appendChild(slect)
+        document.getElementById('paydunya').appendChild(div9)
+        }else{
+            document.getElementById('div1').remove()
+            document.getElementById('div2').remove()
+            document.getElementById('div3').remove()
+            document.getElementById('div4').remove()
+            document.getElementById('div5').remove()
+            document.getElementById('div6').remove()
+            document.getElementById('div7').remove()
+            document.getElementById('div8').remove()
+            document.getElementById('div9').remove()
+        }
+    }
     function formSuccess(form, contect, data, textStatus, jqXHR) 
     {
         if(textStatus == 'success')

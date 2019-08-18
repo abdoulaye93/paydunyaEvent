@@ -83,7 +83,7 @@ class __TwigTemplate_086f8377f237de8d8251cf8d090a8a1ec78b9cabde009e966a9244c6e89
                 id=\"registerPassword\"
                 placeholder=\"Choose a password\" />
         </div>
-
+        
         <button type=\"submit\" class=\"btn btn-default\">Register</button>
     </form>
 ";
@@ -156,7 +156,7 @@ class __TwigTemplate_086f8377f237de8d8251cf8d090a8a1ec78b9cabde009e966a9244c6e89
                 id=\"registerPassword\"
                 placeholder=\"Choose a password\" />
         </div>
-
+        
         <button type=\"submit\" class=\"btn btn-default\">Register</button>
     </form>
 {% else %}
