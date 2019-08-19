@@ -158,16 +158,13 @@ class ManageEvent extends ComponentBase
     //envoi de mail de notification a tous les users qui ont participé a ton evenement
     function onPush(){
         if(sizeof($this->getMail())!=0){
-            $vars = ['name' => 'Joe', 'user' => 'Mary'];
-        Mail::send('event.event::mail.message', $vars, function($message) {
-            $mail='';
-            for ($i=0; $i<count($this->getMail()); $i++) {
-                $mail= $mail.$this->getMail()[$i].',';
-            }
-            $mail=rtrim($mail,",");
-            $message->to([$mail], 'Admin Person');
-            $message->subject(Input::get('nampush'));
-           });
+            $vars = ['name' => 'Joe', 'user' => 'Mary'];       
+                Mail::send('event.event::mail.message', $vars, function($message) {
+                    for ($i=0; $i<count($this->getMail()); $i++) {
+                        $message->to([ $this->getMail()[$i]], 'Admin Person');
+                        $message->subject(Input::get('nampush'));
+                    } 
+                });
         }  
     }
     //recuperation de l'enemble des mail des uers qui ont participé a ton evenement
