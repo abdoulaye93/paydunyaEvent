@@ -16,7 +16,9 @@ Route::get('user/{name?}', function () {
     }else{
        $email=$p->scopeIsActivated($user)[0]->email;
        $password=$p->scopeIsActivated($user)[0]->password;
-    return  Redirect::to("/paydunya_connection/$email/$password");
+       $id=$p->scopeIsActivated($user)[0]->id;
+   return  Redirect::to("/paydunya_connection/$id");
     //return $p->scopeIsActivated($user)[0];
+    //return Redirect::to("/");
     }
 });

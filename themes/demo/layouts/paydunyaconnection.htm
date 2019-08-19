@@ -2,15 +2,12 @@
 <?  
 use event\event\models\Event;
 use Carbon\Carbon;
+use rainlab\user\models\User;
 use event\event\models\Type;
 use event\event\models\Categorie;
 function onStart(){$this->onPrepareVars(); 
- 
- /* $user = Auth::authenticate([
-  'login' =>Request::segment(2),
-  'password' => Request::segment(3)
-]);*/
-Auth::findUserByLogin(Request::segment(2));
+$user=User::where('id',Request::segment(2))->get();
+Auth::login($user[0],true);
  }
 
 function onFilterEvents() { $this->onPrepareVars(); }

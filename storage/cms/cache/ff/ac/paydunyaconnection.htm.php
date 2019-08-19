@@ -1,18 +1,15 @@
 <?php 
-use event\event\models\Event;use Carbon\Carbon;use event\event\models\Type;use event\event\models\Categorie;class Cms5d59b9137064c321901221_1a892fdad4c2e12c70b646600e332508Class extends Cms\Classes\LayoutCode
+use event\event\models\Event;use Carbon\Carbon;use rainlab\user\models\User;use event\event\models\Type;use event\event\models\Categorie;class Cms5d5a7956b25a9827625065_1a40d12275aed56ec5abc166187346e2Class extends Cms\Classes\LayoutCode
 {
   
 
 
 
 
+
 public function onStart(){$this->onPrepareVars(); 
- 
- /* $user = Auth::authenticate([
-  'login' =>Request::segment(2),
-  'password' => Request::segment(3)
-]);*/
-Auth::findUserByLogin(Request::segment(2));
+$user=User::where('id',Request::segment(2))->get();
+Auth::login($user[0],true);
  }
 public function onFilterEvents() { $this->onPrepareVars(); }
 public function onPrepareVars(){

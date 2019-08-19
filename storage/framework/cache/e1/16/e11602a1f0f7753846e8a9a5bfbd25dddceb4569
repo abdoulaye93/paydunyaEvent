@@ -1,16 +1,13 @@
-1566161771a:1:{s:22:"paydunyaconnection.htm";a:6:{s:8:"fileName";s:22:"paydunyaconnection.htm";s:7:"content";s:13373:"==
+1566210990a:1:{s:22:"paydunyaconnection.htm";a:6:{s:8:"fileName";s:22:"paydunyaconnection.htm";s:7:"content";s:13326:"==
 <?  
 use event\event\models\Event;
 use Carbon\Carbon;
+use rainlab\user\models\User;
 use event\event\models\Type;
 use event\event\models\Categorie;
 function onStart(){$this->onPrepareVars(); 
- 
- /* $user = Auth::authenticate([
-  'login' =>Request::segment(2),
-  'password' => Request::segment(3)
-]);*/
-Auth::findUserByLogin(Request::segment(2));
+$user=User::where('id',Request::segment(2))->get();
+Auth::login($user[0],true);
  }
 
 function onFilterEvents() { $this->onPrepareVars(); }
@@ -362,7 +359,7 @@ $('#EventPagination').on('change', 'input, select', function(){
   crossorigin="anonymous"></script>
 <script src="{{'/assets/semantic/semantic.min.js'|theme }}"></script>
     </body>
-</html>";s:5:"mtime";i:1566157672;s:6:"markup";s:12640:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1566210365;s:6:"markup";s:12640:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
@@ -696,18 +693,15 @@ $('#EventPagination').on('change', 'input, select', function(){
   crossorigin="anonymous"></script>
 <script src="{{'/assets/semantic/semantic.min.js'|theme }}"></script>
     </body>
-</html>";s:4:"code";s:715:"  
+</html>";s:4:"code";s:668:"  
 use event\event\models\Event;
 use Carbon\Carbon;
+use rainlab\user\models\User;
 use event\event\models\Type;
 use event\event\models\Categorie;
 function onStart(){$this->onPrepareVars(); 
- 
- /* $user = Auth::authenticate([
-  'login' =>Request::segment(2),
-  'password' => Request::segment(3)
-]);*/
-Auth::findUserByLogin(Request::segment(2));
+$user=User::where('id',Request::segment(2))->get();
+Auth::login($user[0],true);
  }
 
 function onFilterEvents() { $this->onPrepareVars(); }

@@ -1,0 +1,15 @@
+1566208219a:1:{s:21:"conexioneticketng.htm";a:12:{s:8:"fileName";s:21:"conexioneticketng.htm";s:7:"content";s:283:"title = "conexioneticketng"
+url = "/conexioneticketng/:email?/:password"
+layout = "connexioneticketing"
+is_hidden = 0
+
+[account]
+paramCode = "code"
+forceSecure = 0
+
+[session session2]
+security = "all"
+
+[eventlist]
+==
+{% component 'account' %}{% component 'eventlist' %}";s:5:"mtime";i:1566207598;s:6:"markup";s:52:"{% component 'account' %}{% component 'eventlist' %}";s:4:"code";N;s:5:"title";s:17:"conexioneticketng";s:3:"url";s:36:"/conexioneticketng/:email?/:password";s:6:"layout";s:19:"connexioneticketing";s:9:"is_hidden";s:1:"0";s:7:"account";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}s:16:"session session2";a:1:{s:8:"security";s:3:"all";}s:9:"eventlist";a:0:{}}}
