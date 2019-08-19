@@ -243,4 +243,5 @@
   'AhmadFatoni\\ApiGenerator\\Controllers\\ApiGeneratorController' => 'plugins\\ahmadfatoni\\apigenerator\\controllers\\ApiGeneratorController.php',
   'AhmadFatoni\\ApiGenerator\\Controllers\\API\\paydunayaConnectionController' => 'plugins\\ahmadfatoni\\apigenerator\\controllers\\api\\paydunayaConnectionController.php',
   'AhmadFatoni\\ApiGenerator\\Helpers\\Helpers' => 'plugins\\ahmadfatoni\\apigenerator\\helpers\\Helpers.php',
+  'rainlab\\user\\components\\Account' => 'plugins\\rainlab\\user\\components\\Account.php',
 );

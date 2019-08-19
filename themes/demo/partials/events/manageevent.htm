@@ -12,7 +12,7 @@
          <th scope="col" class="action_th" >ACTIONS</th>
          <th scope="col" class="action_th" >INVITATION</th>
          <th scope="col" class="action_th" >Promotion</th>
-         <th scope="col" class="action_th" >Prosition</th>
+      <!--     <th scope="col" class="action_th" >Prosition</th>-->
          <th scope="col" class="action_th" >push Mail au userss</th>
          </tr>
      </thead>
@@ -89,7 +89,7 @@
                          </div>
                          {%endif%}
           </td>    
-          <td>
+        <!--  <td>
               {%if item.position_id%}
                  <a class="btn btn-warning btn-sm" href="{{ 'position'|page({lat:item.position.lat,long:item.position.long}) }}" class="action-btn">Voir position</a>
               {%else%}
@@ -98,12 +98,17 @@
                     </form> 
                    
               {%endif%}
-          </td>   
+          </td>  --> 
           <td>
+              {% if item.is_push!=true%}
                 <form data-request="onPush">
                         <input type="hidden" value="{{item.nom}}" name="nampush">
+                        <input type="hidden" value="{{item.id}}" name="idpush">
                         <button type="submit" class="btn  btn-sm">Send Mail</button>
                 </form> 
+              {%else%}
+                <input type="submit" disabled value="mail envoyer">
+              {%endif%}
           </td>                    
          </tr>
      </tbody>

@@ -1,4 +1,4 @@
-1566216555a:1:{s:22:"events/manageevent.htm";a:5:{s:8:"fileName";s:22:"events/manageevent.htm";s:7:"content";s:8107:"{%set id=user.id%}
+1566217771a:1:{s:22:"events/manageevent.htm";a:5:{s:8:"fileName";s:22:"events/manageevent.htm";s:7:"content";s:8364:"{%set id=user.id%}
 {% if events|length%}
    {% for item in events %}
    
@@ -12,7 +12,7 @@
          <th scope="col" class="action_th" >ACTIONS</th>
          <th scope="col" class="action_th" >INVITATION</th>
          <th scope="col" class="action_th" >Promotion</th>
-         <th scope="col" class="action_th" >Prosition</th>
+      <!--     <th scope="col" class="action_th" >Prosition</th>-->
          <th scope="col" class="action_th" >push Mail au userss</th>
          </tr>
      </thead>
@@ -89,7 +89,7 @@
                          </div>
                          {%endif%}
           </td>    
-          <td>
+        <!--  <td>
               {%if item.position_id%}
                  <a class="btn btn-warning btn-sm" href="{{ 'position'|page({lat:item.position.lat,long:item.position.long}) }}" class="action-btn">Voir position</a>
               {%else%}
@@ -98,12 +98,17 @@
                     </form> 
                    
               {%endif%}
-          </td>   
+          </td>  --> 
           <td>
+              {% if item.is_push!=true%}
                 <form data-request="onPush">
                         <input type="hidden" value="{{item.nom}}" name="nampush">
+                        <input type="hidden" value="{{item.id}}" name="idpush">
                         <button type="submit" class="btn  btn-sm">Send Mail</button>
                 </form> 
+              {%else%}
+                <input type="submit" disabled value="mail envoyer">
+              {%endif%}
           </td>                    
          </tr>
      </tbody>
@@ -146,7 +151,7 @@
  <div class="row" class="text-center">
         <h3 class="">NO  event FOUND</h3>
     </div>
-{%endif%}";s:5:"mtime";i:1566163591;s:6:"markup";s:8107:"{%set id=user.id%}
+{%endif%}";s:5:"mtime";i:1566217166;s:6:"markup";s:8364:"{%set id=user.id%}
 {% if events|length%}
    {% for item in events %}
    
@@ -160,7 +165,7 @@
          <th scope="col" class="action_th" >ACTIONS</th>
          <th scope="col" class="action_th" >INVITATION</th>
          <th scope="col" class="action_th" >Promotion</th>
-         <th scope="col" class="action_th" >Prosition</th>
+      <!--     <th scope="col" class="action_th" >Prosition</th>-->
          <th scope="col" class="action_th" >push Mail au userss</th>
          </tr>
      </thead>
@@ -237,7 +242,7 @@
                          </div>
                          {%endif%}
           </td>    
-          <td>
+        <!--  <td>
               {%if item.position_id%}
                  <a class="btn btn-warning btn-sm" href="{{ 'position'|page({lat:item.position.lat,long:item.position.long}) }}" class="action-btn">Voir position</a>
               {%else%}
@@ -246,12 +251,17 @@
                     </form> 
                    
               {%endif%}
-          </td>   
+          </td>  --> 
           <td>
+              {% if item.is_push!=true%}
                 <form data-request="onPush">
                         <input type="hidden" value="{{item.nom}}" name="nampush">
+                        <input type="hidden" value="{{item.id}}" name="idpush">
                         <button type="submit" class="btn  btn-sm">Send Mail</button>
                 </form> 
+              {%else%}
+                <input type="submit" disabled value="mail envoyer">
+              {%endif%}
           </td>                    
          </tr>
      </tbody>

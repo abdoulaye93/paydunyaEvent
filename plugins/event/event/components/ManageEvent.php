@@ -165,7 +165,11 @@ class ManageEvent extends ComponentBase
                         $message->subject(Input::get('nampush'));
                     } 
                 });
-        }  
+        }   
+        $event=Db::table('event_event_')
+        ->where('id', Input::get('idpush'))
+        ->update(['is_push' => true]);
+        return Redirect::back();
     }
     //recuperation de l'enemble des mail des uers qui ont participé a ton evenement
     public function getMail(){
