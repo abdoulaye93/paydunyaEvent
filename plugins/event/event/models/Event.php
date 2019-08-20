@@ -67,9 +67,6 @@ class Event extends Model
                     $q->where('nom_type', '=', $type);
                 })->orWhere('categorie', '=',$type);
             }
-           /*if($type!=null){
-                $query->where('categorie', '=',$type);
-            }*/
           
             return $query->paginate($perPage,$page);
     }

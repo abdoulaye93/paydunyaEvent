@@ -1,5 +1,5 @@
 <?php 
-use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;class Cms5d59d78bb883d470253450_8808d97b6da8785d6a901b5dbe76c5a9Class extends Cms\Classes\LayoutCode
+use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;class Cms5d5bcc2242411020108974_db1c7f2df60a26415614e9dcf8c1b5f1Class extends Cms\Classes\LayoutCode
 {
   
   
@@ -27,7 +27,7 @@ public function onAchat()
     }
 
     \Paydunya\Setup::setMasterKey($config->master_key);
-    \Paydunya\Setup::setPublicKey($config->public_key_test);
+    //\Paydunya\Setup::setPublicKey($config->public_key_test);
     \Paydunya\Setup::setPrivateKey($config->private_key_test);
     \Paydunya\Setup::setMode("test");
     \Paydunya\Setup::setToken($config->token_test);
@@ -46,8 +46,9 @@ public function onAchat()
     }else{
       $montantTotal=input('total');
     }
+    $url=Config::get('app.url');
     $checkoutInvoice->setTotalAmount($montantTotal);
-    $checkoutInvoice->setCancelUrl("http://localhost/install-master1/description_event/".$b);
+    $checkoutInvoice->setCancelUrl($url."description_event/".$b);
     $checkoutInvoice->setReturnUrl("http://localhost/install-master1/retour_achat/$b");
     $checkoutInvoice->addCustomData("id",$b);
     $checkoutInvoice->addCustomData("total",$b);

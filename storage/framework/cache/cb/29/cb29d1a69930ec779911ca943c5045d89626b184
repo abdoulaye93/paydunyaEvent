@@ -1,4 +1,4 @@
-1566217838a:1:{s:15:"manageevent.htm";a:6:{s:8:"fileName";s:15:"manageevent.htm";s:7:"content";s:13563:"==
+1566309871a:1:{s:15:"manageevent.htm";a:6:{s:8:"fileName";s:15:"manageevent.htm";s:7:"content";s:13567:"==
 <?
 use Carbon\Carbon;
 use event\event\models\Event;
@@ -43,7 +43,7 @@ function prepareVars()
 <html>
     <head>
      <meta charset="utf-8">
-        <title>October CMS - {{ this.page.title }}</title>
+        <title>PayDunya Event  - {{ this.page.title }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -379,11 +379,11 @@ $('#EventFilter').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:5:"mtime";i:1565704047;s:6:"markup";s:12657:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1566297643;s:6:"markup";s:12661:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
-        <title>October CMS - {{ this.page.title }}</title>
+        <title>PayDunya Event  - {{ this.page.title }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

@@ -1,4 +1,4 @@
-1566231106a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:21927:"[session]
+1566313866a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:21927:"[session]
 security = "all"
 ==
 <?php
@@ -66,7 +66,7 @@ function onStart(){
                 
                     {% else %}
                          <li class="nav-item boxed-btn">
-                    <a class="nav-link btn bg-success text-white p-3" href="#" data-toggle="modal" data-target="#login-modal"><h3><i class="fa fa-home"></i> Login - Register</h3></a>
+                    <a class="nav-link btn bg-primary text-white p-3" href="#" data-toggle="modal" data-target="#login-modal"><h3><i class="fa fa-home"></i> Login - Register</h3></a>
                 </li>
                     {% endif %}
                     {% if user.is_superuser %}
@@ -365,7 +365,7 @@ function onStart(){
         if(!confirm('Voulez vous vraiment effectuer une demande d\'annulation d\'achat ?'))
             event.preventDefault()
     })
-    </script>";s:5:"mtime";i:1566006817;s:6:"markup";s:21775:"<!-- Nav -->
+    </script>";s:5:"mtime";i:1566299355;s:6:"markup";s:21775:"<!-- Nav -->
 <nav class="navbar navbar-area navbar-expand-lg bg-white navbar-light fixed-top navbar-autohide" style="background-color: #0070B2">
     <div class="container">
         <div >
@@ -423,7 +423,7 @@ function onStart(){
                 
                     {% else %}
                          <li class="nav-item boxed-btn">
-                    <a class="nav-link btn bg-success text-white p-3" href="#" data-toggle="modal" data-target="#login-modal"><h3><i class="fa fa-home"></i> Login - Register</h3></a>
+                    <a class="nav-link btn bg-primary text-white p-3" href="#" data-toggle="modal" data-target="#login-modal"><h3><i class="fa fa-home"></i> Login - Register</h3></a>
                 </li>
                     {% endif %}
                     {% if user.is_superuser %}

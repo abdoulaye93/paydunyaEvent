@@ -2,7 +2,7 @@
 {% if events|length%}
    {% for item in events %}
    {% if item.user_id==9%}
-   {%if item.periode.date_cloture < date()%}
+   {%if date(item.periode.date_cloture) < date()%}
                                    
    <table id="example" class="table table-striped table-bordered" style="width:100%">
      <thead>

@@ -1,7 +1,7 @@
-1566231106a:1:{s:22:"events/eventexpire.htm";a:5:{s:8:"fileName";s:22:"events/eventexpire.htm";s:7:"content";s:1530:"{% if events|length%}
+1566309339a:1:{s:22:"events/eventexpire.htm";a:5:{s:8:"fileName";s:22:"events/eventexpire.htm";s:7:"content";s:1536:"{% if events|length%}
 <div class="row">
    {% for item in events %}
-   {% if item.periode.date_cloture < date()%}
+   {% if date(item.periode.date_cloture) < date()%}
  
    <div class="col-lg-4 col-sm-6" >
            <div class="single-ico-list-box">
@@ -34,10 +34,10 @@
 <div class="row" class="text-center">
         <h3 class="">NO  TICKETS expire FOUND</h3>
     </div>
-{%endif%}";s:5:"mtime";i:1564576707;s:6:"markup";s:1530:"{% if events|length%}
+{%endif%}";s:5:"mtime";i:1566296496;s:6:"markup";s:1536:"{% if events|length%}
 <div class="row">
    {% for item in events %}
-   {% if item.periode.date_cloture < date()%}
+   {% if date(item.periode.date_cloture) < date()%}
  
    <div class="col-lg-4 col-sm-6" >
            <div class="single-ico-list-box">

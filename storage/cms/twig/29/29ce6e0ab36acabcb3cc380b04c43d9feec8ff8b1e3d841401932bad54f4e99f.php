@@ -33,7 +33,7 @@ class __TwigTemplate_270c54c675606217155442b47096d4d76a1fd395fcac52e55ed2fe3b2c1
     {
         // line 1
         echo "
-<section class=\"live-token-sale\">
+<section class=\"live-token-sale\" style=\"padding-top: 150px;\">
         <div class=\"container\">
             <div class=\"row\">
                 <div class=\"col-lg-12 remove-col-padding-mobile\">
@@ -69,7 +69,7 @@ class __TwigTemplate_270c54c675606217155442b47096d4d76a1fd395fcac52e55ed2fe3b2c1
                 <div class=\"col-lg-12 remove-col-padding-mobile\">
                     <div class=\"tab-content\">
                         <div class=\"tab-pane container active\" id=\"active_tab\">
-                            <div class=\"row\" style=\"text-align:center;display:block;\">
+                            <div class=\"table-responsive\">
                                 
                                     ";
         // line 40
@@ -140,33 +140,7 @@ class __TwigTemplate_270c54c675606217155442b47096d4d76a1fd395fcac52e55ed2fe3b2c1
     </div>
     </section>
            <!-- login and register modal start-->
-<div class=\"login-registration-modal\" id=\"loginRegModal\">
-        <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
-            <div class=\"modal\" tabindex=\"-1\" id=\"invite-modal\" role=\"dialog\"><!-- #login modal-->
-                <div class=\"modal-dialog\" role=\"document\">
-                    <div class=\"modal-content\"><!-- modal content start -->
-                       
-                        <div class=\"tab-content\" id=\"nav-tabContent\"><!-- tab content-->
-                            <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
-                                <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
-                                    <form data-request=\"onActive\">
-                                        <div class=\"form-element square login\"><!-- form element login start -->
-                                            <label>Entrer l'email
-                                            </label>
-                                            <input name=\"email\" type=\"email\" placeholder=\"Entrer l'email....\" class=\"input-field-square\">
-                                            <p class=\"eml\"></p>
-                                        </div><!-- form element login end -->
-                                      <!-- form element login end -->
-                                        <button type=\"submit\" class=\"submit-form-btn\">send</button>
-                                    </form>
-                                </div><!-- login form wrapper end -->
-                            </div>
-                        </div><!-- /.tab conent-->
-                    </div><!-- modal content end -->
-                </div>
-            </div><!-- /#loginmodal -->
-        </div><!-- login modal warapper satart end-->
-    </div>
+
     <div class=\"login-registration-modal\" id=\"loginRegModal\">
     <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
         <div class=\"modal\" tabindex=\"-1\" id=\"login-modal\" role=\"dialog\"><!-- #login modal-->
@@ -184,67 +158,67 @@ class __TwigTemplate_270c54c675606217155442b47096d4d76a1fd395fcac52e55ed2fe3b2c1
                         <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
                             <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
                                ";
-        // line 117
+        // line 91
         if ( !($context["user"] ?? null)) {
-            // line 118
+            // line 92
             echo "
                                     <div class=\"row\">
                                 
                                         <div class=\"col-md-6\">
                                             <h3 class=\"";
-            // line 122
-            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 122), "id", [], "any", false, false, false, 122) == "register")) {
+            // line 96
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 96), "id", [], "any", false, false, false, 96) == "register")) {
                 echo "active";
             }
             echo "\"><a href=\"";
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("register");
             echo "\">Créer un compte</a></h3>
                                             ";
-            // line 123
+            // line 97
             $context['__cms_partial_params'] = [];
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::signin")            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 124
+            // line 98
             echo "                                        </div>
                                 
                                     </div>
                                 
                                 ";
         } else {
-            // line 129
+            // line 103
             echo "                                
                                 ";
         }
-        // line 131
+        // line 105
         echo "                            </div><!-- login form wrapper end -->
                         </div>
                         <div class=\"tab-pane fade\" id=\"nav-signup\" role=\"tabpanel\" aria-labelledby=\"nav-signup-tab\">
 
                             <div class=\"singup-form-wrapper\">
                                 ";
-        // line 136
+        // line 110
         if ( !($context["user"] ?? null)) {
-            // line 137
+            // line 111
             echo "                                
                                     <div class=\"row\">
                                         <div class=\"col-md-6\">
                                             ";
-            // line 140
+            // line 114
             $context['__cms_partial_params'] = [];
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::register")            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 141
+            // line 115
             echo "                                        </div>
                                 
                                     </div>
                                 
                                 ";
         } else {
-            // line 146
+            // line 120
             echo "                                
                                 ";
         }
-        // line 148
+        // line 122
         echo "                             </div>
                         </div>
                     </div><!-- /.tab conent-->
@@ -268,13 +242,13 @@ class __TwigTemplate_270c54c675606217155442b47096d4d76a1fd395fcac52e55ed2fe3b2c1
 
     public function getDebugInfo()
     {
-        return array (  248 => 148,  244 => 146,  237 => 141,  233 => 140,  228 => 137,  226 => 136,  219 => 131,  215 => 129,  208 => 124,  204 => 123,  196 => 122,  190 => 118,  188 => 117,  134 => 66,  130 => 64,  119 => 62,  115 => 61,  108 => 57,  103 => 54,  99 => 53,  92 => 48,  88 => 47,  80 => 41,  76 => 40,  35 => 1,);
+        return array (  222 => 122,  218 => 120,  211 => 115,  207 => 114,  202 => 111,  200 => 110,  193 => 105,  189 => 103,  182 => 98,  178 => 97,  170 => 96,  164 => 92,  162 => 91,  134 => 66,  130 => 64,  119 => 62,  115 => 61,  108 => 57,  103 => 54,  99 => 53,  92 => 48,  88 => 47,  80 => 41,  76 => 40,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("
-<section class=\"live-token-sale\">
+<section class=\"live-token-sale\" style=\"padding-top: 150px;\">
         <div class=\"container\">
             <div class=\"row\">
                 <div class=\"col-lg-12 remove-col-padding-mobile\">
@@ -310,7 +284,7 @@ class __TwigTemplate_270c54c675606217155442b47096d4d76a1fd395fcac52e55ed2fe3b2c1
                 <div class=\"col-lg-12 remove-col-padding-mobile\">
                     <div class=\"tab-content\">
                         <div class=\"tab-pane container active\" id=\"active_tab\">
-                            <div class=\"row\" style=\"text-align:center;display:block;\">
+                            <div class=\"table-responsive\">
                                 
                                     {% partial 'events/manageevent' %}
                                 
@@ -346,33 +320,7 @@ class __TwigTemplate_270c54c675606217155442b47096d4d76a1fd395fcac52e55ed2fe3b2c1
     </div>
     </section>
            <!-- login and register modal start-->
-<div class=\"login-registration-modal\" id=\"loginRegModal\">
-        <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
-            <div class=\"modal\" tabindex=\"-1\" id=\"invite-modal\" role=\"dialog\"><!-- #login modal-->
-                <div class=\"modal-dialog\" role=\"document\">
-                    <div class=\"modal-content\"><!-- modal content start -->
-                       
-                        <div class=\"tab-content\" id=\"nav-tabContent\"><!-- tab content-->
-                            <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
-                                <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
-                                    <form data-request=\"onActive\">
-                                        <div class=\"form-element square login\"><!-- form element login start -->
-                                            <label>Entrer l'email
-                                            </label>
-                                            <input name=\"email\" type=\"email\" placeholder=\"Entrer l'email....\" class=\"input-field-square\">
-                                            <p class=\"eml\"></p>
-                                        </div><!-- form element login end -->
-                                      <!-- form element login end -->
-                                        <button type=\"submit\" class=\"submit-form-btn\">send</button>
-                                    </form>
-                                </div><!-- login form wrapper end -->
-                            </div>
-                        </div><!-- /.tab conent-->
-                    </div><!-- modal content end -->
-                </div>
-            </div><!-- /#loginmodal -->
-        </div><!-- login modal warapper satart end-->
-    </div>
+
     <div class=\"login-registration-modal\" id=\"loginRegModal\">
     <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
         <div class=\"modal\" tabindex=\"-1\" id=\"login-modal\" role=\"dialog\"><!-- #login modal-->

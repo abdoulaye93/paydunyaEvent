@@ -1,4 +1,4 @@
-1566231106a:1:{s:17:"events/events.htm";a:5:{s:8:"fileName";s:17:"events/events.htm";s:7:"content";s:1922:"{% if events|length%}
+1566309339a:1:{s:17:"events/events.htm";a:5:{s:8:"fileName";s:17:"events/events.htm";s:7:"content";s:1922:"{% if events|length%}
 <div class="row bg-transparent no-gutters  ">
    {% for item in events %}
    {% if item.publier%}

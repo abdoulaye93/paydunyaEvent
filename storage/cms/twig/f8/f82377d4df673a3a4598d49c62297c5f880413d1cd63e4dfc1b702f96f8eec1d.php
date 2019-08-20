@@ -33,7 +33,7 @@ class __TwigTemplate_612dc76171d58be8fbc95f846dc070e58982aad6f438a503bf9ce2a516f
     {
         // line 1
         echo "
-<div class=\"container\">
+<div class=\"container\" style=\"padding-top: 80px;\">
     <div class=\"row justify-content-center\">
         <div class=\"card my-5\" style=\"width:100%;\">
           <div class=\"card-body\" style=\"background-color:#7d5fff\">
@@ -553,7 +553,7 @@ function deletetype(ID)
     public function getSourceContext()
     {
         return new Source("
-<div class=\"container\">
+<div class=\"container\" style=\"padding-top: 80px;\">
     <div class=\"row justify-content-center\">
         <div class=\"card my-5\" style=\"width:100%;\">
           <div class=\"card-body\" style=\"background-color:#7d5fff\">

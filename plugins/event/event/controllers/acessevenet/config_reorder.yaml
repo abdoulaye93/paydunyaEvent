@@ -1,0 +1,4 @@
+title: AcessEvenet
+modelClass: Event\Event\Models\AccessEvent
+toolbar:
+    buttons: reorder_toolbar

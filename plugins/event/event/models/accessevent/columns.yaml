@@ -1,0 +1,7 @@
+columns:
+    user_id:
+        label: user
+        type: text
+    event_id:
+        label: event
+        type: text

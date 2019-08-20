@@ -1,5 +1,5 @@
 
-<section class="live-token-sale">
+<section class="live-token-sale" style="padding-top: 150px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 remove-col-padding-mobile">
@@ -46,7 +46,7 @@
                         {{form_ajax('onFilterEvents',{update:{'admin/events':'#active_tab','admin/eventsexpire':'#ending_tab','admin/eventspub':'#upcoming_tab'}})}}
                         <div id="EventFilter" class="text-center">
                                 <label>Page</label>
-                                <select class="ui fluid dropdown" name="Filter[page]">
+                                <select class="ui  dropdown" name="Filter[page]">
                                     {% for i in 1..pages %}
                                         {%  if i == page %}
                                             <option value="{{page}}" selected>{{ page }}</option>

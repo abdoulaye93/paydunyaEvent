@@ -1,0 +1,10 @@
+name: AcessEvenet
+form: $/event/event/models/accessevent/fields.yaml
+modelClass: Event\Event\Models\AccessEvent
+defaultRedirect: event/event/acessevenet
+create:
+    redirect: 'event/event/acessevenet/update/:id'
+    redirectClose: event/event/acessevenet
+update:
+    redirect: event/event/acessevenet
+    redirectClose: event/event/acessevenet

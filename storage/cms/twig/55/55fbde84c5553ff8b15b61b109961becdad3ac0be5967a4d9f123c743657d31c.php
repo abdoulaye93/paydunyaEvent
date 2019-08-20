@@ -32,7 +32,7 @@ class __TwigTemplate_9a013d8cc101ccc90b10d9fede335375156486f29cc3e8b4ba42239f796
     protected function doDisplay(array $context, array $blocks = [])
     {
         // line 1
-        echo "<div class=\"row\">
+        echo "<div class=\"row\" style=\"padding-top: 150px\">
         <div class=\"col-lg-12 remove-col-padding-mobile\">
             <div class=\"tab-content\">
                 <div class=\"tab-pane container active\" id=\"active_tab\">
@@ -50,7 +50,7 @@ class __TwigTemplate_9a013d8cc101ccc90b10d9fede335375156486f29cc3e8b4ba42239f796
         echo "
                  <div id=\"EventFilter\" class=\"text-center\">
                          <label>Page</label>
-                         <select class=\"ui fluid dropdown\" name=\"Filter[page]\">
+                         <select class=\"ui  dropdown\" name=\"Filter[page]\">
                              ";
         // line 12
         $context['_parent'] = $context;
@@ -106,7 +106,7 @@ class __TwigTemplate_9a013d8cc101ccc90b10d9fede335375156486f29cc3e8b4ba42239f796
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"row\">
+        return new Source("<div class=\"row\" style=\"padding-top: 150px\">
         <div class=\"col-lg-12 remove-col-padding-mobile\">
             <div class=\"tab-content\">
                 <div class=\"tab-pane container active\" id=\"active_tab\">
@@ -116,7 +116,7 @@ class __TwigTemplate_9a013d8cc101ccc90b10d9fede335375156486f29cc3e8b4ba42239f796
                  {{form_ajax('onFilterEvents',{update:{'demande/demandes':'#active_tab'}})}}
                  <div id=\"EventFilter\" class=\"text-center\">
                          <label>Page</label>
-                         <select class=\"ui fluid dropdown\" name=\"Filter[page]\">
+                         <select class=\"ui  dropdown\" name=\"Filter[page]\">
                              {% for i in 1..pages %}
                                  {%  if i == page %}
                                      <option value=\"{{page}}\" selected>{{ page }}</option>

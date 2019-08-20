@@ -1,4 +1,4 @@
-1566215235a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:17368:"[session]
+1566297722a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:17376:"[session]
 security = "all"
 ==
 <?php
@@ -28,7 +28,7 @@ security = "all"
     }
 
     \Paydunya\Setup::setMasterKey($config->master_key);
-    \Paydunya\Setup::setPublicKey($config->public_key_test);
+    //\Paydunya\Setup::setPublicKey($config->public_key_test);
     \Paydunya\Setup::setPrivateKey($config->private_key_test);
     \Paydunya\Setup::setMode("test");
     \Paydunya\Setup::setToken($config->token_test);
@@ -47,8 +47,9 @@ security = "all"
     }else{
       $montantTotal=input('total');
     }
+    $url=Config::get('app.url');
     $checkoutInvoice->setTotalAmount($montantTotal);
-    $checkoutInvoice->setCancelUrl("http://localhost/install-master1/description_event/".$b);
+    $checkoutInvoice->setCancelUrl($url."description_event/".$b);
     $checkoutInvoice->setReturnUrl("http://localhost/install-master1/retour_achat/$b");
     $checkoutInvoice->addCustomData("id",$b);
     $checkoutInvoice->addCustomData("total",$b);
@@ -436,7 +437,7 @@ security = "all"
                           }
 </script>
     </body>
-</html>";s:5:"mtime";i:1566168804;s:6:"markup";s:14441:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1566297117;s:6:"markup";s:14441:"<!DOCTYPE html>
 <html>
     <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -799,7 +800,7 @@ security = "all"
                           }
 </script>
     </body>
-</html>";s:4:"code";s:2875:"  use payment\Payment\Models\PaydunyaConfig;
+</html>";s:4:"code";s:2883:"  use payment\Payment\Models\PaydunyaConfig;
   use event\event\models\Event;
   function onAchat()
   {
@@ -825,7 +826,7 @@ security = "all"
     }
 
     \Paydunya\Setup::setMasterKey($config->master_key);
-    \Paydunya\Setup::setPublicKey($config->public_key_test);
+    //\Paydunya\Setup::setPublicKey($config->public_key_test);
     \Paydunya\Setup::setPrivateKey($config->private_key_test);
     \Paydunya\Setup::setMode("test");
     \Paydunya\Setup::setToken($config->token_test);
@@ -844,8 +845,9 @@ security = "all"
     }else{
       $montantTotal=input('total');
     }
+    $url=Config::get('app.url');
     $checkoutInvoice->setTotalAmount($montantTotal);
-    $checkoutInvoice->setCancelUrl("http://localhost/install-master1/description_event/".$b);
+    $checkoutInvoice->setCancelUrl($url."description_event/".$b);
     $checkoutInvoice->setReturnUrl("http://localhost/install-master1/retour_achat/$b");
     $checkoutInvoice->addCustomData("id",$b);
     $checkoutInvoice->addCustomData("total",$b);

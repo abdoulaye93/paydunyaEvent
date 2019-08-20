@@ -1,8 +1,8 @@
-1566217838a:1:{s:28:"events/manageeventexpire.htm";a:5:{s:8:"fileName";s:28:"events/manageeventexpire.htm";s:7:"content";s:3028:"{%set id=user.id%}
+1566309872a:1:{s:28:"events/manageeventexpire.htm";a:5:{s:8:"fileName";s:28:"events/manageeventexpire.htm";s:7:"content";s:3034:"{%set id=user.id%}
 {% if events|length%}
    {% for item in events %}
    {% if item.user_id==9%}
-   {%if item.periode.date_cloture < date()%}
+   {%if date(item.periode.date_cloture) < date()%}
                                    
    <table id="example" class="table table-striped table-bordered" style="width:100%">
      <thead>
@@ -62,11 +62,11 @@
  <div class="row" class="text-center">
         <h3 class="">NO  event FOUND</h3>
     </div>
-{%endif%}";s:5:"mtime";i:1565192467;s:6:"markup";s:3028:"{%set id=user.id%}
+{%endif%}";s:5:"mtime";i:1566296756;s:6:"markup";s:3034:"{%set id=user.id%}
 {% if events|length%}
    {% for item in events %}
    {% if item.user_id==9%}
-   {%if item.periode.date_cloture < date()%}
+   {%if date(item.periode.date_cloture) < date()%}
                                    
    <table id="example" class="table table-striped table-bordered" style="width:100%">
      <thead>

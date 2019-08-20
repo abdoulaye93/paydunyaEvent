@@ -45,7 +45,7 @@ class __TwigTemplate_a4bfcda2549adf05ec5482335c3360038a6172c54f844587dc81fb8011b
                 if ((twig_get_attribute($this->env, $this->source, $context["item"], "user_id", [], "any", false, false, false, 4) == 9)) {
                     // line 5
                     echo "   ";
-                    if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "periode", [], "any", false, false, false, 5), "date_cloture", [], "any", false, false, false, 5) < twig_date_converter($this->env))) {
+                    if ((twig_date_converter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "periode", [], "any", false, false, false, 5), "date_cloture", [], "any", false, false, false, 5)) < twig_date_converter($this->env))) {
                         // line 6
                         echo "                                   
    <table id=\"example\" class=\"table table-striped table-bordered\" style=\"width:100%\">
@@ -180,7 +180,7 @@ class __TwigTemplate_a4bfcda2549adf05ec5482335c3360038a6172c54f844587dc81fb8011b
 {% if events|length%}
    {% for item in events %}
    {% if item.user_id==9%}
-   {%if item.periode.date_cloture < date()%}
+   {%if date(item.periode.date_cloture) < date()%}
                                    
    <table id=\"example\" class=\"table table-striped table-bordered\" style=\"width:100%\">
      <thead>

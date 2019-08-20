@@ -38,3 +38,8 @@ navigation:
         label: position
         url: event/event/position
         icon: icon-line-chart
+        sideMenu:
+            side-menu-item:
+                label: AccessEvent
+                url: event/event/access
+                icon: icon-sitemap

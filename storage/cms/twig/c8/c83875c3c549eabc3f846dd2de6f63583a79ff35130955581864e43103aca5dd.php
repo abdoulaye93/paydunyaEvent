@@ -42,7 +42,7 @@ class __TwigTemplate_9a091d60bc18261229743f3a64eb409121586272342da151bc299a659e0
             foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
                 // line 4
                 echo "   ";
-                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "periode", [], "any", false, false, false, 4), "date_cloture", [], "any", false, false, false, 4) < twig_date_converter($this->env))) {
+                if ((twig_date_converter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "periode", [], "any", false, false, false, 4), "date_cloture", [], "any", false, false, false, 4)) < twig_date_converter($this->env))) {
                     // line 5
                     echo " 
    <div class=\"col-lg-4 col-sm-6\" >
@@ -129,7 +129,7 @@ class __TwigTemplate_9a091d60bc18261229743f3a64eb409121586272342da151bc299a659e0
         return new Source("{% if events|length%}
 <div class=\"row\">
    {% for item in events %}
-   {% if item.periode.date_cloture < date()%}
+   {% if date(item.periode.date_cloture) < date()%}
  
    <div class=\"col-lg-4 col-sm-6\" >
            <div class=\"single-ico-list-box\">

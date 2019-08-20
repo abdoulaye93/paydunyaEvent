@@ -18,19 +18,21 @@ Route::get('user/{name?}', function () {
         });
         $data=json_decode($reponse,true);
         if($data['response']=="success"){
-            $user = Auth::register([
+           $user = Auth::register([
                 'name' => 'isreal',
                 'email' => Request::get('name'),
                 'password' => '#223Mali',
                 'password_confirmation' => '#223Mali',
             ],true);
            $payconfig=new PaydunyaConfig();
-           $payconfig->private_key_test=$data['live_private_key'];
-           $payconfig->master_key=$data['master_key'];
-           $payconfig->token_test=$data['live_token'];
+           $payconfig->private_key_test=$data['data']['user']['live_private_key'];
+           $payconfig->master_key=$data['data']['user']['master_key'];
+           $payconfig->token_test=$data['data']['user']['live_token'];
            $payconfig->id_user=$user->id;
+           $payconfig->phone=$data['data']['user']['phone'];
            $payconfig->save();
-            return "verifiez votre mail pour activer votre compte";
+           $iduser=$user->id;
+           return  Redirect::to("/paydunya_connection/$iduser");
         }else{
             return "not found";
         }
@@ -46,8 +48,10 @@ Route::get('user/{name?}', function () {
       });
       $data=json_decode($reponse,true);
       if($data['response']=="success"){
-        //return  Redirect::to("/paydunya_connection/$id");
-        return $data;
+        Db::table('payment_payment_config')
+        ->where('id_user',$id)
+        ->update(['private_key_test' => $data['data']['user']['live_private_key'],'master_key'=>$data['data']['user']['master_key'],'token_test'=>$data['data']['user']['live_token']]);
+        return  Redirect::to("/paydunya_connection/$id");
       }else{
         return "not found";
       }

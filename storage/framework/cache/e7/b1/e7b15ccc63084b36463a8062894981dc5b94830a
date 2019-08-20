@@ -1,4 +1,4 @@
-1566229073a:1:{s:16:"create_event.htm";a:6:{s:8:"fileName";s:16:"create_event.htm";s:7:"content";s:13415:"[session]
+1566309339a:1:{s:16:"create_event.htm";a:6:{s:8:"fileName";s:16:"create_event.htm";s:7:"content";s:13419:"[session]
 security = "all"
 ==
 <?  
@@ -33,7 +33,7 @@ function onPrepareVars(){
 <html>
     <head>
      <meta charset="utf-8">
-        <title>October CMS - {{ this.page.title }}</title>
+        <title>PayDunya Event  - {{ this.page.title }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -363,11 +363,11 @@ $('#EventPagination').on('change', 'input, select', function(){
   crossorigin="anonymous"></script>
 <script src="{{'/assets/semantic/semantic.min.js'|theme }}"></script>
     </body>
-</html>";s:5:"mtime";i:1566135588;s:6:"markup";s:12640:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1566297526;s:6:"markup";s:12644:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
-        <title>October CMS - {{ this.page.title }}</title>
+        <title>PayDunya Event  - {{ this.page.title }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

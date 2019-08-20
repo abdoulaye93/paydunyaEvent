@@ -36,7 +36,7 @@ class __TwigTemplate_426e26f6e41680765799227f0162214864b2c8d02b4cb2aea8f5e3dacd1
 <html>
     <head>
      <meta charset=\"utf-8\">
-        <title>October CMS - ";
+        <title>PayDunya Event  - ";
         // line 5
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 5), "title", [], "any", false, false, false, 5), "html", null, true);
         echo "</title>
@@ -495,7 +495,7 @@ class __TwigTemplate_426e26f6e41680765799227f0162214864b2c8d02b4cb2aea8f5e3dacd1
 <html>
     <head>
      <meta charset=\"utf-8\">
-        <title>October CMS - {{ this.page.title }}</title>
+        <title>PayDunya Event  - {{ this.page.title }}</title>
         <meta name=\"description\" content=\"{{ this.page.meta_description }}\">
         <meta name=\"title\" content=\"{{ this.page.meta_title }}\">
        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">

@@ -146,7 +146,7 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
         } else {
             // line 58
             echo "                         <li class=\"nav-item boxed-btn\">
-                    <a class=\"nav-link btn bg-success text-white p-3\" href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\"><h3><i class=\"fa fa-home\"></i> Login - Register</h3></a>
+                    <a class=\"nav-link btn bg-primary text-white p-3\" href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\"><h3><i class=\"fa fa-home\"></i> Login - Register</h3></a>
                 </li>
                     ";
         }
@@ -573,7 +573,7 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                 
                     {% else %}
                          <li class=\"nav-item boxed-btn\">
-                    <a class=\"nav-link btn bg-success text-white p-3\" href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\"><h3><i class=\"fa fa-home\"></i> Login - Register</h3></a>
+                    <a class=\"nav-link btn bg-primary text-white p-3\" href=\"#\" data-toggle=\"modal\" data-target=\"#login-modal\"><h3><i class=\"fa fa-home\"></i> Login - Register</h3></a>
                 </li>
                     {% endif %}
                     {% if user.is_superuser %}

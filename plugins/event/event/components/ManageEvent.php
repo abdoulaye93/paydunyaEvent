@@ -22,6 +22,7 @@ use Db;
 use  BackendAuth;
 use Config;
 use Request;
+use event\event\models\AcessEvent;
 use Carbon\Carbon;
 use October\Rain\Support\Collection;
 class ManageEvent extends ComponentBase
@@ -95,11 +96,11 @@ class ManageEvent extends ComponentBase
     }
     //activation d'un evenment
     public function onActive(){
-        $event_id=Request::segment(2);
+        $event_id=Input::get('invitevent');
         $email=Input::get('email');
         $user = Db::table('users')->where('email', Input::get('email'))->first();
         if($user){
-            $accesEven=new AccessEvent();
+            $accesEven=new AcessEvent();
             $accesEven->user_id=$user->id;
             $accesEven->event_id=$event_id;
             $accesEven->save();

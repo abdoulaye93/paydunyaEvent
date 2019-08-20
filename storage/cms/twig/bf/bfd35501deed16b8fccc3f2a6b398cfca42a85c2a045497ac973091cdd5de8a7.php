@@ -33,7 +33,7 @@ class __TwigTemplate_2857971300877c2cf6134ec9c4ca6fbc1f4327d2ddbead5c4e495ac0b6e
     {
         // line 1
         echo "
-<section class=\"live-token-sale\">
+<section class=\"live-token-sale\" style=\"padding-top: 150px;\">
         <div class=\"container\">
             <div class=\"row\">
                 <div class=\"col-lg-12 remove-col-padding-mobile\">
@@ -98,7 +98,7 @@ class __TwigTemplate_2857971300877c2cf6134ec9c4ca6fbc1f4327d2ddbead5c4e495ac0b6e
         echo "
                         <div id=\"EventFilter\" class=\"text-center\">
                                 <label>Page</label>
-                                <select class=\"ui fluid dropdown\" name=\"Filter[page]\">
+                                <select class=\"ui  dropdown\" name=\"Filter[page]\">
                                     ";
         // line 50
         $context['_parent'] = $context;
@@ -248,7 +248,7 @@ class __TwigTemplate_2857971300877c2cf6134ec9c4ca6fbc1f4327d2ddbead5c4e495ac0b6e
     public function getSourceContext()
     {
         return new Source("
-<section class=\"live-token-sale\">
+<section class=\"live-token-sale\" style=\"padding-top: 150px;\">
         <div class=\"container\">
             <div class=\"row\">
                 <div class=\"col-lg-12 remove-col-padding-mobile\">
@@ -295,7 +295,7 @@ class __TwigTemplate_2857971300877c2cf6134ec9c4ca6fbc1f4327d2ddbead5c4e495ac0b6e
                         {{form_ajax('onFilterEvents',{update:{'admin/events':'#active_tab','admin/eventsexpire':'#ending_tab','admin/eventspub':'#upcoming_tab'}})}}
                         <div id=\"EventFilter\" class=\"text-center\">
                                 <label>Page</label>
-                                <select class=\"ui fluid dropdown\" name=\"Filter[page]\">
+                                <select class=\"ui  dropdown\" name=\"Filter[page]\">
                                     {% for i in 1..pages %}
                                         {%  if i == page %}
                                             <option value=\"{{page}}\" selected>{{ page }}</option>
