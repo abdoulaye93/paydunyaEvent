@@ -1,4 +1,4 @@
-1566296001a:1:{s:16:"retour_achat.htm";a:6:{s:8:"fileName";s:16:"retour_achat.htm";s:7:"content";s:15628:"==
+1566382184a:1:{s:16:"retour_achat.htm";a:6:{s:8:"fileName";s:16:"retour_achat.htm";s:7:"content";s:15571:"==
 <?php
 use payment\Payment\Models\PaydunyaConfig;
 use event\event\models\Event;
@@ -20,12 +20,11 @@ function onStart(){
     // echo $invoice->getCustomData("numero_gagnant");
     $this['nomticket']=$invoice->getCustomData("nameticket");
     $this['nbrticket']=$invoice->getCustomData("nbrticket"); 
-    $this['dateEvent']=$invoice->getCustomData("dateEvent"); 
     $this['mail']=$invoice->getCustomData("mail"); 
+    $this['dateEv']=$invoice->getCustomData("dateEv");
     $this['nomevent']=$invoice->getCustomData("nomevent"); 
     $this['description']=$invoice->getCustomData("description"); 
     $this['lieu']=$invoice->getCustomData("lieu"); 
-    
       // Vous pouvez aussi récupérer le montant total spécifié précédemment
       $this['montant']=$invoice->getTotalAmount();
       $user = Db::table('event_event_')->where('id', $invoice->getCustomData("id"))->first();
@@ -61,7 +60,7 @@ function onStart(){
 <html>
     <head>
      <meta charset="utf-8">
-        <title>October CMS - {{ this.page.title }}</title>
+        <title>PayDunya Event  - {{ this.page.title }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -69,7 +68,6 @@ function onStart(){
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> eTicket | Event Details  </title>
     <!-- favicon -->
      <link href="{{ 'assets/user/interfaceControl/logoIcon/icon.jpg'|theme }}" rel="stylesheet">
     <!-- bootstrap -->
@@ -186,10 +184,10 @@ function onStart(){
         <section id="layout-content">
             {% page %}
         </section>
-        <div class="container" style="height: 1000px; padding-top: 200px;">
+         <div class="container" style="height: 1000px; padding-top: 200px;">
           <a href="{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}" onclick="edition();return false;">Imprimer le ticket</a>
-          <a href="{{'calendar'|page({date:dateEvent,email:mail,nom:nomevent,description:description,lieu:lieu})}}">Ajouter à votre calendar</a>
-        </div>
+          <a href="{{'calendar'|page({date:dateEv,email:mail,nom:nomevent,description:description,lieu:lieu})}}">Ajouter à votre calendar</a>
+        </div> 
         
         <!-- Footer -->
         <footer id="layout-footer">
@@ -406,11 +404,11 @@ $('#EventPagination').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:5:"mtime";i:1566168959;s:6:"markup";s:13208:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1566381576;s:6:"markup";s:13164:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
-        <title>October CMS - {{ this.page.title }}</title>
+        <title>PayDunya Event  - {{ this.page.title }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -418,7 +416,6 @@ $('#EventPagination').on('change', 'input, select', function(){
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> eTicket | Event Details  </title>
     <!-- favicon -->
      <link href="{{ 'assets/user/interfaceControl/logoIcon/icon.jpg'|theme }}" rel="stylesheet">
     <!-- bootstrap -->
@@ -535,10 +532,10 @@ $('#EventPagination').on('change', 'input, select', function(){
         <section id="layout-content">
             {% page %}
         </section>
-        <div class="container" style="height: 1000px; padding-top: 200px;">
+         <div class="container" style="height: 1000px; padding-top: 200px;">
           <a href="{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}" onclick="edition();return false;">Imprimer le ticket</a>
-          <a href="{{'calendar'|page({date:dateEvent,email:mail,nom:nomevent,description:description,lieu:lieu})}}">Ajouter à votre calendar</a>
-        </div>
+          <a href="{{'calendar'|page({date:dateEv,email:mail,nom:nomevent,description:description,lieu:lieu})}}">Ajouter à votre calendar</a>
+        </div> 
         
         <!-- Footer -->
         <footer id="layout-footer">
@@ -755,7 +752,7 @@ $('#EventPagination').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:4:"code";s:2399:"use payment\Payment\Models\PaydunyaConfig;
+</html>";s:4:"code";s:2386:"use payment\Payment\Models\PaydunyaConfig;
 use event\event\models\Event;
 use event\event\models\AchatList;
 function onStart(){
@@ -775,12 +772,11 @@ function onStart(){
     // echo $invoice->getCustomData("numero_gagnant");
     $this['nomticket']=$invoice->getCustomData("nameticket");
     $this['nbrticket']=$invoice->getCustomData("nbrticket"); 
-    $this['dateEvent']=$invoice->getCustomData("dateEvent"); 
     $this['mail']=$invoice->getCustomData("mail"); 
+    $this['dateEv']=$invoice->getCustomData("dateEv");
     $this['nomevent']=$invoice->getCustomData("nomevent"); 
     $this['description']=$invoice->getCustomData("description"); 
     $this['lieu']=$invoice->getCustomData("lieu"); 
-    
       // Vous pouvez aussi récupérer le montant total spécifié précédemment
       $this['montant']=$invoice->getTotalAmount();
       $user = Db::table('event_event_')->where('id', $invoice->getCustomData("id"))->first();

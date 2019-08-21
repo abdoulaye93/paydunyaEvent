@@ -36,7 +36,7 @@ class __TwigTemplate_3320f9a701e33c7f37010356e8de0cdf7818cdf94cbe9ac97be879ac740
 <html>
     <head>
      <meta charset=\"utf-8\">
-        <title>October CMS - ";
+        <title>PayDunya Event  - ";
         // line 5
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 5), "title", [], "any", false, false, false, 5), "html", null, true);
         echo "</title>
@@ -53,70 +53,69 @@ class __TwigTemplate_3320f9a701e33c7f37010356e8de0cdf7818cdf94cbe9ac97be879ac740
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />
     <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <title> eTicket | Event Details  </title>
     <!-- favicon -->
      <link href=\"";
-        // line 15
+        // line 14
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/interfaceControl/logoIcon/icon.jpg");
         echo "\" rel=\"stylesheet\">
     <!-- bootstrap -->
      <link href=\"";
-        // line 17
+        // line 16
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/bootstrap.min.css");
         echo "\" rel=\"stylesheet\">
          <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\">
     <!-- fontawesome -->
      <link href=\"";
-        // line 20
+        // line 19
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/css/font-awesome.min.css");
         echo "\" rel=\"stylesheet\">
     <!-- flaticon -->
      <link href=\"";
-        // line 22
+        // line 21
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/flaticon.css");
         echo "\" rel=\"stylesheet\">
     <!-- bootstrap datetime picker -->
       <link href=\"";
-        // line 24
+        // line 23
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/bootstrap-datepicker.min.css");
         echo "\" rel=\"stylesheet\">
     <!-- animate.css -->
      <link href=\"";
-        // line 26
+        // line 25
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/animate.css");
         echo "\" rel=\"stylesheet\">
     <!-- Owl Carousel -->
         <link href=\"";
-        // line 28
+        // line 27
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/owl.carousel.min.css");
         echo "\" rel=\"stylesheet\">
     <!-- magnific popup -->
       <link href=\"";
-        // line 30
+        // line 29
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/magnific-popup.css");
         echo "\" rel=\"stylesheet\">
     <!-- stylesheet -->
     <link href=\"";
-        // line 32
+        // line 31
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/style.css");
         echo "\" rel=\"stylesheet\">
     <!-- responsive -->
     <link href=\"";
-        // line 34
+        // line 33
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/responsive.css");
         echo "\" rel=\"stylesheet\">
      <link href=\"";
-        // line 35
+        // line 34
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/css/sweetalert.css");
         echo "\" rel=\"stylesheet\"><script src=\"";
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/js/sweetalert.js");
         echo "\"></script>
      <link href=\"";
-        // line 36
+        // line 35
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs");
         echo "\" rel=\"stylesheet\">
      <link href=\"";
-        // line 37
+        // line 36
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/themes/base-color.php?color=7d5fff");
         echo "\" rel=\"stylesheet\">
      <!-- Font Awesome -->
@@ -128,7 +127,7 @@ class __TwigTemplate_3320f9a701e33c7f37010356e8de0cdf7818cdf94cbe9ac97be879ac740
 <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
 <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/sema }}\"
 <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 46
+        // line 45
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("semantic/semantic.min.css");
         echo "\">>
     <style media=\"screen\">
@@ -197,11 +196,11 @@ class __TwigTemplate_3320f9a701e33c7f37010356e8de0cdf7818cdf94cbe9ac97be879ac740
     
        <header id=\"layout-header\">
             ";
-        // line 112
+        // line 111
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 113
+        // line 112
         echo "        </header>
 
     <!-- navbar area start -->
@@ -209,37 +208,37 @@ class __TwigTemplate_3320f9a701e33c7f37010356e8de0cdf7818cdf94cbe9ac97be879ac740
         <!-- Content -->
         <section id=\"layout-content\">
             ";
-        // line 119
+        // line 118
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 120
+        // line 119
         echo "        </section>
     
     
         <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 125
+        // line 124
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 126
+        // line 125
         echo "        </footer>
 
         <!-- Scripts -->
         <script src=\"";
-        // line 129
+        // line 128
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
         <script src=\"";
-        // line 130
+        // line 129
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
         <script src=\"";
-        // line 131
+        // line 130
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script>
         ";
-        // line 132
+        // line 131
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="'. Request::getBasePath()
@@ -254,11 +253,11 @@ class __TwigTemplate_3320f9a701e33c7f37010356e8de0cdf7818cdf94cbe9ac97be879ac740
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 133
+        // line 132
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 134
+        // line 133
         echo "        
 <script>
    (function(\$){
@@ -459,7 +458,7 @@ class __TwigTemplate_3320f9a701e33c7f37010356e8de0cdf7818cdf94cbe9ac97be879ac740
   integrity=\"sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=\"
   crossorigin=\"anonymous\"></script>
 <script src=\"";
-        // line 333
+        // line 332
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/semantic/semantic.min.js");
         echo "\"></script>
     </body>
@@ -478,7 +477,7 @@ class __TwigTemplate_3320f9a701e33c7f37010356e8de0cdf7818cdf94cbe9ac97be879ac740
 
     public function getDebugInfo()
     {
-        return array (  463 => 333,  262 => 134,  258 => 133,  243 => 132,  239 => 131,  235 => 130,  231 => 129,  226 => 126,  222 => 125,  215 => 120,  213 => 119,  205 => 113,  201 => 112,  132 => 46,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
+        return array (  462 => 332,  261 => 133,  257 => 132,  242 => 131,  238 => 130,  234 => 129,  230 => 128,  225 => 125,  221 => 124,  214 => 119,  212 => 118,  204 => 112,  200 => 111,  131 => 45,  119 => 36,  115 => 35,  109 => 34,  105 => 33,  100 => 31,  95 => 29,  90 => 27,  85 => 25,  80 => 23,  75 => 21,  70 => 19,  64 => 16,  59 => 14,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -487,7 +486,7 @@ class __TwigTemplate_3320f9a701e33c7f37010356e8de0cdf7818cdf94cbe9ac97be879ac740
 <html>
     <head>
      <meta charset=\"utf-8\">
-        <title>October CMS - {{ this.page.title }}</title>
+        <title>PayDunya Event  - {{ this.page.title }}</title>
         <meta name=\"description\" content=\"{{ this.page.meta_description }}\">
         <meta name=\"title\" content=\"{{ this.page.meta_title }}\">
        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">
@@ -495,7 +494,6 @@ class __TwigTemplate_3320f9a701e33c7f37010356e8de0cdf7818cdf94cbe9ac97be879ac740
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />
     <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <title> eTicket | Event Details  </title>
     <!-- favicon -->
      <link href=\"{{ 'assets/user/interfaceControl/logoIcon/icon.jpg'|theme }}\" rel=\"stylesheet\">
     <!-- bootstrap -->

@@ -1,5 +1,5 @@
 <?php 
-use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;class Cms5d5bcc2242411020108974_db1c7f2df60a26415614e9dcf8c1b5f1Class extends Cms\Classes\LayoutCode
+use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;class Cms5d5d12627d5fa966835587_226550c36335cb90a32035402e6f2c68Class extends Cms\Classes\LayoutCode
 {
   
   
@@ -15,6 +15,7 @@ public function onAchat()
     $nomevent = input('nomevent');
     $decription = input('description');
     $lieu = input('lieu');
+    $date = input('dateev');
     $ticketPromocode = input('ticketPromocode');
     $promocode = input('promocode');
     
@@ -27,7 +28,7 @@ public function onAchat()
     }
 
     \Paydunya\Setup::setMasterKey($config->master_key);
-    //\Paydunya\Setup::setPublicKey($config->public_key_test);
+    \Paydunya\Setup::setPublicKey($config->public_key_test);
     \Paydunya\Setup::setPrivateKey($config->private_key_test);
     \Paydunya\Setup::setMode("test");
     \Paydunya\Setup::setToken($config->token_test);
@@ -56,6 +57,7 @@ public function onAchat()
     $checkoutInvoice->addCustomData("nameticket",$nomticket);
     $checkoutInvoice->addCustomData("dateEvent",$dateEvent);
     $checkoutInvoice->addCustomData("mail",$mail);
+    $checkoutInvoice->addCustomData("dateEv",$date);
     $checkoutInvoice->addCustomData("nomevent",$nomevent);
     $checkoutInvoice->addCustomData("description",$decription);
     $checkoutInvoice->addCustomData("lieu",$lieu);

@@ -1,8 +1,12 @@
-1566313865a:1:{s:12:"calendar.htm";a:10:{s:8:"fileName";s:12:"calendar.htm";s:7:"content";s:144:"title = "calendar"
+1566382184a:1:{s:12:"calendar.htm";a:11:{s:8:"fileName";s:12:"calendar.htm";s:7:"content";s:194:"title = "calendar"
 url = "/calendar/:date/:email/:nom/description/:lieu"
 layout = "calendar"
 is_hidden = 0
 
 [session]
 security = "all"
-==";s:5:"mtime";i:1565800000;s:6:"markup";s:0:"";s:4:"code";N;s:5:"title";s:8:"calendar";s:3:"url";s:45:"/calendar/:date/:email/:nom/description/:lieu";s:6:"layout";s:8:"calendar";s:9:"is_hidden";s:1:"0";s:7:"session";a:1:{s:8:"security";s:3:"all";}}}
+
+[account]
+paramCode = "code"
+forceSecure = 0
+==";s:5:"mtime";i:1566381570;s:6:"markup";s:0:"";s:4:"code";N;s:5:"title";s:8:"calendar";s:3:"url";s:45:"/calendar/:date/:email/:nom/description/:lieu";s:6:"layout";s:8:"calendar";s:9:"is_hidden";s:1:"0";s:7:"session";a:1:{s:8:"security";s:3:"all";}s:7:"account";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}}}

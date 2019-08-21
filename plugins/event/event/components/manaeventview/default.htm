@@ -1,5 +1,5 @@
 {% for item in __SELF__.loadEvents() %}
-<div class="my-5">
+<div class="my-5" style="padding-top: 100px;">
         <div class="container">
           <div class="">
             <div class="">
@@ -8,7 +8,7 @@
             <div class="row my-5">
               <div class="col-lg-8">
                 <div class="">
-                  <img src="http://lab.thesoftking.com/eticket/assets/user/img/ticket/1563294083.jpg" alt="">
+                  <img src="{{item.image}}" alt="">
                 </div>
                 <div class="mt-5">
                   <h3>Description</h3>
@@ -43,21 +43,11 @@
                       <span>
                         <span>Par Person</span><br>
                         <span>{{item.montant}} FCFA</span>
-                        <select class="float-right" onchange="clacTotal('{{ item.montant }}', this.value)" id="nb">
-                            {% for i in 1..item.nombre_ticket %}
-                              <option value="{{ i }}"> {{ i }}</option>
-                           {% endfor %}            
-                    </select>
+                       
                       </span>
                     </div>
                     <hr>
-                    <div class="">
-                      <strong>Total:</strong>
-                      <span class="float-right">
-                        $
-                        <span id="totalPrice"></span>
-                      </span>
-                    </div>
+                   
                     <br>
                                                   
                     

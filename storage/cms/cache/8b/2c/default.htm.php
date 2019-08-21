@@ -1,6 +1,7 @@
 <?php 
-use Carbon\Carbon;use event\event\models\Event;use event\event\models\NotifDemande;use Demande\Demande\Models\DemandeAnnullationAchat;use event\event\models\AccessEvent;use event\event\models\AcessEvent;class Cms5d5bf15a488c2332495644_12879ed5148582281c60591c91db83eeClass extends Cms\Classes\LayoutCode
+use Carbon\Carbon;use event\event\models\Event;use event\event\models\NotifDemande;use Demande\Demande\Models\DemandeAnnullationAchat;use event\event\models\AccessEvent;use event\event\models\AcessEvent;use ticket\ticket\models\Type;class Cms5d5c15a752bc1882716147_bfcc8fe71dcaf0dffec3c3b1d49f540fClass extends Cms\Classes\LayoutCode
 {
+  
   
   
   
@@ -27,7 +28,7 @@ public function prepareVars()
     $option=post('Filter',[]);
     $this['events']=Event::ListFrontEnd($option,$b,$typ);
     $this['pages']=$this['events']->lastPage(); 
-  
+    $this['tickets']=Type::all();
   }
 public function prepareVarsAccess()
   {

@@ -5,7 +5,7 @@
                 <tr>
                 <th scope="col" class="coin_name_th">TITLE</th>
                 <th scope="col" class="founding_target_th" >SALES</th>
-                <th scope="col" class="founding_target_th" >Montant</th>
+                <th scope="col" class="founding_target_th" >Montants</th>
                 <th scope="col" class="founding_target_th" >PUBLISHED</th>
                 <th scope="col" class="action_th" >ACTIONS</th>
                 <th scope="col" class="action_th" >ACTIVATION</th>
@@ -22,7 +22,11 @@
                             {{item.ticket_vendu}}
                         </td>
                         <td data-label="ico_date">
-                                {{item.montant}}
+                                {%for it in tickets%}
+                                {%if it.event_id==item.id%}
+                                {{it.montant}}&nbsp&nbsp
+                                {%endif%}
+                                {%endfor%}
                             </td>
                         <td data-label="ico_date">
                             <h4 style="display:inline-block;">

@@ -14,12 +14,12 @@ security = "all"
   use Demande\Demande\Models\DemandeAnnullationAchat;
   use event\event\models\AccessEvent;
   use event\event\models\AcessEvent;
+  use ticket\ticket\models\Type;
   function onStart()
   {
     $this->prepareVars();
     $this->prepareVarsAccess(); 
   }
-  
   function onFilterEvents() 
   { 
     $this->prepareVars(); 
@@ -28,7 +28,6 @@ security = "all"
   { 
     $this->prepareVarsAccess(); 
   }
-
   function prepareVars()
   {
     $b=null;
@@ -36,7 +35,7 @@ security = "all"
     $option=post('Filter',[]);
     $this['events']=Event::ListFrontEnd($option,$b,$typ);
     $this['pages']=$this['events']->lastPage(); 
-  
+    $this['tickets']=Type::all();
   }
   function prepareVarsAccess()
   {
@@ -44,7 +43,6 @@ security = "all"
     $this['accessevents']=AcessEvent::ListFrontEnd($optionaccess);
     $this['accesspages']=$this['accessevents']->lastPage(); 
   }
-    
   function onAnnuler() 
   {
     $user = Auth::getUser();

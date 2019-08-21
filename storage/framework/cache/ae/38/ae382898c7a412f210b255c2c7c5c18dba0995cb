@@ -1,4 +1,4 @@
-1566297722a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:17376:"[session]
+1566381242a:1:{s:21:"description_event.htm";a:6:{s:8:"fileName";s:21:"description_event.htm";s:7:"content";s:17458:"[session]
 security = "all"
 ==
 <?php
@@ -16,6 +16,7 @@ security = "all"
     $nomevent = input('nomevent');
     $decription = input('description');
     $lieu = input('lieu');
+    $date = input('dateev');
     $ticketPromocode = input('ticketPromocode');
     $promocode = input('promocode');
     
@@ -28,7 +29,7 @@ security = "all"
     }
 
     \Paydunya\Setup::setMasterKey($config->master_key);
-    //\Paydunya\Setup::setPublicKey($config->public_key_test);
+    \Paydunya\Setup::setPublicKey($config->public_key_test);
     \Paydunya\Setup::setPrivateKey($config->private_key_test);
     \Paydunya\Setup::setMode("test");
     \Paydunya\Setup::setToken($config->token_test);
@@ -57,6 +58,7 @@ security = "all"
     $checkoutInvoice->addCustomData("nameticket",$nomticket);
     $checkoutInvoice->addCustomData("dateEvent",$dateEvent);
     $checkoutInvoice->addCustomData("mail",$mail);
+    $checkoutInvoice->addCustomData("dateEv",$date);
     $checkoutInvoice->addCustomData("nomevent",$nomevent);
     $checkoutInvoice->addCustomData("description",$decription);
     $checkoutInvoice->addCustomData("lieu",$lieu);
@@ -437,7 +439,7 @@ security = "all"
                           }
 </script>
     </body>
-</html>";s:5:"mtime";i:1566297117;s:6:"markup";s:14441:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1566380553;s:6:"markup";s:14441:"<!DOCTYPE html>
 <html>
     <head>
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -800,7 +802,7 @@ security = "all"
                           }
 </script>
     </body>
-</html>";s:4:"code";s:2883:"  use payment\Payment\Models\PaydunyaConfig;
+</html>";s:4:"code";s:2965:"  use payment\Payment\Models\PaydunyaConfig;
   use event\event\models\Event;
   function onAchat()
   {
@@ -814,6 +816,7 @@ security = "all"
     $nomevent = input('nomevent');
     $decription = input('description');
     $lieu = input('lieu');
+    $date = input('dateev');
     $ticketPromocode = input('ticketPromocode');
     $promocode = input('promocode');
     
@@ -826,7 +829,7 @@ security = "all"
     }
 
     \Paydunya\Setup::setMasterKey($config->master_key);
-    //\Paydunya\Setup::setPublicKey($config->public_key_test);
+    \Paydunya\Setup::setPublicKey($config->public_key_test);
     \Paydunya\Setup::setPrivateKey($config->private_key_test);
     \Paydunya\Setup::setMode("test");
     \Paydunya\Setup::setToken($config->token_test);
@@ -855,6 +858,7 @@ security = "all"
     $checkoutInvoice->addCustomData("nameticket",$nomticket);
     $checkoutInvoice->addCustomData("dateEvent",$dateEvent);
     $checkoutInvoice->addCustomData("mail",$mail);
+    $checkoutInvoice->addCustomData("dateEv",$date);
     $checkoutInvoice->addCustomData("nomevent",$nomevent);
     $checkoutInvoice->addCustomData("description",$decription);
     $checkoutInvoice->addCustomData("lieu",$lieu);

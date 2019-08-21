@@ -1,5 +1,5 @@
 <?php 
-use event\event\models\Event;use Carbon\Carbon;use rainlab\user\models\User;use event\event\models\Type;use event\event\models\Categorie;class Cms5d5a7e7aa7faf474551928_ba7ca9542b5ea37574589e6221c4ed50Class extends Cms\Classes\LayoutCode
+use event\event\models\Event;use Carbon\Carbon;use rainlab\user\models\User;use event\event\models\Type;use event\event\models\Categorie;class Cms5d5c15470d90d243182932_db7dbe6faeb7f69b516fbb4856c6c0f3Class extends Cms\Classes\LayoutCode
 {
   
 

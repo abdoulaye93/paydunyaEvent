@@ -36,7 +36,7 @@ class __TwigTemplate_57e8281bc630038b33c5f761158de1bc87d429a0b28a2ab6465c5d7f636
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "loadEvents", [], "method", false, false, false, 1));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
             // line 2
-            echo "<div class=\"my-5\">
+            echo "<div class=\"my-5\" style=\"padding-top: 100px;\">
         <div class=\"container\">
           <div class=\"\">
             <div class=\"\">
@@ -48,7 +48,10 @@ class __TwigTemplate_57e8281bc630038b33c5f761158de1bc87d429a0b28a2ab6465c5d7f636
             <div class=\"row my-5\">
               <div class=\"col-lg-8\">
                 <div class=\"\">
-                  <img src=\"http://lab.thesoftking.com/eticket/assets/user/img/ticket/1563294083.jpg\" alt=\"\">
+                  <img src=\"";
+            // line 11
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "image", [], "any", false, false, false, 11), "html", null, true);
+            echo "\" alt=\"\">
                 </div>
                 <div class=\"mt-5\">
                   <h3>Description</h3>
@@ -95,39 +98,11 @@ class __TwigTemplate_57e8281bc630038b33c5f761158de1bc87d429a0b28a2ab6465c5d7f636
             // line 45
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant", [], "any", false, false, false, 45), "html", null, true);
             echo " FCFA</span>
-                        <select class=\"float-right\" onchange=\"clacTotal('";
-            // line 46
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant", [], "any", false, false, false, 46), "html", null, true);
-            echo "', this.value)\" id=\"nb\">
-                            ";
-            // line 47
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(range(1, twig_get_attribute($this->env, $this->source, $context["item"], "nombre_ticket", [], "any", false, false, false, 47)));
-            foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-                // line 48
-                echo "                              <option value=\"";
-                echo twig_escape_filter($this->env, $context["i"], "html", null, true);
-                echo "\"> ";
-                echo twig_escape_filter($this->env, $context["i"], "html", null, true);
-                echo "</option>
-                           ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 49
-            echo "            
-                    </select>
+                       
                       </span>
                     </div>
                     <hr>
-                    <div class=\"\">
-                      <strong>Total:</strong>
-                      <span class=\"float-right\">
-                        \$
-                        <span id=\"totalPrice\"></span>
-                      </span>
-                    </div>
+                   
                     <br>
                                                   
                     
@@ -213,67 +188,67 @@ class __TwigTemplate_57e8281bc630038b33c5f761158de1bc87d429a0b28a2ab6465c5d7f636
                             <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
                                 <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
                                    ";
-            // line 145
+            // line 135
             if ( !($context["user"] ?? null)) {
-                // line 146
+                // line 136
                 echo "    
                                         <div class=\"row\">
                                     
                                             <div class=\"col-md-6\">
                                                 <h3 class=\"";
-                // line 150
-                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 150), "id", [], "any", false, false, false, 150) == "register")) {
+                // line 140
+                if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 140), "id", [], "any", false, false, false, 140) == "register")) {
                     echo "active";
                 }
                 echo "\"><a href=\"";
                 echo $this->extensions['Cms\Twig\Extension']->pageFilter("register");
                 echo "\">Créer un compte</a></h3>
                                                 ";
-                // line 151
+                // line 141
                 $context['__cms_partial_params'] = [];
                 echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::signin")                , $context['__cms_partial_params']                , true                );
                 unset($context['__cms_partial_params']);
-                // line 152
+                // line 142
                 echo "                                            </div>
                                     
                                         </div>
                                     
                                     ";
             } else {
-                // line 157
+                // line 147
                 echo "                                    
                                     ";
             }
-            // line 159
+            // line 149
             echo "                                </div><!-- login form wrapper end -->
                             </div>
                             <div class=\"tab-pane fade\" id=\"nav-signup\" role=\"tabpanel\" aria-labelledby=\"nav-signup-tab\">
     
                                 <div class=\"singup-form-wrapper\">
                                     ";
-            // line 164
+            // line 154
             if ( !($context["user"] ?? null)) {
-                // line 165
+                // line 155
                 echo "                                    
                                         <div class=\"row\">
                                             <div class=\"col-md-6\">
                                                 ";
-                // line 168
+                // line 158
                 $context['__cms_partial_params'] = [];
                 echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::register")                , $context['__cms_partial_params']                , true                );
                 unset($context['__cms_partial_params']);
-                // line 169
+                // line 159
                 echo "                                            </div>
                                     
                                         </div>
                                     
                                     ";
             } else {
-                // line 174
+                // line 164
                 echo "                                    
                                     ";
             }
-            // line 176
+            // line 166
             echo "                                 </div>
                             </div>
                         </div><!-- /.tab conent-->
@@ -301,13 +276,13 @@ class __TwigTemplate_57e8281bc630038b33c5f761158de1bc87d429a0b28a2ab6465c5d7f636
 
     public function getDebugInfo()
     {
-        return array (  277 => 176,  273 => 174,  266 => 169,  262 => 168,  257 => 165,  255 => 164,  248 => 159,  244 => 157,  237 => 152,  233 => 151,  225 => 150,  219 => 146,  217 => 145,  119 => 49,  108 => 48,  104 => 47,  100 => 46,  96 => 45,  86 => 38,  79 => 34,  57 => 15,  45 => 6,  39 => 2,  35 => 1,);
+        return array (  252 => 166,  248 => 164,  241 => 159,  237 => 158,  232 => 155,  230 => 154,  223 => 149,  219 => 147,  212 => 142,  208 => 141,  200 => 140,  194 => 136,  192 => 135,  99 => 45,  89 => 38,  82 => 34,  60 => 15,  53 => 11,  45 => 6,  39 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% for item in __SELF__.loadEvents() %}
-<div class=\"my-5\">
+<div class=\"my-5\" style=\"padding-top: 100px;\">
         <div class=\"container\">
           <div class=\"\">
             <div class=\"\">
@@ -316,7 +291,7 @@ class __TwigTemplate_57e8281bc630038b33c5f761158de1bc87d429a0b28a2ab6465c5d7f636
             <div class=\"row my-5\">
               <div class=\"col-lg-8\">
                 <div class=\"\">
-                  <img src=\"http://lab.thesoftking.com/eticket/assets/user/img/ticket/1563294083.jpg\" alt=\"\">
+                  <img src=\"{{item.image}}\" alt=\"\">
                 </div>
                 <div class=\"mt-5\">
                   <h3>Description</h3>
@@ -351,21 +326,11 @@ class __TwigTemplate_57e8281bc630038b33c5f761158de1bc87d429a0b28a2ab6465c5d7f636
                       <span>
                         <span>Par Person</span><br>
                         <span>{{item.montant}} FCFA</span>
-                        <select class=\"float-right\" onchange=\"clacTotal('{{ item.montant }}', this.value)\" id=\"nb\">
-                            {% for i in 1..item.nombre_ticket %}
-                              <option value=\"{{ i }}\"> {{ i }}</option>
-                           {% endfor %}            
-                    </select>
+                       
                       </span>
                     </div>
                     <hr>
-                    <div class=\"\">
-                      <strong>Total:</strong>
-                      <span class=\"float-right\">
-                        \$
-                        <span id=\"totalPrice\"></span>
-                      </span>
-                    </div>
+                   
                     <br>
                                                   
                     

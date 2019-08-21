@@ -264,4 +264,6 @@
   'event\\event\\Controllers\\access' => 'plugins\\event\\event\\controllers\\access.php',
   'Event\\Event\\Models\\AcessEvent' => 'plugins\\event\\event\\models\\AcessEvent.php',
   'event\\event\\models\\AcessEvent' => 'plugins\\event\\event\\models\\AcessEvent.php',
+  'ticket\\ticket\\models\\Ticket' => 'plugins\\ticket\\ticket\\models\\Ticket.php',
+  'ticket\\ticket\\models\\Type' => 'plugins\\ticket\\ticket\\models\\Type.php',
 );

@@ -1,4 +1,4 @@
-1566313865a:1:{s:11:"default.htm";a:8:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:14243:"description = "Default layout"
+1566381647a:1:{s:11:"default.htm";a:8:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:14296:"description = "Default layout"
 
 [account]
 paramCode = "code"
@@ -14,12 +14,12 @@ security = "all"
   use Demande\Demande\Models\DemandeAnnullationAchat;
   use event\event\models\AccessEvent;
   use event\event\models\AcessEvent;
+  use ticket\ticket\models\Type;
   function onStart()
   {
     $this->prepareVars();
     $this->prepareVarsAccess(); 
   }
-  
   function onFilterEvents() 
   { 
     $this->prepareVars(); 
@@ -28,7 +28,6 @@ security = "all"
   { 
     $this->prepareVarsAccess(); 
   }
-
   function prepareVars()
   {
     $b=null;
@@ -36,7 +35,7 @@ security = "all"
     $option=post('Filter',[]);
     $this['events']=Event::ListFrontEnd($option,$b,$typ);
     $this['pages']=$this['events']->lastPage(); 
-  
+    $this['tickets']=Type::all();
   }
   function prepareVarsAccess()
   {
@@ -44,7 +43,6 @@ security = "all"
     $this['accessevents']=AcessEvent::ListFrontEnd($optionaccess);
     $this['accesspages']=$this['accessevents']->lastPage(); 
   }
-    
   function onAnnuler() 
   {
     $user = Auth::getUser();
@@ -404,7 +402,7 @@ $('#EventPagination').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:5:"mtime";i:1566306648;s:6:"markup";s:12796:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1566315933;s:6:"markup";s:12796:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
@@ -749,18 +747,18 @@ $('#EventPagination').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:4:"code";s:1313:"  use Carbon\Carbon;
+</html>";s:4:"code";s:1366:"  use Carbon\Carbon;
   use event\event\models\Event;
   use event\event\models\NotifDemande;
   use Demande\Demande\Models\DemandeAnnullationAchat;
   use event\event\models\AccessEvent;
   use event\event\models\AcessEvent;
+  use ticket\ticket\models\Type;
   function onStart()
   {
     $this->prepareVars();
     $this->prepareVarsAccess(); 
   }
-  
   function onFilterEvents() 
   { 
     $this->prepareVars(); 
@@ -769,7 +767,6 @@ $('#EventPagination').on('change', 'input, select', function(){
   { 
     $this->prepareVarsAccess(); 
   }
-
   function prepareVars()
   {
     $b=null;
@@ -777,7 +774,7 @@ $('#EventPagination').on('change', 'input, select', function(){
     $option=post('Filter',[]);
     $this['events']=Event::ListFrontEnd($option,$b,$typ);
     $this['pages']=$this['events']->lastPage(); 
-  
+    $this['tickets']=Type::all();
   }
   function prepareVarsAccess()
   {
@@ -785,7 +782,6 @@ $('#EventPagination').on('change', 'input, select', function(){
     $this['accessevents']=AcessEvent::ListFrontEnd($optionaccess);
     $this['accesspages']=$this['accessevents']->lastPage(); 
   }
-    
   function onAnnuler() 
   {
     $user = Auth::getUser();

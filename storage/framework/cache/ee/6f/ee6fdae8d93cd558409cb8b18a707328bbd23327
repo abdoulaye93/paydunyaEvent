@@ -1,4 +1,4 @@
-1566313866a:1:{s:15:"achat/achat.htm";a:5:{s:8:"fileName";s:15:"achat/achat.htm";s:7:"content";s:2592:"<div class="row" style="text-align:center;display:block;">
+1566316779a:1:{s:15:"achat/achat.htm";a:5:{s:8:"fileName";s:15:"achat/achat.htm";s:7:"content";s:2592:"<div class="row" style="text-align:center;display:block;">
         {% if achats|length%}
         {% for item in achats %}                                   
               <table id="example" class="table table-striped table-bordered" style="width:100%">

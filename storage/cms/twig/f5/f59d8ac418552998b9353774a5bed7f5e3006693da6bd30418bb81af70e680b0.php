@@ -42,7 +42,7 @@ class __TwigTemplate_6fd3c3fe45b006ee7289778c76692b1e128605ccc8fcab51c07b68c2b33
                 <tr>
                 <th scope=\"col\" class=\"coin_name_th\">TITLE</th>
                 <th scope=\"col\" class=\"founding_target_th\" >SALES</th>
-                <th scope=\"col\" class=\"founding_target_th\" >Montant</th>
+                <th scope=\"col\" class=\"founding_target_th\" >Montants</th>
                 <th scope=\"col\" class=\"founding_target_th\" >PUBLISHED</th>
                 <th scope=\"col\" class=\"action_th\" >ACTIONS</th>
                 <th scope=\"col\" class=\"action_th\" >ACTIVATION</th>
@@ -72,43 +72,60 @@ class __TwigTemplate_6fd3c3fe45b006ee7289778c76692b1e128605ccc8fcab51c07b68c2b33
                         <td data-label=\"ico_date\">
                                 ";
                 // line 25
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "montant", [], "any", false, false, false, 25), "html", null, true);
-                echo "
-                            </td>
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable(($context["tickets"] ?? null));
+                foreach ($context['_seq'] as $context["_key"] => $context["it"]) {
+                    // line 26
+                    echo "                                ";
+                    if ((twig_get_attribute($this->env, $this->source, $context["it"], "event_id", [], "any", false, false, false, 26) == twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 26))) {
+                        // line 27
+                        echo "                                ";
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["it"], "montant", [], "any", false, false, false, 27), "html", null, true);
+                        echo "&nbsp&nbsp
+                                ";
+                    }
+                    // line 29
+                    echo "                                ";
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['it'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 30
+                echo "                            </td>
                         <td data-label=\"ico_date\">
                             <h4 style=\"display:inline-block;\">
                                 
                                     ";
-                // line 30
-                if (twig_get_attribute($this->env, $this->source, $context["item"], "publier", [], "any", false, false, false, 30)) {
-                    // line 31
+                // line 34
+                if (twig_get_attribute($this->env, $this->source, $context["item"], "publier", [], "any", false, false, false, 34)) {
+                    // line 35
                     echo "                                    <span class=\"badge btn-primary\">
                                       oui
                                     </span>
                                     ";
                 } else {
-                    // line 35
+                    // line 39
                     echo "                                    <span class=\"badge badge-danger\">
                                       No</span>
                                     ";
                 }
-                // line 37
+                // line 41
                 echo "                                                
                                 </h4>
                         </td>
                         <td data-label=\"action\">
                         <form data-request=\"onSave\">
                                 <a class=\"btn btn-primary btn-sm\" class=\"btn btn-warning\" href=\"";
-                // line 42
-                echo $this->extensions['Cms\Twig\Extension']->pageFilter("manage_event_view", ["event_id" => twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 42)]);
+                // line 46
+                echo $this->extensions['Cms\Twig\Extension']->pageFilter("manage_event_view", ["event_id" => twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 46)]);
                 echo "\" class=\"action-btn\">View</a>
                                 <a class=\"btn btn-warning btn-sm\" href=\"";
-                // line 43
-                echo $this->extensions['Cms\Twig\Extension']->pageFilter("manage_event_edit", ["event_id" => twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 43)]);
+                // line 47
+                echo $this->extensions['Cms\Twig\Extension']->pageFilter("manage_event_edit", ["event_id" => twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 47)]);
                 echo "\" class=\"action-btn\">Edit</a>
                                 <input type=\"hidden\" name=\"supprimer\" value=\"";
-                // line 44
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 44), "html", null, true);
+                // line 48
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 48), "html", null, true);
                 echo "\"> 
                                 <button type=\"submit\" class=\"btn btn-danger btn-sm\">Supprimer</button>                                               
                         </form>                 
@@ -116,26 +133,26 @@ class __TwigTemplate_6fd3c3fe45b006ee7289778c76692b1e128605ccc8fcab51c07b68c2b33
                       <td>
                           <form data-request=\"onActive\">
                                 <input type=\"hidden\" name=\"activer\" value=\"";
-                // line 50
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 50), "html", null, true);
+                // line 54
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 54), "html", null, true);
                 echo "\"> 
                                 <input type=\"hidden\" name=\"pub\" value=\"";
-                // line 51
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "publier", [], "any", false, false, false, 51), "html", null, true);
+                // line 55
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "publier", [], "any", false, false, false, 55), "html", null, true);
                 echo "\"> 
                                 ";
-                // line 52
-                if (twig_get_attribute($this->env, $this->source, $context["item"], "publier", [], "any", false, false, false, 52)) {
-                    // line 53
+                // line 56
+                if (twig_get_attribute($this->env, $this->source, $context["item"], "publier", [], "any", false, false, false, 56)) {
+                    // line 57
                     echo "                                <button type=\"submit\" class=\"btn btn-primary btn-sm\">Desactiver</button>                                               
                           
                                 ";
                 } else {
-                    // line 56
+                    // line 60
                     echo "                                <button type=\"submit\" class=\"btn btn-warning btn-sm\">Activer</button>
                                 ";
                 }
-                // line 58
+                // line 62
                 echo "                            </form>
                       </td>                          
                     </tr>
@@ -145,16 +162,16 @@ class __TwigTemplate_6fd3c3fe45b006ee7289778c76692b1e128605ccc8fcab51c07b68c2b33
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 63
+            // line 67
             echo "        </tbody>
     </table>     
         ";
         } else {
-            // line 66
+            // line 70
             echo "            <h3>NO EVENT FOUND</h3>
         ";
         }
-        // line 68
+        // line 72
         echo "    </div>";
     }
 
@@ -170,7 +187,7 @@ class __TwigTemplate_6fd3c3fe45b006ee7289778c76692b1e128605ccc8fcab51c07b68c2b33
 
     public function getDebugInfo()
     {
-        return array (  158 => 68,  154 => 66,  149 => 63,  139 => 58,  135 => 56,  130 => 53,  128 => 52,  124 => 51,  120 => 50,  111 => 44,  107 => 43,  103 => 42,  96 => 37,  91 => 35,  85 => 31,  83 => 30,  75 => 25,  69 => 22,  63 => 19,  54 => 15,  40 => 3,  38 => 2,  35 => 1,);
+        return array (  175 => 72,  171 => 70,  166 => 67,  156 => 62,  152 => 60,  147 => 57,  145 => 56,  141 => 55,  137 => 54,  128 => 48,  124 => 47,  120 => 46,  113 => 41,  108 => 39,  102 => 35,  100 => 34,  94 => 30,  88 => 29,  82 => 27,  79 => 26,  75 => 25,  69 => 22,  63 => 19,  54 => 15,  40 => 3,  38 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -182,7 +199,7 @@ class __TwigTemplate_6fd3c3fe45b006ee7289778c76692b1e128605ccc8fcab51c07b68c2b33
                 <tr>
                 <th scope=\"col\" class=\"coin_name_th\">TITLE</th>
                 <th scope=\"col\" class=\"founding_target_th\" >SALES</th>
-                <th scope=\"col\" class=\"founding_target_th\" >Montant</th>
+                <th scope=\"col\" class=\"founding_target_th\" >Montants</th>
                 <th scope=\"col\" class=\"founding_target_th\" >PUBLISHED</th>
                 <th scope=\"col\" class=\"action_th\" >ACTIONS</th>
                 <th scope=\"col\" class=\"action_th\" >ACTIVATION</th>
@@ -199,7 +216,11 @@ class __TwigTemplate_6fd3c3fe45b006ee7289778c76692b1e128605ccc8fcab51c07b68c2b33
                             {{item.ticket_vendu}}
                         </td>
                         <td data-label=\"ico_date\">
-                                {{item.montant}}
+                                {%for it in tickets%}
+                                {%if it.event_id==item.id%}
+                                {{it.montant}}&nbsp&nbsp
+                                {%endif%}
+                                {%endfor%}
                             </td>
                         <td data-label=\"ico_date\">
                             <h4 style=\"display:inline-block;\">

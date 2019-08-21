@@ -20,12 +20,11 @@ function onStart(){
     // echo $invoice->getCustomData("numero_gagnant");
     $this['nomticket']=$invoice->getCustomData("nameticket");
     $this['nbrticket']=$invoice->getCustomData("nbrticket"); 
-    $this['dateEvent']=$invoice->getCustomData("dateEvent"); 
     $this['mail']=$invoice->getCustomData("mail"); 
+    $this['dateEv']=$invoice->getCustomData("dateEv");
     $this['nomevent']=$invoice->getCustomData("nomevent"); 
     $this['description']=$invoice->getCustomData("description"); 
     $this['lieu']=$invoice->getCustomData("lieu"); 
-    
       // Vous pouvez aussi récupérer le montant total spécifié précédemment
       $this['montant']=$invoice->getTotalAmount();
       $user = Db::table('event_event_')->where('id', $invoice->getCustomData("id"))->first();
@@ -185,10 +184,10 @@ function onStart(){
         <section id="layout-content">
             {% page %}
         </section>
-        <div class="container" style="height: 1000px; padding-top: 200px;">
+         <div class="container" style="height: 1000px; padding-top: 200px;">
           <a href="{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}" onclick="edition();return false;">Imprimer le ticket</a>
-          <a href="{{'calendar'|page({date:dateEvent,email:mail,nom:nomevent,description:description,lieu:lieu})}}">Ajouter à votre calendar</a>
-        </div>
+          <a href="{{'calendar'|page({date:dateEv,email:mail,nom:nomevent,description:description,lieu:lieu})}}">Ajouter à votre calendar</a>
+        </div> 
         
         <!-- Footer -->
         <footer id="layout-footer">

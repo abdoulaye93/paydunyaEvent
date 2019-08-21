@@ -1,4 +1,4 @@
-1566292585a:1:{s:22:"paydunyaconnection.htm";a:6:{s:8:"fileName";s:22:"paydunyaconnection.htm";s:7:"content";s:13326:"==
+1566316447a:1:{s:22:"paydunyaconnection.htm";a:6:{s:8:"fileName";s:22:"paydunyaconnection.htm";s:7:"content";s:13283:"==
 <?  
 use event\event\models\Event;
 use Carbon\Carbon;
@@ -29,7 +29,7 @@ function onPrepareVars(){
 <html>
     <head>
      <meta charset="utf-8">
-        <title>October CMS - {{ this.page.title }}</title>
+        <title>PayDunya Event  - {{ this.page.title }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -37,7 +37,6 @@ function onPrepareVars(){
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> eTicket | Event Details  </title>
     <!-- favicon -->
      <link href="{{ 'assets/user/interfaceControl/logoIcon/icon.jpg'|theme }}" rel="stylesheet">
     <!-- bootstrap -->
@@ -359,11 +358,11 @@ $('#EventPagination').on('change', 'input, select', function(){
   crossorigin="anonymous"></script>
 <script src="{{'/assets/semantic/semantic.min.js'|theme }}"></script>
     </body>
-</html>";s:5:"mtime";i:1566210518;s:6:"markup";s:12640:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1566297743;s:6:"markup";s:12597:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
-        <title>October CMS - {{ this.page.title }}</title>
+        <title>PayDunya Event  - {{ this.page.title }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -371,7 +370,6 @@ $('#EventPagination').on('change', 'input, select', function(){
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> eTicket | Event Details  </title>
     <!-- favicon -->
      <link href="{{ 'assets/user/interfaceControl/logoIcon/icon.jpg'|theme }}" rel="stylesheet">
     <!-- bootstrap -->

@@ -1,21 +1,22 @@
 {% for item in __SELF__.loadEvents() %}
-<div class="my-5">
+<div class="my-5" style="padding-top: 100px;">
         <div class="container">
+            <form data-request="onAchat" id="buyForm">
           <div class="">
             <div class="">
               <h2 style="font-size:32px;">{{item.nom}}</h2>
-              <input type="hidden" value="{{item.nom}}" id="nomevent">
+              <input type="hidden" value="{{item.nom}}" id="nomevent" name="nomevent">
             </div>
             <div class="row my-5">
               <div class="col-lg-8">
                 <div class="">
-                  <img src="http://lab.thesoftking.com/eticket/assets/user/img/ticket/1563294083.jpg" alt="">
+                  <img src="{{item.image}}" alt="">
                 </div>
                 <div class="mt-5">
                   <h3>Description</h3>
                   {{item.description}}
-                  <input type="hidden" value="{{item.description}}" id="description">
-                  <input type="hidden" value="{{item.lieu}}" id="lieu">
+                  <input type="hidden" value="{{item.description}}" id="description" name="description">
+                  <input type="hidden" value="{{item.lieu}}" id="lieu" name="lieu">
                 </div>
                             <div class="" style="margin-bottom: 20px;">
                                                            <a onclick="increaseAdView(25)" href="https://laravel.com/" target="_blank">
@@ -35,9 +36,9 @@
                     <div class="">
                       <strong class="card-title" style="display:inline-block;">Expired Date:</strong>
                       <p class="card-text" style="display:inline-block;">{{item.periode.date_cloture}}</p>
-                      <input type="hidden" id="date" value="{{item.periode.date_cloture}}">
+                      <input type="hidden" value="{{item.periode.date_debut}}" name="dateev">
                       {% if user %}
-                      <input type="hidden" id="mailcalendar" value="{{user.email}}">
+                      <input type="hidden" id="mailcalendar" value="{{user.email}}" name="mailcalendar">
                       {%endif%}
                     </div>
                     <div class="">
@@ -68,7 +69,7 @@
                         </select>  
                         {% endif%}
                     </div>
-                    <form data-request="onAchat" id="buyForm">
+                  
                     {%if item.promo %}
                     <hr>
                     <input type="hidden" value="{{item.code_promo}}" id="ticketPromo" name="ticketPromocode">

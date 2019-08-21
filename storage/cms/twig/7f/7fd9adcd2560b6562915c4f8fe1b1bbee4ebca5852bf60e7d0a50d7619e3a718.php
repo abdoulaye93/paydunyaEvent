@@ -36,7 +36,7 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
 <html>
     <head>
      <meta charset=\"utf-8\">
-        <title>October CMS - ";
+        <title>PayDunya Event  - ";
         // line 5
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 5), "title", [], "any", false, false, false, 5), "html", null, true);
         echo "</title>
@@ -53,70 +53,69 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />
     <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <title> eTicket | Event Details  </title>
     <!-- favicon -->
      <link href=\"";
-        // line 15
+        // line 14
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/interfaceControl/logoIcon/icon.jpg");
         echo "\" rel=\"stylesheet\">
     <!-- bootstrap -->
      <link href=\"";
-        // line 17
+        // line 16
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/bootstrap.min.css");
         echo "\" rel=\"stylesheet\">
          <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" rel=\"stylesheet\">
     <!-- fontawesome -->
      <link href=\"";
-        // line 20
+        // line 19
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/css/font-awesome.min.css");
         echo "\" rel=\"stylesheet\">
     <!-- flaticon -->
      <link href=\"";
-        // line 22
+        // line 21
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/flaticon.css");
         echo "\" rel=\"stylesheet\">
     <!-- bootstrap datetime picker -->
       <link href=\"";
-        // line 24
+        // line 23
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/bootstrap-datepicker.min.css");
         echo "\" rel=\"stylesheet\">
     <!-- animate.css -->
      <link href=\"";
-        // line 26
+        // line 25
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/animate.css");
         echo "\" rel=\"stylesheet\">
     <!-- Owl Carousel -->
         <link href=\"";
-        // line 28
+        // line 27
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/owl.carousel.min.css");
         echo "\" rel=\"stylesheet\">
     <!-- magnific popup -->
       <link href=\"";
-        // line 30
+        // line 29
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/magnific-popup.css");
         echo "\" rel=\"stylesheet\">
     <!-- stylesheet -->
     <link href=\"";
-        // line 32
+        // line 31
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/style.css");
         echo "\" rel=\"stylesheet\">
     <!-- responsive -->
     <link href=\"";
-        // line 34
+        // line 33
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/responsive.css");
         echo "\" rel=\"stylesheet\">
      <link href=\"";
-        // line 35
+        // line 34
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/css/sweetalert.css");
         echo "\" rel=\"stylesheet\"><script src=\"";
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/js/sweetalert.js");
         echo "\"></script>
      <link href=\"";
-        // line 36
+        // line 35
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/admin/plugins/bootstrap-fileinput/bootstrap-fileinput.cs");
         echo "\" rel=\"stylesheet\">
      <link href=\"";
-        // line 37
+        // line 36
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/themes/base-color.php?color=7d5fff");
         echo "\" rel=\"stylesheet\">
      <!-- Font Awesome -->
@@ -192,23 +191,23 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
     
        <header id=\"layout-header\">
             ";
-        // line 110
+        // line 109
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 111
+        // line 110
         echo "        </header>
 
         ";
-        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 113
+        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 112
         $context["type"] = "success"        ;        foreach (Flash::success        () as $message) {
-            $context["message"] = $message;            // line 114
+            $context["message"] = $message;            // line 113
             echo "          <div class=\"container\">
               <div class=\"row\">
                   <div class=\"col-lg-12\">
                   <br>
                       <p class=\"bg-success\">";
-            // line 118
+            // line 117
             echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
             echo "</p>
                   </div>
@@ -216,53 +215,53 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
           </div>
       ";
         }
-        $context["type"] = $_type;        $context["message"] = $_message;        // line 123
+        $context["type"] = $_type;        $context["message"] = $_message;        // line 122
         echo "
     <!-- navbar area start -->
 
         <!-- Content -->
         <section id=\"layout-content\">
             ";
-        // line 128
+        // line 127
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 129
+        // line 128
         echo "        </section>
-        <div class=\"container\" style=\"height: 1000px; padding-top: 200px;\">
+         <div class=\"container\" style=\"height: 1000px; padding-top: 200px;\">
           <a href=\"";
-        // line 131
+        // line 130
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("ticket", ["nom_type_ticket" => ($context["nomticket"] ?? null), "nbr_ticket" => ($context["nbrticket"] ?? null), "montant" => ($context["montant"] ?? null), "id_event" => ($context["id"] ?? null)]);
         echo "\" onclick=\"edition();return false;\">Imprimer le ticket</a>
           <a href=\"";
-        // line 132
-        echo $this->extensions['Cms\Twig\Extension']->pageFilter("calendar", ["date" => ($context["dateEvent"] ?? null), "email" => ($context["mail"] ?? null), "nom" => ($context["nomevent"] ?? null), "description" => ($context["description"] ?? null), "lieu" => ($context["lieu"] ?? null)]);
+        // line 131
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("calendar", ["date" => ($context["dateEv"] ?? null), "email" => ($context["mail"] ?? null), "nom" => ($context["nomevent"] ?? null), "description" => ($context["description"] ?? null), "lieu" => ($context["lieu"] ?? null)]);
         echo "\">Ajouter à votre calendar</a>
-        </div>
+        </div> 
         
         <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 137
+        // line 136
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 138
+        // line 137
         echo "        </footer>
 
         <!-- Scripts -->
         <script src=\"";
-        // line 141
+        // line 140
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
         <script src=\"";
-        // line 142
+        // line 141
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
         <script src=\"";
-        // line 143
+        // line 142
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script>
         ";
-        // line 144
+        // line 143
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="'. Request::getBasePath()
@@ -277,11 +276,11 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 145
+        // line 144
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 146
+        // line 145
         echo "        
 <script>
   (function(\$){
@@ -501,7 +500,7 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
 
     public function getDebugInfo()
     {
-        return array (  285 => 146,  281 => 145,  266 => 144,  262 => 143,  258 => 142,  254 => 141,  249 => 138,  245 => 137,  237 => 132,  233 => 131,  229 => 129,  227 => 128,  220 => 123,  212 => 118,  206 => 114,  204 => 113,  200 => 111,  196 => 110,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
+        return array (  284 => 145,  280 => 144,  265 => 143,  261 => 142,  257 => 141,  253 => 140,  248 => 137,  244 => 136,  236 => 131,  232 => 130,  228 => 128,  226 => 127,  219 => 122,  211 => 117,  205 => 113,  203 => 112,  199 => 110,  195 => 109,  119 => 36,  115 => 35,  109 => 34,  105 => 33,  100 => 31,  95 => 29,  90 => 27,  85 => 25,  80 => 23,  75 => 21,  70 => 19,  64 => 16,  59 => 14,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -510,7 +509,7 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
 <html>
     <head>
      <meta charset=\"utf-8\">
-        <title>October CMS - {{ this.page.title }}</title>
+        <title>PayDunya Event  - {{ this.page.title }}</title>
         <meta name=\"description\" content=\"{{ this.page.meta_description }}\">
         <meta name=\"title\" content=\"{{ this.page.meta_title }}\">
        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">
@@ -518,7 +517,6 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />
     <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <title> eTicket | Event Details  </title>
     <!-- favicon -->
      <link href=\"{{ 'assets/user/interfaceControl/logoIcon/icon.jpg'|theme }}\" rel=\"stylesheet\">
     <!-- bootstrap -->
@@ -635,10 +633,10 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
         <section id=\"layout-content\">
             {% page %}
         </section>
-        <div class=\"container\" style=\"height: 1000px; padding-top: 200px;\">
+         <div class=\"container\" style=\"height: 1000px; padding-top: 200px;\">
           <a href=\"{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}\" onclick=\"edition();return false;\">Imprimer le ticket</a>
-          <a href=\"{{'calendar'|page({date:dateEvent,email:mail,nom:nomevent,description:description,lieu:lieu})}}\">Ajouter à votre calendar</a>
-        </div>
+          <a href=\"{{'calendar'|page({date:dateEv,email:mail,nom:nomevent,description:description,lieu:lieu})}}\">Ajouter à votre calendar</a>
+        </div> 
         
         <!-- Footer -->
         <footer id=\"layout-footer\">

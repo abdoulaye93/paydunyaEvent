@@ -36,7 +36,7 @@ class __TwigTemplate_247f68f14339031b012a9d85f6ba8ed93771df41063d72846038ed5586e
 <html>
     <head>
         <meta charset=\"utf-8\">
-           <title>October CMS - ";
+           <title>PayDunya Event - ";
         // line 5
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 5), "title", [], "any", false, false, false, 5), "html", null, true);
         echo "</title>
@@ -129,46 +129,39 @@ class __TwigTemplate_247f68f14339031b012a9d85f6ba8ed93771df41063d72846038ed5586e
       
        </head>
   <body >
-      <header id=\"layout-header\">
-          ";
-        // line 49
-        $context['__cms_partial_params'] = [];
-        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
-        unset($context['__cms_partial_params']);
-        // line 50
-        echo "      </header>
+      
       <div style=\"height: 1000px;padding-top: 200px;\" class=\"container\">
     <p>Cliquer sur Authorize pour effectuer cette action</p>
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <input type=\"hidden\" value=\"";
-        // line 55
+        // line 53
         echo twig_escape_filter($this->env, ($context["date"] ?? null), "html", null, true);
         echo "\" id=\"date\">
     ";
-        // line 56
+        // line 54
         if (($context["user"] ?? null)) {
-            // line 57
+            // line 55
             echo "    <input type=\"hidden\" value=\"";
             echo twig_escape_filter($this->env, ($context["mail"] ?? null), "html", null, true);
             echo "\" id=\"mail\">
     ";
         } else {
-            // line 59
+            // line 57
             echo "    <label>Entrer votre email</label>
     <input type=\"email\"  id=\"mail\">
     ";
         }
-        // line 62
+        // line 60
         echo "    <input type=\"hidden\" value=\"";
         echo twig_escape_filter($this->env, ($context["nom"] ?? null), "html", null, true);
         echo "\" id=\"nom\">
     <input type=\"hidden\" value=\"";
-        // line 63
+        // line 61
         echo twig_escape_filter($this->env, ($context["description"] ?? null), "html", null, true);
         echo "\" id=\"description\">
     <input type=\"hidden\" value=\"";
-        // line 64
+        // line 62
         echo twig_escape_filter($this->env, ($context["lieu"] ?? null), "html", null, true);
         echo "\" id=\"lieu\">
     <button id=\"authorize_button\" style=\"display: none;\">Authorize</button>
@@ -176,14 +169,7 @@ class __TwigTemplate_247f68f14339031b012a9d85f6ba8ed93771df41063d72846038ed5586e
 
     <pre id=\"content\" style=\"white-space: pre-wrap;\"></pre>
   </div>
-  <footer id=\"layout-footer\">
-      ";
-        // line 71
-        $context['__cms_partial_params'] = [];
-        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
-        unset($context['__cms_partial_params']);
-        // line 72
-        echo "  </footer>
+
     <script type=\"text/javascript\">
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '27600548519-e1du7hi2qjqbji3e7q6vmcmdg2jeq89q.apps.googleusercontent.com';
@@ -381,7 +367,7 @@ request.execute(function(event) {
 
     public function getDebugInfo()
     {
-        return array (  186 => 72,  182 => 71,  172 => 64,  168 => 63,  163 => 62,  158 => 59,  152 => 57,  150 => 56,  146 => 55,  139 => 50,  135 => 49,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
+        return array (  165 => 62,  161 => 61,  156 => 60,  151 => 57,  145 => 55,  143 => 54,  139 => 53,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -390,7 +376,7 @@ request.execute(function(event) {
 <html>
     <head>
         <meta charset=\"utf-8\">
-           <title>October CMS - {{ this.page.title }}</title>
+           <title>PayDunya Event - {{ this.page.title }}</title>
            <meta name=\"description\" content=\"{{ this.page.meta_description }}\">
            <meta name=\"title\" content=\"{{ this.page.meta_title }}\">
           <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">
@@ -433,9 +419,7 @@ request.execute(function(event) {
       
        </head>
   <body >
-      <header id=\"layout-header\">
-          {% partial 'site/header' %}
-      </header>
+      
       <div style=\"height: 1000px;padding-top: 200px;\" class=\"container\">
     <p>Cliquer sur Authorize pour effectuer cette action</p>
 
@@ -455,9 +439,7 @@ request.execute(function(event) {
 
     <pre id=\"content\" style=\"white-space: pre-wrap;\"></pre>
   </div>
-  <footer id=\"layout-footer\">
-      {% partial 'site/footer' %}
-  </footer>
+
     <script type=\"text/javascript\">
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '27600548519-e1du7hi2qjqbji3e7q6vmcmdg2jeq89q.apps.googleusercontent.com';
