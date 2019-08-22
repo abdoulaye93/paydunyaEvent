@@ -58,7 +58,7 @@ function onStart(){
   <body >
       
       <div style="height: 1000px;padding-top: 200px;" class="container">
-    <p>Cliquer sur Authorize pour effectuer cette action</p>
+    <p id="sup">Cliquer sur Authorize pour effectuer cette action</p>
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <input type="hidden" value="{{date}}" id="date">
@@ -74,7 +74,7 @@ function onStart(){
     <button id="authorize_button" style="display: none;">Authorize</button>
     <p id="signout_button" style="display: none;">event ajouter a votre calendar</p>
 
-    <pre id="content" style="white-space: pre-wrap;"></pre>
+    <a id="content" style="white-space: pre-wrap;"></a>
   </div>
 
     <script type="text/javascript">
@@ -156,7 +156,10 @@ function createEvent() {
 });
 
 request.execute(function(event) {
-  appendPre('<a href="' + event.htmlLink+'"> voir dans le calendar</a>');
+  document.getElementById('content').setAttribute('href',event.htmlLink);
+  document.getElementById('content').innerHTML="Voire l'évènement dans votre calendar";
+  document.getElementById('sup').remove();
+  //appendPre( event.htmlLink);
 });
 
 }

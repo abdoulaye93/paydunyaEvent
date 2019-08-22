@@ -1,0 +1,9 @@
+1566474237a:1:{s:24:"paydunya/afterfooter.htm";a:5:{s:8:"fileName";s:24:"paydunya/afterfooter.htm";s:7:"content";s:242:"<div class="text-center navbar navbar-expand-lg" style="border:0px">
+    <div class="card-body">
+        <img style='width:120vh' src="{{ 'assets/user/ad_images/lg.png'|theme }}" class="img-fluid" alt="Responsive image">
+    </div>
+</div>";s:5:"mtime";i:1566423050;s:6:"markup";s:242:"<div class="text-center navbar navbar-expand-lg" style="border:0px">
+    <div class="card-body">
+        <img style='width:120vh' src="{{ 'assets/user/ad_images/lg.png'|theme }}" class="img-fluid" alt="Responsive image">
+    </div>
+</div>";s:4:"code";N;}}

@@ -126,7 +126,72 @@ class __TwigTemplate_426e26f6e41680765799227f0162214864b2c8d02b4cb2aea8f5e3dacd1
 <!-- Material Design Bootstrap -->
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
 <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
+<link href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">
+
+<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+
+<link rel=\"stylesheet\" href=\"";
+        // line 49
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/animate.css");
+        echo "\">
+
+<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\">
+</script>
+
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
+
+<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>
     <style media=\"screen\">
+         #II {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 80px;
+
+      color: #fff;
+    }
+
+    #II2 {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 60px;
+
+      color: #fff;
+    }
+
+    #II3 {
+      background-image: url('images/lg.png');
+      /* background-size: cover; */
+      /* background-attachment: fixed; */
+      background-repeat: no-repeat;
+      padding: 50px;
+
+      color: #fff;
+    }
+
+    .color-nav {
+      background-color: #491105;
+    }
+
+    .color-paydunya {
+      background-color: #1894dd;
+    }
+
+    .color {
+      color: #000;
+    }
+
+    .color-orange {
+      color: orange;
+    }
+
+    #ICON {
+      -webkit-animation: rotation 2s infinite linear;
+    }
+
   .eml {
     color: red;
   }
@@ -144,7 +209,18 @@ class __TwigTemplate_426e26f6e41680765799227f0162214864b2c8d02b4cb2aea8f5e3dacd1
     margin: 5px 2px;
     border-radius: 50%;
   }
-
+  #image {
+            background-image: url(\"";
+        // line 126
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/ad_images/bgFixed.jpg");
+        echo "\");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 110px;
+            margin: 0px;
+            outline: none;
+        }
   .social-icons .fa:hover {
       opacity: 0.7;
   }
@@ -192,23 +268,23 @@ class __TwigTemplate_426e26f6e41680765799227f0162214864b2c8d02b4cb2aea8f5e3dacd1
     
        <header id=\"layout-header\">
             ";
-        // line 110
+        // line 180
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 111
+        // line 181
         echo "        </header>
 
         ";
-        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 113
+        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 183
         $context["type"] = "success"        ;        foreach (Flash::success        () as $message) {
-            $context["message"] = $message;            // line 114
+            $context["message"] = $message;            // line 184
             echo "          <div class=\"container\">
               <div class=\"row\">
                   <div class=\"col-lg-12\">
                   <br>
                       <p class=\"bg-success\">";
-            // line 118
+            // line 188
             echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
             echo "</p>
                   </div>
@@ -216,43 +292,48 @@ class __TwigTemplate_426e26f6e41680765799227f0162214864b2c8d02b4cb2aea8f5e3dacd1
           </div>
       ";
         }
-        $context["type"] = $_type;        $context["message"] = $_message;        // line 123
+        $context["type"] = $_type;        $context["message"] = $_message;        // line 193
         echo "
     <!-- navbar area start -->
 
         <!-- Content -->
         <section id=\"layout-content\">
             ";
-        // line 128
+        // line 198
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 129
+        // line 199
         echo "        </section>
-       
-        <!-- Footer -->
+        ";
+        // line 200
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("paydunya/afterfooter"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        // line 201
+        echo "        <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 133
+        // line 203
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 134
+        // line 204
         echo "        </footer>
 
         <!-- Scripts -->
         <script src=\"";
-        // line 137
+        // line 207
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
         <script src=\"";
-        // line 138
+        // line 208
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
         <script src=\"";
-        // line 139
+        // line 209
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script>
         ";
-        // line 140
+        // line 210
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="'. Request::getBasePath()
@@ -267,11 +348,11 @@ class __TwigTemplate_426e26f6e41680765799227f0162214864b2c8d02b4cb2aea8f5e3dacd1
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 141
+        // line 211
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 142
+        // line 212
         echo "        
 <script>
   (function(\$){
@@ -486,7 +567,7 @@ class __TwigTemplate_426e26f6e41680765799227f0162214864b2c8d02b4cb2aea8f5e3dacd1
 
     public function getDebugInfo()
     {
-        return array (  275 => 142,  271 => 141,  256 => 140,  252 => 139,  248 => 138,  244 => 137,  239 => 134,  235 => 133,  229 => 129,  227 => 128,  220 => 123,  212 => 118,  206 => 114,  204 => 113,  200 => 111,  196 => 110,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
+        return array (  356 => 212,  352 => 211,  337 => 210,  333 => 209,  329 => 208,  325 => 207,  320 => 204,  316 => 203,  312 => 201,  308 => 200,  305 => 199,  303 => 198,  296 => 193,  288 => 188,  282 => 184,  280 => 183,  276 => 181,  272 => 180,  215 => 126,  135 => 49,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -535,7 +616,69 @@ class __TwigTemplate_426e26f6e41680765799227f0162214864b2c8d02b4cb2aea8f5e3dacd1
 <!-- Material Design Bootstrap -->
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
 <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
+<link href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">
+
+<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+
+<link rel=\"stylesheet\" href=\"{{ 'assets/user/css/animate.css'|theme }}\">
+
+<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\">
+</script>
+
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
+
+<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>
     <style media=\"screen\">
+         #II {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 80px;
+
+      color: #fff;
+    }
+
+    #II2 {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 60px;
+
+      color: #fff;
+    }
+
+    #II3 {
+      background-image: url('images/lg.png');
+      /* background-size: cover; */
+      /* background-attachment: fixed; */
+      background-repeat: no-repeat;
+      padding: 50px;
+
+      color: #fff;
+    }
+
+    .color-nav {
+      background-color: #491105;
+    }
+
+    .color-paydunya {
+      background-color: #1894dd;
+    }
+
+    .color {
+      color: #000;
+    }
+
+    .color-orange {
+      color: orange;
+    }
+
+    #ICON {
+      -webkit-animation: rotation 2s infinite linear;
+    }
+
   .eml {
     color: red;
   }
@@ -553,7 +696,15 @@ class __TwigTemplate_426e26f6e41680765799227f0162214864b2c8d02b4cb2aea8f5e3dacd1
     margin: 5px 2px;
     border-radius: 50%;
   }
-
+  #image {
+            background-image: url(\"{{ 'assets/user/ad_images/bgFixed.jpg'|theme }}\");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 110px;
+            margin: 0px;
+            outline: none;
+        }
   .social-icons .fa:hover {
       opacity: 0.7;
   }
@@ -620,7 +771,7 @@ class __TwigTemplate_426e26f6e41680765799227f0162214864b2c8d02b4cb2aea8f5e3dacd1
         <section id=\"layout-content\">
             {% page %}
         </section>
-       
+        {% partial 'paydunya/afterfooter' %}
         <!-- Footer -->
         <footer id=\"layout-footer\">
             {% partial 'site/footer' %}

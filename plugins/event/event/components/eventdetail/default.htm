@@ -154,6 +154,10 @@
                            <input type="submit" class="btn btn-primary" value="Acheter"/>
                           {% endif %}
                         </form>
+                        {% if user%}
+                        {%else%}
+                        <a class="btn btn-primary " href="#" data-toggle="modal" data-target="#login-modal"><h3>Créer un compte</h3></a>
+                        {%endif%}
                       </div>
                     </div>
                   </div>

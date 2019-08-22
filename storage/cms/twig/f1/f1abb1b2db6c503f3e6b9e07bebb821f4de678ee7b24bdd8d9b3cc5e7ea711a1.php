@@ -32,11 +32,11 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
     protected function doDisplay(array $context, array $blocks = [])
     {
         // line 1
-        echo "<!-- Nav -->
+        echo "<!-- 
 <nav class=\"navbar navbar-area navbar-expand-lg bg-white navbar-light fixed-top navbar-autohide\" style=\"background-color: #0070B2\">
     <div class=\"container\">
         <div >
-            <!-- navbar header start -->
+          
             <a class=\"\" href=\"http://lab.thesoftking.com/eticket\">
               <img style=\"width:80px;display:block;margin:0;\" class=\"img-fluid\" src=\"";
         // line 7
@@ -45,14 +45,14 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
             </a>
             
         </div>
-        <!-- navbar header end -->
+       
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#Tokenizer\" aria-controls=\"Tokenizer\"
             aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
         <div class=\"collapse navbar-collapse\" id=\"Tokenizer\">
 
-            <!-- navbar collapse start -->
+           
             <ul class=\"navbar-nav\">
                 <li class=\"nav-item  ";
         // line 20
@@ -124,7 +124,7 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                             </li>
 
 
-                            <!--
+                           
                             <li class=\"nav-item dropdown ";
             // line 48
             if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 48), "id", [], "any", false, false, false, 48) == "configuration_payment")) {
@@ -139,7 +139,7 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
             echo "\">Configurer le paiement</a>
                                   
                                 </div>
-                            </li>-->  
+                            </li>
                     
                 
                     ";
@@ -219,9 +219,193 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                
               </ul>
         </div>
-        <!-- navbar collapse end -->
+        
     </div>
-</nav>
+</nav>-->
+<ul style=\"background-color:#1894dd\" class=\"nav justify-content-center p-2\">
+
+        <li class=\"nav-item\">
+            <a 
+            style=\"color:#fff\" class=\"nav-link\" href=\"#\">
+                <i class=\"fa fa-google-plus\" aria-hidden=\"true\"></i>
+                <span class=\"d-none d-md-inline\">Gmail</span></a>
+        </li>
+
+        <li class=\"nav-item\">
+            <a style=\"color:#fff\" class=\"nav-link\" href=\"#\">
+                <i class=\"fa fa-whatsapp\" aria-hidden=\"true\"></i>
+                <span class=\"d-none d-md-inline\">Whatsapp</span></a>
+        </li>
+
+
+        <li class=\"nav-item\">
+            <a style=\"color:#fff\" class=\"nav-link\" href=\"#\">
+                <i class=\"fa fa-facebook-official\" aria-hidden=\"true\"></i>
+                <span class=\"d-none d-md-inline\">Facebook</span></a>
+        </li>
+
+        <li class=\"nav-item\">
+            <a style=\"color:#fff\" class=\"nav-link\" href=\"#\">
+                <i class=\"fa fa-linkedin-square\" aria-hidden=\"true\">
+                </i>
+                <span class=\"d-none d-md-inline\">Linkedin</span></a>
+        </li>
+    </ul>
+    <header class=\"navbar-dark bg-dark p-1\">
+            <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo01\"
+                    aria-controls=\"navbarTogglerDemo01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+                    <span class=\"navbar-toggler-icon\"></span>
+                </button>
+    
+    
+                <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo01\">
+    
+                    
+                    <a class=\"navbar-brand\" href=\"#\">
+                        <img src=\"";
+        // line 136
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/ad_images/logo.png");
+        echo "\" width=\"40\" height=\"40\" class=\"d-inline-block align-top\"
+                            alt=\"\">
+                        &nbsp;
+                    </a>
+    
+                    <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
+                        <li
+                        class=\"nav-item active\">
+                            <a 
+                            class=\"nav-link\" href=\"";
+        // line 145
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("about");
+        echo "\">Comment Ça marche<span class=\"sr-only\">(current)</span></a>
+                        </li>
+    
+                        <li class=\"nav-item active\">
+                            <a class=\"nav-link\" href=\"";
+        // line 149
+        echo $this->extensions['Cms\Twig\Extension']->pageFilter("view_event");
+        echo "\">Trouver un évènement <span class=\"sr-only\">(current)</span></a>
+                        </li>
+    
+                        <li class=\"nav-item active\">
+                            <a class=\"nav-link\" href=\"#\">Contactez nous <span class=\"sr-only\">(current)</span></a>
+                        </li>
+                        ";
+        // line 155
+        if (($context["user"] ?? null)) {
+            // line 156
+            echo "                        <li class=\"nav-item dropdown ";
+            if ((((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 156), "id", [], "any", false, false, false, 156) == "create_event") || (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 156), "id", [], "any", false, false, false, 156) == "manage_event")) || (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 156), "id", [], "any", false, false, false, 156) == "access_event"))) {
+                echo "active";
+            }
+            echo "\">
+                            <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Event</a>
+                            <div class=\"dropdown-menu\">
+                                <a class=\"dropdown-item\" href=\"";
+            // line 159
+            echo $this->extensions['Cms\Twig\Extension']->pageFilter("create_event");
+            echo "\">Créer un évènement</a>
+                                <a class=\"dropdown-item\" href=\"";
+            // line 160
+            echo $this->extensions['Cms\Twig\Extension']->pageFilter("manage_event", ["user_id" => twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "id", [], "any", false, false, false, 160)]);
+            echo "\">Gestion des évènement</a>
+                                <a class=\"dropdown-item\" href=\"";
+            // line 161
+            echo $this->extensions['Cms\Twig\Extension']->pageFilter("access_event", ["user_id" => twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "id", [], "any", false, false, false, 161)]);
+            echo "\">Invitation</a>
+                                <a class=\"dropdown-item\" href=\"";
+            // line 162
+            echo $this->extensions['Cms\Twig\Extension']->pageFilter("achat");
+            echo "\">Mes achats</a>
+                                <a class=\"dropdown-item\" href=\"";
+            // line 163
+            echo $this->extensions['Cms\Twig\Extension']->pageFilter("annue_achat");
+            echo "\">Demande d'annulation achat</a>
+                            </div>
+                        </li>
+                            ";
+            // line 166
+            if (twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "is_superuser", [], "any", false, false, false, 166)) {
+                // line 167
+                echo "                            <li class=\"nav-item dropdown ";
+                if ((((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 167), "id", [], "any", false, false, false, 167) == "create_event") || (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 167), "id", [], "any", false, false, false, 167) == "manage_event")) || (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 167), "id", [], "any", false, false, false, 167) == "access_event"))) {
+                    echo "active";
+                }
+                echo "\">
+                                <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">";
+                // line 168
+                if (twig_length_filter($this->env, ($context["notifs"] ?? null))) {
+                    // line 169
+                    echo "                                        <span class=\"badge badge-danger\">
+                                                Notif";
+                    // line 170
+                    echo twig_escape_filter($this->env, twig_length_filter($this->env, ($context["notifs"] ?? null)), "html", null, true);
+                    echo "</span>
+                                        ";
+                } else {
+                    // line 172
+                    echo "                                       
+                                        ";
+                }
+                // line 173
+                echo "Gestion</a>
+                                <div class=\"dropdown-menu\">
+                                        <a class=\"dropdown-item\" href=\"";
+                // line 175
+                echo $this->extensions['Cms\Twig\Extension']->pageFilter("admin");
+                echo "\">  évènement</a>
+                                        <a class=\"dropdown-item\" href=\"";
+                // line 176
+                echo $this->extensions['Cms\Twig\Extension']->pageFilter("admin_demande");
+                echo "\">";
+                if (twig_length_filter($this->env, ($context["notifs"] ?? null))) {
+                    // line 177
+                    echo "                                                <span class=\"badge badge-danger\">
+                                                        Notif";
+                    // line 178
+                    echo twig_escape_filter($this->env, twig_length_filter($this->env, ($context["notifs"] ?? null)), "html", null, true);
+                    echo "</span>
+                                                ";
+                } else {
+                    // line 180
+                    echo "                                               
+                                                ";
+                }
+                // line 181
+                echo "Demande Event</a>
+                                                
+                                </div>
+                            </li>
+                            ";
+            }
+            // line 186
+            echo "                        ";
+        }
+        // line 187
+        echo "                    </ul>
+                        ";
+        // line 188
+        if (($context["user"] ?? null)) {
+            // line 189
+            echo "                        <button data-request=\"onLogout\" data-request-data=\"redirect: '/'\" style=\"border-radius:50px\" class=\"btn btn-outline-primary my-2 my-sm-0\">
+    
+                                <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i>
+                                SIGN-OUT</button> 
+                        ";
+        } else {
+            // line 194
+            echo "                        <button style=\"border-radius:50px\" class=\"btn btn-outline-primary my-2 my-sm-0\"  data-toggle=\"modal\" data-target=\"#login-modal\">
+    
+                        <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i>
+                        SIGN-IN</button>
+                        ";
+        }
+        // line 199
+        echo "                </div>
+            </nav>
+        </header>
+      
 
   <!-- login and register modal start-->
     <div class=\"login-registration-modal\" id=\"loginRegModal\">
@@ -259,8 +443,8 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                                         <div class=\"\">
                                           <a style=\"text-decoration: underline;\" href=\"\">Mot de passe oublié ?</a>
                                           <p class=\"";
-        // line 131
-        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 131), "id", [], "any", false, false, false, 131) == "register")) {
+        // line 239
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 239), "id", [], "any", false, false, false, 239) == "register")) {
             echo "active";
         }
         echo "\" style=\"text-decoration: underline;\"><a href=\"";
@@ -485,7 +669,7 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
     {
         if(textStatus == 'success')
             window.location = \"";
-        // line 350
+        // line 458
         echo $this->extensions['Cms\Twig\Extension']->pageFilter("Demonstration");
         echo "\"
 
@@ -510,29 +694,29 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
 
     public function getDebugInfo()
     {
-        return array (  489 => 350,  263 => 131,  216 => 86,  212 => 84,  204 => 78,  200 => 77,  195 => 75,  192 => 74,  188 => 73,  184 => 72,  180 => 70,  176 => 69,  171 => 67,  168 => 66,  166 => 65,  160 => 64,  157 => 63,  154 => 62,  148 => 58,  138 => 51,  130 => 48,  121 => 42,  117 => 41,  113 => 40,  109 => 39,  105 => 38,  97 => 35,  91 => 31,  89 => 30,  81 => 25,  75 => 24,  65 => 21,  59 => 20,  43 => 7,  35 => 1,);
+        return array (  673 => 458,  447 => 239,  405 => 199,  398 => 194,  391 => 189,  389 => 188,  386 => 187,  383 => 186,  376 => 181,  372 => 180,  367 => 178,  364 => 177,  360 => 176,  356 => 175,  352 => 173,  348 => 172,  343 => 170,  340 => 169,  338 => 168,  331 => 167,  329 => 166,  323 => 163,  319 => 162,  315 => 161,  311 => 160,  307 => 159,  298 => 156,  296 => 155,  287 => 149,  280 => 145,  268 => 136,  216 => 86,  212 => 84,  204 => 78,  200 => 77,  195 => 75,  192 => 74,  188 => 73,  184 => 72,  180 => 70,  176 => 69,  171 => 67,  168 => 66,  166 => 65,  160 => 64,  157 => 63,  154 => 62,  148 => 58,  138 => 51,  130 => 48,  121 => 42,  117 => 41,  113 => 40,  109 => 39,  105 => 38,  97 => 35,  91 => 31,  89 => 30,  81 => 25,  75 => 24,  65 => 21,  59 => 20,  43 => 7,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<!-- Nav -->
+        return new Source("<!-- 
 <nav class=\"navbar navbar-area navbar-expand-lg bg-white navbar-light fixed-top navbar-autohide\" style=\"background-color: #0070B2\">
     <div class=\"container\">
         <div >
-            <!-- navbar header start -->
+          
             <a class=\"\" href=\"http://lab.thesoftking.com/eticket\">
               <img style=\"width:80px;display:block;margin:0;\" class=\"img-fluid\" src=\"{{ '/assets/images/logo.jpg'|theme }}\" alt=\"logo PayDunay\">
             </a>
             
         </div>
-        <!-- navbar header end -->
+       
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#Tokenizer\" aria-controls=\"Tokenizer\"
             aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
         <div class=\"collapse navbar-collapse\" id=\"Tokenizer\">
 
-            <!-- navbar collapse start -->
+           
             <ul class=\"navbar-nav\">
                 <li class=\"nav-item  {% if this.page.id == 'home' %}active{% endif %} \">
                     <a class=\"na{% component 'session' %}v-link\" href=\"{{ 'home'|page }}\">Comment Ça marche</a>
@@ -561,14 +745,14 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                             </li>
 
 
-                            <!--
+                           
                             <li class=\"nav-item dropdown {% if this.page.id == 'configuration_payment' %}active{% endif %}\">
                                 <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Paiement</a>
                                 <div class=\"dropdown-menu\">
                                     <a class=\"dropdown-item\" href=\"{{ 'configuration_payment'|page }}\">Configurer le paiement</a>
                                   
                                 </div>
-                            </li>-->  
+                            </li>
                     
                 
                     {% else %}
@@ -606,9 +790,117 @@ class __TwigTemplate_6f5bf4335314b194ff0f5b17909dec286b6919bb5eec3967608c7343210
                
               </ul>
         </div>
-        <!-- navbar collapse end -->
+        
     </div>
-</nav>
+</nav>-->
+<ul style=\"background-color:#1894dd\" class=\"nav justify-content-center p-2\">
+
+        <li class=\"nav-item\">
+            <a 
+            style=\"color:#fff\" class=\"nav-link\" href=\"#\">
+                <i class=\"fa fa-google-plus\" aria-hidden=\"true\"></i>
+                <span class=\"d-none d-md-inline\">Gmail</span></a>
+        </li>
+
+        <li class=\"nav-item\">
+            <a style=\"color:#fff\" class=\"nav-link\" href=\"#\">
+                <i class=\"fa fa-whatsapp\" aria-hidden=\"true\"></i>
+                <span class=\"d-none d-md-inline\">Whatsapp</span></a>
+        </li>
+
+
+        <li class=\"nav-item\">
+            <a style=\"color:#fff\" class=\"nav-link\" href=\"#\">
+                <i class=\"fa fa-facebook-official\" aria-hidden=\"true\"></i>
+                <span class=\"d-none d-md-inline\">Facebook</span></a>
+        </li>
+
+        <li class=\"nav-item\">
+            <a style=\"color:#fff\" class=\"nav-link\" href=\"#\">
+                <i class=\"fa fa-linkedin-square\" aria-hidden=\"true\">
+                </i>
+                <span class=\"d-none d-md-inline\">Linkedin</span></a>
+        </li>
+    </ul>
+    <header class=\"navbar-dark bg-dark p-1\">
+            <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+                <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo01\"
+                    aria-controls=\"navbarTogglerDemo01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+                    <span class=\"navbar-toggler-icon\"></span>
+                </button>
+    
+    
+                <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo01\">
+    
+                    
+                    <a class=\"navbar-brand\" href=\"#\">
+                        <img src=\"{{ 'assets/user/ad_images/logo.png'|theme }}\" width=\"40\" height=\"40\" class=\"d-inline-block align-top\"
+                            alt=\"\">
+                        &nbsp;
+                    </a>
+    
+                    <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
+                        <li
+                        class=\"nav-item active\">
+                            <a 
+                            class=\"nav-link\" href=\"{{ 'about'|page }}\">Comment Ça marche<span class=\"sr-only\">(current)</span></a>
+                        </li>
+    
+                        <li class=\"nav-item active\">
+                            <a class=\"nav-link\" href=\"{{ 'view_event'|page }}\">Trouver un évènement <span class=\"sr-only\">(current)</span></a>
+                        </li>
+    
+                        <li class=\"nav-item active\">
+                            <a class=\"nav-link\" href=\"#\">Contactez nous <span class=\"sr-only\">(current)</span></a>
+                        </li>
+                        {%if user%}
+                        <li class=\"nav-item dropdown {% if this.page.id == 'create_event' or this.page.id == 'manage_event' or this.page.id == 'access_event' %}active{% endif %}\">
+                            <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Event</a>
+                            <div class=\"dropdown-menu\">
+                                <a class=\"dropdown-item\" href=\"{{ 'create_event'|page }}\">Créer un évènement</a>
+                                <a class=\"dropdown-item\" href=\"{{ 'manage_event'|page({user_id:user.id}) }}\">Gestion des évènement</a>
+                                <a class=\"dropdown-item\" href=\"{{ 'access_event'|page({user_id:user.id}) }}\">Invitation</a>
+                                <a class=\"dropdown-item\" href=\"{{ 'achat'|page }}\">Mes achats</a>
+                                <a class=\"dropdown-item\" href=\"{{ 'annue_achat'|page }}\">Demande d'annulation achat</a>
+                            </div>
+                        </li>
+                            {%if user.is_superuser%}
+                            <li class=\"nav-item dropdown {% if this.page.id == 'create_event' or this.page.id == 'manage_event' or this.page.id == 'access_event' %}active{% endif %}\">
+                                <a class=\"nav-link dropdown-toggle\" href=\"#\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">{% if notifs|length%}
+                                        <span class=\"badge badge-danger\">
+                                                Notif{{ notifs|length}}</span>
+                                        {%else%}
+                                       
+                                        {%endif%}Gestion</a>
+                                <div class=\"dropdown-menu\">
+                                        <a class=\"dropdown-item\" href=\"{{ 'admin'|page }}\">  évènement</a>
+                                        <a class=\"dropdown-item\" href=\"{{ 'admin_demande'|page }}\">{% if notifs|length%}
+                                                <span class=\"badge badge-danger\">
+                                                        Notif{{ notifs|length}}</span>
+                                                {%else%}
+                                               
+                                                {%endif%}Demande Event</a>
+                                                
+                                </div>
+                            </li>
+                            {%endif%}
+                        {%endif%}
+                    </ul>
+                        {%if user%}
+                        <button data-request=\"onLogout\" data-request-data=\"redirect: '/'\" style=\"border-radius:50px\" class=\"btn btn-outline-primary my-2 my-sm-0\">
+    
+                                <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i>
+                                SIGN-OUT</button> 
+                        {%else%}
+                        <button style=\"border-radius:50px\" class=\"btn btn-outline-primary my-2 my-sm-0\"  data-toggle=\"modal\" data-target=\"#login-modal\">
+    
+                        <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i>
+                        SIGN-IN</button>
+                        {%endif%}
+                </div>
+            </nav>
+        </header>
+      
 
   <!-- login and register modal start-->
     <div class=\"login-registration-modal\" id=\"loginRegModal\">

@@ -33,7 +33,7 @@ class __TwigTemplate_270c54c675606217155442b47096d4d76a1fd395fcac52e55ed2fe3b2c1
     {
         // line 1
         echo "
-<section class=\"live-token-sale\" style=\"padding-top: 150px;\">
+<section class=\"live-token-sale\" style=\"\">
         <div class=\"container\">
             <div class=\"row\">
                 <div class=\"col-lg-12 remove-col-padding-mobile\">
@@ -139,6 +139,7 @@ class __TwigTemplate_270c54c675606217155442b47096d4d76a1fd395fcac52e55ed2fe3b2c1
         </div>
     </div>
     </section>
+    
            <!-- login and register modal start-->
 
     <div class=\"login-registration-modal\" id=\"loginRegModal\">
@@ -158,67 +159,67 @@ class __TwigTemplate_270c54c675606217155442b47096d4d76a1fd395fcac52e55ed2fe3b2c1
                         <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
                             <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
                                ";
-        // line 91
+        // line 92
         if ( !($context["user"] ?? null)) {
-            // line 92
+            // line 93
             echo "
                                     <div class=\"row\">
                                 
                                         <div class=\"col-md-6\">
                                             <h3 class=\"";
-            // line 96
-            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 96), "id", [], "any", false, false, false, 96) == "register")) {
+            // line 97
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 97), "id", [], "any", false, false, false, 97) == "register")) {
                 echo "active";
             }
             echo "\"><a href=\"";
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("register");
             echo "\">Créer un compte</a></h3>
                                             ";
-            // line 97
+            // line 98
             $context['__cms_partial_params'] = [];
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::signin")            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 98
+            // line 99
             echo "                                        </div>
                                 
                                     </div>
                                 
                                 ";
         } else {
-            // line 103
+            // line 104
             echo "                                
                                 ";
         }
-        // line 105
+        // line 106
         echo "                            </div><!-- login form wrapper end -->
                         </div>
                         <div class=\"tab-pane fade\" id=\"nav-signup\" role=\"tabpanel\" aria-labelledby=\"nav-signup-tab\">
 
                             <div class=\"singup-form-wrapper\">
                                 ";
-        // line 110
+        // line 111
         if ( !($context["user"] ?? null)) {
-            // line 111
+            // line 112
             echo "                                
                                     <div class=\"row\">
                                         <div class=\"col-md-6\">
                                             ";
-            // line 114
+            // line 115
             $context['__cms_partial_params'] = [];
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::register")            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 115
+            // line 116
             echo "                                        </div>
                                 
                                     </div>
                                 
                                 ";
         } else {
-            // line 120
+            // line 121
             echo "                                
                                 ";
         }
-        // line 122
+        // line 123
         echo "                             </div>
                         </div>
                     </div><!-- /.tab conent-->
@@ -242,13 +243,13 @@ class __TwigTemplate_270c54c675606217155442b47096d4d76a1fd395fcac52e55ed2fe3b2c1
 
     public function getDebugInfo()
     {
-        return array (  222 => 122,  218 => 120,  211 => 115,  207 => 114,  202 => 111,  200 => 110,  193 => 105,  189 => 103,  182 => 98,  178 => 97,  170 => 96,  164 => 92,  162 => 91,  134 => 66,  130 => 64,  119 => 62,  115 => 61,  108 => 57,  103 => 54,  99 => 53,  92 => 48,  88 => 47,  80 => 41,  76 => 40,  35 => 1,);
+        return array (  223 => 123,  219 => 121,  212 => 116,  208 => 115,  203 => 112,  201 => 111,  194 => 106,  190 => 104,  183 => 99,  179 => 98,  171 => 97,  165 => 93,  163 => 92,  134 => 66,  130 => 64,  119 => 62,  115 => 61,  108 => 57,  103 => 54,  99 => 53,  92 => 48,  88 => 47,  80 => 41,  76 => 40,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("
-<section class=\"live-token-sale\" style=\"padding-top: 150px;\">
+<section class=\"live-token-sale\" style=\"\">
         <div class=\"container\">
             <div class=\"row\">
                 <div class=\"col-lg-12 remove-col-padding-mobile\">
@@ -319,6 +320,7 @@ class __TwigTemplate_270c54c675606217155442b47096d4d76a1fd395fcac52e55ed2fe3b2c1
         </div>
     </div>
     </section>
+    
            <!-- login and register modal start-->
 
     <div class=\"login-registration-modal\" id=\"loginRegModal\">

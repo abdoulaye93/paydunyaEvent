@@ -1,12 +1,19 @@
-1566381966a:1:{s:16:"retour_achat.htm";a:9:{s:8:"fileName";s:16:"retour_achat.htm";s:7:"content";s:472:"title = "retour_achat"
+1566474236a:1:{s:16:"retour_achat.htm";a:11:{s:8:"fileName";s:16:"retour_achat.htm";s:7:"content";s:553:"title = "retour_achat"
 url = "/retour_achat/:id?"
 layout = "retour_achat"
 is_hidden = 0
+
+[account]
+paramCode = "code"
+forceSecure = 0
+
+[session]
+security = "all"
 ==
 <!--<div class="container" style="height: 1000px;">
     <a href="{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}" onclick="edition();return false;">Imprimer le ticket</a>
     <a href="{{'calendar'|page({date:dateEv,email:mail,nom:nomevent,description:description,lieu:lieu})}}">Ajouter à votre calendar</a>{{lieu}}
-</div>-->";s:5:"mtime";i:1566380702;s:6:"markup";s:376:"<!--<div class="container" style="height: 1000px;">
+</div>-->";s:5:"mtime";i:1566389904;s:6:"markup";s:376:"<!--<div class="container" style="height: 1000px;">
     <a href="{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}" onclick="edition();return false;">Imprimer le ticket</a>
     <a href="{{'calendar'|page({date:dateEv,email:mail,nom:nomevent,description:description,lieu:lieu})}}">Ajouter à votre calendar</a>{{lieu}}
-</div>-->";s:4:"code";N;s:5:"title";s:12:"retour_achat";s:3:"url";s:18:"/retour_achat/:id?";s:6:"layout";s:12:"retour_achat";s:9:"is_hidden";s:1:"0";}}
+</div>-->";s:4:"code";N;s:5:"title";s:12:"retour_achat";s:3:"url";s:18:"/retour_achat/:id?";s:6:"layout";s:12:"retour_achat";s:9:"is_hidden";s:1:"0";s:7:"account";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}s:7:"session";a:1:{s:8:"security";s:3:"all";}}}

@@ -115,7 +115,72 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
 <!-- Material Design Bootstrap -->
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
 <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
+<link href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">
+
+<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+
+<link rel=\"stylesheet\" href=\"";
+        // line 47
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/animate.css");
+        echo "\">
+
+<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\">
+</script>
+
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
+
+<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>
     <style media=\"screen\">
+         #II {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 80px;
+
+      color: #fff;
+    }
+
+    #II2 {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 60px;
+
+      color: #fff;
+    }
+
+    #II3 {
+      background-image: url('images/lg.png');
+      /* background-size: cover; */
+      /* background-attachment: fixed; */
+      background-repeat: no-repeat;
+      padding: 50px;
+
+      color: #fff;
+    }
+
+    .color-nav {
+      background-color: #491105;
+    }
+
+    .color-paydunya {
+      background-color: #1894dd;
+    }
+
+    .color {
+      color: #000;
+    }
+
+    .color-orange {
+      color: orange;
+    }
+
+    #ICON {
+      -webkit-animation: rotation 2s infinite linear;
+    }
+
   .eml {
     color: red;
   }
@@ -157,7 +222,18 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
     background: #007bb5;
     color: white;
   }
-
+  #image {
+            background-image: url(\"";
+        // line 148
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/ad_images/bgFixed.jpg");
+        echo "\");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 110px;
+            margin: 0px;
+            outline: none;
+        }
   .social-icons {
     margin-top:20px;
     width: 300px;
@@ -181,11 +257,11 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
     
        <header id=\"layout-header\">
             ";
-        // line 108
+        // line 178
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 109
+        // line 179
         echo "        </header>
 
     <!-- navbar area start -->
@@ -193,36 +269,41 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
         <!-- Content -->
         <section id=\"layout-content\">
             ";
-        // line 115
+        // line 185
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 116
+        // line 186
         echo "        </section>
-
-        <!-- Footer -->
+        ";
+        // line 187
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("paydunya/afterfooter"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        // line 188
+        echo "        <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 120
+        // line 190
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 121
+        // line 191
         echo "        </footer>
 
         <!-- Scripts -->
         <script src=\"";
-        // line 124
+        // line 194
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
         <script src=\"";
-        // line 125
+        // line 195
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
         <script src=\"";
-        // line 126
+        // line 196
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script>
         ";
-        // line 127
+        // line 197
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="'. Request::getBasePath()
@@ -237,11 +318,11 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 128
+        // line 198
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 129
+        // line 199
         echo "        
 <script>
    function increaseAdView(adID) {
@@ -492,7 +573,7 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
 
     public function getDebugInfo()
     {
-        return array (  245 => 129,  241 => 128,  226 => 127,  222 => 126,  218 => 125,  214 => 124,  209 => 121,  205 => 120,  199 => 116,  197 => 115,  189 => 109,  185 => 108,  109 => 35,  105 => 34,  99 => 33,  95 => 32,  90 => 30,  85 => 28,  80 => 26,  75 => 24,  70 => 22,  65 => 20,  60 => 18,  54 => 15,  49 => 13,  35 => 1,);
+        return array (  326 => 199,  322 => 198,  307 => 197,  303 => 196,  299 => 195,  295 => 194,  290 => 191,  286 => 190,  282 => 188,  278 => 187,  275 => 186,  273 => 185,  265 => 179,  261 => 178,  228 => 148,  124 => 47,  109 => 35,  105 => 34,  99 => 33,  95 => 32,  90 => 30,  85 => 28,  80 => 26,  75 => 24,  70 => 22,  65 => 20,  60 => 18,  54 => 15,  49 => 13,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -539,7 +620,69 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
 <!-- Material Design Bootstrap -->
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
 <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
+<link href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">
+
+<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+
+<link rel=\"stylesheet\" href=\"{{ 'assets/user/css/animate.css'|theme }}\">
+
+<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\">
+</script>
+
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
+
+<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>
     <style media=\"screen\">
+         #II {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 80px;
+
+      color: #fff;
+    }
+
+    #II2 {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 60px;
+
+      color: #fff;
+    }
+
+    #II3 {
+      background-image: url('images/lg.png');
+      /* background-size: cover; */
+      /* background-attachment: fixed; */
+      background-repeat: no-repeat;
+      padding: 50px;
+
+      color: #fff;
+    }
+
+    .color-nav {
+      background-color: #491105;
+    }
+
+    .color-paydunya {
+      background-color: #1894dd;
+    }
+
+    .color {
+      color: #000;
+    }
+
+    .color-orange {
+      color: orange;
+    }
+
+    #ICON {
+      -webkit-animation: rotation 2s infinite linear;
+    }
+
   .eml {
     color: red;
   }
@@ -581,7 +724,15 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
     background: #007bb5;
     color: white;
   }
-
+  #image {
+            background-image: url(\"{{ 'assets/user/ad_images/bgFixed.jpg'|theme }}\");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 110px;
+            margin: 0px;
+            outline: none;
+        }
   .social-icons {
     margin-top:20px;
     width: 300px;
@@ -613,7 +764,7 @@ class __TwigTemplate_fcec50c19a9f040fe16fc721119e2f09ce3a52ebbeb6c4f0d9c60769b0b
         <section id=\"layout-content\">
             {% page %}
         </section>
-
+        {% partial 'paydunya/afterfooter' %}
         <!-- Footer -->
         <footer id=\"layout-footer\">
             {% partial 'site/footer' %}

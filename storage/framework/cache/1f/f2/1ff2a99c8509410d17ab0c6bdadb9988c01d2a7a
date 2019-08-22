@@ -1,7 +1,71 @@
-1566381202a:1:{s:17:"events/filter.htm";a:5:{s:8:"fileName";s:17:"events/filter.htm";s:7:"content";s:172:"<div class="ui action input" id="EventFilter">
+1566473647a:1:{s:17:"events/filter.htm";a:5:{s:8:"fileName";s:17:"events/filter.htm";s:7:"content";s:1645:" <!-- <div class="ui action input" id="EventFilter">
         <input type="text" placeholder="Search..."  name="typ">
         <input type="submit"_ value="Search">
-      </div>";s:5:"mtime";i:1565703362;s:6:"markup";s:172:"<div class="ui action input" id="EventFilter">
+      </div>-->
+      <header class="text-center mt-1 p-0 justify-content-center navbar navbar-expand-lg" id="image">
+
+          <div class="card bg-transparent mt-3 mb-5 border-0" >
+              <div class="card-body text-center">
+              <h5
+              style="font-size:6vw"
+              class="card-title text-white display-4" >
+              PAYDUNYA-EVENT</h5>
+  
+              <hr class="bg-white" style='width: 200px '>
+  
+              <p class="card-text text-white lead lh-180">Facilitez la gestion des réservations et/ou ventes de ticket lors de vos événements professionnels ou grand public.</p>
+  
+              <!-- <p class="card-text text-white">La solution idéale pour gérer en toute simplicité votre événement : billet­terie en ligne, contrôle d’accès, gestion d’inscriptions, envoi d’invita­tions...</p> -->
+  
+             <!--   <form action="" class="justify-content-center form-inline my-2 my-lg-0">-->
+              
+              <input class="form-control mr-sm-2" type="text" placeholder="Rechercher un event" aria-label="Search" name="typ">
+  
+              <button  
+              class="btn btn-outline-primary text-uppercase" type="submit">
+  
+              <i class="animated pulse infinite fa fa-arrow-right " aria-hidden="true">
+              Je me lance</i>
+  
+              </button>
+              <!--  </form>-->
+  
+              </div>
+          </div>
+          
+      </header>";s:5:"mtime";i:1566409191;s:6:"markup";s:1644:"<!-- <div class="ui action input" id="EventFilter">
         <input type="text" placeholder="Search..."  name="typ">
         <input type="submit"_ value="Search">
-      </div>";s:4:"code";N;}}
+      </div>-->
+      <header class="text-center mt-1 p-0 justify-content-center navbar navbar-expand-lg" id="image">
+
+          <div class="card bg-transparent mt-3 mb-5 border-0" >
+              <div class="card-body text-center">
+              <h5
+              style="font-size:6vw"
+              class="card-title text-white display-4" >
+              PAYDUNYA-EVENT</h5>
+  
+              <hr class="bg-white" style='width: 200px '>
+  
+              <p class="card-text text-white lead lh-180">Facilitez la gestion des réservations et/ou ventes de ticket lors de vos événements professionnels ou grand public.</p>
+  
+              <!-- <p class="card-text text-white">La solution idéale pour gérer en toute simplicité votre événement : billet­terie en ligne, contrôle d’accès, gestion d’inscriptions, envoi d’invita­tions...</p> -->
+  
+             <!--   <form action="" class="justify-content-center form-inline my-2 my-lg-0">-->
+              
+              <input class="form-control mr-sm-2" type="text" placeholder="Rechercher un event" aria-label="Search" name="typ">
+  
+              <button  
+              class="btn btn-outline-primary text-uppercase" type="submit">
+  
+              <i class="animated pulse infinite fa fa-arrow-right " aria-hidden="true">
+              Je me lance</i>
+  
+              </button>
+              <!--  </form>-->
+  
+              </div>
+          </div>
+          
+      </header>";s:4:"code";N;}}

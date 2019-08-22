@@ -126,12 +126,77 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
 <!-- Material Design Bootstrap -->
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
 <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
-<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/sema }}\"
+<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/sema }}\">
 <link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 46
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("semantic/semantic.min.css");
-        echo "\">>
+        echo "\">
+<link href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">
+
+<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+
+<link rel=\"stylesheet\" href=\"";
+        // line 51
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/animate.css");
+        echo "\">
+
+<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\">
+</script>
+
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
+
+<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>
     <style media=\"screen\">
+         #II {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 80px;
+
+      color: #fff;
+    }
+
+    #II2 {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 60px;
+
+      color: #fff;
+    }
+
+    #II3 {
+      background-image: url('images/lg.png');
+      /* background-size: cover; */
+      /* background-attachment: fixed; */
+      background-repeat: no-repeat;
+      padding: 50px;
+
+      color: #fff;
+    }
+
+    .color-nav {
+      background-color: #491105;
+    }
+
+    .color-paydunya {
+      background-color: #1894dd;
+    }
+
+    .color {
+      color: #000;
+    }
+
+    .color-orange {
+      color: orange;
+    }
+
+    #ICON {
+      -webkit-animation: rotation 2s infinite linear;
+    }
+
   .eml {
     color: red;
   }
@@ -149,7 +214,18 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
     margin: 5px 2px;
     border-radius: 50%;
   }
-
+  #image {
+            background-image: url(\"";
+        // line 128
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/ad_images/bgFixed.jpg");
+        echo "\");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 110px;
+            margin: 0px;
+            outline: none;
+        }
   .social-icons .fa:hover {
       opacity: 0.7;
   }
@@ -197,11 +273,11 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
     
        <header id=\"layout-header\">
             ";
-        // line 112
+        // line 182
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 113
+        // line 183
         echo "        </header>
 
     <!-- navbar area start -->
@@ -209,37 +285,42 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
         <!-- Content -->
         <section id=\"layout-content\">
             ";
-        // line 119
+        // line 189
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 120
+        // line 190
         echo "        </section>
-    
-    
+        ";
+        // line 191
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("paydunya/afterfooter"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        // line 192
+        echo "    
         <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 125
+        // line 195
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 126
+        // line 196
         echo "        </footer>
 
         <!-- Scripts -->
         <script src=\"";
-        // line 129
+        // line 199
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
         <script src=\"";
-        // line 130
+        // line 200
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
         <script src=\"";
-        // line 131
+        // line 201
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script>
         ";
-        // line 132
+        // line 202
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="'. Request::getBasePath()
@@ -254,11 +335,11 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 133
+        // line 203
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 134
+        // line 204
         echo "        
 <script>
    (function(\$){
@@ -459,7 +540,7 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
   integrity=\"sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=\"
   crossorigin=\"anonymous\"></script>
 <script src=\"";
-        // line 333
+        // line 403
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("/assets/semantic/semantic.min.js");
         echo "\"></script>
     </body>
@@ -478,7 +559,7 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
 
     public function getDebugInfo()
     {
-        return array (  463 => 333,  262 => 134,  258 => 133,  243 => 132,  239 => 131,  235 => 130,  231 => 129,  226 => 126,  222 => 125,  215 => 120,  213 => 119,  205 => 113,  201 => 112,  132 => 46,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
+        return array (  544 => 403,  343 => 204,  339 => 203,  324 => 202,  320 => 201,  316 => 200,  312 => 199,  307 => 196,  303 => 195,  298 => 192,  294 => 191,  291 => 190,  289 => 189,  281 => 183,  277 => 182,  220 => 128,  140 => 51,  132 => 46,  120 => 37,  116 => 36,  110 => 35,  106 => 34,  101 => 32,  96 => 30,  91 => 28,  86 => 26,  81 => 24,  76 => 22,  71 => 20,  65 => 17,  60 => 15,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -527,9 +608,71 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
 <!-- Material Design Bootstrap -->
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
 <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
-<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/sema }}\"
-<link rel=\"stylesheet\" type=\"text/css\" href=\"{{'semantic/semantic.min.css'|theme}}\">>
+<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/sema }}\">
+<link rel=\"stylesheet\" type=\"text/css\" href=\"{{'semantic/semantic.min.css'|theme}}\">
+<link href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">
+
+<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+
+<link rel=\"stylesheet\" href=\"{{ 'assets/user/css/animate.css'|theme }}\">
+
+<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\">
+</script>
+
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
+
+<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>
     <style media=\"screen\">
+         #II {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 80px;
+
+      color: #fff;
+    }
+
+    #II2 {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 60px;
+
+      color: #fff;
+    }
+
+    #II3 {
+      background-image: url('images/lg.png');
+      /* background-size: cover; */
+      /* background-attachment: fixed; */
+      background-repeat: no-repeat;
+      padding: 50px;
+
+      color: #fff;
+    }
+
+    .color-nav {
+      background-color: #491105;
+    }
+
+    .color-paydunya {
+      background-color: #1894dd;
+    }
+
+    .color {
+      color: #000;
+    }
+
+    .color-orange {
+      color: orange;
+    }
+
+    #ICON {
+      -webkit-animation: rotation 2s infinite linear;
+    }
+
   .eml {
     color: red;
   }
@@ -547,7 +690,15 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
     margin: 5px 2px;
     border-radius: 50%;
   }
-
+  #image {
+            background-image: url(\"{{ 'assets/user/ad_images/bgFixed.jpg'|theme }}\");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 110px;
+            margin: 0px;
+            outline: none;
+        }
   .social-icons .fa:hover {
       opacity: 0.7;
   }
@@ -603,7 +754,7 @@ class __TwigTemplate_b423e55371dc4a2d783175b6aeb1962dfb4ce5698bfa24bef7493a87bfe
         <section id=\"layout-content\">
             {% page %}
         </section>
-    
+        {% partial 'paydunya/afterfooter' %}
     
         <!-- Footer -->
         <footer id=\"layout-footer\">

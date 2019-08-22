@@ -1,9 +1,7 @@
-<div class="container-fluid mt-5 mx-auto" style=" height: 400px;padding-top: 200px;padding-left: 800px;background-attachment: fixed;background-image: url({{ '/assets/images/bgFixed.jpg'|theme }});background-position: center;background-repeat: no-repeat">
-   
-  {{form_ajax('onFilterEvents',{update:{'events/events':'#upcoming_tab','events/eventexpire':'#ending_tab','events/pagination':'#active_tab'}})}}
+     {{form_ajax('onFilterEvents',{update:{'events/events':'#upcoming_tab','events/eventexpire':'#ending_tab','events/pagination':'#active_tab'}})}}
    {% partial 'events/filter'%}
    {{form_close()}}
-</div>
+
 <section class="live-token-sale" >
         <div class="container ">
             <div class="row justify-content-center">

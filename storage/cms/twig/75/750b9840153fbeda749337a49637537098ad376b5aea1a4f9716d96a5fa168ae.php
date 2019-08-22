@@ -36,7 +36,7 @@ class __TwigTemplate_e4cd92577717a11123f31026d4e55969dedaf3cf7550a7a052d0b493105
         echo "
 <div id=\"EventFilter\" class=\"text-center\">
         <label>Page</label>
-        <select class=\"ui fluid dropdown\" name=\"Filter[page]\">
+        <select class=\"ui  dropdown\" name=\"Filter[page]\">
             ";
         // line 5
         $context['_parent'] = $context;
@@ -95,7 +95,7 @@ class __TwigTemplate_e4cd92577717a11123f31026d4e55969dedaf3cf7550a7a052d0b493105
         return new Source("{{form_ajax('onFilterAccess',{update:{'access/events':'#upcoming_tab','access/eventsexpire':'#ending_tab','access/eventspublier':'#active_tab'}})}}
 <div id=\"EventFilter\" class=\"text-center\">
         <label>Page</label>
-        <select class=\"ui fluid dropdown\" name=\"Filter[page]\">
+        <select class=\"ui  dropdown\" name=\"Filter[page]\">
             {% for i in 1..accesspages %}
                 {%  if i == page %}
                     <option value=\"{{page}}\" selected>{{ page }}</option>

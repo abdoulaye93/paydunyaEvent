@@ -1,0 +1,204 @@
+1566469951a:1:{s:9:"about.htm";a:6:{s:8:"fileName";s:9:"about.htm";s:7:"content";s:2363:"==
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <style>
+    #II {
+      background-image: url("{{ 'assets/user/ad_images/bgFixed.jpg'|theme }}");
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 80px;
+
+      color: #fff;
+    }
+
+    #II2 {
+      background-image: url("{{ 'assets/user/ad_images/bgFixed.jpg'|theme }}");
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 60px;
+
+      color: #fff;
+    }
+
+    #II3 {
+      background-image: url("{{ 'assets/user/ad_images/lg.png'|theme }}");
+      /* background-size: cover; */
+      /* background-attachment: fixed; */
+      background-repeat: no-repeat;
+      padding: 50px;
+
+      color: #fff;
+    }
+
+    .color-nav {
+      background-color: #491105;
+    }
+
+    .color-paydunya {
+      background-color: #1894dd;
+    }
+
+    .color {
+      color: #000;
+    }
+
+    .color-orange {
+      color: orange;
+    }
+
+    #ICON {
+      -webkit-animation: rotation 2s infinite linear;
+    }
+
+    @-webkit-keyframes rotation {
+      from {
+        -webkit-transform: rotate(0deg);
+      }
+
+      to {
+        -webkit-transform: rotate(359deg);
+      }
+    }
+  </style>
+
+  <title>Document</title>
+</head>
+
+<body>
+
+
+    <header id="layout-header">
+        {% partial 'site/header' %}
+    </header>
+    <section id="layout-content">
+        {% page %}
+    </section>
+  <footer id="layout-footer">
+      {% partial 'site/footer' %}
+  </footer>
+
+</body>
+
+</html>";s:5:"mtime";i:1566427290;s:6:"markup";s:2359:"<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <style>
+    #II {
+      background-image: url("{{ 'assets/user/ad_images/bgFixed.jpg'|theme }}");
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 80px;
+
+      color: #fff;
+    }
+
+    #II2 {
+      background-image: url("{{ 'assets/user/ad_images/bgFixed.jpg'|theme }}");
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 60px;
+
+      color: #fff;
+    }
+
+    #II3 {
+      background-image: url("{{ 'assets/user/ad_images/lg.png'|theme }}");
+      /* background-size: cover; */
+      /* background-attachment: fixed; */
+      background-repeat: no-repeat;
+      padding: 50px;
+
+      color: #fff;
+    }
+
+    .color-nav {
+      background-color: #491105;
+    }
+
+    .color-paydunya {
+      background-color: #1894dd;
+    }
+
+    .color {
+      color: #000;
+    }
+
+    .color-orange {
+      color: orange;
+    }
+
+    #ICON {
+      -webkit-animation: rotation 2s infinite linear;
+    }
+
+    @-webkit-keyframes rotation {
+      from {
+        -webkit-transform: rotate(0deg);
+      }
+
+      to {
+        -webkit-transform: rotate(359deg);
+      }
+    }
+  </style>
+
+  <title>Document</title>
+</head>
+
+<body>
+
+
+    <header id="layout-header">
+        {% partial 'site/header' %}
+    </header>
+    <section id="layout-content">
+        {% page %}
+    </section>
+  <footer id="layout-footer">
+      {% partial 'site/footer' %}
+  </footer>
+
+</body>
+
+</html>";s:4:"code";N;s:17:"_PARSER_ERROR_INI";s:0:"";}}

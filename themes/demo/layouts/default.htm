@@ -101,7 +101,69 @@ security = "all"
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="{{ 'assets/user/css/animate.css'|theme }}">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style media="screen">
+         #II {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 80px;
+
+      color: #fff;
+    }
+
+    #II2 {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 60px;
+
+      color: #fff;
+    }
+
+    #II3 {
+      background-image: url('images/lg.png');
+      /* background-size: cover; */
+      /* background-attachment: fixed; */
+      background-repeat: no-repeat;
+      padding: 50px;
+
+      color: #fff;
+    }
+
+    .color-nav {
+      background-color: #491105;
+    }
+
+    .color-paydunya {
+      background-color: #1894dd;
+    }
+
+    .color {
+      color: #000;
+    }
+
+    .color-orange {
+      color: orange;
+    }
+
+    #ICON {
+      -webkit-animation: rotation 2s infinite linear;
+    }
+
   .eml {
     color: red;
   }
@@ -109,6 +171,15 @@ security = "all"
   .emr {
     color: red;
   }
+  #image {
+            background-image: url("{{ 'assets/user/ad_images/bgFixed.jpg'|theme }}");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 110px;
+            margin: 0px;
+            outline: none;
+        }
   .social-icons .fa {
     padding-top: 14px;
     font-size: 30px;
@@ -186,7 +257,7 @@ security = "all"
         <section id="layout-content">
             {% page %}
         </section>
-       
+        {% partial 'paydunya/afterfooter' %}
         <!-- Footer -->
         <footer id="layout-footer">
             {% partial 'site/footer' %}

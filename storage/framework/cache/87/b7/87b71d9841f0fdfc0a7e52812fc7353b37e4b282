@@ -1,8 +1,16 @@
-1566382184a:1:{s:16:"retour_achat.htm";a:6:{s:8:"fileName";s:16:"retour_achat.htm";s:7:"content";s:15571:"==
+1566473700a:1:{s:16:"retour_achat.htm";a:6:{s:8:"fileName";s:16:"retour_achat.htm";s:7:"content";s:20679:"==
 <?php
 use payment\Payment\Models\PaydunyaConfig;
 use event\event\models\Event;
 use event\event\models\AchatList;
+function onCalendar(){
+  $date=Input::get('date');
+  $nom=Input::get('nomevent');
+  $email=Input::get('email');
+  $desc=Input::get('description');
+  $lieu=Input::get('lieu');
+  return  Redirect::to("/calnonsign/$email/$date/$nom/$lieu/$desc");
+}
 function onStart(){
   $eventconf=Event::where('id',Request::segment(2))->first();
   $config =PaydunyaConfig::where('id_user',$eventconf->user_id)->first();
@@ -43,7 +51,9 @@ function onStart(){
     }
     $user = Auth::getUser();
     $achat=new AchatList();
-    $achat->user_email=$user->email;
+    if(Auth::getUser()){
+      $achat->user_email=$user->email;
+    }
     $achat->event_id=$invoice->getCustomData("id");
     $achat->montant=$invoice->getTotalAmount();
     $achat->save();
@@ -99,7 +109,69 @@ function onStart(){
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="{{ 'assets/user/css/animate.css'|theme }}">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style media="screen">
+         #II {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 80px;
+
+      color: #fff;
+    }
+
+    #II2 {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 60px;
+
+      color: #fff;
+    }
+
+    #II3 {
+      background-image: url('images/lg.png');
+      /* background-size: cover; */
+      /* background-attachment: fixed; */
+      background-repeat: no-repeat;
+      padding: 50px;
+
+      color: #fff;
+    }
+
+    .color-nav {
+      background-color: #491105;
+    }
+
+    .color-paydunya {
+      background-color: #1894dd;
+    }
+
+    .color {
+      color: #000;
+    }
+
+    .color-orange {
+      color: orange;
+    }
+
+    #ICON {
+      -webkit-animation: rotation 2s infinite linear;
+    }
+
   .eml {
     color: red;
   }
@@ -117,7 +189,15 @@ function onStart(){
     margin: 5px 2px;
     border-radius: 50%;
   }
-
+  #image {
+            background-image: url("{{ 'assets/user/ad_images/bgFixed.jpg'|theme }}");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 110px;
+            margin: 0px;
+            outline: none;
+        }
   .social-icons .fa:hover {
       opacity: 0.7;
   }
@@ -184,10 +264,48 @@ function onStart(){
         <section id="layout-content">
             {% page %}
         </section>
-         <div class="container" style="height: 1000px; padding-top: 200px;">
+        {% if user %}
+        <div class="container" style="height: 1000px; padding-top: 200px;">
           <a href="{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}" onclick="edition();return false;">Imprimer le ticket</a>
           <a href="{{'calendar'|page({date:dateEv,email:mail,nom:nomevent,description:description,lieu:lieu})}}">Ajouter à votre calendar</a>
         </div> 
+        {% else %}
+        <div class="container" style="height: 1000px; padding-top: 200px;">
+          <a href="{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}" onclick="edition();return false;">Imprimer le ticket</a>
+          <a class="btn btn-warning btn-sm" href="#" data-toggle="modal" data-target="#invite-modal" class="action-btn">Ajouter à votre calendar</a>
+          <div class="login-registration-modal" id="loginRegModal">
+              <div class="login-modal-wrapper"><!-- login modal warapper satart start-->
+                  <div class="modal" tabindex="-1" id="invite-modal" role="dialog"><!-- #login modal-->
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content"><!-- modal content start -->
+                             
+                              <div class="tab-content" id="nav-tabContent"><!-- tab content-->
+                                  <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+                                      <div class="login-form-wrapper"><!-- login form wrapper start -->
+                                          <form data-request="onCalendar">
+                                              <div class="form-element square login"><!-- form element login start -->
+                                                  <label>Entrer l'email
+                                                  </label>
+                                                  <input type="hidden" name="date" value="{{dateEv}}" >
+                                                  <input type="hidden" name="nomevent" value="{{nomevent}}" >
+                                                  <input type="hidden" name="description" value="{{description}}" >
+                                                  <input type="hidden" name="lieu" value="{{lieu}}" >
+                                                  <input name="email" type="email" placeholder="Entrer l'email...." class="input-field-square">
+                                                  <p class="eml"></p>
+                                              </div><!-- form element login end -->
+                                            <!-- form element login end -->
+                                              <button type="submit" class="submit-form-btn">send</button>
+                                          </form>
+                                      </div><!-- login form wrapper end -->
+                                  </div>
+                              </div><!-- /.tab conent-->
+                          </div><!-- modal content end -->
+                      </div>
+                  </div><!-- /#loginmodal -->
+              </div><!-- login modal warapper satart end-->
+          </div>
+        </div>
+        {% endif %}
         
         <!-- Footer -->
         <footer id="layout-footer">
@@ -404,7 +522,7 @@ $('#EventPagination').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:5:"mtime";i:1566381576;s:6:"markup";s:13164:"<!DOCTYPE html>
+</html>";s:5:"mtime";i:1566472408;s:6:"markup";s:17983:"<!DOCTYPE html>
 <html>
     <head>
      <meta charset="utf-8">
@@ -447,7 +565,69 @@ $('#EventPagination').on('change', 'input, select', function(){
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="{{ 'assets/user/css/animate.css'|theme }}">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style media="screen">
+         #II {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 80px;
+
+      color: #fff;
+    }
+
+    #II2 {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 60px;
+
+      color: #fff;
+    }
+
+    #II3 {
+      background-image: url('images/lg.png');
+      /* background-size: cover; */
+      /* background-attachment: fixed; */
+      background-repeat: no-repeat;
+      padding: 50px;
+
+      color: #fff;
+    }
+
+    .color-nav {
+      background-color: #491105;
+    }
+
+    .color-paydunya {
+      background-color: #1894dd;
+    }
+
+    .color {
+      color: #000;
+    }
+
+    .color-orange {
+      color: orange;
+    }
+
+    #ICON {
+      -webkit-animation: rotation 2s infinite linear;
+    }
+
   .eml {
     color: red;
   }
@@ -465,7 +645,15 @@ $('#EventPagination').on('change', 'input, select', function(){
     margin: 5px 2px;
     border-radius: 50%;
   }
-
+  #image {
+            background-image: url("{{ 'assets/user/ad_images/bgFixed.jpg'|theme }}");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 110px;
+            margin: 0px;
+            outline: none;
+        }
   .social-icons .fa:hover {
       opacity: 0.7;
   }
@@ -532,10 +720,48 @@ $('#EventPagination').on('change', 'input, select', function(){
         <section id="layout-content">
             {% page %}
         </section>
-         <div class="container" style="height: 1000px; padding-top: 200px;">
+        {% if user %}
+        <div class="container" style="height: 1000px; padding-top: 200px;">
           <a href="{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}" onclick="edition();return false;">Imprimer le ticket</a>
           <a href="{{'calendar'|page({date:dateEv,email:mail,nom:nomevent,description:description,lieu:lieu})}}">Ajouter à votre calendar</a>
         </div> 
+        {% else %}
+        <div class="container" style="height: 1000px; padding-top: 200px;">
+          <a href="{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}" onclick="edition();return false;">Imprimer le ticket</a>
+          <a class="btn btn-warning btn-sm" href="#" data-toggle="modal" data-target="#invite-modal" class="action-btn">Ajouter à votre calendar</a>
+          <div class="login-registration-modal" id="loginRegModal">
+              <div class="login-modal-wrapper"><!-- login modal warapper satart start-->
+                  <div class="modal" tabindex="-1" id="invite-modal" role="dialog"><!-- #login modal-->
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content"><!-- modal content start -->
+                             
+                              <div class="tab-content" id="nav-tabContent"><!-- tab content-->
+                                  <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+                                      <div class="login-form-wrapper"><!-- login form wrapper start -->
+                                          <form data-request="onCalendar">
+                                              <div class="form-element square login"><!-- form element login start -->
+                                                  <label>Entrer l'email
+                                                  </label>
+                                                  <input type="hidden" name="date" value="{{dateEv}}" >
+                                                  <input type="hidden" name="nomevent" value="{{nomevent}}" >
+                                                  <input type="hidden" name="description" value="{{description}}" >
+                                                  <input type="hidden" name="lieu" value="{{lieu}}" >
+                                                  <input name="email" type="email" placeholder="Entrer l'email...." class="input-field-square">
+                                                  <p class="eml"></p>
+                                              </div><!-- form element login end -->
+                                            <!-- form element login end -->
+                                              <button type="submit" class="submit-form-btn">send</button>
+                                          </form>
+                                      </div><!-- login form wrapper end -->
+                                  </div>
+                              </div><!-- /.tab conent-->
+                          </div><!-- modal content end -->
+                      </div>
+                  </div><!-- /#loginmodal -->
+              </div><!-- login modal warapper satart end-->
+          </div>
+        </div>
+        {% endif %}
         
         <!-- Footer -->
         <footer id="layout-footer">
@@ -752,9 +978,17 @@ $('#EventPagination').on('change', 'input, select', function(){
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
     </body>
-</html>";s:4:"code";s:2386:"use payment\Payment\Models\PaydunyaConfig;
+</html>";s:4:"code";s:2675:"use payment\Payment\Models\PaydunyaConfig;
 use event\event\models\Event;
 use event\event\models\AchatList;
+function onCalendar(){
+  $date=Input::get('date');
+  $nom=Input::get('nomevent');
+  $email=Input::get('email');
+  $desc=Input::get('description');
+  $lieu=Input::get('lieu');
+  return  Redirect::to("/calnonsign/$email/$date/$nom/$lieu/$desc");
+}
 function onStart(){
   $eventconf=Event::where('id',Request::segment(2))->first();
   $config =PaydunyaConfig::where('id_user',$eventconf->user_id)->first();
@@ -795,7 +1029,9 @@ function onStart(){
     }
     $user = Auth::getUser();
     $achat=new AchatList();
-    $achat->user_email=$user->email;
+    if(Auth::getUser()){
+      $achat->user_email=$user->email;
+    }
     $achat->event_id=$invoice->getCustomData("id");
     $achat->montant=$invoice->getTotalAmount();
     $achat->save();

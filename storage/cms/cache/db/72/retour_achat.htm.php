@@ -1,9 +1,17 @@
 <?php 
-use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;use event\event\models\AchatList;class Cms5d5d16109e31b865578167_739eb2ed22404abc968db27c8c12a8e4Class extends Cms\Classes\LayoutCode
+use payment\Payment\Models\PaydunyaConfig;use event\event\models\Event;use event\event\models\AchatList;class Cms5d5e791dde184579806718_9572a6ef66335fff3d961ac0d55c6b73Class extends Cms\Classes\LayoutCode
 {
 
 
 
+public function onCalendar(){
+  $date=Input::get('date');
+  $nom=Input::get('nomevent');
+  $email=Input::get('email');
+  $desc=Input::get('description');
+  $lieu=Input::get('lieu');
+  return  Redirect::to("/calnonsign/$email/$date/$nom/$lieu/$desc");
+}
 public function onStart(){
   $eventconf=Event::where('id',Request::segment(2))->first();
   $config =PaydunyaConfig::where('id_user',$eventconf->user_id)->first();
@@ -44,7 +52,9 @@ public function onStart(){
     }
     $user = Auth::getUser();
     $achat=new AchatList();
-    $achat->user_email=$user->email;
+    if(Auth::getUser()){
+      $achat->user_email=$user->email;
+    }
     $achat->event_id=$invoice->getCustomData("id");
     $achat->montant=$invoice->getTotalAmount();
     $achat->save();

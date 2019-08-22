@@ -8,24 +8,25 @@ function onStart(){
 }
 ?>
 ==
-<!-- Nav -->
+
+<!-- 
 <nav class="navbar navbar-area navbar-expand-lg bg-white navbar-light fixed-top navbar-autohide" style="background-color: #0070B2">
     <div class="container">
         <div >
-            <!-- navbar header start -->
+          
             <a class="" href="http://lab.thesoftking.com/eticket">
               <img style="width:80px;display:block;margin:0;" class="img-fluid" src="{{ '/assets/images/logo.jpg'|theme }}" alt="logo PayDunay">
             </a>
             
         </div>
-        <!-- navbar header end -->
+       
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Tokenizer" aria-controls="Tokenizer"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="Tokenizer">
 
-            <!-- navbar collapse start -->
+           
             <ul class="navbar-nav">
                 <li class="nav-item  {% if this.page.id == 'home' %}active{% endif %} ">
                     <a class="na{% component 'session' %}v-link" href="{{ 'home'|page }}">Comment Ça marche</a>
@@ -54,14 +55,14 @@ function onStart(){
                             </li>
 
 
-                            <!--
+                           
                             <li class="nav-item dropdown {% if this.page.id == 'configuration_payment' %}active{% endif %}">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Paiement</a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="{{ 'configuration_payment'|page }}">Configurer le paiement</a>
                                   
                                 </div>
-                            </li>-->  
+                            </li>
                     
                 
                     {% else %}
@@ -99,9 +100,117 @@ function onStart(){
                
               </ul>
         </div>
-        <!-- navbar collapse end -->
+        
     </div>
-</nav>
+</nav>-->
+<ul style="background-color:#1894dd" class="nav justify-content-center p-2">
+
+        <li class="nav-item">
+            <a 
+            style="color:#fff" class="nav-link" href="#">
+                <i class="fa fa-google-plus" aria-hidden="true"></i>
+                <span class="d-none d-md-inline">Gmail</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a style="color:#fff" class="nav-link" href="#">
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                <span class="d-none d-md-inline">Whatsapp</span></a>
+        </li>
+
+
+        <li class="nav-item">
+            <a style="color:#fff" class="nav-link" href="#">
+                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                <span class="d-none d-md-inline">Facebook</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a style="color:#fff" class="nav-link" href="#">
+                <i class="fa fa-linkedin-square" aria-hidden="true">
+                </i>
+                <span class="d-none d-md-inline">Linkedin</span></a>
+        </li>
+    </ul>
+    <header class="navbar-dark bg-dark p-1">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+    
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    
+                    
+                    <a class="navbar-brand" href="#">
+                        <img src="{{ 'assets/user/ad_images/logo.png'|theme }}" width="40" height="40" class="d-inline-block align-top"
+                            alt="">
+                        &nbsp;
+                    </a>
+    
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li
+                        class="nav-item active">
+                            <a 
+                            class="nav-link" href="{{ 'about'|page }}">Comment Ça marche<span class="sr-only">(current)</span></a>
+                        </li>
+    
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ 'view_event'|page }}">Trouver un évènement <span class="sr-only">(current)</span></a>
+                        </li>
+    
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Contactez nous <span class="sr-only">(current)</span></a>
+                        </li>
+                        {%if user%}
+                        <li class="nav-item dropdown {% if this.page.id == 'create_event' or this.page.id == 'manage_event' or this.page.id == 'access_event' %}active{% endif %}">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Event</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ 'create_event'|page }}">Créer un évènement</a>
+                                <a class="dropdown-item" href="{{ 'manage_event'|page({user_id:user.id}) }}">Gestion des évènement</a>
+                                <a class="dropdown-item" href="{{ 'access_event'|page({user_id:user.id}) }}">Invitation</a>
+                                <a class="dropdown-item" href="{{ 'achat'|page }}">Mes achats</a>
+                                <a class="dropdown-item" href="{{ 'annue_achat'|page }}">Demande d'annulation achat</a>
+                            </div>
+                        </li>
+                            {%if user.is_superuser%}
+                            <li class="nav-item dropdown {% if this.page.id == 'create_event' or this.page.id == 'manage_event' or this.page.id == 'access_event' %}active{% endif %}">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% if notifs|length%}
+                                        <span class="badge badge-danger">
+                                                Notif{{ notifs|length}}</span>
+                                        {%else%}
+                                       
+                                        {%endif%}Gestion</a>
+                                <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="{{ 'admin'|page }}">  évènement</a>
+                                        <a class="dropdown-item" href="{{ 'admin_demande'|page }}">{% if notifs|length%}
+                                                <span class="badge badge-danger">
+                                                        Notif{{ notifs|length}}</span>
+                                                {%else%}
+                                               
+                                                {%endif%}Demande Event</a>
+                                                
+                                </div>
+                            </li>
+                            {%endif%}
+                        {%endif%}
+                    </ul>
+                        {%if user%}
+                        <button data-request="onLogout" data-request-data="redirect: '/'" style="border-radius:50px" class="btn btn-outline-primary my-2 my-sm-0">
+    
+                                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                SIGN-OUT</button> 
+                        {%else%}
+                        <button style="border-radius:50px" class="btn btn-outline-primary my-2 my-sm-0"  data-toggle="modal" data-target="#login-modal">
+    
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        SIGN-IN</button>
+                        {%endif%}
+                </div>
+            </nav>
+        </header>
+      
 
   <!-- login and register modal start-->
     <div class="login-registration-modal" id="loginRegModal">

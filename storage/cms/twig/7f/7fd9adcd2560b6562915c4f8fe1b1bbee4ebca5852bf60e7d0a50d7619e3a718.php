@@ -125,7 +125,72 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
 <!-- Material Design Bootstrap -->
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
 <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
+<link href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">
+
+<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+
+<link rel=\"stylesheet\" href=\"";
+        // line 48
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/css/animate.css");
+        echo "\">
+
+<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\">
+</script>
+
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
+
+<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>
     <style media=\"screen\">
+         #II {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 80px;
+
+      color: #fff;
+    }
+
+    #II2 {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 60px;
+
+      color: #fff;
+    }
+
+    #II3 {
+      background-image: url('images/lg.png');
+      /* background-size: cover; */
+      /* background-attachment: fixed; */
+      background-repeat: no-repeat;
+      padding: 50px;
+
+      color: #fff;
+    }
+
+    .color-nav {
+      background-color: #491105;
+    }
+
+    .color-paydunya {
+      background-color: #1894dd;
+    }
+
+    .color {
+      color: #000;
+    }
+
+    .color-orange {
+      color: orange;
+    }
+
+    #ICON {
+      -webkit-animation: rotation 2s infinite linear;
+    }
+
   .eml {
     color: red;
   }
@@ -143,7 +208,18 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
     margin: 5px 2px;
     border-radius: 50%;
   }
-
+  #image {
+            background-image: url(\"";
+        // line 125
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/user/ad_images/bgFixed.jpg");
+        echo "\");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 110px;
+            margin: 0px;
+            outline: none;
+        }
   .social-icons .fa:hover {
       opacity: 0.7;
   }
@@ -191,23 +267,23 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
     
        <header id=\"layout-header\">
             ";
-        // line 109
+        // line 179
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 110
+        // line 180
         echo "        </header>
 
         ";
-        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 112
+        $_type = isset($context["type"]) ? $context["type"] : null;        $_message = isset($context["message"]) ? $context["message"] : null;        // line 182
         $context["type"] = "success"        ;        foreach (Flash::success        () as $message) {
-            $context["message"] = $message;            // line 113
+            $context["message"] = $message;            // line 183
             echo "          <div class=\"container\">
               <div class=\"row\">
                   <div class=\"col-lg-12\">
                   <br>
                       <p class=\"bg-success\">";
-            // line 117
+            // line 187
             echo twig_escape_filter($this->env, ($context["message"] ?? null), "html", null, true);
             echo "</p>
                   </div>
@@ -215,53 +291,113 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
           </div>
       ";
         }
-        $context["type"] = $_type;        $context["message"] = $_message;        // line 122
+        $context["type"] = $_type;        $context["message"] = $_message;        // line 192
         echo "
     <!-- navbar area start -->
 
         <!-- Content -->
         <section id=\"layout-content\">
             ";
-        // line 127
+        // line 197
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 128
+        // line 198
         echo "        </section>
-         <div class=\"container\" style=\"height: 1000px; padding-top: 200px;\">
+        ";
+        // line 199
+        if (($context["user"] ?? null)) {
+            // line 200
+            echo "        <div class=\"container\" style=\"height: 1000px; padding-top: 200px;\">
           <a href=\"";
-        // line 130
-        echo $this->extensions['Cms\Twig\Extension']->pageFilter("ticket", ["nom_type_ticket" => ($context["nomticket"] ?? null), "nbr_ticket" => ($context["nbrticket"] ?? null), "montant" => ($context["montant"] ?? null), "id_event" => ($context["id"] ?? null)]);
-        echo "\" onclick=\"edition();return false;\">Imprimer le ticket</a>
+            // line 201
+            echo $this->extensions['Cms\Twig\Extension']->pageFilter("ticket", ["nom_type_ticket" => ($context["nomticket"] ?? null), "nbr_ticket" => ($context["nbrticket"] ?? null), "montant" => ($context["montant"] ?? null), "id_event" => ($context["id"] ?? null)]);
+            echo "\" onclick=\"edition();return false;\">Imprimer le ticket</a>
           <a href=\"";
-        // line 131
-        echo $this->extensions['Cms\Twig\Extension']->pageFilter("calendar", ["date" => ($context["dateEv"] ?? null), "email" => ($context["mail"] ?? null), "nom" => ($context["nomevent"] ?? null), "description" => ($context["description"] ?? null), "lieu" => ($context["lieu"] ?? null)]);
-        echo "\">Ajouter à votre calendar</a>
+            // line 202
+            echo $this->extensions['Cms\Twig\Extension']->pageFilter("calendar", ["date" => ($context["dateEv"] ?? null), "email" => ($context["mail"] ?? null), "nom" => ($context["nomevent"] ?? null), "description" => ($context["description"] ?? null), "lieu" => ($context["lieu"] ?? null)]);
+            echo "\">Ajouter à votre calendar</a>
         </div> 
-        
+        ";
+        } else {
+            // line 205
+            echo "        <div class=\"container\" style=\"height: 1000px; padding-top: 200px;\">
+          <a href=\"";
+            // line 206
+            echo $this->extensions['Cms\Twig\Extension']->pageFilter("ticket", ["nom_type_ticket" => ($context["nomticket"] ?? null), "nbr_ticket" => ($context["nbrticket"] ?? null), "montant" => ($context["montant"] ?? null), "id_event" => ($context["id"] ?? null)]);
+            echo "\" onclick=\"edition();return false;\">Imprimer le ticket</a>
+          <a class=\"btn btn-warning btn-sm\" href=\"#\" data-toggle=\"modal\" data-target=\"#invite-modal\" class=\"action-btn\">Ajouter à votre calendar</a>
+          <div class=\"login-registration-modal\" id=\"loginRegModal\">
+              <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
+                  <div class=\"modal\" tabindex=\"-1\" id=\"invite-modal\" role=\"dialog\"><!-- #login modal-->
+                      <div class=\"modal-dialog\" role=\"document\">
+                          <div class=\"modal-content\"><!-- modal content start -->
+                             
+                              <div class=\"tab-content\" id=\"nav-tabContent\"><!-- tab content-->
+                                  <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
+                                      <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
+                                          <form data-request=\"onCalendar\">
+                                              <div class=\"form-element square login\"><!-- form element login start -->
+                                                  <label>Entrer l'email
+                                                  </label>
+                                                  <input type=\"hidden\" name=\"date\" value=\"";
+            // line 221
+            echo twig_escape_filter($this->env, ($context["dateEv"] ?? null), "html", null, true);
+            echo "\" >
+                                                  <input type=\"hidden\" name=\"nomevent\" value=\"";
+            // line 222
+            echo twig_escape_filter($this->env, ($context["nomevent"] ?? null), "html", null, true);
+            echo "\" >
+                                                  <input type=\"hidden\" name=\"description\" value=\"";
+            // line 223
+            echo twig_escape_filter($this->env, ($context["description"] ?? null), "html", null, true);
+            echo "\" >
+                                                  <input type=\"hidden\" name=\"lieu\" value=\"";
+            // line 224
+            echo twig_escape_filter($this->env, ($context["lieu"] ?? null), "html", null, true);
+            echo "\" >
+                                                  <input name=\"email\" type=\"email\" placeholder=\"Entrer l'email....\" class=\"input-field-square\">
+                                                  <p class=\"eml\"></p>
+                                              </div><!-- form element login end -->
+                                            <!-- form element login end -->
+                                              <button type=\"submit\" class=\"submit-form-btn\">send</button>
+                                          </form>
+                                      </div><!-- login form wrapper end -->
+                                  </div>
+                              </div><!-- /.tab conent-->
+                          </div><!-- modal content end -->
+                      </div>
+                  </div><!-- /#loginmodal -->
+              </div><!-- login modal warapper satart end-->
+          </div>
+        </div>
+        ";
+        }
+        // line 241
+        echo "        
         <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 136
+        // line 244
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 137
+        // line 245
         echo "        </footer>
 
         <!-- Scripts -->
         <script src=\"";
-        // line 140
+        // line 248
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
         <script src=\"";
-        // line 141
+        // line 249
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
         echo "\"></script>
         <script src=\"";
-        // line 142
+        // line 250
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
         echo "\"></script>
         ";
-        // line 143
+        // line 251
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="'. Request::getBasePath()
@@ -276,11 +412,11 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
         echo '<link rel="stylesheet" property="stylesheet" href="'. Request::getBasePath()
                     .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 144
+        // line 252
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 145
+        // line 253
         echo "        
 <script>
   (function(\$){
@@ -500,7 +636,7 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
 
     public function getDebugInfo()
     {
-        return array (  284 => 145,  280 => 144,  265 => 143,  261 => 142,  257 => 141,  253 => 140,  248 => 137,  244 => 136,  236 => 131,  232 => 130,  228 => 128,  226 => 127,  219 => 122,  211 => 117,  205 => 113,  203 => 112,  199 => 110,  195 => 109,  119 => 36,  115 => 35,  109 => 34,  105 => 33,  100 => 31,  95 => 29,  90 => 27,  85 => 25,  80 => 23,  75 => 21,  70 => 19,  64 => 16,  59 => 14,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
+        return array (  420 => 253,  416 => 252,  401 => 251,  397 => 250,  393 => 249,  389 => 248,  384 => 245,  380 => 244,  375 => 241,  355 => 224,  351 => 223,  347 => 222,  343 => 221,  325 => 206,  322 => 205,  316 => 202,  312 => 201,  309 => 200,  307 => 199,  304 => 198,  302 => 197,  295 => 192,  287 => 187,  281 => 183,  279 => 182,  275 => 180,  271 => 179,  214 => 125,  134 => 48,  119 => 36,  115 => 35,  109 => 34,  105 => 33,  100 => 31,  95 => 29,  90 => 27,  85 => 25,  80 => 23,  75 => 21,  70 => 19,  64 => 16,  59 => 14,  49 => 7,  45 => 6,  41 => 5,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -548,7 +684,69 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
 <!-- Material Design Bootstrap -->
 <link href=\"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css\" rel=\"stylesheet\">
 <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css\">
+<link href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\">
+
+<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">
+
+<link rel=\"stylesheet\" href=\"{{ 'assets/user/css/animate.css'|theme }}\">
+
+<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\">
+</script>
+
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>
+
+<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>
     <style media=\"screen\">
+         #II {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 80px;
+
+      color: #fff;
+    }
+
+    #II2 {
+      background-image: url('images/bgFixed.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 60px;
+
+      color: #fff;
+    }
+
+    #II3 {
+      background-image: url('images/lg.png');
+      /* background-size: cover; */
+      /* background-attachment: fixed; */
+      background-repeat: no-repeat;
+      padding: 50px;
+
+      color: #fff;
+    }
+
+    .color-nav {
+      background-color: #491105;
+    }
+
+    .color-paydunya {
+      background-color: #1894dd;
+    }
+
+    .color {
+      color: #000;
+    }
+
+    .color-orange {
+      color: orange;
+    }
+
+    #ICON {
+      -webkit-animation: rotation 2s infinite linear;
+    }
+
   .eml {
     color: red;
   }
@@ -566,7 +764,15 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
     margin: 5px 2px;
     border-radius: 50%;
   }
-
+  #image {
+            background-image: url(\"{{ 'assets/user/ad_images/bgFixed.jpg'|theme }}\");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 110px;
+            margin: 0px;
+            outline: none;
+        }
   .social-icons .fa:hover {
       opacity: 0.7;
   }
@@ -633,10 +839,48 @@ class __TwigTemplate_f3a988bb00e87c6c9ff2dc43f362f86f58556b71bc64869229aa041bdb1
         <section id=\"layout-content\">
             {% page %}
         </section>
-         <div class=\"container\" style=\"height: 1000px; padding-top: 200px;\">
+        {% if user %}
+        <div class=\"container\" style=\"height: 1000px; padding-top: 200px;\">
           <a href=\"{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}\" onclick=\"edition();return false;\">Imprimer le ticket</a>
           <a href=\"{{'calendar'|page({date:dateEv,email:mail,nom:nomevent,description:description,lieu:lieu})}}\">Ajouter à votre calendar</a>
         </div> 
+        {% else %}
+        <div class=\"container\" style=\"height: 1000px; padding-top: 200px;\">
+          <a href=\"{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}\" onclick=\"edition();return false;\">Imprimer le ticket</a>
+          <a class=\"btn btn-warning btn-sm\" href=\"#\" data-toggle=\"modal\" data-target=\"#invite-modal\" class=\"action-btn\">Ajouter à votre calendar</a>
+          <div class=\"login-registration-modal\" id=\"loginRegModal\">
+              <div class=\"login-modal-wrapper\"><!-- login modal warapper satart start-->
+                  <div class=\"modal\" tabindex=\"-1\" id=\"invite-modal\" role=\"dialog\"><!-- #login modal-->
+                      <div class=\"modal-dialog\" role=\"document\">
+                          <div class=\"modal-content\"><!-- modal content start -->
+                             
+                              <div class=\"tab-content\" id=\"nav-tabContent\"><!-- tab content-->
+                                  <div class=\"tab-pane fade show active\" id=\"nav-login\" role=\"tabpanel\" aria-labelledby=\"nav-login-tab\">
+                                      <div class=\"login-form-wrapper\"><!-- login form wrapper start -->
+                                          <form data-request=\"onCalendar\">
+                                              <div class=\"form-element square login\"><!-- form element login start -->
+                                                  <label>Entrer l'email
+                                                  </label>
+                                                  <input type=\"hidden\" name=\"date\" value=\"{{dateEv}}\" >
+                                                  <input type=\"hidden\" name=\"nomevent\" value=\"{{nomevent}}\" >
+                                                  <input type=\"hidden\" name=\"description\" value=\"{{description}}\" >
+                                                  <input type=\"hidden\" name=\"lieu\" value=\"{{lieu}}\" >
+                                                  <input name=\"email\" type=\"email\" placeholder=\"Entrer l'email....\" class=\"input-field-square\">
+                                                  <p class=\"eml\"></p>
+                                              </div><!-- form element login end -->
+                                            <!-- form element login end -->
+                                              <button type=\"submit\" class=\"submit-form-btn\">send</button>
+                                          </form>
+                                      </div><!-- login form wrapper end -->
+                                  </div>
+                              </div><!-- /.tab conent-->
+                          </div><!-- modal content end -->
+                      </div>
+                  </div><!-- /#loginmodal -->
+              </div><!-- login modal warapper satart end-->
+          </div>
+        </div>
+        {% endif %}
         
         <!-- Footer -->
         <footer id=\"layout-footer\">

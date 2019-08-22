@@ -2,6 +2,13 @@ title = "retour_achat"
 url = "/retour_achat/:id?"
 layout = "retour_achat"
 is_hidden = 0
+
+[account]
+paramCode = "code"
+forceSecure = 0
+
+[session]
+security = "all"
 ==
 <!--<div class="container" style="height: 1000px;">
     <a href="{{'ticket'|page({nom_type_ticket:nomticket,nbr_ticket:nbrticket,montant:montant,id_event:id})}}" onclick="edition();return false;">Imprimer le ticket</a>

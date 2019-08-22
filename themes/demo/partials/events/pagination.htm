@@ -1,7 +1,7 @@
 {{form_ajax('onFilterEvents',{update:{'events/events':'#upcoming_tab','events/eventexpire':'#ending_tab','events/pagination':'#active_tab'}})}}
 <div id="EventFilter" class="text-center">
         <label>Page</label>
-        <select class="ui fluid dropdown" name="Filter[page]">
+        <select class="ui   dropdown" name="Filter[page]">
             {% for i in 1..pages %}
                 {%  if i == page %}
                     <option value="{{page}}" selected>{{ page }}</option>

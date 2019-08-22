@@ -131,7 +131,7 @@ class __TwigTemplate_247f68f14339031b012a9d85f6ba8ed93771df41063d72846038ed5586e
   <body >
       
       <div style=\"height: 1000px;padding-top: 200px;\" class=\"container\">
-    <p>Cliquer sur Authorize pour effectuer cette action</p>
+    <p id=\"sup\">Cliquer sur Authorize pour effectuer cette action</p>
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <input type=\"hidden\" value=\"";
@@ -167,7 +167,7 @@ class __TwigTemplate_247f68f14339031b012a9d85f6ba8ed93771df41063d72846038ed5586e
     <button id=\"authorize_button\" style=\"display: none;\">Authorize</button>
     <p id=\"signout_button\" style=\"display: none;\">event ajouter a votre calendar</p>
 
-    <pre id=\"content\" style=\"white-space: pre-wrap;\"></pre>
+    <a id=\"content\" style=\"white-space: pre-wrap;\"></a>
   </div>
 
     <script type=\"text/javascript\">
@@ -249,7 +249,10 @@ function createEvent() {
 });
 
 request.execute(function(event) {
-  appendPre('<a href=\"' + event.htmlLink+'\"> voir dans le calendar</a>');
+  document.getElementById('content').setAttribute('href',event.htmlLink);
+  document.getElementById('content').innerHTML=\"Voire l'évènement dans votre calendar\";
+  document.getElementById('sup').remove();
+  //appendPre( event.htmlLink);
 });
 
 }
@@ -421,7 +424,7 @@ request.execute(function(event) {
   <body >
       
       <div style=\"height: 1000px;padding-top: 200px;\" class=\"container\">
-    <p>Cliquer sur Authorize pour effectuer cette action</p>
+    <p id=\"sup\">Cliquer sur Authorize pour effectuer cette action</p>
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <input type=\"hidden\" value=\"{{date}}\" id=\"date\">
@@ -437,7 +440,7 @@ request.execute(function(event) {
     <button id=\"authorize_button\" style=\"display: none;\">Authorize</button>
     <p id=\"signout_button\" style=\"display: none;\">event ajouter a votre calendar</p>
 
-    <pre id=\"content\" style=\"white-space: pre-wrap;\"></pre>
+    <a id=\"content\" style=\"white-space: pre-wrap;\"></a>
   </div>
 
     <script type=\"text/javascript\">
@@ -519,7 +522,10 @@ function createEvent() {
 });
 
 request.execute(function(event) {
-  appendPre('<a href=\"' + event.htmlLink+'\"> voir dans le calendar</a>');
+  document.getElementById('content').setAttribute('href',event.htmlLink);
+  document.getElementById('content').innerHTML=\"Voire l'évènement dans votre calendar\";
+  document.getElementById('sup').remove();
+  //appendPre( event.htmlLink);
 });
 
 }
